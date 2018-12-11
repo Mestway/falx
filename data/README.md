@@ -25,3 +25,4 @@ the folder for data collected online
 | 021 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/crunchbase_investment.Rmd | 
 | 022 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/buffett-letters.Rmd |
 | 023 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/traffic_safety.Rmd | 
+| 024 | pulse.txt | https://barmsijs.lumc.nl/R_course/ggplot2/ggplot2.tasks.code.html |
