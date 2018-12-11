@@ -15,4 +15,4 @@ the folder for data collected online
 | 011 | fruit.csv | https://bokeh.pydata.org/en/latest/docs/gallery/bar_nested_colormapped.html | 
 | 012 | fruit.csv | https://bokeh.pydata.org/en/latest/docs/gallery/bar_stacked.html |
 | 013 | fruit-2.py | https://bokeh.pydata.org/en/latest/docs/gallery/bar_stacked_split.html |
-
+| 014 | reshape1.R | https://stackoverflow.com/questions/3777174/plotting-two-variables-as-lines-using-ggplot2-on-the-same-graph/3777592?r=SearchResults#3777592 |
