@@ -16,3 +16,12 @@ the folder for data collected online
 | 012 | fruit.csv | https://bokeh.pydata.org/en/latest/docs/gallery/bar_stacked.html |
 | 013 | fruit-2.py | https://bokeh.pydata.org/en/latest/docs/gallery/bar_stacked_split.html |
 | 014 | reshape1.R | https://stackoverflow.com/questions/3777174/plotting-two-variables-as-lines-using-ggplot2-on-the-same-graph/3777592?r=SearchResults#3777592 |
+| 015 | gapminder.csv | http://stat545.com/block016_secrets-happy-graphing.html |
+| 016 | xloc.csv | https://www.biostars.org/p/231978/ |
+| 017 | mtcars.csv | http://rismyhammer.com/plots/tidyrggplot2explained.html |
+| 018 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/mark_twain_novels.Rmd |
+| 019 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/toronto_major_crime_indicators.Rmd |
+| 020 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/download_stackoverflow.Rmd |
+| 021 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/crunchbase_investment.Rmd | 
+| 022 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/buffett-letters.Rmd |
+| 023 | TBD | https://github.com/susanli2016/Data-Analysis-with-R/blob/master/traffic_safety.Rmd | 
