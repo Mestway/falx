@@ -16,7 +16,7 @@ if not os.path.exists(temp_dir): os.mkdir(temp_dir)
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_file", dest="input_file", 
-	default=os.path.join(proj_dir, "vl_examples", "histogram.json"), 
+	default=os.path.join(proj_dir, "vl_examples", "histogram.vl.json"), 
 	help="input Vega-Lite spec file")
 parser.add_argument("--output_dir", dest="output_dir", 
 	default=temp_dir, help="output directory")
