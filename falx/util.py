@@ -5,7 +5,15 @@ from __future__ import absolute_import
 import json
 
 def flatten_object(obj):
-	"""flatten an object into paths for easier enumeration. """
+	"""flatten an object into paths for easier enumeration. 
+		Args: an object
+		Returns:
+			a flat object with a list of pairs 
+			[(p_1, v_1), ..., (p_k, v_k)], (paths and values)
+		Example:
+			{x: 1, y : {z: [a, b], w: c}} will be flatten into
+			[("/x", 1), ("/y/z/0", a), ("/y/z/1", b), ("/y/w", c)]
+	"""
 	paths = []
 
 	if isinstance(obj, (dict,)):
@@ -24,7 +32,14 @@ def flatten_object(obj):
 	return paths
 
 def reconstruct_object(flat_obj):
-	"""reconstruct an object from flatten paths. """
+	"""reconstruct an object from flatten paths. 
+		Args:
+			flat_obj: a flat object with a list of pairs 
+				[(p_1, v_1), ..., (p_k, v_k)], (paths and values)
+		Returns:
+			Either a primitive value, a list, or a dict 
+			(depending on how the path is specified) 
+	"""
 	heads = list(set([x[0][1:].split('/')[0] for x in flat_obj]))
 
 	# this is a primitive value
@@ -85,4 +100,3 @@ def obj2vl(spec):
 def check_validatiy(vl_spec):
 	"""check if a vl spec is valid"""
 	return True
-		
