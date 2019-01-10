@@ -24,7 +24,6 @@ parser.add_argument("--input_dir", dest="input_dir",
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=temp_dir, help="output directory")
 
-
 def run(flags):
 	input_files = []
 	if flags.input_file is not None:

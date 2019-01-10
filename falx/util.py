@@ -4,28 +4,49 @@ from __future__ import absolute_import
 
 import json
 
-def resolve_field_paths(obj):
-	"""obtain xpaths for fields in an object. """
+
+def flatten_object(obj):
+	"""flatten an object into paths for easier enumeration. """
 	paths = []
 
-	if not isinstance(obj, (dict, )):
-		return [""]
-
-	for f in obj:
-		if isinstance(obj[f], (list,)):
-			for x in obj[f]:
-				sub_paths = resolve_field_paths(x)
-				if len(sub_paths) == 1 and sub_paths[0] == "":
-					paths.append(f)
-				else:
-					for p in sub_paths:
-						paths.append(f + "/*/"  + p)
-		elif isinstance(obj[f], (dict,)):
-			sub_paths = resolve_field_paths(obj[f])
+	if isinstance(obj, (dict,)):
+		for f in obj:
+			sub_paths = flatten_object(obj[f])
 			for p in sub_paths:
-				paths.append(f + "/" + p)
+				paths.append(("/{}{}".format(f, p[0]), p[1]))
+	elif isinstance(obj, (list,)):
+		for i, x in enumerate(obj):
+			sub_paths = flatten_object(x)
+			for p in sub_paths:
+				paths.append(("/{}{}".format(i, p[0]), p[1]))
+	else:
+		paths = [("", obj)]
 
-	return list(set(paths))
+	return paths
+
+def reconstruct_object(flat_obj):
+	"""reconstruct an object from flatten paths. """
+	heads = list(set([x[0][1:].split('/')[0] for x in flat_obj]))
+
+	# this is a primitive value
+	if len(heads) == 1 and heads[0] == "":
+		return flat_obj[0][1]
+
+	# check if it is a list
+	if all([v.isdigit() for v in heads]):
+		heads = sorted([int(v) for v in heads])
+		retval = list(range(len(heads)))
+	else:
+		retval = {}
+
+	for h in heads:
+		# recursively construct objects from paths
+		prefix = "/{}".format(h)
+		sub_paths = [(x[0][len(prefix):], x[1]) for x in flat_obj 
+					 if x[0].startswith(prefix)]
+		retval[h] = reconstruct_object(sub_paths)
+
+	return retval
 
 def load_vl_spec(input_file):
 	"""load vl specs from a json file. """
@@ -34,7 +55,8 @@ def load_vl_spec(input_file):
 	return vl_spec
 
 def vl2obj(vl_spec):
-	"""transforms an vl_spec to an object, modifying encodings"""
+	"""transforms an vl_spec to an object,
+	   it changes encodings from dict into list"""
 	spec = {}
 	for f in vl_spec:
 		if f == "encoding":
