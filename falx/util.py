@@ -4,7 +4,6 @@ from __future__ import absolute_import
 
 import json
 
-
 def flatten_object(obj):
 	"""flatten an object into paths for easier enumeration. """
 	paths = []
