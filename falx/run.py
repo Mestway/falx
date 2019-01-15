@@ -6,8 +6,8 @@ import argparse
 import os
 from pprint import pprint
 
-import transformer
-import util
+import design_enumerator
+import utils
 
 # default directories
 proj_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -33,16 +33,22 @@ def run(flags):
 			if fname.endswith(".vl.json"):
 				input_files.append(os.path.join(flags.input_dir, fname))
 
-	vl_specs = [util.load_vl_spec(f) for f in input_files]
+	vl_specs = [utils.load_vl_spec(f) for f in input_files]
 	data_urls = [spec["data"]["url"] for spec in vl_specs if "url" in spec["data"]]
 
 	for vl_spec in vl_specs:
-		if "layer" in vl_spec:
+		if "layer" in vl_spec or "transform" in vl_spec:
 			continue
-		out_vl_specs = transformer.enum_specs(vl_spec)
-		for s in out_vl_specs:
-			pass #print(s)
-		break
+		if len(vl_spec["encoding"]) != 2:
+			continue 
+
+		new_data = {"url": "data/unemployment-across-industries.json"}
+		target_fields = ["series", "count"]
+
+		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
+		
+		for s in candidates:
+			pprint(s)
 
 if __name__ == '__main__':
 	flags = parser.parse_args()

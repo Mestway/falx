@@ -4,6 +4,9 @@ from __future__ import absolute_import
 
 import json
 
+def intersect(l1, l2):
+	return set(l1) & set(l2)
+
 def flatten_object(obj):
 	"""flatten an object into paths for easier enumeration. 
 		Args: an object
@@ -77,6 +80,7 @@ def vl2obj(vl_spec):
 			spec[f] = []
 			for v in vl_spec[f]:
 				enc = vl_spec[f][v].copy()
+
 				enc["channel"] = v
 				spec[f].append(enc)
 		else:
