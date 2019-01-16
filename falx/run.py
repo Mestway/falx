@@ -3,6 +3,7 @@ from __future__ import division
 from __future__ import absolute_import
 
 import argparse
+import json
 import os
 from pprint import pprint
 
@@ -36,6 +37,7 @@ def run(flags):
 	vl_specs = [utils.load_vl_spec(f) for f in input_files]
 	data_urls = [spec["data"]["url"] for spec in vl_specs if "url" in spec["data"]]
 
+	output_index = 0
 	for vl_spec in vl_specs:
 		if "layer" in vl_spec or "transform" in vl_spec:
 			continue
@@ -48,7 +50,9 @@ def run(flags):
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 		
 		for s in candidates:
-			pprint(s)
+			with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
+				g.write(json.dumps(s))
+			output_index += 1
 
 if __name__ == '__main__':
 	flags = parser.parse_args()
