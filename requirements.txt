@@ -3,3 +3,4 @@ pandas
 vega
 dpath
 rpy2
+jsonschema

@@ -1,0 +1,11 @@
+{
+  "name": "falx",
+  "version": "0.0.1",
+  "description": "falx-js",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "vega-lite": "^3.0.0-rc12"
+  }
+}

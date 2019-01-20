@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 import argparse
 import json
+from jsonschema
 import os
 from pprint import pprint
 
@@ -50,6 +51,7 @@ def run(flags):
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 		
 		for s in candidates:
+			print(json.dumps(s, indent=2))
 			with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
 				g.write(json.dumps(s))
 			output_index += 1
