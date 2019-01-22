@@ -8,6 +8,7 @@ const exampleSchema = "{\"$schema\":\"https:\/\/vega.github.io\/schema\/vega-lit
 var targetSpecs = process.argv.slice(2);
 
 result = []
+result.push()
 
 for (var i = 0; i < targetSpecs.length; i ++) {
 	vlSpec = JSON.parse(targetSpecs[i])

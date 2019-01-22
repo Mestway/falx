@@ -7,9 +7,11 @@ import json
 import jsonschema
 import os
 from pprint import pprint
+import subprocess
 
 import design_enumerator
 import utils
+
 
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -26,6 +28,25 @@ parser.add_argument("--input_dir", dest="input_dir",
 					help="input files; ignored if input-file is specified")
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=TEMP_DIR, help="output directory")
+parser.add_argument("--external_validation", dest="external_validation",
+					default=False, help="whether enable using JS module to validate specs")
+
+def absolute_path(p):
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
+
+def external_validation(spec):
+    proc = subprocess.Popen(
+        args=["node", absolute_path("../js/index.js")],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    stdout, stderr = proc.communicate(json.dumps(spec).encode("utf8"))
+
+    if stderr:
+        return stderr.decode("utf-8").strip()
+
+    return stdout.decode("utf-8").strip()
 
 def run(flags):
 	"""Synthesize vega-lite schema """
@@ -58,13 +79,17 @@ def run(flags):
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 		
 		for s in candidates:
+			if external_validation:
+				status = json.loads(external_validation(s))
+				if status:
+					print("-", end="", flush=True)
 			try:
 				jsonschema.validate(s, vl_schema)
-				print(".", end="",flush=True)
+				print(".", end="", flush=True)
 			except:
-				print("x", end="",flush=True)
-				pass
-			#print(json.dumps(s, indent=2))
+				print("x", end="", flush=True)
+				continue
+
 			with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
 				g.write(json.dumps(s))
 			output_index += 1
