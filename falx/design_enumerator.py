@@ -4,7 +4,11 @@ from __future__ import absolute_import
 
 import itertools
 import json
+import jsonschema
+import os
 from pprint import pprint
+import subprocess
+
 import dpath
 
 import utils
@@ -16,7 +20,6 @@ DOMAINS = {
 	"/encoding/*/aggregate": [None, "count", "min", "max", "sum"],
 	"/encoding/*/bin": [None, 10],
 }
-
 
 def instantiate_domains(domains, encoding_cnt):
 	"""create domain for fields we want to encode. """
@@ -65,3 +68,30 @@ def enum_specs(vl_json, max_changes=1):
 			outputs.append(new_vl_json)
 
 	return outputs
+
+def validate_spec(spec, vl_schema, external_validation=None):
+
+	message = []
+
+	valid = True
+	if external_validation:
+		proc = subprocess.Popen(
+			args=["node", utils.absolute_path("../js/index.js")],
+			stdin=subprocess.PIPE,
+			stdout=subprocess.PIPE,
+			stderr=subprocess.PIPE
+		)
+		stdout, stderr = proc.communicate(json.dumps(spec).encode("utf8"))
+
+		if stderr:
+			message.append(stderr.decode("utf-8").strip())
+
+		message.append(stdout.decode("utf-8").strip())
+	
+	try:
+		jsonschema.validate(spec, vl_schema)
+	except:
+		valid = False
+
+	return valid, message
+

@@ -3,9 +3,10 @@ from __future__ import division
 from __future__ import absolute_import
 
 import json
+import os
 
-def intersect(l1, l2):
-	return set(l1) & set(l2)
+def absolute_path(p):
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
 
 def flatten_object(obj):
 	"""flatten an object into paths for easier enumeration. 
