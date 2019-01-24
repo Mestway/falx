@@ -44,6 +44,10 @@ def explore_designs(example_vl, target_data, target_fields):
 		results.extend(enum_specs(temp_vl_json))
 	return results
 
+def validate_encoding(encoding_fields):
+
+	pass
+
 def enum_specs(vl_json, max_changes=1):
 	"""enumerate specs out of an existing vl_json. """
 	
@@ -69,10 +73,9 @@ def enum_specs(vl_json, max_changes=1):
 
 	return outputs
 
-def validate_spec(spec, vl_schema, external_validation=None):
+def validate_spec(spec, vl_schema, external_validation=False):
 
 	message = []
-
 	valid = True
 	if external_validation:
 		proc = subprocess.Popen(
@@ -85,9 +88,7 @@ def validate_spec(spec, vl_schema, external_validation=None):
 
 		if stderr:
 			message.append(stderr.decode("utf-8").strip())
-
 		message.append(stdout.decode("utf-8").strip())
-	
 	try:
 		jsonschema.validate(spec, vl_schema)
 	except:

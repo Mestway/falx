@@ -28,8 +28,8 @@ parser.add_argument("--input_dir", dest="input_dir",
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=TEMP_DIR, help="output directory")
 
-parser.add_argument("--external_validation", dest="external_validation",
-					default=True, help="whether enable using JS module to validate specs")
+parser.add_argument("--validation", dest="validation",
+					default=None, help="whether enable using JS module to validate specs")
 
 def run(flags):
 	"""Synthesize vega-lite schema """
@@ -64,18 +64,17 @@ def run(flags):
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 		
 		for spec in candidates:
-			status, message = design_enumerator.validate_spec(spec, vl_schema, flags.external_validation)
-
-			if status: 
-				print(".", end="", flush=True)
-			else:
-				print("x", end="", flush=True)
-				continue
-
+			if flags.validation:
+				if "external_validation" in flags.validation:
+					external_validation = True
+				status, message = design_enumerator.validate_spec(spec, vl_schema, external_validation)
+				if not status:
+					print("x", end="", flush=True)
+			print(".", end="", flush=True)
 			with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
 				g.write(json.dumps(spec))
 			output_index += 1
-	
+
 	print("")
 	print("# finish enumeration")
 
