@@ -28,8 +28,11 @@ parser.add_argument("--input_dir", dest="input_dir",
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=TEMP_DIR, help="output directory")
 
-parser.add_argument("--validation", dest="validation",
-					default=None, help="whether enable using JS module to validate specs")
+parser.add_argument("--validation", dest="validation", default=0, type=int,
+					help="whether to run external validation for VegaLite spec,"
+						 "Mode: 0 -- no extra validation"
+						 "      1 -- schema check"
+						 "      2 -- schema check and compilation check")
 
 def run(flags):
 	"""Synthesize vega-lite schema """
@@ -67,9 +70,8 @@ def run(flags):
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 		
 		for spec in candidates:
-			if flags.validation:
-				if "external_validation" in flags.validation:
-					external_validation = True
+			if flags.validation != 0:
+				external_validation = True if flags.validation == 2 else False
 				status, message = design_enumerator.validate_spec(spec, vl_schema, external_validation)
 				if not status:
 					print("x", end="", flush=True)
