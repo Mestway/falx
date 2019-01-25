@@ -86,13 +86,36 @@ def internal_validate_spec(spec, field_metadata):
 
 
 def validate_encoding(enc, field_metadata):
-#	print(enc)
-#	print(field_metadata)
-	if (field_metadata[enc['field']]["type"] == "str" 
-		and enc['type'] in ["quantitative", "ordinal", "temporal"]):
+	"""validate whether an encoding is valid or not """
+
+	def discrete(e):
+		return e["type"] in ["nominal", "ordinal"] or get_attr(e, "bin")
+
+	field_type = field_metadata[enc["field"]]["type"]
+
+	# Primitive type has to support data type
+	if enc["type"] == "temporal" and field_type != "datetime": return False
+	if enc["type"] in ["quantitative", "ordinal"] and field_type in ["string", "boolean"]: return False
+
+	# Can only bin quantitative or ordinal.
+	if get_attr(enc, "bin") and enc["type"] not in ["quantitative", "ordinal"]: 
 		return False
-	if (get_attr(enc, "bin") is not None and get_attr(enc, "aggregate") is not None):
+
+	# Can only use log / zero with quantitative.
+	if (get_attr(enc, "zero") or get_attr(enc, "log")) and enc["type"] != "quantitative": 
 		return False
+
+	# Cannot use log scale with discrete (which includes binned).
+	if get_attr(enc, "log") and discrete(enc): return False
+
+	# Cannot use log and zero together
+	if get_attr(enc, "zero") and get_attr(enc, "log"): return False
+
+	# TODO Cannot use log if the data is negative or zero
+	
+	# Cannot bin and aggregate
+	if get_attr(enc, "bin") and get_attr(enc, "aggregate"): return False
+
 	return True
 
 def validate_spec(spec, vl_schema, external_validation=False):

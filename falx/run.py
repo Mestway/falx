@@ -63,8 +63,8 @@ def run(flags):
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
 		target_fields = {
-			"series": {"type": "str"},
-			"count": {"type": "int"}
+			"series": {"type": "string"},
+			"count": {"type": "integer"}
 		}
 
 		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
