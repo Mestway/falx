@@ -1,6 +1,6 @@
 # Falx
 
-copy paste to make visualization design easier
+An opportunistic programming tool for visualizations to make design easier.
 
 ## Set up
 
@@ -29,24 +29,20 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 
 #### Install dependencies
 
-- Install python dependencies: `pip install -r requirements.txt`
+1. Install python dependencies: `pip install -r requirements.txt`
 
-- Install falx in the development mode: `pip install -e .`
+2. Install falx in the development mode: `pip install -e .`
 
-- Install the Tyrell framework and its dependencies:
+3. Install the Tyrell framework and its dependencies:
 
-  - Obtain a tarball distribution of tyrell and run `pip install tyrell-0.1.tar.gz`
+   * Obtain a tarball distribution of tyrell and run `pip install tyrell-0.1.tar.gz`
 
-    (Note: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.)
+   * To test Tyrell installation, run: `parse-tyrell-spec --help` (it is properly installed if help messages show up).
 
-  - To test Tyrell installation, run: `parse-tyrell-spec --help`
-
-    If the help message is correctly shown, tyrell is properly installed.
-
-  - Install R 3.3+ and its relevant libraries for data wrangling （https://cran.r-project.org/bin/macosx/R-3.5.2.pkg）
-      - dplyr: install.packages("dplyr", dependencies=TRUE)
-      - tidyr: install.packages("tidyr", dependencies=TRUE)
-      - jsonlite: install.packages("jsonlite", dependencies=TRUE)
+   * Install [R 3.3+](https://cran.r-project.org/bin/macosx/R-3.5.2.pkg) and the following data wrangling libraries:
+       - dplyr: install.packages("dplyr", dependencies=TRUE)
+       - tidyr: install.packages("tidyr", dependencies=TRUE)
+       - jsonlite: install.packages("jsonlite", dependencies=TRUE)
 
 ## Run
 
