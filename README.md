@@ -2,7 +2,7 @@
 
 copy paste to make visualization design easier
 
-## Instructions
+## Set up
 
 Requirement: Python version >=3.7.
 
@@ -29,34 +29,39 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 
 #### Install dependencies
 
-Install python dependencies: run `pip install -r requirements.txt`.
+- Install python dependencies:
 
-Install falx in the development mode: `pip install -e .`, this is necessary to resolve dependencies.
+   ```pip install -r requirements.txt```
 
-Install the Tyrell framework and its dependencies.
+- Install falx in the development mode to resolve dependencies
+  
+  ```pip install -e .```
 
-- Obtaining a tarball distribution of tyrell. Suppose the name of the tarball is ``tyrell-0.1.tar.gz``:
+- Install the Tyrell framework and its dependencies:
 
-   ```
-   pip install tyrell-0.1.tar.gz
-   ```
+  - Obtain a tarball distribution of tyrell. Suppose the name of the tarball is ``tyrell-0.1.tar.gz``:
 
-.. note:: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.
+   ```pip install tyrell-0.1.tar.gz```
 
-To test whether the installation is successful, run the following command:
+   (Note: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.)
 
-   ```parse-tyrell-spec --help```
+  - To test Tyrell installation, run the following command:
 
-If the help message is correctly shown, everything should be good.
+     ```parse-tyrell-spec --help```
 
-- Install R 3.3+ and its relevant libraries for data wrangling （https://cran.r-project.org/bin/macosx/R-3.5.2.pkg）
-    - dplyr: install.packages("dplyr", dependencies=TRUE)
-    - tidyr: install.packages("tidyr", dependencies=TRUE)
-    - jsonlite: install.packages("jsonlite", dependencies=TRUE)
+    If the help message is correctly shown, tyrell is properly installed.
 
+  - Install R 3.3+ and its relevant libraries for data wrangling （https://cran.r-project.org/bin/macosx/R-3.5.2.pkg）
+      - dplyr: install.packages("dplyr", dependencies=TRUE)
+      - tidyr: install.packages("tidyr", dependencies=TRUE)
+      - jsonlite: install.packages("jsonlite", dependencies=TRUE)
 
-- Try our toy example:
+## Run
 
-   ```
-   cd falx; python morpheus_enumerator.py
-   ```
+To run the Falx design synthesizer:
+
+```cd falx; python run.py```
+
+To test Tyrell enumerator:
+
+```cd falx; python morpheus_enumerator.py```
