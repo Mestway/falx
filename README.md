@@ -29,25 +29,17 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 
 #### Install dependencies
 
-- Install python dependencies:
+- Install python dependencies: `pip install -r requirements.txt`
 
-   ```pip install -r requirements.txt```
-
-- Install falx in the development mode to resolve dependencies
-  
-  ```pip install -e .```
+- Install falx in the development mode: `pip install -e .`
 
 - Install the Tyrell framework and its dependencies:
 
-  - Obtain a tarball distribution of tyrell. Suppose the name of the tarball is ``tyrell-0.1.tar.gz``:
+  - Obtain a tarball distribution of tyrell and run `pip install tyrell-0.1.tar.gz`
 
-   ```pip install tyrell-0.1.tar.gz```
+    (Note: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.)
 
-   (Note: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.)
-
-  - To test Tyrell installation, run the following command:
-
-     ```parse-tyrell-spec --help```
+  - To test Tyrell installation, run: `parse-tyrell-spec --help`
 
     If the help message is correctly shown, tyrell is properly installed.
 
@@ -58,10 +50,6 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 
 ## Run
 
-To run the Falx design synthesizer:
+To run the Falx design synthesizer: `cd falx; python run.py`
 
-```cd falx; python run.py```
-
-To test Tyrell enumerator:
-
-```cd falx; python morpheus_enumerator.py```
+To test Tyrell enumerator: `cd falx; python morpheus_enumerator.py`
