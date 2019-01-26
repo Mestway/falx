@@ -33,7 +33,7 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 
 2. Install falx in the development mode: `pip install -e .`
 
-3. Install the Tyrell framework and its dependencies:
+3. Install Tyrell and dependencies:
 
    * Obtain a tarball distribution of tyrell and run `pip install tyrell-0.1.tar.gz`
 
