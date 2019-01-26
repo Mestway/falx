@@ -37,6 +37,7 @@ If the help message is correctly shown, everything should be good.
 - Install R 3.3+ and its relevant libraries for data wrangling （https://cran.r-project.org/bin/macosx/R-3.5.2.pkg）
     - dplyr: install.packages("dplyr", dependencies=TRUE)
     - tidyr: install.packages("tidyr", dependencies=TRUE)
+    - jsonlite: install.packages("jsonlite", dependencies=TRUE)
 
 
 - Try our toy example:
