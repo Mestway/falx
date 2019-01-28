@@ -40,9 +40,9 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
    * To test Tyrell installation, run: `parse-tyrell-spec --help` (it is properly installed if help messages show up).
 
    * Install [R 3.3+](https://cran.r-project.org/bin/macosx/R-3.5.2.pkg) and the following data wrangling libraries:
-       - dplyr: install.packages("dplyr", dependencies=TRUE)
-       - tidyr: install.packages("tidyr", dependencies=TRUE)
-       - jsonlite: install.packages("jsonlite", dependencies=TRUE)
+       - dplyr: `install.packages("dplyr", dependencies=TRUE)`
+       - tidyr: `install.packages("tidyr", dependencies=TRUE)`
+       - jsonlite: `install.packages("jsonlite", dependencies=TRUE)`
 
 ## Run
 
