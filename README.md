@@ -8,7 +8,6 @@ Install dependencies: run `pip install -r requirements.txt`.
 
 Install falx in the development mode: `pip install -e .`, this is necessary to resolve dependencies.
 
-
 First of all, make sure that your system has a python version >=3.6 installed.
 
 It is recommended that a `virtual environment <https://docs.python.org/3/library/venv.html>`_ is used when starting with a new project:

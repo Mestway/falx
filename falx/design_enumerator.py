@@ -31,7 +31,7 @@ def instantiate_domains(domains, encoding_cnt):
 	for d in domains:
 		if "/encoding/*" in d:
 			for i in range(encoding_cnt):
-				instantiated[d.replace("/encoding/*", f"/encoding/{i}")] = domains[d]
+				instantiated[d.replace("/encoding/*", "/encoding/{}".format(i))] = domains[d]
 		else:
 			instantiated[d] = domains[d]
 	return instantiated
