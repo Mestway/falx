@@ -1,43 +1,52 @@
 # Falx
 
-copy paste to make visualization design easier
+An opportunistic programming tool for visualizations to make design easier.
 
-## Instructions
+## Set up
 
-Install dependencies: run `pip install -r requirements.txt`.
+Requirement: Python version >=3.7.
 
-Install falx in the development mode: `pip install -e .`, this is necessary to resolve dependencies.
+#### Create virtual environment (recommended)
 
-First of all, make sure that your system has a python version >=3.6 installed.
 
-It is recommended that a `virtual environment <https://docs.python.org/3/library/venv.html>`_ is used when starting with a new project:
+[Virtual Environment](<https://docs.python.org/3/library/venv.html>) or [Conda](https://www.anaconda.com/download/#macos) is recommended for managing dependencies:
 
-   $ mkdir venv
+If using Virtual Environment:
+
+   ```
+   mkdir venv
+   python3 -m venv ./venv
+   source venv/bin/activate
+   ```
    
-   $ python3 -m venv ./venv
+If using Conda:
+
+   ```
+   conda create -n falx python=3.7 anaconda
+   source activate falx
+   ```
    
-   $ source venv/bin/activate
+At development time, use `source venv/bin/activate` (venv) or `source activate falx` (conda) to activate the virtual environment.
 
-Now, you may install the Tyrell framework and its dependencies.
+#### Install dependencies
 
+1. Install python dependencies: `pip install -r requirements.txt`
 
-- Obtaining a tarball distribution of tyrell. Suppose the name of the tarball is ``tyrell-0.1.tar.gz``:
+2. Install falx in the development mode: `pip install -e .`
 
-   $ pip install tyrell-0.1.tar.gz
+3. Install Tyrell and dependencies:
 
-.. note:: One of Tyrell's dependency, `z3-solver`, takes a long time to build. Please be patient.
+   * Obtain a tarball distribution of tyrell and run `pip install tyrell-0.1.tar.gz`
 
-To test whether the installation is successful, run the following command:
+   * To test Tyrell installation, run: `parse-tyrell-spec --help` (it is properly installed if help messages show up).
 
-   $ parse-tyrell-spec --help
+   * Install [R 3.3+](https://cran.r-project.org/bin/macosx/R-3.5.2.pkg) and the following data wrangling libraries:
+       - dplyr: `install.packages("dplyr", dependencies=TRUE)`
+       - tidyr: `install.packages("tidyr", dependencies=TRUE)`
+       - jsonlite: `install.packages("jsonlite", dependencies=TRUE)`
 
-If the help message is correctly shown, everything should be good.
+## Run
 
-- Install R 3.3+ and its relevant libraries for data wrangling （https://cran.r-project.org/bin/macosx/R-3.5.2.pkg）
-    - dplyr: install.packages("dplyr", dependencies=TRUE)
-    - tidyr: install.packages("tidyr", dependencies=TRUE)
+To run the Falx design synthesizer: `cd falx; python run.py`
 
-
-- Try our toy example:
-
-   $ cd falx; python morpheus_enumerator.py
+To test Tyrell enumerator: `cd falx; python morpheus_enumerator.py`

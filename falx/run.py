@@ -11,6 +11,7 @@ from pprint import pprint
 import design_enumerator
 import utils
 
+from morpheus_enumerator import *
 
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -34,6 +35,53 @@ parser.add_argument("--validation", dest="validation", default=0, type=int,
 						 "      1 -- schema check"
 						 "      2 -- schema check and compilation check")
 
+
+def get_sample_data():
+
+	##### Input-output constraint
+	benchmark1_input = robjects.r('''
+	dat <- read.table(text="
+	round var1 var2 nam        val
+	round1   22   33 foo 0.16912201
+	round2   11   44 foo 0.18570826
+	round1   22   33 bar 0.12410581
+	round2   11   44 bar 0.03258235
+	", header=T)
+	dat
+   ''')
+
+	benchmark1_output = robjects.r('''
+	dat2 <- read.table(text="
+	nam val_round1 val_round2 var1_round1 var1_round2 var2_round1 var2_round2
+	bar  0.1241058 0.03258235          22          11          33          44
+	foo  0.1691220 0.18570826          22          11          33          44
+	", header=T)
+	dat2
+   ''')
+
+	# logger.info('Parsing Spec...')
+	spec = None
+	with open('dsl/morpheus.tyrell', 'r') as f:
+		m_spec_str = f.read()
+		spec = S.parse(m_spec_str)
+
+	synthesizer = Synthesizer(
+		#loc: # of function productions
+		enumerator=SmtEnumerator(spec, depth=2, loc=1),
+		# enumerator=SmtEnumerator(spec, depth=3, loc=2),
+		# enumerator=SmtEnumerator(spec, depth=4, loc=3),
+		decider=ExampleConstraintDecider(
+			spec=spec,
+			interpreter=MorpheusInterpreter(),
+			examples=[
+				Example(input=['dat'], output='dat2'),
+			],
+			equal_output=eq_r
+		)
+	)
+
+	prog = synthesizer.synthesize()
+
 def run(flags):
 	"""Synthesize vega-lite schema """
 
@@ -41,6 +89,9 @@ def run(flags):
 		vl_schema = json.load(f)
 
 	input_files = []
+	get_sample_data()
+	global g_list
+
 	if flags.input_file is not None:
 		input_files.append(flags.input_file)
 	else:
@@ -62,23 +113,26 @@ def run(flags):
 			continue
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
-		target_fields = {
-			"series": {"type": "string"},
-			"count": {"type": "integer"}
-		}
+		for morpheus_data in g_list:
+			new_data = morpheus_data
 
-		candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
-		
-		for spec in candidates:
-			if flags.validation != 0:
-				external_validation = True if flags.validation == 2 else False
-				status, message = design_enumerator.validate_spec(spec, vl_schema, external_validation)
-				if not status:
-					print("x", end="", flush=True)
-			print(".", end="", flush=True)
-			with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
-				g.write(json.dumps(spec))
-			output_index += 1
+			target_fields = {
+				"series": {"type": "string"},
+				"count": {"type": "integer"}
+			}
+
+			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
+			
+			for spec in candidates:
+				if flags.validation != 0:
+					external_validation = True if flags.validation == 2 else False
+					status, message = design_enumerator.validate_spec(spec, vl_schema, external_validation)
+					if not status:
+						print("x", end="", flush=True)
+				print(".", end="", flush=True)
+				with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
+					g.write(json.dumps(spec))
+				output_index += 1
 
 	print("")
 	print("# finish enumeration")

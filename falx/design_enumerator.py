@@ -2,6 +2,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 
+import dpath
 import itertools
 import json
 import jsonschema
@@ -10,8 +11,7 @@ from pprint import pprint
 import subprocess
 import sys
 
-import dpath
-
+import design_validator
 import utils
 
 DOMAINS = {
@@ -21,9 +21,6 @@ DOMAINS = {
 	"/encoding/*/aggregate": [None, "count", "min", "max", "sum"],
 	"/encoding/*/bin": [None, 10],
 }
-
-def get_attr(obj, attr):
-	return obj[attr] if attr in obj else None
 
 def instantiate_domains(domains, encoding_cnt):
 	"""create domain for fields we want to encode. """
@@ -70,7 +67,7 @@ def enum_specs(vl_json, target_fields, max_changes=1):
 
 			new_spec = utils.reconstruct_object(new_flat_spec.items()) 
 
-			if not internal_validate_spec(new_spec, target_fields):
+			if not design_validator.internal_validation(new_spec, target_fields):
 				continue
 
 			new_vl_json = utils.obj2vl(new_spec)
@@ -78,66 +75,5 @@ def enum_specs(vl_json, target_fields, max_changes=1):
 
 	return outputs
 
-def internal_validate_spec(spec, field_metadata):
-	for enc in spec["encoding"]:
-		if not validate_encoding(enc, field_metadata):
-			return False
-	return True
 
-
-def validate_encoding(enc, field_metadata):
-	"""validate whether an encoding is valid or not """
-
-	def discrete(e):
-		return e["type"] in ["nominal", "ordinal"] or get_attr(e, "bin")
-
-	field_type = field_metadata[enc["field"]]["type"]
-
-	# Primitive type has to support data type
-	if enc["type"] == "temporal" and field_type != "datetime": return False
-	if enc["type"] in ["quantitative", "ordinal"] and field_type in ["string", "boolean"]: return False
-
-	# Can only bin quantitative or ordinal.
-	if get_attr(enc, "bin") and enc["type"] not in ["quantitative", "ordinal"]: 
-		return False
-
-	# Can only use log / zero with quantitative.
-	if (get_attr(enc, "zero") or get_attr(enc, "log")) and enc["type"] != "quantitative": 
-		return False
-
-	# Cannot use log scale with discrete (which includes binned).
-	if get_attr(enc, "log") and discrete(enc): return False
-
-	# Cannot use log and zero together
-	if get_attr(enc, "zero") and get_attr(enc, "log"): return False
-
-	# TODO Cannot use log if the data is negative or zero
-	
-	# Cannot bin and aggregate
-	if get_attr(enc, "bin") and get_attr(enc, "aggregate"): return False
-
-	return True
-
-def validate_spec(spec, vl_schema, external_validation=False):
-	"""validate whether """
-	message = []
-	valid = True
-	if external_validation:
-		proc = subprocess.Popen(
-			args=["node", utils.absolute_path("../js/index.js")],
-			stdin=subprocess.PIPE,
-			stdout=subprocess.PIPE,
-			stderr=subprocess.PIPE
-		)
-		stdout, stderr = proc.communicate(json.dumps(spec).encode("utf8"))
-
-		if stderr:
-			message.append(stderr.decode("utf-8").strip())
-		message.append(stdout.decode("utf-8").strip())
-	try:
-		jsonschema.validate(spec, vl_schema)
-	except:
-		valid = False
-
-	return valid, message
 

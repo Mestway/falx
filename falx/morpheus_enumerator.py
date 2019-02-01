@@ -3,71 +3,26 @@
 import tyrell.spec as S
 from tyrell.interpreter import PostOrderInterpreter, GeneralError
 from tyrell.enumerator import SmtEnumerator
-from tyrell.synthesizer import AssertionViolationHandler, ExampleConstraintSynthesizer, Example
+from tyrell.decider import Example, ExampleConstraintDecider
+from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 import rpy2.robjects as robjects
+import rpy2.rinterface as ri 
 
-import argparse
 import json
 import os
-from pprint import pprint
-
-import design_enumerator
-import utils
-
-# default directories
-proj_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-temp_dir = os.path.join(proj_dir, "__temp__")
-if not os.path.exists(temp_dir): os.mkdir(temp_dir)
-
-# arguments
-parser = argparse.ArgumentParser()
-parser.add_argument("--input_file", dest="input_file", default=None, 
-                    help="input Vega-Lite spec file")
-parser.add_argument("--input_dir", dest="input_dir",
-                    default=os.path.join(proj_dir, "vl_examples"),
-                    help="input files; ignored if input-file is specified")
-parser.add_argument("--output_dir", dest="output_dir", 
-                    default=temp_dir, help="output directory")
-
-def run(flags):
-    input_files = []
-    if flags.input_file is not None:
-        input_files.append(flags.input_file)
-    else:
-        for fname in os.listdir(flags.input_dir):
-            if fname.endswith(".vl.json"):
-                input_files.append(os.path.join(flags.input_dir, fname))
-
-    vl_specs = [utils.load_vl_spec(f) for f in input_files]
-    data_urls = [spec["data"]["url"] for spec in vl_specs if "url" in spec["data"]]
-
-    output_index = 0
-    for vl_spec in vl_specs:
-        if "layer" in vl_spec or "transform" in vl_spec:
-            continue
-        if len(vl_spec["encoding"]) != 2:
-            continue 
-
-        new_data = {"url": "data/unemployment-across-industries.json"}
-        target_fields = ["series", "count"]
-
-        candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
-        
-        for s in candidates:
-            with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
-                g.write(json.dumps(s))
-            output_index += 1
 
 logger = get_logger('tyrell')
 
 counter_ = 1
-csv_cnt = 0
 
 robjects.r('''
     library(dplyr)
     library(tidyr)
+    library(jsonlite)
    ''')
+
+g_list = []
 
 ## Common utils.
 def get_collist(sel):
@@ -95,15 +50,20 @@ def get_type(df, index):
 
 def eq_r(actual, expect):
     ret_val = robjects.r(actual)
-    global csv_cnt 
-    csv_cnt = csv_cnt + 1
-    csv_path = temp_dir + '/df'+str(csv_cnt)+'.csv'
-    print(ret_val)
-    robjects.r("if(!anyNA({df}) && nrow({df}) > 1 && ncol({df}) > 1)  write.csv({df}, file = '{csv_name}', row.names=FALSE)"
-        .format(df=actual, csv_name=csv_path))
+    # print(ret_val)
+    ret_json = robjects.r("if(!anyNA({df}) && nrow({df}) > 1 && ncol({df}) > 1)  toJSON({df})"
+        .format(df=actual))
 
-    flags = parser.parse_args()
-    run(flags)
+    if not isinstance(ret_json, ri.RNULLType):
+        json_wrapper = {}
+        json_wrapper['values'] = json.loads(ret_json[0])
+        # print('**********************\n', json_wrapper)
+        global g_list
+        g_list.append(json_wrapper)
+        # print('ret_json:', type(ret_json), type(json.loads(ret_json[0])))
+
+    # flags = parser.parse_args()
+    # run(flags)
     return False
 
 class MorpheusInterpreter(PostOrderInterpreter):
@@ -333,9 +293,6 @@ class MorpheusInterpreter(PostOrderInterpreter):
         return df.ncol
 
 
-class MorpheusSynthesizer(AssertionViolationHandler, ExampleConstraintSynthesizer):
-    pass
-
 def main():
 
     ##### Input-output constraint
@@ -367,11 +324,11 @@ def main():
     logger.info('Parsing succeeded')
 
     logger.info('Building synthesizer...')
-    synthesizer = MorpheusSynthesizer(
+    synthesizer = Synthesizer(
         spec=spec,
         #loc: # of function productions
-        enumerator=SmtEnumerator(spec, depth=2, loc=1),
-        # enumerator=SmtEnumerator(spec, depth=3, loc=2),
+        # enumerator=SmtEnumerator(spec, depth=2, loc=1),
+        enumerator=SmtEnumerator(spec, depth=3, loc=2),
         # enumerator=SmtEnumerator(spec, depth=4, loc=3),
         interpreter=MorpheusInterpreter(),
         examples=[
