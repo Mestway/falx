@@ -22,7 +22,7 @@ def validate_encoding(enc, field_metadata):
 	def discrete(e):
 		return e["type"] in ["nominal", "ordinal"] or get_attr(e, "bin")
 
-	field_type = field_metadata[enc["field"]]["type"]
+	field_type = field_metadata[enc["field"]]["type"] if "field" in enc else None
 
 	# Primitive type has to support data type
 	if enc["type"] == "temporal" and field_type != "datetime": return False
@@ -57,6 +57,24 @@ def validate_encoding(enc, field_metadata):
 
 	# Cannot aggregate nominal.
 	if enc["type"] == "nominal" and get_attr(enc, "aggregate"): return False
+
+	# Detail cannot be aggregated
+	if enc["channel"] == "detail" and get_attr(enc, "aggregate"): return False
+
+	# Count has to be quantitative and not using a field
+	if get_attr(enc, "aggregate") == "count" and get_attr(enc, "field"): return False
+	if get_attr(enc, "aggregate") == "count" and enc["type"] != "quantitative": return False
+
+	# Shape requires discrete and not ordered (nominal). Using ordinal would't make a difference in Vega-Lite.
+	if enc["channel"] == "shape" and enc["type"] != "nominal": return False
+
+	# Detail requires nominal
+	if enc["channel"] == "detail" and enc["type"] != "nominal": return False
+
+	# Size implies ordr so nominal is misleading
+	if enc["channel"] == "size" and enc["type"] == "nominal": return False
+
+	# TODO: Do not use size when data is negative as size implies that data is positive.
 
 	return True
 
