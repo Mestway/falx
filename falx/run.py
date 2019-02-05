@@ -22,7 +22,7 @@ if not os.path.exists(TEMP_DIR): os.mkdir(TEMP_DIR)
 
 # arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("--input_chart_files", dest="input_chart_files", 
+parser.add_argument("--input_chart_files", dest="input_chart_files", nargs='+',
 					default=os.path.join(PROJ_DIR, "vl_examples", "bar.vl.json"), 
 					help="input Vega-Lite example files")
 parser.add_argument("--output_dir", dest="output_dir", 
@@ -89,7 +89,10 @@ def run(flags):
 	global g_list
 
 	if flags.input_chart_files is not None:
-		input_chart_files.append(flags.input_chart_files)
+		if isinstance(flags.input_chart_files, (list,)): 
+			input_chart_files.extend(flags.input_chart_files)
+		else:
+			input_chart_files.append(flags.input_chart_files)
 
 	vl_specs = [utils.load_vl_spec(f) for f in input_chart_files]
 	data_urls = [spec["data"]["url"] for spec in vl_specs if "url" in spec["data"]]
