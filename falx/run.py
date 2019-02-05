@@ -8,10 +8,11 @@ import jsonschema
 import os
 from pprint import pprint
 
+import design_validator
 import design_enumerator
 import utils
 
-from morpheus_enumerator import *
+import morpheus_enumerator as morpheus
 
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -21,25 +22,22 @@ if not os.path.exists(TEMP_DIR): os.mkdir(TEMP_DIR)
 
 # arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("--input_file", dest="input_file", default=None, 
-					help="input Vega-Lite spec file")
-parser.add_argument("--input_dir", dest="input_dir",
-					default=os.path.join(PROJ_DIR, "vl_examples"),
-					help="input files; ignored if input-file is specified")
+parser.add_argument("--input_chart_files", dest="input_chart_files", 
+					default=os.path.join(PROJ_DIR, "vl_examples", "bar.vl.json"), 
+					help="input Vega-Lite example files")
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=TEMP_DIR, help="output directory")
 
 parser.add_argument("--validation", dest="validation", default=0, type=int,
-					help="whether to run external validation for VegaLite spec,"
+					help="whether to run additional validations for Vega-Lite specs,"
 						 "Mode: 0 -- no extra validation"
-						 "      1 -- schema check"
-						 "      2 -- schema check and compilation check")
+						 "      1 -- schema check")
 
 
 def get_sample_data():
 
 	##### Input-output constraint
-	benchmark1_input = robjects.r('''
+	benchmark1_input = morpheus.robjects.r('''
     dat <- read.table(header = TRUE, text = 
         "gene                   value_1                     value_2
         XLOC_000060           3.662330                   0.3350140
@@ -47,7 +45,7 @@ def get_sample_data():
 	dat
    ''')
 
-	benchmark1_output = robjects.r('''
+	benchmark1_output = morpheus.robjects.r('''
 	dat2 <- read.table(text="
 	nam val_round1 val_round2 var1_round1 var1_round2 var2_round1 var2_round2
 	bar  0.1241058 0.03258235          22          11          33          44
@@ -61,20 +59,20 @@ def get_sample_data():
 	morpheus_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "dsl", "morpheus.tyrell")
 	with open(morpheus_path, 'r') as f:
 		m_spec_str = f.read()
-		spec = S.parse(m_spec_str)
+		spec = morpheus.S.parse(m_spec_str)
 
-	synthesizer = Synthesizer(
+	synthesizer = morpheus.Synthesizer(
 		#loc: # of function productions
-		enumerator=SmtEnumerator(spec, depth=2, loc=1),
+		enumerator=morpheus.SmtEnumerator(spec, depth=2, loc=1),
 		# enumerator=SmtEnumerator(spec, depth=3, loc=2),
 		# enumerator=SmtEnumerator(spec, depth=4, loc=3),
-		decider=ExampleConstraintDecider(
+		decider=morpheus.ExampleConstraintDecider(
 			spec=spec,
-			interpreter=MorpheusInterpreter(),
+			interpreter=morpheus.MorpheusInterpreter(),
 			examples=[
-				Example(input=['dat'], output='dat2'),
+				morpheus.Example(input=['dat'], output='dat2'),
 			],
-			equal_output=eq_r
+			equal_output=morpheus.eq_r
 		)
 	)
 
@@ -86,18 +84,14 @@ def run(flags):
 	with open(os.path.join(RESOURCE_DIR, "vega-lite-schema.json")) as f:
 		vl_schema = json.load(f)
 
-	input_files = []
+	input_chart_files = []
 	get_sample_data()
 	global g_list
 
-	if flags.input_file is not None:
-		input_files.append(flags.input_file)
-	else:
-		for fname in os.listdir(flags.input_dir):
-			if fname.endswith(".vl.json"):
-				input_files.append(os.path.join(flags.input_dir, fname))
+	if flags.input_chart_files is not None:
+		input_chart_files.append(flags.input_chart_files)
 
-	vl_specs = [utils.load_vl_spec(f) for f in input_files]
+	vl_specs = [utils.load_vl_spec(f) for f in input_chart_files]
 	data_urls = [spec["data"]["url"] for spec in vl_specs if "url" in spec["data"]]
 
 	print("# start enumeration")
@@ -111,7 +105,7 @@ def run(flags):
 			continue
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
-		for morpheus_data in g_list:
+		for morpheus_data in morpheus.g_list:
 			new_data = morpheus_data
 
 			target_fields = {
@@ -122,9 +116,9 @@ def run(flags):
 			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 			
 			for spec in candidates:
-				if flags.validation != 0:
-					external_validation = True if flags.validation == 2 else False
-					status, message = design_enumerator.validate_spec(spec, vl_schema, external_validation)
+				if flags.validation == 1:
+					# run external validation
+					status, message = design_validator.external_validation(spec, vl_schema)
 					if not status:
 						print("x", end="", flush=True)
 				print(".", end="", flush=True)

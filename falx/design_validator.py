@@ -135,7 +135,6 @@ def cross_encoding_validation(spec):
 	return True
 
 
-
 def validate_encoding(enc, field_metadata):
 	"""validate whether an encoding is valid or not """
 

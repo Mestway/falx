@@ -8,7 +8,6 @@ import json
 import jsonschema
 import os
 from pprint import pprint
-import subprocess
 import sys
 
 import design_validator
