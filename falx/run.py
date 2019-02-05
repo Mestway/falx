@@ -40,13 +40,10 @@ def get_sample_data():
 
 	##### Input-output constraint
 	benchmark1_input = robjects.r('''
-	dat <- read.table(text="
-	round var1 var2 nam        val
-	round1   22   33 foo 0.16912201
-	round2   11   44 foo 0.18570826
-	round1   22   33 bar 0.12410581
-	round2   11   44 bar 0.03258235
-	", header=T)
+    dat <- read.table(header = TRUE, text = 
+        "gene                   value_1                     value_2
+        XLOC_000060           3.662330                   0.3350140
+        XLOC_000074           2.568130                   0.0426299")
 	dat
    ''')
 

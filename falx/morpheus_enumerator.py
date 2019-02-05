@@ -53,6 +53,7 @@ def eq_r(actual, expect):
     # print(ret_val)
     ret_json = robjects.r("if(!anyNA({df}) && nrow({df}) > 1 && ncol({df}) > 1)  toJSON({df})"
         .format(df=actual))
+    # print(robjects.r(actual))
 
     if not isinstance(ret_json, ri.RNULLType):
         json_wrapper = {}
