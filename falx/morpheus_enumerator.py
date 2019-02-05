@@ -345,16 +345,11 @@ def main():
     else:
         logger.info('Solution not found!')
 
-def get_sample_data():
+def get_sample_data(input_data):
 
     ##### Input-output constraint
-    benchmark1_input = robjects.r('''
-    dat <- read.table(header = TRUE, text = 
-        "gene                   value_1                     value_2
-        XLOC_000060           3.662330                   0.3350140
-        XLOC_000074           2.568130                   0.0426299")
-    dat
-   ''')
+    _iscript = "dat <- read.csv(file='{csv_file}')".format(csv_file=input_data)
+    benchmark1_input = robjects.r(_iscript)
 
     benchmark1_output = robjects.r('''
     dat2 <- read.table(text="

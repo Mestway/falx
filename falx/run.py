@@ -25,6 +25,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--input_chart_files", dest="input_chart_files", nargs='+',
 					default=os.path.join(PROJ_DIR, "vl_examples", "bar.vl.json"), 
 					help="input Vega-Lite example files")
+parser.add_argument("--input_data_files", dest="input_data_files", 
+					default=os.path.join(PROJ_DIR, "benchmarks", "default.csv"), 
+					help="input raw data in CSV files")
 parser.add_argument("--output_dir", dest="output_dir", 
 					default=TEMP_DIR, help="output directory")
 
@@ -41,7 +44,7 @@ def run(flags):
 		vl_schema = json.load(f)
 
 	input_chart_files = []
-	g_list = morpheus.get_sample_data()
+	g_list = morpheus.get_sample_data(flags.input_data_files)
 
 	if flags.input_chart_files is not None:
 		if isinstance(flags.input_chart_files, (list,)): 
