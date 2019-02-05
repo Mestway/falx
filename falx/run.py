@@ -28,7 +28,7 @@ parser.add_argument("--input_chart_files", dest="input_chart_files", nargs='+',
 parser.add_argument("--input_data_files", dest="input_data_files", 
 					default=os.path.join(PROJ_DIR, "benchmarks", "default.csv"), 
 					help="input raw data in CSV files")
-parser.add_argument("--output_dir", dest="output_dir", 
+parser.add_argument("--output_dir", dest="output_dir",
 					default=TEMP_DIR, help="output directory")
 
 parser.add_argument("--validation", dest="validation", default=0, type=int,

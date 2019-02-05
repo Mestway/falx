@@ -53,7 +53,7 @@ def explore_designs(example_vl, target_data, target_fields):
 		temp_vl_json = example_vl.copy()
 		for i, k in enumerate(temp_vl_json["encoding"]):
 			temp_vl_json["encoding"][k]["field"] = p[i]
-			
+
 		candidates = enum_specs(temp_vl_json, target_fields)
 		results.extend(candidates)
 	return results
@@ -87,6 +87,3 @@ def enum_specs(vl_json, target_fields, max_changes=1):
 			outputs.append(new_vl_json)
 
 	return outputs
-
-
-
