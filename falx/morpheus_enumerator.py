@@ -59,7 +59,6 @@ def eq_r(actual, expect):
         json_wrapper = {}
         json_wrapper['values'] = json.loads(ret_json[0])
         # print('**********************\n', json_wrapper)
-        global g_list
         g_list.append(json_wrapper)
         # print('ret_json:', type(ret_json), type(json.loads(ret_json[0])))
 
@@ -345,6 +344,51 @@ def main():
         logger.info('Solution found: {}'.format(prog))
     else:
         logger.info('Solution not found!')
+
+def get_sample_data():
+
+    ##### Input-output constraint
+    benchmark1_input = robjects.r('''
+    dat <- read.table(header = TRUE, text = 
+        "gene                   value_1                     value_2
+        XLOC_000060           3.662330                   0.3350140
+        XLOC_000074           2.568130                   0.0426299")
+    dat
+   ''')
+
+    benchmark1_output = robjects.r('''
+    dat2 <- read.table(text="
+    nam val_round1 val_round2 var1_round1 var1_round2 var2_round1 var2_round2
+    bar  0.1241058 0.03258235          22          11          33          44
+    foo  0.1691220 0.18570826          22          11          33          44
+    ", header=T)
+    dat2
+   ''')
+
+    # logger.info('Parsing Spec...')
+    spec = None
+    morpheus_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "dsl", "morpheus.tyrell")
+    with open(morpheus_path, 'r') as f:
+        m_spec_str = f.read()
+        spec = S.parse(m_spec_str)
+
+    synthesizer = Synthesizer(
+        #loc: # of function productions
+        enumerator=SmtEnumerator(spec, depth=2, loc=1),
+        # enumerator=SmtEnumerator(spec, depth=3, loc=2),
+        # enumerator=SmtEnumerator(spec, depth=4, loc=3),
+        decider=ExampleConstraintDecider(
+            spec=spec,
+            interpreter=MorpheusInterpreter(),
+            examples=[
+                Example(input=['dat'], output='dat2'),
+            ],
+            equal_output=eq_r
+        )
+    )
+
+    prog = synthesizer.synthesize()
+    return g_list
 
 
 if __name__ == '__main__':
