@@ -51,11 +51,19 @@ def explore_designs(example_vl, target_data, target_fields):
 	# enumerate over field combinations
 	for p in fields_permutations:
 		temp_vl_json = example_vl.copy()
+
+		find_valid_field_assignment = True
 		for i, k in enumerate(temp_vl_json["encoding"]):
+			if "field" not in temp_vl_json["encoding"][k]:
+				continue
+			if i >= len(p):
+				find_valid_field_assignment = False
+				break
 			temp_vl_json["encoding"][k]["field"] = p[i]
 
-		candidates = enum_specs(temp_vl_json, target_fields)
-		results.extend(candidates)
+		if find_valid_field_assignment:
+			candidates = enum_specs(temp_vl_json, target_fields)
+			results.extend(candidates)
 	return results
 
 
