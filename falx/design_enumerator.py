@@ -23,7 +23,7 @@ DOMAINS = {
 }
 
 ENUM_DOMAINS = {
-	"/mark": DOMAINS["mark"],
+	#"/mark": DOMAINS["mark"],
 	"/encoding/*/type": DOMAINS["enc_type"],
 	"/encoding/*/aggregate": DOMAINS["aggregate"],
 	"/encoding/*/bin": DOMAINS["bin"],

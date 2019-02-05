@@ -139,6 +139,7 @@ def validate_encoding(enc, field_metadata):
 	"""validate whether an encoding is valid or not """
 
 	field_type = field_metadata[enc["field"]]["type"] if "field" in enc else None
+	field_min_max = (field_metadata[enc["field"]]["min"], field_metadata[enc["field"]]["max"]) if "field" in enc and field_type == "number" else None
 
 	# Primitive type has to support data type
 	if enc["type"] == "temporal" and field_type != "datetime": return False
@@ -158,7 +159,10 @@ def validate_encoding(enc, field_metadata):
 	# Cannot use log and zero together
 	if get_attr(enc, "zero") and get_attr(enc, "log"): return False
 
-	# TODO Cannot use log if the data is negative or zero
+	# Cannot use log if the data is negative or zero
+	if (get_attr(enc, "scale") and get_attr(get_attr(enc, "scale"), "log") and 
+		field_min_max and field_min_max[0] <= 0):
+		return False
 	
 	# Cannot bin and aggregate
 	if get_attr(enc, "bin") and get_attr(enc, "aggregate"): return False
@@ -193,7 +197,8 @@ def validate_encoding(enc, field_metadata):
 	# Size implies ordr so nominal is misleading
 	if enc["channel"] == "size" and enc["type"] == "nominal": return False
 
-	# TODO: Do not use size when data is negative as size implies that data is positive.
+	# Do not use size when data is negative as size implies that data is positive.
+	if enc["channel"] == "size" and field_min_max and field_min_max[0] <= 0: return False
 
 	# Row and column require discrete
 	if enc["channel"] in ["row", "column"] and not channel_discrete(enc): return False
