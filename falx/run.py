@@ -64,12 +64,8 @@ def run(flags):
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
 		for morpheus_data in g_list:
-			new_data = morpheus_data
-
-			target_fields = {
-				"series": {"type": "string"},
-				"count": {"type": "integer"}
-			}
+			new_data = morpheus_data[0]
+			target_fields = morpheus_data[1]
 
 			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 			
