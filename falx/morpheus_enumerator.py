@@ -48,18 +48,37 @@ def get_type(df, index):
     ret_val = robjects.r(_rscript)
     return ret_val[0]
 
+# target_fields = {
+#     "series": {"type": "string"},
+#     "count": {"type": "integer"}
+# }
 def eq_r(actual, expect):
     ret_val = robjects.r(actual)
     # print(ret_val)
     ret_json = robjects.r("if(!anyNA({df}) && nrow({df}) > 1 && ncol({df}) > 1)  toJSON({df})"
         .format(df=actual))
-    # print(robjects.r(actual))
+    # print(ret_json)
+    if ret_json:
+        target_fields = {}
+        ret_data = robjects.r(actual)
+        ret_type = robjects.r("sapply({df}, class)".format(df=actual))
+        colnames = ret_data.colnames
+        for i in range(0, len(ret_type)):
+            t_obj = {}
+            ret_t = ret_type[i]
+            ret_d = ret_data[i]
+            if ret_t == 'numeric':
+                t_obj["type"] = "number"
+            else:
+                t_obj["type"] = "string"
 
-    if not isinstance(ret_json, ri.RNULLType):
+            # print('*********', ret_d, type(ret_d), ret_t, type(ret_t))
+            target_fields[colnames[i]] = t_obj
+
         json_wrapper = {}
         json_wrapper['values'] = json.loads(ret_json[0])
-        # print('**********************\n', json_wrapper)
-        g_list.append(json_wrapper)
+        # print('**********************\n', json_wrapper, "\n", target_fields)
+        g_list.append((json_wrapper, target_fields))
         # print('ret_json:', type(ret_json), type(json.loads(ret_json[0])))
 
     # flags = parser.parse_args()
