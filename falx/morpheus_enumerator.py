@@ -63,12 +63,20 @@ def eq_r(actual, expect):
         ret_data = robjects.r(actual)
         ret_type = robjects.r("sapply({df}, class)".format(df=actual))
         colnames = ret_data.colnames
+        # print(ret_data)
         for i in range(0, len(ret_type)):
             t_obj = {}
             ret_t = ret_type[i]
             ret_d = ret_data[i]
+            d_list = []
+            for dt in ret_d:
+                d_list.append(dt)
+
             if ret_t == 'numeric':
                 t_obj["type"] = "number"
+                t_obj["min"] = min(d_list)
+                t_obj["max"] = max(d_list)
+                t_obj["sum"] = sum(d_list)
             else:
                 t_obj["type"] = "string"
 
