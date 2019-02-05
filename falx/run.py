@@ -61,7 +61,8 @@ def get_sample_data():
 
 	# logger.info('Parsing Spec...')
 	spec = None
-	with open('dsl/morpheus.tyrell', 'r') as f:
+	morpheus_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "dsl", "morpheus.tyrell")
+	with open(morpheus_path, 'r') as f:
 		m_spec_str = f.read()
 		spec = S.parse(m_spec_str)
 
@@ -135,7 +136,7 @@ def run(flags):
 				output_index += 1
 
 	print("")
-	print("# finish enumeration")
+	print("# finish enumeration {}".format(output_index))
 
 if __name__ == '__main__':
 	flags = parser.parse_args()

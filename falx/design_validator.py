@@ -14,13 +14,130 @@ def internal_validation(spec, field_metadata):
 	for enc in spec["encoding"]:
 		if not validate_encoding(enc, field_metadata):
 			return False
+	return cross_encoding_validation(spec)
+
+def channel_discrete(enc):
+	return enc["type"] in ["nominal", "ordinal"] or get_attr(enc, "bin")
+
+def channel_continuous(enc):
+	return not channel_discrete(enc)
+
+def get_orientation(spec):
+	"""get orientation of a spec, whether 'vertical' or 'horizontal' """
+
+	channels = [enc["channel"] for enc in spec["encoding"]]
+	x_enc = None if "x" not in channels else [enc for enc in spec["encoding"] if enc["channel"] == "x"][0]
+	y_enc = None if "y" not in channels else [enc for enc in spec["encoding"] if enc["channel"] == "y"][0]
+
+	if spec["mark"] in ["bark", "tick", "area", "line"] and x_enc is not None and channel_discrete(x_enc):
+		return "vertical" 
+	elif spec["mark"] in ["area", "line"] and channel_continuous(x_enc) and channel_continuous(y):
+		return "vertical"
+	elif spec["mark"] in ["bark", "tick", "area", "line"] and channel_discrete(y):
+		return "horizontal"
+	else:
+		print("[err] unable to determine horizontal or vertical for the following spec")
+		print(json.dumps(spec))
+		sys.exit(-1)		
+
+def cross_encoding_validation(spec):
+	"""validate the spec cross encodings """
+
+	encodings = spec["encoding"]
+	channels = [enc["channel"] for enc in encodings]
+	
+	x_enc = None if "x" not in channels else [enc for enc in encodings if enc["channel"] == "x"][0]
+	y_enc = None if "y" not in channels else [enc for enc in encodings if enc["channel"] == "y"][0]
+
+	# Cannot use single channels twice.
+	if len(channels) != len(set(channels)): return False
+
+	# There has to be at least one encoding. Otherwise, the visualization doesn't show anything.
+	if len(encodings) == 0: return False
+
+	# Row and column require discrete. [see validate_encoding]
+
+	# Don't use row without y. Just using y is simpler.
+	if "row" in channels and not "y" in channels: return False
+
+	# Don't use column without x. Just using x is simpler.
+	if "column" in channels and not "x" in channels: return False
+
+	# All encodings (if they have a channel) require field except if we have a count aggregate. [moved to validate_encoding]
+	# Count should not have a field. Having a field doesn't make a difference. [moved to validate_encoding]
+
+	# Text mark requires text channel; Text channel requires text mark.
+	if (spec["mark"] == "text" and "text" not in "channel") or ("text" in "channel" and spec["mark"] != "text"): return False
+
+	# Point, tick, and bar require x or y channel.
+	if spec["mark"] in ["point", "tick", "bark"] and not ("x" in channels or "y" in channels): return False
+	
+	if spec["mark"] in ["line", "area"]:
+		# Line and area require x and y channel.
+		if not ("x" in channels and "y" in channels): 
+			return False
+		# Line and area cannot have two discrete.
+		if channel_discrete(x_enc) and channel_discrete(y_enc):
+			return False
+
+	# Bar and tick cannot have both x and y continuous.
+	if spec["mark"] in ["bar", "tick"]:
+		if "x" in channels and "y" in channels:
+			if channel_continuous(x_enc) and channel_continuous(y_enc):
+				return False
+	
+	# Bar, tick, line, area require some continuous variable on x or y.
+	if spec["mark"] in ["bar", "tick", "area", "line"]:
+		if not ((x_enc != None and channel_continuous(x_enc)) or (y_enc != None and channel_continuous(y_enc))):
+			return False
+
+	# Bar and area mark requires scale of continuous to start at zero.
+	if spec["mark"] in ["bark", "area"]:
+		if get_orientation(spec) == "horizontal" and not get_attr(x_enc, "zero"): 
+			return False
+		if get_orientation(spec) == "vertical" and not get_attr(y_enc, "zero"):
+			return False
+
+	# Shape channel requires point mark.
+	if "shape"in channels and spec["mark"] != "point": 
+		return False
+
+	# Size only works with some marks. Vega-Lite can also size lines, and ticks but that would violate best practices.
+	if "size" in channels and spec["mark"] not in ["point", "text"]:
+		return False
+
+	# Detail requires aggregation. Detail adds a field to the group by. 
+	# Detail could also be used to add information to tooltips. We may remove this later.
+	if "detail" in "channels" and len([enc for enc in encodings if "aggregate" in enc]) == 0: return False
+
+	# Do not use log for bar or area mark as they are often misleading. We may remove this rule in the future.
+	if spec["mark"] in ["bar", "area"] and (x_enc is not None and "log" in x_enc) and (y_enc is not None and "log" in y_enc):
+		return False
+
+	# Rect mark needs discrete x and y.
+	if spec["mark"] == "rect" and not (channel_discrete(x_enc) and channel_discrete(y_enc)): return False
+
+	# Don't use the same field on x and y.
+	if x_enc and y_enc and (x_enc["channel"] == y_enc["channel"]): return False
+
+	# Don't use count on x and y.
+	if (x_enc and get_attr(x_enc, "count")) or (y_enc and get_attr(y_enc, "count")): return False
+
+	# If we use aggregation, then all continuous fields need to be aggeragted.
+	if (len([enc for enc in encodings if get_attr(enc, "aggregate")]) > 0 
+		and len([enc for enc in encodings if channel_continuous(enc) and "aggregate" not in enc]) > 0):
+		return False
+
+	# Don't use count twice.
+	if len([enc for enc in encodings if get_attr(enc, "aggregate") == "count"]) >= 2:
+		return False
+
 	return True
+
+
 
 def validate_encoding(enc, field_metadata):
 	"""validate whether an encoding is valid or not """
-
-	def discrete(e):
-		return e["type"] in ["nominal", "ordinal"] or get_attr(e, "bin")
 
 	field_type = field_metadata[enc["field"]]["type"] if "field" in enc else None
 
@@ -65,6 +182,9 @@ def validate_encoding(enc, field_metadata):
 	if get_attr(enc, "aggregate") == "count" and get_attr(enc, "field"): return False
 	if get_attr(enc, "aggregate") == "count" and enc["type"] != "quantitative": return False
 
+	# All encodings (if they have a channel) require field except if we have a count aggregate.
+	if get_attr(enc, "aggregate") != "count" and "field" not in enc: return False
+
 	# Shape requires discrete and not ordered (nominal). Using ordinal would't make a difference in Vega-Lite.
 	if enc["channel"] == "shape" and enc["type"] != "nominal": return False
 
@@ -75,6 +195,9 @@ def validate_encoding(enc, field_metadata):
 	if enc["channel"] == "size" and enc["type"] == "nominal": return False
 
 	# TODO: Do not use size when data is negative as size implies that data is positive.
+
+	# Row and column require discrete
+	if enc["channel"] in ["row", "column"] and not channel_discrete(enc): return False
 
 	return True
 
