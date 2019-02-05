@@ -87,8 +87,7 @@ def eq_r(actual, expect):
         json_wrapper['values'] = json.loads(ret_json[0])
         # print('**********************\n', json_wrapper, "\n", target_fields)
         g_list.append((json_wrapper, target_fields))
-        # print('ret_json:', type(ret_json), type(json.loads(ret_json[0])))
-
+        
     # flags = parser.parse_args()
     # run(flags)
     return False
