@@ -23,7 +23,7 @@ if not os.path.exists(TEMP_DIR): os.mkdir(TEMP_DIR)
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_chart_files", dest="input_chart_files", nargs='+',
-					default=os.path.join(PROJ_DIR, "vl_examples", "bar.vl.json"), 
+					default=os.path.join(PROJ_DIR, "vl_examples", "rect_heatmap.vl.json"), 
 					help="input Vega-Lite example files")
 parser.add_argument("--input_data_files", dest="input_data_files", 
 					default=os.path.join(PROJ_DIR, "benchmarks", "default.csv"), 
@@ -59,11 +59,6 @@ def run(flags):
 	
 	output_index = 0
 	for vl_spec in vl_specs:
-		
-		if "layer" in vl_spec or "transform" in vl_spec:
-			continue
-		if len(vl_spec["encoding"]) != 2:
-			continue
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
 		for morpheus_data in g_list:
