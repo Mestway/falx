@@ -11,6 +11,7 @@ import rpy2.rinterface as ri
 
 import json
 import os
+import itertools
 
 logger = get_logger('tyrell')
 
@@ -23,6 +24,14 @@ robjects.r('''
    ''')
 
 g_list = []
+
+def findsubsets(S,m):
+    ret = set()
+    for i in range(2, m):
+        ret |= set(itertools.combinations(S, i))
+
+    return ret
+
 
 ## Common utils.
 def get_collist(sel):
@@ -48,6 +57,37 @@ def get_type(df, index):
     ret_val = robjects.r(_rscript)
     return ret_val[0]
 
+def get_json(actual):
+    target_fields = {}
+    ret_data = robjects.r(actual)
+    ret_type = robjects.r("sapply({df}, class)".format(df=actual))
+    colnames = ret_data.colnames
+    ret_json = robjects.r("toJSON({df})".format(df=actual))
+
+    for i in range(0, len(ret_type)):
+        t_obj = {}
+        ret_t = ret_type[i]
+        ret_d = ret_data[i]
+        d_list = []
+        for dt in ret_d:
+            d_list.append(dt)
+
+        if ret_t == 'numeric':
+            t_obj["type"] = "number"
+            t_obj["min"] = min(d_list)
+            t_obj["max"] = max(d_list)
+            t_obj["sum"] = sum(d_list)
+        else:
+            t_obj["type"] = "string"
+
+        # print('*********', ret_d, type(ret_d), ret_t, type(ret_t))
+        target_fields[colnames[i]] = t_obj
+
+    json_wrapper = {}
+    json_wrapper['values'] = json.loads(ret_json[0])
+    # print('**********************\n', json_wrapper, "\n", target_fields)
+    return (json_wrapper, target_fields)
+
 # target_fields = {
 #     "series": {"type": "string"},
 #     "count": {"type": "integer"}
@@ -59,37 +99,22 @@ def eq_r(actual, expect):
         .format(df=actual))
     # print(ret_json)
     if ret_json:
-        target_fields = {}
         ret_data = robjects.r(actual)
-        ret_type = robjects.r("sapply({df}, class)".format(df=actual))
-        colnames = ret_data.colnames
         # print(ret_data)
-        for i in range(0, len(ret_type)):
-            t_obj = {}
-            ret_t = ret_type[i]
-            ret_d = ret_data[i]
-            d_list = []
-            for dt in ret_d:
-                d_list.append(dt)
+        colnames = ret_data.colnames
+        ncol = ret_data.ncol
+        mid_list = list(range(1, ncol+1))
+        blk_list = list(filter(lambda x: colnames[x-1]=='KEY' or colnames[x-1]=='VALUE', mid_list))
+        all_set = findsubsets(list(range(1, ncol+1)), ncol)
+        sub_set = list(filter(lambda x: all(elem in list(x) for elem in blk_list), all_set))
+        if blk_list:
+            # print(ncol, all_set, blk_list, 'my subset:', sub_set)
+            for ele in all_set:
+                sel = 'c' + str(ele)
+                sub_f = robjects.r("sub_f = select({df}, {se})".format(df=actual,se=sel))
+                jj = get_json('sub_f')
+                g_list.append(jj)
 
-            if ret_t == 'numeric':
-                t_obj["type"] = "number"
-                t_obj["min"] = min(d_list)
-                t_obj["max"] = max(d_list)
-                t_obj["sum"] = sum(d_list)
-            else:
-                t_obj["type"] = "string"
-
-            # print('*********', ret_d, type(ret_d), ret_t, type(ret_t))
-            target_fields[colnames[i]] = t_obj
-
-        json_wrapper = {}
-        json_wrapper['values'] = json.loads(ret_json[0])
-        # print('**********************\n', json_wrapper, "\n", target_fields)
-        g_list.append((json_wrapper, target_fields))
-        
-    # flags = parser.parse_args()
-    # run(flags)
     return False
 
 class MorpheusInterpreter(PostOrderInterpreter):
