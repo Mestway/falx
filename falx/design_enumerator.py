@@ -17,8 +17,8 @@ DOMAINS = {
 	"mark": ["point", "bar", "line", "area", "text", "tick", "rect"],
 	"primitive_type": ["string", "number", "boolean", "datetime"],
 	"enc_type": ["quantitative", "ordinal", "nominal", "temporal"],
-	"aggregate": [None, "count", "min", "max", "sum"],
-	"bin": [None, 10, 25],
+	"aggregate": [None], #, "max", "sum"],
+	"bin": [None],
 	"summative_aggregate_op": ["count", "sum"],
 }
 
@@ -46,26 +46,32 @@ def explore_designs(example_vl, target_data, target_fields):
 	"""given an example vl, explore alternatives """
 	results = []
 	example_vl["data"] = target_data
-	fields_permutations = itertools.permutations(target_fields.keys())
 
-	if len(target_fields) < len([k for k in example_vl["encoding"] if "field" in example_vl["encoding"][k]]):
+	needed_fields = len([k for k in example_vl["encoding"] if "field" in example_vl["encoding"][k]])
+
+	if len(target_fields) != needed_fields:
 		return []
 
-	# enumerate over field combinations
-	for p in fields_permutations:
-		temp_vl_json = example_vl.copy()
-		for i, k in enumerate(temp_vl_json["encoding"]):
-			temp_vl_json["encoding"][k]["field"] = p[i]
+	candidates = enum_specs(utils.vl2obj(example_vl))
 
-		candidates = enum_specs(temp_vl_json, target_fields)
-		results.extend(candidates)
+	field_permutations = list(itertools.permutations(list(target_fields.keys())))
+
+	for candidate_spec in candidates:
+		for fields in field_permutations:
+			temp_spec = candidate_spec.copy()
+			for i in range(len(temp_spec["encoding"])):
+				temp_spec["encoding"][i]["field"] = fields[i]
+
+			if design_validator.fieldtype_compatibility_check(temp_spec, target_fields):
+				temp_vl_spec = utils.obj2vl(temp_spec)
+				results.append(temp_vl_spec)
+
 	return results
 
 
-def enum_specs(vl_json, target_fields, max_changes=1):
+def enum_specs(spec, max_changes=1):
 	"""enumerate specs out of an existing vl_json. """
 	
-	spec = utils.vl2obj(vl_json)
 	flat_spec = dict(utils.flatten_object(spec))
 
 	domains = instantiate_domains(ENUM_DOMAINS, len(spec["encoding"]))
@@ -83,10 +89,9 @@ def enum_specs(vl_json, target_fields, max_changes=1):
 
 			new_spec = utils.reconstruct_object(new_flat_spec.items()) 
 
-			if not design_validator.internal_validation(new_spec, target_fields):
+			if not design_validator.internal_validation(new_spec):
 				continue
 
-			new_vl_json = utils.obj2vl(new_spec)
-			outputs.append(new_vl_json)
+			outputs.append(new_spec)
 
 	return outputs
