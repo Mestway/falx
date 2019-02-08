@@ -42,33 +42,6 @@ def instantiate_domains(domains, encoding_cnt):
 	return instantiated
 
 
-def explore_designs(example_vl, target_data, target_fields):
-	"""given an example vl, explore alternatives """
-	results = []
-	example_vl["data"] = target_data
-
-	needed_fields = len([k for k in example_vl["encoding"] if "field" in example_vl["encoding"][k]])
-
-	if len(target_fields) != needed_fields:
-		return []
-
-	candidates = enum_specs(utils.vl2obj(example_vl))
-
-	field_permutations = list(itertools.permutations(list(target_fields.keys())))
-
-	for candidate_spec in candidates:
-		for fields in field_permutations:
-			temp_spec = candidate_spec.copy()
-			for i in range(len(temp_spec["encoding"])):
-				temp_spec["encoding"][i]["field"] = fields[i]
-
-			if design_validator.fieldtype_compatibility_check(temp_spec, target_fields):
-				temp_vl_spec = utils.obj2vl(temp_spec)
-				results.append(temp_vl_spec)
-
-	return results
-
-
 def enum_specs(spec, max_changes=1):
 	"""enumerate specs out of an existing vl_json. """
 	
@@ -95,3 +68,39 @@ def enum_specs(spec, max_changes=1):
 			outputs.append(new_spec)
 
 	return outputs
+
+
+def equiv_design_abstraction():
+	pass
+
+
+def explore_designs(example_vl, target_data, target_fields):
+	"""given an example vl, explore alternatives """
+	results = []
+	example_vl["data"] = target_data
+	example_vl = example_vl.copy()
+	for enc in example_vl["encoding"]:
+		if "field" in enc:
+			enc["field"] = None
+
+	needed_fields = len([k for k in example_vl["encoding"] if "field" in example_vl["encoding"][k]])
+
+	if len(target_fields) != needed_fields:
+		return []
+
+	candidates = enum_specs(utils.vl2obj(example_vl))
+
+	field_permutations = list(itertools.permutations(list(target_fields.keys())))
+
+	for candidate_spec in candidates:
+		for fields in field_permutations:
+			temp_spec = candidate_spec.copy()
+
+			for i in range(len(temp_spec["encoding"])):
+				temp_spec["encoding"][i]["field"] = fields[i]
+
+			if design_validator.fieldtype_compatibility_check(temp_spec, target_fields):
+				temp_vl_spec = utils.obj2vl(temp_spec)
+				results.append(temp_vl_spec)
+
+	return results

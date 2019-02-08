@@ -65,11 +65,6 @@ def run(flags):
 			new_data = morpheus_data[0]
 			target_fields = morpheus_data[1]
 
-			if len(target_fields.keys()) == 3:
-				print("====")
-				pprint(new_data)
-				pprint(target_fields)
-
 			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 			
 			for spec in candidates:
