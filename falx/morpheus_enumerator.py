@@ -27,7 +27,7 @@ g_list = []
 
 def findsubsets(S,m):
     ret = set()
-    for i in range(2, m):
+    for i in range(2, m+1):
         ret |= set(itertools.combinations(S, i))
 
     return ret
@@ -109,7 +109,7 @@ def eq_r(actual, expect):
         sub_set = list(filter(lambda x: all(elem in list(x) for elem in blk_list), all_set))
         if blk_list:
             # print(ncol, all_set, blk_list, 'my subset:', sub_set)
-            for ele in all_set:
+            for ele in sub_set:
                 sel = 'c' + str(ele)
                 sub_f = robjects.r("sub_f = select({df}, {se})".format(df=actual,se=sel))
                 jj = get_json('sub_f')
