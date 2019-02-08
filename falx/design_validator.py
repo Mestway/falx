@@ -10,11 +10,19 @@ import sys
 def get_attr(obj, attr):
 	return obj[attr] if attr in obj else None
 
-def internal_validation(spec, field_metadata):
+def internal_validation(spec):
 	for enc in spec["encoding"]:
-		if not validate_encoding(enc, field_metadata):
+		if not validate_encoding(enc):
 			return False
 	return cross_encoding_validation(spec)
+
+def fieldtype_compatibility_check(spec, field_metadata):
+	"""check compatibility of fields with the encodings. """
+	for enc in spec["encoding"]:
+		if not validate_field_type(enc, field_metadata):
+			return False
+	return True
+
 
 def channel_discrete(enc):
 	return enc["type"] in ["nominal", "ordinal"] or get_attr(enc, "bin")
@@ -135,15 +143,8 @@ def cross_encoding_validation(spec):
 	return True
 
 
-def validate_encoding(enc, field_metadata):
+def validate_encoding(enc):
 	"""validate whether an encoding is valid or not """
-
-	field_type = field_metadata[enc["field"]]["type"] if "field" in enc else None
-	field_min_max = (field_metadata[enc["field"]]["min"], field_metadata[enc["field"]]["max"]) if "field" in enc and field_type == "number" else None
-
-	# Primitive type has to support data type
-	if enc["type"] == "temporal" and field_type != "datetime": return False
-	if enc["type"] in ["quantitative", "ordinal"] and field_type in ["string", "boolean"]: return False
 
 	# Can only bin quantitative or ordinal.
 	if get_attr(enc, "bin") and enc["type"] not in ["quantitative", "ordinal"]: 
@@ -158,11 +159,6 @@ def validate_encoding(enc, field_metadata):
 
 	# Cannot use log and zero together
 	if get_attr(enc, "zero") and get_attr(enc, "log"): return False
-
-	# Cannot use log if the data is negative or zero
-	if (get_attr(enc, "scale") and get_attr(get_attr(enc, "scale"), "log") and 
-		field_min_max and field_min_max[0] <= 0):
-		return False
 	
 	# Cannot bin and aggregate
 	if get_attr(enc, "bin") and get_attr(enc, "aggregate"): return False
@@ -197,11 +193,28 @@ def validate_encoding(enc, field_metadata):
 	# Size implies ordr so nominal is misleading
 	if enc["channel"] == "size" and enc["type"] == "nominal": return False
 
-	# Do not use size when data is negative as size implies that data is positive.
-	if enc["channel"] == "size" and field_min_max and field_min_max[0] <= 0: return False
-
 	# Row and column require discrete
 	if enc["channel"] in ["row", "column"] and not channel_discrete(enc): return False
+
+	return True
+
+def validate_field_type(enc, field_metadata):
+	"""fieldtype related validation """
+
+	field_type = field_metadata[enc["field"]]["type"] if "field" in enc else None
+	field_min_max = (field_metadata[enc["field"]]["min"], field_metadata[enc["field"]]["max"]) if "field" in enc and field_type == "number" else None
+
+	# Primitive type has to support data type
+	if enc["type"] == "temporal" and field_type != "datetime": return False
+	if enc["type"] in ["quantitative", "ordinal"] and field_type in ["string", "boolean"]: return False
+
+	# Cannot use log if the data is negative or zero
+	if (get_attr(enc, "scale") and get_attr(get_attr(enc, "scale"), "log") and 
+		field_min_max and field_min_max[0] <= 0):
+		return False
+
+	# Do not use size when data is negative as size implies that data is positive.
+	if enc["channel"] == "size" and field_min_max and field_min_max[0] <= 0: return False
 
 	return True
 

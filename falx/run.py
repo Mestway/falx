@@ -65,6 +65,11 @@ def run(flags):
 			new_data = morpheus_data[0]
 			target_fields = morpheus_data[1]
 
+			if len(target_fields.keys()) == 3:
+				print("====")
+				pprint(new_data)
+				pprint(target_fields)
+
 			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 			
 			for spec in candidates:
@@ -73,6 +78,7 @@ def run(flags):
 					status, message = design_validator.external_validation(spec, vl_schema)
 					if not status:
 						print("x", end="", flush=True)
+
 				print(".", end="", flush=True)
 				with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
 					g.write(json.dumps(spec))

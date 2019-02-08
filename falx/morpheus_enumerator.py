@@ -8,10 +8,16 @@ from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 import rpy2.robjects as robjects
 import rpy2.rinterface as ri 
+from rpy2.rinterface import RRuntimeWarning
 
+import itertools
 import json
 import os
-import itertools
+import warnings
+
+
+# suppress R warnings
+warnings.filterwarnings("ignore", category=RRuntimeWarning)
 
 logger = get_logger('tyrell')
 
