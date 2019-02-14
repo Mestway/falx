@@ -8,7 +8,7 @@ the folder for data collected online
 | ~~004~~ | data-004.csv  | https://stackoverflow.com/questions/5208679/ |
 | ~~005~~ | data-005.csv  | https://stackoverflow.com/questions/10349206 |
 | 006 | data-006.csv  | https://stackoverflow.com/questions/6644997 |
-| 007 | day-hour-value.tsv | http://bl.ocks.org/tjdecke/5558084 |
+| ~~007~~ | day-hour-value.tsv | http://bl.ocks.org/tjdecke/5558084 |
 | 008 | population.csv | https://bl.ocks.org/mbostock/4062085 |
 | 009 | data-009.json | http://bl.ocks.org/jhubley/17aa30fd98eb0cc7072f |
 | 010 | fifa-18-demon-player-dataset | https://towardsdatascience.com/exploratory-analysis-of-fifa-18-dataset-using-r-ba09aa4a2d3c |
