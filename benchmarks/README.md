@@ -4,7 +4,7 @@ the folder for data collected online
 |-----|---------------|---------------|
 | 001 | immigrant.csv | https://learnr.wordpress.com/2009/03/17/ggplot2-barplots/ |
 | ~~002~~ | iris.csv      | https://stackoverflow.com/questions/47523389   |
-| 003 | iris.csv      | https://stackoverflow.com/questions/1249548 |
+| ~~003~~ | iris.csv      | https://stackoverflow.com/questions/1249548 |
 | 004 | data-004.csv  | https://stackoverflow.com/questions/5208679/ |
 | 005 | data-005.csv  | https://stackoverflow.com/questions/10349206 |
 | 006 | data-006.csv  | https://stackoverflow.com/questions/6644997 |
