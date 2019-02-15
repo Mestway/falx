@@ -59,6 +59,7 @@ def run(flags):
 	
 	output_index = 0
 	for vl_spec in vl_specs:
+		example_data_props = utils.extract_data_props(vl_spec)
 
 		new_data = {"url": "data/unemployment-across-industries.json"}
 		for morpheus_data in g_list:

@@ -2,8 +2,11 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 
+import csv
 import json
 import os
+
+import pandas
 
 def absolute_path(p):
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
@@ -66,12 +69,6 @@ def reconstruct_object(flat_obj):
 
 	return retval
 
-def load_vl_spec(input_file):
-	"""load vl specs from a json file. """
-	with open(input_file, "r") as f:
-		vl_spec = json.load(f)
-	return vl_spec
-
 def vl2obj(vl_spec):
 	"""transforms an vl_spec to an object,
 	   it changes encodings from dict into list"""
@@ -102,6 +99,43 @@ def obj2vl(spec):
 			vl_spec[f] = spec[f]
 	return vl_spec
 
-def check_validatiy(vl_spec):
-	"""check if a vl spec is valid"""
-	return True
+def load_vl_spec(vl_spec_path, inline_data=True):
+	"""load a vl spec and inline data as 'values' """
+	abs_path = absolute_path(vl_spec_path)
+	with open(vl_spec_path, "r") as f:
+		vl_spec = json.load(f)
+
+	if inline_data and "url" in vl_spec["data"]:
+		data_path = vl_spec["data"]["url"]
+		with open(os.path.join(os.path.dirname(abs_path), data_path), "r") as g:
+			if data_path.endswith(".csv"):
+				csv_reader = csv.DictReader(g)
+				data = list([row for row in csv_reader])
+			elif data_path.endswith(".json"):
+				data = json.load(g)
+
+		vl_spec["data"] = {"values": data}
+
+	return vl_spec
+
+
+def extract_data_props(vl_spec):
+	"""extract properties of data """
+	field_props = []
+	vspec = vl2obj(vl_spec)
+	data = vl_spec["data"]["values"]
+	for enc in vspec["encoding"]:
+		field_prop = {}
+		if enc["field"] is not None:
+			field_prop["field"] = enc["field"]
+			field_prop["enc_type"] = enc["type"]
+			column_values = [d[field_prop["field"]] for d in data]
+			dtype = pandas.api.types.infer_dtype(column_values)
+			field_prop["dtype"] = dtype
+			if dtype in ["integer", "float", "mixed-integer-float"]:
+				field_prop["min"] = min(column_values)
+				field_prop["max"] = max(column_values)
+			field_prop["cardinality"] = len(set(column_values))
+			field_props.append(field_prop)
+	return field_props
+
