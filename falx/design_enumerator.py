@@ -42,12 +42,12 @@ def instantiate_domains(domains, encoding_cnt):
 	return instantiated
 
 
-def enum_specs(spec, max_changes=1):
+def enum_specs(vspec, max_changes=1):
 	"""enumerate specs out of an existing vl_json. """
 	
-	flat_spec = dict(utils.flatten_object(spec))
+	flat_spec = dict(utils.flatten_object(vspec))
 
-	domains = instantiate_domains(ENUM_DOMAINS, len(spec["encoding"]))
+	domains = instantiate_domains(ENUM_DOMAINS, len(vspec["encoding"]))
 	
 	outputs = []
 	for l in itertools.combinations(domains.keys(), r=max_changes):
@@ -68,10 +68,6 @@ def enum_specs(spec, max_changes=1):
 			outputs.append(new_spec)
 
 	return outputs
-
-
-def equiv_design_abstraction():
-	pass
 
 
 def explore_designs(example_vl, target_data, target_fields):
