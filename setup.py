@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-
-from setuptools import setup
+import os
+from setuptools import setup, Command
 
 class CleanCommand(Command):
     """Custom clean command to tidy up the project root."""
@@ -11,7 +11,7 @@ class CleanCommand(Command):
         pass
     def run(self):
         os.system('rm -vrf ./build ./dist ./*.pyc ./*.tgz ./*.egg-info')
-
+ 
 setup(name='falx',
       version='0.1',
       description='Visualization By Example',
