@@ -1,10 +1,5 @@
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-
 import argparse
 import json
-import jsonschema
 import os
 from pprint import pprint
 
@@ -31,17 +26,9 @@ parser.add_argument("--input_data_files", dest="input_data_files",
 parser.add_argument("--output_dir", dest="output_dir",
 					default=TEMP_DIR, help="output directory")
 
-parser.add_argument("--validation", dest="validation", default=0, type=int,
-					help="whether to run additional validations for Vega-Lite specs,"
-						 "Mode: 0 -- no extra validation"
-						 "      1 -- schema check")
-
 
 def run(flags):
 	"""Synthesize vega-lite schema """
-
-	with open(os.path.join(RESOURCE_DIR, "vega-lite-schema.json")) as f:
-		vl_schema = json.load(f)
 
 	input_chart_files = []
 	g_list = morpheus.get_sample_data(flags.input_data_files)
@@ -69,12 +56,6 @@ def run(flags):
 			candidates = design_enumerator.explore_designs(vl_spec, new_data, target_fields)
 			
 			for spec in candidates:
-				if flags.validation == 1:
-					# run external validation
-					status, message = design_validator.external_validation(spec, vl_schema)
-					if not status:
-						print("x", end="", flush=True)
-
 				print(".", end="", flush=True)
 				with open(os.path.join(flags.output_dir, "temp_{}.vl.json".format(output_index)), "w") as g:
 					g.write(json.dumps(spec))

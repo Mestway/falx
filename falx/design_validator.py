@@ -1,10 +1,4 @@
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-
 import json
-import jsonschema
-import subprocess
 import sys
 
 def get_attr(obj, attr):
@@ -47,6 +41,7 @@ def get_orientation(spec):
 		print("[err] unable to determine horizontal or vertical for the following spec")
 		print(json.dumps(spec))
 		sys.exit(-1)		
+
 
 def cross_encoding_validation(spec):
 	"""validate the spec cross encodings """
@@ -217,29 +212,3 @@ def validate_field_type(enc, field_metadata):
 	if enc["channel"] == "size" and field_min_max and field_min_max[0] <= 0: return False
 
 	return True
-
-def external_validation(spec, vl_schema):
-	"""validate whether """
-	message = []
-	valid = True
-
-	## TODO test the following snippet later
-	# if external_validation:
-	# 	proc = subprocess.Popen(
-	# 		args=["node", utils.absolute_path("../js/index.js")],
-	# 		stdin=subprocess.PIPE,
-	# 		stdout=subprocess.PIPE,
-	# 		stderr=subprocess.PIPE
-	# 	)
-	# 	stdout, stderr = proc.communicate(json.dumps(spec).encode("utf8"))
-
-	# 	if stderr:
-	# 		message.append(stderr.decode("utf-8").strip())
-	# 	message.append(stdout.decode("utf-8").strip())
-
-	try:
-		jsonschema.validate(spec, vl_schema)
-	except:
-		valid = False
-
-	return valid, message
