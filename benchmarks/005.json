@@ -1,0 +1,46 @@
+{
+  "input_data": [
+    {
+      "Month": "Jan",
+      "Sales": 10,
+      "Cost": 6,
+      "Profit": 4,
+      "ROI": "66.67%"
+    },
+    {
+      "Month": "Feb",
+      "Sales": 20,
+      "Cost": 15,
+      "Profit": 5,
+      "ROI": "33.33%"
+    },
+    {
+      "Month": "Mar",
+      "Sales": 30,
+      "Cost": 24,
+      "Profit": 6,
+      "ROI": "25.00%"
+    },
+    {
+      "Month": "Apr",
+      "Sales": 40,
+      "Cost": 33,
+      "Profit": 7,
+      "ROI": "21.21%"
+    },
+    {
+      "Month": "May",
+      "Sales": 50,
+      "Cost": 42,
+      "Profit": 8,
+      "ROI": "19.05%"
+    },
+    {
+      "Month": "Jun",
+      "Sales": 60,
+      "Cost": 51,
+      "Profit": 9,
+      "ROI": "17.65%"
+    }
+  ]
+}
