@@ -5,3 +5,4 @@ __temp__/*
 *.DS_Store
 *.Rhistory
 venv/*
+*.egg-info
