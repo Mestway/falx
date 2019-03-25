@@ -1,24 +1,22 @@
-{
-	"input_data": [
-	  {
-	    "Quarter": "Quarter1",
-	    "No. of Units": 23,
-	    "Actual Profits": 3358
-	  },
-	  {
-	    "Quarter": "Quarter2",
-	    "No. of Units": 27,
-	    "Actual Profits": 3829
-	  },
-	  {
-	    "Quarter": "Quarter3",
-	    "No. of Units": 15,
-	    "Actual Profits": 2374
-	  },
-	  {
-	    "Quarter": "Quarter4",
-	    "No. of Units": 43,
-	    "Actual Profits": 3373
-	  }
-	]
-}
+[
+  {
+    "Quarter": "Quarter1",
+    "No. of Units": 23,
+    "Actual Profits": 3358
+  },
+  {
+    "Quarter": "Quarter2",
+    "No. of Units": 27,
+    "Actual Profits": 3829
+  },
+  {
+    "Quarter": "Quarter3",
+    "No. of Units": 15,
+    "Actual Profits": 2374
+  },
+  {
+    "Quarter": "Quarter4",
+    "No. of Units": 43,
+    "Actual Profits": 3373
+  }
+]
