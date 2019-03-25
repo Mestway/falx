@@ -1,0 +1,162 @@
+[
+  {
+    "Shift": "1",
+    "Period": "1",
+    "Start of Shift": "0:50 / 19:10",
+    "": "",
+    "End of Shift ": "1:50 / 18:10",
+    "Duration": "01:00"
+  },
+  {
+    "Shift": "2",
+    "Period": "1",
+    "Start of Shift": "3:44 / 16:16",
+    "": "",
+    "End of Shift ": "4:32 / 15:28",
+    "Duration": "00:48"
+  },
+  {
+    "Shift": "3",
+    "Period": "1",
+    "Start of Shift": "6:19 / 13:41",
+    "": "",
+    "End of Shift ": "6:59 / 13:01",
+    "Duration": "00:40"
+  },
+  {
+    "Shift": "4",
+    "Period": "1",
+    "Start of Shift": "9:05 / 10:55",
+    "": "",
+    "End of Shift ": "10:01 / 9:59",
+    "Duration": "00:56"
+  },
+  {
+    "Shift": "5",
+    "Period": "1",
+    "Start of Shift": "12:39 / 7:21",
+    "": "",
+    "End of Shift ": "14:00 / 6:00",
+    "Duration": "01:21"
+  },
+  {
+    "Shift": "6",
+    "Period": "1",
+    "Start of Shift": "16:06 / 3:54",
+    "": "",
+    "End of Shift ": "16:54 / 3:06",
+    "Duration": "00:48"
+  },
+  {
+    "Shift": "7",
+    "Period": "1",
+    "Start of Shift": "18:04 / 1:56",
+    "": "",
+    "End of Shift ": "19:06 / 0:54",
+    "Duration": "01:02"
+  },
+  {
+    "Shift": "8",
+    "Period": "2",
+    "Start of Shift": "0:00 / 20:00",
+    "": "",
+    "End of Shift ": "1:00 / 19:00",
+    "Duration": "01:00"
+  },
+  {
+    "Shift": "9",
+    "Period": "2",
+    "Start of Shift": "2:37 / 17:23",
+    "": "",
+    "End of Shift ": "4:05 / 15:55",
+    "Duration": "01:28"
+  },
+  {
+    "Shift": "10",
+    "Period": "2",
+    "Start of Shift": "9:18 / 10:42",
+    "": "",
+    "End of Shift ": "10:04 / 9:56",
+    "Duration": "00:46"
+  },
+  {
+    "Shift": "11",
+    "Period": "2",
+    "Start of Shift": "11:41 / 8:19",
+    "": "",
+    "End of Shift ": "12:47 / 7:13",
+    "Duration": "01:06"
+  },
+  {
+    "Shift": "12",
+    "Period": "2",
+    "Start of Shift": "13:50 / 6:10",
+    "": "",
+    "End of Shift ": "15:13 / 4:47",
+    "Duration": "01:23"
+  },
+  {
+    "Shift": "13",
+    "Period": "2",
+    "Start of Shift": "17:37 / 2:23",
+    "": "",
+    "End of Shift ": "19:00 / 1:00",
+    "Duration": "01:23"
+  },
+  {
+    "Shift": "14",
+    "Period": "3",
+    "Start of Shift": "0:39 / 19:21",
+    "": "",
+    "End of Shift ": "1:16 / 18:44",
+    "Duration": "00:37"
+  },
+  {
+    "Shift": "15",
+    "Period": "3",
+    "Start of Shift": "2:57 / 17:03 ",
+    "": "",
+    "End of Shift ": "3:25 / 16:35",
+    "Duration": "00:28"
+  },
+  {
+    "Shift": "16",
+    "Period": "3",
+    "Start of Shift": "5:25 / 14:35",
+    "": "",
+    "End of Shift ": "6:16 / 13:44",
+    "Duration": "00:51"
+  },
+  {
+    "Shift": "17",
+    "Period": "3",
+    "Start of Shift": "9:01 / 10:59",
+    "": "",
+    "End of Shift ": "9:24 / 10:36",
+    "Duration": "00:23"
+  },
+  {
+    "Shift": "18",
+    "Period": "3",
+    "Start of Shift": "11:24 / 8:36",
+    "": "",
+    "End of Shift ": "11:34 / 8:26",
+    "Duration": "00:10"
+  },
+  {
+    "Shift": "19",
+    "Period": "3",
+    "Start of Shift": "11:35 / 8:25",
+    "": "",
+    "End of Shift ": "12:55 / 7:05",
+    "Duration": "01:20"
+  },
+  {
+    "Shift": "20",
+    "Period": "3",
+    "Start of Shift": "16:27 / 3:33",
+    "": "",
+    "End of Shift ": "20:00 / 0:00",
+    "Duration": "03:33"
+  }
+]

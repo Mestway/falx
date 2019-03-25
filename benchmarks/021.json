@@ -1,0 +1,58 @@
+[
+  {
+    "Country": "Australia",
+    "Beans": "$14,433",
+    "Broccoli": "$17,953",
+    "Carrots": "$8,106",
+    "Total Result": "$40,492"
+  },
+  {
+    "Country": "Canada",
+    "Beans": "",
+    "Broccoli": "$12,407",
+    "Carrots": "",
+    "Total Result": "$12,407"
+  },
+  {
+    "Country": "France",
+    "Beans": "$680",
+    "Broccoli": "$5,341",
+    "Carrots": "$9,104",
+    "Total Result": "$15,125"
+  },
+  {
+    "Country": "Germany",
+    "Beans": "$29,905",
+    "Broccoli": "$37,197",
+    "Carrots": "$21,636",
+    "Total Result": "$88,738"
+  },
+  {
+    "Country": "New Zealand",
+    "Beans": "",
+    "Broccoli": "$4,390",
+    "Carrots": "",
+    "Total Result": "$4,390"
+  },
+  {
+    "Country": "United Kingdom",
+    "Beans": "$5,100",
+    "Broccoli": "$38,436",
+    "Carrots": "$41,815",
+    "Total Result": "$85,351"
+  },
+  {
+    "Country": "United States",
+    "Beans": "$7,163",
+    "Broccoli": "$26,715",
+    "Carrots": "$56,284",
+    "Total Result": "$90,162"
+  },
+  {
+    "Country": "Total Result",
+    "Beans": "$57,281",
+    "Broccoli": "$142,439",
+    "Carrots": "$136,945",
+    "Total Result": "$336,665"
+  }
+]

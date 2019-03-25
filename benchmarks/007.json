@@ -1,0 +1,22 @@
+{
+	"input_data": [
+		{
+			"Strongly Agree": "50%",
+			"Agree": "35%",
+			"Disagree": "8%",
+			"Strongly Disagree": "7%"
+		},
+		{
+			"Strongly Agree": "70%",
+			"Agree": "10%",
+			"Disagree": "10.00%",
+			"Strongly Disagree": "10%"
+		},
+		{
+			"Strongly Agree": "45%",
+			"Agree": "30%",
+			"Disagree": "15.00%",
+			"Strongly Disagree": "10%"
+		}
+	]
+}
