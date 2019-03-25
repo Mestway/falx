@@ -1,0 +1,32 @@
+[
+  {
+    "DATA": "A",
+    "Value": 100,
+    "Lower": 80,
+    "Upper": 116
+  },
+  {
+    "DATA": "B",
+    "Value": 120,
+    "Lower": 103,
+    "Upper": 138
+  },
+  {
+    "DATA": "C",
+    "Value": 140,
+    "Lower": 106,
+    "Upper": 157
+  },
+  {
+    "DATA": "D",
+    "Value": 80,
+    "Lower": 75,
+    "Upper": 85
+  },
+  {
+    "DATA": "E",
+    "Value": 90,
+    "Lower": 85,
+    "Upper": 102
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "Timeline": "Jul-15",
+    "Values": 436,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Aug-15",
+    "Values": 500,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Sep-15",
+    "Values": 805,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Oct-15",
+    "Values": 5124,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Nov-15",
+    "Values": 1674,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Dec-15",
+    "Values": 300,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Jan-16",
+    "Values": 265,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Feb-16",
+    "Values": 742,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Mar-16",
+    "Values": 1955,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Apr-16",
+    "Values": 1466,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "May-16",
+    "Values": 584,
+    "Forecast": "",
+    "Lower Confidence Bound": "",
+    "Upper Confidence Bound": ""
+  },
+  {
+    "Timeline": "Jun-16",
+    "Values": 1097,
+    "Forecast": 1097,
+    "Lower Confidence Bound": 1097,
+    "Upper Confidence Bound": 1097
+  },
+  {
+    "Timeline": "Jul-16",
+    "Values": "",
+    "Forecast": 939.9246053,
+    "Lower Confidence Bound": -1913.98,
+    "Upper Confidence Bound": 3793.83
+  },
+  {
+    "Timeline": "Aug-16",
+    "Values": "",
+    "Forecast": 924.4956041,
+    "Lower Confidence Bound": -1952.33,
+    "Upper Confidence Bound": 3801.32
+  },
+  {
+    "Timeline": "Sep-16",
+    "Values": "",
+    "Forecast": 909.0666028,
+    "Lower Confidence Bound": -1990.86,
+    "Upper Confidence Bound": 3808.99
+  }
+]

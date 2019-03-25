@@ -1,0 +1,38 @@
+[
+  {
+    "Year": "'07",
+    "SOUTH-Choc": 10,
+    "SOUTH-Bisc": 4,
+    "WEST-Choc": 6,
+    "WEST-Bisc": 4,
+    "NORTH-Choc": 14,
+    "NORTH-Bisc": 6
+  },
+  {
+    "Year": "'08",
+    "SOUTH-Choc": 11,
+    "SOUTH-Bisc": 5,
+    "WEST-Choc": 10,
+    "WEST-Bisc": 5,
+    "NORTH-Choc": 18,
+    "NORTH-Bisc": 6.7
+  },
+  {
+    "Year": "'09",
+    "SOUTH-Choc": 14,
+    "SOUTH-Bisc": 5.7,
+    "WEST-Choc": 12,
+    "WEST-Bisc": 5.7,
+    "NORTH-Choc": 19,
+    "NORTH-Bisc": 7
+  },
+  {
+    "Year": "'10",
+    "SOUTH-Choc": 16,
+    "SOUTH-Bisc": 6,
+    "WEST-Choc": 15,
+    "WEST-Bisc": 6,
+    "NORTH-Choc": 21,
+    "NORTH-Bisc": 8
+  }
+]
