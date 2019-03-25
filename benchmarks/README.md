@@ -29,7 +29,18 @@
 | 025 | [link](025.json) | <img src="chart_025.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/pareto-chart.html) | excel |
 | 027 | [link](027.json) | <img src="chart_027.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/moving-average.html) | excel |
 | 028 | [link](028.json) | <img src="chart_028.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/histogram.html) | excel |
-
+| 029 | [link](029.json) | <img src="chart_029.png" width="150"/> | [source_link](https://chandoo.org/wp/60-sports-in-six-charts/) | excel |
+| 030 | [link](030.json) | <img src="chart_030.png" width="150"/> | [source_link](https://chandoo.org/wp/60-sports-in-six-charts/) | excel |
+| 031 | [link](031.json) | <img src="chart_031.png" width="150"/> | [source_link](https://chandoo.org/wp/visualize-salary-increases-jitter-plot/) | excel / R |
+| 032 | [link](032.json) | <img src="chart_032.png" width="150"/> | [source_link](https://chandoo.org/wp/joyplot-in-excel/) | excel / R |
+| 033 | [link](033.json) | <img src="chart_033.png" width="150"/> | [source_link](https://chandoo.org/wp/joyplot-in-excel/) | excel / R |
+| 034 | [link](034.json) | <img src="chart_034.png" width="150"/> | [source_link](https://chandoo.org/wp/forecasting-in-excel/) | excel |
+| 035 | [link](035.json) | <img src="chart_035.png" width="150"/> | [source_link](https://chandoo.org/wp/bar-chart-with-lower-upper-bounds-tutorial) | excel |
+| 036 | [link](036.json) | <img src="chart_036.png" width="150"/> | [source_link](https://chandoo.org/wp/shading-an-area-different-colors-for-up-down-movements/) | excel |
+| 037 | [link](037.json) | <img src="chart_037.png" width="150"/> | [source_link](https://chandoo.org/wp/advances-vs-declines-chart/) | excel |
+| 038 | [link](038.json) | <img src="chart_038.png" width="150"/> | [source_link](https://chandoo.org/wp/excel-box-plot-tutorial/) | excel |
+| 039 | [link](039.json) | <img src="chart_039.png" width="150"/> | [source_link](https://chandoo.org/wp/small-multiples-charts-in-excel/) | excel |
+| 040 | [link](040.json) | <img src="chart_040.png" width="150"/> | [source_link](https://chandoo.org/wp/win-loss-chart/) | excel |
 
 <!-- 007 http://stephanieevergreen.com/diverging-stacked-bars/
 008 http://stephanieevergreen.com/adding-standard-deviation-to-a-dataviz/
