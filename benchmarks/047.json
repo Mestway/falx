@@ -1,0 +1,121 @@
+{
+    "input_data":
+    [
+        {
+          "label": "Label1",
+          "ok": 0
+        },
+        {
+          "label": "Label2",
+          "ok": 0.5
+        },
+        {
+          "label": "Label3",
+          "ok": 0.4
+        },
+        {
+          "label": "Label4",
+          "ok": 0.9
+        },
+        {
+          "label": "Label5",
+          "ok": 0.4
+        },
+        {
+          "label": "Label6",
+          "ok": 0.9
+        },
+        {
+          "label": "Label7",
+          "ok": 0.8
+        },
+        {
+          "label": "Label8",
+          "ok": 0.8
+        }
+      ]    
+    , 
+    "output_data":
+    [
+        {
+          "label": "Label1",
+          "type": "ok",
+          "freq": 0
+        },
+        {
+          "label": "Label2",
+          "type": "ok",
+          "freq": 0.5
+        },
+        {
+          "label": "Label3",
+          "type": "ok",
+          "freq": 0.4
+        },
+        {
+          "label": "Label4",
+          "type": "ok",
+          "freq": 0.9
+        },
+        {
+          "label": "Label5",
+          "type": "ok",
+          "freq": 0.4
+        },
+        {
+          "label": "Label6",
+          "type": "ok",
+          "freq": 0.9
+        },
+        {
+          "label": "Label7",
+          "type": "ok",
+          "freq": 0.8
+        },
+        {
+          "label": "Label8",
+          "type": "ok",
+          "freq": 0.8
+        },
+        {
+          "label": "Label1",
+          "type": "err",
+          "freq": 1
+        },
+        {
+          "label": "Label2",
+          "type": "err",
+          "freq": 0.5
+        },
+        {
+          "label": "Label3",
+          "type": "err",
+          "freq": 0.6
+        },
+        {
+          "label": "Label4",
+          "type": "err",
+          "freq": 0.1
+        },
+        {
+          "label": "Label5",
+          "type": "err",
+          "freq": 0.6
+        },
+        {
+          "label": "Label6",
+          "type": "err",
+          "freq": 0.1
+        },
+        {
+          "label": "Label7",
+          "type": "err",
+          "freq": 0.2
+        },
+        {
+          "label": "Label8",
+          "type": "err",
+          "freq": 0.2
+        }
+      ]      
+}

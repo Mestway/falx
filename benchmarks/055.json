@@ -1,0 +1,139 @@
+{
+    "input_data":
+    [
+        {
+          "id": "A",
+          "group_measure": "a_c",
+          "value": 2
+        },
+        {
+          "id": "B",
+          "group_measure": "a_c",
+          "value": 2
+        },
+        {
+          "id": "C",
+          "group_measure": "a_c",
+          "value": 3
+        },
+        {
+          "id": "D",
+          "group_measure": "a_c",
+          "value": 5
+        },
+        {
+          "id": "A",
+          "group_measure": "b_c",
+          "value": 2
+        },
+        {
+          "id": "B",
+          "group_measure": "b_c",
+          "value": 5
+        },
+        {
+          "id": "C",
+          "group_measure": "b_c",
+          "value": 5
+        },
+        {
+          "id": "D",
+          "group_measure": "b_c",
+          "value": 4
+        },
+        {
+          "id": "A",
+          "group_measure": "a_d",
+          "value": 4
+        },
+        {
+          "id": "B",
+          "group_measure": "a_d",
+          "value": 1
+        },
+        {
+          "id": "C",
+          "group_measure": "a_d",
+          "value": 2
+        },
+        {
+          "id": "D",
+          "group_measure": "a_d",
+          "value": 1
+        },
+        {
+          "id": "A",
+          "group_measure": "b_d",
+          "value": 4
+        },
+        {
+          "id": "B",
+          "group_measure": "b_d",
+          "value": 2
+        },
+        {
+          "id": "C",
+          "group_measure": "b_d",
+          "value": 4
+        },
+        {
+          "id": "D",
+          "group_measure": "b_d",
+          "value": 3
+        }
+      ]
+      
+    ,
+    "output_data":
+    [
+        {
+          "id": "A",
+          "suffix": "c",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "id": "A",
+          "suffix": "d",
+          "a": 4,
+          "b": 4
+        },
+        {
+          "id": "B",
+          "suffix": "c",
+          "a": 2,
+          "b": 5
+        },
+        {
+          "id": "B",
+          "suffix": "d",
+          "a": 1,
+          "b": 2
+        },
+        {
+          "id": "C",
+          "suffix": "c",
+          "a": 3,
+          "b": 5
+        },
+        {
+          "id": "C",
+          "suffix": "d",
+          "a": 2,
+          "b": 4
+        },
+        {
+          "id": "D",
+          "suffix": "c",
+          "a": 5,
+          "b": 4
+        },
+        {
+          "id": "D",
+          "suffix": "d",
+          "a": 1,
+          "b": 3
+        }
+      ]
+      
+}

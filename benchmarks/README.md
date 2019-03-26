@@ -41,6 +41,26 @@
 | 038 | [link](038.json) | <img src="chart_038.png" width="150"/> | [source_link](https://chandoo.org/wp/excel-box-plot-tutorial/) | excel |
 | 039 | [link](039.json) | <img src="chart_039.png" width="150"/> | [source_link](https://chandoo.org/wp/small-multiples-charts-in-excel/) | excel |
 | 040 | [link](040.json) | <img src="chart_040.png" width="150"/> | [source_link](https://chandoo.org/wp/win-loss-chart/) | excel |
+| 041 | [link](041.json) | <img src="chart_041.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/7910594) | ggplot2 |
+| 042 | [link](042.json) | <img src="chart_042.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/3777174) | ggplot2 |
+| 043 | [link](043.json) | <img src="chart_043.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/38184288) | ggplot2 |
+| 044 | [link](044.json) | <img src="chart_044.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/42317332) | ggplot2 |
+| 045 | [link](045.json) | <img src="chart_045.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/50026999) | ggplot2 |
+| 046 | [link](046.json) | <img src="chart_046.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/29650684) | ggplot2 |
+| 047 | [link](047.json) | <img src="chart_047.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/30614105) | ggplot2 |
+| 048 | [link](048.json) | <img src="chart_048.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/44764464) | ggplot2 |
+| 049 | [link](049.json) | <img src="chart_049.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/41627194) | ggplot2 |
+| 050 | [link](050.json) | <img src="chart_050.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/42026487) | ggplot2 |
+| 051 | [link](051.json) | <img src="chart_051.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/47024117) | ggplot2 |
+| 052 | [link](052.json) | <img src="chart_052.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/55210907) | ggplot2 |
+| 053 | [link](053.json) | <img src="chart_053.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/25935202) | ggplot2 |
+| 054 | [link](054.json) | <img src="chart_054.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/52592567) | ggplot2 |
+| 055 | [link](055.json) | <img src="chart_055.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/51957411) | ggplot2 |
+| 056 | [link](056.json) | <img src="chart_056.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/48081191) | ggplot2 |
+| 057 | [link](057.json) | <img src="chart_057.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/40136801) | ggplot2 |
+| 058 | [link](058.json) | <img src="chart_058.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/50059409) | ggplot2 |
+| 059 | [link](059.json) | <img src="chart_059.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/38956958) | ggplot2 |
+| 060 | [link](060.json) | <img src="chart_060.jpeg" width="150"/> | [source_link](https://stackoverflow.com/questions/53765586/) | ggplot2 |
 
 <!-- 007 http://stephanieevergreen.com/diverging-stacked-bars/
 008 http://stephanieevergreen.com/adding-standard-deviation-to-a-dataviz/

@@ -1,0 +1,111 @@
+{
+    "input_data":
+    [
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS",
+          "VALUE": 73.6
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_LL",
+          "VALUE": 66.2
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_UL",
+          "VALUE": 79.8
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS",
+          "VALUE": 73.7
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_LL",
+          "VALUE": 66.3
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_UL",
+          "VALUE": 80
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS",
+          "VALUE": 77
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_LL",
+          "VALUE": 69.1
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_UL",
+          "VALUE": 83.6
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS",
+          "VALUE": 77.5
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_LL",
+          "VALUE": 69.6
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "MEASURE": "DIAG_RATE_65_PLUS_UL",
+          "VALUE": 84.2
+        }
+      ]
+      
+    ,
+    "output_data":
+    [
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "DIAG_RATE_65_PLUS": 77,
+          "DIAG_RATE_65_PLUS_LL": 69.1,
+          "DIAG_RATE_65_PLUS_UL": 83.6
+        },
+        {
+          "NAME": "NOTTINGHAMSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "DIAG_RATE_65_PLUS": 77.5,
+          "DIAG_RATE_65_PLUS_LL": 69.6,
+          "DIAG_RATE_65_PLUS_UL": 84.2
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-09-01",
+          "DIAG_RATE_65_PLUS": 73.6,
+          "DIAG_RATE_65_PLUS_LL": 66.2,
+          "DIAG_RATE_65_PLUS_UL": 79.8
+        },
+        {
+          "NAME": "WEST YORKSHIRE",
+          "ACH_DATE": "2017-10-01",
+          "DIAG_RATE_65_PLUS": 73.7,
+          "DIAG_RATE_65_PLUS_LL": 66.3,
+          "DIAG_RATE_65_PLUS_UL": 80
+        }
+      ]
+      
+}

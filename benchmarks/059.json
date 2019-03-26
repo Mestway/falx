@@ -1,0 +1,113 @@
+{
+    "input_data":
+    [
+        {
+          "ID": "1",
+          "name": "A",
+          "persons_g1_0min": 1,
+          "persons_g1_10min": 4,
+          "persons_g1_30min": 7,
+          "persons_g2_0min": 10,
+          "persons_g2_10min": 13,
+          "persons_g2_30min": 16
+        },
+        {
+          "ID": "2",
+          "name": "A",
+          "persons_g1_0min": 2,
+          "persons_g1_10min": 5,
+          "persons_g1_30min": 8,
+          "persons_g2_0min": 11,
+          "persons_g2_10min": 14,
+          "persons_g2_30min": 17
+        },
+        {
+          "ID": "3",
+          "name": "C",
+          "persons_g1_0min": 3,
+          "persons_g1_10min": 6,
+          "persons_g1_30min": 9,
+          "persons_g2_0min": 12,
+          "persons_g2_10min": 15,
+          "persons_g2_30min": 18
+        }
+      ]
+      
+    ,
+    "output_data":
+    [
+        {
+          "ID": "1",
+          "name": "A",
+          "A": "persons",
+          "Time": "0min",
+          "g1": 1,
+          "g2": 10
+        },
+        {
+          "ID": "1",
+          "name": "A",
+          "A": "persons",
+          "Time": "10min",
+          "g1": 4,
+          "g2": 13
+        },
+        {
+          "ID": "1",
+          "name": "A",
+          "A": "persons",
+          "Time": "30min",
+          "g1": 7,
+          "g2": 16
+        },
+        {
+          "ID": "2",
+          "name": "A",
+          "A": "persons",
+          "Time": "0min",
+          "g1": 2,
+          "g2": 11
+        },
+        {
+          "ID": "2",
+          "name": "A",
+          "A": "persons",
+          "Time": "10min",
+          "g1": 5,
+          "g2": 14
+        },
+        {
+          "ID": "2",
+          "name": "A",
+          "A": "persons",
+          "Time": "30min",
+          "g1": 8,
+          "g2": 17
+        },
+        {
+          "ID": "3",
+          "name": "C",
+          "A": "persons",
+          "Time": "0min",
+          "g1": 3,
+          "g2": 12
+        },
+        {
+          "ID": "3",
+          "name": "C",
+          "A": "persons",
+          "Time": "10min",
+          "g1": 6,
+          "g2": 15
+        },
+        {
+          "ID": "3",
+          "name": "C",
+          "A": "persons",
+          "Time": "30min",
+          "g1": 9,
+          "g2": 18
+        }
+      ]
+      
+}
