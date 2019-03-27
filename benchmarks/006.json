@@ -1,27 +1,29 @@
-[
-  {
-    "Bucket": "Bucket E",
-    "Budgeted": "$100",
-    "Actual": "$115"
-  },
-  {
-    "Bucket": "Bucket D",
-    "Budgeted": "$100",
-    "Actual": "$90"
-  },
-  {
-    "Bucket": "Bucket C",
-    "Budgeted": "$125",
-    "Actual": "$115"
-  },
-  {
-    "Bucket": "Bucket B",
-    "Budgeted": "$125",
-    "Actual": "$140"
-  },
-  {
-    "Bucket": "Bucket A",
-    "Budgeted": "$140",
-    "Actual": "$150"
-  }
-]
+{
+    "input_data": [
+        {
+            "Bucket": "Bucket E",
+            "Budgeted": "$100",
+            "Actual": "$115"
+        },
+        {
+            "Bucket": "Bucket D",
+            "Budgeted": "$100",
+            "Actual": "$90"
+        },
+        {
+            "Bucket": "Bucket C",
+            "Budgeted": "$125",
+            "Actual": "$115"
+        },
+        {
+            "Bucket": "Bucket B",
+            "Budgeted": "$125",
+            "Actual": "$140"
+        },
+        {
+            "Bucket": "Bucket A",
+            "Budgeted": "$140",
+            "Actual": "$150"
+        }
+    ]
+}

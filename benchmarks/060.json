@@ -1,141 +1,136 @@
 {
-    "input_data":
-    [
+    "input_data": [
         {
-          "fac": "trial1",
-          "score": 1.0355
+            "fac": "trial1",
+            "score": 1.0355
         },
         {
-          "fac": "trial1",
-          "score": 1.4998
+            "fac": "trial1",
+            "score": 1.4998
         },
         {
-          "fac": "trial1",
-          "score": 2.1847
+            "fac": "trial1",
+            "score": 2.1847
         },
         {
-          "fac": "trial1",
-          "score": 1.014
+            "fac": "trial1",
+            "score": 1.014
         },
         {
-          "fac": "trial1",
-          "score": 1.8388
+            "fac": "trial1",
+            "score": 1.8388
         },
         {
-          "fac": "trial1",
-          "score": 1.3549
+            "fac": "trial1",
+            "score": 1.3549
         },
         {
-          "fac": "trial1",
-          "score": 0.9128
+            "fac": "trial1",
+            "score": 0.9128
         },
         {
-          "fac": "trial1",
-          "score": 1.6856
+            "fac": "trial1",
+            "score": 1.6856
         },
         {
-          "fac": "trial1",
-          "score": 3.0877
+            "fac": "trial1",
+            "score": 3.0877
         },
         {
-          "fac": "trial1",
-          "score": 3.2488
+            "fac": "trial1",
+            "score": 3.2488
         },
         {
-          "fac": "trial2",
-          "score": 1.7138
+            "fac": "trial2",
+            "score": 1.7138
         },
         {
-          "fac": "trial2",
-          "score": 2.6099
+            "fac": "trial2",
+            "score": 2.6099
         },
         {
-          "fac": "trial2",
-          "score": 4.3185
+            "fac": "trial2",
+            "score": 4.3185
         },
         {
-          "fac": "trial2",
-          "score": 2.8532
+            "fac": "trial2",
+            "score": 2.8532
         },
         {
-          "fac": "trial2",
-          "score": 3.2195
+            "fac": "trial2",
+            "score": 3.2195
         },
         {
-          "fac": "trial2",
-          "score": 4.4374
+            "fac": "trial2",
+            "score": 4.4374
         },
         {
-          "fac": "trial2",
-          "score": 2.1362
+            "fac": "trial2",
+            "score": 2.1362
         },
         {
-          "fac": "trial2",
-          "score": 2.5519
+            "fac": "trial2",
+            "score": 2.5519
         },
         {
-          "fac": "trial2",
-          "score": 1.2056
+            "fac": "trial2",
+            "score": 1.2056
         },
         {
-          "fac": "trial2",
-          "score": 2.64
+            "fac": "trial2",
+            "score": 2.64
         }
-      ]
-      
-    ,
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "id": 1,
-          "trial1": 1.0355,
-          "trial2": 1.7138
+            "id": 1,
+            "trial1": 1.0355,
+            "trial2": 1.7138
         },
         {
-          "id": 2,
-          "trial1": 1.4998,
-          "trial2": 2.6099
+            "id": 2,
+            "trial1": 1.4998,
+            "trial2": 2.6099
         },
         {
-          "id": 3,
-          "trial1": 2.1847,
-          "trial2": 4.3185
+            "id": 3,
+            "trial1": 2.1847,
+            "trial2": 4.3185
         },
         {
-          "id": 4,
-          "trial1": 1.014,
-          "trial2": 2.8532
+            "id": 4,
+            "trial1": 1.014,
+            "trial2": 2.8532
         },
         {
-          "id": 5,
-          "trial1": 1.8388,
-          "trial2": 3.2195
+            "id": 5,
+            "trial1": 1.8388,
+            "trial2": 3.2195
         },
         {
-          "id": 6,
-          "trial1": 1.3549,
-          "trial2": 4.4374
+            "id": 6,
+            "trial1": 1.3549,
+            "trial2": 4.4374
         },
         {
-          "id": 7,
-          "trial1": 0.9128,
-          "trial2": 2.1362
+            "id": 7,
+            "trial1": 0.9128,
+            "trial2": 2.1362
         },
         {
-          "id": 8,
-          "trial1": 1.6856,
-          "trial2": 2.5519
+            "id": 8,
+            "trial1": 1.6856,
+            "trial2": 2.5519
         },
         {
-          "id": 9,
-          "trial1": 3.0877,
-          "trial2": 1.2056
+            "id": 9,
+            "trial1": 3.0877,
+            "trial2": 1.2056
         },
         {
-          "id": 10,
-          "trial1": 3.2488,
-          "trial2": 2.64
+            "id": 10,
+            "trial1": 3.2488,
+            "trial2": 2.64
         }
-      ]
-      
+    ]
 }

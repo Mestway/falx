@@ -1,124 +1,120 @@
 {
-    "input_data":
-    [
+    "input_data": [
         {
-          "Feature": "A",
-          "value": 6,
-          "Condition": 1,
-          "Sex": "M"
+            "Feature": "A",
+            "value": 6,
+            "Condition": 1,
+            "Sex": "M"
         },
         {
-          "Feature": "A",
-          "value": 4,
-          "Condition": 2,
-          "Sex": "M"
+            "Feature": "A",
+            "value": 4,
+            "Condition": 2,
+            "Sex": "M"
         },
         {
-          "Feature": "A",
-          "value": 10,
-          "Condition": 3,
-          "Sex": "M"
+            "Feature": "A",
+            "value": 10,
+            "Condition": 3,
+            "Sex": "M"
         },
         {
-          "Feature": "Aneg",
-          "value": 1,
-          "Condition": 1,
-          "Sex": "M"
+            "Feature": "Aneg",
+            "value": 1,
+            "Condition": 1,
+            "Sex": "M"
         },
         {
-          "Feature": "Aneg",
-          "value": 2,
-          "Condition": 2,
-          "Sex": "M"
+            "Feature": "Aneg",
+            "value": 2,
+            "Condition": 2,
+            "Sex": "M"
         },
         {
-          "Feature": "Aneg",
-          "value": 6,
-          "Condition": 3,
-          "Sex": "M"
+            "Feature": "Aneg",
+            "value": 6,
+            "Condition": 3,
+            "Sex": "M"
         },
         {
-          "Feature": "A",
-          "value": 2,
-          "Condition": 1,
-          "Sex": "F"
+            "Feature": "A",
+            "value": 2,
+            "Condition": 1,
+            "Sex": "F"
         },
         {
-          "Feature": "A",
-          "value": 3,
-          "Condition": 2,
-          "Sex": "F"
+            "Feature": "A",
+            "value": 3,
+            "Condition": 2,
+            "Sex": "F"
         },
         {
-          "Feature": "A",
-          "value": 4,
-          "Condition": 3,
-          "Sex": "F"
+            "Feature": "A",
+            "value": 4,
+            "Condition": 3,
+            "Sex": "F"
         },
         {
-          "Feature": "Aneg",
-          "value": 5,
-          "Condition": 1,
-          "Sex": "F"
+            "Feature": "Aneg",
+            "value": 5,
+            "Condition": 1,
+            "Sex": "F"
         },
         {
-          "Feature": "Aneg",
-          "value": 6,
-          "Condition": 2,
-          "Sex": "F"
+            "Feature": "Aneg",
+            "value": 6,
+            "Condition": 2,
+            "Sex": "F"
         },
         {
-          "Feature": "Aneg",
-          "value": 9,
-          "Condition": 3,
-          "Sex": "F"
+            "Feature": "Aneg",
+            "value": 9,
+            "Condition": 3,
+            "Sex": "F"
         }
-      ]
-      
-    ,
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "Condition": 1,
-          "Sex": "F",
-          "A": 2,
-          "Aneg": 5,
-          "p": 28.5714
+            "Condition": 1,
+            "Sex": "F",
+            "A": 2,
+            "Aneg": 5,
+            "p": 28.5714
         },
         {
-          "Condition": 1,
-          "Sex": "M",
-          "A": 6,
-          "Aneg": 1,
-          "p": 85.7143
+            "Condition": 1,
+            "Sex": "M",
+            "A": 6,
+            "Aneg": 1,
+            "p": 85.7143
         },
         {
-          "Condition": 2,
-          "Sex": "F",
-          "A": 3,
-          "Aneg": 6,
-          "p": 33.3333
+            "Condition": 2,
+            "Sex": "F",
+            "A": 3,
+            "Aneg": 6,
+            "p": 33.3333
         },
         {
-          "Condition": 2,
-          "Sex": "M",
-          "A": 4,
-          "Aneg": 2,
-          "p": 66.6667
+            "Condition": 2,
+            "Sex": "M",
+            "A": 4,
+            "Aneg": 2,
+            "p": 66.6667
         },
         {
-          "Condition": 3,
-          "Sex": "F",
-          "A": 4,
-          "Aneg": 9,
-          "p": 30.7692
+            "Condition": 3,
+            "Sex": "F",
+            "A": 4,
+            "Aneg": 9,
+            "p": 30.7692
         },
         {
-          "Condition": 3,
-          "Sex": "M",
-          "A": 10,
-          "Aneg": 6,
-          "p": 62.5
+            "Condition": 3,
+            "Sex": "M",
+            "A": 10,
+            "Aneg": 6,
+            "p": 62.5
         }
-      ]      
+    ]
 }

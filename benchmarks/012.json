@@ -1,228 +1,230 @@
-[
-	{
-		"C1": "Q1",
-		"C2": "Targeted",
-		"North America": "56%",
-		"EMEA": "66%",
-		"APAC": "48%",
-		"LATAM": "48%"
-	},
-	{
-		"C1": "Q1",
-		"C2": "Engaged",
-		"North America": "52%",
-		"EMEA": "65%",
-		"APAC": "47%",
-		"LATAM": "48%"
-	},
-	{
-		"C1": "Q1",
-		"C2": "Pitched",
-		"North America": "45%",
-		"EMEA": "59%",
-		"APAC": "45%",
-		"LATAM": "44%"
-	},
-	{
-		"C1": "Q1",
-		"C2": "Adopted",
-		"North America": "36%",
-		"EMEA": "52%",
-		"APAC": "38%",
-		"LATAM": "31%"
-	},
-	{
-		"C1": "Q2",
-		"C2": "Targeted",
-		"North America": "50%",
-		"EMEA": "56%",
-		"APAC": "39%",
-		"LATAM": "43%"
-	},
-	{
-		"C1": "Q2",
-		"C2": "Engaged",
-		"North America": "43%",
-		"EMEA": "54%",
-		"APAC": "37%",
-		"LATAM": "41%"
-	},
-	{
-		"C1": "Q2",
-		"C2": "Pitched",
-		"North America": "39%",
-		"EMEA": "50%",
-		"APAC": "35%",
-		"LATAM": "37%"
-	},
-	{
-		"C1": "Q2",
-		"C2": "Adopted",
-		"North America": "31%",
-		"EMEA": "42%",
-		"APAC": "27%",
-		"LATAM": "26%"
-	},
-	{
-		"C1": "Q3",
-		"C2": "Targeted",
-		"North America": "70%",
-		"EMEA": "91%",
-		"APAC": "87%",
-		"LATAM": "95%"
-	},
-	{
-		"C1": "Q3",
-		"C2": "Engaged",
-		"North America": "55%",
-		"EMEA": "78%",
-		"APAC": "75%",
-		"LATAM": "80%"
-	},
-	{
-		"C1": "Q3",
-		"C2": "Pitched",
-		"North America": "50%",
-		"EMEA": "72%",
-		"APAC": "74%",
-		"LATAM": "73%"
-	},
-	{
-		"C1": "Q3",
-		"C2": "Adopted",
-		"North America": "40%",
-		"EMEA": "62%",
-		"APAC": "59%",
-		"LATAM": "53%"
-	}
-],
-"output_data": [
-  {
-    "C1": "Targeted",
-    "C2": "North America",
-    "C3": "T",
-    "Q1 cohort": "56%",
-    "Q2 cohort": "50%",
-    "Q3 cohort": "70%"
-  },
-  {
-    "C1": "Engaged",
-    "C2": "North America",
-    "C3": "E",
-    "Q1 cohort": "52%",
-    "Q2 cohort": "43%",
-    "Q3 cohort": "55%"
-  },
-  {
-    "C1": "Pitched",
-    "C2": "North America",
-    "C3": "P",
-    "Q1 cohort": "45%",
-    "Q2 cohort": "39%",
-    "Q3 cohort": "50%"
-  },
-  {
-    "C1": "Adopted",
-    "C2": "North America",
-    "C3": "A",
-    "Q1 cohort": "36%",
-    "Q2 cohort": "31%",
-    "Q3 cohort": "40%"
-  },
-  {
-    "C1": "Targeted",
-    "C2": "EMEA",
-    "C3": "T",
-    "Q1 cohort": "66%",
-    "Q2 cohort": "56%",
-    "Q3 cohort": "91%"
-  },
-  {
-    "C1": "Engaged",
-    "C2": "EMEA",
-    "C3": "E",
-    "Q1 cohort": "65%",
-    "Q2 cohort": "54%",
-    "Q3 cohort": "78%"
-  },
-  {
-    "C1": "Pitched",
-    "C2": "EMEA",
-    "C3": "P",
-    "Q1 cohort": "59%",
-    "Q2 cohort": "50%",
-    "Q3 cohort": "72%"
-  },
-  {
-    "C1": "Adopted",
-    "C2": "EMEA",
-    "C3": "A",
-    "Q1 cohort": "52%",
-    "Q2 cohort": "42%",
-    "Q3 cohort": "62%"
-  },
-  {
-    "C1": "Targeted",
-    "C2": "APAC",
-    "C3": "T",
-    "Q1 cohort": "48%",
-    "Q2 cohort": "39%",
-    "Q3 cohort": "87%"
-  },
-  {
-    "C1": "Engaged",
-    "C2": "APAC",
-    "C3": "E",
-    "Q1 cohort": "47%",
-    "Q2 cohort": "37%",
-    "Q3 cohort": "75%"
-  },
-  {
-    "C1": "Pitched",
-    "C2": "APAC",
-    "C3": "P",
-    "Q1 cohort": "45%",
-    "Q2 cohort": "35%",
-    "Q3 cohort": "74%"
-  },
-  {
-    "C1": "Adopted",
-    "C2": "APAC",
-    "C3": "A",
-    "Q1 cohort": "38%",
-    "Q2 cohort": "27%",
-    "Q3 cohort": "59%"
-  },
-  {
-    "C1": "Targeted",
-    "C2": "LATAM",
-    "C3": "T",
-    "Q1 cohort": "48%",
-    "Q2 cohort": "43%",
-    "Q3 cohort": "95%"
-  },
-  {
-    "C1": "Engaged",
-    "C2": "LATAM",
-    "C3": "E",
-    "Q1 cohort": "48%",
-    "Q2 cohort": "41%",
-    "Q3 cohort": "80%"
-  },
-  {
-    "C1": "Pitched",
-    "C2": "LATAM",
-    "C3": "P",
-    "Q1 cohort": "44%",
-    "Q2 cohort": "37%",
-    "Q3 cohort": "73%"
-  },
-  {
-    "C1": "Adopted",
-    "C2": "LATAM",
-    "C3": "A",
-    "Q1 cohort": "31%",
-    "Q2 cohort": "26%",
-    "Q3 cohort": "53%"
-  }
-]
+{
+    "input_data": [
+        {
+            "C1": "Q1",
+            "C2": "Targeted",
+            "North America": "56%",
+            "EMEA": "66%",
+            "APAC": "48%",
+            "LATAM": "48%"
+        },
+        {
+            "C1": "Q1",
+            "C2": "Engaged",
+            "North America": "52%",
+            "EMEA": "65%",
+            "APAC": "47%",
+            "LATAM": "48%"
+        },
+        {
+            "C1": "Q1",
+            "C2": "Pitched",
+            "North America": "45%",
+            "EMEA": "59%",
+            "APAC": "45%",
+            "LATAM": "44%"
+        },
+        {
+            "C1": "Q1",
+            "C2": "Adopted",
+            "North America": "36%",
+            "EMEA": "52%",
+            "APAC": "38%",
+            "LATAM": "31%"
+        },
+        {
+            "C1": "Q2",
+            "C2": "Targeted",
+            "North America": "50%",
+            "EMEA": "56%",
+            "APAC": "39%",
+            "LATAM": "43%"
+        },
+        {
+            "C1": "Q2",
+            "C2": "Engaged",
+            "North America": "43%",
+            "EMEA": "54%",
+            "APAC": "37%",
+            "LATAM": "41%"
+        },
+        {
+            "C1": "Q2",
+            "C2": "Pitched",
+            "North America": "39%",
+            "EMEA": "50%",
+            "APAC": "35%",
+            "LATAM": "37%"
+        },
+        {
+            "C1": "Q2",
+            "C2": "Adopted",
+            "North America": "31%",
+            "EMEA": "42%",
+            "APAC": "27%",
+            "LATAM": "26%"
+        },
+        {
+            "C1": "Q3",
+            "C2": "Targeted",
+            "North America": "70%",
+            "EMEA": "91%",
+            "APAC": "87%",
+            "LATAM": "95%"
+        },
+        {
+            "C1": "Q3",
+            "C2": "Engaged",
+            "North America": "55%",
+            "EMEA": "78%",
+            "APAC": "75%",
+            "LATAM": "80%"
+        },
+        {
+            "C1": "Q3",
+            "C2": "Pitched",
+            "North America": "50%",
+            "EMEA": "72%",
+            "APAC": "74%",
+            "LATAM": "73%"
+        },
+        {
+            "C1": "Q3",
+            "C2": "Adopted",
+            "North America": "40%",
+            "EMEA": "62%",
+            "APAC": "59%",
+            "LATAM": "53%"
+        }
+    ],
+    "output_data": [
+        {
+            "C1": "Targeted",
+            "C2": "North America",
+            "C3": "T",
+            "Q1 cohort": "56%",
+            "Q2 cohort": "50%",
+            "Q3 cohort": "70%"
+        },
+        {
+            "C1": "Engaged",
+            "C2": "North America",
+            "C3": "E",
+            "Q1 cohort": "52%",
+            "Q2 cohort": "43%",
+            "Q3 cohort": "55%"
+        },
+        {
+            "C1": "Pitched",
+            "C2": "North America",
+            "C3": "P",
+            "Q1 cohort": "45%",
+            "Q2 cohort": "39%",
+            "Q3 cohort": "50%"
+        },
+        {
+            "C1": "Adopted",
+            "C2": "North America",
+            "C3": "A",
+            "Q1 cohort": "36%",
+            "Q2 cohort": "31%",
+            "Q3 cohort": "40%"
+        },
+        {
+            "C1": "Targeted",
+            "C2": "EMEA",
+            "C3": "T",
+            "Q1 cohort": "66%",
+            "Q2 cohort": "56%",
+            "Q3 cohort": "91%"
+        },
+        {
+            "C1": "Engaged",
+            "C2": "EMEA",
+            "C3": "E",
+            "Q1 cohort": "65%",
+            "Q2 cohort": "54%",
+            "Q3 cohort": "78%"
+        },
+        {
+            "C1": "Pitched",
+            "C2": "EMEA",
+            "C3": "P",
+            "Q1 cohort": "59%",
+            "Q2 cohort": "50%",
+            "Q3 cohort": "72%"
+        },
+        {
+            "C1": "Adopted",
+            "C2": "EMEA",
+            "C3": "A",
+            "Q1 cohort": "52%",
+            "Q2 cohort": "42%",
+            "Q3 cohort": "62%"
+        },
+        {
+            "C1": "Targeted",
+            "C2": "APAC",
+            "C3": "T",
+            "Q1 cohort": "48%",
+            "Q2 cohort": "39%",
+            "Q3 cohort": "87%"
+        },
+        {
+            "C1": "Engaged",
+            "C2": "APAC",
+            "C3": "E",
+            "Q1 cohort": "47%",
+            "Q2 cohort": "37%",
+            "Q3 cohort": "75%"
+        },
+        {
+            "C1": "Pitched",
+            "C2": "APAC",
+            "C3": "P",
+            "Q1 cohort": "45%",
+            "Q2 cohort": "35%",
+            "Q3 cohort": "74%"
+        },
+        {
+            "C1": "Adopted",
+            "C2": "APAC",
+            "C3": "A",
+            "Q1 cohort": "38%",
+            "Q2 cohort": "27%",
+            "Q3 cohort": "59%"
+        },
+        {
+            "C1": "Targeted",
+            "C2": "LATAM",
+            "C3": "T",
+            "Q1 cohort": "48%",
+            "Q2 cohort": "43%",
+            "Q3 cohort": "95%"
+        },
+        {
+            "C1": "Engaged",
+            "C2": "LATAM",
+            "C3": "E",
+            "Q1 cohort": "48%",
+            "Q2 cohort": "41%",
+            "Q3 cohort": "80%"
+        },
+        {
+            "C1": "Pitched",
+            "C2": "LATAM",
+            "C3": "P",
+            "Q1 cohort": "44%",
+            "Q2 cohort": "37%",
+            "Q3 cohort": "73%"
+        },
+        {
+            "C1": "Adopted",
+            "C2": "LATAM",
+            "C3": "A",
+            "Q1 cohort": "31%",
+            "Q2 cohort": "26%",
+            "Q3 cohort": "53%"
+        }
+    ]
+}

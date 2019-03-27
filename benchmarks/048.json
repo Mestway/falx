@@ -1,86 +1,82 @@
 {
-    "input_data":
-    [
+    "input_data": [
         {
-          "ID": 10,
-          "category": "group1",
-          "A": 1,
-          "B": 3,
-          "C": 0,
-          "totalABC": 4
+            "ID": 10,
+            "category": "group1",
+            "A": 1,
+            "B": 3,
+            "C": 0,
+            "totalABC": 4
         },
         {
-          "ID": 11,
-          "category": "group1",
-          "A": 1,
-          "B": 11,
-          "C": 1,
-          "totalABC": 13
+            "ID": 11,
+            "category": "group1",
+            "A": 1,
+            "B": 11,
+            "C": 1,
+            "totalABC": 13
         },
         {
-          "ID": 12,
-          "category": "group2",
-          "A": 15,
-          "B": 20,
-          "C": 2,
-          "totalABC": 37
+            "ID": 12,
+            "category": "group2",
+            "A": 15,
+            "B": 20,
+            "C": 2,
+            "totalABC": 37
         },
         {
-          "ID": 13,
-          "category": "group2",
-          "A": 6,
-          "B": 12,
-          "C": 2,
-          "totalABC": 20
+            "ID": 13,
+            "category": "group2",
+            "A": 6,
+            "B": 12,
+            "C": 2,
+            "totalABC": 20
         },
         {
-          "ID": 14,
-          "category": "group2",
-          "A": 17,
-          "B": 83,
-          "C": 6,
-          "totalABC": 106
+            "ID": 14,
+            "category": "group2",
+            "A": 17,
+            "B": 83,
+            "C": 6,
+            "totalABC": 106
         }
-      ]      
-    ,
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "category": "group1",
-          "totalABC": 17,
-          "variable": "A",
-          "value": 2
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "A",
+            "value": 2
         },
         {
-          "category": "group2",
-          "totalABC": 163,
-          "variable": "A",
-          "value": 38
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "A",
+            "value": 38
         },
         {
-          "category": "group1",
-          "totalABC": 17,
-          "variable": "B",
-          "value": 14
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "B",
+            "value": 14
         },
         {
-          "category": "group2",
-          "totalABC": 163,
-          "variable": "B",
-          "value": 115
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "B",
+            "value": 115
         },
         {
-          "category": "group1",
-          "totalABC": 17,
-          "variable": "C",
-          "value": 1
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "C",
+            "value": 1
         },
         {
-          "category": "group2",
-          "totalABC": 163,
-          "variable": "C",
-          "value": 10
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "C",
+            "value": 10
         }
-      ]
-      
+    ]
 }

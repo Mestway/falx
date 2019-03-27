@@ -1,251 +1,246 @@
 {
-    "input_data":
-    [
+    "input_data": [
         {
-          "scenario": "measured_raw21",
-          "value": 55,
-          "cat": "measured",
-          "scenario1": "raw21",
-          "drain": "nodrain"
+            "scenario": "measured_raw21",
+            "value": 55,
+            "cat": "measured",
+            "scenario1": "raw21",
+            "drain": "nodrain"
         },
         {
-          "scenario": "measured_raw22",
-          "value": 60,
-          "cat": "measured",
-          "scenario1": "raw22",
-          "drain": "nodrain"
+            "scenario": "measured_raw22",
+            "value": 60,
+            "cat": "measured",
+            "scenario1": "raw22",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_raw21",
-          "value": 54,
-          "cat": "simulated",
-          "scenario1": "raw21",
-          "drain": "nodrain"
+            "scenario": "simulated_raw21",
+            "value": 54,
+            "cat": "simulated",
+            "scenario1": "raw21",
+            "drain": "nodrain"
         },
         {
-          "scenario": "measured_raw21_drain",
-          "value": 55,
-          "cat": "measured",
-          "scenario1": "raw21",
-          "drain": "drain"
+            "scenario": "measured_raw21_drain",
+            "value": 55,
+            "cat": "measured",
+            "scenario1": "raw21",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_raw22_drain",
-          "value": 60,
-          "cat": "measured",
-          "scenario1": "raw22",
-          "drain": "drain"
+            "scenario": "measured_raw22_drain",
+            "value": 60,
+            "cat": "measured",
+            "scenario1": "raw22",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_adj21",
-          "value": 23,
-          "cat": "measured",
-          "scenario1": "adj21",
-          "drain": "nodrain"
+            "scenario": "measured_adj21",
+            "value": 23,
+            "cat": "measured",
+            "scenario1": "adj21",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_raw22",
-          "value": 59,
-          "cat": "simulated",
-          "scenario1": "raw22",
-          "drain": "nodrain"
+            "scenario": "simulated_raw22",
+            "value": 59,
+            "cat": "simulated",
+            "scenario1": "raw22",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_raw21_drain",
-          "value": 54.5,
-          "cat": "simulated",
-          "scenario1": "raw21",
-          "drain": "drain"
+            "scenario": "simulated_raw21_drain",
+            "value": 54.5,
+            "cat": "simulated",
+            "scenario1": "raw21",
+            "drain": "drain"
         },
         {
-          "scenario": "simulated_raw22_drain",
-          "value": 60.2,
-          "cat": "simulated",
-          "scenario1": "raw22",
-          "drain": "drain"
+            "scenario": "simulated_raw22_drain",
+            "value": 60.2,
+            "cat": "simulated",
+            "scenario1": "raw22",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_adj21_drain",
-          "value": 23,
-          "cat": "measured",
-          "scenario1": "adj21",
-          "drain": "drain"
+            "scenario": "measured_adj21_drain",
+            "value": 23,
+            "cat": "measured",
+            "scenario1": "adj21",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_adj22",
-          "value": 27,
-          "cat": "measured",
-          "scenario1": "adj22",
-          "drain": "nodrain"
+            "scenario": "measured_adj22",
+            "value": 27,
+            "cat": "measured",
+            "scenario1": "adj22",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_adj21",
-          "value": 22,
-          "cat": "simulated",
-          "scenario1": "adj21",
-          "drain": "nodrain"
+            "scenario": "simulated_adj21",
+            "value": 22,
+            "cat": "simulated",
+            "scenario1": "adj21",
+            "drain": "nodrain"
         },
         {
-          "scenario": "measured_adj22_drain",
-          "value": 27,
-          "cat": "measured",
-          "scenario1": "adj22",
-          "drain": "drain"
+            "scenario": "measured_adj22_drain",
+            "value": 27,
+            "cat": "measured",
+            "scenario1": "adj22",
+            "drain": "drain"
         },
         {
-          "scenario": "simulated_adj21_drain",
-          "value": 23.4,
-          "cat": "simulated",
-          "scenario1": "adj21",
-          "drain": "drain"
+            "scenario": "simulated_adj21_drain",
+            "value": 23.4,
+            "cat": "simulated",
+            "scenario1": "adj21",
+            "drain": "drain"
         },
         {
-          "scenario": "simulated_adj22",
-          "value": 27.5,
-          "cat": "simulated",
-          "scenario1": "adj22",
-          "drain": "nodrain"
+            "scenario": "simulated_adj22",
+            "value": 27.5,
+            "cat": "simulated",
+            "scenario1": "adj22",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_adj22_drain",
-          "value": 27.2,
-          "cat": "simulated",
-          "scenario1": "adj22",
-          "drain": "drain"
+            "scenario": "simulated_adj22_drain",
+            "value": 27.2,
+            "cat": "simulated",
+            "scenario1": "adj22",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_0.5",
-          "value": 40,
-          "cat": "measured",
-          "scenario1": "0.5",
-          "drain": "nodrain"
+            "scenario": "measured_0.5",
+            "value": 40,
+            "cat": "measured",
+            "scenario1": "0.5",
+            "drain": "nodrain"
         },
         {
-          "scenario": "measured_0.8",
-          "value": 55,
-          "cat": "measured",
-          "scenario1": "0.8",
-          "drain": "nodrain"
+            "scenario": "measured_0.8",
+            "value": 55,
+            "cat": "measured",
+            "scenario1": "0.8",
+            "drain": "nodrain"
         },
         {
-          "scenario": "measured_0.5_drain",
-          "value": 40,
-          "cat": "measured",
-          "scenario1": "0.5",
-          "drain": "drain"
+            "scenario": "measured_0.5_drain",
+            "value": 40,
+            "cat": "measured",
+            "scenario1": "0.5",
+            "drain": "drain"
         },
         {
-          "scenario": "measured_0.8_drain",
-          "value": 55,
-          "cat": "measured",
-          "scenario1": "0.8",
-          "drain": "drain"
+            "scenario": "measured_0.8_drain",
+            "value": 55,
+            "cat": "measured",
+            "scenario1": "0.8",
+            "drain": "drain"
         },
         {
-          "scenario": "simulated_0.5",
-          "value": 41,
-          "cat": "simulated",
-          "scenario1": "0.5",
-          "drain": "nodrain"
+            "scenario": "simulated_0.5",
+            "value": 41,
+            "cat": "simulated",
+            "scenario1": "0.5",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_0.8",
-          "value": 56,
-          "cat": "simulated",
-          "scenario1": "0.8",
-          "drain": "nodrain"
+            "scenario": "simulated_0.8",
+            "value": 56,
+            "cat": "simulated",
+            "scenario1": "0.8",
+            "drain": "nodrain"
         },
         {
-          "scenario": "simulated_0.5_drain",
-          "value": 39.9,
-          "cat": "simulated",
-          "scenario1": "0.5",
-          "drain": "drain"
+            "scenario": "simulated_0.5_drain",
+            "value": 39.9,
+            "cat": "simulated",
+            "scenario1": "0.5",
+            "drain": "drain"
         },
         {
-          "scenario": "simulated_0.8_drain",
-          "value": 55.3,
-          "cat": "simulated",
-          "scenario1": "0.8",
-          "drain": "drain"
+            "scenario": "simulated_0.8_drain",
+            "value": 55.3,
+            "cat": "simulated",
+            "scenario1": "0.8",
+            "drain": "drain"
         }
-      ]
-      
-    ,
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "scenario1": "0.5",
-          "drain": "drain",
-          "measured": 40,
-          "simulated": 39.9
+            "scenario1": "0.5",
+            "drain": "drain",
+            "measured": 40,
+            "simulated": 39.9
         },
         {
-          "scenario1": "0.5",
-          "drain": "nodrain",
-          "measured": 40,
-          "simulated": 41
+            "scenario1": "0.5",
+            "drain": "nodrain",
+            "measured": 40,
+            "simulated": 41
         },
         {
-          "scenario1": "0.8",
-          "drain": "drain",
-          "measured": 55,
-          "simulated": 55.3
+            "scenario1": "0.8",
+            "drain": "drain",
+            "measured": 55,
+            "simulated": 55.3
         },
         {
-          "scenario1": "0.8",
-          "drain": "nodrain",
-          "measured": 55,
-          "simulated": 56
+            "scenario1": "0.8",
+            "drain": "nodrain",
+            "measured": 55,
+            "simulated": 56
         },
         {
-          "scenario1": "adj21",
-          "drain": "drain",
-          "measured": 23,
-          "simulated": 23.4
+            "scenario1": "adj21",
+            "drain": "drain",
+            "measured": 23,
+            "simulated": 23.4
         },
         {
-          "scenario1": "adj21",
-          "drain": "nodrain",
-          "measured": 23,
-          "simulated": 22
+            "scenario1": "adj21",
+            "drain": "nodrain",
+            "measured": 23,
+            "simulated": 22
         },
         {
-          "scenario1": "adj22",
-          "drain": "drain",
-          "measured": 27,
-          "simulated": 27.2
+            "scenario1": "adj22",
+            "drain": "drain",
+            "measured": 27,
+            "simulated": 27.2
         },
         {
-          "scenario1": "adj22",
-          "drain": "nodrain",
-          "measured": 27,
-          "simulated": 27.5
+            "scenario1": "adj22",
+            "drain": "nodrain",
+            "measured": 27,
+            "simulated": 27.5
         },
         {
-          "scenario1": "raw21",
-          "drain": "drain",
-          "measured": 55,
-          "simulated": 54.5
+            "scenario1": "raw21",
+            "drain": "drain",
+            "measured": 55,
+            "simulated": 54.5
         },
         {
-          "scenario1": "raw21",
-          "drain": "nodrain",
-          "measured": 55,
-          "simulated": 54
+            "scenario1": "raw21",
+            "drain": "nodrain",
+            "measured": 55,
+            "simulated": 54
         },
         {
-          "scenario1": "raw22",
-          "drain": "drain",
-          "measured": 60,
-          "simulated": 60.2
+            "scenario1": "raw22",
+            "drain": "drain",
+            "measured": 60,
+            "simulated": 60.2
         },
         {
-          "scenario1": "raw22",
-          "drain": "nodrain",
-          "measured": 60,
-          "simulated": 59
+            "scenario1": "raw22",
+            "drain": "nodrain",
+            "measured": 60,
+            "simulated": 59
         }
-      ]
-      
+    ]
 }

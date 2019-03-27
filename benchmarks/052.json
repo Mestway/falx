@@ -1,64 +1,60 @@
 {
-    "input_data":
-    [
+    "input_data": [
         {
-          "Car": "Audi A6",
-          "Country": "US",
-          "Value": 23
+            "Car": "Audi A6",
+            "Country": "US",
+            "Value": 23
         },
         {
-          "Car": "Audi A6",
-          "Country": "UK",
-          "Value": 12
+            "Car": "Audi A6",
+            "Country": "UK",
+            "Value": 12
         },
         {
-          "Car": "Audi A6",
-          "Country": "DE",
-          "Value": 19
+            "Car": "Audi A6",
+            "Country": "DE",
+            "Value": 19
         },
         {
-          "Car": "BMW X5",
-          "Country": "UK",
-          "Value": 8
+            "Car": "BMW X5",
+            "Country": "UK",
+            "Value": 8
         },
         {
-          "Car": "BMW X5",
-          "Country": "DE",
-          "Value": 5
+            "Car": "BMW X5",
+            "Country": "DE",
+            "Value": 5
         }
-      ]      
-    ,
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "Country": "DE",
-          "Car": "Audi A6",
-          "Value": 19
+            "Country": "DE",
+            "Car": "Audi A6",
+            "Value": 19
         },
         {
-          "Country": "UK",
-          "Car": "Audi A6",
-          "Value": 12
+            "Country": "UK",
+            "Car": "Audi A6",
+            "Value": 12
         },
         {
-          "Country": "US",
-          "Car": "Audi A6",
-          "Value": 23
+            "Country": "US",
+            "Car": "Audi A6",
+            "Value": 23
         },
         {
-          "Country": "DE",
-          "Car": "BMW X5",
-          "Value": 5
+            "Country": "DE",
+            "Car": "BMW X5",
+            "Value": 5
         },
         {
-          "Country": "UK",
-          "Car": "BMW X5",
-          "Value": 8
+            "Country": "UK",
+            "Car": "BMW X5",
+            "Value": 8
         },
         {
-          "Country": "US",
-          "Car": "BMW X5"
+            "Country": "US",
+            "Car": "BMW X5"
         }
-      ]
-      
+    ]
 }

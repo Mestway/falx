@@ -1,42 +1,44 @@
-[
-  {
-    "Complaint Type": "Too noisy",
-    "Count": "27"
-  },
-  {
-    "Complaint Type": "Overpriced",
-    "Count": "789"
-  },
-  {
-    "Complaint Type": "Food is tasteless",
-    "Count": "65"
-  },
-  {
-    "Complaint Type": "Food not fresh",
-    "Count": "9"
-  },
-  {
-    "Complaint Type": "Food is too salty",
-    "Count": "15"
-  },
-  {
-    "Complaint Type": "Not clean",
-    "Count": "30"
-  },
-  {
-    "Complaint Type": "Unfriendly staff",
-    "Count": "12"
-  },
-  {
-    "Complaint Type": "Wait time",
-    "Count": "109"
-  },
-  {
-    "Complaint Type": "No atmosphere",
-    "Count": "45"
-  },
-  {
-    "Complaint Type": "Small portions",
-    "Count": "621"
-  }
-]
+{
+    "input_data": [
+        {
+            "Complaint Type": "Too noisy",
+            "Count": "27"
+        },
+        {
+            "Complaint Type": "Overpriced",
+            "Count": "789"
+        },
+        {
+            "Complaint Type": "Food is tasteless",
+            "Count": "65"
+        },
+        {
+            "Complaint Type": "Food not fresh",
+            "Count": "9"
+        },
+        {
+            "Complaint Type": "Food is too salty",
+            "Count": "15"
+        },
+        {
+            "Complaint Type": "Not clean",
+            "Count": "30"
+        },
+        {
+            "Complaint Type": "Unfriendly staff",
+            "Count": "12"
+        },
+        {
+            "Complaint Type": "Wait time",
+            "Count": "109"
+        },
+        {
+            "Complaint Type": "No atmosphere",
+            "Count": "45"
+        },
+        {
+            "Complaint Type": "Small portions",
+            "Count": "621"
+        }
+    ]
+}

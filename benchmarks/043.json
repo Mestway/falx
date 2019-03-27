@@ -1,2410 +1,2406 @@
 {
-    "input_data":
-    [
-        {
-          "carat": 0.94,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VVS1",
-          "depth": 62.4,
-          "table": 58,
-          "price": 6488,
-          "x": 6.22,
-          "y": 6.27,
-          "z": 3.9
-        },
-        {
-          "carat": 0.3,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "VVS1",
-          "depth": 62.5,
-          "table": 57,
-          "price": 814,
-          "x": 4.26,
-          "y": 4.29,
-          "z": 2.67
-        },
-        {
-          "carat": 1.01,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 62.4,
-          "table": 58,
-          "price": 5999,
-          "x": 6.38,
-          "y": 6.41,
-          "z": 3.99
-        },
-        {
-          "carat": 0.39,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 62.2,
-          "table": 53.9,
-          "price": 787,
-          "x": 4.66,
-          "y": 4.69,
-          "z": 2.9
-        },
-        {
-          "carat": 1.05,
-          "cut": "Very Good",
-          "color": "E",
-          "clarity": "SI2",
-          "depth": 62.2,
-          "table": 59,
-          "price": 3816,
-          "x": 6.44,
-          "y": 6.51,
-          "z": 4.03
-        },
-        {
-          "carat": 1.27,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "SI2",
-          "depth": 58.8,
-          "table": 56,
-          "price": 4936,
-          "x": 7.16,
-          "y": 7.06,
-          "z": 4.18
-        },
-        {
-          "carat": 0.56,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 62.1,
-          "table": 57,
-          "price": 1814,
-          "x": 5.29,
-          "y": 5.28,
-          "z": 3.28
-        },
-        {
-          "carat": 0.55,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "SI2",
-          "depth": 62.2,
-          "table": 54,
-          "price": 1057,
-          "x": 5.28,
-          "y": 5.3,
-          "z": 3.29
-        },
-        {
-          "carat": 0.75,
-          "cut": "Good",
-          "color": "E",
-          "clarity": "SI1",
-          "depth": 58.3,
-          "table": 60,
-          "price": 2923,
-          "x": 5.94,
-          "y": 5.99,
-          "z": 3.48
-        },
-        {
-          "carat": 0.3,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "VS1",
-          "depth": 63.5,
-          "table": 57,
-          "price": 608,
-          "x": 4.29,
-          "y": 4.24,
-          "z": 2.71
-        },
-        {
-          "carat": 1.34,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 62.5,
-          "table": 56,
-          "price": 7504,
-          "x": 7.09,
-          "y": 7.05,
-          "z": 4.42
-        },
-        {
-          "carat": 0.51,
-          "cut": "Good",
-          "color": "F",
-          "clarity": "SI1",
-          "depth": 63.6,
-          "table": 58,
-          "price": 1308,
-          "x": 5.05,
-          "y": 5.08,
-          "z": 3.22
-        },
-        {
-          "carat": 0.54,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VVS2",
-          "depth": 61.4,
-          "table": 55,
-          "price": 1985,
-          "x": 5.22,
-          "y": 5.3,
-          "z": 3.23
-        },
-        {
-          "carat": 0.7,
-          "cut": "Good",
-          "color": "G",
-          "clarity": "SI2",
-          "depth": 64.1,
-          "table": 56,
-          "price": 1935,
-          "x": 5.64,
-          "y": 5.59,
-          "z": 3.6
-        },
-        {
-          "carat": 0.9,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VS1",
-          "depth": 61.6,
-          "table": 56.3,
-          "price": 4531,
-          "x": 6.22,
-          "y": 6.3,
-          "z": 3.86
-        },
-        {
-          "carat": 0.5,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "VVS2",
-          "depth": 62.8,
-          "table": 57,
-          "price": 1764,
-          "x": 5.05,
-          "y": 5.07,
-          "z": 3.18
-        },
-        {
-          "carat": 0.38,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VVS1",
-          "depth": 61.2,
-          "table": 54,
-          "price": 949,
-          "x": 4.69,
-          "y": 4.72,
-          "z": 2.88
-        },
-        {
-          "carat": 0.5,
-          "cut": "Good",
-          "color": "D",
-          "clarity": "SI2",
-          "depth": 63.2,
-          "table": 56,
-          "price": 1157,
-          "x": 5.01,
-          "y": 5.05,
-          "z": 3.18
-        },
-        {
-          "carat": 0.51,
-          "cut": "Very Good",
-          "color": "H",
-          "clarity": "VVS2",
-          "depth": 62.2,
-          "table": 61,
-          "price": 1577,
-          "x": 5.06,
-          "y": 5.1,
-          "z": 3.16
-        },
-        {
-          "carat": 0.26,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "VVS2",
-          "depth": 62.5,
-          "table": 56,
-          "price": 599,
-          "x": 4.1,
-          "y": 4.12,
-          "z": 2.57
-        },
-        {
-          "carat": 0.29,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 61.9,
-          "table": 55,
-          "price": 471,
-          "x": 4.25,
-          "y": 4.28,
-          "z": 2.64
-        },
-        {
-          "carat": 0.54,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 62.9,
-          "table": 57,
-          "price": 1105,
-          "x": 5.18,
-          "y": 5.21,
-          "z": 3.27
-        },
-        {
-          "carat": 1.03,
-          "cut": "Ideal",
-          "color": "E",
-          "clarity": "SI2",
-          "depth": 62,
-          "table": 55,
-          "price": 4095,
-          "x": 6.46,
-          "y": 6.44,
-          "z": 4
-        },
-        {
-          "carat": 0.26,
-          "cut": "Ideal",
-          "color": "E",
-          "clarity": "VVS1",
-          "depth": 62,
-          "table": 56,
-          "price": 769,
-          "x": 4.13,
-          "y": 4.09,
-          "z": 2.55
-        },
-        {
-          "carat": 2.18,
-          "cut": "Very Good",
-          "color": "E",
-          "clarity": "I1",
-          "depth": 62,
-          "table": 60,
-          "price": 10340,
-          "x": 8.25,
-          "y": 8.33,
-          "z": 5.14
-        },
-        {
-          "carat": 0.53,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "VS1",
-          "depth": 61.3,
-          "table": 57,
-          "price": 1607,
-          "x": 5.22,
-          "y": 5.18,
-          "z": 3.19
-        },
-        {
-          "carat": 0.3,
-          "cut": "Premium",
-          "color": "D",
-          "clarity": "VS1",
-          "depth": 61.2,
-          "table": 59,
-          "price": 914,
-          "x": 4.34,
-          "y": 4.29,
-          "z": 2.64
-        },
-        {
-          "carat": 0.57,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "SI2",
-          "depth": 62.2,
-          "table": 53,
-          "price": 1308,
-          "x": 5.34,
-          "y": 5.4,
-          "z": 3.34
-        },
-        {
-          "carat": 0.73,
-          "cut": "Good",
-          "color": "E",
-          "clarity": "I1",
-          "depth": 56.9,
-          "table": 60,
-          "price": 1628,
-          "x": 5.98,
-          "y": 5.93,
-          "z": 3.39
-        },
-        {
-          "carat": 1.16,
-          "cut": "Very Good",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 60.2,
-          "table": 63,
-          "price": 7803,
-          "x": 6.79,
-          "y": 6.7,
-          "z": 4.07
-        },
-        {
-          "carat": 0.97,
-          "cut": "Premium",
-          "color": "F",
-          "clarity": "SI2",
-          "depth": 59.9,
-          "table": 59,
-          "price": 3993,
-          "x": 6.45,
-          "y": 6.38,
-          "z": 3.84
-        },
-        {
-          "carat": 1,
-          "cut": "Fair",
-          "color": "F",
-          "clarity": "SI1",
-          "depth": 64.8,
-          "table": 59,
-          "price": 5292,
-          "x": 6.29,
-          "y": 6.24,
-          "z": 4.06
-        },
-        {
-          "carat": 1.04,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 62.5,
-          "table": 58,
-          "price": 6177,
-          "x": 6.43,
-          "y": 6.47,
-          "z": 4.03
-        },
-        {
-          "carat": 2.01,
-          "cut": "Premium",
-          "color": "J",
-          "clarity": "SI1",
-          "depth": 60.3,
-          "table": 56,
-          "price": 11188,
-          "x": 8.02,
-          "y": 7.96,
-          "z": 4.82
-        },
-        {
-          "carat": 0.41,
-          "cut": "Ideal",
-          "color": "E",
-          "clarity": "VS2",
-          "depth": 61.6,
-          "table": 55,
-          "price": 935,
-          "x": 4.75,
-          "y": 4.79,
-          "z": 2.94
-        },
-        {
-          "carat": 0.5,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VS1",
-          "depth": 60.8,
-          "table": 60,
-          "price": 1629,
-          "x": 5.16,
-          "y": 5.14,
-          "z": 3.13
-        },
-        {
-          "carat": 2.05,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "SI2",
-          "depth": 60.4,
-          "table": 58,
-          "price": 15857,
-          "x": 8.21,
-          "y": 8.27,
-          "z": 4.98
-        },
-        {
-          "carat": 1,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "VVS2",
-          "depth": 61.6,
-          "table": 61,
-          "price": 7623,
-          "x": 6.35,
-          "y": 6.38,
-          "z": 3.92
-        },
-        {
-          "carat": 1.08,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "SI2",
-          "depth": 63.2,
-          "table": 57,
-          "price": 4318,
-          "x": 6.54,
-          "y": 6.5,
-          "z": 4.12
-        },
-        {
-          "carat": 0.59,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "SI1",
-          "depth": 61.6,
-          "table": 57,
-          "price": 1835,
-          "x": 5.44,
-          "y": 5.41,
-          "z": 3.34
-        },
-        {
-          "carat": 1.03,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 62.2,
-          "table": 56,
-          "price": 5814,
-          "x": 6.51,
-          "y": 6.48,
-          "z": 4.04
-        },
-        {
-          "carat": 1.54,
-          "cut": "Ideal",
-          "color": "J",
-          "clarity": "VS2",
-          "depth": 61.9,
-          "table": 57,
-          "price": 8275,
-          "x": 7.39,
-          "y": 7.5,
-          "z": 4.6
-        },
-        {
-          "carat": 1.12,
-          "cut": "Premium",
-          "color": "J",
-          "clarity": "SI1",
-          "depth": 62.3,
-          "table": 57,
-          "price": 4064,
-          "x": 6.72,
-          "y": 6.61,
-          "z": 4.15
-        },
-        {
-          "carat": 0.31,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "VVS2",
-          "depth": 61.5,
-          "table": 56,
-          "price": 802,
-          "x": 4.37,
-          "y": 4.35,
-          "z": 2.68
-        },
-        {
-          "carat": 0.28,
-          "cut": "Very Good",
-          "color": "H",
-          "clarity": "SI1",
-          "depth": 61.5,
-          "table": 56,
-          "price": 360,
-          "x": 4.21,
-          "y": 4.24,
-          "z": 2.6
-        },
-        {
-          "carat": 0.42,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VVS1",
-          "depth": 59.3,
-          "table": 59,
-          "price": 1179,
-          "x": 4.9,
-          "y": 4.92,
-          "z": 2.91
-        },
-        {
-          "carat": 0.72,
-          "cut": "Very Good",
-          "color": "J",
-          "clarity": "VS1",
-          "depth": 62.7,
-          "table": 58,
-          "price": 1988,
-          "x": 5.67,
-          "y": 5.72,
-          "z": 3.57
-        },
-        {
-          "carat": 1.52,
-          "cut": "Ideal",
-          "color": "J",
-          "clarity": "SI1",
-          "depth": 61.9,
-          "table": 57,
-          "price": 7356,
-          "x": 7.33,
-          "y": 7.37,
-          "z": 4.55
-        },
-        {
-          "carat": 2.01,
-          "cut": "Premium",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 62,
-          "table": 56,
-          "price": 12338,
-          "x": 8.01,
-          "y": 7.87,
-          "z": 4.92
-        },
-        {
-          "carat": 2.2,
-          "cut": "Very Good",
-          "color": "H",
-          "clarity": "SI2",
-          "depth": 63.3,
-          "table": 57,
-          "price": 11088,
-          "x": 8.28,
-          "y": 8.17,
-          "z": 5.21
-        },
-        {
-          "carat": 0.36,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "IF",
-          "depth": 61.7,
-          "table": 55,
-          "price": 1210,
-          "x": 4.58,
-          "y": 4.62,
-          "z": 2.84
-        },
-        {
-          "carat": 0.33,
-          "cut": "Very Good",
-          "color": "D",
-          "clarity": "SI1",
-          "depth": 60,
-          "table": 59,
-          "price": 608,
-          "x": 4.47,
-          "y": 4.5,
-          "z": 2.69
-        },
-        {
-          "carat": 1.09,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 62.5,
-          "table": 57,
-          "price": 4584,
-          "x": 6.56,
-          "y": 6.58,
-          "z": 4.11
-        },
-        {
-          "carat": 1.19,
-          "cut": "Premium",
-          "color": "J",
-          "clarity": "VS2",
-          "depth": 62.8,
-          "table": 57,
-          "price": 4761,
-          "x": 6.78,
-          "y": 6.7,
-          "z": 4.23
-        },
-        {
-          "carat": 1.59,
-          "cut": "Very Good",
-          "color": "D",
-          "clarity": "VS2",
-          "depth": 61.4,
-          "table": 60,
-          "price": 12846,
-          "x": 7.47,
-          "y": 7.6,
-          "z": 4.63
-        },
-        {
-          "carat": 0.5,
-          "cut": "Good",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 62.8,
-          "table": 61,
-          "price": 1447,
-          "x": 4.94,
-          "y": 5,
-          "z": 3.12
-        },
-        {
-          "carat": 0.32,
-          "cut": "Very Good",
-          "color": "J",
-          "clarity": "VS2",
-          "depth": 62.9,
-          "table": 56,
-          "price": 393,
-          "x": 4.37,
-          "y": 4.4,
-          "z": 2.76
-        },
-        {
-          "carat": 0.77,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 60.8,
-          "table": 56,
-          "price": 2159,
-          "x": 5.89,
-          "y": 5.92,
-          "z": 3.59
-        },
-        {
-          "carat": 0.54,
-          "cut": "Ideal",
-          "color": "E",
-          "clarity": "VS2",
-          "depth": 61.8,
-          "table": 55,
-          "price": 1847,
-          "x": 5.26,
-          "y": 5.24,
-          "z": 3.24
-        },
-        {
-          "carat": 0.32,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "SI1",
-          "depth": 61.5,
-          "table": 56,
-          "price": 715,
-          "x": 4.41,
-          "y": 4.44,
-          "z": 2.72
-        },
-        {
-          "carat": 1,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "SI1",
-          "depth": 62.5,
-          "table": 55,
-          "price": 6664,
-          "x": 6.42,
-          "y": 6.34,
-          "z": 3.99
-        },
-        {
-          "carat": 0.41,
-          "cut": "Premium",
-          "color": "H",
-          "clarity": "VS1",
-          "depth": 58.2,
-          "table": 59,
-          "price": 990,
-          "x": 4.92,
-          "y": 4.88,
-          "z": 2.85
-        },
-        {
-          "carat": 0.54,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VVS1",
-          "depth": 62.2,
-          "table": 53.9,
-          "price": 2007,
-          "x": 5.22,
-          "y": 5.25,
-          "z": 3.26
-        },
-        {
-          "carat": 2.02,
-          "cut": "Ideal",
-          "color": "J",
-          "clarity": "VS2",
-          "depth": 61.8,
-          "table": 57,
-          "price": 14766,
-          "x": 8.11,
-          "y": 8.14,
-          "z": 5.02
-        },
-        {
-          "carat": 1.54,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 60.1,
-          "table": 61,
-          "price": 7589,
-          "x": 7.41,
-          "y": 7.46,
-          "z": 4.47
-        },
-        {
-          "carat": 0.31,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "SI1",
-          "depth": 62.4,
-          "table": 55,
-          "price": 464,
-          "x": 4.31,
-          "y": 4.35,
-          "z": 2.7
-        },
-        {
-          "carat": 0.91,
-          "cut": "Premium",
-          "color": "E",
-          "clarity": "SI2",
-          "depth": 62.8,
-          "table": 59,
-          "price": 3898,
-          "x": 6.16,
-          "y": 6.13,
-          "z": 3.86
-        },
-        {
-          "carat": 2.01,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "SI1",
-          "depth": 62.2,
-          "table": 56,
-          "price": 18252,
-          "x": 8.03,
-          "y": 8.05,
-          "z": 5
-        },
-        {
-          "carat": 0.7,
-          "cut": "Fair",
-          "color": "I",
-          "clarity": "I1",
-          "depth": 68.6,
-          "table": 57,
-          "price": 1147,
-          "x": 5.46,
-          "y": 5.34,
-          "z": 3.71
-        },
-        {
-          "carat": 0.5,
-          "cut": "Premium",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 60.9,
-          "table": 58,
-          "price": 1436,
-          "x": 5.1,
-          "y": 5.14,
-          "z": 3.12
-        },
-        {
-          "carat": 1.7,
-          "cut": "Ideal",
-          "color": "J",
-          "clarity": "SI2",
-          "depth": 62,
-          "table": 53,
-          "price": 7464,
-          "x": 7.68,
-          "y": 7.65,
-          "z": 4.75
-        },
-        {
-          "carat": 1.04,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VS1",
-          "depth": 61.1,
-          "table": 56,
-          "price": 6632,
-          "x": 6.58,
-          "y": 6.55,
-          "z": 4.01
-        },
-        {
-          "carat": 1,
-          "cut": "Very Good",
-          "color": "F",
-          "clarity": "SI1",
-          "depth": 62.5,
-          "table": 56,
-          "price": 4643,
-          "x": 6.38,
-          "y": 6.42,
-          "z": 4
-        },
-        {
-          "carat": 0.56,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "VS2",
-          "depth": 61.5,
-          "table": 57,
-          "price": 2066,
-          "x": 5.33,
-          "y": 5.28,
-          "z": 3.26
-        },
-        {
-          "carat": 0.32,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "VS2",
-          "depth": 62.4,
-          "table": 57,
-          "price": 758,
-          "x": 4.34,
-          "y": 4.38,
-          "z": 2.72
-        },
-        {
-          "carat": 0.32,
-          "cut": "Premium",
-          "color": "G",
-          "clarity": "VS2",
-          "depth": 62.8,
-          "table": 58,
-          "price": 720,
-          "x": 4.35,
-          "y": 4.31,
-          "z": 2.72
-        },
-        {
-          "carat": 1.56,
-          "cut": "Ideal",
-          "color": "J",
-          "clarity": "SI1",
-          "depth": 61.8,
-          "table": 57,
-          "price": 6727,
-          "x": 7.44,
-          "y": 7.39,
-          "z": 4.58
-        },
-        {
-          "carat": 1.23,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "VS2",
-          "depth": 62.2,
-          "table": 55,
-          "price": 7260,
-          "x": 6.85,
-          "y": 6.81,
-          "z": 4.25
-        },
-        {
-          "carat": 1.02,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "VVS2",
-          "depth": 62.1,
-          "table": 56,
-          "price": 6797,
-          "x": 6.5,
-          "y": 6.45,
-          "z": 4.02
-        },
-        {
-          "carat": 0.9,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "SI2",
-          "depth": 61.5,
-          "table": 57,
-          "price": 3722,
-          "x": 6.07,
-          "y": 6.19,
-          "z": 3.77
-        },
-        {
-          "carat": 0.39,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "SI2",
-          "depth": 61.6,
-          "table": 56,
-          "price": 651,
-          "x": 4.69,
-          "y": 4.72,
-          "z": 2.9
-        },
-        {
-          "carat": 3.01,
-          "cut": "Fair",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 65.8,
-          "table": 56,
-          "price": 18242,
-          "x": 8.99,
-          "y": 8.94,
-          "z": 5.9
-        },
-        {
-          "carat": 0.84,
-          "cut": "Ideal",
-          "color": "D",
-          "clarity": "SI1",
-          "depth": 61.5,
-          "table": 54,
-          "price": 3265,
-          "x": 6.07,
-          "y": 6.13,
-          "z": 3.75
-        },
-        {
-          "carat": 0.34,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "SI1",
-          "depth": 61.5,
-          "table": 56,
-          "price": 507,
-          "x": 4.45,
-          "y": 4.52,
-          "z": 2.76
-        },
-        {
-          "carat": 2.05,
-          "cut": "Premium",
-          "color": "E",
-          "clarity": "SI2",
-          "depth": 62.5,
-          "table": 56,
-          "price": 17294,
-          "x": 8.17,
-          "y": 8.08,
-          "z": 5.08
-        },
-        {
-          "carat": 1.07,
-          "cut": "Very Good",
-          "color": "G",
-          "clarity": "VVS2",
-          "depth": 62.8,
-          "table": 57,
-          "price": 7975,
-          "x": 6.46,
-          "y": 6.56,
-          "z": 4.09
-        },
-        {
-          "carat": 1,
-          "cut": "Good",
-          "color": "H",
-          "clarity": "SI2",
-          "depth": 63.8,
-          "table": 55,
-          "price": 3640,
-          "x": 6.28,
-          "y": 6.24,
-          "z": 4
-        },
-        {
-          "carat": 1.05,
-          "cut": "Very Good",
-          "color": "H",
-          "clarity": "VS2",
-          "depth": 63.2,
-          "table": 58,
-          "price": 5292,
-          "x": 6.46,
-          "y": 6.39,
-          "z": 4.06
-        },
-        {
-          "carat": 0.38,
-          "cut": "Very Good",
-          "color": "I",
-          "clarity": "SI2",
-          "depth": 62.7,
-          "table": 58,
-          "price": 500,
-          "x": 4.57,
-          "y": 4.61,
-          "z": 2.88
-        },
-        {
-          "carat": 1.21,
-          "cut": "Good",
-          "color": "J",
-          "clarity": "SI2",
-          "depth": 61.1,
-          "table": 60.8,
-          "price": 4824,
-          "x": 6.83,
-          "y": 6.89,
-          "z": 4.18
-        },
-        {
-          "carat": 0.86,
-          "cut": "Ideal",
-          "color": "I",
-          "clarity": "VS2",
-          "depth": 62.1,
-          "table": 57,
-          "price": 3121,
-          "x": 6.1,
-          "y": 6.07,
-          "z": 3.78
-        },
-        {
-          "carat": 0.34,
-          "cut": "Ideal",
-          "color": "I",
-          "clarity": "VVS1",
-          "depth": 61.8,
-          "table": 56,
-          "price": 626,
-          "x": 4.47,
-          "y": 4.5,
-          "z": 2.77
-        },
-        {
-          "carat": 1.3,
-          "cut": "Premium",
-          "color": "F",
-          "clarity": "SI1",
-          "depth": 61.4,
-          "table": 59,
-          "price": 8164,
-          "x": 7.01,
-          "y": 6.97,
-          "z": 4.29
-        },
-        {
-          "carat": 1.14,
-          "cut": "Good",
-          "color": "I",
-          "clarity": "VS1",
-          "depth": 63.3,
-          "table": 56,
-          "price": 5056,
-          "x": 6.6,
-          "y": 6.68,
-          "z": 4.2
-        },
-        {
-          "carat": 0.3,
-          "cut": "Ideal",
-          "color": "H",
-          "clarity": "VVS2",
-          "depth": 62.8,
-          "table": 57,
-          "price": 776,
-          "x": 4.25,
-          "y": 4.22,
-          "z": 2.66
-        },
-        {
-          "carat": 0.3,
-          "cut": "Ideal",
-          "color": "F",
-          "clarity": "SI1",
-          "depth": 61.9,
-          "table": 57,
-          "price": 475,
-          "x": 4.31,
-          "y": 4.35,
-          "z": 2.68
-        },
-        {
-          "carat": 0.32,
-          "cut": "Ideal",
-          "color": "E",
-          "clarity": "VVS1",
-          "depth": 61.5,
-          "table": 56,
-          "price": 1140,
-          "x": 4.43,
-          "y": 4.45,
-          "z": 2.73
-        },
-        {
-          "carat": 0.31,
-          "cut": "Premium",
-          "color": "F",
-          "clarity": "VS2",
-          "depth": 60.8,
-          "table": 60,
-          "price": 625,
-          "x": 4.34,
-          "y": 4.37,
-          "z": 2.65
-        },
-        {
-          "carat": 0.25,
-          "cut": "Very Good",
-          "color": "E",
-          "clarity": "VVS2",
-          "depth": 63.4,
-          "table": 58,
-          "price": 575,
-          "x": 3.97,
-          "y": 4.01,
-          "z": 2.53
-        },
-        {
-          "carat": 0.51,
-          "cut": "Ideal",
-          "color": "G",
-          "clarity": "VS1",
-          "depth": 61.6,
-          "table": 56,
-          "price": 1662,
-          "x": 5.18,
-          "y": 5.15,
-          "z": 3.18
+    "input_data": [
+        {
+            "carat": 0.94,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VVS1",
+            "depth": 62.4,
+            "table": 58,
+            "price": 6488,
+            "x": 6.22,
+            "y": 6.27,
+            "z": 3.9
+        },
+        {
+            "carat": 0.3,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "VVS1",
+            "depth": 62.5,
+            "table": 57,
+            "price": 814,
+            "x": 4.26,
+            "y": 4.29,
+            "z": 2.67
+        },
+        {
+            "carat": 1.01,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 62.4,
+            "table": 58,
+            "price": 5999,
+            "x": 6.38,
+            "y": 6.41,
+            "z": 3.99
+        },
+        {
+            "carat": 0.39,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 62.2,
+            "table": 53.9,
+            "price": 787,
+            "x": 4.66,
+            "y": 4.69,
+            "z": 2.9
+        },
+        {
+            "carat": 1.05,
+            "cut": "Very Good",
+            "color": "E",
+            "clarity": "SI2",
+            "depth": 62.2,
+            "table": 59,
+            "price": 3816,
+            "x": 6.44,
+            "y": 6.51,
+            "z": 4.03
+        },
+        {
+            "carat": 1.27,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "SI2",
+            "depth": 58.8,
+            "table": 56,
+            "price": 4936,
+            "x": 7.16,
+            "y": 7.06,
+            "z": 4.18
+        },
+        {
+            "carat": 0.56,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 62.1,
+            "table": 57,
+            "price": 1814,
+            "x": 5.29,
+            "y": 5.28,
+            "z": 3.28
+        },
+        {
+            "carat": 0.55,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "SI2",
+            "depth": 62.2,
+            "table": 54,
+            "price": 1057,
+            "x": 5.28,
+            "y": 5.3,
+            "z": 3.29
+        },
+        {
+            "carat": 0.75,
+            "cut": "Good",
+            "color": "E",
+            "clarity": "SI1",
+            "depth": 58.3,
+            "table": 60,
+            "price": 2923,
+            "x": 5.94,
+            "y": 5.99,
+            "z": 3.48
+        },
+        {
+            "carat": 0.3,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "VS1",
+            "depth": 63.5,
+            "table": 57,
+            "price": 608,
+            "x": 4.29,
+            "y": 4.24,
+            "z": 2.71
+        },
+        {
+            "carat": 1.34,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 62.5,
+            "table": 56,
+            "price": 7504,
+            "x": 7.09,
+            "y": 7.05,
+            "z": 4.42
+        },
+        {
+            "carat": 0.51,
+            "cut": "Good",
+            "color": "F",
+            "clarity": "SI1",
+            "depth": 63.6,
+            "table": 58,
+            "price": 1308,
+            "x": 5.05,
+            "y": 5.08,
+            "z": 3.22
+        },
+        {
+            "carat": 0.54,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VVS2",
+            "depth": 61.4,
+            "table": 55,
+            "price": 1985,
+            "x": 5.22,
+            "y": 5.3,
+            "z": 3.23
+        },
+        {
+            "carat": 0.7,
+            "cut": "Good",
+            "color": "G",
+            "clarity": "SI2",
+            "depth": 64.1,
+            "table": 56,
+            "price": 1935,
+            "x": 5.64,
+            "y": 5.59,
+            "z": 3.6
+        },
+        {
+            "carat": 0.9,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VS1",
+            "depth": 61.6,
+            "table": 56.3,
+            "price": 4531,
+            "x": 6.22,
+            "y": 6.3,
+            "z": 3.86
+        },
+        {
+            "carat": 0.5,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "VVS2",
+            "depth": 62.8,
+            "table": 57,
+            "price": 1764,
+            "x": 5.05,
+            "y": 5.07,
+            "z": 3.18
+        },
+        {
+            "carat": 0.38,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VVS1",
+            "depth": 61.2,
+            "table": 54,
+            "price": 949,
+            "x": 4.69,
+            "y": 4.72,
+            "z": 2.88
+        },
+        {
+            "carat": 0.5,
+            "cut": "Good",
+            "color": "D",
+            "clarity": "SI2",
+            "depth": 63.2,
+            "table": 56,
+            "price": 1157,
+            "x": 5.01,
+            "y": 5.05,
+            "z": 3.18
+        },
+        {
+            "carat": 0.51,
+            "cut": "Very Good",
+            "color": "H",
+            "clarity": "VVS2",
+            "depth": 62.2,
+            "table": 61,
+            "price": 1577,
+            "x": 5.06,
+            "y": 5.1,
+            "z": 3.16
+        },
+        {
+            "carat": 0.26,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "VVS2",
+            "depth": 62.5,
+            "table": 56,
+            "price": 599,
+            "x": 4.1,
+            "y": 4.12,
+            "z": 2.57
+        },
+        {
+            "carat": 0.29,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 61.9,
+            "table": 55,
+            "price": 471,
+            "x": 4.25,
+            "y": 4.28,
+            "z": 2.64
+        },
+        {
+            "carat": 0.54,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 62.9,
+            "table": 57,
+            "price": 1105,
+            "x": 5.18,
+            "y": 5.21,
+            "z": 3.27
+        },
+        {
+            "carat": 1.03,
+            "cut": "Ideal",
+            "color": "E",
+            "clarity": "SI2",
+            "depth": 62,
+            "table": 55,
+            "price": 4095,
+            "x": 6.46,
+            "y": 6.44,
+            "z": 4
+        },
+        {
+            "carat": 0.26,
+            "cut": "Ideal",
+            "color": "E",
+            "clarity": "VVS1",
+            "depth": 62,
+            "table": 56,
+            "price": 769,
+            "x": 4.13,
+            "y": 4.09,
+            "z": 2.55
+        },
+        {
+            "carat": 2.18,
+            "cut": "Very Good",
+            "color": "E",
+            "clarity": "I1",
+            "depth": 62,
+            "table": 60,
+            "price": 10340,
+            "x": 8.25,
+            "y": 8.33,
+            "z": 5.14
+        },
+        {
+            "carat": 0.53,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "VS1",
+            "depth": 61.3,
+            "table": 57,
+            "price": 1607,
+            "x": 5.22,
+            "y": 5.18,
+            "z": 3.19
+        },
+        {
+            "carat": 0.3,
+            "cut": "Premium",
+            "color": "D",
+            "clarity": "VS1",
+            "depth": 61.2,
+            "table": 59,
+            "price": 914,
+            "x": 4.34,
+            "y": 4.29,
+            "z": 2.64
+        },
+        {
+            "carat": 0.57,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "SI2",
+            "depth": 62.2,
+            "table": 53,
+            "price": 1308,
+            "x": 5.34,
+            "y": 5.4,
+            "z": 3.34
+        },
+        {
+            "carat": 0.73,
+            "cut": "Good",
+            "color": "E",
+            "clarity": "I1",
+            "depth": 56.9,
+            "table": 60,
+            "price": 1628,
+            "x": 5.98,
+            "y": 5.93,
+            "z": 3.39
+        },
+        {
+            "carat": 1.16,
+            "cut": "Very Good",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 60.2,
+            "table": 63,
+            "price": 7803,
+            "x": 6.79,
+            "y": 6.7,
+            "z": 4.07
+        },
+        {
+            "carat": 0.97,
+            "cut": "Premium",
+            "color": "F",
+            "clarity": "SI2",
+            "depth": 59.9,
+            "table": 59,
+            "price": 3993,
+            "x": 6.45,
+            "y": 6.38,
+            "z": 3.84
+        },
+        {
+            "carat": 1,
+            "cut": "Fair",
+            "color": "F",
+            "clarity": "SI1",
+            "depth": 64.8,
+            "table": 59,
+            "price": 5292,
+            "x": 6.29,
+            "y": 6.24,
+            "z": 4.06
+        },
+        {
+            "carat": 1.04,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 62.5,
+            "table": 58,
+            "price": 6177,
+            "x": 6.43,
+            "y": 6.47,
+            "z": 4.03
+        },
+        {
+            "carat": 2.01,
+            "cut": "Premium",
+            "color": "J",
+            "clarity": "SI1",
+            "depth": 60.3,
+            "table": 56,
+            "price": 11188,
+            "x": 8.02,
+            "y": 7.96,
+            "z": 4.82
+        },
+        {
+            "carat": 0.41,
+            "cut": "Ideal",
+            "color": "E",
+            "clarity": "VS2",
+            "depth": 61.6,
+            "table": 55,
+            "price": 935,
+            "x": 4.75,
+            "y": 4.79,
+            "z": 2.94
+        },
+        {
+            "carat": 0.5,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VS1",
+            "depth": 60.8,
+            "table": 60,
+            "price": 1629,
+            "x": 5.16,
+            "y": 5.14,
+            "z": 3.13
+        },
+        {
+            "carat": 2.05,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "SI2",
+            "depth": 60.4,
+            "table": 58,
+            "price": 15857,
+            "x": 8.21,
+            "y": 8.27,
+            "z": 4.98
+        },
+        {
+            "carat": 1,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "VVS2",
+            "depth": 61.6,
+            "table": 61,
+            "price": 7623,
+            "x": 6.35,
+            "y": 6.38,
+            "z": 3.92
+        },
+        {
+            "carat": 1.08,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "SI2",
+            "depth": 63.2,
+            "table": 57,
+            "price": 4318,
+            "x": 6.54,
+            "y": 6.5,
+            "z": 4.12
+        },
+        {
+            "carat": 0.59,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "SI1",
+            "depth": 61.6,
+            "table": 57,
+            "price": 1835,
+            "x": 5.44,
+            "y": 5.41,
+            "z": 3.34
+        },
+        {
+            "carat": 1.03,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 62.2,
+            "table": 56,
+            "price": 5814,
+            "x": 6.51,
+            "y": 6.48,
+            "z": 4.04
+        },
+        {
+            "carat": 1.54,
+            "cut": "Ideal",
+            "color": "J",
+            "clarity": "VS2",
+            "depth": 61.9,
+            "table": 57,
+            "price": 8275,
+            "x": 7.39,
+            "y": 7.5,
+            "z": 4.6
+        },
+        {
+            "carat": 1.12,
+            "cut": "Premium",
+            "color": "J",
+            "clarity": "SI1",
+            "depth": 62.3,
+            "table": 57,
+            "price": 4064,
+            "x": 6.72,
+            "y": 6.61,
+            "z": 4.15
+        },
+        {
+            "carat": 0.31,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "VVS2",
+            "depth": 61.5,
+            "table": 56,
+            "price": 802,
+            "x": 4.37,
+            "y": 4.35,
+            "z": 2.68
+        },
+        {
+            "carat": 0.28,
+            "cut": "Very Good",
+            "color": "H",
+            "clarity": "SI1",
+            "depth": 61.5,
+            "table": 56,
+            "price": 360,
+            "x": 4.21,
+            "y": 4.24,
+            "z": 2.6
+        },
+        {
+            "carat": 0.42,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VVS1",
+            "depth": 59.3,
+            "table": 59,
+            "price": 1179,
+            "x": 4.9,
+            "y": 4.92,
+            "z": 2.91
+        },
+        {
+            "carat": 0.72,
+            "cut": "Very Good",
+            "color": "J",
+            "clarity": "VS1",
+            "depth": 62.7,
+            "table": 58,
+            "price": 1988,
+            "x": 5.67,
+            "y": 5.72,
+            "z": 3.57
+        },
+        {
+            "carat": 1.52,
+            "cut": "Ideal",
+            "color": "J",
+            "clarity": "SI1",
+            "depth": 61.9,
+            "table": 57,
+            "price": 7356,
+            "x": 7.33,
+            "y": 7.37,
+            "z": 4.55
+        },
+        {
+            "carat": 2.01,
+            "cut": "Premium",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 62,
+            "table": 56,
+            "price": 12338,
+            "x": 8.01,
+            "y": 7.87,
+            "z": 4.92
+        },
+        {
+            "carat": 2.2,
+            "cut": "Very Good",
+            "color": "H",
+            "clarity": "SI2",
+            "depth": 63.3,
+            "table": 57,
+            "price": 11088,
+            "x": 8.28,
+            "y": 8.17,
+            "z": 5.21
+        },
+        {
+            "carat": 0.36,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "IF",
+            "depth": 61.7,
+            "table": 55,
+            "price": 1210,
+            "x": 4.58,
+            "y": 4.62,
+            "z": 2.84
+        },
+        {
+            "carat": 0.33,
+            "cut": "Very Good",
+            "color": "D",
+            "clarity": "SI1",
+            "depth": 60,
+            "table": 59,
+            "price": 608,
+            "x": 4.47,
+            "y": 4.5,
+            "z": 2.69
+        },
+        {
+            "carat": 1.09,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 62.5,
+            "table": 57,
+            "price": 4584,
+            "x": 6.56,
+            "y": 6.58,
+            "z": 4.11
+        },
+        {
+            "carat": 1.19,
+            "cut": "Premium",
+            "color": "J",
+            "clarity": "VS2",
+            "depth": 62.8,
+            "table": 57,
+            "price": 4761,
+            "x": 6.78,
+            "y": 6.7,
+            "z": 4.23
+        },
+        {
+            "carat": 1.59,
+            "cut": "Very Good",
+            "color": "D",
+            "clarity": "VS2",
+            "depth": 61.4,
+            "table": 60,
+            "price": 12846,
+            "x": 7.47,
+            "y": 7.6,
+            "z": 4.63
+        },
+        {
+            "carat": 0.5,
+            "cut": "Good",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 62.8,
+            "table": 61,
+            "price": 1447,
+            "x": 4.94,
+            "y": 5,
+            "z": 3.12
+        },
+        {
+            "carat": 0.32,
+            "cut": "Very Good",
+            "color": "J",
+            "clarity": "VS2",
+            "depth": 62.9,
+            "table": 56,
+            "price": 393,
+            "x": 4.37,
+            "y": 4.4,
+            "z": 2.76
+        },
+        {
+            "carat": 0.77,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 60.8,
+            "table": 56,
+            "price": 2159,
+            "x": 5.89,
+            "y": 5.92,
+            "z": 3.59
+        },
+        {
+            "carat": 0.54,
+            "cut": "Ideal",
+            "color": "E",
+            "clarity": "VS2",
+            "depth": 61.8,
+            "table": 55,
+            "price": 1847,
+            "x": 5.26,
+            "y": 5.24,
+            "z": 3.24
+        },
+        {
+            "carat": 0.32,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "SI1",
+            "depth": 61.5,
+            "table": 56,
+            "price": 715,
+            "x": 4.41,
+            "y": 4.44,
+            "z": 2.72
+        },
+        {
+            "carat": 1,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "SI1",
+            "depth": 62.5,
+            "table": 55,
+            "price": 6664,
+            "x": 6.42,
+            "y": 6.34,
+            "z": 3.99
+        },
+        {
+            "carat": 0.41,
+            "cut": "Premium",
+            "color": "H",
+            "clarity": "VS1",
+            "depth": 58.2,
+            "table": 59,
+            "price": 990,
+            "x": 4.92,
+            "y": 4.88,
+            "z": 2.85
+        },
+        {
+            "carat": 0.54,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VVS1",
+            "depth": 62.2,
+            "table": 53.9,
+            "price": 2007,
+            "x": 5.22,
+            "y": 5.25,
+            "z": 3.26
+        },
+        {
+            "carat": 2.02,
+            "cut": "Ideal",
+            "color": "J",
+            "clarity": "VS2",
+            "depth": 61.8,
+            "table": 57,
+            "price": 14766,
+            "x": 8.11,
+            "y": 8.14,
+            "z": 5.02
+        },
+        {
+            "carat": 1.54,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 60.1,
+            "table": 61,
+            "price": 7589,
+            "x": 7.41,
+            "y": 7.46,
+            "z": 4.47
+        },
+        {
+            "carat": 0.31,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "SI1",
+            "depth": 62.4,
+            "table": 55,
+            "price": 464,
+            "x": 4.31,
+            "y": 4.35,
+            "z": 2.7
+        },
+        {
+            "carat": 0.91,
+            "cut": "Premium",
+            "color": "E",
+            "clarity": "SI2",
+            "depth": 62.8,
+            "table": 59,
+            "price": 3898,
+            "x": 6.16,
+            "y": 6.13,
+            "z": 3.86
+        },
+        {
+            "carat": 2.01,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "SI1",
+            "depth": 62.2,
+            "table": 56,
+            "price": 18252,
+            "x": 8.03,
+            "y": 8.05,
+            "z": 5
+        },
+        {
+            "carat": 0.7,
+            "cut": "Fair",
+            "color": "I",
+            "clarity": "I1",
+            "depth": 68.6,
+            "table": 57,
+            "price": 1147,
+            "x": 5.46,
+            "y": 5.34,
+            "z": 3.71
+        },
+        {
+            "carat": 0.5,
+            "cut": "Premium",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 60.9,
+            "table": 58,
+            "price": 1436,
+            "x": 5.1,
+            "y": 5.14,
+            "z": 3.12
+        },
+        {
+            "carat": 1.7,
+            "cut": "Ideal",
+            "color": "J",
+            "clarity": "SI2",
+            "depth": 62,
+            "table": 53,
+            "price": 7464,
+            "x": 7.68,
+            "y": 7.65,
+            "z": 4.75
+        },
+        {
+            "carat": 1.04,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VS1",
+            "depth": 61.1,
+            "table": 56,
+            "price": 6632,
+            "x": 6.58,
+            "y": 6.55,
+            "z": 4.01
+        },
+        {
+            "carat": 1,
+            "cut": "Very Good",
+            "color": "F",
+            "clarity": "SI1",
+            "depth": 62.5,
+            "table": 56,
+            "price": 4643,
+            "x": 6.38,
+            "y": 6.42,
+            "z": 4
+        },
+        {
+            "carat": 0.56,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "VS2",
+            "depth": 61.5,
+            "table": 57,
+            "price": 2066,
+            "x": 5.33,
+            "y": 5.28,
+            "z": 3.26
+        },
+        {
+            "carat": 0.32,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "VS2",
+            "depth": 62.4,
+            "table": 57,
+            "price": 758,
+            "x": 4.34,
+            "y": 4.38,
+            "z": 2.72
+        },
+        {
+            "carat": 0.32,
+            "cut": "Premium",
+            "color": "G",
+            "clarity": "VS2",
+            "depth": 62.8,
+            "table": 58,
+            "price": 720,
+            "x": 4.35,
+            "y": 4.31,
+            "z": 2.72
+        },
+        {
+            "carat": 1.56,
+            "cut": "Ideal",
+            "color": "J",
+            "clarity": "SI1",
+            "depth": 61.8,
+            "table": 57,
+            "price": 6727,
+            "x": 7.44,
+            "y": 7.39,
+            "z": 4.58
+        },
+        {
+            "carat": 1.23,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "VS2",
+            "depth": 62.2,
+            "table": 55,
+            "price": 7260,
+            "x": 6.85,
+            "y": 6.81,
+            "z": 4.25
+        },
+        {
+            "carat": 1.02,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "VVS2",
+            "depth": 62.1,
+            "table": 56,
+            "price": 6797,
+            "x": 6.5,
+            "y": 6.45,
+            "z": 4.02
+        },
+        {
+            "carat": 0.9,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "SI2",
+            "depth": 61.5,
+            "table": 57,
+            "price": 3722,
+            "x": 6.07,
+            "y": 6.19,
+            "z": 3.77
+        },
+        {
+            "carat": 0.39,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "SI2",
+            "depth": 61.6,
+            "table": 56,
+            "price": 651,
+            "x": 4.69,
+            "y": 4.72,
+            "z": 2.9
+        },
+        {
+            "carat": 3.01,
+            "cut": "Fair",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 65.8,
+            "table": 56,
+            "price": 18242,
+            "x": 8.99,
+            "y": 8.94,
+            "z": 5.9
+        },
+        {
+            "carat": 0.84,
+            "cut": "Ideal",
+            "color": "D",
+            "clarity": "SI1",
+            "depth": 61.5,
+            "table": 54,
+            "price": 3265,
+            "x": 6.07,
+            "y": 6.13,
+            "z": 3.75
+        },
+        {
+            "carat": 0.34,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "SI1",
+            "depth": 61.5,
+            "table": 56,
+            "price": 507,
+            "x": 4.45,
+            "y": 4.52,
+            "z": 2.76
+        },
+        {
+            "carat": 2.05,
+            "cut": "Premium",
+            "color": "E",
+            "clarity": "SI2",
+            "depth": 62.5,
+            "table": 56,
+            "price": 17294,
+            "x": 8.17,
+            "y": 8.08,
+            "z": 5.08
+        },
+        {
+            "carat": 1.07,
+            "cut": "Very Good",
+            "color": "G",
+            "clarity": "VVS2",
+            "depth": 62.8,
+            "table": 57,
+            "price": 7975,
+            "x": 6.46,
+            "y": 6.56,
+            "z": 4.09
+        },
+        {
+            "carat": 1,
+            "cut": "Good",
+            "color": "H",
+            "clarity": "SI2",
+            "depth": 63.8,
+            "table": 55,
+            "price": 3640,
+            "x": 6.28,
+            "y": 6.24,
+            "z": 4
+        },
+        {
+            "carat": 1.05,
+            "cut": "Very Good",
+            "color": "H",
+            "clarity": "VS2",
+            "depth": 63.2,
+            "table": 58,
+            "price": 5292,
+            "x": 6.46,
+            "y": 6.39,
+            "z": 4.06
+        },
+        {
+            "carat": 0.38,
+            "cut": "Very Good",
+            "color": "I",
+            "clarity": "SI2",
+            "depth": 62.7,
+            "table": 58,
+            "price": 500,
+            "x": 4.57,
+            "y": 4.61,
+            "z": 2.88
+        },
+        {
+            "carat": 1.21,
+            "cut": "Good",
+            "color": "J",
+            "clarity": "SI2",
+            "depth": 61.1,
+            "table": 60.8,
+            "price": 4824,
+            "x": 6.83,
+            "y": 6.89,
+            "z": 4.18
+        },
+        {
+            "carat": 0.86,
+            "cut": "Ideal",
+            "color": "I",
+            "clarity": "VS2",
+            "depth": 62.1,
+            "table": 57,
+            "price": 3121,
+            "x": 6.1,
+            "y": 6.07,
+            "z": 3.78
+        },
+        {
+            "carat": 0.34,
+            "cut": "Ideal",
+            "color": "I",
+            "clarity": "VVS1",
+            "depth": 61.8,
+            "table": 56,
+            "price": 626,
+            "x": 4.47,
+            "y": 4.5,
+            "z": 2.77
+        },
+        {
+            "carat": 1.3,
+            "cut": "Premium",
+            "color": "F",
+            "clarity": "SI1",
+            "depth": 61.4,
+            "table": 59,
+            "price": 8164,
+            "x": 7.01,
+            "y": 6.97,
+            "z": 4.29
+        },
+        {
+            "carat": 1.14,
+            "cut": "Good",
+            "color": "I",
+            "clarity": "VS1",
+            "depth": 63.3,
+            "table": 56,
+            "price": 5056,
+            "x": 6.6,
+            "y": 6.68,
+            "z": 4.2
+        },
+        {
+            "carat": 0.3,
+            "cut": "Ideal",
+            "color": "H",
+            "clarity": "VVS2",
+            "depth": 62.8,
+            "table": 57,
+            "price": 776,
+            "x": 4.25,
+            "y": 4.22,
+            "z": 2.66
+        },
+        {
+            "carat": 0.3,
+            "cut": "Ideal",
+            "color": "F",
+            "clarity": "SI1",
+            "depth": 61.9,
+            "table": 57,
+            "price": 475,
+            "x": 4.31,
+            "y": 4.35,
+            "z": 2.68
+        },
+        {
+            "carat": 0.32,
+            "cut": "Ideal",
+            "color": "E",
+            "clarity": "VVS1",
+            "depth": 61.5,
+            "table": 56,
+            "price": 1140,
+            "x": 4.43,
+            "y": 4.45,
+            "z": 2.73
+        },
+        {
+            "carat": 0.31,
+            "cut": "Premium",
+            "color": "F",
+            "clarity": "VS2",
+            "depth": 60.8,
+            "table": 60,
+            "price": 625,
+            "x": 4.34,
+            "y": 4.37,
+            "z": 2.65
+        },
+        {
+            "carat": 0.25,
+            "cut": "Very Good",
+            "color": "E",
+            "clarity": "VVS2",
+            "depth": 63.4,
+            "table": 58,
+            "price": 575,
+            "x": 3.97,
+            "y": 4.01,
+            "z": 2.53
+        },
+        {
+            "carat": 0.51,
+            "cut": "Ideal",
+            "color": "G",
+            "clarity": "VS1",
+            "depth": 61.6,
+            "table": 56,
+            "price": 1662,
+            "x": 5.18,
+            "y": 5.15,
+            "z": 3.18
         }
-      ],
-  
-    "output_data":
-    [
+    ],
+    "output_data": [
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Fair"
+            "key": "cut",
+            "value": "Fair"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Fair"
+            "key": "cut",
+            "value": "Fair"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Fair"
+            "key": "cut",
+            "value": "Fair"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Good"
+            "key": "cut",
+            "value": "Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "cut",
-          "value": "Premium"
+            "key": "cut",
+            "value": "Premium"
         },
         {
-          "key": "cut",
-          "value": "Very Good"
+            "key": "cut",
+            "value": "Very Good"
         },
         {
-          "key": "cut",
-          "value": "Ideal"
+            "key": "cut",
+            "value": "Ideal"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "D"
+            "key": "color",
+            "value": "D"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "J"
+            "key": "color",
+            "value": "J"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "I"
+            "key": "color",
+            "value": "I"
         },
         {
-          "key": "color",
-          "value": "H"
+            "key": "color",
+            "value": "H"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "F"
+            "key": "color",
+            "value": "F"
         },
         {
-          "key": "color",
-          "value": "E"
+            "key": "color",
+            "value": "E"
         },
         {
-          "key": "color",
-          "value": "G"
+            "key": "color",
+            "value": "G"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "I1"
+            "key": "clarity",
+            "value": "I1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "I1"
+            "key": "clarity",
+            "value": "I1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "IF"
+            "key": "clarity",
+            "value": "IF"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "I1"
+            "key": "clarity",
+            "value": "I1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "SI2"
+            "key": "clarity",
+            "value": "SI2"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "SI1"
+            "key": "clarity",
+            "value": "SI1"
         },
         {
-          "key": "clarity",
-          "value": "VVS1"
+            "key": "clarity",
+            "value": "VVS1"
         },
         {
-          "key": "clarity",
-          "value": "VS2"
+            "key": "clarity",
+            "value": "VS2"
         },
         {
-          "key": "clarity",
-          "value": "VVS2"
+            "key": "clarity",
+            "value": "VVS2"
         },
         {
-          "key": "clarity",
-          "value": "VS1"
+            "key": "clarity",
+            "value": "VS1"
         }
-      ]
-      
+    ]
 }

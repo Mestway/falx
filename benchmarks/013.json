@@ -1,37 +1,39 @@
-[
-	{
-		"Value": "A",
-		"alpha": 2,
-		"beta": 2,
-		"gamma": 3,
-		"Totals": 7
-	},
-	{
-		"Value": "B",
-		"alpha": 2,
-		"beta": 3,
-		"gamma": 3,
-		"Totals": 8
-	},
-	{
-		"Value": "c",
-		"alpha": 3,
-		"beta": 3,
-		"gamma": 3,
-		"Totals": 9
-	},
-	{
-		"Value": "D",
-		"alpha": 3,
-		"beta": 4,
-		"gamma": 2,
-		"Totals": 9
-	},
-	{
-		"Value": "E",
-		"alpha": 4,
-		"beta": 3,
-		"gamma": 2,
-		"Totals": 9
-	}
-]
+{
+    "input_data": [
+        {
+            "Value": "A",
+            "alpha": 2,
+            "beta": 2,
+            "gamma": 3,
+            "Totals": 7
+        },
+        {
+            "Value": "B",
+            "alpha": 2,
+            "beta": 3,
+            "gamma": 3,
+            "Totals": 8
+        },
+        {
+            "Value": "c",
+            "alpha": 3,
+            "beta": 3,
+            "gamma": 3,
+            "Totals": 9
+        },
+        {
+            "Value": "D",
+            "alpha": 3,
+            "beta": 4,
+            "gamma": 2,
+            "Totals": 9
+        },
+        {
+            "Value": "E",
+            "alpha": 4,
+            "beta": 3,
+            "gamma": 2,
+            "Totals": 9
+        }
+    ]
+}

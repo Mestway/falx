@@ -1,107 +1,109 @@
-[
-  {
-    "Year": "2001",
-    "Actual": "1000",
-    "Projected": ""
-  },
-  {
-    "Year": "2002",
-    "Actual": "1050",
-    "Projected": ""
-  },
-  {
-    "Year": "2003",
-    "Actual": "1110",
-    "Projected": ""
-  },
-  {
-    "Year": "2004",
-    "Actual": "1180",
-    "Projected": ""
-  },
-  {
-    "Year": "2005",
-    "Actual": "1260",
-    "Projected": ""
-  },
-  {
-    "Year": "2006",
-    "Actual": "1350",
-    "Projected": ""
-  },
-  {
-    "Year": "2007",
-    "Actual": "1450",
-    "Projected": ""
-  },
-  {
-    "Year": "2008",
-    "Actual": "1560",
-    "Projected": ""
-  },
-  {
-    "Year": "2009",
-    "Actual": "1680",
-    "Projected": ""
-  },
-  {
-    "Year": "2010",
-    "Actual": "1810",
-    "Projected": ""
-  },
-  {
-    "Year": "2011",
-    "Actual": "1950",
-    "Projected": ""
-  },
-  {
-    "Year": "2012",
-    "Actual": "2100",
-    "Projected": ""
-  },
-  {
-    "Year": "2013",
-    "Actual": "2260",
-    "Projected": ""
-  },
-  {
-    "Year": "2014",
-    "Actual": "2430",
-    "Projected": ""
-  },
-  {
-    "Year": "2015",
-    "Actual": "2610",
-    "Projected": ""
-  },
-  {
-    "Year": "2016",
-    "Actual": "2800",
-    "Projected": ""
-  },
-  {
-    "Year": "2017",
-    "Actual": "3000",
-    "Projected": ""
-  },
-  {
-    "Year": "2018",
-    "Actual": "3210",
-    "Projected": "3210"
-  },
-  {
-    "Year": "2025",
-    "Actual": "",
-    "Projected": "4960"
-  },
-  {
-    "Year": "2030",
-    "Actual": "",
-    "Projected": "6510"
-  },
-  {
-    "Year": "2040",
-    "Actual": "",
-    "Projected": "10360"
-  }
-]
+{
+    "input_data": [
+        {
+            "Year": "2001",
+            "Actual": "1000",
+            "Projected": ""
+        },
+        {
+            "Year": "2002",
+            "Actual": "1050",
+            "Projected": ""
+        },
+        {
+            "Year": "2003",
+            "Actual": "1110",
+            "Projected": ""
+        },
+        {
+            "Year": "2004",
+            "Actual": "1180",
+            "Projected": ""
+        },
+        {
+            "Year": "2005",
+            "Actual": "1260",
+            "Projected": ""
+        },
+        {
+            "Year": "2006",
+            "Actual": "1350",
+            "Projected": ""
+        },
+        {
+            "Year": "2007",
+            "Actual": "1450",
+            "Projected": ""
+        },
+        {
+            "Year": "2008",
+            "Actual": "1560",
+            "Projected": ""
+        },
+        {
+            "Year": "2009",
+            "Actual": "1680",
+            "Projected": ""
+        },
+        {
+            "Year": "2010",
+            "Actual": "1810",
+            "Projected": ""
+        },
+        {
+            "Year": "2011",
+            "Actual": "1950",
+            "Projected": ""
+        },
+        {
+            "Year": "2012",
+            "Actual": "2100",
+            "Projected": ""
+        },
+        {
+            "Year": "2013",
+            "Actual": "2260",
+            "Projected": ""
+        },
+        {
+            "Year": "2014",
+            "Actual": "2430",
+            "Projected": ""
+        },
+        {
+            "Year": "2015",
+            "Actual": "2610",
+            "Projected": ""
+        },
+        {
+            "Year": "2016",
+            "Actual": "2800",
+            "Projected": ""
+        },
+        {
+            "Year": "2017",
+            "Actual": "3000",
+            "Projected": ""
+        },
+        {
+            "Year": "2018",
+            "Actual": "3210",
+            "Projected": "3210"
+        },
+        {
+            "Year": "2025",
+            "Actual": "",
+            "Projected": "4960"
+        },
+        {
+            "Year": "2030",
+            "Actual": "",
+            "Projected": "6510"
+        },
+        {
+            "Year": "2040",
+            "Actual": "",
+            "Projected": "10360"
+        }
+    ]
+}

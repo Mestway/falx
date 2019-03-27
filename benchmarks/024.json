@@ -1,42 +1,44 @@
-[
-  {
-    "Parts": "Foundation",
-    "Start Date": "1-Jun",
-    "Duration": "10"
-  },
-  {
-    "Parts": "Walls",
-    "Start Date": "12-Jun",
-    "Duration": "7"
-  },
-  {
-    "Parts": "Roof",
-    "Start Date": "20-Jun",
-    "Duration": "10"
-  },
-  {
-    "Parts": "Windows, Doors",
-    "Start Date": "1-Jul",
-    "Duration": "5"
-  },
-  {
-    "Parts": "Plumbing",
-    "Start Date": "7-Jul",
-    "Duration": "3"
-  },
-  {
-    "Parts": "Electric",
-    "Start Date": "7-Jul",
-    "Duration": "3"
-  },
-  {
-    "Parts": "Painting",
-    "Start Date": "11-Jul",
-    "Duration": "2"
-  },
-  {
-    "Parts": "Flooring",
-    "Start Date": "13-Jul",
-    "Duration": "2"
-  }
-]
+{
+    "input_data": [
+        {
+            "Parts": "Foundation",
+            "Start Date": "1-Jun",
+            "Duration": "10"
+        },
+        {
+            "Parts": "Walls",
+            "Start Date": "12-Jun",
+            "Duration": "7"
+        },
+        {
+            "Parts": "Roof",
+            "Start Date": "20-Jun",
+            "Duration": "10"
+        },
+        {
+            "Parts": "Windows, Doors",
+            "Start Date": "1-Jul",
+            "Duration": "5"
+        },
+        {
+            "Parts": "Plumbing",
+            "Start Date": "7-Jul",
+            "Duration": "3"
+        },
+        {
+            "Parts": "Electric",
+            "Start Date": "7-Jul",
+            "Duration": "3"
+        },
+        {
+            "Parts": "Painting",
+            "Start Date": "11-Jul",
+            "Duration": "2"
+        },
+        {
+            "Parts": "Flooring",
+            "Start Date": "13-Jul",
+            "Duration": "2"
+        }
+    ]
+}

@@ -1,27 +1,29 @@
-[
-	{
-		"Class": "Literacy",
-		"Fall": 34,
-		"Spring": 69
-	},
-	{
-		"Class": "Language",
-		"Fall": 63,
-		"Spring": 77
-	},
-	{
-		"Class": "Math",
-		"Fall": 67,
-		"Spring": 75
-	},
-	{
-		"Class": "Science",
-		"Fall": 92,
-		"Spring": 98
-	},
-	{
-		"Class": "Arts",
-		"Fall": 96,
-		"Spring": 100
-	}
-]
+{
+    "input_data": [
+        {
+            "Class": "Literacy",
+            "Fall": 34,
+            "Spring": 69
+        },
+        {
+            "Class": "Language",
+            "Fall": 63,
+            "Spring": 77
+        },
+        {
+            "Class": "Math",
+            "Fall": 67,
+            "Spring": 75
+        },
+        {
+            "Class": "Science",
+            "Fall": 92,
+            "Spring": 98
+        },
+        {
+            "Class": "Arts",
+            "Fall": 96,
+            "Spring": 100
+        }
+    ]
+}

@@ -1,54 +1,56 @@
-[
-  {
-    "Value": 10,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 2,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 12,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 4,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 5,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 16,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 9,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 18,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 12,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 3,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 4,
-    "Win / Loss": "Win"
-  },
-  {
-    "Value": 4,
-    "Win / Loss": "Loss"
-  },
-  {
-    "Value": 1,
-    "Win / Loss": "Win"
-  }
-]
+{
+    "input_data": [
+        {
+            "Value": 10,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 2,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 12,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 4,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 5,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 16,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 9,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 18,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 12,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 3,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 4,
+            "Win / Loss": "Win"
+        },
+        {
+            "Value": 4,
+            "Win / Loss": "Loss"
+        },
+        {
+            "Value": 1,
+            "Win / Loss": "Win"
+        }
+    ]
+}

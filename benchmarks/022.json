@@ -1,114 +1,116 @@
-[
-  {
-    "#": "1",
-    "Year": "1995",
-    "Coverage": "81%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "2",
-    "Year": "1996",
-    "Coverage": "81%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "3",
-    "Year": "1997",
-    "Coverage": "81%",
-    "Event": "Medicaid coverage for kids",
-    "Event_line": "81%"
-  },
-  {
-    "#": "4",
-    "Year": "1998",
-    "Coverage": "82%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "5",
-    "Year": "1999",
-    "Coverage": "81%",
-    "Event": "Patient bill of rights",
-    "Event_line": "81%"
-  },
-  {
-    "#": "6",
-    "Year": "2000",
-    "Coverage": "82%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "7",
-    "Year": "2001",
-    "Coverage": "85%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "8",
-    "Year": "2002",
-    "Coverage": "85%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "9",
-    "Year": "2003",
-    "Coverage": "84%",
-    "Event": "Medicare Part D",
-    "Event_line": "84%"
-  },
-  {
-    "#": "10",
-    "Year": "2004",
-    "Coverage": "83%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "11",
-    "Year": "2005",
-    "Coverage": "83%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "12",
-    "Year": "2006",
-    "Coverage": "83%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "13",
-    "Year": "2007",
-    "Coverage": "84%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "14",
-    "Year": "2008",
-    "Coverage": "83%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "15",
-    "Year": "2009",
-    "Coverage": "83%",
-    "Event": "",
-    "Event_line": ""
-  },
-  {
-    "#": "16",
-    "Year": "2010",
-    "Coverage": "82%",
-    "Event": "",
-    "Event_line": ""
-  }
-]
+{
+    "input_data": [
+        {
+            "#": "1",
+            "Year": "1995",
+            "Coverage": "81%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "2",
+            "Year": "1996",
+            "Coverage": "81%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "3",
+            "Year": "1997",
+            "Coverage": "81%",
+            "Event": "Medicaid coverage for kids",
+            "Event_line": "81%"
+        },
+        {
+            "#": "4",
+            "Year": "1998",
+            "Coverage": "82%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "5",
+            "Year": "1999",
+            "Coverage": "81%",
+            "Event": "Patient bill of rights",
+            "Event_line": "81%"
+        },
+        {
+            "#": "6",
+            "Year": "2000",
+            "Coverage": "82%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "7",
+            "Year": "2001",
+            "Coverage": "85%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "8",
+            "Year": "2002",
+            "Coverage": "85%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "9",
+            "Year": "2003",
+            "Coverage": "84%",
+            "Event": "Medicare Part D",
+            "Event_line": "84%"
+        },
+        {
+            "#": "10",
+            "Year": "2004",
+            "Coverage": "83%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "11",
+            "Year": "2005",
+            "Coverage": "83%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "12",
+            "Year": "2006",
+            "Coverage": "83%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "13",
+            "Year": "2007",
+            "Coverage": "84%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "14",
+            "Year": "2008",
+            "Coverage": "83%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "15",
+            "Year": "2009",
+            "Coverage": "83%",
+            "Event": "",
+            "Event_line": ""
+        },
+        {
+            "#": "16",
+            "Year": "2010",
+            "Coverage": "82%",
+            "Event": "",
+            "Event_line": ""
+        }
+    ]
+}
