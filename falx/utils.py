@@ -2,7 +2,45 @@ import csv
 import json
 import os
 
-import pandas
+import pandas as pd
+
+
+def infer_column_dtype(column_values):
+	dtype = pd.api.types.infer_dtype(column_values, skipna=True)
+
+	if dtype != "string":
+		return dtype, column_values
+
+	def try_infer_string_type(values):
+		"""try to infer datatype from values """
+		dtype = pd.api.types.infer_dtype(values, skipna=True)
+		ty_check_functions = [
+			lambda l: pd.to_numeric(l),
+			lambda l: pd.to_datetime(values)
+		]
+		for ty_func in ty_check_functions:
+			try:
+				values = ty_func(values)
+				dtype = pd.api.types.infer_dtype(values, skipna=True)
+			except:
+				pass
+			if dtype != "stirng":
+				break
+		return dtype, values
+
+	convert_functions = {
+		"id": (lambda l: True, lambda l: l),
+		"percentage": (lambda l: all(["%" in x for x in l]), lambda l: [x.replace("%", "") for x in l]),
+		"currency": (lambda l: all(["%" in x for x in l]), lambda l: [x.replace("$", "").replace(",", "") for x in l])
+	}
+
+	for key in convert_functions:
+		if convert_functions[key][0](column_values):
+			dtype, values = try_infer_string_type(convert_functions[key][1](column_values))
+		if dtype != "string": break
+	return dtype, values
+
+
 
 def absolute_path(p):
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
@@ -114,7 +152,6 @@ def load_vl_spec(vl_spec_path, inline_data=True):
 
 	return vl_spec
 
-
 def extract_data_props(vl_spec):
 	"""extract properties of data """
 	field_props = []
@@ -126,7 +163,7 @@ def extract_data_props(vl_spec):
 			field_prop["field"] = enc["field"]
 			field_prop["enc_type"] = enc["type"]
 			column_values = [d[field_prop["field"]] for d in data]
-			dtype = pandas.api.types.infer_dtype(column_values)
+			dtype = pd.api.types.infer_dtype(column_values)
 			field_prop["dtype"] = dtype
 			if dtype in ["integer", "float", "mixed-integer-float"]:
 				field_prop["min"] = min(column_values)
