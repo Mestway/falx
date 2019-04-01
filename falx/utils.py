@@ -16,7 +16,7 @@ def infer_column_dtype(column_values):
 		dtype = pd.api.types.infer_dtype(values, skipna=True)
 		ty_check_functions = [
 			lambda l: pd.to_numeric(l),
-			lambda l: pd.to_datetime(values)
+			lambda l: pd.to_datetime(l)
 		]
 		for ty_func in ty_check_functions:
 			try:
@@ -30,8 +30,10 @@ def infer_column_dtype(column_values):
 
 	convert_functions = {
 		"id": (lambda l: True, lambda l: l),
-		"percentage": (lambda l: all(["%" in x for x in l]), lambda l: [x.replace("%", "") for x in l]),
-		"currency": (lambda l: all(["%" in x for x in l]), lambda l: [x.replace("$", "").replace(",", "") for x in l])
+		"percentage": (lambda l: all(["%" in x for x in l]), 
+					   lambda l: [x.replace("%", "").replace(" ", "") if x.strip() not in [""] else "" for x in l]),
+		"currency": (lambda l: True, lambda l: [x.replace("$", "").replace(",", "") for x in l]),
+		"cleaning_missing_number": (lambda l: True, lambda l: [x if x.strip() not in [""] else "" for x in l]),
 	}
 
 	for key in convert_functions:
