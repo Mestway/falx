@@ -39,10 +39,19 @@ def infer_column_dtype(column_values):
 	for key in convert_functions:
 		if convert_functions[key][0](column_values):
 			dtype, values = try_infer_string_type(convert_functions[key][1](column_values))
-		if dtype != "string": break
+		if dtype != "string": 
+			if key == "percentage":
+				values = values / 100.
+			break
 	return dtype, values
 
 
+def load_and_clean_table(input_data):
+	# infer type of each column and then update column value
+	for col in input_data:
+		dtype, new_col_values = infer_column_dtype(input_data[col])
+		input_data[col] = new_col_values
+	return input_data
 
 def absolute_path(p):
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
