@@ -1,7 +1,7 @@
 {
     "input_data": [
         {
-            "Year": "'07",
+            "Year": "2007",
             "SOUTH-Choc": 10,
             "SOUTH-Bisc": 4,
             "WEST-Choc": 6,
@@ -10,7 +10,7 @@
             "NORTH-Bisc": 6
         },
         {
-            "Year": "'08",
+            "Year": "2008",
             "SOUTH-Choc": 11,
             "SOUTH-Bisc": 5,
             "WEST-Choc": 10,
@@ -19,7 +19,7 @@
             "NORTH-Bisc": 6.7
         },
         {
-            "Year": "'09",
+            "Year": "2009",
             "SOUTH-Choc": 14,
             "SOUTH-Bisc": 5.7,
             "WEST-Choc": 12,
@@ -28,7 +28,7 @@
             "NORTH-Bisc": 7
         },
         {
-            "Year": "'10",
+            "Year": "2010",
             "SOUTH-Choc": 16,
             "SOUTH-Bisc": 6,
             "WEST-Choc": 15,
