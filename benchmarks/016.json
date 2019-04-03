@@ -5,7 +5,6 @@
             "Amount": "773000",
             "Year Label": "2011",
             "Revenue": "$773K",
-            "Invisible Bar": "812000",
             "Variance": "39000",
             "Variance %": "+5%"
         },
@@ -14,7 +13,6 @@
             "Amount": "812000",
             "Year Label": "2012",
             "Revenue": "$812K",
-            "Invisible Bar": "367000",
             "Variance": " -445000",
             "Variance %": "-55%"
         },
@@ -23,7 +21,6 @@
             "Amount": "367000",
             "Year Label": "2013",
             "Revenue": "$367K",
-            "Invisible Bar": "484000",
             "Variance": "117000",
             "Variance %": "+32%"
         },
@@ -32,7 +29,6 @@
             "Amount": "484000",
             "Year Label": "2014",
             "Revenue": "$484K",
-            "Invisible Bar": "762000",
             "Variance": "278000",
             "Variance %": "+57%"
         },
@@ -41,7 +37,6 @@
             "Amount": "762000",
             "Year Label": "2015",
             "Revenue": "$762K",
-            "Invisible Bar": "561000",
             "Variance": " -201000",
             "Variance %": "-26%"
         },
@@ -50,7 +45,6 @@
             "Amount": "561000",
             "Year Label": "2016",
             "Revenue": "$561K",
-            "Invisible Bar": "774000",
             "Variance": "213000",
             "Variance %": "+38%"
         },
@@ -59,7 +53,6 @@
             "Amount": "774000",
             "Year Label": "2017",
             "Revenue": "$774K",
-            "Invisible Bar": "",
             "Variance": "",
             "Variance %": ""
         }

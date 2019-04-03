@@ -28,17 +28,25 @@ def infer_column_dtype(column_values):
 				break
 		return dtype, values
 
+	def to_time(l):
+		return l[0] * 60 + l[1]
+
 	convert_functions = {
 		"id": (lambda l: True, lambda l: l),
 		"percentage": (lambda l: all(["%" in x for x in l]), 
 					   lambda l: [x.replace("%", "").replace(" ", "") if x.strip() not in [""] else "" for x in l]),
 		"currency": (lambda l: True, lambda l: [x.replace("$", "").replace(",", "") for x in l]),
 		"cleaning_missing_number": (lambda l: True, lambda l: [x if x.strip() not in [""] else "" for x in l]),
+		"cleaning_time_value": (lambda l: True, lambda l: [to_time([int(y) for y in x.split(":")]) for x in l]),
 	}
 
 	for key in convert_functions:
 		if convert_functions[key][0](column_values):
-			dtype, values = try_infer_string_type(convert_functions[key][1](column_values))
+			try:
+				converted_values = convert_functions[key][1](column_values)
+			except:
+				continue
+			dtype, values = try_infer_string_type(converted_values)
 		if dtype != "string": 
 			if key == "percentage":
 				values = values / 100.
