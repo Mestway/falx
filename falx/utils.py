@@ -16,7 +16,7 @@ def infer_column_dtype(column_values):
 		dtype = pd.api.types.infer_dtype(values, skipna=True)
 		ty_check_functions = [
 			lambda l: pd.to_numeric(l),
-			lambda l: pd.to_datetime(l)
+			lambda l: pd.to_datetime(l, infer_datetime_format=True)
 		]
 		for ty_func in ty_check_functions:
 			try:

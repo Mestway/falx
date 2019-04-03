@@ -2,42 +2,42 @@
     "input_data": [
         {
             "Parts": "Foundation",
-            "Start Date": "1-Jun",
+            "Start Date": "6/1/2000",
             "Duration": "10"
         },
         {
             "Parts": "Walls",
-            "Start Date": "12-Jun",
+            "Start Date": "6/12/2000",
             "Duration": "7"
         },
         {
             "Parts": "Roof",
-            "Start Date": "20-Jun",
+            "Start Date": "6/20/2000",
             "Duration": "10"
         },
         {
             "Parts": "Windows, Doors",
-            "Start Date": "1-Jul",
+            "Start Date": "7/1/2000",
             "Duration": "5"
         },
         {
             "Parts": "Plumbing",
-            "Start Date": "7-Jul",
+            "Start Date": "7/7/2000",
             "Duration": "3"
         },
         {
             "Parts": "Electric",
-            "Start Date": "7-Jul",
+            "Start Date": "7/7/2000",
             "Duration": "3"
         },
         {
             "Parts": "Painting",
-            "Start Date": "11-Jul",
+            "Start Date": "7/11/2000",
             "Duration": "2"
         },
         {
             "Parts": "Flooring",
-            "Start Date": "13-Jul",
+            "Start Date": "7/13/2000",
             "Duration": "2"
         }
     ],
