@@ -69,7 +69,6 @@ def enum_specs(vspec, max_changes=1):
 
 	return outputs
 
-
 def explore_designs(example_vl, target_data, target_fields):
 	"""given an example vl, explore alternatives """
 	results = []

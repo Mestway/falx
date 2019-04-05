@@ -17,7 +17,6 @@ def fieldtype_compatibility_check(spec, field_metadata):
 			return False
 	return True
 
-
 def channel_discrete(enc):
 	return enc["type"] in ["nominal", "ordinal"] or get_attr(enc, "bin")
 
@@ -41,7 +40,6 @@ def get_orientation(spec):
 		print("[err] unable to determine horizontal or vertical for the following spec")
 		print(json.dumps(spec))
 		sys.exit(-1)		
-
 
 def cross_encoding_validation(spec):
 	"""validate the spec cross encodings """
@@ -136,7 +134,6 @@ def cross_encoding_validation(spec):
 		return False
 
 	return True
-
 
 def validate_encoding(enc):
 	"""validate whether an encoding is valid or not """

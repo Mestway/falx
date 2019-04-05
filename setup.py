@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 from setuptools import setup, Command
+import unittest
 
 class CleanCommand(Command):
     """Custom clean command to tidy up the project root."""
@@ -12,6 +13,11 @@ class CleanCommand(Command):
     def run(self):
         os.system('rm -vrf ./build ./dist ./*.pyc ./*.tgz ./*.egg-info')
  
+def falx_test_suite():
+    test_loader = unittest.TestLoader()
+    test_suite = test_loader.discover('test', pattern='test_*.py')
+    return test_suite
+
 setup(name='falx',
       version='0.1',
       description='Visualization By Example',
@@ -19,4 +25,5 @@ setup(name='falx',
       author_email='',
       url='https://github.com/Mestway/falx',
       packages=['falx'],
+      test_suite='setup.falx_test_suite',
       cmdclass={'clean': CleanCommand,})
