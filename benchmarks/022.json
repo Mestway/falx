@@ -113,5 +113,5 @@
             "Event_line": ""
         }
     ],
-    "output_data": []
+    "output_data": [{"#":1,"Coverage":81,"Event":"","Event_line":null,"Year":1995},{"#":2,"Coverage":81,"Event":"","Event_line":null,"Year":1996},{"#":3,"Coverage":81,"Event":"Medicaid coverage for kids","Event_line":81.0,"Year":1997},{"#":4,"Coverage":82,"Event":"","Event_line":null,"Year":1998},{"#":5,"Coverage":81,"Event":"Patient bill of rights","Event_line":81.0,"Year":1999},{"#":6,"Coverage":82,"Event":"","Event_line":null,"Year":2000},{"#":7,"Coverage":85,"Event":"","Event_line":null,"Year":2001},{"#":8,"Coverage":85,"Event":"","Event_line":null,"Year":2002},{"#":9,"Coverage":84,"Event":"Medicare Part D","Event_line":84.0,"Year":2003},{"#":10,"Coverage":83,"Event":"","Event_line":null,"Year":2004},{"#":11,"Coverage":83,"Event":"","Event_line":null,"Year":2005},{"#":12,"Coverage":83,"Event":"","Event_line":null,"Year":2006},{"#":13,"Coverage":84,"Event":"","Event_line":null,"Year":2007},{"#":14,"Coverage":83,"Event":"","Event_line":null,"Year":2008},{"#":15,"Coverage":83,"Event":"","Event_line":null,"Year":2009},{"#":16,"Coverage":82,"Event":"","Event_line":null,"Year":2010}]
 }

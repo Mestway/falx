@@ -41,5 +41,5 @@
             "Duration": "2"
         }
     ],
-    "output_data": []
+    "output_data": [{"Duration":10,"Parts":"Foundation","Start Date":959817600000,"id":0,"End Date":960681600000},{"Duration":7,"Parts":"Walls","Start Date":960768000000,"id":1,"End Date":961372800000},{"Duration":10,"Parts":"Roof","Start Date":961459200000,"id":2,"End Date":962323200000},{"Duration":5,"Parts":"Windows, Doors","Start Date":962409600000,"id":3,"End Date":962841600000},{"Duration":3,"Parts":"Plumbing","Start Date":962928000000,"id":4,"End Date":963187200000},{"Duration":3,"Parts":"Electric","Start Date":962928000000,"id":5,"End Date":963187200000},{"Duration":2,"Parts":"Painting","Start Date":963273600000,"id":6,"End Date":963446400000},{"Duration":2,"Parts":"Flooring","Start Date":963446400000,"id":7,"End Date":963619200000}]
 }

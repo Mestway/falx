@@ -26,5 +26,5 @@
             "Actual": "$150"
         }
     ],
-    "output_data": []
+    "output_data": [{"Bucket":"Bucket E","variable":"Actual","value":115},{"Bucket":"Bucket D","variable":"Actual","value":90},{"Bucket":"Bucket C","variable":"Actual","value":115},{"Bucket":"Bucket B","variable":"Actual","value":140},{"Bucket":"Bucket A","variable":"Actual","value":150},{"Bucket":"Bucket E","variable":"Budgeted","value":100},{"Bucket":"Bucket D","variable":"Budgeted","value":100},{"Bucket":"Bucket C","variable":"Budgeted","value":125},{"Bucket":"Bucket B","variable":"Budgeted","value":125},{"Bucket":"Bucket A","variable":"Budgeted","value":140}]
 }

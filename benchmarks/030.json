@@ -1,6 +1,5 @@
 {
-    "input_data": [
-        {
+    "input_data": [{
             "Sport": "Archery",
             "Endurance": 2.88,
             "Strength": 4.5,
@@ -901,5 +900,3605 @@
             "Rank": 5
         }
     ],
-    "output_data": []
+    "output_data": [{
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Endurance",
+        "value": 2.88,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Endurance",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Endurance",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Endurance",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Endurance",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Endurance",
+        "value": 1.0,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Endurance",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Endurance",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Endurance",
+        "value": 8.63,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Endurance",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Endurance",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Endurance",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Endurance",
+        "value": 9.63,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Endurance",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Endurance",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Endurance",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Endurance",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Endurance",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Endurance",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Endurance",
+        "value": 1.38,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Endurance",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Endurance",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Endurance",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Endurance",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Endurance",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Endurance",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Endurance",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Endurance",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Endurance",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Endurance",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Endurance",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Endurance",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Endurance",
+        "value": 8.13,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Endurance",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Endurance",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Endurance",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Endurance",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Endurance",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Endurance",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Endurance",
+        "value": 9.0,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Endurance",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Endurance",
+        "value": 7.63,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Endurance",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Endurance",
+        "value": 9.25,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Endurance",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Endurance",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Endurance",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Endurance",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Endurance",
+        "value": 9.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Endurance",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Endurance",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Endurance",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Endurance",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Endurance",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Endurance",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Endurance",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Endurance",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Endurance",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Endurance",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Endurance",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Strength",
+        "value": 4.5,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Strength",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Strength",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Strength",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Strength",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Strength",
+        "value": 1.0,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Strength",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Strength",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Strength",
+        "value": 8.13,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Strength",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Strength",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Strength",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Strength",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Strength",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Strength",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Strength",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Strength",
+        "value": 1.63,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Strength",
+        "value": 8.63,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Strength",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Strength",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Strength",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Strength",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Strength",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Strength",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Strength",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Strength",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Strength",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Strength",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Strength",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Strength",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Strength",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Strength",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Strength",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Strength",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Strength",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Strength",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Strength",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Strength",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Strength",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Strength",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Strength",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Strength",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Strength",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Strength",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Strength",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Strength",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Strength",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Strength",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Strength",
+        "value": 9.25,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Strength",
+        "value": 8.38,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Power",
+        "value": 3.13,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Power",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Power",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Power",
+        "value": 7.63,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Power",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Power",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Power",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Power",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Power",
+        "value": 8.63,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Power",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Power",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Power",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Power",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Power",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Power",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Power",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Power",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Power",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Power",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Power",
+        "value": 1.25,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Power",
+        "value": 8.13,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Power",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Power",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Power",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Power",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Power",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Power",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Power",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Power",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Power",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Power",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Power",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Power",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Power",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Power",
+        "value": 1.38,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Power",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Power",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Power",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Power",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Power",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Power",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Power",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Power",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Power",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Power",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Power",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Power",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Power",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Power",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Power",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Power",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Power",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Power",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Power",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Power",
+        "value": 9.13,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Power",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Power",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Power",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Power",
+        "value": 9.75,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Power",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Speed",
+        "value": 1.13,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Speed",
+        "value": 1.63,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Speed",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Speed",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Speed",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Speed",
+        "value": 0.75,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Speed",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Speed",
+        "value": 1.0,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Speed",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Speed",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Speed",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Speed",
+        "value": 1.5,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Speed",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Speed",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Speed",
+        "value": 1.25,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Speed",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Speed",
+        "value": 0.63,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Speed",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Speed",
+        "value": 1.63,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Speed",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Speed",
+        "value": 1.38,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Speed",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Speed",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Speed",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Speed",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Speed",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Speed",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Speed",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Speed",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Speed",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Speed",
+        "value": 0.88,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Speed",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Speed",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Speed",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Speed",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Speed",
+        "value": 8.88,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Speed",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Speed",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Speed",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Speed",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Speed",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Speed",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Speed",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Speed",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Speed",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Speed",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Speed",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Speed",
+        "value": 9.88,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Speed",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Speed",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Speed",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Speed",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Speed",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Speed",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Agility",
+        "value": 1.63,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Agility",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Agility",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Agility",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Agility",
+        "value": 8.13,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Agility",
+        "value": 1.0,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Agility",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Agility",
+        "value": 1.88,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Agility",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Agility",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Agility",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Agility",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Agility",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Agility",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Agility",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Agility",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Agility",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Agility",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Agility",
+        "value": 1.5,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Agility",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Agility",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Agility",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Agility",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Agility",
+        "value": 7.63,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Agility",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Agility",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Agility",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Agility",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Agility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Agility",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Agility",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Agility",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Agility",
+        "value": 1.13,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Agility",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Agility",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Agility",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Agility",
+        "value": 8.25,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Agility",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Agility",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Agility",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Agility",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Agility",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Agility",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Agility",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Agility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Agility",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Agility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Agility",
+        "value": 5.38,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Agility",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Agility",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Agility",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Agility",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Agility",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Agility",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Agility",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Flexibility",
+        "value": 2.63,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Flexibility",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Flexibility",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Flexibility",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Flexibility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Flexibility",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Flexibility",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Flexibility",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Flexibility",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Flexibility",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Flexibility",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Flexibility",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Flexibility",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Flexibility",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Flexibility",
+        "value": 8.5,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Flexibility",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Flexibility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Flexibility",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Flexibility",
+        "value": 8.25,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Flexibility",
+        "value": 1.13,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Flexibility",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Flexibility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Flexibility",
+        "value": 10.0,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Flexibility",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Flexibility",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Flexibility",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Flexibility",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Flexibility",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Flexibility",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Flexibility",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Flexibility",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Flexibility",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Flexibility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Flexibility",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Flexibility",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Flexibility",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Flexibility",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Flexibility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Flexibility",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Flexibility",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Flexibility",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Flexibility",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Flexibility",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Flexibility",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Flexibility",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Flexibility",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Flexibility",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Flexibility",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Flexibility",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Flexibility",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Flexibility",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Flexibility",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Flexibility",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Flexibility",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Flexibility",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Flexibility",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Flexibility",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Flexibility",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Flexibility",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Flexibility",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Nerve",
+        "value": 2.75,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Nerve",
+        "value": 9.88,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Nerve",
+        "value": 1.25,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Nerve",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Nerve",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Nerve",
+        "value": 1.63,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Nerve",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Nerve",
+        "value": 1.63,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Nerve",
+        "value": 8.88,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Nerve",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Nerve",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Nerve",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Nerve",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Nerve",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Nerve",
+        "value": 8.38,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Nerve",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Nerve",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Nerve",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Nerve",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Nerve",
+        "value": 0.88,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Nerve",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Nerve",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Nerve",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Nerve",
+        "value": 8.0,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Nerve",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Nerve",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Nerve",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Nerve",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Nerve",
+        "value": 9.5,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Nerve",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Nerve",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Nerve",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Nerve",
+        "value": 1.75,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Nerve",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Nerve",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Nerve",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Nerve",
+        "value": 9.0,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Nerve",
+        "value": 8.38,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Nerve",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Nerve",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Nerve",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Nerve",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Nerve",
+        "value": 8.25,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Nerve",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Nerve",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Nerve",
+        "value": 1.38,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Nerve",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Nerve",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Nerve",
+        "value": 2.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Nerve",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Nerve",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Nerve",
+        "value": 2.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Nerve",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Nerve",
+        "value": 2.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Nerve",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Nerve",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Nerve",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Nerve",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Nerve",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Nerve",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Durability",
+        "value": 2.13,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Durability",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Durability",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Durability",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Durability",
+        "value": 7.75,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Durability",
+        "value": 0.75,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Durability",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Durability",
+        "value": 1.25,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Durability",
+        "value": 8.5,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Durability",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Durability",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Durability",
+        "value": 1.5,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Durability",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Durability",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Durability",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Durability",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Durability",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Durability",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Durability",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Durability",
+        "value": 0.88,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Durability",
+        "value": 8.5,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Durability",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Durability",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Durability",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Durability",
+        "value": 8.25,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Durability",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Durability",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Durability",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Durability",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Durability",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Durability",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Durability",
+        "value": 3.38,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Durability",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Durability",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Durability",
+        "value": 1.88,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Durability",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Durability",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Durability",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Durability",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Durability",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Durability",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Durability",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Durability",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Durability",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Durability",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Durability",
+        "value": 1.88,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Durability",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Durability",
+        "value": 5.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Durability",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Durability",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Durability",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Durability",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Durability",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Durability",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Durability",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Durability",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Durability",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Durability",
+        "value": 4.63,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Durability",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Durability",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.63,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Hand-Eye Coordination",
+        "value": 8.0,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Hand-Eye Coordination",
+        "value": 9.25,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Hand-Eye Coordination",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.75,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.0,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.5,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.63,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Hand-Eye Coordination",
+        "value": 5.5,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Hand-Eye Coordination",
+        "value": 8.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Hand-Eye Coordination",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Hand-Eye Coordination",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.38,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.75,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Hand-Eye Coordination",
+        "value": 8.88,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.88,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Hand-Eye Coordination",
+        "value": 8.38,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Hand-Eye Coordination",
+        "value": 1.88,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Hand-Eye Coordination",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Hand-Eye Coordination",
+        "value": 5.25,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Hand-Eye Coordination",
+        "value": 7.25,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Hand-Eye Coordination",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Hand-Eye Coordination",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Hand-Eye Coordination",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Archery",
+        "Rank": 55,
+        "variable": "Analytical Aptitude",
+        "value": 3.25,
+        "Archery": true
+    }, {
+        "Sport": "Auto Racing",
+        "Rank": 32,
+        "variable": "Analytical Aptitude",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Badminton",
+        "Rank": 30,
+        "variable": "Analytical Aptitude",
+        "value": 6.13,
+        "Archery": false
+    }, {
+        "Sport": "Baseball\/Softball",
+        "Rank": 9,
+        "variable": "Analytical Aptitude",
+        "value": 6.25,
+        "Archery": false
+    }, {
+        "Sport": "Basketball",
+        "Rank": 4,
+        "variable": "Analytical Aptitude",
+        "value": 7.38,
+        "Archery": false
+    }, {
+        "Sport": "Billiards",
+        "Rank": 59,
+        "variable": "Analytical Aptitude",
+        "value": 5.75,
+        "Archery": false
+    }, {
+        "Sport": "Bobsledding\/Luge",
+        "Rank": 28,
+        "variable": "Analytical Aptitude",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Bowling",
+        "Rank": 57,
+        "variable": "Analytical Aptitude",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Boxing",
+        "Rank": 1,
+        "variable": "Analytical Aptitude",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Canoe\/Kayak",
+        "Rank": 49,
+        "variable": "Analytical Aptitude",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Cheerleading",
+        "Rank": 52,
+        "variable": "Analytical Aptitude",
+        "value": 2.25,
+        "Archery": false
+    }, {
+        "Sport": "Curling",
+        "Rank": 56,
+        "variable": "Analytical Aptitude",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Distance",
+        "Rank": 20,
+        "variable": "Analytical Aptitude",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Cycling: Sprints",
+        "Rank": 27,
+        "variable": "Analytical Aptitude",
+        "value": 4.5,
+        "Archery": false
+    }, {
+        "Sport": "Diving",
+        "Rank": 35,
+        "variable": "Analytical Aptitude",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Equestrian",
+        "Rank": 54,
+        "variable": "Analytical Aptitude",
+        "value": 5.13,
+        "Archery": false
+    }, {
+        "Sport": "Fencing",
+        "Rank": 24,
+        "variable": "Analytical Aptitude",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Field Hockey",
+        "Rank": 17,
+        "variable": "Analytical Aptitude",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Figure Skating",
+        "Rank": 19,
+        "variable": "Analytical Aptitude",
+        "value": 4.25,
+        "Archery": false
+    }, {
+        "Sport": "Fishing",
+        "Rank": 60,
+        "variable": "Analytical Aptitude",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Football",
+        "Rank": 3,
+        "variable": "Analytical Aptitude",
+        "value": 7.13,
+        "Archery": false
+    }, {
+        "Sport": "Golf",
+        "Rank": 51,
+        "variable": "Analytical Aptitude",
+        "value": 6.38,
+        "Archery": false
+    }, {
+        "Sport": "Gymnastics",
+        "Rank": 8,
+        "variable": "Analytical Aptitude",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Horse Racing",
+        "Rank": 50,
+        "variable": "Analytical Aptitude",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Ice Hockey",
+        "Rank": 2,
+        "variable": "Analytical Aptitude",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Lacrosse",
+        "Rank": 14,
+        "variable": "Analytical Aptitude",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Martial Arts",
+        "Rank": 6,
+        "variable": "Analytical Aptitude",
+        "value": 6.88,
+        "Archery": false
+    }, {
+        "Sport": "Racquetball\/Squash",
+        "Rank": 22,
+        "variable": "Analytical Aptitude",
+        "value": 6.5,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Bull\/Bareback\/Bronc Riding",
+        "Rank": 42,
+        "variable": "Analytical Aptitude",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Calf Roping",
+        "Rank": 40,
+        "variable": "Analytical Aptitude",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Rodeo: Steer Wrestling",
+        "Rank": 15,
+        "variable": "Analytical Aptitude",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Roller Skating",
+        "Rank": 52,
+        "variable": "Analytical Aptitude",
+        "value": 2.63,
+        "Archery": false
+    }, {
+        "Sport": "Rowing",
+        "Rank": 39,
+        "variable": "Analytical Aptitude",
+        "value": 3.63,
+        "Archery": false
+    }, {
+        "Sport": "Rugby",
+        "Rank": 13,
+        "variable": "Analytical Aptitude",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Shooting",
+        "Rank": 58,
+        "variable": "Analytical Aptitude",
+        "value": 4.0,
+        "Archery": false
+    }, {
+        "Sport": "Skateboarding",
+        "Rank": 37,
+        "variable": "Analytical Aptitude",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Ski Jumping",
+        "Rank": 29,
+        "variable": "Analytical Aptitude",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Alpine",
+        "Rank": 11,
+        "variable": "Analytical Aptitude",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Freestyle",
+        "Rank": 25,
+        "variable": "Analytical Aptitude",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Skiing: Nordic",
+        "Rank": 30,
+        "variable": "Analytical Aptitude",
+        "value": 3.88,
+        "Archery": false
+    }, {
+        "Sport": "Soccer",
+        "Rank": 10,
+        "variable": "Analytical Aptitude",
+        "value": 7.5,
+        "Archery": false
+    }, {
+        "Sport": "Speed Skating",
+        "Rank": 17,
+        "variable": "Analytical Aptitude",
+        "value": 3.5,
+        "Archery": false
+    }, {
+        "Sport": "Surfing",
+        "Rank": 23,
+        "variable": "Analytical Aptitude",
+        "value": 4.88,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Distance",
+        "Rank": 36,
+        "variable": "Analytical Aptitude",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Swimming (all strokes): Sprints",
+        "Rank": 45,
+        "variable": "Analytical Aptitude",
+        "value": 3.0,
+        "Archery": false
+    }, {
+        "Sport": "Table Tennis",
+        "Rank": 47,
+        "variable": "Analytical Aptitude",
+        "value": 6.0,
+        "Archery": false
+    }, {
+        "Sport": "Team Handball",
+        "Rank": 26,
+        "variable": "Analytical Aptitude",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Tennis",
+        "Rank": 7,
+        "variable": "Analytical Aptitude",
+        "value": 6.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Distance",
+        "Rank": 40,
+        "variable": "Analytical Aptitude",
+        "value": 4.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: High Jump",
+        "Rank": 33,
+        "variable": "Analytical Aptitude",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Long, Triple jumps",
+        "Rank": 34,
+        "variable": "Analytical Aptitude",
+        "value": 3.13,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Middle Distance",
+        "Rank": 43,
+        "variable": "Analytical Aptitude",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Pole Vault",
+        "Rank": 16,
+        "variable": "Analytical Aptitude",
+        "value": 3.75,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Sprints",
+        "Rank": 38,
+        "variable": "Analytical Aptitude",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Track and Field: Weights",
+        "Rank": 48,
+        "variable": "Analytical Aptitude",
+        "value": 2.88,
+        "Archery": false
+    }, {
+        "Sport": "Volleyball",
+        "Rank": 20,
+        "variable": "Analytical Aptitude",
+        "value": 5.88,
+        "Archery": false
+    }, {
+        "Sport": "Water Polo",
+        "Rank": 11,
+        "variable": "Analytical Aptitude",
+        "value": 5.63,
+        "Archery": false
+    }, {
+        "Sport": "Water Skiing",
+        "Rank": 46,
+        "variable": "Analytical Aptitude",
+        "value": 3.25,
+        "Archery": false
+    }, {
+        "Sport": "Weight-Lifting",
+        "Rank": 44,
+        "variable": "Analytical Aptitude",
+        "value": 2.38,
+        "Archery": false
+    }, {
+        "Sport": "Wrestling",
+        "Rank": 5,
+        "variable": "Analytical Aptitude",
+        "value": 6.38,
+        "Archery": false
+    }]
 }
