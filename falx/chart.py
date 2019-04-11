@@ -107,14 +107,12 @@ class BarChart(object):
 		return res
 
 class StackedChart(object):
-	def __init__(self, chart_ty, stack_channel, stack_ty, encodings):
+	def __init__(self, chart_ty, orientation, encodings):
 		""" encodings x,y,color
 			stack_channel, stack_ty: specifies which channel to stack and the stack configuration
 		"""
 		self.chart_ty = chart_ty
-		self.stack_channel = stack_channel
-		self.stack_position = "y" if stack_channel == "x" else "x"
-		self.stack_ty = stack_ty
+		self.orientation = orientation
 		self.encodings = {e.channel:e for e in encodings}
 
 	def to_vl_obj(self):
@@ -122,20 +120,22 @@ class StackedChart(object):
 			"mark": self.chart_ty,
 			"encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
 		}
-		vl_obj["encoding"][self.stack_channel]["stack"] = self.stack_ty
 		return vl_obj
 
 	def eval(self, data):
-		"""first group data based on stack channel and then stack them """								   
-		group_keys = set([r[self.encodings[self.stack_position].field] for r in data])
-		grouped_data = {key: [r for r in data if r[self.encodings[self.stack_position].field] == key] for key in group_keys}
+		"""first group data based on stack channel and then stack them """	
+		stack_pos = "x" if self.orientation == "vertical" else "y"
+
+		# group based on stack_pos channel
+		group_keys = set([r[self.encodings[stack_pos].field] for r in data])
+		grouped_data = {key: [r for r in data if r[self.encodings[stack_pos].field] == key] for key in group_keys}
 		stack_order = self.encodings["color"].sort_order
 
 		res = []
 		for key in grouped_data:
 			vals = grouped_data[key]
 			vals.sort(key=lambda x: x[self.encodings["color"].field], 
-					  reverse=True if stack_order == 'descending' else False)
+					  reverse=False if stack_order == 'ascending' else True)
 
 			# only used when there is no interval value for x, y
 			last_stack_val = 0
@@ -143,11 +143,11 @@ class StackedChart(object):
 				x = get_channel(self.encodings, "x", r)
 				y = get_channel(self.encodings, "y", r)
 
-				if self.stack_channel == "y" and not isinstance(y, (tuple, list,)):
+				if self.orientation == "vertical" and not isinstance(y, (tuple, list,)):
 					y = (last_stack_val, last_stack_val + y)
 					last_stack_val = y[1]
 
-				if self.stack_channel == "x" and not isinstance(x, (tuple, list,)):
+				if self.orientation == "horizontal" and not isinstance(x, (tuple, list,)):
 					x = (last_stack_val, last_stack_val + x)
 					last_stack_val = x[1]
 

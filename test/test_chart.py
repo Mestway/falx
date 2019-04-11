@@ -30,8 +30,7 @@ class TestChart(unittest.TestCase):
     def test_stacked(self):
         chart = StackedChart(
             chart_ty="area",
-            stack_channel="y",
-            stack_ty="normalize",
+            orientation="vertical",
             encodings=[ Encoding("x", "Value", "nominal"),
                         Encoding("y", "value", "quantitative"),
                         Encoding("color", "variable", "nominal") ])
@@ -55,8 +54,7 @@ class TestChart(unittest.TestCase):
 
         area_chart = StackedChart(
             chart_ty="bar",
-            stack_channel="y",
-            stack_ty="normalize",
+            orientation="vertical",
             encodings=[ Encoding("y", "value", "quantitative"),
                         Encoding("color", "variable", "nominal") ])
 
