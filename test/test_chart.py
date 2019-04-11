@@ -29,7 +29,7 @@ class TestChart(unittest.TestCase):
 
     def test_stacked(self):
         chart = StackedChart(
-            chart_ty="area",
+            chart_ty="bar",
             orientation="vertical",
             encodings=[ Encoding("x", "Value", "nominal"),
                         Encoding("y", "value", "quantitative"),
