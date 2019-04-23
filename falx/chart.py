@@ -4,14 +4,16 @@ from pprint import pprint
 
 from namedlist import namedlist
 
-# mutatable
-Rect = namedlist("Rect", ["x", "y", "color", "width", "height", "group"], default=None)
+# mutatable vtrace
+BarV = namedlist("BarV", ["x", "y1", "y2", "color", "group"], default=None)
+BarH = namedlist("BarH", ["x1", "x2", "y", "color", "group"], default=None)
 Point = namedlist("Point", ["shape", "x", "y", "size", "color", "group"], default=None)
 Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "group"], default=None)
 Area = namedlist("Area", ["x", "y", "color", "group"])
 
-get_x = lambda encs, r: sorted((r[encs["x"].field], r[encs["x2"].field])) if "x2" in encs else r[encs["x"].field]
-get_y = lambda encs, r: sorted((r[encs["y"].field], r[encs["y2"].field])) if "y2" in encs else r[encs["y"].field]
+def get_vt_type(v):
+	return type(v).__name__
+
 get_channel = lambda encs, channel, r: r[encs[channel].field] if channel in encs else None
 
 class VisDesign(object):
@@ -30,6 +32,36 @@ class VisDesign(object):
 
 	def eval(self):
 		return self.chart.eval(self.data)
+
+	@staticmethod
+	def inv_eval(vtrace):
+		# partition trace elements by types
+		trace_layer = {}
+		for v in vtrace:
+			vty = get_vt_type(v)
+			if vty not in trace_layer:
+				trace_layer[vty] = []
+			trace_layer[vty].append(v)
+
+		pprint(trace_layer)
+		
+		layers = {}
+		for vty in trace_layer:
+			if vty == "BarV":
+				l1 = BarChart.inv_eval(trace_layer[vty], orientation="vertical")
+				l2 = StackedChart.inv_eval(trace_layer[vty], orientation="vertical")
+				layers[vty] = l1 + l2
+			elif vty == "BarH":
+				l1 = BarChart.inv_eval(trace_layer[vty], orientation="horizontal")
+				l2 = StackedChart.inv_eval(trace_layer[vty], orientation="horizontal")
+				layers[vty] = l1 + l2
+			elif vty == "Point":
+				layers[vty] = ScatterPlot.inv_eval(trace_layer[vty])
+			elif vty == "Line":
+				layers[vty] = LineChart.inv_eval(trace_layer[vty])
+			elif vty == "Area":
+				#TODO: handle area chart later
+				pass
 
 class GroupChart(object):
 	"""Repeat the chart for multiple groups """
@@ -99,12 +131,22 @@ class BarChart(object):
 	def eval(self, data):
 		res = []
 		for r in data:
-			x = get_x(self.encodings, r)
-			y = get_y(self.encodings, r)
-			width = (x[1] - x[0]) if isinstance(x, (tuple, list,)) else (x if self.orientation == "horizontal" else 1)
-			height = (y[1] - y[0]) if isinstance(y, (tuple, list,)) else (y if self.orientation == "vertical" else 1)
-			res.append(Rect(x=x, y=y, width=width, height=height))
+			if self.orientation == "horizontal":
+				x1 = get_channel(self.encodings, "x", r)
+				x2 = get_channel(self.encodings, "x2", r)
+				y = get_channel(self.encodings, "y", r)
+				res.append(BarH(x1=x1, x2=x2, y=y))
+			elif self.orientation == "vertical":
+				y1 = get_channel(self.encodings, "y", r)
+				y2 = get_channel(self.encodings, "y2", r)
+				x = get_channel(self.encodings, "x", r)
+				res.append(BarV(x=x, y1=y1, y2=y2))
 		return res
+
+	@staticmethod
+	def inv_eval(vtrace, orientation):
+		#TODO
+		return []
 
 class StackedChart(object):
 	def __init__(self, chart_ty, orientation, encodings):
@@ -142,21 +184,24 @@ class StackedChart(object):
 			for r in vals:
 				x = get_channel(self.encodings, "x", r)
 				y = get_channel(self.encodings, "y", r)
+				color = get_channel(self.encodings, "color", r)
 
-				if self.orientation == "vertical" and not isinstance(y, (tuple, list,)):
+				if self.orientation == "vertical":
 					y = (last_stack_val, last_stack_val + y)
 					last_stack_val = y[1]
+					res.append(BarV(x=x, y1=y[0], y2=y[1], color=color))
 
-				if self.orientation == "horizontal" and not isinstance(x, (tuple, list,)):
+				if self.orientation == "horizontal":
 					x = (last_stack_val, last_stack_val + x)
 					last_stack_val = x[1]
-
-				width = (x[1] - x[0]) if isinstance(x, (tuple, list,)) else (x if self.encodings["x"].enc_ty == "quantitative" else 1)
-				height = (y[1] - y[0]) if isinstance(y, (tuple, list,)) else (y if self.encodings["y"].enc_ty == "quantitative" else 1)
-				color = get_channel(self.encodings, "color", r)
-				res.append(Rect(x=x, y=y, color=color, width=width, height=height))
+					res.append(BarH(x1=x[0], x2=x[0], y=y, color=color))
 
 		return res
+
+	@staticmethod
+	def inv_eval(vtrace, orientation):
+		#TODO
+		return []
 
 class LineChart(object):
 	def __init__(self, encodings):
@@ -196,6 +241,11 @@ class LineChart(object):
 
 		return res
 
+	@staticmethod
+	def inv_eval(vtrace):
+		#TODO
+		return []
+
 class ScatterPlot(object):
 	def __init__(self, mark_ty, encodings):
 		"""x, y, color, size, shape"""
@@ -218,6 +268,11 @@ class ScatterPlot(object):
 			shape = get_channel(self.encodings, "shape", r)
 			res.append(Point(x=x, y=y, color=color, size=size, shape=shape))
 		return res
+
+	@staticmethod
+	def inv_eval(vtrace):
+		#TODO
+		return []
 
 class Encoding(object):
 	def __init__(self, channel, field, enc_ty, sort_order=None):
