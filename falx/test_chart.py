@@ -28,6 +28,10 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
+
+        print(design.to_vl_json())
+        pprint(trace)
+        for chart in charts: print(chart)
     
 
     def test_stacked(self):
@@ -57,14 +61,15 @@ class TestChart(unittest.TestCase):
     def test_layered_scatter(self):
         line_chart = ScatterPlot(
             mark_ty="point",
-            encodings=[ Encoding("y", "Totals", "quantitative") ])
+            encodings=[ Encoding("x", "Value", "nominal"),
+                        Encoding("y", "Totals", "quantitative") ])
         area_chart = StackedChart(
             chart_ty="bar",
             orientation="vertical",
             encodings=[ Encoding("y", "value", "quantitative"),
-                        Encoding("color", "variable", "nominal") ])
+                        Encoding("color", "variable", "nominal"),
+                        Encoding("x", "Value", "nominal") ])
         chart = LayeredChart(
-            shared_encodings=[Encoding("x", "Value", "nominal")],
             layers=[line_chart, area_chart],
             resolve={"scale": {"y": "independent"}})
 
@@ -72,11 +77,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
 
-        #TODO: fix layer representation
-        
-        print(design.to_vl_json())
-        pprint(trace)
-        for chart in charts: print(chart)
 
     def test_grouped_bar(self):
         chart = BarChart(
@@ -88,9 +88,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
-
-        
-
 
 
 if __name__ == '__main__':

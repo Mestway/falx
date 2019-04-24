@@ -17,20 +17,38 @@ Area = namedlist("Area", ["x", "y", "color", "column"])
 def get_vt_type(v):
     return type(v).__name__
 
+def remove_unused_fields(data):
+    # remove fields that contain none values
+    unused_fields = [key for key in data[0] if any([r[key] is None for r in data])]
+    for r in data:
+        for k in unused_fields:
+            r.pop(k)
+    return unused_fields
+
 get_channel = lambda encs, channel, r: r[encs[channel].field] if channel in encs else None
 
 class VisDesign(object):
     """Top level visualization construct """
     def __init__(self, data, chart):
-
         # data can either be a table list (for layered chart) or a single table
-
         self.data = data
         self.chart = chart
 
     def to_vl_obj(self):
         chart_obj = self.chart.to_vl_obj()
-        chart_obj["data"] = {"values": self.data}
+        if isinstance(self.data[0], (list,)):
+            # this case represents a data list for layered chart
+            combined_data = []
+            for i, layer_data in enumerate(self.data):
+                for r in layer_data:
+                    new_r = copy.copy(r)
+                    new_r["layer_id"] = i
+                    combined_data.append(new_r)
+
+            chart_obj["data"] = {"values": combined_data}
+        else:
+            chart_obj["data"] = {"values": self.data}
+
         return chart_obj
 
     def to_vl_json(self):
@@ -52,18 +70,17 @@ class VisDesign(object):
 
 
 class LayeredChart(object):
-    def __init__(self, layers, shared_encodings, resolve):
+    def __init__(self, layers, resolve):
         """A layered chart, shared encodings contains encodings for all layers. """
         self.layers = layers
-        self.shared_encodings = {e.channel:e for e in shared_encodings}
         self.resolve = resolve
 
     def to_vl_obj(self):
         layer_obj = [l.to_vl_obj() for l in self.layers]
-        for l in layer_obj:
+        for i, l in enumerate(layer_obj):
             l["mark"] = {"type": l["mark"], "opacity": 0.7}
+            l["transform"] = [{"filter": "datum.layer_id == {}".format(i)}]
         vl_obj = {
-            "encoding": {e:self.shared_encodings[e].to_vl_obj() for e in self.shared_encodings},
             "layer": layer_obj,
             "resolve": self.resolve
         }
@@ -76,10 +93,7 @@ class LayeredChart(object):
         """obtain elements in each layer and put them together. """
         result = []
         for data, layer in zip(data_list, self.layers):
-            inst_layer = copy.copy(layer)
-            for e in self.shared_encodings:
-                inst_layer.encodings[e] = self.shared_encodings[e]
-            result += inst_layer.eval(data)
+            result += layer.eval(data)
         return result
 
     @staticmethod
@@ -117,14 +131,14 @@ class LayeredChart(object):
             layer_candidates = [layers[vty] for vty in layers]
             sizes = [list(range(len(l))) for l in layer_candidates]
             
+            # iterating over combinations for different layers
             for id_list in itertools.product(*sizes):
-
-                pairs = [layer_candidates[i][id_list[i]] for i in range(len(id_list))]
-
-                data_list = [cl[0] for cl in pairs]
-                chart_layers = [cl[1] for cl in pairs]
-                res.append((data_list, LayeredChart(layers=chart_layers, shared_encodings=[], resolve={})))
-            return  res #return (LayeredChart(layers=layers,shared_encodings=[],resolve={}))
+                #id_list[i] is the candidate (data, layer) pair for layer i
+                data_layer_pairs = [layer_candidates[i][id_list[i]] for i in range(len(id_list))]
+                data_list = [cl[0] for cl in data_layer_pairs]
+                chart_layers = [cl[1] for cl in data_layer_pairs]
+                res.append((data_list, LayeredChart(layers=chart_layers, resolve={})))
+            return  res 
 
 
 class BarChart(object):
@@ -132,6 +146,7 @@ class BarChart(object):
         """encodings of x,y,x2,y2
             orientation is one of vertical / horizontal
         """
+        assert(orientation in ["horizontal", "vertical"])
         self.encodings = {e.channel:e for e in encodings}
         self.orientation = orientation
 
@@ -164,28 +179,31 @@ class BarChart(object):
     @staticmethod
     def inv_eval(vtrace, orientation):
         data = []
+
+        assert(orientation in ["horizontal", "vertical"])
+        
         if orientation == "vertical":
             for vt in vtrace:
                 data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column})
-            
-            encodings = []
-            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("column", "nominal")]:
-                field_name = "c_{}".format(channel)
-                encodings.append(Encoding(channel, field_name, enc_ty))
-
-            bar_chart = BarChart(encodings=encodings, orientation=orientation)
-
-        elif orientation == "horizontal":
+            channel_types = [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("column", "nominal")]
+       
+        if orientation == "horizontal":
             for vt in vtrace:
                 data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column})
+            channel_types = [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("column", "nominal")]
+        
+        # remove fields that contain none values
+        unused_fields = remove_unused_fields(data)
 
-            encodings = []
-            for channel, enc_ty in [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("column", "nominal")]:
-                field_name = "c_{}".format(channel)
-                encodings.append(Encoding(channel, field_name, enc_ty))
-            bar_chart = BarChart(encodings=encodings, orientation=orientation)
-        else:
-            print('[Error] orientation should be vertical or horizontal, given: {}'.format(orientation))
+        encodings = []
+        for channel, enc_ty in channel_types:
+            field_name = "c_{}".format(channel)
+            if field_name in unused_fields:
+                continue
+            encodings.append(Encoding(channel, field_name, enc_ty))
+
+        bar_chart = BarChart(encodings=encodings, orientation=orientation)
+
         return [(data, bar_chart)]
 
 
@@ -194,6 +212,7 @@ class StackedChart(object):
         """ encodings x,y,color
             stack_channel, stack_ty: specifies which channel to stack and the stack configuration
         """
+        assert(orientation in ["horizontal", "vertical"])
         self.chart_ty = chart_ty
         self.orientation = orientation
         self.encodings = {e.channel:e for e in encodings}
@@ -244,28 +263,36 @@ class StackedChart(object):
 
     @staticmethod
     def inv_eval(vtrace, orientation):
+
+        assert(orientation in ["horizontal", "vertical"])
+
         """inverse construction of vertical bars """
         if ((orientation=="horizontal" and any([vt.x1 is None or vt.x2 is None for vt in vtrace]))
             or (orientation=="vertical" and any([vt.y1 is None or vt.y2 is None for vt in vtrace]))):
                 # it does not satisfy stacked bar semantics
                 return []
+        
         data = []
         if orientation == "vertical":
             # vertical stacked bar
             for vt in vtrace:
                 data.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color, "c_column": vt.column})
-            encodings = []
-            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("color", "nominal"), ("column", "nominal")]:
-                field_name = "c_{}".format(channel)
-                encodings.append(Encoding(channel, field_name, enc_ty))
+            channel_types = [("x", "nominal"), ("y", "quantitative"), ("color", "nominal"), ("column", "nominal")]
         elif orientation == "horizontal":
             # horizontal stacked bar
             for vt in vtrace:
                 data.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color, "c_column": vt.column})
-            encodings = []
-            for channel, enc_ty in [("x", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]:
-                field_name = "c_{}".format(channel)
-                encodings.append(Encoding(channel, field_name, enc_ty))
+            channel_types = [("x", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]
+
+        # remove fields that contain none values
+        unused_fields = remove_unused_fields(data)
+
+        encodings = []
+        for channel, enc_ty in channel_types:
+            field_name = "c_{}".format(channel)
+            if field_name in unused_fields:
+                continue
+            encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = StackedChart(chart_ty="bar", encodings=encodings, orientation=orientation)
         return [(data, bar_chart)]
@@ -277,7 +304,7 @@ class LineChart(object):
         self.encodings = {e.channel:e for e in encodings}
         if "order" not in self.encodings:
             # the default order to connect points is based on x encoding
-            self.encodings["order"] = self.encodings["x"]
+            self.encodings["order"] = Encoding(channel="order", field=self.encodings["x"].field, enc_ty="quantitative")
 
     def to_vl_obj(self):
         return {
@@ -324,9 +351,13 @@ class LineChart(object):
         
         data = [json.loads(r) for r in frozen_data]
 
+        unused_fields = remove_unused_fields(data)
+
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), ("size", "nominal"), ("color", "nominal")]:
             field_name = "c_{}".format(channel)
+            if field_name in unused_fields:
+                continue
             if channel in ["x", "y"]:
                 dtype = utils.infer_dtype([r[field_name] for r in data])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
@@ -371,15 +402,15 @@ class ScatterPlot(object):
                          "c_color": vt.color, "c_shape": vt.shape, "c_column": vt.column})
 
         # remove fields that contain none values
-        unused_fields = []# [key for key in data[0] if any([r[key] is None for r in data])]
-        for r in data:
-            for k in unused_fields:
-                r.pop(k)
+        unused_fields = remove_unused_fields(data)
 
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), 
                                 ("size", "_"), ("color", "nominal"), ("shape", "nominal"), ("column", "nominal")]:
             field_name = "c_{}".format(channel)
+            if field_name in unused_fields: 
+                continue
+
             if channel in ["x", "y", "size"]:
                 # the type needs to be determined by datatype
                 dtype = utils.infer_dtype([r[field_name] for r in data])
