@@ -4,8 +4,10 @@ import os
 
 import pandas as pd
 
+def infer_dtype(values):
+	return pd.api.types.infer_dtype(values, skipna=True)
 
-def infer_column_dtype(column_values):
+def clean_column_dtype(column_values):
 	dtype = pd.api.types.infer_dtype(column_values, skipna=True)
 
 	if dtype != "string":

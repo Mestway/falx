@@ -33,7 +33,7 @@ def load_dataset(data_dir):
 			input_data = pd.read_json(json.dumps(data["input_data"]))
 			# infer type of each column and then update column value
 			for col in input_data:
-				dtype, new_col_values = utils.infer_column_dtype(input_data[col])
+				dtype, new_col_values = utils.clean_column_dtype(input_data[col])
 				input_data[col] = new_col_values
 				print(col, ":", dtype)
 				#print(input_data[col])
