@@ -36,10 +36,14 @@ class TestChart(unittest.TestCase):
             orientation="vertical",
             encodings=[ Encoding("x", "Value", "nominal"),
                         Encoding("y", "value", "quantitative"),
-                        Encoding("color", "variable", "nominal") ])
+                        Encoding("color", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
+
+        print(design.to_vl_json())
+        pprint(trace)
+        for chart in charts: print(chart)
 
 
     def test_scatter(self):
@@ -52,6 +56,8 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
+
+        
 
 
     def test_layered_scatter(self):
@@ -71,21 +77,20 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         #charts = VisDesign.inv_eval(trace)
-
+        
 
     def test_grouped_bar(self):
-        bar_chart = BarChart(
+        chart = BarChart(
             encodings=[ Encoding("y", "Value", "nominal"),
-                        Encoding("x", "value", "quantitative") ],
+                        Encoding("x", "value", "quantitative"),
+                        Encoding("column", "variable", "nominal") ],
             orientation="horizontal")
-
-        chart = GroupChart(
-            enc_group=Encoding("group", "variable", "nominal"),
-            layer=bar_chart)
 
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
+
+        
 
 
 

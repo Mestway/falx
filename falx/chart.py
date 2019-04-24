@@ -7,11 +7,11 @@ from namedlist import namedlist
 import utils
 
 # mutatable vtrace
-BarV = namedlist("BarV", ["x", "y1", "y2", "color", "group"], default=None)
-BarH = namedlist("BarH", ["x1", "x2", "y", "color", "group"], default=None)
-Point = namedlist("Point", ["shape", "x", "y", "size", "color", "group"], default=None)
-Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "group"], default=None)
-Area = namedlist("Area", ["x", "y", "color", "group"])
+BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
+BarH = namedlist("BarH", ["x1", "x2", "y", "color", "column"], default=None)
+Point = namedlist("Point", ["shape", "x", "y", "size", "color", "column"], default=None)
+Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "column"], default=None)
+Area = namedlist("Area", ["x", "y", "color", "column"])
 
 def get_vt_type(v):
     return type(v).__name__
@@ -42,67 +42,8 @@ class VisDesign(object):
         Returns: a list of pairs (data, vis) s.t. vis(data)=vtrace
         """
         res = []
-        for data, chart in GroupChart.inv_eval(vtrace):
+        for data, chart in LayeredChart.inv_eval(vtrace):
             res.append(VisDesign(data, chart).to_vl_json())
-        return res
-
-
-class GroupChart(object):
-    """Repeat the chart for multiple groups """
-    def __init__(self, enc_group, layer):
-        self.layer = layer
-        self.enc_group = enc_group
-
-    def to_vl_obj(self):
-        vl_obj = self.layer.to_vl_obj()
-        vl_obj["encoding"]["column"] = self.enc_group.to_vl_obj()
-        return vl_obj
-
-    def eval(self, data):
-        """group data based on the group column and then evaluate each group"""
-        group_keys = set([r[self.enc_group.field] for r in data])
-        grouped_data = {g:[r for r in data if r[self.enc_group.field] == g] for g in group_keys}
-        components = {g:self.layer.eval(grouped_data[g]) for g in grouped_data}
-        result = []
-        for g in components:
-            for d in components[g]:
-                d.group = g
-            result += components[g]
-        return result
-
-    @staticmethod
-    def inv_eval(vtrace):
-        # partition trace elements into groups
-        trace_group = {}
-        for v in vtrace:
-            if v.group not in trace_group:
-                trace_group[v.group] = []
-            trace_group[v.group].append(v)
-
-        chart_str_to_chart = {}
-        group_data_chart = {}
-        for g in trace_group:
-            # each group is a dictionary in the form of: {chart_str: (data, chart)}
-            data_chart_pairs = LayeredChart.inv_eval(trace_group[g])
-            for dc in data_chart_pairs:
-                chart_str_to_chart[dc[1].to_vl_json()] = dc[1]
-            group_data_chart[g] = {dc[1].to_vl_json():dc[0] for dc in data_chart_pairs}
-        
-        # get all specs for all groups and find shared specs
-        group_chart_specs = {g:list(group_data_chart[g].keys()) for g in group_data_chart}
-        common_charts = set.intersection(*map(set,[group_chart_specs[g] for g in group_chart_specs]))
-
-        res = []
-        for chart_str in common_charts:
-            chart = chart_str_to_chart[chart_str]
-            group_data = {g:group_data_chart[g][chart_str] for g in group_data_chart}
-            for g in group_data:
-                for r in group_data[g]:
-                    r["c_group"] = g 
-            data = [d for g in group_data for d in group_data[g]]
-            
-            chart = GroupChart(layer=chart, enc_group=Encoding(channel="column", field="c_group", enc_ty="nominal"))
-            res.append((data, chart))
         return res
 
 
@@ -168,6 +109,7 @@ class LayeredChart(object):
             # directly return the layer if there is only one layer
             return layers[list(layers.keys())[0]]
         else:
+            pprint(layers)
             pass #return (LayeredChart(layers=layers,shared_encodings=[],resolve={}))
 
 
@@ -195,12 +137,14 @@ class BarChart(object):
                 x1 = get_channel(self.encodings, "x", r)
                 x2 = get_channel(self.encodings, "x2", r)
                 y = get_channel(self.encodings, "y", r)
-                res.append(BarH(x1=x1, x2=x2, y=y))
+                column = get_channel(self.encodings, "column", r)
+                res.append(BarH(x1=x1, x2=x2, y=y, column=column))
             elif self.orientation == "vertical":
                 y1 = get_channel(self.encodings, "y", r)
                 y2 = get_channel(self.encodings, "y2", r)
                 x = get_channel(self.encodings, "x", r)
-                res.append(BarV(x=x, y1=y1, y2=y2))
+                column = get_channel(self.encodings, "column", r)
+                res.append(BarV(x=x, y1=y1, y2=y2, column=column))
         return res
 
     @staticmethod
@@ -208,10 +152,10 @@ class BarChart(object):
         data = []
         if orientation == "vertical":
             for vt in vtrace:
-                data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2})
+                data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column})
             
             encodings = []
-            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative")]:
+            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("column", "nominal")]:
                 field_name = "c_{}".format(channel)
                 encodings.append(Encoding(channel, field_name, enc_ty))
 
@@ -219,10 +163,10 @@ class BarChart(object):
 
         elif orientation == "horizontal":
             for vt in vtrace:
-                data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y})
+                data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column})
 
             encodings = []
-            for channel, enc_ty in [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal")]:
+            for channel, enc_ty in [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("column", "nominal")]:
                 field_name = "c_{}".format(channel)
                 encodings.append(Encoding(channel, field_name, enc_ty))
             bar_chart = BarChart(encodings=encodings, orientation=orientation)
@@ -271,16 +215,17 @@ class StackedChart(object):
                 x = get_channel(self.encodings, "x", r)
                 y = get_channel(self.encodings, "y", r)
                 color = get_channel(self.encodings, "color", r)
+                column = get_channel(self.encodings, "column", r)
 
                 if self.orientation == "vertical":
                     y = (last_stack_val, last_stack_val + y)
                     last_stack_val = y[1]
-                    res.append(BarV(x=x, y1=y[0], y2=y[1], color=color))
+                    res.append(BarV(x=x, y1=y[0], y2=y[1], color=color, column=column))
 
                 if self.orientation == "horizontal":
                     x = (last_stack_val, last_stack_val + x)
                     last_stack_val = x[1]
-                    res.append(BarH(x1=x[0], x2=x[0], y=y, color=color))
+                    res.append(BarH(x1=x[0], x2=x[0], y=y, color=color, column=column))
         return res
 
     @staticmethod
@@ -294,22 +239,23 @@ class StackedChart(object):
         if orientation == "vertical":
             # vertical stacked bar
             for vt in vtrace:
-                data.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color})
+                data.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color, "c_column": vt.column})
             encodings = []
-            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("color", "nominal")]:
+            for channel, enc_ty in [("x", "nominal"), ("y", "quantitative"), ("color", "nominal"), ("column", "nominal")]:
                 field_name = "c_{}".format(channel)
                 encodings.append(Encoding(channel, field_name, enc_ty))
         elif orientation == "horizontal":
             # horizontal stacked bar
             for vt in vtrace:
-                data.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color})
+                data.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color, "c_column": vt.column})
             encodings = []
-            for channel, enc_ty in [("x", "quantitative"), ("y", "nominal"), ("color", "nominal")]:
+            for channel, enc_ty in [("x", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]:
                 field_name = "c_{}".format(channel)
                 encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = StackedChart(chart_ty="bar", encodings=encodings, orientation=orientation)
         return [(data, bar_chart)]
+
 
 class LineChart(object):
     def __init__(self, encodings):
@@ -331,7 +277,8 @@ class LineChart(object):
     def eval(self, data):
         """ first group data based on color and width, and then connect them"""
         get_group_key = lambda r: (r[self.encodings["color"].field] if "color" in self.encodings else None,
-                                   r[self.encodings["size"].field] if "size" in self.encodings else None)
+                                   r[self.encodings["size"].field] if "size" in self.encodings else None,
+                                   r[self.encodings["column"].field] if "column" in self.encodings else None)
         group_keys = set([get_group_key(r) for r in data])
         grouped_data = {key:[r for r in data if get_group_key(r) == key] for key in group_keys}
 
@@ -343,12 +290,12 @@ class LineChart(object):
             if sort_order != None:
                 vals.sort(key=lambda x: x[order_channel], reverse=True if sort_order == "descending" else False)
 
-            color, size = key
+            color, size, column = key
             for i in range(len(vals) - 1):
                 l, r = vals[i], vals[i + 1]
                 xl, yl = l[self.encodings["x"].field], l[self.encodings["y"].field]
                 xr, yr = r[self.encodings["x"].field], r[self.encodings["y"].field]
-                res.append(Line(xl, yl, xr, yr, size, color))
+                res.append(Line(xl, yl, xr, yr, size, color, column))
         return res
 
     @staticmethod
@@ -398,14 +345,16 @@ class ScatterPlot(object):
             color = get_channel(self.encodings, "color", r)
             size = get_channel(self.encodings, "size", r)
             shape = get_channel(self.encodings, "shape", r)
-            res.append(Point(x=x, y=y, color=color, size=size, shape=shape))
+            column = get_channel(self.encodings, "column", r)
+            res.append(Point(x=x, y=y, color=color, size=size, shape=shape, column=column))
         return res
 
     @staticmethod
     def inv_eval(vtrace):
         data = []
         for vt in vtrace:
-            data.append({"c_x": vt.x, "c_y": vt.y, "c_size": vt.size, "c_color": vt.color, "c_shape": vt.shape})
+            data.append({"c_x": vt.x, "c_y": vt.y, "c_size": vt.size, 
+                         "c_color": vt.color, "c_shape": vt.shape, "c_column": vt.column})
 
         # remove fields that contain none values
         unused_fields = []# [key for key in data[0] if any([r[key] is None for r in data])]
@@ -415,7 +364,7 @@ class ScatterPlot(object):
 
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), 
-                                ("size", "_"), ("color", "nominal"), ("shape", "nominal")]:
+                                ("size", "_"), ("color", "nominal"), ("shape", "nominal"), ("column", "nominal")]:
             field_name = "c_{}".format(channel)
             if channel in ["x", "y", "size"]:
                 # the type needs to be determined by datatype
