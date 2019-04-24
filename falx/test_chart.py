@@ -33,7 +33,6 @@ class TestChart(unittest.TestCase):
         pprint(trace)
         for chart in charts: print(chart)
 
-
     def test_group_line_chart(self):
         chart = LineChart(
             encodings=[ Encoding("x", "Value", "nominal"),
@@ -52,7 +51,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
 
-
     def test_stacked(self):
         chart = StackedBarChart(
             orientation="vertical",
@@ -62,7 +60,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
-
 
     def test_scatter(self):
         chart = ScatterPlot(
@@ -74,7 +71,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
-
 
     def test_layered_scatter(self):
         line_chart = ScatterPlot(
@@ -93,7 +89,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=[test_data, test_data])
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
-
 
     def test_grouped_bar(self):
         chart = BarChart(
