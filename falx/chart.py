@@ -12,7 +12,7 @@ BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
 BarH = namedlist("BarH", ["x1", "x2", "y", "color", "column"], default=None)
 Point = namedlist("Point", ["shape", "x", "y", "size", "color", "column"], default=None)
 Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "column"], default=None)
-Area = namedlist("Area", ["x", "y", "color", "column"])
+Area = namedlist("Area", ["x1", "yt1", "yb1", "x2", "yt2", "yb2", "color", "column"], default=None)
 
 def get_vt_type(v):
     return type(v).__name__
@@ -78,7 +78,11 @@ class LayeredChart(object):
     def to_vl_obj(self):
         layer_obj = [l.to_vl_obj() for l in self.layers]
         for i, l in enumerate(layer_obj):
-            l["mark"] = {"type": l["mark"], "opacity": 0.7}
+            if isinstance(l["mark"], (dict,)) and "opacity" in l["mark"]:
+                # opacity for the given chart is already set
+                l["mark"]["opacity"] = 0.7
+            else:
+                l["mark"] = {"type": l["mark"], "opacity": 0.7}
             l["transform"] = [{"filter": "datum.layer_id == {}".format(i)}]
         vl_obj = {
             "layer": layer_obj,
@@ -109,19 +113,19 @@ class LayeredChart(object):
         for vty in trace_layer:
             if vty == "BarV":
                 l1 = BarChart.inv_eval(trace_layer[vty], orientation="vertical")
-                l2 = StackedChart.inv_eval(trace_layer[vty], orientation="vertical")
+                l2 = StackedBarChart.inv_eval(trace_layer[vty], orientation="vertical")
                 layers[vty] = l1 + l2
             elif vty == "BarH":
                 l1 = BarChart.inv_eval(trace_layer[vty], orientation="horizontal")
-                l2 = StackedChart.inv_eval(trace_layer[vty], orientation="horizontal")
+                l2 = StackedBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
                 layers[vty] = l1 + l2
             elif vty == "Point":
                 layers[vty] = ScatterPlot.inv_eval(trace_layer[vty])
             elif vty == "Line":
                 layers[vty] = LineChart.inv_eval(trace_layer[vty])
             elif vty == "Area":
-                #TODO: handle area chart later
-                pass
+                layers[vty] = AreaChart.inv_eval(trace_layer[vty])
+                #TODO: handle stacked area chart later
 
         if len(layers) == 1:
             # directly return the layer if there is only one layer
@@ -151,9 +155,17 @@ class BarChart(object):
         self.orientation = orientation
 
     def to_vl_obj(self):
+        mark = "bar"
+        encodings =  {e:self.encodings[e].to_vl_obj() for e in self.encodings}
+        if "color" in self.encodings:
+            mark = {"type": "bar", "opacity": 0.8}
+            if self.orientation == "horizontal":
+                encodings["x"]["stack"] = None
+            if self.orientation == "vertical":
+                encodings["y"]["stack"] = None
         return {
-            "mark": "bar",
-            "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
+            "mark": mark,
+            "encoding": encodings
         }
 
     def to_vl_json(self):
@@ -166,14 +178,16 @@ class BarChart(object):
                 x1 = get_channel(self.encodings, "x", r)
                 x2 = get_channel(self.encodings, "x2", r)
                 y = get_channel(self.encodings, "y", r)
+                color = get_channel(self.encodings, "color", r)
                 column = get_channel(self.encodings, "column", r)
-                res.append(BarH(x1=x1, x2=x2, y=y, column=column))
+                res.append(BarH(x1=x1, x2=x2, y=y, color=color, column=column))
             elif self.orientation == "vertical":
                 y1 = get_channel(self.encodings, "y", r)
                 y2 = get_channel(self.encodings, "y2", r)
                 x = get_channel(self.encodings, "x", r)
+                color = get_channel(self.encodings, "color", r)
                 column = get_channel(self.encodings, "column", r)
-                res.append(BarV(x=x, y1=y1, y2=y2, column=column))
+                res.append(BarV(x=x, y1=y1, y2=y2, color=color, column=column))
         return res
 
     @staticmethod
@@ -184,13 +198,13 @@ class BarChart(object):
         
         if orientation == "vertical":
             for vt in vtrace:
-                data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column})
-            channel_types = [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("column", "nominal")]
+                data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column, "c_color": vt.color})
+            channel_types = [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("color", "nominal"), ("column", "nominal")]
        
         if orientation == "horizontal":
             for vt in vtrace:
-                data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column})
-            channel_types = [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("column", "nominal")]
+                data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column, "c_color": vt.color})
+            channel_types = [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]
         
         # remove fields that contain none values
         unused_fields = remove_unused_fields(data)
@@ -207,19 +221,18 @@ class BarChart(object):
         return [(data, bar_chart)]
 
 
-class StackedChart(object):
-    def __init__(self, chart_ty, orientation, encodings):
+class StackedBarChart(object):
+    def __init__(self, orientation, encodings):
         """ encodings x,y,color
             stack_channel, stack_ty: specifies which channel to stack and the stack configuration
         """
         assert(orientation in ["horizontal", "vertical"])
-        self.chart_ty = chart_ty
         self.orientation = orientation
         self.encodings = {e.channel:e for e in encodings}
 
     def to_vl_obj(self):
         vl_obj = {
-            "mark": self.chart_ty,
+            "mark": "bar",
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
         return vl_obj
@@ -294,8 +307,80 @@ class StackedChart(object):
                 continue
             encodings.append(Encoding(channel, field_name, enc_ty))
 
-        bar_chart = StackedChart(chart_ty="bar", encodings=encodings, orientation=orientation)
+        bar_chart = StackedBarChart(encodings=encodings, orientation=orientation)
         return [(data, bar_chart)]
+
+
+class AreaChart(object):
+    def __init__(self, encodings):
+        """encodings of x,y,y2,color """
+        self.encodings = {e.channel:e for e in encodings}
+
+    def to_vl_obj(self):
+        mark = "area"
+        encodings =  {e:self.encodings[e].to_vl_obj() for e in self.encodings}
+        if "color" in self.encodings:
+            mark = {"type": "area", "opacity": 0.8}
+            encodings["y"]["stack"] = None
+        return {
+            "mark": mark,
+            "encoding": encodings
+        }
+
+    def to_vl_json(self):
+        return json.dumps(self.to_vl_obj())
+
+    def eval(self, data):
+        """ first group data based on color and column and then connect them"""
+        get_group_key = lambda r: (r[self.encodings["color"].field] if "color" in self.encodings else None,
+                                   r[self.encodings["column"].field] if "column" in self.encodings else None)
+        group_keys = set([get_group_key(r) for r in data])
+        grouped_data = {key:[r for r in data if get_group_key(r) == key] for key in group_keys}
+
+        res = []
+        for key in grouped_data:
+            vals = grouped_data[key]
+            # sort by ascending in x by default
+            vals.sort(key=lambda x: x[self.encodings["x"].field])
+
+            color, column = key
+            for i in range(len(vals) - 1):
+                l, r = vals[i], vals[i + 1]
+                xl, ylt, ylb = l[self.encodings["x"].field], l[self.encodings["y"].field], get_channel(self.encodings, "y2", l)
+                xr, yrt, yrb = r[self.encodings["x"].field], r[self.encodings["y"].field], get_channel(self.encodings, "y2", r)
+                res.append(Area(xl, ylt, ylb, xr, yrt, yrb, color, column))
+        return res
+
+    @staticmethod
+    def inv_eval(vtrace):
+
+        frozen_data = []
+        for vt in vtrace:
+            # each end of an point will only be added once
+            p1 = json.dumps({"c_x": vt.x1, "c_y": vt.yt1, "c_y2": vt.yb1, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+            p2 = json.dumps({"c_x": vt.x2, "c_y": vt.yt2, "c_y2": vt.yb2, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+            if p1 not in frozen_data: frozen_data.append(p1)
+            if p2 not in frozen_data: frozen_data.append(p2)
+
+        data = [json.loads(r) for r in frozen_data]
+        channel_types = [("x", "_"), ("y", "quantitative"), ("y2", "quantitative"), ("color", "nominal"), ("column", "nominal")]
+
+        # remove fields that contain none values
+        unused_fields = remove_unused_fields(data)
+
+        encodings = []
+        for channel, enc_ty in channel_types:
+            field_name = "c_{}".format(channel)
+            if field_name in unused_fields:
+                continue
+            if channel == "x":
+                dtype = utils.infer_dtype([r[field_name] for r in data])
+                enc_ty = "nominal" if dtype == "string" else "quantitative"
+            encodings.append(Encoding(channel, field_name, enc_ty))
+
+        chart = AreaChart(encodings=encodings)
+
+        return [(data, chart)]
 
 
 class LineChart(object):
@@ -326,10 +411,10 @@ class LineChart(object):
         res = []
         for key in grouped_data:
             vals = grouped_data[key]
-            order_channel = self.encodings["order"].channel
+            order_field = self.encodings["order"].field
             sort_order = self.encodings["order"].sort_order
             if sort_order != None:
-                vals.sort(key=lambda x: x[order_channel], reverse=True if sort_order == "descending" else False)
+                vals.sort(key=lambda x: x[order_field], reverse=True if sort_order == "descending" else False)
 
             color, size, column = key
             for i in range(len(vals) - 1):
@@ -344,8 +429,8 @@ class LineChart(object):
         frozen_data = []
         for vt in vtrace:
             # each end of an point will only be added once
-            p1 = json.dumps({"c_x": vt.x1, "c_y": vt.y1, "c_size": vt.size, "c_color": vt.color}, sort_keys=True)
-            p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color}, sort_keys=True)
+            p1 = json.dumps({"c_x": vt.x1, "c_y": vt.y1, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+            p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
             if p1 not in frozen_data: frozen_data.append(p1)
             if p2 not in frozen_data: frozen_data.append(p2)
         
@@ -354,7 +439,7 @@ class LineChart(object):
         unused_fields = remove_unused_fields(data)
 
         encodings = []
-        for channel, enc_ty in [("x", "_"), ("y", "_"), ("size", "nominal"), ("color", "nominal")]:
+        for channel, enc_ty in [("x", "_"), ("y", "_"), ("size", "nominal"), ("color", "nominal"), ("column", "nominal")]:
             field_name = "c_{}".format(channel)
             if field_name in unused_fields:
                 continue
@@ -366,6 +451,9 @@ class LineChart(object):
 
         bar_chart = LineChart(encodings=encodings)
         return [(data, bar_chart)]
+
+
+
 
 class ScatterPlot(object):
     def __init__(self, mark_ty, encodings):
@@ -432,6 +520,9 @@ class Encoding(object):
 
     def to_vl_obj(self):
         res = {"field": self.field, "type": self.enc_ty}
+        if self.channel in ["y2", "x2"]:
+            # in vegalite, y2 should not have type since it should be consistent to y
+            res.pop("type")
         if self.sort_order:
             res["sort_order"] = self.sort_order
         return res
