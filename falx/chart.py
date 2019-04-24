@@ -2,6 +2,7 @@ import json
 import copy
 from pprint import pprint
 
+import itertools
 from namedlist import namedlist
 
 import utils
@@ -21,6 +22,9 @@ get_channel = lambda encs, channel, r: r[encs[channel].field] if channel in encs
 class VisDesign(object):
     """Top level visualization construct """
     def __init__(self, data, chart):
+
+        # data can either be a table list (for layered chart) or a single table
+
         self.data = data
         self.chart = chart
 
@@ -68,10 +72,10 @@ class LayeredChart(object):
     def to_vl_json(self):
         return json.dumps(self.to_vl_obj())
 
-    def eval(self, data):
+    def eval(self, data_list):
         """obtain elements in each layer and put them together. """
         result = []
-        for layer in self.layers:
+        for data, layer in zip(data_list, self.layers):
             inst_layer = copy.copy(layer)
             for e in self.shared_encodings:
                 inst_layer.encodings[e] = self.shared_encodings[e]
@@ -109,8 +113,18 @@ class LayeredChart(object):
             # directly return the layer if there is only one layer
             return layers[list(layers.keys())[0]]
         else:
-            pprint(layers)
-            pass #return (LayeredChart(layers=layers,shared_encodings=[],resolve={}))
+            res = []
+            layer_candidates = [layers[vty] for vty in layers]
+            sizes = [list(range(len(l))) for l in layer_candidates]
+            
+            for id_list in itertools.product(*sizes):
+
+                pairs = [layer_candidates[i][id_list[i]] for i in range(len(id_list))]
+
+                data_list = [cl[0] for cl in pairs]
+                chart_layers = [cl[1] for cl in pairs]
+                res.append((data_list, LayeredChart(layers=chart_layers, shared_encodings=[], resolve={})))
+            return  res #return (LayeredChart(layers=layers,shared_encodings=[],resolve={}))
 
 
 class BarChart(object):

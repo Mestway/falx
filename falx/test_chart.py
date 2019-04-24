@@ -41,10 +41,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
 
-        print(design.to_vl_json())
-        pprint(trace)
-        for chart in charts: print(chart)
-
 
     def test_scatter(self):
         chart = ScatterPlot(
@@ -56,8 +52,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
-
-        
 
 
     def test_layered_scatter(self):
@@ -74,10 +68,15 @@ class TestChart(unittest.TestCase):
             layers=[line_chart, area_chart],
             resolve={"scale": {"y": "independent"}})
 
-        design = VisDesign(chart=chart, data=test_data)
+        design = VisDesign(chart=chart, data=[test_data, test_data])
         trace = design.eval()
-        #charts = VisDesign.inv_eval(trace)
+        charts = VisDesign.inv_eval(trace)
+
+        #TODO: fix layer representation
         
+        print(design.to_vl_json())
+        pprint(trace)
+        for chart in charts: print(chart)
 
     def test_grouped_bar(self):
         chart = BarChart(
