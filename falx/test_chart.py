@@ -18,6 +18,7 @@ test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
              {"Totals":9,"Value":"D","variable":"gamma","value":2,"cumsum":9},
              {"Totals":9,"Value":"E","variable":"gamma","value":2,"cumsum":9}]
 
+
 class TestChart(unittest.TestCase):
 
     def test_line_chart(self):
@@ -29,9 +30,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
 
-        print(design.to_vl_json())
-        pprint(trace)
-        for chart in charts: print(chart)
 
     def test_group_line_chart(self):
         chart = LineChart(
@@ -90,6 +88,20 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
 
+
+    def test_boxplot(self):
+        chart = BoxPlot(
+            encodings=[ Encoding("x", "Value", "nominal"),
+                        Encoding("y", "value", "quantitative") ])
+
+        design = VisDesign(chart=chart, data=test_data)
+        trace = design.eval()
+        charts = VisDesign.inv_eval(trace)
+        
+        print(design.to_vl_json())
+        pprint(trace)
+        for chart in charts: print(chart)
+
     def test_grouped_bar(self):
         chart = BarChart(
             encodings=[ Encoding("y", "Value", "nominal"),
@@ -100,6 +112,10 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
         charts = VisDesign.inv_eval(trace)
+
+        # print(design.to_vl_json())
+        # pprint(trace)
+        # for chart in charts: print(chart)
 
 
 if __name__ == '__main__':

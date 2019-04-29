@@ -4,7 +4,9 @@ from pprint import pprint
 
 import itertools
 from namedlist import namedlist
+import numpy as np
 
+from abstract_table import AbstractTable
 import utils
 
 # mutatable vtrace
@@ -13,6 +15,7 @@ BarH = namedlist("BarH", ["x1", "x2", "y", "color", "column"], default=None)
 Point = namedlist("Point", ["shape", "x", "y", "size", "color", "column"], default=None)
 Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "column"], default=None)
 Area = namedlist("Area", ["x1", "yt1", "yb1", "x2", "yt2", "yb2", "color", "column"], default=None)
+Box = namedlist("Box", ["x", "min", "max", "Q1", "median", "Q3", "color", "column"], default=None)
 
 def get_vt_type(v):
     return type(v).__name__
@@ -61,11 +64,11 @@ class VisDesign(object):
     def inv_eval(vtrace):
         """inverse evaluation of a visual trace 
         Args: vtrace: a visual trace
-        Returns: a list of pairs (data, vis) s.t. vis(data)=vtrace
+        Returns: a list of pairs (abs_table, vis) s.t. vis(abs_table)=vtrace
         """
         res = []
-        for data, chart in LayeredChart.inv_eval(vtrace):
-            res.append(VisDesign(data, chart).to_vl_json())
+        for abs_table, chart in LayeredChart.inv_eval(vtrace):
+            res.append(VisDesign(abs_table, chart).to_vl_json())
         return res
 
 
@@ -102,6 +105,7 @@ class LayeredChart(object):
 
     @staticmethod
     def inv_eval(vtrace):
+        """returns a list of (abs_table, layer) pairs. """
         trace_layer = {}
         for v in vtrace:
             vty = get_vt_type(v)
@@ -125,6 +129,8 @@ class LayeredChart(object):
                 layers[vty] = LineChart.inv_eval(trace_layer[vty])
             elif vty == "Area":
                 layers[vty] = AreaChart.inv_eval(trace_layer[vty])
+            elif vty == "Box":
+                layers[vty] = BoxPlot.inv_eval(trace_layer[vty])
                 #TODO: handle stacked area chart later
 
         if len(layers) == 1:
@@ -311,6 +317,71 @@ class StackedBarChart(object):
         return [(data, bar_chart)]
 
 
+class BoxPlot(object):
+    def __init__(self, encodings):
+        """ encodes x, y, color, group"""
+        self.encodings = {e.channel:e for e in encodings}
+
+    def to_vl_obj(self):
+        mark = { "type": "boxplot", "extent": "min-max" }
+        encodings =  {e:self.encodings[e].to_vl_obj() for e in self.encodings}
+        return {
+            "mark": mark,
+            "encoding": encodings
+        }
+
+    def to_vl_json(self):
+        return json.dumps(self.to_vl_obj())
+
+    def eval(self, data):
+        res = []
+        # group by x, color and column to generate a box for each item
+        get_group_key = lambda r: (r[self.encodings["x"].field] if "x" in self.encodings else None,
+                                   r[self.encodings["color"].field] if "color" in self.encodings else None,
+                                   r[self.encodings["column"].field] if "column" in self.encodings else None)
+        group_keys = set([get_group_key(r) for r in data])
+        grouped_data = {key:[r for r in data if get_group_key(r) == key] for key in group_keys}
+
+        for key in grouped_data:
+            x, color, column = key
+            ys = [r[self.encodings["y"].field] for r in grouped_data[key]]
+            median = float(np.median(ys))
+            upper_quartile = float(np.percentile(ys, 75))
+            lower_quartile = float(np.percentile(ys, 25))
+            res.append(Box(x=x, median=median, Q1=lower_quartile, Q3=upper_quartile, 
+                           min=float(np.min(ys)), max=float(np.max(ys)), color=color, column=column))
+        return res
+
+    @staticmethod
+    def inv_eval(vtrace):
+        data = []
+        for vt in vtrace:
+            data.append({"c_x": vt.x, "c_y": vt.Q1, "c_color": vt.color,  "c_column": vt.column})
+            data.append({"c_x": vt.x, "c_y": vt.Q3, "c_color": vt.color,  "c_column": vt.column})
+            data.append({"c_x": vt.x, "c_y": vt.median, "c_color": vt.color,  "c_column": vt.column})
+            data.append({"c_x": vt.x, "c_y": vt.min, "c_color": vt.color,  "c_column": vt.column})
+            data.append({"c_x": vt.x, "c_y": vt.max, "c_color": vt.color,  "c_column": vt.column})
+
+        # remove fields that contain none values
+        unused_fields = remove_unused_fields(data)
+
+        encodings = []
+        for channel, enc_ty in [("x", "_"), ("y", "_"), ("color", "nominal"), ("column", "nominal")]:
+            field_name = "c_{}".format(channel)
+            if field_name in unused_fields: 
+                continue
+
+            if channel in ["x", "y"]:
+                # the type needs to be determined by datatype
+                dtype = utils.infer_dtype([r[field_name] for r in data])
+                enc_ty = "nominal" if dtype == "string" else "quantitative"
+
+            encodings.append(Encoding(channel, field_name, enc_ty))
+
+        chart = BoxPlot(encodings=encodings)
+        return [(data, chart)]
+
+
 class AreaChart(object):
     def __init__(self, encodings):
         """encodings of x,y,y2,color """
@@ -451,8 +522,6 @@ class LineChart(object):
 
         bar_chart = LineChart(encodings=encodings)
         return [(data, bar_chart)]
-
-
 
 
 class ScatterPlot(object):
