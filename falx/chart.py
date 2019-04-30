@@ -462,6 +462,7 @@ class AreaChart(object):
 
 
 class LineChart(object):
+
     def __init__(self, encodings):
         """Encodings x,y,color,size,order"""
         self.encodings = {e.channel:e for e in encodings}
@@ -501,6 +502,10 @@ class LineChart(object):
 
     @staticmethod
     def inv_eval(vtrace):
+
+        constraints = []
+
+        # frozen data used for removing duplicate points
         frozen_data = []
         for vt in vtrace:
             # each end of an point will only be added once
@@ -508,9 +513,15 @@ class LineChart(object):
             p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
             if p1 not in frozen_data: frozen_data.append(p1)
             if p2 not in frozen_data: frozen_data.append(p2)
+
+            # there should not be any points between these two
+            constraints.append("""
+                (not (exists (r Tuple) (and (> r.c_x vt.x1) 
+                                            (< r.c_x vt.x2) 
+                                            (= r.c_color vt.color) 
+                                            (= r.c_column vt.column))))""")
         
         data_values = [json.loads(r) for r in frozen_data]
-
         unused_fields = remove_unused_fields(data_values)
 
         encodings = []
@@ -525,7 +536,7 @@ class LineChart(object):
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = LineChart(encodings=encodings)
-        return [(SymTable(values=data_values), bar_chart)]
+        return [(SymTable(values=data_values, constraints=constraints), bar_chart)]
 
 
 class ScatterPlot(object):
