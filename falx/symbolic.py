@@ -35,6 +35,10 @@ class SymTable(object):
 		self.values = values
 		self.constraints = constraints
 
+	def consistent_with(table):
+		"""Check if the given table is consistent with the symbolic table """
+		return True
+
 	def instantiate(self):
 		"""a naive instantiation that simply returns all values"""
 		return self.values
