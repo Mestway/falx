@@ -7,7 +7,12 @@ from tyrell.enumerator import SmtEnumerator
 from tyrell.decider import Example, ExampleConstraintPruningDecider
 from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
+from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects
+import warnings
+
+# suppress R warnings
+warnings.filterwarnings("ignore", category=RRuntimeWarning)
 
 logger = get_logger('tyrell')
 
@@ -17,6 +22,7 @@ counter_ = 1
 #library(compare)
 robjects.r('''
     library(dplyr)
+    library(compare)
     library(tidyr)
     library(jsonlite)
    ''')
@@ -29,6 +35,8 @@ def synthesize(inputs, output):
     Returns:
         a list of transformation programs s.t. p(inputs) = output
     """
+    print(output)
+    print(len(inputs))
     return []
 
 
