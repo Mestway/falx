@@ -35,29 +35,6 @@ def get_channel_value(encodings, channel, r):
     return r[encodings[channel].field] if channel in encodings else None
 
 
-class AbstractVisDesign(object):
-    def __init__(self, sym_data, chart):
-        self.sym_data = sym_data
-        self.chart = chart
-
-    def instantiate(self):
-        if isinstance(self.chart, LayeredChart):
-            data = [d.instantiate() for d in self.sym_data]
-        else:
-            data = self.sym_data.instantiate()
-        return VisDesign(data, self.chart)
-
-    @staticmethod
-    def inv_eval(vtrace):
-        """inverse evaluation of a visual trace 
-        Args: vtrace: a visual trace
-        Returns: a list of pairs (abs_table, vis) s.t. vis(abs_table)=vtrace
-        """
-        res = []
-        for data, chart in LayeredChart.inv_eval(vtrace):
-            res.append(AbstractVisDesign(data, chart))
-        return res
-
 class VisDesign(object):
     """Top level visualization construct """
     def __init__(self, data, chart):
@@ -88,6 +65,17 @@ class VisDesign(object):
 
     def eval(self):
         return self.chart.eval(self.data)
+
+    @staticmethod
+    def inv_eval(vtrace):
+        """inverse evaluation of a visual trace 
+        Args: vtrace: a visual trace
+        Returns: a list of pairs (table, vis) s.t. vis(table)=vtrace
+        """
+        res = []
+        for data, chart in LayeredChart.inv_eval(vtrace):
+            res.append((data, chart))
+        return res
 
 
 class LayeredChart(object):

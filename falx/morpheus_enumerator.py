@@ -13,12 +13,34 @@ logger = get_logger('tyrell')
 
 counter_ = 1
 
+
+#library(compare)
 robjects.r('''
-    library(compare)
     library(dplyr)
     library(tidyr)
     library(jsonlite)
    ''')
+
+def synthesize(inputs, output):
+    """ synthesizer table transformation programs from input-output examples
+    Args:
+        inputs: a list of input tables (represented as a list of named tuples)
+        output: a symbolic table (of class symbolic.SymTable)
+    Returns:
+        a list of transformation programs s.t. p(inputs) = output
+    """
+    return []
+
+
+def evaluate(inputs, prog):
+    """ evaluate a table transformation program on input tables
+    Args:
+        input: a list of input tables (represented as a list of named tuples)
+        prog: a R program
+    Returns:
+        an output table (represented as a list of named tuples)
+    """
+    return None
 
 ## Common utils.
 def get_collist(sel):
