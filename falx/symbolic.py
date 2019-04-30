@@ -3,10 +3,23 @@ import copy
 from pprint import pprint
 
 
+class SymVal(object):
+	""" symbolic value"""
+	id_counter = 0
 
-class AbstractTable(object):
+	def __init__(self, id, ty):
+		self.id = id
+		self.ty = ty
 
-	def __init__(self, values, constraints):
+	@classmethod
+	def get_fresh_name(cls):
+		current_id = cls.id_counter
+		cls.id_counter += 1
+		return current_id
+
+class SymTable(object):
+
+	def __init__(self, values, constraints=None):
 		"""constraints should be of form 
 			Args:
 				values: a list of named tuples representing values 
@@ -19,9 +32,12 @@ class AbstractTable(object):
 					exists r in T. p(t)
 					p(column) 
 		"""
-
-		self.values = exist_values
+		self.values = values
 		self.constraints = constraints
+
+	def instantiate(self):
+		"""a naive instantiation that simply returns all values"""
+		return self.values
 
 	def __str__(self):
 		return self.values.__str__()

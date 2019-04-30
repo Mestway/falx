@@ -28,7 +28,7 @@ class TestChart(unittest.TestCase):
                         Encoding("color", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
 
     def test_group_line_chart(self):
@@ -38,7 +38,7 @@ class TestChart(unittest.TestCase):
                         Encoding("column", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
     def test_area_chart(self):
         chart = AreaChart(
@@ -47,7 +47,7 @@ class TestChart(unittest.TestCase):
                         Encoding("color", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
     def test_stacked(self):
         chart = StackedBarChart(
@@ -57,7 +57,7 @@ class TestChart(unittest.TestCase):
                         Encoding("color", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
     def test_scatter(self):
         chart = ScatterPlot(
@@ -68,7 +68,7 @@ class TestChart(unittest.TestCase):
         #print(VisDesign(chart=chart, data=test_data).to_vl_json())
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
     def test_layered_scatter(self):
         line_chart = ScatterPlot(
@@ -86,8 +86,7 @@ class TestChart(unittest.TestCase):
 
         design = VisDesign(chart=chart, data=[test_data, test_data])
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
-
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
     def test_boxplot(self):
         chart = BoxPlot(
@@ -96,11 +95,8 @@ class TestChart(unittest.TestCase):
 
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
         
-        print(design.to_vl_json())
-        pprint(trace)
-        for chart in charts: print(chart)
 
     def test_grouped_bar(self):
         chart = BarChart(
@@ -111,11 +107,12 @@ class TestChart(unittest.TestCase):
 
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-        charts = VisDesign.inv_eval(trace)
+        abstract_designs = AbstractVisDesign.inv_eval(trace)
 
-        # print(design.to_vl_json())
-        # pprint(trace)
-        # for chart in charts: print(chart)
+        print(design.to_vl_json())
+        pprint(trace)
+        for abs_design in abstract_designs: 
+            print(abs_design.instantiate().to_vl_json())
 
 
 if __name__ == '__main__':

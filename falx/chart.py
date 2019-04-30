@@ -6,7 +6,7 @@ import itertools
 from namedlist import namedlist
 import numpy as np
 
-from abstract_table import AbstractTable
+from symbolic import SymTable, SymVal
 import utils
 
 # mutatable vtrace
@@ -28,7 +28,35 @@ def remove_unused_fields(data):
             r.pop(k)
     return unused_fields
 
-get_channel = lambda encs, channel, r: r[encs[channel].field] if channel in encs else None
+def get_channel_value(encodings, channel, r):
+    """ Given encodings e, 
+        return the value in the tuple r that maps to the channel c
+    """
+    return r[encodings[channel].field] if channel in encodings else None
+
+
+class AbstractVisDesign(object):
+    def __init__(self, sym_data, chart):
+        self.sym_data = sym_data
+        self.chart = chart
+
+    def instantiate(self):
+        if isinstance(self.chart, LayeredChart):
+            data = [d.instantiate() for d in self.sym_data]
+        else:
+            data = self.sym_data.instantiate()
+        return VisDesign(data, self.chart)
+
+    @staticmethod
+    def inv_eval(vtrace):
+        """inverse evaluation of a visual trace 
+        Args: vtrace: a visual trace
+        Returns: a list of pairs (abs_table, vis) s.t. vis(abs_table)=vtrace
+        """
+        res = []
+        for data, chart in LayeredChart.inv_eval(vtrace):
+            res.append(AbstractVisDesign(data, chart))
+        return res
 
 class VisDesign(object):
     """Top level visualization construct """
@@ -37,10 +65,11 @@ class VisDesign(object):
         self.data = data
         self.chart = chart
 
+
     def to_vl_obj(self):
         chart_obj = self.chart.to_vl_obj()
-        if isinstance(self.data[0], (list,)):
-            # this case represents a data list for layered chart
+        if isinstance(self.chart, LayeredChart):
+            # in this case, the data section is a list of tables
             combined_data = []
             for i, layer_data in enumerate(self.data):
                 for r in layer_data:
@@ -59,17 +88,6 @@ class VisDesign(object):
 
     def eval(self):
         return self.chart.eval(self.data)
-
-    @staticmethod
-    def inv_eval(vtrace):
-        """inverse evaluation of a visual trace 
-        Args: vtrace: a visual trace
-        Returns: a list of pairs (abs_table, vis) s.t. vis(abs_table)=vtrace
-        """
-        res = []
-        for abs_table, chart in LayeredChart.inv_eval(vtrace):
-            res.append(VisDesign(abs_table, chart).to_vl_json())
-        return res
 
 
 class LayeredChart(object):
@@ -92,9 +110,6 @@ class LayeredChart(object):
             "resolve": self.resolve
         }
         return vl_obj
-
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
 
     def eval(self, data_list):
         """obtain elements in each layer and put them together. """
@@ -131,7 +146,7 @@ class LayeredChart(object):
                 layers[vty] = AreaChart.inv_eval(trace_layer[vty])
             elif vty == "Box":
                 layers[vty] = BoxPlot.inv_eval(trace_layer[vty])
-                #TODO: handle stacked area chart later
+            #TODO: handle stacked area chart later
 
         if len(layers) == 1:
             # directly return the layer if there is only one layer
@@ -145,9 +160,9 @@ class LayeredChart(object):
             for id_list in itertools.product(*sizes):
                 #id_list[i] is the candidate (data, layer) pair for layer i
                 data_layer_pairs = [layer_candidates[i][id_list[i]] for i in range(len(id_list))]
-                data_list = [cl[0] for cl in data_layer_pairs]
-                chart_layers = [cl[1] for cl in data_layer_pairs]
-                res.append((data_list, LayeredChart(layers=chart_layers, resolve={})))
+                data_for_all_layers = [cl[0] for cl in data_layer_pairs]
+                all_layers = [cl[1] for cl in data_layer_pairs]
+                res.append((data_for_all_layers, LayeredChart(layers=all_layers, resolve={})))
             return  res 
 
 
@@ -174,46 +189,43 @@ class BarChart(object):
             "encoding": encodings
         }
 
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
-
     def eval(self, data):
         res = []
         for r in data:
             if self.orientation == "horizontal":
-                x1 = get_channel(self.encodings, "x", r)
-                x2 = get_channel(self.encodings, "x2", r)
-                y = get_channel(self.encodings, "y", r)
-                color = get_channel(self.encodings, "color", r)
-                column = get_channel(self.encodings, "column", r)
+                x1 = get_channel_value(self.encodings, "x", r)
+                x2 = get_channel_value(self.encodings, "x2", r)
+                y = get_channel_value(self.encodings, "y", r)
+                color = get_channel_value(self.encodings, "color", r)
+                column = get_channel_value(self.encodings, "column", r)
                 res.append(BarH(x1=x1, x2=x2, y=y, color=color, column=column))
             elif self.orientation == "vertical":
-                y1 = get_channel(self.encodings, "y", r)
-                y2 = get_channel(self.encodings, "y2", r)
-                x = get_channel(self.encodings, "x", r)
-                color = get_channel(self.encodings, "color", r)
-                column = get_channel(self.encodings, "column", r)
+                y1 = get_channel_value(self.encodings, "y", r)
+                y2 = get_channel_value(self.encodings, "y2", r)
+                x = get_channel_value(self.encodings, "x", r)
+                color = get_channel_value(self.encodings, "color", r)
+                column = get_channel_value(self.encodings, "column", r)
                 res.append(BarV(x=x, y1=y1, y2=y2, color=color, column=column))
         return res
 
     @staticmethod
     def inv_eval(vtrace, orientation):
-        data = []
+        data_values = []
 
         assert(orientation in ["horizontal", "vertical"])
         
         if orientation == "vertical":
             for vt in vtrace:
-                data.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column, "c_color": vt.color})
+                data_values.append({"c_x": vt.x, "c_y": vt.y1, "c_y2": vt.y2, "c_column": vt.column, "c_color": vt.color})
             channel_types = [("x", "nominal"), ("y", "quantitative"), ("y2", "quantitative"), ("color", "nominal"), ("column", "nominal")]
        
         if orientation == "horizontal":
             for vt in vtrace:
-                data.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column, "c_color": vt.color})
+                data_values.append({"c_x": vt.x1, "c_x2": vt.x2, "c_y": vt.y, "c_column": vt.column, "c_color": vt.color})
             channel_types = [("x", "quantitative"), ("x2", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]
         
         # remove fields that contain none values
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in channel_types:
@@ -224,7 +236,7 @@ class BarChart(object):
 
         bar_chart = BarChart(encodings=encodings, orientation=orientation)
 
-        return [(data, bar_chart)]
+        return [(SymTable(values=data_values), bar_chart)]
 
 
 class StackedBarChart(object):
@@ -242,9 +254,6 @@ class StackedBarChart(object):
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
         return vl_obj
-
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
 
     def eval(self, data):
         """first group data based on stack channel and then stack them """  
@@ -264,10 +273,10 @@ class StackedBarChart(object):
             # only used when there is no interval value for x, y
             last_stack_val = 0
             for r in vals:
-                x = get_channel(self.encodings, "x", r)
-                y = get_channel(self.encodings, "y", r)
-                color = get_channel(self.encodings, "color", r)
-                column = get_channel(self.encodings, "column", r)
+                x = get_channel_value(self.encodings, "x", r)
+                y = get_channel_value(self.encodings, "y", r)
+                color = get_channel_value(self.encodings, "color", r)
+                column = get_channel_value(self.encodings, "column", r)
 
                 if self.orientation == "vertical":
                     y = (last_stack_val, last_stack_val + y)
@@ -291,20 +300,20 @@ class StackedBarChart(object):
                 # it does not satisfy stacked bar semantics
                 return []
         
-        data = []
+        data_values = []
         if orientation == "vertical":
             # vertical stacked bar
             for vt in vtrace:
-                data.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color, "c_column": vt.column})
+                data_values.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color, "c_column": vt.column})
             channel_types = [("x", "nominal"), ("y", "quantitative"), ("color", "nominal"), ("column", "nominal")]
         elif orientation == "horizontal":
             # horizontal stacked bar
             for vt in vtrace:
-                data.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color, "c_column": vt.column})
+                data_values.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color, "c_column": vt.column})
             channel_types = [("x", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]
 
         # remove fields that contain none values
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in channel_types:
@@ -314,7 +323,7 @@ class StackedBarChart(object):
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = StackedBarChart(encodings=encodings, orientation=orientation)
-        return [(data, bar_chart)]
+        return [(SymTable(values=data_values), bar_chart)]
 
 
 class BoxPlot(object):
@@ -329,9 +338,6 @@ class BoxPlot(object):
             "mark": mark,
             "encoding": encodings
         }
-
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
 
     def eval(self, data):
         res = []
@@ -354,16 +360,20 @@ class BoxPlot(object):
 
     @staticmethod
     def inv_eval(vtrace):
-        data = []
+        #TODO: handle this
+
+        data_values = []
+        constraints = []
+
         for vt in vtrace:
-            data.append({"c_x": vt.x, "c_y": vt.Q1, "c_color": vt.color,  "c_column": vt.column})
-            data.append({"c_x": vt.x, "c_y": vt.Q3, "c_color": vt.color,  "c_column": vt.column})
-            data.append({"c_x": vt.x, "c_y": vt.median, "c_color": vt.color,  "c_column": vt.column})
-            data.append({"c_x": vt.x, "c_y": vt.min, "c_color": vt.color,  "c_column": vt.column})
-            data.append({"c_x": vt.x, "c_y": vt.max, "c_color": vt.color,  "c_column": vt.column})
+            # data.append({"c_x": vt.x, "c_y": vt.Q1, "c_color": vt.color,  "c_column": vt.column})
+            # data.append({"c_x": vt.x, "c_y": vt.Q3, "c_color": vt.color,  "c_column": vt.column})
+            # data.append({"c_x": vt.x, "c_y": vt.median, "c_color": vt.color,  "c_column": vt.column})
+            data_values.append({"c_x": vt.x, "c_y": vt.min, "c_color": vt.color,  "c_column": vt.column})
+            data_values.append({"c_x": vt.x, "c_y": vt.max, "c_color": vt.color,  "c_column": vt.column})
 
         # remove fields that contain none values
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), ("color", "nominal"), ("column", "nominal")]:
@@ -373,13 +383,13 @@ class BoxPlot(object):
 
             if channel in ["x", "y"]:
                 # the type needs to be determined by datatype
-                dtype = utils.infer_dtype([r[field_name] for r in data])
+                dtype = utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         chart = BoxPlot(encodings=encodings)
-        return [(data, chart)]
+        return [(SymTable(data_values, constraints), chart)]
 
 
 class AreaChart(object):
@@ -398,9 +408,6 @@ class AreaChart(object):
             "encoding": encodings
         }
 
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
-
     def eval(self, data):
         """ first group data based on color and column and then connect them"""
         get_group_key = lambda r: (r[self.encodings["color"].field] if "color" in self.encodings else None,
@@ -417,8 +424,8 @@ class AreaChart(object):
             color, column = key
             for i in range(len(vals) - 1):
                 l, r = vals[i], vals[i + 1]
-                xl, ylt, ylb = l[self.encodings["x"].field], l[self.encodings["y"].field], get_channel(self.encodings, "y2", l)
-                xr, yrt, yrb = r[self.encodings["x"].field], r[self.encodings["y"].field], get_channel(self.encodings, "y2", r)
+                xl, ylt, ylb = l[self.encodings["x"].field], l[self.encodings["y"].field], get_channel_value(self.encodings, "y2", l)
+                xr, yrt, yrb = r[self.encodings["x"].field], r[self.encodings["y"].field], get_channel_value(self.encodings, "y2", r)
                 res.append(Area(xl, ylt, ylb, xr, yrt, yrb, color, column))
         return res
 
@@ -433,11 +440,11 @@ class AreaChart(object):
             if p1 not in frozen_data: frozen_data.append(p1)
             if p2 not in frozen_data: frozen_data.append(p2)
 
-        data = [json.loads(r) for r in frozen_data]
+        data_values = [json.loads(r) for r in frozen_data]
         channel_types = [("x", "_"), ("y", "quantitative"), ("y2", "quantitative"), ("color", "nominal"), ("column", "nominal")]
 
         # remove fields that contain none values
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in channel_types:
@@ -445,13 +452,13 @@ class AreaChart(object):
             if field_name in unused_fields:
                 continue
             if channel == "x":
-                dtype = utils.infer_dtype([r[field_name] for r in data])
+                dtype = utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         chart = AreaChart(encodings=encodings)
 
-        return [(data, chart)]
+        return [(SymTable(values=data_values), chart)]
 
 
 class LineChart(object):
@@ -467,9 +474,6 @@ class LineChart(object):
             "mark": "line",
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
-
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
 
     def eval(self, data):
         """ first group data based on color and width, and then connect them"""
@@ -505,9 +509,9 @@ class LineChart(object):
             if p1 not in frozen_data: frozen_data.append(p1)
             if p2 not in frozen_data: frozen_data.append(p2)
         
-        data = [json.loads(r) for r in frozen_data]
+        data_values = [json.loads(r) for r in frozen_data]
 
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), ("size", "nominal"), ("color", "nominal"), ("column", "nominal")]:
@@ -515,13 +519,13 @@ class LineChart(object):
             if field_name in unused_fields:
                 continue
             if channel in ["x", "y"]:
-                dtype = utils.infer_dtype([r[field_name] for r in data])
+                dtype = utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = LineChart(encodings=encodings)
-        return [(data, bar_chart)]
+        return [(SymTable(values=data_values), bar_chart)]
 
 
 class ScatterPlot(object):
@@ -536,30 +540,27 @@ class ScatterPlot(object):
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
 
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
-
     def eval(self, data):
         res = []
         for r in data:
-            x = get_channel(self.encodings, "x", r)
-            y = get_channel(self.encodings, "y", r)
-            color = get_channel(self.encodings, "color", r)
-            size = get_channel(self.encodings, "size", r)
-            shape = get_channel(self.encodings, "shape", r)
-            column = get_channel(self.encodings, "column", r)
+            x = get_channel_value(self.encodings, "x", r)
+            y = get_channel_value(self.encodings, "y", r)
+            color = get_channel_value(self.encodings, "color", r)
+            size = get_channel_value(self.encodings, "size", r)
+            shape = get_channel_value(self.encodings, "shape", r)
+            column = get_channel_value(self.encodings, "column", r)
             res.append(Point(x=x, y=y, color=color, size=size, shape=shape, column=column))
         return res
 
     @staticmethod
     def inv_eval(vtrace):
-        data = []
+        data_values = []
         for vt in vtrace:
-            data.append({"c_x": vt.x, "c_y": vt.y, "c_size": vt.size, 
+            data_values.append({"c_x": vt.x, "c_y": vt.y, "c_size": vt.size, 
                          "c_color": vt.color, "c_shape": vt.shape, "c_column": vt.column})
 
         # remove fields that contain none values
-        unused_fields = remove_unused_fields(data)
+        unused_fields = remove_unused_fields(data_values)
 
         encodings = []
         for channel, enc_ty in [("x", "_"), ("y", "_"), 
@@ -570,13 +571,13 @@ class ScatterPlot(object):
 
             if channel in ["x", "y", "size"]:
                 # the type needs to be determined by datatype
-                dtype = utils.infer_dtype([r[field_name] for r in data])
+                dtype = utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
 
         bar_chart = ScatterPlot(mark_ty="point", encodings=encodings)
-        return [(data, bar_chart)]
+        return [(SymTable(values=data_values), bar_chart)]
 
 
 class Encoding(object):
