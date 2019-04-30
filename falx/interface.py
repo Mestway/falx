@@ -1,7 +1,7 @@
 import json
 
 from falx.chart import VisDesign
-import morpheus_enumerator
+import morpheus
 import itertools
 
 class FalxTask(object):
@@ -27,7 +27,7 @@ class FalxTask(object):
             sym_tables = sym_data if isinstance(sym_data, (list,)) else [sym_data]
             for output in sym_tables:
                 # synthesize table transformation programs
-                candidates_per_layer.append(morpheus_enumerator.synthesize(self.inputs, output))
+                candidates_per_layer.append(morpheus.synthesize(self.inputs, output))
 
             num_candidates_per_layer = [list(range(len(l))) for l in candidates_per_layer]
             
@@ -36,7 +36,7 @@ class FalxTask(object):
                 progs_per_layer = [candidates[i][id_list[i]] for i in range(len(id_list))]
 
                 # apply each program on inputs to get output table for each layer
-                outputs = [morpheus_enumerator.evalute(p, self.inputs) for p in progs_per_layer]
+                outputs = [morpheus.evalute(p, self.inputs) for p in progs_per_layer]
 
                 data = outputs[0] if len(outputs) == 1 else outputs
                 prog = progs_per_layer[0] if len(progs_per_layer) == 1 else progs_per_layer

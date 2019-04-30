@@ -8,7 +8,7 @@ import design_validator
 import design_enumerator
 import utils
 
-import morpheus_enumerator as morpheus
+import morpheus
 
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
