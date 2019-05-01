@@ -32,7 +32,6 @@
 | 029 | [link](029.json) | <img src="chart_029.png" width="150"/> | [source_link](https://chandoo.org/wp/60-sports-in-six-charts/) | excel |
 | 030 | [link](030.json) | <img src="chart_030.png" width="150"/> | [source_link](https://chandoo.org/wp/60-sports-in-six-charts/) | excel |
 | 031 | [link](031.json) | <img src="chart_031.png" width="150"/> | [source_link](https://chandoo.org/wp/visualize-salary-increases-jitter-plot/) | excel / R |
-| 032 | [link](032.json) | <img src="chart_032.png" width="150"/> | [source_link](https://chandoo.org/wp/joyplot-in-excel/) | excel / R |
 | 033 | [link](033.json) | <img src="chart_033.png" width="150"/> | [source_link](https://chandoo.org/wp/joyplot-in-excel/) | excel / R |
 | 034 | [link](034.json) | <img src="chart_034.png" width="150"/> | [source_link](https://chandoo.org/wp/forecasting-in-excel/) | excel |
 | 035 | [link](035.json) | <img src="chart_035.png" width="150"/> | [source_link](https://chandoo.org/wp/bar-chart-with-lower-upper-bounds-tutorial) | excel |
