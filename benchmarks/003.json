@@ -53,5 +53,97 @@
             "Month": "Mar"
         }
     ],
-    "output_data": [{"Month":"Start","Net Cash Flow":80000,"Net Cash Flow Sum":80000,"c":0,"d":false},{"Month":"Apr","Net Cash Flow":-5003,"Net Cash Flow Sum":74997,"c":80000,"d":true},{"Month":"May","Net Cash Flow":-16700,"Net Cash Flow Sum":58297,"c":74997,"d":true},{"Month":"Jun","Net Cash Flow":48802,"Net Cash Flow Sum":107099,"c":58297,"d":false},{"Month":"Jul","Net Cash Flow":-11198,"Net Cash Flow Sum":95901,"c":107099,"d":true},{"Month":"Aug","Net Cash Flow":-35260,"Net Cash Flow Sum":60641,"c":95901,"d":true},{"Month":"Sep","Net Cash Flow":18220,"Net Cash Flow Sum":78861,"c":60641,"d":false},{"Month":"Oct","Net Cash Flow":-23840,"Net Cash Flow Sum":55021,"c":78861,"d":true},{"Month":"Nov","Net Cash Flow":43250,"Net Cash Flow Sum":98271,"c":55021,"d":false},{"Month":"Dec","Net Cash Flow":-18280,"Net Cash Flow Sum":79991,"c":98271,"d":true},{"Month":"Jan","Net Cash Flow":26670,"Net Cash Flow Sum":106661,"c":79991,"d":false},{"Month":"Feb","Net Cash Flow":15000,"Net Cash Flow Sum":121661,"c":106661,"d":false},{"Month":"Mar","Net Cash Flow":24750,"Net Cash Flow Sum":146411,"c":121661,"d":false}]
+    "output_data": [
+        {
+            "Month": "Start",
+            "Net Cash Flow": 80000,
+            "Net Cash Flow Sum": 80000,
+            "c": 0,
+            "d": false
+        },
+        {
+            "Month": "Apr",
+            "Net Cash Flow": -5003,
+            "Net Cash Flow Sum": 74997,
+            "c": 80000,
+            "d": true
+        },
+        {
+            "Month": "May",
+            "Net Cash Flow": -16700,
+            "Net Cash Flow Sum": 58297,
+            "c": 74997,
+            "d": true
+        },
+        {
+            "Month": "Jun",
+            "Net Cash Flow": 48802,
+            "Net Cash Flow Sum": 107099,
+            "c": 58297,
+            "d": false
+        },
+        {
+            "Month": "Jul",
+            "Net Cash Flow": -11198,
+            "Net Cash Flow Sum": 95901,
+            "c": 107099,
+            "d": true
+        },
+        {
+            "Month": "Aug",
+            "Net Cash Flow": -35260,
+            "Net Cash Flow Sum": 60641,
+            "c": 95901,
+            "d": true
+        },
+        {
+            "Month": "Sep",
+            "Net Cash Flow": 18220,
+            "Net Cash Flow Sum": 78861,
+            "c": 60641,
+            "d": false
+        },
+        {
+            "Month": "Oct",
+            "Net Cash Flow": -23840,
+            "Net Cash Flow Sum": 55021,
+            "c": 78861,
+            "d": true
+        },
+        {
+            "Month": "Nov",
+            "Net Cash Flow": 43250,
+            "Net Cash Flow Sum": 98271,
+            "c": 55021,
+            "d": false
+        },
+        {
+            "Month": "Dec",
+            "Net Cash Flow": -18280,
+            "Net Cash Flow Sum": 79991,
+            "c": 98271,
+            "d": true
+        },
+        {
+            "Month": "Jan",
+            "Net Cash Flow": 26670,
+            "Net Cash Flow Sum": 106661,
+            "c": 79991,
+            "d": false
+        },
+        {
+            "Month": "Feb",
+            "Net Cash Flow": 15000,
+            "Net Cash Flow Sum": 121661,
+            "c": 106661,
+            "d": false
+        },
+        {
+            "Month": "Mar",
+            "Net Cash Flow": 24750,
+            "Net Cash Flow Sum": 146411,
+            "c": 121661,
+            "d": false
+        }
+    ]
 }

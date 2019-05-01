@@ -33,5 +33,41 @@
             "Y5": "51%"
         }
     ],
-    "output_data": [{"variable":"Y1","lower range":0.39,"means":0.52,"stddev":0.1328,"upper range":0.66},{"variable":"Y2","lower range":0.44,"means":0.57,"stddev":0.1321,"upper range":0.7},{"variable":"Y3","lower range":0.47,"means":0.6,"stddev":0.1303,"upper range":0.73},{"variable":"Y4","lower range":0.5,"means":0.63,"stddev":0.1266,"upper range":0.75},{"variable":"Y5","lower range":0.51,"means":0.63,"stddev":0.1225,"upper range":0.75}]
+    "output_data": [
+        {
+            "variable": "Y1",
+            "lower range": 0.39,
+            "means": 0.52,
+            "stddev": 0.1328,
+            "upper range": 0.66
+        },
+        {
+            "variable": "Y2",
+            "lower range": 0.44,
+            "means": 0.57,
+            "stddev": 0.1321,
+            "upper range": 0.7
+        },
+        {
+            "variable": "Y3",
+            "lower range": 0.47,
+            "means": 0.6,
+            "stddev": 0.1303,
+            "upper range": 0.73
+        },
+        {
+            "variable": "Y4",
+            "lower range": 0.5,
+            "means": 0.63,
+            "stddev": 0.1266,
+            "upper range": 0.75
+        },
+        {
+            "variable": "Y5",
+            "lower range": 0.51,
+            "means": 0.63,
+            "stddev": 0.1225,
+            "upper range": 0.75
+        }
+    ]
 }

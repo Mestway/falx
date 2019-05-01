@@ -97,5 +97,118 @@
             "LATAM": "53%"
         }
     ],
-    "output_data": [{"variable":"APAC","C2":"Adopted","Q1":0.38,"Q2":0.27,"Q3":0.59},{"variable":"APAC","C2":"Engaged","Q1":0.47,"Q2":0.37,"Q3":0.75},{"variable":"APAC","C2":"Pitched","Q1":0.45,"Q2":0.35,"Q3":0.74},{"variable":"APAC","C2":"Targeted","Q1":0.48,"Q2":0.39,"Q3":0.87},{"variable":"EMEA","C2":"Adopted","Q1":0.52,"Q2":0.42,"Q3":0.62},{"variable":"EMEA","C2":"Engaged","Q1":0.65,"Q2":0.54,"Q3":0.78},{"variable":"EMEA","C2":"Pitched","Q1":0.59,"Q2":0.5,"Q3":0.72},{"variable":"EMEA","C2":"Targeted","Q1":0.66,"Q2":0.56,"Q3":0.91},{"variable":"LATAM","C2":"Adopted","Q1":0.31,"Q2":0.26,"Q3":0.53},{"variable":"LATAM","C2":"Engaged","Q1":0.48,"Q2":0.41,"Q3":0.8},{"variable":"LATAM","C2":"Pitched","Q1":0.44,"Q2":0.37,"Q3":0.73},{"variable":"LATAM","C2":"Targeted","Q1":0.48,"Q2":0.43,"Q3":0.95},{"variable":"North America","C2":"Adopted","Q1":0.36,"Q2":0.31,"Q3":0.4},{"variable":"North America","C2":"Engaged","Q1":0.52,"Q2":0.43,"Q3":0.55},{"variable":"North America","C2":"Pitched","Q1":0.45,"Q2":0.39,"Q3":0.5},{"variable":"North America","C2":"Targeted","Q1":0.56,"Q2":0.5,"Q3":0.7}]
+    "output_data": [
+        {
+            "variable": "APAC",
+            "C2": "Adopted",
+            "Q1": 0.38,
+            "Q2": 0.27,
+            "Q3": 0.59
+        },
+        {
+            "variable": "APAC",
+            "C2": "Engaged",
+            "Q1": 0.47,
+            "Q2": 0.37,
+            "Q3": 0.75
+        },
+        {
+            "variable": "APAC",
+            "C2": "Pitched",
+            "Q1": 0.45,
+            "Q2": 0.35,
+            "Q3": 0.74
+        },
+        {
+            "variable": "APAC",
+            "C2": "Targeted",
+            "Q1": 0.48,
+            "Q2": 0.39,
+            "Q3": 0.87
+        },
+        {
+            "variable": "EMEA",
+            "C2": "Adopted",
+            "Q1": 0.52,
+            "Q2": 0.42,
+            "Q3": 0.62
+        },
+        {
+            "variable": "EMEA",
+            "C2": "Engaged",
+            "Q1": 0.65,
+            "Q2": 0.54,
+            "Q3": 0.78
+        },
+        {
+            "variable": "EMEA",
+            "C2": "Pitched",
+            "Q1": 0.59,
+            "Q2": 0.5,
+            "Q3": 0.72
+        },
+        {
+            "variable": "EMEA",
+            "C2": "Targeted",
+            "Q1": 0.66,
+            "Q2": 0.56,
+            "Q3": 0.91
+        },
+        {
+            "variable": "LATAM",
+            "C2": "Adopted",
+            "Q1": 0.31,
+            "Q2": 0.26,
+            "Q3": 0.53
+        },
+        {
+            "variable": "LATAM",
+            "C2": "Engaged",
+            "Q1": 0.48,
+            "Q2": 0.41,
+            "Q3": 0.8
+        },
+        {
+            "variable": "LATAM",
+            "C2": "Pitched",
+            "Q1": 0.44,
+            "Q2": 0.37,
+            "Q3": 0.73
+        },
+        {
+            "variable": "LATAM",
+            "C2": "Targeted",
+            "Q1": 0.48,
+            "Q2": 0.43,
+            "Q3": 0.95
+        },
+        {
+            "variable": "North America",
+            "C2": "Adopted",
+            "Q1": 0.36,
+            "Q2": 0.31,
+            "Q3": 0.4
+        },
+        {
+            "variable": "North America",
+            "C2": "Engaged",
+            "Q1": 0.52,
+            "Q2": 0.43,
+            "Q3": 0.55
+        },
+        {
+            "variable": "North America",
+            "C2": "Pitched",
+            "Q1": 0.45,
+            "Q2": 0.39,
+            "Q3": 0.5
+        },
+        {
+            "variable": "North America",
+            "C2": "Targeted",
+            "Q1": 0.56,
+            "Q2": 0.5,
+            "Q3": 0.7
+        }
+    ]
 }

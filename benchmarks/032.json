@@ -2979,7 +2979,7 @@
         {
             "activity": "Playing racquet sports",
             "time": 420,
-            "p": 7e-05,
+            "p": "7e-05",
             "Include?": 1,
             "Peak": 1140,
             "modified time": 240
@@ -4419,7 +4419,7 @@
         {
             "activity": "Playing racquet sports",
             "time": 1320,
-            "p": 5e-05,
+            "p": "5e-05",
             "Include?": 1,
             "Peak": 1140,
             "modified time": 1140
@@ -26019,7 +26019,7 @@
         {
             "activity": "Skiing, ice skating, snowboarding",
             "time": 420,
-            "p": 3e-05,
+            "p": "3e-05",
             "Include?": 1,
             "Peak": 840,
             "modified time": 240
@@ -29715,7 +29715,7 @@
         {
             "activity": "Doing yoga",
             "time": 1290,
-            "p": 9e-05,
+            "p": "9e-05",
             "Include?": 1,
             "Peak": 1080,
             "modified time": 1110
@@ -34859,7 +34859,7 @@
         {
             "activity": "Dancing",
             "time": 185,
-            "p": 6e-05,
+            "p": "6e-05",
             "Include?": 1,
             "Peak": 1290,
             "modified time": 5
@@ -34867,7 +34867,7 @@
         {
             "activity": "Dancing",
             "time": 190,
-            "p": 6e-05,
+            "p": "6e-05",
             "Include?": 1,
             "Peak": 1290,
             "modified time": 10
@@ -34875,7 +34875,7 @@
         {
             "activity": "Dancing",
             "time": 195,
-            "p": 6e-05,
+            "p": "6e-05",
             "Include?": 1,
             "Peak": 1290,
             "modified time": 15
@@ -47515,7 +47515,7 @@
         {
             "activity": "Doing aerobics",
             "time": 895,
-            "p": 5e-05,
+            "p": "5e-05",
             "Include?": 1,
             "Peak": 540,
             "modified time": 715
@@ -50395,7 +50395,7 @@
         {
             "activity": "Hunting",
             "time": 1255,
-            "p": 7e-05,
+            "p": "7e-05",
             "Include?": 1,
             "Peak": 990,
             "modified time": 1075
@@ -50403,7 +50403,7 @@
         {
             "activity": "Hunting",
             "time": 1260,
-            "p": 7e-05,
+            "p": "7e-05",
             "Include?": 1,
             "Peak": 990,
             "modified time": 1080
@@ -58147,7 +58147,7 @@
         {
             "activity": "Golfing",
             "time": 340,
-            "p": 2e-05,
+            "p": "2e-05",
             "Include?": 1,
             "Peak": 690,
             "modified time": 160
@@ -58155,7 +58155,7 @@
         {
             "activity": "Golfing",
             "time": 345,
-            "p": 2e-05,
+            "p": "2e-05",
             "Include?": 1,
             "Peak": 690,
             "modified time": 165
@@ -63555,7 +63555,7 @@
         {
             "activity": "Doing gymnastics",
             "time": 840,
-            "p": 6e-06,
+            "p": "6e-06",
             "Include?": 0,
             "Peak": 0,
             "modified time": 660
@@ -63563,7 +63563,7 @@
         {
             "activity": "Doing gymnastics",
             "time": 845,
-            "p": 6e-06,
+            "p": "6e-06",
             "Include?": 0,
             "Peak": 0,
             "modified time": 665
@@ -63571,7 +63571,7 @@
         {
             "activity": "Doing gymnastics",
             "time": 850,
-            "p": 6e-06,
+            "p": "6e-06",
             "Include?": 0,
             "Peak": 0,
             "modified time": 670
@@ -66859,7 +66859,7 @@
         {
             "activity": "Playing hockey",
             "time": 25,
-            "p": 1e-05,
+            "p": "1e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1285
@@ -66867,7 +66867,7 @@
         {
             "activity": "Playing hockey",
             "time": 30,
-            "p": 1e-05,
+            "p": "1e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1290
@@ -67739,7 +67739,7 @@
         {
             "activity": "Playing hockey",
             "time": 575,
-            "p": 5e-05,
+            "p": "5e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 395
@@ -68043,7 +68043,7 @@
         {
             "activity": "Playing hockey",
             "time": 765,
-            "p": 4e-05,
+            "p": "4e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 585
@@ -68051,7 +68051,7 @@
         {
             "activity": "Playing hockey",
             "time": 770,
-            "p": 4e-05,
+            "p": "4e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 590
@@ -68059,7 +68059,7 @@
         {
             "activity": "Playing hockey",
             "time": 775,
-            "p": 4e-05,
+            "p": "4e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 595
@@ -82483,7 +82483,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1150,
-            "p": 2e-05,
+            "p": "2e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 970
@@ -82491,7 +82491,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1155,
-            "p": 2e-05,
+            "p": "2e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 975
@@ -82651,7 +82651,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1255,
-            "p": 3e-05,
+            "p": "3e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1075
@@ -82659,7 +82659,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1260,
-            "p": 3e-05,
+            "p": "3e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1080
@@ -82667,7 +82667,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1265,
-            "p": 3e-05,
+            "p": "3e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1085
@@ -82675,7 +82675,7 @@
         {
             "activity": "Climbing, spelunking, caving",
             "time": 1270,
-            "p": 3e-05,
+            "p": "3e-05",
             "Include?": 0,
             "Peak": 0,
             "modified time": 1090

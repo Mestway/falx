@@ -43,5 +43,126 @@
             "ROI": "17.65%"
         }
     ],
-    "output_data": [{"Month":"Jan","variable":"Cost","value":6.0},{"Month":"Feb","variable":"Cost","value":15.0},{"Month":"Mar","variable":"Cost","value":24.0},{"Month":"Apr","variable":"Cost","value":33.0},{"Month":"May","variable":"Cost","value":42.0},{"Month":"Jun","variable":"Cost","value":51.0},{"Month":"Jan","variable":"Profit","value":4.0},{"Month":"Feb","variable":"Profit","value":5.0},{"Month":"Mar","variable":"Profit","value":6.0},{"Month":"Apr","variable":"Profit","value":7.0},{"Month":"May","variable":"Profit","value":8.0},{"Month":"Jun","variable":"Profit","value":9.0},{"Month":"Jan","variable":"ROI","value":0.6667},{"Month":"Feb","variable":"ROI","value":0.3333},{"Month":"Mar","variable":"ROI","value":0.25},{"Month":"Apr","variable":"ROI","value":0.2121},{"Month":"May","variable":"ROI","value":0.1905},{"Month":"Jun","variable":"ROI","value":0.1765},{"Month":"Jan","variable":"Sales","value":10.0},{"Month":"Feb","variable":"Sales","value":20.0},{"Month":"Mar","variable":"Sales","value":30.0},{"Month":"Apr","variable":"Sales","value":40.0},{"Month":"May","variable":"Sales","value":50.0},{"Month":"Jun","variable":"Sales","value":60.0}]
+    "output_data": [
+        {
+            "Month": "Jan",
+            "variable": "Cost",
+            "value": 6.0
+        },
+        {
+            "Month": "Feb",
+            "variable": "Cost",
+            "value": 15.0
+        },
+        {
+            "Month": "Mar",
+            "variable": "Cost",
+            "value": 24.0
+        },
+        {
+            "Month": "Apr",
+            "variable": "Cost",
+            "value": 33.0
+        },
+        {
+            "Month": "May",
+            "variable": "Cost",
+            "value": 42.0
+        },
+        {
+            "Month": "Jun",
+            "variable": "Cost",
+            "value": 51.0
+        },
+        {
+            "Month": "Jan",
+            "variable": "Profit",
+            "value": 4.0
+        },
+        {
+            "Month": "Feb",
+            "variable": "Profit",
+            "value": 5.0
+        },
+        {
+            "Month": "Mar",
+            "variable": "Profit",
+            "value": 6.0
+        },
+        {
+            "Month": "Apr",
+            "variable": "Profit",
+            "value": 7.0
+        },
+        {
+            "Month": "May",
+            "variable": "Profit",
+            "value": 8.0
+        },
+        {
+            "Month": "Jun",
+            "variable": "Profit",
+            "value": 9.0
+        },
+        {
+            "Month": "Jan",
+            "variable": "ROI",
+            "value": 0.6667
+        },
+        {
+            "Month": "Feb",
+            "variable": "ROI",
+            "value": 0.3333
+        },
+        {
+            "Month": "Mar",
+            "variable": "ROI",
+            "value": 0.25
+        },
+        {
+            "Month": "Apr",
+            "variable": "ROI",
+            "value": 0.2121
+        },
+        {
+            "Month": "May",
+            "variable": "ROI",
+            "value": 0.1905
+        },
+        {
+            "Month": "Jun",
+            "variable": "ROI",
+            "value": 0.1765
+        },
+        {
+            "Month": "Jan",
+            "variable": "Sales",
+            "value": 10.0
+        },
+        {
+            "Month": "Feb",
+            "variable": "Sales",
+            "value": 20.0
+        },
+        {
+            "Month": "Mar",
+            "variable": "Sales",
+            "value": 30.0
+        },
+        {
+            "Month": "Apr",
+            "variable": "Sales",
+            "value": 40.0
+        },
+        {
+            "Month": "May",
+            "variable": "Sales",
+            "value": 50.0
+        },
+        {
+            "Month": "Jun",
+            "variable": "Sales",
+            "value": 60.0
+        }
+    ]
 }

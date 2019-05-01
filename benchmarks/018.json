@@ -29,5 +29,86 @@
             "Item": "Printers"
         }
     ],
-    "output_data": [{"Item":"Desktop Computers","variable":"2012","value":20},{"Item":"Laptops","variable":"2012","value":34},{"Item":"Monitors","variable":"2012","value":12},{"Item":"Printers","variable":"2012","value":78},{"Item":"Desktop Computers","variable":"2013","value":12},{"Item":"Laptops","variable":"2013","value":45},{"Item":"Monitors","variable":"2013","value":10},{"Item":"Printers","variable":"2013","value":13},{"Item":"Desktop Computers","variable":"2014","value":13},{"Item":"Laptops","variable":"2014","value":40},{"Item":"Monitors","variable":"2014","value":17},{"Item":"Printers","variable":"2014","value":90},{"Item":"Desktop Computers","variable":"2015","value":12},{"Item":"Laptops","variable":"2015","value":39},{"Item":"Monitors","variable":"2015","value":15},{"Item":"Printers","variable":"2015","value":14}]
+    "output_data": [
+        {
+            "Item": "Desktop Computers",
+            "variable": "2012",
+            "value": 20
+        },
+        {
+            "Item": "Laptops",
+            "variable": "2012",
+            "value": 34
+        },
+        {
+            "Item": "Monitors",
+            "variable": "2012",
+            "value": 12
+        },
+        {
+            "Item": "Printers",
+            "variable": "2012",
+            "value": 78
+        },
+        {
+            "Item": "Desktop Computers",
+            "variable": "2013",
+            "value": 12
+        },
+        {
+            "Item": "Laptops",
+            "variable": "2013",
+            "value": 45
+        },
+        {
+            "Item": "Monitors",
+            "variable": "2013",
+            "value": 10
+        },
+        {
+            "Item": "Printers",
+            "variable": "2013",
+            "value": 13
+        },
+        {
+            "Item": "Desktop Computers",
+            "variable": "2014",
+            "value": 13
+        },
+        {
+            "Item": "Laptops",
+            "variable": "2014",
+            "value": 40
+        },
+        {
+            "Item": "Monitors",
+            "variable": "2014",
+            "value": 17
+        },
+        {
+            "Item": "Printers",
+            "variable": "2014",
+            "value": 90
+        },
+        {
+            "Item": "Desktop Computers",
+            "variable": "2015",
+            "value": 12
+        },
+        {
+            "Item": "Laptops",
+            "variable": "2015",
+            "value": 39
+        },
+        {
+            "Item": "Monitors",
+            "variable": "2015",
+            "value": 15
+        },
+        {
+            "Item": "Printers",
+            "variable": "2015",
+            "value": 14
+        }
+    ]
 }

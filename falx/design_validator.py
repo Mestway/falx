@@ -1,10 +1,9 @@
 import json
 import sys
 
-def get_attr(obj, attr):
-	return obj[attr] if attr in obj else None
+get_attr = lambda obj, attr: obj[attr] if attr in obj else None
 
-def internal_validation(spec):
+def validate(spec):
 	for enc in spec["encoding"]:
 		if not validate_encoding(enc):
 			return False

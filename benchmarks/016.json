@@ -57,5 +57,69 @@
             "Variance %": ""
         }
     ],
-    "output_data": [{"Amount":773000,"Revenue":"$773K","Variance":39000.0,"Variance %":"+5%","Year":2011,"Year Label":2011,"c":812000.0},{"Amount":812000,"Revenue":"$812K","Variance":-445000.0,"Variance %":"-55%","Year":2012,"Year Label":2012,"c":367000.0},{"Amount":367000,"Revenue":"$367K","Variance":117000.0,"Variance %":"+32%","Year":2013,"Year Label":2013,"c":484000.0},{"Amount":484000,"Revenue":"$484K","Variance":278000.0,"Variance %":"+57%","Year":2014,"Year Label":2014,"c":762000.0},{"Amount":762000,"Revenue":"$762K","Variance":-201000.0,"Variance %":"-26%","Year":2015,"Year Label":2015,"c":561000.0},{"Amount":561000,"Revenue":"$561K","Variance":213000.0,"Variance %":"+38%","Year":2016,"Year Label":2016,"c":774000.0},{"Amount":774000,"Revenue":"$774K","Variance":null,"Variance %":"","Year":2017,"Year Label":2017,"c":null}]
+    "output_data": [
+        {
+            "Amount": 773000,
+            "Revenue": "$773K",
+            "Variance": 39000.0,
+            "Variance %": "+5%",
+            "Year": 2011,
+            "Year Label": 2011,
+            "c": 812000.0
+        },
+        {
+            "Amount": 812000,
+            "Revenue": "$812K",
+            "Variance": -445000.0,
+            "Variance %": "-55%",
+            "Year": 2012,
+            "Year Label": 2012,
+            "c": 367000.0
+        },
+        {
+            "Amount": 367000,
+            "Revenue": "$367K",
+            "Variance": 117000.0,
+            "Variance %": "+32%",
+            "Year": 2013,
+            "Year Label": 2013,
+            "c": 484000.0
+        },
+        {
+            "Amount": 484000,
+            "Revenue": "$484K",
+            "Variance": 278000.0,
+            "Variance %": "+57%",
+            "Year": 2014,
+            "Year Label": 2014,
+            "c": 762000.0
+        },
+        {
+            "Amount": 762000,
+            "Revenue": "$762K",
+            "Variance": -201000.0,
+            "Variance %": "-26%",
+            "Year": 2015,
+            "Year Label": 2015,
+            "c": 561000.0
+        },
+        {
+            "Amount": 561000,
+            "Revenue": "$561K",
+            "Variance": 213000.0,
+            "Variance %": "+38%",
+            "Year": 2016,
+            "Year Label": 2016,
+            "c": 774000.0
+        },
+        {
+            "Amount": 774000,
+            "Revenue": "$774K",
+            "Variance": null,
+            "Variance %": "",
+            "Year": 2017,
+            "Year Label": 2017,
+            "c": null
+        }
+    ]
 }

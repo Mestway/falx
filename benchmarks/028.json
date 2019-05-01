@@ -55,5 +55,66 @@
             "Number of students": "23"
         }
     ],
-    "output_data": [{"cuts":{"closed":"right","closed_right":true,"length":20,"open_left":true,"right":20},"Number of students":1},{"cuts":{"closed":"right","closed_right":true,"length":5,"open_left":true,"right":25},"Number of students":8},{"cuts":{"closed":"right","closed_right":true,"length":5,"open_left":true,"right":30},"Number of students":2},{"cuts":{"closed":"right","closed_right":true,"length":5,"open_left":true,"right":35},"Number of students":2},{"cuts":{"closed":"right","closed_right":true,"length":5,"open_left":true,"right":40},"Number of students":3},{"cuts":{"closed":"right","closed_right":true,"length":60,"open_left":true,"right":100},"Number of students":2}]
+    "output_data": [
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 20,
+                "open_left": true,
+                "right": 20
+            },
+            "Number of students": 1
+        },
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 5,
+                "open_left": true,
+                "right": 25
+            },
+            "Number of students": 8
+        },
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 5,
+                "open_left": true,
+                "right": 30
+            },
+            "Number of students": 2
+        },
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 5,
+                "open_left": true,
+                "right": 35
+            },
+            "Number of students": 2
+        },
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 5,
+                "open_left": true,
+                "right": 40
+            },
+            "Number of students": 3
+        },
+        {
+            "cuts": {
+                "closed": "right",
+                "closed_right": true,
+                "length": 60,
+                "open_left": true,
+                "right": 100
+            },
+            "Number of students": 2
+        }
+    ]
 }

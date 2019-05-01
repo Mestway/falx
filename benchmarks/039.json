@@ -37,5 +37,78 @@
             "NORTH-Bisc": 8
         }
     ],
-    "output_data": [{"Year":2007,"loc":"NORTH","Bisc":6.0,"Choc":14.0},{"Year":2007,"loc":"SOUTH","Bisc":4.0,"Choc":10.0},{"Year":2007,"loc":"WEST","Bisc":4.0,"Choc":6.0},{"Year":2008,"loc":"NORTH","Bisc":6.7,"Choc":18.0},{"Year":2008,"loc":"SOUTH","Bisc":5.0,"Choc":11.0},{"Year":2008,"loc":"WEST","Bisc":5.0,"Choc":10.0},{"Year":2009,"loc":"NORTH","Bisc":7.0,"Choc":19.0},{"Year":2009,"loc":"SOUTH","Bisc":5.7,"Choc":14.0},{"Year":2009,"loc":"WEST","Bisc":5.7,"Choc":12.0},{"Year":2010,"loc":"NORTH","Bisc":8.0,"Choc":21.0},{"Year":2010,"loc":"SOUTH","Bisc":6.0,"Choc":16.0},{"Year":2010,"loc":"WEST","Bisc":6.0,"Choc":15.0}]
+    "output_data": [
+        {
+            "Year": 2007,
+            "loc": "NORTH",
+            "Bisc": 6.0,
+            "Choc": 14.0
+        },
+        {
+            "Year": 2007,
+            "loc": "SOUTH",
+            "Bisc": 4.0,
+            "Choc": 10.0
+        },
+        {
+            "Year": 2007,
+            "loc": "WEST",
+            "Bisc": 4.0,
+            "Choc": 6.0
+        },
+        {
+            "Year": 2008,
+            "loc": "NORTH",
+            "Bisc": 6.7,
+            "Choc": 18.0
+        },
+        {
+            "Year": 2008,
+            "loc": "SOUTH",
+            "Bisc": 5.0,
+            "Choc": 11.0
+        },
+        {
+            "Year": 2008,
+            "loc": "WEST",
+            "Bisc": 5.0,
+            "Choc": 10.0
+        },
+        {
+            "Year": 2009,
+            "loc": "NORTH",
+            "Bisc": 7.0,
+            "Choc": 19.0
+        },
+        {
+            "Year": 2009,
+            "loc": "SOUTH",
+            "Bisc": 5.7,
+            "Choc": 14.0
+        },
+        {
+            "Year": 2009,
+            "loc": "WEST",
+            "Bisc": 5.7,
+            "Choc": 12.0
+        },
+        {
+            "Year": 2010,
+            "loc": "NORTH",
+            "Bisc": 8.0,
+            "Choc": 21.0
+        },
+        {
+            "Year": 2010,
+            "loc": "SOUTH",
+            "Bisc": 6.0,
+            "Choc": 16.0
+        },
+        {
+            "Year": 2010,
+            "loc": "WEST",
+            "Bisc": 6.0,
+            "Choc": 15.0
+        }
+    ]
 }

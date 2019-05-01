@@ -31,5 +31,81 @@
             "Upper": 102
         }
     ],
-    "output_data": [{"DATA":"A","variable":"Lower","value":80},{"DATA":"B","variable":"Lower","value":103},{"DATA":"C","variable":"Lower","value":106},{"DATA":"D","variable":"Lower","value":75},{"DATA":"E","variable":"Lower","value":85},{"DATA":"A","variable":"Upper","value":116},{"DATA":"B","variable":"Upper","value":138},{"DATA":"C","variable":"Upper","value":157},{"DATA":"D","variable":"Upper","value":85},{"DATA":"E","variable":"Upper","value":102},{"DATA":"A","variable":"Value","value":100},{"DATA":"B","variable":"Value","value":120},{"DATA":"C","variable":"Value","value":140},{"DATA":"D","variable":"Value","value":80},{"DATA":"E","variable":"Value","value":90}]
+    "output_data": [
+        {
+            "DATA": "A",
+            "variable": "Lower",
+            "value": 80
+        },
+        {
+            "DATA": "B",
+            "variable": "Lower",
+            "value": 103
+        },
+        {
+            "DATA": "C",
+            "variable": "Lower",
+            "value": 106
+        },
+        {
+            "DATA": "D",
+            "variable": "Lower",
+            "value": 75
+        },
+        {
+            "DATA": "E",
+            "variable": "Lower",
+            "value": 85
+        },
+        {
+            "DATA": "A",
+            "variable": "Upper",
+            "value": 116
+        },
+        {
+            "DATA": "B",
+            "variable": "Upper",
+            "value": 138
+        },
+        {
+            "DATA": "C",
+            "variable": "Upper",
+            "value": 157
+        },
+        {
+            "DATA": "D",
+            "variable": "Upper",
+            "value": 85
+        },
+        {
+            "DATA": "E",
+            "variable": "Upper",
+            "value": 102
+        },
+        {
+            "DATA": "A",
+            "variable": "Value",
+            "value": 100
+        },
+        {
+            "DATA": "B",
+            "variable": "Value",
+            "value": 120
+        },
+        {
+            "DATA": "C",
+            "variable": "Value",
+            "value": 140
+        },
+        {
+            "DATA": "D",
+            "variable": "Value",
+            "value": 80
+        },
+        {
+            "DATA": "E",
+            "variable": "Value",
+            "value": 90
+        }
+    ]
 }

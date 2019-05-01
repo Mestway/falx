@@ -26,5 +26,56 @@
             "Spring": 100
         }
     ],
-    "output_data": [{"Class":"Literacy","variable":"Fall","value":34},{"Class":"Language","variable":"Fall","value":63},{"Class":"Math","variable":"Fall","value":67},{"Class":"Science","variable":"Fall","value":92},{"Class":"Arts","variable":"Fall","value":96},{"Class":"Literacy","variable":"Spring","value":69},{"Class":"Language","variable":"Spring","value":77},{"Class":"Math","variable":"Spring","value":75},{"Class":"Science","variable":"Spring","value":98},{"Class":"Arts","variable":"Spring","value":100}]
+    "output_data": [
+        {
+            "Class": "Literacy",
+            "variable": "Fall",
+            "value": 34
+        },
+        {
+            "Class": "Language",
+            "variable": "Fall",
+            "value": 63
+        },
+        {
+            "Class": "Math",
+            "variable": "Fall",
+            "value": 67
+        },
+        {
+            "Class": "Science",
+            "variable": "Fall",
+            "value": 92
+        },
+        {
+            "Class": "Arts",
+            "variable": "Fall",
+            "value": 96
+        },
+        {
+            "Class": "Literacy",
+            "variable": "Spring",
+            "value": 69
+        },
+        {
+            "Class": "Language",
+            "variable": "Spring",
+            "value": 77
+        },
+        {
+            "Class": "Math",
+            "variable": "Spring",
+            "value": 75
+        },
+        {
+            "Class": "Science",
+            "variable": "Spring",
+            "value": 98
+        },
+        {
+            "Class": "Arts",
+            "variable": "Spring",
+            "value": 100
+        }
+    ]
 }

@@ -21,5 +21,26 @@
             "Actual Profits": 3373
         }
     ],
-    "output_data": [{"Actual Profits":3358,"Number of Units":23,"Quarter":"Quarter1"},{"Actual Profits":3829,"Number of Units":27,"Quarter":"Quarter2"},{"Actual Profits":2374,"Number of Units":15,"Quarter":"Quarter3"},{"Actual Profits":3373,"Number of Units":43,"Quarter":"Quarter4"}]
+    "output_data": [
+        {
+            "Actual Profits": 3358,
+            "Number of Units": 23,
+            "Quarter": "Quarter1"
+        },
+        {
+            "Actual Profits": 3829,
+            "Number of Units": 27,
+            "Quarter": "Quarter2"
+        },
+        {
+            "Actual Profits": 2374,
+            "Number of Units": 15,
+            "Quarter": "Quarter3"
+        },
+        {
+            "Actual Profits": 3373,
+            "Number of Units": 43,
+            "Quarter": "Quarter4"
+        }
+    ]
 }
