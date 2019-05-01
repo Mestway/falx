@@ -386,5 +386,27 @@
             "variable": "APAC",
             "value": 0.59
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "line",
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "C2",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "C1",
+                "type": "nominal"
+            }
+        }
+    }
 }

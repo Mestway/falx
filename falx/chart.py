@@ -38,22 +38,26 @@ def get_channel_value(encodings, channel, r):
 class VisDesign(object):
     """Top level visualization construct """
     def __init__(self, data, chart):
-        # data can either be a table list (for layered chart) or a single table
+        # data can either be a list of tables (for layered chart) or a single table
+        # each table is a list of named tuples:
+        #   e.g. {["a": 1, "b": 2, "c": 100],
+        #          "a": 2, "b"; 5, "c": 15]}
+        # is a table with 3 columns "a", "b", "c" and two rows
         self.data = data
         self.chart = chart
 
-
     def to_vl_obj(self):
+        """generate vl obj from the vis design"""
         chart_obj = self.chart.to_vl_obj()
         if isinstance(self.chart, LayeredChart):
             # in this case, the data section is a list of tables
+            # we combine them into one table to feed to the database
             combined_data = []
             for i, layer_data in enumerate(self.data):
                 for r in layer_data:
                     new_r = copy.copy(r)
                     new_r["layer_id"] = i
                     combined_data.append(new_r)
-
             chart_obj["data"] = {"values": combined_data}
         else:
             chart_obj["data"] = {"values": self.data}
@@ -198,9 +202,10 @@ class BarChart(object):
 
     @staticmethod
     def inv_eval(vtrace, orientation):
-        data_values = []
 
         assert(orientation in ["horizontal", "vertical"])
+
+        data_values = []
         
         if orientation == "vertical":
             for vt in vtrace:
@@ -348,17 +353,20 @@ class BoxPlot(object):
 
     @staticmethod
     def inv_eval(vtrace):
-        #TODO: handle this
-
         data_values = []
         constraints = []
 
         for vt in vtrace:
-            # data.append({"c_x": vt.x, "c_y": vt.Q1, "c_color": vt.color,  "c_column": vt.column})
-            # data.append({"c_x": vt.x, "c_y": vt.Q3, "c_color": vt.color,  "c_column": vt.column})
-            # data.append({"c_x": vt.x, "c_y": vt.median, "c_color": vt.color,  "c_column": vt.column})
+            # min max will appear in the table
             data_values.append({"c_x": vt.x, "c_y": vt.min, "c_color": vt.color,  "c_column": vt.column})
             data_values.append({"c_x": vt.x, "c_y": vt.max, "c_color": vt.color,  "c_column": vt.column})
+
+            # the output table should satisfy these constraints
+            constraints.append("min([r.c_y for r in T if r.c_color == {} and r.c_column == {}]) = {}".format(vt.color, vt.column, vt.min))
+            constraints.append("max([r.c_y for r in T if r.c_color == {} and r.c_column == {}]) = {}".format(vt.color, vt.column, vt.max))
+            constraints.append("Q1([r.c_y for r in T if r.c_color == {} and r.c_column == {}]) = {}".format(vt.color, vt.column, vt.Q1))
+            constraints.append("Q3([r.c_y for r in T if r.c_color == {} and r.c_column == {}]) = {}".format(vt.color, vt.column, vt.Q3))
+            constraints.append("median([r.c_y for r in T if r.c_color == {} and r.c_column == {}]) = {}".format(vt.color, vt.column, vt.median))
 
         # remove fields that contain none values
         unused_fields = remove_unused_fields(data_values)

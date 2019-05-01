@@ -110,5 +110,56 @@
             "variable": "2015",
             "value": 14
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "bar",
+                "transform": [
+                    {
+                        "filter": "datum.Item == \"Desktop Computers\" || datum.Item == \"Laptops\""
+                    }
+                ],
+                "encoding": {
+                    "x": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "Item",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.Item != \"Desktop Computers\" && datum.Item != \"Laptops\""
+                    }
+                ],
+                "encoding": {
+                    "x": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "Item",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ]
+    }
 }

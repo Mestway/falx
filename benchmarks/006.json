@@ -77,5 +77,34 @@
             "variable": "Budgeted",
             "value": 140
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "transform": [
+            {
+                "filter": "datum.variable != \"ROI\""
+            }
+        ],
+        "encoding": {
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative",
+                "stack": "null"
+            },
+            "x": {
+                "field": "Bucket",
+                "type": "nominal"
+            },
+            "opacity": {
+                "value": 0.7
+            }
+        }
+    }
 }

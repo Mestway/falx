@@ -92,5 +92,50 @@
             "Count": 9,
             "cumsum": 1722
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "bar",
+                "encoding": {
+                    "x": {
+                        "field": "Complaint Type",
+                        "type": "nominal",
+                        "sort": null
+                    },
+                    "y": {
+                        "field": "Count",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "color": "red"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "Complaint Type",
+                        "type": "nominal",
+                        "sort": null
+                    },
+                    "y": {
+                        "field": "cumsum",
+                        "type": "quantitative"
+                    },
+                    "order": {
+                        "field": "id",
+                        "type": "ordinal"
+                    }
+                }
+            }
+        ],
+        "resolve": {
+            "scale": {
+                "y": "independent"
+            }
+        }
+    }
 }

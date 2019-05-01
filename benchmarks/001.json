@@ -42,5 +42,46 @@
             "Number of Units": 43,
             "Quarter": "Quarter4"
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "type": "line"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "Number of Units",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Quarter",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "bar"
+                },
+                "encoding": {
+                    "y": {
+                        "type": "quantitative",
+                        "field": "Actual Profits"
+                    },
+                    "x": {
+                        "field": "Quarter",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ],
+        "resolve": {
+            "scale": {
+                "y": "independent"
+            }
+        }
+    }
 }

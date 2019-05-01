@@ -142,5 +142,47 @@
             "value": 2,
             "cumsum": 9
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "encoding": {
+            "x": {
+                "field": "Value",
+                "type": "nominal"
+            }
+        },
+        "layer": [
+            {
+                "mark": "bar",
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "order": {
+                        "field": "variable",
+                        "type": "quantitative",
+                        "sort": "ascending"
+                    }
+                }
+            },
+            {
+                "mark": "text",
+                "encoding": {
+                    "y": {
+                        "field": "cumsum",
+                        "type": "quantitative"
+                    },
+                    "text": {
+                        "field": "value",
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ]
+    }
 }

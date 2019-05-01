@@ -164,5 +164,62 @@
             "variable": "Sales",
             "value": 60.0
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "encoding": {
+            "x": {
+                "field": "Month",
+                "type": "nominal"
+            }
+        },
+        "layer": [
+            {
+                "mark": {
+                    "type": "bar"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"ROI\""
+                    }
+                ],
+                "encoding": {
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "stroke": "red"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"ROI\""
+                    }
+                ],
+                "encoding": {
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ],
+        "resolve": {
+            "scale": {
+                "y": "independent"
+            }
+        }
+    }
 }

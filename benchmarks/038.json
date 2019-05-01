@@ -4938,5 +4938,49 @@
             "Job Type": "Analyst",
             "Salary in USD": 70000
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "type": "bar"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "Job Type",
+                        "type": "nominal"
+                    },
+                    "x": {
+                        "field": "min",
+                        "type": "quantitative"
+                    },
+                    "x2": {
+                        "field": "mean",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "bar",
+                    "color": "orange"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "Job Type",
+                        "type": "nominal"
+                    },
+                    "x": {
+                        "field": "mean",
+                        "type": "quantitative"
+                    },
+                    "x2": {
+                        "field": "max",
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ]
+    }
 }

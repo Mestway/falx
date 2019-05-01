@@ -121,5 +121,23 @@
             "Year Label": 2017,
             "c": null
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "bar",
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "Amount",
+                "type": "quantitative"
+            },
+            "y2": {
+                "field": "c",
+                "type": "quantitative"
+            }
+        }
+    }
 }

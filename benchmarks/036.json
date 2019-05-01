@@ -6326,5 +6326,45 @@
             "VolumeDiff": 1400.0,
             "color": true
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "vconcat": [
+            {
+                "mark": {
+                    "type": "area"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "Date",
+                        "type": "temporal"
+                    },
+                    "y": {
+                        "field": "VolumeDiff",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "color",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "area",
+                    "opacity": 0.5
+                },
+                "encoding": {
+                    "y": {
+                        "field": "Volume",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Date",
+                        "type": "temporal"
+                    }
+                }
+            }
+        ]
+    }
 }

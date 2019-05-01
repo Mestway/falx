@@ -107,5 +107,55 @@
             "variable": "Value",
             "value": 90
         }
-    ]
+    ],
+    "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "type": "bar",
+                    "opacity": 0.5
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"Value\""
+                    }
+                ],
+                "encoding": {
+                    "x": {
+                        "field": "DATA",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "point"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"Value\""
+                    }
+                ],
+                "encoding": {
+                    "x": {
+                        "field": "DATA",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ]
+    }
 }

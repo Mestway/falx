@@ -398,5 +398,60 @@
             "variable": "West",
             "value": 0.957
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "bar"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"East\" && datum.variable != \"West\""
+                    }
+                ],
+                "encoding": {
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Month",
+                        "type": "temporal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "stroke": "red"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"East\" || datum.variable == \"West\""
+                    }
+                ],
+                "encoding": {
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Month",
+                        "type": "temporal"
+                    }
+                }
+            }
+        ]
+    }
 }

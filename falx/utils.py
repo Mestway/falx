@@ -59,7 +59,7 @@ def clean_column_dtype(column_values):
 def load_and_clean_table(input_data):
 	# infer type of each column and then update column value
 	for col in input_data:
-		dtype, new_col_values = infer_column_dtype(input_data[col])
+		dtype, new_col_values = clean_column_dtype(input_data[col])
 		input_data[col] = new_col_values
 	return input_data
 

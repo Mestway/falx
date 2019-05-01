@@ -69,5 +69,43 @@
             "stddev": 0.1225,
             "upper range": 0.75
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "means",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "area"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "type": "quantitative",
+                        "field": "lower range"
+                    },
+                    "y2": {
+                        "type": "quantitative",
+                        "field": "upper range"
+                    }
+                }
+            }
+        ]
+    }
 }

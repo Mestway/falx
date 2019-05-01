@@ -15564,5 +15564,47 @@
             "Representative": 153,
             "csum": 2547
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "bar",
+                "encoding": {
+                    "x": {
+                        "field": "cuts",
+                        "type": "ordinal",
+                        "sort": "none"
+                    },
+                    "y": {
+                        "field": "Purchase Amount",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "cuts",
+                        "type": "ordinal",
+                        "sort": "none"
+                    },
+                    "y": {
+                        "field": "csum",
+                        "type": "quantitative"
+                    },
+                    "order": {
+                        "field": "id",
+                        "type": "ordinal"
+                    }
+                }
+            }
+        ],
+        "resolve": {
+            "scale": {
+                "y": "independent"
+            }
+        }
+    }
 }

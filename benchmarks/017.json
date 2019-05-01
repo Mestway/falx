@@ -212,5 +212,39 @@
             "Projected": 10360.0,
             "Year": 2040
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "Actual",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "color": "orange"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "Projected",
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ]
+    }
 }

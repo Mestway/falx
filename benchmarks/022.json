@@ -226,5 +226,53 @@
             "Event_line": null,
             "Year": 2010
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "quantitative"
+                    },
+                    "y": {
+                        "field": "Coverage",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": "bar",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "quantitative"
+                    },
+                    "y": {
+                        "field": "Event_line",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": "text",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "quantitative"
+                    },
+                    "y": {
+                        "field": "Event_line",
+                        "type": "quantitative"
+                    },
+                    "text": {
+                        "field": "Event",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ]
+    }
 }

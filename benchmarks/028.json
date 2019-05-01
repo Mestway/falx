@@ -116,5 +116,19 @@
             },
             "Number of students": 2
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "bar",
+        "encoding": {
+            "x": {
+                "field": "cuts",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "Number of students",
+                "type": "quantitative"
+            }
+        }
+    }
 }
