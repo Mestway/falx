@@ -44,6 +44,7 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
        - dplyr: `install.packages("dplyr", dependencies=TRUE)`
        - tidyr: `install.packages("tidyr", dependencies=TRUE)`
        - jsonlite: `install.packages("jsonlite", dependencies=TRUE)`
+       - jsonlite: `install.packages("compare", dependencies=TRUE)`
 
 ## Run
 
