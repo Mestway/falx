@@ -5,7 +5,7 @@ from falx.interface import *
 
 class TestFalxInterface(unittest.TestCase):
 
-    def test_line_chart(self):
+    def test_line_chart_1(self):
 
         inputs = [[
             {"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
@@ -41,7 +41,8 @@ class TestFalxInterface(unittest.TestCase):
             print(ptable)
             print(vis_design.to_vl_json())
 
-    def test_multi_color_lines(self):
+
+    def test_line_chart_2(self):
 
         inputs = [[{"Year":1950,"Crustaceans":58578630,"Cod":2716706,"Tuna":69690537,"Herring":87161396,"Scorpion.fishes":15250015},
                 {"Year":1951,"Crustaceans":59194582,"Cod":3861166,"Tuna":34829755,"Herring":51215349,"Scorpion.fishes":15454659},
