@@ -44,9 +44,10 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
        - dplyr: `install.packages("dplyr", dependencies=TRUE)`
        - tidyr: `install.packages("tidyr", dependencies=TRUE)`
        - jsonlite: `install.packages("jsonlite", dependencies=TRUE)`
+       - jsonlite: `install.packages("compare", dependencies=TRUE)`
 
 ## Run
 
 To run the Falx design synthesizer: `cd falx; python run.py`
 
-To test Tyrell enumerator: `cd falx; python morpheus_enumerator.py`
+To test Tyrell enumerator: `cd falx; python morpheus.py`
