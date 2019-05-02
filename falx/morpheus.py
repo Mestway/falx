@@ -21,7 +21,6 @@ counter_ = 1
 #library(compare)
 robjects.r('''
     library(dplyr)
-    library(compare)
     library(tidyr)
     library(jsonlite)
    ''')
@@ -61,16 +60,16 @@ def get_type(df, index):
     ret_val = robjects.r(_rscript)
     return ret_val[0]
 
-def eq_r(actual, expect):
-    _rscript = '''
-    tmp1 <- sapply({lhs}, as.character)
-    tmp2 <- sapply({rhs}, as.character)
-    compare(tmp1, tmp2, ignoreOrder = TRUE)
-    '''.format(lhs=actual, rhs=expect)
-    # logger.info(robjects.r(actual))
-    # logger.info(robjects.r(expect))
-    ret_val = robjects.r(_rscript)
-    return True == ret_val[0][0]
+# def eq_r(actual, expect):
+#     _rscript = '''
+#     tmp1 <- sapply({lhs}, as.character)
+#     tmp2 <- sapply({rhs}, as.character)
+#     compare(tmp1, tmp2, ignoreOrder = TRUE)
+#     '''.format(lhs=actual, rhs=expect)
+#     # logger.info(robjects.r(actual))
+#     # logger.info(robjects.r(expect))
+#     ret_val = robjects.r(_rscript)
+#     return True == ret_val[0][0]
 
 
 def subset_eq(actual, expect):
