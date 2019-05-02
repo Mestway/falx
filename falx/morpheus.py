@@ -25,8 +25,9 @@ robjects.r('''
     library(jsonlite)
    ''')
 
+prog_output = None
 
-def evaluate(inputs, prog):
+def evaluate(prog, inputs):
     """ evaluate a table transformation program on input tables
     Args:
         input: a list of input tables (represented as a list of named tuples)
@@ -34,7 +35,7 @@ def evaluate(inputs, prog):
     Returns:
         an output table (represented as a list of named tuples)
     """
-    return prog[0]
+    return prog_output
 
 ## Common utils.
 def get_collist(sel):
@@ -78,6 +79,10 @@ def subset_eq(actual, expect):
     # cmd = 'toJSON({df_name})'.format(df_name=actual)
     # prog_output = robjects.r(cmd)[0]
     all_ok = all([check_row(expect_row, robjects.r(actual)) for expect_row in robjects.r(expect).iter_row()])
+    if all_ok:
+        cmd = 'toJSON({df_name})'.format(df_name=actual)
+        global prog_output
+        prog_output = robjects.r(cmd)[0]
     return all_ok
 
 def check_row(row, table):
