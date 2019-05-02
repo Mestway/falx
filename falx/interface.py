@@ -22,7 +22,7 @@ class FalxTask(object):
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(self.inputs, sym_data)
                 for p in candidate_progs:
-                    vis_design = VisDesign(data=morpheus.evalute(p, self.inputs), chart=chart)
+                    vis_design = VisDesign(data=morpheus.evaluate(p, self.inputs), chart=chart)
                     candidates.append((p, vis_design))
             else: 
                 # multi-layer charts

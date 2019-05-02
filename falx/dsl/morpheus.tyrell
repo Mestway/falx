@@ -61,7 +61,7 @@ func group_by: Table r -> Table a, ColList b {
 func gather: Table r -> Table a, ColNegList b {
   row(r) >= row(a);
   col(r) <= col(a);
-  head(r) <= head(a) + 2;
+ # head(r) <= head(a) + 2;
  # content(r) <= content(a) + 2;
 }
 

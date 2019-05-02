@@ -52,8 +52,8 @@ class TestFalxInterface(unittest.TestCase):
                 {"Year":1955,"Crustaceans":76111004,"Cod":4774045,"Tuna":13992697,"Herring":18910756,"Scorpion.fishes":8446391}]]
 
         vtrace = [
-            Line(x1=1950, y1=58578630, x2=1951, y2=59194582, size=None, color='blue', column=None), 
-            Line(x1=1954, y1=4412721, x2=1955, y2=4774045, size=None, color='red', column=None),
+            Line(x1=1950, y1=58578630, x2=1951, y2=59194582, size=None, color='Crustaceans', column=None), 
+            Line(x1=1954, y1=4412721, x2=1955, y2=4774045, size=None, color='Cod', column=None),
         ]
 
         task = FalxTask(inputs=inputs, vtrace=vtrace)
