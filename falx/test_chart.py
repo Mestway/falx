@@ -1,6 +1,7 @@
 import unittest
 
 from falx.chart import *
+import os
 
 test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
              {"Totals":8,"Value":"B","variable":"alpha","value":2,"cumsum":2},
@@ -18,7 +19,6 @@ test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
              {"Totals":9,"Value":"D","variable":"gamma","value":2,"cumsum":9},
              {"Totals":9,"Value":"E","variable":"gamma","value":2,"cumsum":9}]
 
-
 class TestChart(unittest.TestCase):
 
     def test_line_chart(self):
@@ -30,7 +30,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
 
         abstract_designs = VisDesign.inv_eval(trace)
-
 
     def test_group_line_chart(self):
         chart = LineChart(
@@ -98,7 +97,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         abstract_designs = VisDesign.inv_eval(trace)
         
-
     def test_grouped_bar(self):
         chart = BarChart(
             encodings=[ Encoding("y", "Value", "nominal"),
@@ -110,11 +108,24 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         abstract_designs = VisDesign.inv_eval(trace)
 
-        print(design.to_vl_json())
-        pprint(trace)
+        #print(design.to_vl_json())
+        #pprint(trace)
         #for abs_design in abstract_designs: 
         #    print(abs_design.instantiate().to_vl_json())
 
+
+class TestLoadChart(unittest.TestCase):
+
+    def test_load_vl_spec(self):
+        # test it can correctly load files from benchmarks
+        benchmark_dir = os.path.join("..", "benchmarks")
+        for fname in os.listdir(benchmark_dir):
+            if fname.endswith(".json"):
+                with open(os.path.join(benchmark_dir, fname)) as f:
+                    testcase = json.load(f)
+                    if "vl_spec" not in testcase:
+                        continue
+                    vis = VisDesign.load_from_vegalite(testcase["vl_spec"], testcase["output_data"])
 
 if __name__ == '__main__':
     unittest.main()

@@ -34,7 +34,6 @@ def get_channel_value(encodings, channel, r):
     """
     return r[encodings[channel].field] if channel in encodings else None
 
-
 class VisDesign(object):
     """Top level visualization construct """
     def __init__(self, data, chart):
@@ -102,12 +101,35 @@ class VisDesign(object):
         layers = []
         for lspec in layer_specs:
             mark_ty = lspec["mark"] if not isinstance(lspec["mark"], (dict,)) else lspec["mark"]["type"]
-            encodings = [Encoding(channel, get_value(enc, "field"), get_value(enc, "type"),get_value(enc, "sort")) for channel, enc in lspec["encoding"].items()]
+            encodings = [Encoding(channel, get_value(enc, "field"), get_value(enc, "type"), get_value(enc, "sort")) 
+                            for channel, enc in lspec["encoding"].items()]
+            
+            if mark_ty == "bar":
+                orientation = "horizontal" if lspec["encoding"]["y"]["type"] == "nominal" else "vertical"
+                if "color" in lspec["encoding"]:
+                    # stacked bar chart or layered bar chart
+                    val_channel = "y" if orientation == "vertical" else "x"
+                    if "stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None:
+                        chart = BarChart(encodings, orientation)
+                    else:
+                        chart = StackedBarChart(orientation, encodings)                        
+                else:
+                    chart = BarChart(encodings, orientation)
+            elif mark_ty == "boxplot":
+                chart = BoxPlot(encodings)
+            elif mark_ty == "area":
+                chart = AreaChart(encodings)
+            elif mark_ty == "line":
+                chart = LineChart(encodings)
+            elif mark_ty in ["point", "circle", "text", "rect"]:
+                chart = ScatterPlot(mark_ty, encodings)
 
+            layers.append(chart)
 
         # layered chart will handle load responsibility
-        chart = LayeredChart.load_from_vegalite(vl_spec)
-        return VisDesign(data, chart)
+        if len(layers) == 1:
+            return VisDesign(data, layers[0])
+        return VisDesign(data, LayeredChart(layers, resolve=vl_spec["resolve"] if "resolve" in vl_spec else None))
 
 
 class LayeredChart(object):

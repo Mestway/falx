@@ -83,11 +83,6 @@
         "mark": {
             "type": "bar"
         },
-        "transform": [
-            {
-                "filter": "datum.variable != \"ROI\""
-            }
-        ],
         "encoding": {
             "color": {
                 "field": "variable",
@@ -96,7 +91,7 @@
             "y": {
                 "field": "value",
                 "type": "quantitative",
-                "stack": "null"
+                "stack": null
             },
             "x": {
                 "field": "Bucket",

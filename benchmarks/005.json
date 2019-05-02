@@ -167,12 +167,6 @@
     ],
     "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "encoding": {
-            "x": {
-                "field": "Month",
-                "type": "nominal"
-            }
-        },
         "layer": [
             {
                 "mark": {
@@ -184,6 +178,10 @@
                     }
                 ],
                 "encoding": {
+                    "x": {
+                        "field": "Month",
+                        "type": "nominal"
+                    },
                     "color": {
                         "field": "variable",
                         "type": "nominal"
@@ -205,6 +203,10 @@
                     }
                 ],
                 "encoding": {
+                    "x": {
+                        "field": "Month",
+                        "type": "nominal"
+                    },
                     "color": {
                         "field": "variable",
                         "type": "nominal"
