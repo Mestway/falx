@@ -18,7 +18,6 @@ logger = get_logger('tyrell')
 
 counter_ = 1
 
-
 #library(compare)
 robjects.r('''
     library(dplyr)
@@ -26,18 +25,6 @@ robjects.r('''
     library(tidyr)
     library(jsonlite)
    ''')
-
-def synthesize(inputs, output):
-    """ synthesizer table transformation programs from input-output examples
-    Args:
-        inputs: a list of input tables (represented as a list of named tuples)
-        output: a symbolic table (of class symbolic.SymTable)
-    Returns:
-        a list of transformation programs s.t. p(inputs) = output
-    """
-    print(output)
-    print(len(inputs))
-    return []
 
 
 def evaluate(inputs, prog):
@@ -48,7 +35,7 @@ def evaluate(inputs, prog):
     Returns:
         an output table (represented as a list of named tuples)
     """
-    return None
+    return prog[0]
 
 ## Common utils.
 def get_collist(sel):
@@ -84,6 +71,29 @@ def eq_r(actual, expect):
     # logger.info(robjects.r(expect))
     ret_val = robjects.r(_rscript)
     return True == ret_val[0][0]
+
+
+def subset_eq(actual, expect):
+    # logger.info(robjects.r(actual))
+    # logger.info(robjects.r(expect))
+    # cmd = 'toJSON({df_name})'.format(df_name=actual)
+    # prog_output = robjects.r(cmd)[0]
+    all_ok = all([check_row(expect_row, robjects.r(actual)) for expect_row in robjects.r(expect).iter_row()])
+    return all_ok
+
+def check_row(row, table):
+    for actual_row in table.iter_row():
+        list = []
+        for e in actual_row:
+            list.append(e)
+        all_ok = all(contain(elem, list) for elem in row)
+        if all_ok == True:
+            return True
+
+    return False
+
+def contain(elem, list):
+    return any((elem[0] == e[0]) for e in list)
 
 def get_head(df):
     head = set()
@@ -315,7 +325,10 @@ class MorpheusInterpreter(PostOrderInterpreter):
     ## Abstract interpreter
     def apply_row(self, val):
         df = robjects.r(val)
-        return df.nrow
+        row = df.nrow
+        if val == 'output':
+            row = -1
+        return row
 
     def apply_col(self, val):
         df = robjects.r(val)
@@ -338,19 +351,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
         content_curr = get_content(curr_df)
         return len(content_curr - content_input)
 
-def init_tbl(df_name, csv_loc):
-    cmd = '''
-    tbl_name <- read.csv(csv_location, check.names = FALSE)
-    fctr.cols <- sapply(tbl_name, is.factor)
-    int.cols <- sapply(tbl_name, is.integer)
-    tbl_name[, fctr.cols] <- sapply(tbl_name[, fctr.cols], as.character)
-    tbl_name[, int.cols] <- sapply(tbl_name[, int.cols], as.numeric)
-    '''
-    cmd = cmd.replace('tbl_name', df_name).replace('csv_location', '"'+ csv_loc + '"')
-    robjects.r(cmd)
-    return None
-
-def init_tbl_json(df_name, json_loc):
+def init_tbl_json_str(df_name, json_loc):
     cmd = '''
     # tbl_name <- read.csv(csv_location, check.names = FALSE)
     tbl_name <- fromJSON(json_location)
@@ -359,32 +360,30 @@ def init_tbl_json(df_name, json_loc):
     tbl_name[, fctr.cols] <- sapply(tbl_name[, fctr.cols], as.character)
     tbl_name[, int.cols] <- sapply(tbl_name[, int.cols], as.numeric)
     '''
-    cmd = cmd.replace('tbl_name', df_name).replace('json_location', '"'+ json_loc + '"')
+    cmd = cmd.replace('tbl_name', df_name).replace('json_location', "'" + json_loc + "'")
     robjects.r(cmd)
     return None
 
-def main():
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-i0', '--input0', type=str)
-    parser.add_argument('-i1', '--input1', type=str)
-    parser.add_argument('-o', '--output', type=str)
-    parser.add_argument('-l', '--length', type=int)
-    args = parser.parse_args()
-    loc_val = args.length
-    # Input and Output must be in CSV format.
-    input0 = args.input0
-    input1 = args.input1
-    output = args.output
-
-    depth_val = loc_val + 1
-    print(input0, input1, output, loc_val)
-    init_tbl_json('input0', input0)
-    #FIXME: ignore the second input table for now.
-    init_tbl_json('output', output)
+def synthesize(inputs, output):
+    logger.setLevel('INFO')
+    """ synthesizer table transformation programs from input-output examples
+    Args:
+        inputs: a list of input tables (represented as a list of named tuples)
+        output: a symbolic table (of class symbolic.SymTable)
+    Returns:
+        a list of transformation programs s.t. p(inputs) = output
+    """
+    print("output table:\n", output)
+    print("input table:\n", inputs[0])
+    loc_val = 1
+    output_data = str(output.instantiate()).replace("'", '"')
+    input_data = str(inputs[0]).replace("'", '"')
+    init_tbl_json_str('input0', input_data)
+    init_tbl_json_str('output', output_data)
     print(robjects.r('input0'))
     print(robjects.r('output'))
 
+    depth_val = loc_val + 1
     logger.info('Parsing Spec...')
     spec = S.parse_file('dsl/morpheus.tyrell')
     logger.info('Parsing succeeded')
@@ -397,10 +396,9 @@ def main():
             spec=spec,
             interpreter=MorpheusInterpreter(),
             examples=[
-                # Example(input=[DataFrame2(benchmark1_input)], output=benchmark1_output),
                 Example(input=['input0'], output='output'),
             ],
-            equal_output=eq_r
+            equal_output=subset_eq
         )
     )
     logger.info('Synthesizing programs...')
@@ -408,10 +406,8 @@ def main():
     prog = synthesizer.synthesize()
     if prog is not None:
         logger.info('Solution found: {}'.format(prog))
+        return [prog]
     else:
         logger.info('Solution not found!')
 
-
-if __name__ == '__main__':
-    logger.setLevel('DEBUG')
-    main()
+    return []
