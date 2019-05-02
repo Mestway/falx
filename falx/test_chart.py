@@ -29,8 +29,6 @@ class TestChart(unittest.TestCase):
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
 
-        print(trace)
-
         abstract_designs = VisDesign.inv_eval(trace)
 
 

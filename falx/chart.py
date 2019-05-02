@@ -7,7 +7,7 @@ from namedlist import namedlist
 import numpy as np
 
 from symbolic import SymTable, SymVal
-import utils
+import table_utils
 
 # mutatable vtrace
 BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
@@ -80,6 +80,34 @@ class VisDesign(object):
         for data, chart in LayeredChart.inv_eval(vtrace):
             res.append((data, chart))
         return res
+
+    @staticmethod
+    def load_from_vegalite(vl_spec, input_data):
+        """given a vegalite spec, load the spec into Falx VisDesign object """
+
+        def get_value(obj, key):
+            return obj[key] if key in obj else None
+
+        # multi-layered chart
+        if "layer" in vl_spec:
+            data = []
+            layer_specs = vl_spec["layer"]
+            for lspec in vl_spec["layer"]:
+                pred = lspec["transform"] if "transform" in lspec else True
+                data.append(table_utils.filter_table(input_data, pred))   
+        else:
+            data = input_data
+            layer_specs = [vl_spec]
+
+        layers = []
+        for lspec in layer_specs:
+            mark_ty = lspec["mark"] if not isinstance(lspec["mark"], (dict,)) else lspec["mark"]["type"]
+            encodings = [Encoding(channel, get_value(enc, "field"), get_value(enc, "type"),get_value(enc, "sort")) for channel, enc in lspec["encoding"].items()]
+
+
+        # layered chart will handle load responsibility
+        chart = LayeredChart.load_from_vegalite(vl_spec)
+        return VisDesign(data, chart)
 
 
 class LayeredChart(object):
@@ -155,7 +183,7 @@ class LayeredChart(object):
                 data_for_all_layers = [cl[0] for cl in data_layer_pairs]
                 all_layers = [cl[1] for cl in data_layer_pairs]
                 res.append((data_for_all_layers, LayeredChart(layers=all_layers, resolve={})))
-            return  res 
+            return  res
 
 
 class BarChart(object):
@@ -379,7 +407,7 @@ class BoxPlot(object):
 
             if channel in ["x", "y"]:
                 # the type needs to be determined by datatype
-                dtype = utils.infer_dtype([r[field_name] for r in data_values])
+                dtype = table_utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
@@ -448,7 +476,7 @@ class AreaChart(object):
             if field_name in unused_fields:
                 continue
             if channel == "x":
-                dtype = utils.infer_dtype([r[field_name] for r in data_values])
+                dtype = table_utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
             encodings.append(Encoding(channel, field_name, enc_ty))
 
@@ -526,7 +554,7 @@ class LineChart(object):
             if field_name in unused_fields:
                 continue
             if channel in ["x", "y"]:
-                dtype = utils.infer_dtype([r[field_name] for r in data_values])
+                dtype = table_utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
@@ -578,7 +606,7 @@ class ScatterPlot(object):
 
             if channel in ["x", "y", "size"]:
                 # the type needs to be determined by datatype
-                dtype = utils.infer_dtype([r[field_name] for r in data_values])
+                dtype = table_utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
