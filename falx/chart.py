@@ -92,8 +92,9 @@ class VisDesign(object):
             data = []
             layer_specs = vl_spec["layer"]
             for lspec in vl_spec["layer"]:
-                pred = lspec["transform"] if "transform" in lspec else True
-                data.append(table_utils.filter_table(input_data, pred))   
+                # note that "True" here is a string expression
+                pred = lspec["transform"][0]["filter"] if "transform" in lspec else "True"
+                data.append(table_utils.filter_table(input_data, pred))
         else:
             data = input_data
             layer_specs = [vl_spec]
@@ -322,6 +323,8 @@ class StackedBarChart(object):
                 column = get_channel_value(self.encodings, "column", r)
 
                 if self.orientation == "vertical":
+                    # TODO: take a look at this
+                    y = 0 if y is None else y
                     y = (last_stack_val, last_stack_val + y)
                     last_stack_val = y[1]
                     res.append(BarV(x=x, y1=y[0], y2=y[1], color=color, column=column))

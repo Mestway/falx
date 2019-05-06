@@ -1,13 +1,16 @@
 import json
 import pandas as pd
+import re
 
 def infer_dtype(values):
 	return pd.api.types.infer_dtype(values, skipna=True)
 
 def filter_table(table, pred):
-	#TODO: implement filter function
-	print("# [unimplemented] filter table by pred {}".format(pred))
-	return table
+	"""convert js expression to python expression and then run eval """
+	pred = pred.replace("&&", "and").replace("||", "or")
+	pred = " ".join([v if "datum" not in v else "[\"".join(v.split(".")) + "\"]" for v in pred.split()])
+	res = [datum for datum in table if eval(pred)]
+	return res
 
 def clean_column_dtype(column_values):
 	dtype = pd.api.types.infer_dtype(column_values, skipna=True)

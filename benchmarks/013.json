@@ -145,16 +145,14 @@
     ],
     "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "encoding": {
-            "x": {
-                "field": "Value",
-                "type": "nominal"
-            }
-        },
         "layer": [
             {
                 "mark": "bar",
                 "encoding": {
+                    "x": {
+                        "field": "Value",
+                        "type": "nominal"
+                    },
                     "y": {
                         "field": "value",
                         "type": "quantitative"
@@ -173,6 +171,10 @@
             {
                 "mark": "text",
                 "encoding": {
+                    "x": {
+                        "field": "Value",
+                        "type": "nominal"
+                    },
                     "y": {
                         "field": "cumsum",
                         "type": "quantitative"

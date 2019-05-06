@@ -24,7 +24,7 @@
 | 020 | [link](020.json) | <img src="chart_020.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/pivot-chart.html) | excel |
 | 021 | [link](021.json) | <img src="chart_021.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/pivot-chart.html) | excel |
 | 022 | [link](022.json) | <img src="chart_022.png" width="150"/> | [source_link](https://medium.com/berkeleyischool/how-to-create-a-visualization-showing-events-on-time-series-data-in-excel-96abbc1475e0) | excel |
-| 023 | [link](023.json) | <img src="chart_023.png" width="150"/> | [source_link](https://www.officetimeline.com/make-timeline/excel) | excel |
+| ~~023~~ | ~~[link](023.json)~~ | <img src="chart_023.png" width="150"/> | ~~[source_link](https://www.officetimeline.com/make-timeline/excel)~~ | ~~excel~~ |
 | 024 | [link](024.json) | <img src="chart_024.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/gantt-chart.html) | excel |
 | 025 | [link](025.json) | <img src="chart_025.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/pareto-chart.html) | excel |
 | 027 | [link](027.json) | <img src="chart_027.png" width="150"/> | [source_link](https://www.excel-easy.com/examples/moving-average.html) | excel |

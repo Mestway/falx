@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from pprint import pprint
 
+from chart import VisDesign
 import design_validator
 import design_enumerator
 import table_utils
@@ -13,42 +14,38 @@ import morpheus
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 DATA_DIR = os.path.join(PROJ_DIR, "benchmarks")
-TEMP_DIR = os.path.join(PROJ_DIR, "__temp__")
-if not os.path.exists(TEMP_DIR): os.mkdir(TEMP_DIR)
 
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
-parser.add_argument("--output_dir", dest="output_dir", default=TEMP_DIR, help="output directory")
 
-def load_dataset(data_dir):
+
+def test_benchmarks(data_dir):
 	"""load the dataset into panda dataframes """
-	dataset = []
-	print("=======")
+	benchmarks = []
 	for fname in os.listdir(data_dir):
 		#if "031.json" not in fname: continue
 		if fname.endswith(".json"):
 			with open(os.path.join(data_dir, fname), "r") as f:
 				data = json.load(f)
-			input_data = pd.read_json(json.dumps(data["input_data"]))
-			# infer type of each column and then update column value
-			for col in input_data:
-				dtype, new_col_values = table_utils.clean_column_dtype(input_data[col])
-				input_data[col] = new_col_values
-				print(col, ":", dtype)
-				#print(input_data[col])
-				#print(list(input_data[col]))
 
-			dataset.append(input_data)
-			print(input_data)
-	return dataset
+			if not "vl_spec" in data: continue
 
+			print("======= {}".format(fname))
 
-def run(flags):
-	"""Synthesize vega-lite schema """
-	dataset = load_dataset(flags.data_dir)
+			input_data = table_utils.load_and_clean_table(pd.read_json(json.dumps(data["input_data"])))
+			output_data = data["output_data"]
+			vl_spec = data["vl_spec"]
+
+			vis = VisDesign.load_from_vegalite(vl_spec, output_data)
+			trace = vis.eval()
+
+			#print(input_data)
+			#print(output_data)
+			#pprint(vl_spec)
+			pprint(trace)
 
 
 if __name__ == '__main__':
 	flags = parser.parse_args()
-	run(flags)
+	test_benchmarks(flags.data_dir)
