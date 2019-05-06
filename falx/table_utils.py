@@ -61,9 +61,23 @@ def clean_column_dtype(column_values):
 	return dtype, values
 
 
+def load_and_clean_dataframe(df):
+	"""infer type of each column and then update column value
+	Args:
+		df: input dataframe we want to clean
+	Returns:
+		clean data frame
+	"""
+	for col in df:
+		dtype, new_col_values = clean_column_dtype(df[col])
+		df[col] = new_col_values
+	return df
+
+
 def load_and_clean_table(input_data):
-	# infer type of each column and then update column value
-	for col in input_data:
-		dtype, new_col_values = clean_column_dtype(input_data[col])
-		input_data[col] = new_col_values
-	return input_data
+	"""load and clean table where the input format is a table record """
+	try:
+		return load_and_clean_dataframe(pd.DataFrame.from_dict(input_data)).to_dict(orient="records")
+	except:
+		print("# [warning] error cleaning table, return without cleaning")
+		return input_data

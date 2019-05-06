@@ -22,7 +22,7 @@ def get_vt_type(v):
 
 def remove_unused_fields(data):
     # remove fields that contain none values
-    unused_fields = [key for key in data[0] if any([r[key] is None for r in data])]
+    unused_fields = [key for key in data[0] if all([r[key] is None for r in data])]
     for r in data:
         for k in unused_fields:
             r.pop(k)

@@ -377,22 +377,23 @@ def synthesize(inputs, output):
     Returns:
         a list of transformation programs s.t. p(inputs) = output
     """
-    print("output table:\n", output)
-    print("input table:\n", inputs[0])
+    
+    #print("output table:\n", output)
+    #print("input table:\n", inputs[0])
     loc_val = 1
     output_data = str(output.instantiate()).replace("'", '"')
     input_data = str(inputs[0]).replace("'", '"')
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
-    print(robjects.r('input0'))
-    print(robjects.r('output'))
+    #print(robjects.r('input0'))
+    #print(robjects.r('output'))
 
     depth_val = loc_val + 1
-    logger.info('Parsing Spec...')
+    logger.info('Parsing spec ...')
     spec = S.parse_file('dsl/morpheus.tyrell')
     logger.info('Parsing succeeded')
 
-    logger.info('Building synthesizer...')
+    logger.info('Building synthesizer ...')
     synthesizer = Synthesizer(
         #loc: # of function productions
         enumerator=SmtEnumerator(spec, depth=depth_val, loc=loc_val),
@@ -405,7 +406,7 @@ def synthesize(inputs, output):
             equal_output=subset_eq
         )
     )
-    logger.info('Synthesizing programs...')
+    logger.info('Synthesizing programs ...')
 
     prog = synthesizer.synthesize()
     if prog is not None:
