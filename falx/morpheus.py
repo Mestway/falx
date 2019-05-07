@@ -365,7 +365,10 @@ def init_tbl_json_str(df_name, json_loc):
     tbl_name[, int.cols] <- sapply(tbl_name[, int.cols], as.numeric)
     '''
     cmd = cmd.replace('tbl_name', df_name).replace('json_location', "'" + json_loc + "'")
-    robjects.r(cmd)
+    try:
+        robjects.r(cmd)
+    except:
+        print('Parse error!!! Move on...')
     return None
 
 def synthesize(inputs, output):
