@@ -10,6 +10,7 @@ from tyrell.logger import get_logger
 from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects
 import warnings
+import json
 
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)
@@ -384,7 +385,7 @@ def synthesize(inputs, output):
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
     loc_val = 1
-    output_data = str(output.instantiate()).replace("'", '"')
+    output_data = json.dumps(output.instantiate())
     input_data = str(inputs[0]).replace("'", '"')
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
