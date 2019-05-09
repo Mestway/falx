@@ -19,30 +19,37 @@ DATA_DIR = os.path.join(PROJ_DIR, "benchmarks")
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
+parser.add_argument("--data_id", dest="data_id", default="001", 
+                    help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 
-def test_benchmarks(data_dir):
+def test_benchmarks(data_dir, data_id):
     """load the dataset into panda dataframes """
+    test_targets = None
+    if data_id is not None:
+        test_targets = [str(data_id) + '.json']
+    else:
+        test_targets = [fname for fname in os.listdir(data_dir) if fname.endswith(".json")]
+
     benchmarks = []
-    for fname in os.listdir(data_dir):
-        #if "031.json" not in fname: continue
-        if fname.endswith(".json"):
-            with open(os.path.join(data_dir, fname), "r") as f:
-                data = json.load(f)
+    for fname in test_targets:
 
-            if not "vl_spec" in data: 
-                # ignore cases that do not have vl specs
-                continue
+        with open(os.path.join(data_dir, fname), "r") as f:
+            data = json.load(f)
 
-            print("======= {}".format(fname))
+        if not "vl_spec" in data: 
+            # ignore cases that do not have vl specs
+            continue
 
-            input_data = table_utils.load_and_clean_table(data["input_data"])
-            vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
-            trace = vis.eval()
+        print("======= {}".format(fname))
 
-            task = FalxTask(inputs=[input_data], vtrace=trace)
-            task.synthesize()
+        input_data = table_utils.load_and_clean_table(data["input_data"])
+        vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
+        trace = vis.eval()
+
+        task = FalxTask(inputs=[input_data], vtrace=trace)
+        task.synthesize()
 
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir)
+    test_benchmarks(flags.data_dir, flags.data_id)

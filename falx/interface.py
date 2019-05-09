@@ -39,10 +39,10 @@ class FalxTask(object):
                 for layer_id_choices in itertools.product(*layer_id_lists):
 
                     #layer_prog[i] is the transformation program for the i-th layer
-                    progs = [candidates[i][layer_id_choices[i]] for i in range(len(layer_id_choices))]
+                    progs = [layer_candidate_progs[i][layer_id_choices[i]] for i in range(len(layer_id_choices))]
 
                     # apply each program on inputs to get output table for each layer
-                    outputs = [morpheus.evalute(p, self.inputs) for p in progs]
+                    outputs = [morpheus.evaluate(p, self.inputs) for p in progs]
 
                     vis_design = VisDesign(data=outputs, chart=chart)
                     candidates.append((progs, vis_design))

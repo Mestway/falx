@@ -74,10 +74,14 @@ def load_and_clean_dataframe(df):
 	return df
 
 
-def load_and_clean_table(input_data):
+def load_and_clean_table(input_data, return_as_df=False):
 	"""load and clean table where the input format is a table record """
 	try:
-		return load_and_clean_dataframe(pd.DataFrame.from_dict(input_data)).to_dict(orient="records")
+		df = load_and_clean_dataframe(pd.DataFrame.from_dict(input_data))
+		if return_as_df:
+		 	return df
+		else:
+		 	return df.to_dict(orient="records")
 	except:
 		print("# [warning] error cleaning table, return without cleaning")
 		return input_data
