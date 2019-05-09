@@ -3,6 +3,7 @@ import json
 from falx.chart import VisDesign
 import morpheus
 import itertools
+from pprint import pprint
 
 class FalxTask(object):
 

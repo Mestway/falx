@@ -332,7 +332,7 @@ class StackedBarChart(object):
                 if self.orientation == "horizontal":
                     x = (last_stack_val, last_stack_val + x)
                     last_stack_val = x[1]
-                    res.append(BarH(x1=x[0], x2=x[0], y=y, color=color, column=column))
+                    res.append(BarH(x1=x[0], x2=x[1], y=y, color=color, column=column))
         return res
 
     @staticmethod
