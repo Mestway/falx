@@ -1201,7 +1201,7 @@
             "z": 3.18
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "key": "cut",
             "value": "Ideal"
@@ -2402,5 +2402,247 @@
             "key": "clarity",
             "value": "VS1"
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "variable": "clarity",
+            "value": "I1",
+            "depth": 3,
+            "price": 3,
+            "table": 3,
+            "x": 3,
+            "y": 3,
+            "z": 3,
+            "carat": 3
+        },
+        {
+            "variable": "clarity",
+            "value": "IF",
+            "depth": 1,
+            "price": 1,
+            "table": 1,
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "carat": 1
+        },
+        {
+            "variable": "clarity",
+            "value": "SI1",
+            "depth": 19,
+            "price": 19,
+            "table": 19,
+            "x": 19,
+            "y": 19,
+            "z": 19,
+            "carat": 19
+        },
+        {
+            "variable": "clarity",
+            "value": "SI2",
+            "depth": 25,
+            "price": 25,
+            "table": 25,
+            "x": 25,
+            "y": 25,
+            "z": 25,
+            "carat": 25
+        },
+        {
+            "variable": "clarity",
+            "value": "VS1",
+            "depth": 10,
+            "price": 10,
+            "table": 10,
+            "x": 10,
+            "y": 10,
+            "z": 10,
+            "carat": 10
+        },
+        {
+            "variable": "clarity",
+            "value": "VS2",
+            "depth": 24,
+            "price": 24,
+            "table": 24,
+            "x": 24,
+            "y": 24,
+            "z": 24,
+            "carat": 24
+        },
+        {
+            "variable": "clarity",
+            "value": "VVS1",
+            "depth": 8,
+            "price": 8,
+            "table": 8,
+            "x": 8,
+            "y": 8,
+            "z": 8,
+            "carat": 8
+        },
+        {
+            "variable": "clarity",
+            "value": "VVS2",
+            "depth": 10,
+            "price": 10,
+            "table": 10,
+            "x": 10,
+            "y": 10,
+            "z": 10,
+            "carat": 10
+        },
+        {
+            "variable": "color",
+            "value": "D",
+            "depth": 11,
+            "price": 11,
+            "table": 11,
+            "x": 11,
+            "y": 11,
+            "z": 11,
+            "carat": 11
+        },
+        {
+            "variable": "color",
+            "value": "E",
+            "depth": 12,
+            "price": 12,
+            "table": 12,
+            "x": 12,
+            "y": 12,
+            "z": 12,
+            "carat": 12
+        },
+        {
+            "variable": "color",
+            "value": "F",
+            "depth": 16,
+            "price": 16,
+            "table": 16,
+            "x": 16,
+            "y": 16,
+            "z": 16,
+            "carat": 16
+        },
+        {
+            "variable": "color",
+            "value": "G",
+            "depth": 23,
+            "price": 23,
+            "table": 23,
+            "x": 23,
+            "y": 23,
+            "z": 23,
+            "carat": 23
+        },
+        {
+            "variable": "color",
+            "value": "H",
+            "depth": 15,
+            "price": 15,
+            "table": 15,
+            "x": 15,
+            "y": 15,
+            "z": 15,
+            "carat": 15
+        },
+        {
+            "variable": "color",
+            "value": "I",
+            "depth": 12,
+            "price": 12,
+            "table": 12,
+            "x": 12,
+            "y": 12,
+            "z": 12,
+            "carat": 12
+        },
+        {
+            "variable": "color",
+            "value": "J",
+            "depth": 11,
+            "price": 11,
+            "table": 11,
+            "x": 11,
+            "y": 11,
+            "z": 11,
+            "carat": 11
+        },
+        {
+            "variable": "cut",
+            "value": "Fair",
+            "depth": 3,
+            "price": 3,
+            "table": 3,
+            "x": 3,
+            "y": 3,
+            "z": 3,
+            "carat": 3
+        },
+        {
+            "variable": "cut",
+            "value": "Good",
+            "depth": 9,
+            "price": 9,
+            "table": 9,
+            "x": 9,
+            "y": 9,
+            "z": 9,
+            "carat": 9
+        },
+        {
+            "variable": "cut",
+            "value": "Ideal",
+            "depth": 45,
+            "price": 45,
+            "table": 45,
+            "x": 45,
+            "y": 45,
+            "z": 45,
+            "carat": 45
+        },
+        {
+            "variable": "cut",
+            "value": "Premium",
+            "depth": 18,
+            "price": 18,
+            "table": 18,
+            "x": 18,
+            "y": 18,
+            "z": 18,
+            "carat": 18
+        },
+        {
+            "variable": "cut",
+            "value": "Very Good",
+            "depth": 25,
+            "price": 25,
+            "table": 25,
+            "x": 25,
+            "y": 25,
+            "z": 25,
+            "carat": 25
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "value",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "depth",
+                "type": "quantitative"
+            }
+        }
+    }
 }

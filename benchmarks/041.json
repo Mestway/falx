@@ -49,7 +49,7 @@
             "Scorpion.fishes": 8446391
         }
     ],
-    "output_data": [
+    "r_output_data": [
         {
             "Year": 1950,
             "variable": "Crustaceans",
@@ -200,5 +200,177 @@
             "variable": "Scorpion.fishes",
             "value": 8446391
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "Year": 1950,
+            "variable": "Cod",
+            "value": 2716706
+        },
+        {
+            "Year": 1951,
+            "variable": "Cod",
+            "value": 3861166
+        },
+        {
+            "Year": 1952,
+            "variable": "Cod",
+            "value": 4396174
+        },
+        {
+            "Year": 1953,
+            "variable": "Cod",
+            "value": 3901176
+        },
+        {
+            "Year": 1954,
+            "variable": "Cod",
+            "value": 4412721
+        },
+        {
+            "Year": 1955,
+            "variable": "Cod",
+            "value": 4774045
+        },
+        {
+            "Year": 1950,
+            "variable": "Crustaceans",
+            "value": 58578630
+        },
+        {
+            "Year": 1951,
+            "variable": "Crustaceans",
+            "value": 59194582
+        },
+        {
+            "Year": 1952,
+            "variable": "Crustaceans",
+            "value": 47562941
+        },
+        {
+            "Year": 1953,
+            "variable": "Crustaceans",
+            "value": 68432658
+        },
+        {
+            "Year": 1954,
+            "variable": "Crustaceans",
+            "value": 64395489
+        },
+        {
+            "Year": 1955,
+            "variable": "Crustaceans",
+            "value": 76111004
+        },
+        {
+            "Year": 1950,
+            "variable": "Herring",
+            "value": 87161396
+        },
+        {
+            "Year": 1951,
+            "variable": "Herring",
+            "value": 51215349
+        },
+        {
+            "Year": 1952,
+            "variable": "Herring",
+            "value": 13962479
+        },
+        {
+            "Year": 1953,
+            "variable": "Herring",
+            "value": 13229061
+        },
+        {
+            "Year": 1954,
+            "variable": "Herring",
+            "value": 25285539
+        },
+        {
+            "Year": 1955,
+            "variable": "Herring",
+            "value": 18910756
+        },
+        {
+            "Year": 1950,
+            "variable": "Scorpion.fishes",
+            "value": 15250015
+        },
+        {
+            "Year": 1951,
+            "variable": "Scorpion.fishes",
+            "value": 15454659
+        },
+        {
+            "Year": 1952,
+            "variable": "Scorpion.fishes",
+            "value": 12541484
+        },
+        {
+            "Year": 1953,
+            "variable": "Scorpion.fishes",
+            "value": 9524564
+        },
+        {
+            "Year": 1954,
+            "variable": "Scorpion.fishes",
+            "value": 9890656
+        },
+        {
+            "Year": 1955,
+            "variable": "Scorpion.fishes",
+            "value": 8446391
+        },
+        {
+            "Year": 1950,
+            "variable": "Tuna",
+            "value": 69690537
+        },
+        {
+            "Year": 1951,
+            "variable": "Tuna",
+            "value": 34829755
+        },
+        {
+            "Year": 1952,
+            "variable": "Tuna",
+            "value": 31061481
+        },
+        {
+            "Year": 1953,
+            "variable": "Tuna",
+            "value": 23225423
+        },
+        {
+            "Year": 1954,
+            "variable": "Tuna",
+            "value": 20798126
+        },
+        {
+            "Year": 1955,
+            "variable": "Tuna",
+            "value": 13992697
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "line"
+        },
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "type": "ordinal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }

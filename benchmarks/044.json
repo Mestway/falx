@@ -1051,7 +1051,7 @@
             "Species": "virginica"
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "Species": "setosa",
             "attribute": "Petal.Length",
@@ -1112,5 +1112,87 @@
             "attribute": "Sepal.Width",
             "attr_mean": 2.974
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "Species": "setosa",
+            "variable": "Petal.Length",
+            "value": 1.462
+        },
+        {
+            "Species": "setosa",
+            "variable": "Petal.Width",
+            "value": 0.246
+        },
+        {
+            "Species": "setosa",
+            "variable": "Sepal.Length",
+            "value": 5.006
+        },
+        {
+            "Species": "setosa",
+            "variable": "Sepal.Width",
+            "value": 3.428
+        },
+        {
+            "Species": "versicolor",
+            "variable": "Petal.Length",
+            "value": 4.26
+        },
+        {
+            "Species": "versicolor",
+            "variable": "Petal.Width",
+            "value": 1.326
+        },
+        {
+            "Species": "versicolor",
+            "variable": "Sepal.Length",
+            "value": 5.936
+        },
+        {
+            "Species": "versicolor",
+            "variable": "Sepal.Width",
+            "value": 2.77
+        },
+        {
+            "Species": "virginica",
+            "variable": "Petal.Length",
+            "value": 5.552
+        },
+        {
+            "Species": "virginica",
+            "variable": "Petal.Width",
+            "value": 2.026
+        },
+        {
+            "Species": "virginica",
+            "variable": "Sepal.Length",
+            "value": 6.588
+        },
+        {
+            "Species": "virginica",
+            "variable": "Sepal.Width",
+            "value": 2.974
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "Species",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }
