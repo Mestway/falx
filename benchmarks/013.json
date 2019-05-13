@@ -15,7 +15,7 @@
             "Totals": 8
         },
         {
-            "Value": "c",
+            "Value": "C",
             "alpha": 3,
             "beta": 3,
             "gamma": 3,
@@ -53,7 +53,7 @@
         },
         {
             "Totals": 9,
-            "Value": "c",
+            "Value": "C",
             "variable": "alpha",
             "value": 3,
             "cumsum": 3
@@ -88,7 +88,7 @@
         },
         {
             "Totals": 9,
-            "Value": "c",
+            "Value": "C",
             "variable": "beta",
             "value": 3,
             "cumsum": 6
@@ -123,7 +123,7 @@
         },
         {
             "Totals": 9,
-            "Value": "c",
+            "Value": "C",
             "variable": "gamma",
             "value": 3,
             "cumsum": 9
