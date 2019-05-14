@@ -36,7 +36,7 @@ def evaluate(prog, inputs):
     Returns:
         an output table (represented as a list of named tuples)
     """
-    return prog_output
+    return json.loads(prog_output)
 
 ## Common utils.
 def get_collist(sel):
