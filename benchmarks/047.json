@@ -33,7 +33,7 @@
             "ok": 0.8
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "label": "Label1",
             "type": "ok",
@@ -114,5 +114,107 @@
             "type": "err",
             "freq": 0.2
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "label": "Label1",
+            "variable": "ok",
+            "value": 0.0
+        },
+        {
+            "label": "Label2",
+            "variable": "ok",
+            "value": 0.5
+        },
+        {
+            "label": "Label3",
+            "variable": "ok",
+            "value": 0.4
+        },
+        {
+            "label": "Label4",
+            "variable": "ok",
+            "value": 0.9
+        },
+        {
+            "label": "Label5",
+            "variable": "ok",
+            "value": 0.4
+        },
+        {
+            "label": "Label6",
+            "variable": "ok",
+            "value": 0.9
+        },
+        {
+            "label": "Label7",
+            "variable": "ok",
+            "value": 0.8
+        },
+        {
+            "label": "Label8",
+            "variable": "ok",
+            "value": 0.8
+        },
+        {
+            "label": "Label1",
+            "variable": "err",
+            "value": 1.0
+        },
+        {
+            "label": "Label2",
+            "variable": "err",
+            "value": 0.5
+        },
+        {
+            "label": "Label3",
+            "variable": "err",
+            "value": 0.6
+        },
+        {
+            "label": "Label4",
+            "variable": "err",
+            "value": 0.1
+        },
+        {
+            "label": "Label5",
+            "variable": "err",
+            "value": 0.6
+        },
+        {
+            "label": "Label6",
+            "variable": "err",
+            "value": 0.1
+        },
+        {
+            "label": "Label7",
+            "variable": "err",
+            "value": 0.2
+        },
+        {
+            "label": "Label8",
+            "variable": "err",
+            "value": 0.2
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "label",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }

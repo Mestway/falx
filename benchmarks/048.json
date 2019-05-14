@@ -41,7 +41,7 @@
             "totalABC": 106
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "category": "group1",
             "totalABC": 17,
@@ -78,5 +78,63 @@
             "variable": "C",
             "value": 10
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "A",
+            "value": 0.1176470588
+        },
+        {
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "A",
+            "value": 0.2331288344
+        },
+        {
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "B",
+            "value": 0.8235294118
+        },
+        {
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "B",
+            "value": 0.7055214724
+        },
+        {
+            "category": "group1",
+            "totalABC": 17,
+            "variable": "C",
+            "value": 0.0588235294
+        },
+        {
+            "category": "group2",
+            "totalABC": 163,
+            "variable": "C",
+            "value": 0.0613496933
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "category",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }

@@ -79,42 +79,66 @@
             "Sex": "F",
             "A": 2,
             "Aneg": 5,
-            "p": 28.5714
+            "p": 0.2857142857
         },
         {
             "Condition": 1,
             "Sex": "M",
             "A": 6,
             "Aneg": 1,
-            "p": 85.7143
+            "p": 0.8571428571
         },
         {
             "Condition": 2,
             "Sex": "F",
             "A": 3,
             "Aneg": 6,
-            "p": 33.3333
+            "p": 0.3333333333
         },
         {
             "Condition": 2,
             "Sex": "M",
             "A": 4,
             "Aneg": 2,
-            "p": 66.6667
+            "p": 0.6666666667
         },
         {
             "Condition": 3,
             "Sex": "F",
             "A": 4,
             "Aneg": 9,
-            "p": 30.7692
+            "p": 0.3076923077
         },
         {
             "Condition": 3,
             "Sex": "M",
             "A": 10,
             "Aneg": 6,
-            "p": 62.5
+            "p": 0.625
         }
-    ]
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "Condition",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "Condition",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "p",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "Sex",
+                "type": "nominal"
+            }
+        }
+    }
 }

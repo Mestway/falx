@@ -81,7 +81,7 @@
             "value": 3
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "id": "A",
             "suffix": "c",
@@ -130,5 +130,75 @@
             "a": 1,
             "b": 3
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "id": "A",
+            "val2": "c",
+            "a": 2,
+            "b": 2
+        },
+        {
+            "id": "A",
+            "val2": "d",
+            "a": 4,
+            "b": 4
+        },
+        {
+            "id": "B",
+            "val2": "c",
+            "a": 2,
+            "b": 5
+        },
+        {
+            "id": "B",
+            "val2": "d",
+            "a": 1,
+            "b": 2
+        },
+        {
+            "id": "C",
+            "val2": "c",
+            "a": 3,
+            "b": 5
+        },
+        {
+            "id": "C",
+            "val2": "d",
+            "a": 2,
+            "b": 4
+        },
+        {
+            "id": "D",
+            "val2": "c",
+            "a": 5,
+            "b": 4
+        },
+        {
+            "id": "D",
+            "val2": "d",
+            "a": 1,
+            "b": 3
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "point"
+        },
+        "encoding": {
+            "y": {
+                "field": "a",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "b",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "val2",
+                "type": "nominal"
+            }
+        }
+    }
 }

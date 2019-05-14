@@ -401,7 +401,7 @@
             "unemploy": 5523
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "date": "2012-07-01",
             "pce": 11074.8,
@@ -1302,5 +1302,631 @@
             "percentage": 5.5,
             "Y2K": false
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "date": "2012-07-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.6
+        },
+        {
+            "date": "2001-09-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.3
+        },
+        {
+            "date": "2011-08-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.2
+        },
+        {
+            "date": "2005-07-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 1.9
+        },
+        {
+            "date": "1989-05-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 7.6
+        },
+        {
+            "date": "1985-03-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 8.1
+        },
+        {
+            "date": "1989-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 7.1
+        },
+        {
+            "date": "2008-11-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.3
+        },
+        {
+            "date": "2014-01-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 4.9
+        },
+        {
+            "date": "1987-09-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 7.0
+        },
+        {
+            "date": "2006-06-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 3.4
+        },
+        {
+            "date": "1992-07-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 9.1
+        },
+        {
+            "date": "1976-07-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.2
+        },
+        {
+            "date": "1973-06-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 13.2
+        },
+        {
+            "date": "1967-09-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.7
+        },
+        {
+            "date": "1995-06-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 6.1
+        },
+        {
+            "date": "1980-07-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 10.5
+        },
+        {
+            "date": "1970-01-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.7
+        },
+        {
+            "date": "1967-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 12.5
+        },
+        {
+            "date": "1995-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 6.1
+        },
+        {
+            "date": "1996-10-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 5.8
+        },
+        {
+            "date": "2012-09-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.5
+        },
+        {
+            "date": "2006-10-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 3.1
+        },
+        {
+            "date": "1994-07-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 6.4
+        },
+        {
+            "date": "2008-05-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 7.9
+        },
+        {
+            "date": "1975-10-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 13.0
+        },
+        {
+            "date": "1982-12-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 10.3
+        },
+        {
+            "date": "1976-01-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.3
+        },
+        {
+            "date": "1999-03-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 5.3
+        },
+        {
+            "date": "1973-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 13.6
+        },
+        {
+            "date": "2010-11-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 5.3
+        },
+        {
+            "date": "1974-03-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 13.0
+        },
+        {
+            "date": "1972-01-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 12.4
+        },
+        {
+            "date": "1999-11-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 4.1
+        },
+        {
+            "date": "2012-03-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 6.9
+        },
+        {
+            "date": "2000-12-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 3.5
+        },
+        {
+            "date": "1977-05-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 9.8
+        },
+        {
+            "date": "2004-10-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 3.8
+        },
+        {
+            "date": "1986-09-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 6.6
+        },
+        {
+            "date": "1976-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.2
+        },
+        {
+            "date": "2001-02-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 4.1
+        },
+        {
+            "date": "2013-05-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 5.2
+        },
+        {
+            "date": "1982-07-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 12.0
+        },
+        {
+            "date": "1982-03-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.7
+        },
+        {
+            "date": "1987-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 6.5
+        },
+        {
+            "date": "2001-06-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 3.7
+        },
+        {
+            "date": "2007-10-01",
+            "Y2K": true,
+            "variable": "psavert",
+            "value": 2.8
+        },
+        {
+            "date": "1981-04-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 10.3
+        },
+        {
+            "date": "1984-08-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 11.2
+        },
+        {
+            "date": "1974-10-01",
+            "Y2K": false,
+            "variable": "psavert",
+            "value": 13.0
+        },
+        {
+            "date": "2012-07-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 17.5
+        },
+        {
+            "date": "2001-09-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 7.2
+        },
+        {
+            "date": "2011-08-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 22.4
+        },
+        {
+            "date": "2005-07-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 8.8
+        },
+        {
+            "date": "1989-05-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 5.3
+        },
+        {
+            "date": "1985-03-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.1
+        },
+        {
+            "date": "1989-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 5.0
+        },
+        {
+            "date": "2008-11-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 9.8
+        },
+        {
+            "date": "2014-01-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 15.9
+        },
+        {
+            "date": "1987-09-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.0
+        },
+        {
+            "date": "2006-06-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 7.3
+        },
+        {
+            "date": "1992-07-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 8.6
+        },
+        {
+            "date": "1976-07-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.7
+        },
+        {
+            "date": "1973-06-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 5.0
+        },
+        {
+            "date": "1967-09-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 4.6
+        },
+        {
+            "date": "1995-06-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.9
+        },
+        {
+            "date": "1980-07-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.0
+        },
+        {
+            "date": "1970-01-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 4.6
+        },
+        {
+            "date": "1967-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 4.7
+        },
+        {
+            "date": "1995-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 8.3
+        },
+        {
+            "date": "1996-10-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 8.3
+        },
+        {
+            "date": "2012-09-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 18.8
+        },
+        {
+            "date": "2006-10-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 7.9
+        },
+        {
+            "date": "1994-07-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 9.0
+        },
+        {
+            "date": "2008-05-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 7.9
+        },
+        {
+            "date": "1975-10-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 8.6
+        },
+        {
+            "date": "1982-12-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 10.2
+        },
+        {
+            "date": "1976-01-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 9.0
+        },
+        {
+            "date": "1999-03-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.8
+        },
+        {
+            "date": "1973-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 4.9
+        },
+        {
+            "date": "2010-11-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 21.0
+        },
+        {
+            "date": "1974-03-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 4.8
+        },
+        {
+            "date": "1972-01-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.2
+        },
+        {
+            "date": "1999-11-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.2
+        },
+        {
+            "date": "2012-03-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 19.2
+        },
+        {
+            "date": "2000-12-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.0
+        },
+        {
+            "date": "1977-05-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.9
+        },
+        {
+            "date": "2004-10-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 9.5
+        },
+        {
+            "date": "1986-09-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.4
+        },
+        {
+            "date": "1976-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.9
+        },
+        {
+            "date": "2001-02-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 6.1
+        },
+        {
+            "date": "2013-05-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 17.0
+        },
+        {
+            "date": "1982-07-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 8.5
+        },
+        {
+            "date": "1982-03-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.7
+        },
+        {
+            "date": "1987-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 6.4
+        },
+        {
+            "date": "2001-06-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 6.0
+        },
+        {
+            "date": "2007-10-01",
+            "Y2K": true,
+            "variable": "uempmed",
+            "value": 8.4
+        },
+        {
+            "date": "1981-04-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.4
+        },
+        {
+            "date": "1984-08-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 7.3
+        },
+        {
+            "date": "1974-10-01",
+            "Y2K": false,
+            "variable": "uempmed",
+            "value": 5.5
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "line"
+        },
+        "encoding": {
+            "x": {
+                "field": "date",
+                "type": "temporal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "opacity": {
+                "field": "Y2K",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }

@@ -1,0 +1,198 @@
+{
+    "input_data": [
+        {
+            "scenario": "measured_raw21",
+            "value": 55
+        },
+        {
+            "scenario": "measured_raw22",
+            "value": 60
+        },
+        {
+            "scenario": "simulated_raw21",
+            "value": 54
+        },
+        {
+            "scenario": "measured_raw21_drain",
+            "value": 55
+        },
+        {
+            "scenario": "measured_raw22_drain",
+            "value": 60
+        },
+        {
+            "scenario": "measured_adj21",
+            "value": 23
+        },
+        {
+            "scenario": "simulated_raw22",
+            "value": 59
+        },
+        {
+            "scenario": "simulated_raw21_drain",
+            "value": 54.5
+        },
+        {
+            "scenario": "simulated_raw22_drain",
+            "value": 60.2
+        },
+        {
+            "scenario": "measured_adj21_drain",
+            "value": 23
+        },
+        {
+            "scenario": "measured_adj22",
+            "value": 27
+        },
+        {
+            "scenario": "simulated_adj21",
+            "value": 22
+        },
+        {
+            "scenario": "measured_adj22_drain",
+            "value": 27
+        },
+        {
+            "scenario": "simulated_adj21_drain",
+            "value": 23.4
+        },
+        {
+            "scenario": "simulated_adj22",
+            "value": 27.5
+        },
+        {
+            "scenario": "simulated_adj22_drain",
+            "value": 27.2
+        },
+        {
+            "scenario": "measured_0.5",
+            "value": 40
+        },
+        {
+            "scenario": "measured_0.8",
+            "value": 55
+        },
+        {
+            "scenario": "measured_0.5_drain",
+            "value": 40
+        },
+        {
+            "scenario": "measured_0.8_drain",
+            "value": 55
+        },
+        {
+            "scenario": "simulated_0.5",
+            "value": 41
+        },
+        {
+            "scenario": "simulated_0.8",
+            "value": 56
+        },
+        {
+            "scenario": "simulated_0.5_drain",
+            "value": 39.9
+        },
+        {
+            "scenario": "simulated_0.8_drain",
+            "value": 55.3
+        }
+    ],
+    "output_data": [
+        {
+            "row": "0.5",
+            "drain": "None",
+            "measured": 40.0,
+            "simulated": 41.0
+        },
+        {
+            "row": "0.5",
+            "drain": "drain",
+            "measured": 40.0,
+            "simulated": 39.9
+        },
+        {
+            "row": "0.8",
+            "drain": "None",
+            "measured": 55.0,
+            "simulated": 56.0
+        },
+        {
+            "row": "0.8",
+            "drain": "drain",
+            "measured": 55.0,
+            "simulated": 55.3
+        },
+        {
+            "row": "adj21",
+            "drain": "None",
+            "measured": 23.0,
+            "simulated": 22.0
+        },
+        {
+            "row": "adj21",
+            "drain": "drain",
+            "measured": 23.0,
+            "simulated": 23.4
+        },
+        {
+            "row": "adj22",
+            "drain": "None",
+            "measured": 27.0,
+            "simulated": 27.5
+        },
+        {
+            "row": "adj22",
+            "drain": "drain",
+            "measured": 27.0,
+            "simulated": 27.2
+        },
+        {
+            "row": "raw21",
+            "drain": "None",
+            "measured": 55.0,
+            "simulated": 54.0
+        },
+        {
+            "row": "raw21",
+            "drain": "drain",
+            "measured": 55.0,
+            "simulated": 54.5
+        },
+        {
+            "row": "raw22",
+            "drain": "None",
+            "measured": 60.0,
+            "simulated": 59.0
+        },
+        {
+            "row": "raw22",
+            "drain": "drain",
+            "measured": 60.0,
+            "simulated": 60.2
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "point"
+        },
+        "encoding": {
+            "x": {
+                "field": "measured",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "row",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "simulated",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "drain",
+                "type": "nominal"
+            }
+        }
+    }
+}
