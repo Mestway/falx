@@ -40,13 +40,20 @@ def test_benchmarks(data_dir, data_id):
             # ignore cases that do not have vl specs
             continue
 
-        print("======= {}".format(fname))
+        print("# run synthesize {}".format(fname))
 
         input_data = table_utils.load_and_clean_table(data["input_data"])
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
 
-        Falx.synthesize(inputs=[input_data], vtrace=trace)
+        result = Falx.synthesize(inputs=[input_data], vtrace=trace)
+
+        print("## synthesize result for task {}".format(fname))
+        for p, vis in result:
+            print("table_prog:")
+            print(p)
+            print("vis_spec:")
+            print(vis.to_vl_json(indent=2))
 
 if __name__ == '__main__':
     flags = parser.parse_args()

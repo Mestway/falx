@@ -63,8 +63,8 @@ class VisDesign(object):
 
         return chart_obj
 
-    def to_vl_json(self):
-        return json.dumps(self.to_vl_obj())
+    def to_vl_json(self, indent=4):
+        return json.dumps(self.to_vl_obj(), indent=indent)
 
     def eval(self):
         return self.chart.eval(self.data)

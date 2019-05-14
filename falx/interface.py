@@ -18,10 +18,6 @@ def align_table_schema(table1, table2):
             if all([vals1.count(v) <= vals2.count(v) for v in vals1]):
                 mapping[k1].append(k2)
 
-    pprint(table1)
-    pprint(table2)
-    print(mapping)
-
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
     t1_schema = list(mapping.keys())
@@ -64,6 +60,7 @@ class Falx(object):
                     output = morpheus.evaluate(p, inputs)
                     
                     field_mapping = align_table_schema(sym_data.values, output)
+                    assert(field_mapping != None)
 
                     vis_design = VisDesign(data=output, chart=chart)
                     vis_design.update_field_names(field_mapping)
