@@ -28,8 +28,8 @@ class TestChart(unittest.TestCase):
                         Encoding("color", "variable", "nominal")])
         design = VisDesign(chart=chart, data=test_data)
         trace = design.eval()
-
         abstract_designs = VisDesign.inv_eval(trace)
+
 
     def test_group_line_chart(self):
         chart = LineChart(

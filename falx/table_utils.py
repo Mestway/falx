@@ -12,6 +12,26 @@ def filter_table(table, pred):
 	res = [datum for datum in table if eval(pred)]
 	return res
 
+def table_subset_eq(table1, table2):
+	"""check whether table1 is subsumed by table2 """
+	if len(table1) == 0: return True
+	if len(table2) == 0: return False
+
+	schema1 = tuple(sorted(table1[0].keys()))
+	schema2 = tuple(sorted(table2[0].keys()))
+	if schema1 != schema2: return False
+
+	frozen_table1 = [tuple([t[key] for key in schema1]) for t in table1]
+	frozen_table2 = [tuple([t[key] for key in schema1]) for t in table2]
+
+	for t in frozen_table1:
+		cnt1 = len([r for r in frozen_table1 if r == t])
+		cnt2 = len([r for r in frozen_table2 if r == t])
+		if cnt2 < cnt1:
+			return False
+	return True
+
+
 def clean_column_dtype(column_values):
 	dtype = pd.api.types.infer_dtype(column_values, skipna=True)
 

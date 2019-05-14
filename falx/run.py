@@ -19,7 +19,7 @@ DATA_DIR = os.path.join(PROJ_DIR, "benchmarks")
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
-parser.add_argument("--data_id", dest="data_id", default="007", 
+parser.add_argument("--data_id", dest="data_id", default="001", 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 
 def test_benchmarks(data_dir, data_id):

@@ -63,5 +63,6 @@ class TestFalxInterface(unittest.TestCase):
             print(ptable)
             print(vis_design.to_vl_json())
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -18,6 +18,10 @@ def align_table_schema(table1, table2):
             if all([vals1.count(v) <= vals2.count(v) for v in vals1]):
                 mapping[k1].append(k2)
 
+    pprint(table1)
+    pprint(table2)
+    print(mapping)
+
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
     t1_schema = list(mapping.keys())
@@ -31,13 +35,14 @@ def align_table_schema(table1, table2):
 
     for mapping_id_choices in all_choices:
         # the following is an instantiation of the the mapping
-        inst = {t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
+        inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
 
         # distill the tables for checking
-        schemaless_table1 = [tuple([r[key] for key in t1_schema]) for r in table1]
-        schemaless_table2 = [tuple([r[inst[key]] for key in t1_schema]) for r in table2]
-        if all([schemaless_table1.count(t) <= schemaless_table2.count(t) for t in schemaless_table1]):
+        frozen_table1 = [tuple([r[key] for key in t1_schema]) for r in table1]
+        frozen_table2 = [tuple([r[inst[key]] for key in t1_schema]) for r in table2]
+        if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
             return inst
+            
     return None
 
 
@@ -80,7 +85,7 @@ class Falx(object):
                     # apply each program on inputs to get output table for each layer
                     outputs = [morpheus.evaluate(p, inputs) for p in progs]
 
-                    field_mappings = [align_table_schema(sym_data.values, output) for output in outputs]
+                    field_mappings = [align_table_schema(sym_data[k].values, output) for k, output in enumerate(outputs)]
 
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)

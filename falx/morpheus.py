@@ -26,7 +26,6 @@ robjects.r('''
     library(jsonlite)
    ''')
 
-prog_output = None
 
 def evaluate(prog, inputs):
     """ evaluate a table transformation program on input tables
@@ -36,6 +35,16 @@ def evaluate(prog, inputs):
     Returns:
         an output table (represented as a list of named tuples)
     """
+    tnames = []
+    for i in range(len(inputs)):
+        name = "input_{}".format(i)
+        tnames.append(name)
+        init_tbl_json_str(name, json.dumps(inputs[i]))
+
+    # call morpheusInterpreter to obtain result variable name in r
+    res_id = MorpheusInterpreter().eval(prog, tnames)
+    # get the result out from r environment
+    prog_output = robjects.r('toJSON({})'.format(res_id))[0]
     return json.loads(prog_output)
 
 ## Common utils.
@@ -82,8 +91,8 @@ def subset_eq(actual, expect):
     all_ok = all([check_row(expect_row, robjects.r(actual)) for expect_row in robjects.r(expect).iter_row()])
     if all_ok:
         cmd = 'toJSON({df_name})'.format(df_name=actual)
-        global prog_output
-        prog_output = robjects.r(cmd)[0]
+        # global prog_output
+        # prog_output = robjects.r(cmd)[0]
     return all_ok
 
 def check_row(row, table):
@@ -386,7 +395,7 @@ def synthesize(inputs, output):
     #print("input table:\n", inputs[0])
     loc_val = 1
     output_data = json.dumps(output.instantiate())
-    input_data = str(inputs[0]).replace("'", '"')
+    input_data = json.dumps(inputs[0])
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
     #print(robjects.r('input0'))
