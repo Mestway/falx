@@ -5,48 +5,85 @@ import morpheus
 import itertools
 from pprint import pprint
 
-class FalxTask(object):
+def align_table_schema(table1, table2):
+    """align table schema, assume that table1 is contained by table2"""
+    assert(len(table1) <= len(table2))
+    
+    mapping = {}
+    for k1 in table1[0].keys():
+        mapping[k1] = []
+        vals1 = [r[k1] for r in table1]
+        for k2 in table2[0].keys():
+            vals2 = [r[k2] for r in table2]
+            if all([vals1.count(v) <= vals2.count(v) for v in vals1]):
+                mapping[k1].append(k2)
 
-    def __init__(self, inputs, vtrace):
-        self.inputs = inputs
-        self.vtrace = vtrace
+    # distill plausible mappings from the table
+    # not all choices generated from the approach above generalize, we need to check consistency
+    t1_schema = list(mapping.keys())
+    mapping_id_lists = [list(range(len(mapping[key]))) for key in t1_schema]
 
-    def synthesize(self):
+    all_choices = list(itertools.product(*mapping_id_lists))
+
+    # directly return if there is only one choice
+    if len(all_choices) == 1:
+        return {key:mapping[key][0] for key in mapping}
+
+    for mapping_id_choices in all_choices:
+        # the following is an instantiation of the the mapping
+        inst = {t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
+
+        # distill the tables for checking
+        schemaless_table1 = [tuple([r[key] for key in t1_schema]) for r in table1]
+        schemaless_table2 = [tuple([r[inst[key]] for key in t1_schema]) for r in table2]
+        if all([schemaless_table1.count(t) <= schemaless_table2.count(t) for t in schemaless_table1]):
+            return inst
+    return None
+
+
+class Falx(object):
+
+    @staticmethod
+    def synthesize(inputs, vtrace):
         """synthesize table prog and vis prog from input and output traces"""
         candidates = []
 
         # apply inverse semantics to obtain symbolic output table and vis programs
-        abstract_designs = VisDesign.inv_eval(self.vtrace)
+        abstract_designs = VisDesign.inv_eval(vtrace)
 
         for sym_data, chart in abstract_designs:
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
-                candidate_progs = morpheus.synthesize(self.inputs, sym_data)
+                candidate_progs = morpheus.synthesize(inputs, sym_data)
                 for p in candidate_progs:
-                    output = morpheus.evaluate(p, self.inputs)
+                    output = morpheus.evaluate(p, inputs)
+                    
+                    field_mapping = align_table_schema(sym_data.values, output)
+
                     vis_design = VisDesign(data=output, chart=chart)
+                    vis_design.update_field_names(field_mapping)
+
                     candidates.append((p, vis_design))
             else: 
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
-
-                layer_candidate_progs = []
-                for output in sym_data:
-                    # synthesize table transformation programs
-                    layer_candidate_progs.append(morpheus.synthesize(self.inputs, output))
-
-                layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
-                
+                 # synthesize table transformation programs for each layer
+                layer_candidate_progs = [morpheus.synthesize(inputs, output) for output in sym_data]
+                   
                 # iterating over combinations for different layers
+                layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
                 for layer_id_choices in itertools.product(*layer_id_lists):
 
                     #layer_prog[i] is the transformation program for the i-th layer
                     progs = [layer_candidate_progs[i][layer_id_choices[i]] for i in range(len(layer_id_choices))]
 
                     # apply each program on inputs to get output table for each layer
-                    outputs = [morpheus.evaluate(p, self.inputs) for p in progs]
+                    outputs = [morpheus.evaluate(p, inputs) for p in progs]
+
+                    field_mappings = [align_table_schema(sym_data.values, output) for output in outputs]
 
                     vis_design = VisDesign(data=outputs, chart=chart)
+                    vis_design.update_field_names(field_mappings)
                     candidates.append((progs, vis_design))
 
         return candidates

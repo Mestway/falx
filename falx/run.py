@@ -7,7 +7,7 @@ from pprint import pprint
 from chart import VisDesign
 import design_validator
 import design_enumerator
-from interface import FalxTask
+from interface import Falx
 import table_utils
 
 import morpheus
@@ -46,9 +46,7 @@ def test_benchmarks(data_dir, data_id):
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
 
-        task = FalxTask(inputs=[input_data], vtrace=trace)
-        task.synthesize()
-
+        Falx.synthesize(inputs=[input_data], vtrace=trace)
 
 if __name__ == '__main__':
     flags = parser.parse_args()

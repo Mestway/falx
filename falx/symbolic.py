@@ -30,10 +30,16 @@ class SymTable(object):
 				constraints:
 					forall r in T. p(t)
 					exists r in T. p(t)
-					p(column) 
+					p(column)
 		"""
 		self.values = values
 		self.constraints = constraints
+
+	def get_schema(self):
+		"""get schema of the table """
+		if len(self.values) > 0:
+			return self.values[0].keys()
+		return None
 
 	def consistent_with(table):
 		"""Check if the given table is consistent with the symbolic table """

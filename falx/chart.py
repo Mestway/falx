@@ -69,6 +69,16 @@ class VisDesign(object):
     def eval(self):
         return self.chart.eval(self.data)
 
+    def update_field_names(self, mapping):
+        """Given a mapping between current field names to new field names, update all of their occurence"""
+        if isinstance(self.chart, (LayeredChart,)):
+            for i, l in enumerate(self.chart.layers):
+                for key, e in l.encodings.items():
+                    e.field = mapping[i][e.field]
+        else:
+            for key, e in self.chart.encodings.items():
+                e.field = mapping[e.field]
+
     @staticmethod
     def inv_eval(vtrace):
         """inverse evaluation of a visual trace 
