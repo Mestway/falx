@@ -81,7 +81,7 @@
             "score": 2.64
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "id": 1,
             "trial1": 1.0355,
@@ -132,5 +132,73 @@
             "trial1": 3.2488,
             "trial2": 2.64
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "g": 0,
+            "trial1": 1.0355,
+            "trial2": 1.7138
+        },
+        {
+            "g": 1,
+            "trial1": 1.4998,
+            "trial2": 2.6099
+        },
+        {
+            "g": 2,
+            "trial1": 2.1847,
+            "trial2": 4.3185
+        },
+        {
+            "g": 3,
+            "trial1": 1.014,
+            "trial2": 2.8532
+        },
+        {
+            "g": 4,
+            "trial1": 1.8388,
+            "trial2": 3.2195
+        },
+        {
+            "g": 5,
+            "trial1": 1.3549,
+            "trial2": 4.4374
+        },
+        {
+            "g": 6,
+            "trial1": 0.9128,
+            "trial2": 2.1362
+        },
+        {
+            "g": 7,
+            "trial1": 1.6856,
+            "trial2": 2.5519
+        },
+        {
+            "g": 8,
+            "trial1": 3.0877,
+            "trial2": 1.2056
+        },
+        {
+            "g": 9,
+            "trial1": 3.2488,
+            "trial2": 2.64
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "line"
+        },
+        "encoding": {
+            "x": {
+                "field": "trial2",
+                "type": "quantitative"
+            },
+            "y": {
+                "field": "trial1",
+                "type": "quantitative"
+            }
+        }
+    }
 }

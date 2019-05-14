@@ -253,7 +253,7 @@
             "11": 21114
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "Group": "A",
             "Participant": "02",
@@ -674,5 +674,1111 @@
             "T5": 26642,
             "T12": 21114
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "02",
+            "value": 36034
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "02",
+            "value": 63763
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "02",
+            "value": 51432
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "02",
+            "value": 65100
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "02",
+            "value": 61444
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "02",
+            "value": 71012
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "02",
+            "value": 266610
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "02",
+            "value": 389787
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "02",
+            "value": 47659
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "02",
+            "value": 63156
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "02",
+            "value": 84593
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "02",
+            "value": 84331
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "02",
+            "value": 514204
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "02",
+            "value": 685995
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "02",
+            "value": 325569
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "02",
+            "value": 394893
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "02",
+            "value": 88586
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "02",
+            "value": 119206
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "03",
+            "value": 45632
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "03",
+            "value": 66505
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "03",
+            "value": 60360
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "03",
+            "value": 36685
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "03",
+            "value": 107551
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "03",
+            "value": 53360
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "03",
+            "value": 323952
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "03",
+            "value": 344944
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "03",
+            "value": 69601
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "03",
+            "value": 51268
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "03",
+            "value": 130665
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "03",
+            "value": 59704
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "03",
+            "value": 541017
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "03",
+            "value": 578627
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "03",
+            "value": 424918
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "03",
+            "value": 336442
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "03",
+            "value": 156380
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "03",
+            "value": 80952
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "04",
+            "value": 59025
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "04",
+            "value": 52837
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "04",
+            "value": 68571
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "04",
+            "value": 35788
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "04",
+            "value": 75262
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "04",
+            "value": 66601
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "04",
+            "value": 424683
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "04",
+            "value": 340948
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "04",
+            "value": 79487
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "04",
+            "value": 42809
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "04",
+            "value": 95607
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "04",
+            "value": 81739
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "04",
+            "value": 729858
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "04",
+            "value": 606794
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "04",
+            "value": 501805
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "04",
+            "value": 333508
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "04",
+            "value": 112263
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "04",
+            "value": 112676
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "05",
+            "value": 74767
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "05",
+            "value": 48210
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "05",
+            "value": 70972
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "05",
+            "value": 67705
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "05",
+            "value": 85576
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "05",
+            "value": 89265
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "05",
+            "value": 393380
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "05",
+            "value": 306633
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "05",
+            "value": 77816
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "05",
+            "value": 73611
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "05",
+            "value": 106317
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "05",
+            "value": 116890
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "05",
+            "value": 677483
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "05",
+            "value": 533762
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "05",
+            "value": 375046
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "05",
+            "value": 483442
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "05",
+            "value": 136605
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "05",
+            "value": 160272
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "06",
+            "value": 50846
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "06",
+            "value": 37970
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "06",
+            "value": 63896
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "06",
+            "value": 78296
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "06",
+            "value": 81216
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "06",
+            "value": 62308
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "06",
+            "value": 62613
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "06",
+            "value": 21770
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "06",
+            "value": 80955
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "06",
+            "value": 88832
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "06",
+            "value": 97586
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "06",
+            "value": 68345
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "06",
+            "value": 100610
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "06",
+            "value": 38642
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "06",
+            "value": 130879
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "06",
+            "value": 134422
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "06",
+            "value": 164913
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "06",
+            "value": 112949
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "07",
+            "value": 26688
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "07",
+            "value": 27830
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "07",
+            "value": 17010
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "07",
+            "value": 54074
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "07",
+            "value": 26727
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "07",
+            "value": 31109
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "07",
+            "value": 24448
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "07",
+            "value": 38701
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "07",
+            "value": 17378
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "07",
+            "value": 46327
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "07",
+            "value": 25324
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "07",
+            "value": 25325
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "07",
+            "value": 22457
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "07",
+            "value": 33676
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "07",
+            "value": 20154
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "07",
+            "value": 33916
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "07",
+            "value": 25483
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "07",
+            "value": 24284
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "08",
+            "value": 16498
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "08",
+            "value": 26604
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "08",
+            "value": 41201
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "08",
+            "value": 38417
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "08",
+            "value": 43709
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "08",
+            "value": 33217
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "08",
+            "value": 69943
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "08",
+            "value": 80638
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "08",
+            "value": 37444
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "08",
+            "value": 31701
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "08",
+            "value": 46781
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "08",
+            "value": 31152
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "08",
+            "value": 69223
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "08",
+            "value": 102067
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "08",
+            "value": 47771
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "08",
+            "value": 70210
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "08",
+            "value": 44783
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "08",
+            "value": 22790
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "09",
+            "value": 16272
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "09",
+            "value": 24485
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "09",
+            "value": 14546
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "09",
+            "value": 74756
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "09",
+            "value": 28193
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "09",
+            "value": 770
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "09",
+            "value": 72238
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "09",
+            "value": 78418
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "09",
+            "value": 9161
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "09",
+            "value": 48618
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "09",
+            "value": 26466
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "09",
+            "value": 1078
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "09",
+            "value": 67369
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "09",
+            "value": 89824
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "09",
+            "value": 37838
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "09",
+            "value": 93295
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "09",
+            "value": 20890
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "09",
+            "value": 998
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "10",
+            "value": 20612
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "10",
+            "value": 713
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "10",
+            "value": 18114
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "10",
+            "value": 57872
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "10",
+            "value": 25684
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "10",
+            "value": 27985
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "10",
+            "value": 73618
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "10",
+            "value": 1770
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "10",
+            "value": 11953
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "10",
+            "value": 33347
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "10",
+            "value": 25824
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "10",
+            "value": 25860
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "10",
+            "value": 70949
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "10",
+            "value": 1520
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "10",
+            "value": 46044
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "10",
+            "value": 66312
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "10",
+            "value": 20971
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "10",
+            "value": 20217
+        },
+        {
+            "grp": "A",
+            "time": 1,
+            "variable": "11",
+            "value": 23549
+        },
+        {
+            "grp": "B",
+            "time": 1,
+            "variable": "11",
+            "value": 856
+        },
+        {
+            "grp": "C",
+            "time": 1,
+            "variable": "11",
+            "value": 32854
+        },
+        {
+            "grp": "D",
+            "time": 1,
+            "variable": "11",
+            "value": 42906
+        },
+        {
+            "grp": "E",
+            "time": 1,
+            "variable": "11",
+            "value": 33385
+        },
+        {
+            "grp": "F",
+            "time": 1,
+            "variable": "11",
+            "value": 26218
+        },
+        {
+            "grp": "A",
+            "time": 5,
+            "variable": "11",
+            "value": 88509
+        },
+        {
+            "grp": "B",
+            "time": 5,
+            "variable": "11",
+            "value": 62103
+        },
+        {
+            "grp": "C",
+            "time": 5,
+            "variable": "11",
+            "value": 23377
+        },
+        {
+            "grp": "D",
+            "time": 5,
+            "variable": "11",
+            "value": 29738
+        },
+        {
+            "grp": "E",
+            "time": 5,
+            "variable": "11",
+            "value": 33504
+        },
+        {
+            "grp": "F",
+            "time": 5,
+            "variable": "11",
+            "value": 26642
+        },
+        {
+            "grp": "A",
+            "time": 12,
+            "variable": "11",
+            "value": 104893
+        },
+        {
+            "grp": "B",
+            "time": 12,
+            "variable": "11",
+            "value": 100707
+        },
+        {
+            "grp": "C",
+            "time": 12,
+            "variable": "11",
+            "value": 53324
+        },
+        {
+            "grp": "D",
+            "time": 12,
+            "variable": "11",
+            "value": 63296
+        },
+        {
+            "grp": "E",
+            "time": 12,
+            "variable": "11",
+            "value": 24867
+        },
+        {
+            "grp": "F",
+            "time": 12,
+            "variable": "11",
+            "value": 21114
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "rect"
+        },
+        "encoding": {
+            "y": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "x": {
+                "field": "grp",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "time",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
+    }
 }

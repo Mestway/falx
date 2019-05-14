@@ -31,7 +31,7 @@
             "persons_g2_30min": 18
         }
     ],
-    "output_data": [
+    "output_data_r": [
         {
             "ID": "1",
             "name": "A",
@@ -104,5 +104,81 @@
             "g1": 9,
             "g2": 18
         }
-    ]
+    ],
+    "output_data": [
+        {
+            "ID": 1,
+            "time": "0min",
+            "g1": 1,
+            "g2": 10
+        },
+        {
+            "ID": 1,
+            "time": "10min",
+            "g1": 4,
+            "g2": 13
+        },
+        {
+            "ID": 1,
+            "time": "30min",
+            "g1": 7,
+            "g2": 16
+        },
+        {
+            "ID": 2,
+            "time": "0min",
+            "g1": 2,
+            "g2": 11
+        },
+        {
+            "ID": 2,
+            "time": "10min",
+            "g1": 5,
+            "g2": 14
+        },
+        {
+            "ID": 2,
+            "time": "30min",
+            "g1": 8,
+            "g2": 17
+        },
+        {
+            "ID": 3,
+            "time": "0min",
+            "g1": 3,
+            "g2": 12
+        },
+        {
+            "ID": 3,
+            "time": "10min",
+            "g1": 6,
+            "g2": 15
+        },
+        {
+            "ID": 3,
+            "time": "30min",
+            "g1": 9,
+            "g2": 18
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "point"
+        },
+        "encoding": {
+            "x": {
+                "field": "g1",
+                "type": "quantitative"
+            },
+            "y": {
+                "field": "g2",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "ID",
+                "type": "nominal"
+            }
+        }
+    }
 }
