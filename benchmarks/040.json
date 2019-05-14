@@ -1,173 +1,173 @@
 {
-    "input_data": [
-        {
-            "Value": 10,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 2,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 12,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 5,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 16,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 9,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 18,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 12,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 3,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Win"
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Loss"
-        },
-        {
-            "Value": 1,
-            "Win / Loss": "Win"
-        }
-    ],
-    "output_data": [
-        {
-            "Value": 10,
-            "Win / Loss": "Win",
-            "id": 0,
-            "end": 10,
-            "start": 0
-        },
-        {
-            "Value": 2,
-            "Win / Loss": "Loss",
-            "id": 1,
-            "end": 12,
-            "start": 10
-        },
-        {
-            "Value": 12,
-            "Win / Loss": "Win",
-            "id": 2,
-            "end": 24,
-            "start": 12
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Loss",
-            "id": 3,
-            "end": 28,
-            "start": 24
-        },
-        {
-            "Value": 5,
-            "Win / Loss": "Win",
-            "id": 4,
-            "end": 33,
-            "start": 28
-        },
-        {
-            "Value": 16,
-            "Win / Loss": "Loss",
-            "id": 5,
-            "end": 49,
-            "start": 33
-        },
-        {
-            "Value": 9,
-            "Win / Loss": "Win",
-            "id": 6,
-            "end": 58,
-            "start": 49
-        },
-        {
-            "Value": 18,
-            "Win / Loss": "Loss",
-            "id": 7,
-            "end": 76,
-            "start": 58
-        },
-        {
-            "Value": 12,
-            "Win / Loss": "Win",
-            "id": 8,
-            "end": 88,
-            "start": 76
-        },
-        {
-            "Value": 3,
-            "Win / Loss": "Loss",
-            "id": 9,
-            "end": 91,
-            "start": 88
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Win",
-            "id": 10,
-            "end": 95,
-            "start": 91
-        },
-        {
-            "Value": 4,
-            "Win / Loss": "Loss",
-            "id": 11,
-            "end": 99,
-            "start": 95
-        },
-        {
-            "Value": 1,
-            "Win / Loss": "Win",
-            "id": 12,
-            "end": 100,
-            "start": 99
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "bar"
-        },
-        "encoding": {
-            "x": {
-                "field": "start",
-                "type": "quantitative"
-            },
-            "x2": {
-                "field": "end",
-                "type": "quantitative"
-            },
-            "color": {
-                "field": "Win / Loss",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "Win / Loss",
-                "type": "nominal"
-            }
-        }
+  "input_data": [
+    {
+      "Value": 10,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 2,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 12,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 5,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 16,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 9,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 18,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 12,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 3,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Win"
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Loss"
+    },
+    {
+      "Value": 1,
+      "Win / Loss": "Win"
     }
+  ],
+  "output_data": [
+    {
+      "Value": 10,
+      "Win / Loss": "Win",
+      "id": 0,
+      "end": 10,
+      "start": 0
+    },
+    {
+      "Value": 2,
+      "Win / Loss": "Loss",
+      "id": 1,
+      "end": 12,
+      "start": 10
+    },
+    {
+      "Value": 12,
+      "Win / Loss": "Win",
+      "id": 2,
+      "end": 24,
+      "start": 12
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Loss",
+      "id": 3,
+      "end": 28,
+      "start": 24
+    },
+    {
+      "Value": 5,
+      "Win / Loss": "Win",
+      "id": 4,
+      "end": 33,
+      "start": 28
+    },
+    {
+      "Value": 16,
+      "Win / Loss": "Loss",
+      "id": 5,
+      "end": 49,
+      "start": 33
+    },
+    {
+      "Value": 9,
+      "Win / Loss": "Win",
+      "id": 6,
+      "end": 58,
+      "start": 49
+    },
+    {
+      "Value": 18,
+      "Win / Loss": "Loss",
+      "id": 7,
+      "end": 76,
+      "start": 58
+    },
+    {
+      "Value": 12,
+      "Win / Loss": "Win",
+      "id": 8,
+      "end": 88,
+      "start": 76
+    },
+    {
+      "Value": 3,
+      "Win / Loss": "Loss",
+      "id": 9,
+      "end": 91,
+      "start": 88
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Win",
+      "id": 10,
+      "end": 95,
+      "start": 91
+    },
+    {
+      "Value": 4,
+      "Win / Loss": "Loss",
+      "id": 11,
+      "end": 99,
+      "start": 95
+    },
+    {
+      "Value": 1,
+      "Win / Loss": "Win",
+      "id": 12,
+      "end": 100,
+      "start": 99
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {
+        "field": "start",
+        "type": "quantitative"
+      },
+      "x2": {
+        "field": "end",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Win / Loss",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "Win / Loss",
+        "type": "nominal"
+      }
+    }
+  }
 }

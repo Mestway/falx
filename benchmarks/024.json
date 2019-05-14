@@ -1,121 +1,121 @@
 {
-    "input_data": [
-        {
-            "Parts": "Foundation",
-            "Start Date": "6/1/2000",
-            "Duration": "10"
-        },
-        {
-            "Parts": "Walls",
-            "Start Date": "6/12/2000",
-            "Duration": "7"
-        },
-        {
-            "Parts": "Roof",
-            "Start Date": "6/20/2000",
-            "Duration": "10"
-        },
-        {
-            "Parts": "Windows, Doors",
-            "Start Date": "7/1/2000",
-            "Duration": "5"
-        },
-        {
-            "Parts": "Plumbing",
-            "Start Date": "7/7/2000",
-            "Duration": "3"
-        },
-        {
-            "Parts": "Electric",
-            "Start Date": "7/7/2000",
-            "Duration": "3"
-        },
-        {
-            "Parts": "Painting",
-            "Start Date": "7/11/2000",
-            "Duration": "2"
-        },
-        {
-            "Parts": "Flooring",
-            "Start Date": "7/13/2000",
-            "Duration": "2"
-        }
-    ],
-    "output_data": [
-        {
-            "Duration": 10,
-            "Parts": "Foundation",
-            "Start Date": 959817600000,
-            "id": 0,
-            "End Date": 960681600000
-        },
-        {
-            "Duration": 7,
-            "Parts": "Walls",
-            "Start Date": 960768000000,
-            "id": 1,
-            "End Date": 961372800000
-        },
-        {
-            "Duration": 10,
-            "Parts": "Roof",
-            "Start Date": 961459200000,
-            "id": 2,
-            "End Date": 962323200000
-        },
-        {
-            "Duration": 5,
-            "Parts": "Windows, Doors",
-            "Start Date": 962409600000,
-            "id": 3,
-            "End Date": 962841600000
-        },
-        {
-            "Duration": 3,
-            "Parts": "Plumbing",
-            "Start Date": 962928000000,
-            "id": 4,
-            "End Date": 963187200000
-        },
-        {
-            "Duration": 3,
-            "Parts": "Electric",
-            "Start Date": 962928000000,
-            "id": 5,
-            "End Date": 963187200000
-        },
-        {
-            "Duration": 2,
-            "Parts": "Painting",
-            "Start Date": 963273600000,
-            "id": 6,
-            "End Date": 963446400000
-        },
-        {
-            "Duration": 2,
-            "Parts": "Flooring",
-            "Start Date": 963446400000,
-            "id": 7,
-            "End Date": 963619200000
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": "bar",
-        "encoding": {
-            "y": {
-                "field": "Parts",
-                "type": "nominal",
-                "sort": "null"
-            },
-            "x": {
-                "field": "Start Date",
-                "type": "temporal"
-            },
-            "x2": {
-                "field": "End Date",
-                "type": "temporal"
-            }
-        }
+  "input_data": [
+    {
+      "Parts": "Foundation",
+      "Start Date": "6/1/2000",
+      "Duration": "10"
+    },
+    {
+      "Parts": "Walls",
+      "Start Date": "6/12/2000",
+      "Duration": "7"
+    },
+    {
+      "Parts": "Roof",
+      "Start Date": "6/20/2000",
+      "Duration": "10"
+    },
+    {
+      "Parts": "Windows, Doors",
+      "Start Date": "7/1/2000",
+      "Duration": "5"
+    },
+    {
+      "Parts": "Plumbing",
+      "Start Date": "7/7/2000",
+      "Duration": "3"
+    },
+    {
+      "Parts": "Electric",
+      "Start Date": "7/7/2000",
+      "Duration": "3"
+    },
+    {
+      "Parts": "Painting",
+      "Start Date": "7/11/2000",
+      "Duration": "2"
+    },
+    {
+      "Parts": "Flooring",
+      "Start Date": "7/13/2000",
+      "Duration": "2"
     }
+  ],
+  "output_data": [
+    {
+      "Duration": 10,
+      "Parts": "Foundation",
+      "Start Date": 959817600000,
+      "id": 0,
+      "End Date": 960681600000
+    },
+    {
+      "Duration": 7,
+      "Parts": "Walls",
+      "Start Date": 960768000000,
+      "id": 1,
+      "End Date": 961372800000
+    },
+    {
+      "Duration": 10,
+      "Parts": "Roof",
+      "Start Date": 961459200000,
+      "id": 2,
+      "End Date": 962323200000
+    },
+    {
+      "Duration": 5,
+      "Parts": "Windows, Doors",
+      "Start Date": 962409600000,
+      "id": 3,
+      "End Date": 962841600000
+    },
+    {
+      "Duration": 3,
+      "Parts": "Plumbing",
+      "Start Date": 962928000000,
+      "id": 4,
+      "End Date": 963187200000
+    },
+    {
+      "Duration": 3,
+      "Parts": "Electric",
+      "Start Date": 962928000000,
+      "id": 5,
+      "End Date": 963187200000
+    },
+    {
+      "Duration": 2,
+      "Parts": "Painting",
+      "Start Date": 963273600000,
+      "id": 6,
+      "End Date": 963446400000
+    },
+    {
+      "Duration": 2,
+      "Parts": "Flooring",
+      "Start Date": 963446400000,
+      "id": 7,
+      "End Date": 963619200000
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Parts",
+        "type": "nominal",
+        "sort": "null"
+      },
+      "x": {
+        "field": "Start Date",
+        "type": "temporal"
+      },
+      "x2": {
+        "field": "End Date",
+        "type": "temporal"
+      }
+    }
+  }
 }

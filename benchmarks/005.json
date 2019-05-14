@@ -1,227 +1,227 @@
 {
-    "input_data": [
-        {
-            "Month": "Jan",
-            "Sales": 10,
-            "Cost": 6,
-            "Profit": 4,
-            "ROI": "66.67%"
-        },
-        {
-            "Month": "Feb",
-            "Sales": 20,
-            "Cost": 15,
-            "Profit": 5,
-            "ROI": "33.33%"
-        },
-        {
-            "Month": "Mar",
-            "Sales": 30,
-            "Cost": 24,
-            "Profit": 6,
-            "ROI": "25.00%"
-        },
-        {
-            "Month": "Apr",
-            "Sales": 40,
-            "Cost": 33,
-            "Profit": 7,
-            "ROI": "21.21%"
-        },
-        {
-            "Month": "May",
-            "Sales": 50,
-            "Cost": 42,
-            "Profit": 8,
-            "ROI": "19.05%"
-        },
-        {
-            "Month": "Jun",
-            "Sales": 60,
-            "Cost": 51,
-            "Profit": 9,
-            "ROI": "17.65%"
-        }
-    ],
-    "output_data": [
-        {
-            "Month": "Jan",
-            "variable": "Cost",
-            "value": 6.0
-        },
-        {
-            "Month": "Feb",
-            "variable": "Cost",
-            "value": 15.0
-        },
-        {
-            "Month": "Mar",
-            "variable": "Cost",
-            "value": 24.0
-        },
-        {
-            "Month": "Apr",
-            "variable": "Cost",
-            "value": 33.0
-        },
-        {
-            "Month": "May",
-            "variable": "Cost",
-            "value": 42.0
-        },
-        {
-            "Month": "Jun",
-            "variable": "Cost",
-            "value": 51.0
-        },
-        {
-            "Month": "Jan",
-            "variable": "Profit",
-            "value": 4.0
-        },
-        {
-            "Month": "Feb",
-            "variable": "Profit",
-            "value": 5.0
-        },
-        {
-            "Month": "Mar",
-            "variable": "Profit",
-            "value": 6.0
-        },
-        {
-            "Month": "Apr",
-            "variable": "Profit",
-            "value": 7.0
-        },
-        {
-            "Month": "May",
-            "variable": "Profit",
-            "value": 8.0
-        },
-        {
-            "Month": "Jun",
-            "variable": "Profit",
-            "value": 9.0
-        },
-        {
-            "Month": "Jan",
-            "variable": "ROI",
-            "value": 0.6667
-        },
-        {
-            "Month": "Feb",
-            "variable": "ROI",
-            "value": 0.3333
-        },
-        {
-            "Month": "Mar",
-            "variable": "ROI",
-            "value": 0.25
-        },
-        {
-            "Month": "Apr",
-            "variable": "ROI",
-            "value": 0.2121
-        },
-        {
-            "Month": "May",
-            "variable": "ROI",
-            "value": 0.1905
-        },
-        {
-            "Month": "Jun",
-            "variable": "ROI",
-            "value": 0.1765
-        },
-        {
-            "Month": "Jan",
-            "variable": "Sales",
-            "value": 10.0
-        },
-        {
-            "Month": "Feb",
-            "variable": "Sales",
-            "value": 20.0
-        },
-        {
-            "Month": "Mar",
-            "variable": "Sales",
-            "value": 30.0
-        },
-        {
-            "Month": "Apr",
-            "variable": "Sales",
-            "value": 40.0
-        },
-        {
-            "Month": "May",
-            "variable": "Sales",
-            "value": 50.0
-        },
-        {
-            "Month": "Jun",
-            "variable": "Sales",
-            "value": 60.0
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": {
-                    "type": "bar"
-                },
-                "transform": [
-                    {
-                        "filter": "datum.variable != \"ROI\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "Month",
-                        "type": "nominal"
-                    },
-                    "color": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "type": "line",
-                    "stroke": "red"
-                },
-                "transform": [
-                    {
-                        "filter": "datum.variable == \"ROI\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "Month",
-                        "type": "nominal"
-                    },
-                    "color": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    }
-                }
-            }
-        ],
-        "resolve": {
-            "scale": {
-                "y": "independent"
-            }
-        }
+  "input_data": [
+    {
+      "Month": "Jan",
+      "Sales": 10,
+      "Cost": 6,
+      "Profit": 4,
+      "ROI": "66.67%"
+    },
+    {
+      "Month": "Feb",
+      "Sales": 20,
+      "Cost": 15,
+      "Profit": 5,
+      "ROI": "33.33%"
+    },
+    {
+      "Month": "Mar",
+      "Sales": 30,
+      "Cost": 24,
+      "Profit": 6,
+      "ROI": "25.00%"
+    },
+    {
+      "Month": "Apr",
+      "Sales": 40,
+      "Cost": 33,
+      "Profit": 7,
+      "ROI": "21.21%"
+    },
+    {
+      "Month": "May",
+      "Sales": 50,
+      "Cost": 42,
+      "Profit": 8,
+      "ROI": "19.05%"
+    },
+    {
+      "Month": "Jun",
+      "Sales": 60,
+      "Cost": 51,
+      "Profit": 9,
+      "ROI": "17.65%"
     }
+  ],
+  "output_data": [
+    {
+      "Month": "Jan",
+      "variable": "Cost",
+      "value": 6.0
+    },
+    {
+      "Month": "Feb",
+      "variable": "Cost",
+      "value": 15.0
+    },
+    {
+      "Month": "Mar",
+      "variable": "Cost",
+      "value": 24.0
+    },
+    {
+      "Month": "Apr",
+      "variable": "Cost",
+      "value": 33.0
+    },
+    {
+      "Month": "May",
+      "variable": "Cost",
+      "value": 42.0
+    },
+    {
+      "Month": "Jun",
+      "variable": "Cost",
+      "value": 51.0
+    },
+    {
+      "Month": "Jan",
+      "variable": "Profit",
+      "value": 4.0
+    },
+    {
+      "Month": "Feb",
+      "variable": "Profit",
+      "value": 5.0
+    },
+    {
+      "Month": "Mar",
+      "variable": "Profit",
+      "value": 6.0
+    },
+    {
+      "Month": "Apr",
+      "variable": "Profit",
+      "value": 7.0
+    },
+    {
+      "Month": "May",
+      "variable": "Profit",
+      "value": 8.0
+    },
+    {
+      "Month": "Jun",
+      "variable": "Profit",
+      "value": 9.0
+    },
+    {
+      "Month": "Jan",
+      "variable": "ROI",
+      "value": 0.6667
+    },
+    {
+      "Month": "Feb",
+      "variable": "ROI",
+      "value": 0.3333
+    },
+    {
+      "Month": "Mar",
+      "variable": "ROI",
+      "value": 0.25
+    },
+    {
+      "Month": "Apr",
+      "variable": "ROI",
+      "value": 0.2121
+    },
+    {
+      "Month": "May",
+      "variable": "ROI",
+      "value": 0.1905
+    },
+    {
+      "Month": "Jun",
+      "variable": "ROI",
+      "value": 0.1765
+    },
+    {
+      "Month": "Jan",
+      "variable": "Sales",
+      "value": 10.0
+    },
+    {
+      "Month": "Feb",
+      "variable": "Sales",
+      "value": 20.0
+    },
+    {
+      "Month": "Mar",
+      "variable": "Sales",
+      "value": 30.0
+    },
+    {
+      "Month": "Apr",
+      "variable": "Sales",
+      "value": 40.0
+    },
+    {
+      "Month": "May",
+      "variable": "Sales",
+      "value": 50.0
+    },
+    {
+      "Month": "Jun",
+      "variable": "Sales",
+      "value": 60.0
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": {
+          "type": "bar"
+        },
+        "transform": [
+          {
+            "filter": "datum.variable != \"ROI\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Month",
+            "type": "nominal"
+          },
+          "color": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "stroke": "red"
+        },
+        "transform": [
+          {
+            "filter": "datum.variable == \"ROI\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Month",
+            "type": "nominal"
+          },
+          "color": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          }
+        }
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "y": "independent"
+      }
+    }
+  }
 }

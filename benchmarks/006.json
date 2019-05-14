@@ -1,105 +1,105 @@
 {
-    "input_data": [
-        {
-            "Bucket": "Bucket E",
-            "Budgeted": "$100",
-            "Actual": "$115"
-        },
-        {
-            "Bucket": "Bucket D",
-            "Budgeted": "$100",
-            "Actual": "$90"
-        },
-        {
-            "Bucket": "Bucket C",
-            "Budgeted": "$125",
-            "Actual": "$115"
-        },
-        {
-            "Bucket": "Bucket B",
-            "Budgeted": "$125",
-            "Actual": "$140"
-        },
-        {
-            "Bucket": "Bucket A",
-            "Budgeted": "$140",
-            "Actual": "$150"
-        }
-    ],
-    "output_data": [
-        {
-            "Bucket": "Bucket E",
-            "variable": "Actual",
-            "value": 115
-        },
-        {
-            "Bucket": "Bucket D",
-            "variable": "Actual",
-            "value": 90
-        },
-        {
-            "Bucket": "Bucket C",
-            "variable": "Actual",
-            "value": 115
-        },
-        {
-            "Bucket": "Bucket B",
-            "variable": "Actual",
-            "value": 140
-        },
-        {
-            "Bucket": "Bucket A",
-            "variable": "Actual",
-            "value": 150
-        },
-        {
-            "Bucket": "Bucket E",
-            "variable": "Budgeted",
-            "value": 100
-        },
-        {
-            "Bucket": "Bucket D",
-            "variable": "Budgeted",
-            "value": 100
-        },
-        {
-            "Bucket": "Bucket C",
-            "variable": "Budgeted",
-            "value": 125
-        },
-        {
-            "Bucket": "Bucket B",
-            "variable": "Budgeted",
-            "value": 125
-        },
-        {
-            "Bucket": "Bucket A",
-            "variable": "Budgeted",
-            "value": 140
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "bar"
-        },
-        "encoding": {
-            "color": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "value",
-                "type": "quantitative",
-                "stack": null
-            },
-            "x": {
-                "field": "Bucket",
-                "type": "nominal"
-            },
-            "opacity": {
-                "value": 0.7
-            }
-        }
+  "input_data": [
+    {
+      "Bucket": "Bucket E",
+      "Budgeted": "$100",
+      "Actual": "$115"
+    },
+    {
+      "Bucket": "Bucket D",
+      "Budgeted": "$100",
+      "Actual": "$90"
+    },
+    {
+      "Bucket": "Bucket C",
+      "Budgeted": "$125",
+      "Actual": "$115"
+    },
+    {
+      "Bucket": "Bucket B",
+      "Budgeted": "$125",
+      "Actual": "$140"
+    },
+    {
+      "Bucket": "Bucket A",
+      "Budgeted": "$140",
+      "Actual": "$150"
     }
+  ],
+  "output_data": [
+    {
+      "Bucket": "Bucket E",
+      "variable": "Actual",
+      "value": 115
+    },
+    {
+      "Bucket": "Bucket D",
+      "variable": "Actual",
+      "value": 90
+    },
+    {
+      "Bucket": "Bucket C",
+      "variable": "Actual",
+      "value": 115
+    },
+    {
+      "Bucket": "Bucket B",
+      "variable": "Actual",
+      "value": 140
+    },
+    {
+      "Bucket": "Bucket A",
+      "variable": "Actual",
+      "value": 150
+    },
+    {
+      "Bucket": "Bucket E",
+      "variable": "Budgeted",
+      "value": 100
+    },
+    {
+      "Bucket": "Bucket D",
+      "variable": "Budgeted",
+      "value": 100
+    },
+    {
+      "Bucket": "Bucket C",
+      "variable": "Budgeted",
+      "value": 125
+    },
+    {
+      "Bucket": "Bucket B",
+      "variable": "Budgeted",
+      "value": 125
+    },
+    {
+      "Bucket": "Bucket A",
+      "variable": "Budgeted",
+      "value": 140
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "stack": null
+      },
+      "x": {
+        "field": "Bucket",
+        "type": "nominal"
+      },
+      "opacity": {
+        "value": 0.7
+      }
+    }
+  }
 }

@@ -1,111 +1,111 @@
 {
-    "input_data": [
-        {
-            "Value": "means",
-            "Y1": "52%",
-            "Y2": "57%",
-            "Y3": "60%",
-            "Y4": "63%",
-            "Y5": "63%"
-        },
-        {
-            "Value": "stddev",
-            "Y1": "0.1328",
-            "Y2": "0.1321",
-            "Y3": "0.1303",
-            "Y4": "0.1266",
-            "Y5": "0.1225"
-        },
-        {
-            "Value": "upper range",
-            "Y1": "66%",
-            "Y2": "70%",
-            "Y3": "73%",
-            "Y4": "75%",
-            "Y5": "75%"
-        },
-        {
-            "Value": "lower range",
-            "Y1": "39%",
-            "Y2": "44%",
-            "Y3": "47%",
-            "Y4": "50%",
-            "Y5": "51%"
-        }
-    ],
-    "output_data": [
-        {
-            "variable": "Y1",
-            "lower range": 0.39,
-            "means": 0.52,
-            "stddev": 0.1328,
-            "upper range": 0.66
-        },
-        {
-            "variable": "Y2",
-            "lower range": 0.44,
-            "means": 0.57,
-            "stddev": 0.1321,
-            "upper range": 0.7
-        },
-        {
-            "variable": "Y3",
-            "lower range": 0.47,
-            "means": 0.6,
-            "stddev": 0.1303,
-            "upper range": 0.73
-        },
-        {
-            "variable": "Y4",
-            "lower range": 0.5,
-            "means": 0.63,
-            "stddev": 0.1266,
-            "upper range": 0.75
-        },
-        {
-            "variable": "Y5",
-            "lower range": 0.51,
-            "means": 0.63,
-            "stddev": 0.1225,
-            "upper range": 0.75
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": "line",
-                "encoding": {
-                    "x": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "means",
-                        "type": "quantitative"
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "opacity": 0.4,
-                    "type": "area"
-                },
-                "encoding": {
-                    "x": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "type": "quantitative",
-                        "field": "lower range"
-                    },
-                    "y2": {
-                        "type": "quantitative",
-                        "field": "upper range"
-                    }
-                }
-            }
-        ]
+  "input_data": [
+    {
+      "Value": "means",
+      "Y1": "52%",
+      "Y2": "57%",
+      "Y3": "60%",
+      "Y4": "63%",
+      "Y5": "63%"
+    },
+    {
+      "Value": "stddev",
+      "Y1": "0.1328",
+      "Y2": "0.1321",
+      "Y3": "0.1303",
+      "Y4": "0.1266",
+      "Y5": "0.1225"
+    },
+    {
+      "Value": "upper range",
+      "Y1": "66%",
+      "Y2": "70%",
+      "Y3": "73%",
+      "Y4": "75%",
+      "Y5": "75%"
+    },
+    {
+      "Value": "lower range",
+      "Y1": "39%",
+      "Y2": "44%",
+      "Y3": "47%",
+      "Y4": "50%",
+      "Y5": "51%"
     }
+  ],
+  "output_data": [
+    {
+      "variable": "Y1",
+      "lower range": 0.39,
+      "means": 0.52,
+      "stddev": 0.1328,
+      "upper range": 0.66
+    },
+    {
+      "variable": "Y2",
+      "lower range": 0.44,
+      "means": 0.57,
+      "stddev": 0.1321,
+      "upper range": 0.7
+    },
+    {
+      "variable": "Y3",
+      "lower range": 0.47,
+      "means": 0.6,
+      "stddev": 0.1303,
+      "upper range": 0.73
+    },
+    {
+      "variable": "Y4",
+      "lower range": 0.5,
+      "means": 0.63,
+      "stddev": 0.1266,
+      "upper range": 0.75
+    },
+    {
+      "variable": "Y5",
+      "lower range": 0.51,
+      "means": 0.63,
+      "stddev": 0.1225,
+      "upper range": 0.75
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "means",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "opacity": 0.4,
+          "type": "area"
+        },
+        "encoding": {
+          "x": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "type": "quantitative",
+            "field": "lower range"
+          },
+          "y2": {
+            "type": "quantitative",
+            "field": "upper range"
+          }
+        }
+      }
+    ]
+  }
 }

@@ -1,144 +1,144 @@
 {
-    "input_data": [
-        {
-            "Feature": "A",
-            "value": 6,
-            "Condition": 1,
-            "Sex": "M"
-        },
-        {
-            "Feature": "A",
-            "value": 4,
-            "Condition": 2,
-            "Sex": "M"
-        },
-        {
-            "Feature": "A",
-            "value": 10,
-            "Condition": 3,
-            "Sex": "M"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 1,
-            "Condition": 1,
-            "Sex": "M"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 2,
-            "Condition": 2,
-            "Sex": "M"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 6,
-            "Condition": 3,
-            "Sex": "M"
-        },
-        {
-            "Feature": "A",
-            "value": 2,
-            "Condition": 1,
-            "Sex": "F"
-        },
-        {
-            "Feature": "A",
-            "value": 3,
-            "Condition": 2,
-            "Sex": "F"
-        },
-        {
-            "Feature": "A",
-            "value": 4,
-            "Condition": 3,
-            "Sex": "F"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 5,
-            "Condition": 1,
-            "Sex": "F"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 6,
-            "Condition": 2,
-            "Sex": "F"
-        },
-        {
-            "Feature": "Aneg",
-            "value": 9,
-            "Condition": 3,
-            "Sex": "F"
-        }
-    ],
-    "output_data": [
-        {
-            "Condition": 1,
-            "Sex": "F",
-            "A": 2,
-            "Aneg": 5,
-            "p": 0.2857142857
-        },
-        {
-            "Condition": 1,
-            "Sex": "M",
-            "A": 6,
-            "Aneg": 1,
-            "p": 0.8571428571
-        },
-        {
-            "Condition": 2,
-            "Sex": "F",
-            "A": 3,
-            "Aneg": 6,
-            "p": 0.3333333333
-        },
-        {
-            "Condition": 2,
-            "Sex": "M",
-            "A": 4,
-            "Aneg": 2,
-            "p": 0.6666666667
-        },
-        {
-            "Condition": 3,
-            "Sex": "F",
-            "A": 4,
-            "Aneg": 9,
-            "p": 0.3076923077
-        },
-        {
-            "Condition": 3,
-            "Sex": "M",
-            "A": 10,
-            "Aneg": 6,
-            "p": 0.625
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "bar"
-        },
-        "encoding": {
-            "x": {
-                "field": "Condition",
-                "type": "nominal"
-            },
-            "color": {
-                "field": "Condition",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "p",
-                "type": "quantitative"
-            },
-            "column": {
-                "field": "Sex",
-                "type": "nominal"
-            }
-        }
+  "input_data": [
+    {
+      "Feature": "A",
+      "value": 6,
+      "Condition": 1,
+      "Sex": "M"
+    },
+    {
+      "Feature": "A",
+      "value": 4,
+      "Condition": 2,
+      "Sex": "M"
+    },
+    {
+      "Feature": "A",
+      "value": 10,
+      "Condition": 3,
+      "Sex": "M"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 1,
+      "Condition": 1,
+      "Sex": "M"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 2,
+      "Condition": 2,
+      "Sex": "M"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 6,
+      "Condition": 3,
+      "Sex": "M"
+    },
+    {
+      "Feature": "A",
+      "value": 2,
+      "Condition": 1,
+      "Sex": "F"
+    },
+    {
+      "Feature": "A",
+      "value": 3,
+      "Condition": 2,
+      "Sex": "F"
+    },
+    {
+      "Feature": "A",
+      "value": 4,
+      "Condition": 3,
+      "Sex": "F"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 5,
+      "Condition": 1,
+      "Sex": "F"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 6,
+      "Condition": 2,
+      "Sex": "F"
+    },
+    {
+      "Feature": "Aneg",
+      "value": 9,
+      "Condition": 3,
+      "Sex": "F"
     }
+  ],
+  "output_data": [
+    {
+      "Condition": 1,
+      "Sex": "F",
+      "A": 2,
+      "Aneg": 5,
+      "p": 0.2857142857
+    },
+    {
+      "Condition": 1,
+      "Sex": "M",
+      "A": 6,
+      "Aneg": 1,
+      "p": 0.8571428571
+    },
+    {
+      "Condition": 2,
+      "Sex": "F",
+      "A": 3,
+      "Aneg": 6,
+      "p": 0.3333333333
+    },
+    {
+      "Condition": 2,
+      "Sex": "M",
+      "A": 4,
+      "Aneg": 2,
+      "p": 0.6666666667
+    },
+    {
+      "Condition": 3,
+      "Sex": "F",
+      "A": 4,
+      "Aneg": 9,
+      "p": 0.3076923077
+    },
+    {
+      "Condition": 3,
+      "Sex": "M",
+      "A": 10,
+      "Aneg": 6,
+      "p": 0.625
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {
+        "field": "Condition",
+        "type": "nominal"
+      },
+      "color": {
+        "field": "Condition",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "p",
+        "type": "quantitative"
+      },
+      "column": {
+        "field": "Sex",
+        "type": "nominal"
+      }
+    }
+  }
 }

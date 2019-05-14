@@ -1,624 +1,624 @@
 {
-    "input_data": [
-        {
-            "Age Group": "00-04",
-            "Male-1986": 8580,
-            "Female-1986": 8243,
-            "Male-2050": 5901,
-            "Female-2050": 5637
-        },
-        {
-            "Age Group": "05-09",
-            "Male-1986": 8763,
-            "Female-1986": 8440,
-            "Male-2050": 6070,
-            "Female-2050": 5804
-        },
-        {
-            "Age Group": "10-14",
-            "Male-1986": 8959,
-            "Female-1986": 8659,
-            "Male-2050": 6255,
-            "Female-2050": 5986
-        },
-        {
-            "Age Group": "15-19",
-            "Male-1986": 8836,
-            "Female-1986": 8588,
-            "Male-2050": 6479,
-            "Female-2050": 6213
-        },
-        {
-            "Age Group": "20-24",
-            "Male-1986": 8096,
-            "Female-1986": 7930,
-            "Male-2050": 6704,
-            "Female-2050": 6455
-        },
-        {
-            "Age Group": "25-29",
-            "Male-1986": 7524,
-            "Female-1986": 7413,
-            "Male-2050": 6895,
-            "Female-2050": 6673
-        },
-        {
-            "Age Group": "30-34",
-            "Male-1986": 6749,
-            "Female-1986": 6759,
-            "Male-2050": 7052,
-            "Female-2050": 6862
-        },
-        {
-            "Age Group": "35-39",
-            "Male-1986": 5719,
-            "Female-1986": 5815,
-            "Male-2050": 7186,
-            "Female-2050": 7037
-        },
-        {
-            "Age Group": "40-44",
-            "Male-1986": 4765,
-            "Female-1986": 4926,
-            "Male-2050": 7309,
-            "Female-2050": 7215
-        },
-        {
-            "Age Group": "45-49",
-            "Male-1986": 3848,
-            "Female-1986": 4062,
-            "Male-2050": 7455,
-            "Female-2050": 7440
-        },
-        {
-            "Age Group": "50-54",
-            "Male-1986": 2994,
-            "Female-1986": 3250,
-            "Male-2050": 7705,
-            "Female-2050": 7810
-        },
-        {
-            "Age Group": "55-59",
-            "Male-1986": 2391,
-            "Female-1986": 2698,
-            "Male-2050": 7395,
-            "Female-2050": 7669
-        },
-        {
-            "Age Group": "60-64",
-            "Male-1986": 1862,
-            "Female-1986": 2207,
-            "Male-2050": 7315,
-            "Female-2050": 7870
-        },
-        {
-            "Age Group": "65-69",
-            "Male-1986": 1384,
-            "Female-1986": 1783,
-            "Male-2050": 6712,
-            "Female-2050": 7607
-        },
-        {
-            "Age Group": "70-74",
-            "Male-1986": 942,
-            "Female-1986": 1330,
-            "Male-2050": 5621,
-            "Female-2050": 6844
-        },
-        {
-            "Age Group": "75-79",
-            "Male-1986": 547,
-            "Female-1986": 864,
-            "Male-2050": 4176,
-            "Female-2050": 5623
-        },
-        {
-            "Age Group": "80-00",
-            "Male-1986": 382,
-            "Female-1986": 763,
-            "Male-2050": 4876,
-            "Female-2050": 8575
-        }
-    ],
-    "output_data": [
-        {
-            "Age Group": "00-04",
-            "variable": "Female-1986",
-            "value": 8243,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "05-09",
-            "variable": "Female-1986",
-            "value": 8440,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "10-14",
-            "variable": "Female-1986",
-            "value": 8659,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "15-19",
-            "variable": "Female-1986",
-            "value": 8588,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "20-24",
-            "variable": "Female-1986",
-            "value": 7930,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "25-29",
-            "variable": "Female-1986",
-            "value": 7413,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "30-34",
-            "variable": "Female-1986",
-            "value": 6759,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "35-39",
-            "variable": "Female-1986",
-            "value": 5815,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "40-44",
-            "variable": "Female-1986",
-            "value": 4926,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "45-49",
-            "variable": "Female-1986",
-            "value": 4062,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "50-54",
-            "variable": "Female-1986",
-            "value": 3250,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "55-59",
-            "variable": "Female-1986",
-            "value": 2698,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "60-64",
-            "variable": "Female-1986",
-            "value": 2207,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "65-69",
-            "variable": "Female-1986",
-            "value": 1783,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "70-74",
-            "variable": "Female-1986",
-            "value": 1330,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "75-79",
-            "variable": "Female-1986",
-            "value": 864,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "80-00",
-            "variable": "Female-1986",
-            "value": 763,
-            "gender": "Female",
-            "year": "1986"
-        },
-        {
-            "Age Group": "00-04",
-            "variable": "Female-2050",
-            "value": 5637,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "05-09",
-            "variable": "Female-2050",
-            "value": 5804,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "10-14",
-            "variable": "Female-2050",
-            "value": 5986,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "15-19",
-            "variable": "Female-2050",
-            "value": 6213,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "20-24",
-            "variable": "Female-2050",
-            "value": 6455,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "25-29",
-            "variable": "Female-2050",
-            "value": 6673,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "30-34",
-            "variable": "Female-2050",
-            "value": 6862,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "35-39",
-            "variable": "Female-2050",
-            "value": 7037,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "40-44",
-            "variable": "Female-2050",
-            "value": 7215,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "45-49",
-            "variable": "Female-2050",
-            "value": 7440,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "50-54",
-            "variable": "Female-2050",
-            "value": 7810,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "55-59",
-            "variable": "Female-2050",
-            "value": 7669,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "60-64",
-            "variable": "Female-2050",
-            "value": 7870,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "65-69",
-            "variable": "Female-2050",
-            "value": 7607,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "70-74",
-            "variable": "Female-2050",
-            "value": 6844,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "75-79",
-            "variable": "Female-2050",
-            "value": 5623,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "80-00",
-            "variable": "Female-2050",
-            "value": 8575,
-            "gender": "Female",
-            "year": "2050"
-        },
-        {
-            "Age Group": "00-04",
-            "variable": "Male-1986",
-            "value": 8580,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "05-09",
-            "variable": "Male-1986",
-            "value": 8763,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "10-14",
-            "variable": "Male-1986",
-            "value": 8959,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "15-19",
-            "variable": "Male-1986",
-            "value": 8836,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "20-24",
-            "variable": "Male-1986",
-            "value": 8096,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "25-29",
-            "variable": "Male-1986",
-            "value": 7524,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "30-34",
-            "variable": "Male-1986",
-            "value": 6749,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "35-39",
-            "variable": "Male-1986",
-            "value": 5719,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "40-44",
-            "variable": "Male-1986",
-            "value": 4765,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "45-49",
-            "variable": "Male-1986",
-            "value": 3848,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "50-54",
-            "variable": "Male-1986",
-            "value": 2994,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "55-59",
-            "variable": "Male-1986",
-            "value": 2391,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "60-64",
-            "variable": "Male-1986",
-            "value": 1862,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "65-69",
-            "variable": "Male-1986",
-            "value": 1384,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "70-74",
-            "variable": "Male-1986",
-            "value": 942,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "75-79",
-            "variable": "Male-1986",
-            "value": 547,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "80-00",
-            "variable": "Male-1986",
-            "value": 382,
-            "gender": "Male",
-            "year": "1986"
-        },
-        {
-            "Age Group": "00-04",
-            "variable": "Male-2050",
-            "value": 5901,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "05-09",
-            "variable": "Male-2050",
-            "value": 6070,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "10-14",
-            "variable": "Male-2050",
-            "value": 6255,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "15-19",
-            "variable": "Male-2050",
-            "value": 6479,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "20-24",
-            "variable": "Male-2050",
-            "value": 6704,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "25-29",
-            "variable": "Male-2050",
-            "value": 6895,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "30-34",
-            "variable": "Male-2050",
-            "value": 7052,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "35-39",
-            "variable": "Male-2050",
-            "value": 7186,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "40-44",
-            "variable": "Male-2050",
-            "value": 7309,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "45-49",
-            "variable": "Male-2050",
-            "value": 7455,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "50-54",
-            "variable": "Male-2050",
-            "value": 7705,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "55-59",
-            "variable": "Male-2050",
-            "value": 7395,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "60-64",
-            "variable": "Male-2050",
-            "value": 7315,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "65-69",
-            "variable": "Male-2050",
-            "value": 6712,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "70-74",
-            "variable": "Male-2050",
-            "value": 5621,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "75-79",
-            "variable": "Male-2050",
-            "value": 4176,
-            "gender": "Male",
-            "year": "2050"
-        },
-        {
-            "Age Group": "80-00",
-            "variable": "Male-2050",
-            "value": 4876,
-            "gender": "Male",
-            "year": "2050"
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": "line",
-        "encoding": {
-            "y": {
-                "field": "Age Group",
-                "type": "nominal",
-                "sort": "descending"
-            },
-            "x": {
-                "field": "value",
-                "type": "quantitative"
-            },
-            "column": {
-                "field": "gender",
-                "type": "nominal"
-            },
-            "color": {
-                "field": "year",
-                "type": "ordinal"
-            }
-        }
+  "input_data": [
+    {
+      "Age Group": "00-04",
+      "Male-1986": 8580,
+      "Female-1986": 8243,
+      "Male-2050": 5901,
+      "Female-2050": 5637
+    },
+    {
+      "Age Group": "05-09",
+      "Male-1986": 8763,
+      "Female-1986": 8440,
+      "Male-2050": 6070,
+      "Female-2050": 5804
+    },
+    {
+      "Age Group": "10-14",
+      "Male-1986": 8959,
+      "Female-1986": 8659,
+      "Male-2050": 6255,
+      "Female-2050": 5986
+    },
+    {
+      "Age Group": "15-19",
+      "Male-1986": 8836,
+      "Female-1986": 8588,
+      "Male-2050": 6479,
+      "Female-2050": 6213
+    },
+    {
+      "Age Group": "20-24",
+      "Male-1986": 8096,
+      "Female-1986": 7930,
+      "Male-2050": 6704,
+      "Female-2050": 6455
+    },
+    {
+      "Age Group": "25-29",
+      "Male-1986": 7524,
+      "Female-1986": 7413,
+      "Male-2050": 6895,
+      "Female-2050": 6673
+    },
+    {
+      "Age Group": "30-34",
+      "Male-1986": 6749,
+      "Female-1986": 6759,
+      "Male-2050": 7052,
+      "Female-2050": 6862
+    },
+    {
+      "Age Group": "35-39",
+      "Male-1986": 5719,
+      "Female-1986": 5815,
+      "Male-2050": 7186,
+      "Female-2050": 7037
+    },
+    {
+      "Age Group": "40-44",
+      "Male-1986": 4765,
+      "Female-1986": 4926,
+      "Male-2050": 7309,
+      "Female-2050": 7215
+    },
+    {
+      "Age Group": "45-49",
+      "Male-1986": 3848,
+      "Female-1986": 4062,
+      "Male-2050": 7455,
+      "Female-2050": 7440
+    },
+    {
+      "Age Group": "50-54",
+      "Male-1986": 2994,
+      "Female-1986": 3250,
+      "Male-2050": 7705,
+      "Female-2050": 7810
+    },
+    {
+      "Age Group": "55-59",
+      "Male-1986": 2391,
+      "Female-1986": 2698,
+      "Male-2050": 7395,
+      "Female-2050": 7669
+    },
+    {
+      "Age Group": "60-64",
+      "Male-1986": 1862,
+      "Female-1986": 2207,
+      "Male-2050": 7315,
+      "Female-2050": 7870
+    },
+    {
+      "Age Group": "65-69",
+      "Male-1986": 1384,
+      "Female-1986": 1783,
+      "Male-2050": 6712,
+      "Female-2050": 7607
+    },
+    {
+      "Age Group": "70-74",
+      "Male-1986": 942,
+      "Female-1986": 1330,
+      "Male-2050": 5621,
+      "Female-2050": 6844
+    },
+    {
+      "Age Group": "75-79",
+      "Male-1986": 547,
+      "Female-1986": 864,
+      "Male-2050": 4176,
+      "Female-2050": 5623
+    },
+    {
+      "Age Group": "80-00",
+      "Male-1986": 382,
+      "Female-1986": 763,
+      "Male-2050": 4876,
+      "Female-2050": 8575
     }
+  ],
+  "output_data": [
+    {
+      "Age Group": "00-04",
+      "variable": "Female-1986",
+      "value": 8243,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "05-09",
+      "variable": "Female-1986",
+      "value": 8440,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "10-14",
+      "variable": "Female-1986",
+      "value": 8659,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "15-19",
+      "variable": "Female-1986",
+      "value": 8588,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "20-24",
+      "variable": "Female-1986",
+      "value": 7930,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "25-29",
+      "variable": "Female-1986",
+      "value": 7413,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "30-34",
+      "variable": "Female-1986",
+      "value": 6759,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "35-39",
+      "variable": "Female-1986",
+      "value": 5815,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "40-44",
+      "variable": "Female-1986",
+      "value": 4926,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "45-49",
+      "variable": "Female-1986",
+      "value": 4062,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "50-54",
+      "variable": "Female-1986",
+      "value": 3250,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "55-59",
+      "variable": "Female-1986",
+      "value": 2698,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "60-64",
+      "variable": "Female-1986",
+      "value": 2207,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "65-69",
+      "variable": "Female-1986",
+      "value": 1783,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "70-74",
+      "variable": "Female-1986",
+      "value": 1330,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "75-79",
+      "variable": "Female-1986",
+      "value": 864,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "80-00",
+      "variable": "Female-1986",
+      "value": 763,
+      "gender": "Female",
+      "year": "1986"
+    },
+    {
+      "Age Group": "00-04",
+      "variable": "Female-2050",
+      "value": 5637,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "05-09",
+      "variable": "Female-2050",
+      "value": 5804,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "10-14",
+      "variable": "Female-2050",
+      "value": 5986,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "15-19",
+      "variable": "Female-2050",
+      "value": 6213,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "20-24",
+      "variable": "Female-2050",
+      "value": 6455,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "25-29",
+      "variable": "Female-2050",
+      "value": 6673,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "30-34",
+      "variable": "Female-2050",
+      "value": 6862,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "35-39",
+      "variable": "Female-2050",
+      "value": 7037,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "40-44",
+      "variable": "Female-2050",
+      "value": 7215,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "45-49",
+      "variable": "Female-2050",
+      "value": 7440,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "50-54",
+      "variable": "Female-2050",
+      "value": 7810,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "55-59",
+      "variable": "Female-2050",
+      "value": 7669,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "60-64",
+      "variable": "Female-2050",
+      "value": 7870,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "65-69",
+      "variable": "Female-2050",
+      "value": 7607,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "70-74",
+      "variable": "Female-2050",
+      "value": 6844,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "75-79",
+      "variable": "Female-2050",
+      "value": 5623,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "80-00",
+      "variable": "Female-2050",
+      "value": 8575,
+      "gender": "Female",
+      "year": "2050"
+    },
+    {
+      "Age Group": "00-04",
+      "variable": "Male-1986",
+      "value": 8580,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "05-09",
+      "variable": "Male-1986",
+      "value": 8763,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "10-14",
+      "variable": "Male-1986",
+      "value": 8959,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "15-19",
+      "variable": "Male-1986",
+      "value": 8836,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "20-24",
+      "variable": "Male-1986",
+      "value": 8096,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "25-29",
+      "variable": "Male-1986",
+      "value": 7524,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "30-34",
+      "variable": "Male-1986",
+      "value": 6749,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "35-39",
+      "variable": "Male-1986",
+      "value": 5719,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "40-44",
+      "variable": "Male-1986",
+      "value": 4765,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "45-49",
+      "variable": "Male-1986",
+      "value": 3848,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "50-54",
+      "variable": "Male-1986",
+      "value": 2994,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "55-59",
+      "variable": "Male-1986",
+      "value": 2391,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "60-64",
+      "variable": "Male-1986",
+      "value": 1862,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "65-69",
+      "variable": "Male-1986",
+      "value": 1384,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "70-74",
+      "variable": "Male-1986",
+      "value": 942,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "75-79",
+      "variable": "Male-1986",
+      "value": 547,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "80-00",
+      "variable": "Male-1986",
+      "value": 382,
+      "gender": "Male",
+      "year": "1986"
+    },
+    {
+      "Age Group": "00-04",
+      "variable": "Male-2050",
+      "value": 5901,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "05-09",
+      "variable": "Male-2050",
+      "value": 6070,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "10-14",
+      "variable": "Male-2050",
+      "value": 6255,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "15-19",
+      "variable": "Male-2050",
+      "value": 6479,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "20-24",
+      "variable": "Male-2050",
+      "value": 6704,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "25-29",
+      "variable": "Male-2050",
+      "value": 6895,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "30-34",
+      "variable": "Male-2050",
+      "value": 7052,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "35-39",
+      "variable": "Male-2050",
+      "value": 7186,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "40-44",
+      "variable": "Male-2050",
+      "value": 7309,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "45-49",
+      "variable": "Male-2050",
+      "value": 7455,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "50-54",
+      "variable": "Male-2050",
+      "value": 7705,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "55-59",
+      "variable": "Male-2050",
+      "value": 7395,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "60-64",
+      "variable": "Male-2050",
+      "value": 7315,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "65-69",
+      "variable": "Male-2050",
+      "value": 6712,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "70-74",
+      "variable": "Male-2050",
+      "value": 5621,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "75-79",
+      "variable": "Male-2050",
+      "value": 4176,
+      "gender": "Male",
+      "year": "2050"
+    },
+    {
+      "Age Group": "80-00",
+      "variable": "Male-2050",
+      "value": 4876,
+      "gender": "Male",
+      "year": "2050"
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "line",
+    "encoding": {
+      "y": {
+        "field": "Age Group",
+        "type": "nominal",
+        "sort": "descending"
+      },
+      "x": {
+        "field": "value",
+        "type": "quantitative"
+      },
+      "column": {
+        "field": "gender",
+        "type": "nominal"
+      },
+      "color": {
+        "field": "year",
+        "type": "ordinal"
+      }
+    }
+  }
 }

@@ -1,239 +1,239 @@
 {
-    "input_data": [
-        {
-            "date": "04/17/2018",
-            "type": "Completed",
-            "count": 12,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/17/2018",
-            "type": "Missed",
-            "count": 13,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/17/2018",
-            "type": "Completed",
-            "count": 10,
-            "retailer": "Retailer2"
-        },
-        {
-            "date": "04/19/2018",
-            "type": "Completed",
-            "count": 10,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/19/2018",
-            "type": "Missed",
-            "count": 1,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/20/2018",
-            "type": "Completed",
-            "count": 2,
-            "retailer": "Retailer2"
-        },
-        {
-            "date": "04/20/2018",
-            "type": "Missed",
-            "count": 1,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/21/2018",
-            "type": "Completed",
-            "count": 2,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/21/2018",
-            "type": "Completed",
-            "count": 1,
-            "retailer": "Retailer2"
-        },
-        {
-            "date": "04/21/2018",
-            "type": "Missed",
-            "count": 1,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/23/2018",
-            "type": "Completed",
-            "count": 2,
-            "retailer": "Retailer1"
-        },
-        {
-            "date": "04/23/2018",
-            "type": "Missed",
-            "count": 2,
-            "retailer": "Retailer2"
-        }
-    ],
-    "output_data_r": [
-        {
-            "date": "04/17/2018",
-            "retailer": "Retailer1",
-            "Completed": 12,
-            "Missed": 13,
-            "Total": 25
-        },
-        {
-            "date": "04/17/2018",
-            "retailer": "Retailer2",
-            "Completed": 10,
-            "Missed": 0,
-            "Total": 10
-        },
-        {
-            "date": "04/19/2018",
-            "retailer": "Retailer1",
-            "Completed": 10,
-            "Missed": 1,
-            "Total": 11
-        },
-        {
-            "date": "04/20/2018",
-            "retailer": "Retailer1",
-            "Completed": 0,
-            "Missed": 1,
-            "Total": 1
-        },
-        {
-            "date": "04/20/2018",
-            "retailer": "Retailer2",
-            "Completed": 2,
-            "Missed": 0,
-            "Total": 2
-        },
-        {
-            "date": "04/21/2018",
-            "retailer": "Retailer1",
-            "Completed": 2,
-            "Missed": 1,
-            "Total": 3
-        },
-        {
-            "date": "04/21/2018",
-            "retailer": "Retailer2",
-            "Completed": 1,
-            "Missed": 0,
-            "Total": 1
-        },
-        {
-            "date": "04/23/2018",
-            "retailer": "Retailer1",
-            "Completed": 2,
-            "Missed": 0,
-            "Total": 2
-        },
-        {
-            "date": "04/23/2018",
-            "retailer": "Retailer2",
-            "Completed": 0,
-            "Missed": 2,
-            "Total": 2
-        }
-    ],
-    "output_data": [
-        {
-            "count": 12,
-            "date": "04/17/2018",
-            "retailer": "Retailer1",
-            "type": "Completed"
-        },
-        {
-            "count": 13,
-            "date": "04/17/2018",
-            "retailer": "Retailer1",
-            "type": "Missed"
-        },
-        {
-            "count": 10,
-            "date": "04/17/2018",
-            "retailer": "Retailer2",
-            "type": "Completed"
-        },
-        {
-            "count": 10,
-            "date": "04/19/2018",
-            "retailer": "Retailer1",
-            "type": "Completed"
-        },
-        {
-            "count": 1,
-            "date": "04/19/2018",
-            "retailer": "Retailer1",
-            "type": "Missed"
-        },
-        {
-            "count": 2,
-            "date": "04/20/2018",
-            "retailer": "Retailer2",
-            "type": "Completed"
-        },
-        {
-            "count": 1,
-            "date": "04/20/2018",
-            "retailer": "Retailer1",
-            "type": "Missed"
-        },
-        {
-            "count": 2,
-            "date": "04/21/2018",
-            "retailer": "Retailer1",
-            "type": "Completed"
-        },
-        {
-            "count": 1,
-            "date": "04/21/2018",
-            "retailer": "Retailer2",
-            "type": "Completed"
-        },
-        {
-            "count": 1,
-            "date": "04/21/2018",
-            "retailer": "Retailer1",
-            "type": "Missed"
-        },
-        {
-            "count": 2,
-            "date": "04/23/2018",
-            "retailer": "Retailer1",
-            "type": "Completed"
-        },
-        {
-            "count": 2,
-            "date": "04/23/2018",
-            "retailer": "Retailer2",
-            "type": "Missed"
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "bar"
-        },
-        "encoding": {
-            "x": {
-                "field": "count",
-                "type": "quantitative"
-            },
-            "y": {
-                "field": "date",
-                "type": "nominal"
-            },
-            "column": {
-                "field": "retailer",
-                "type": "nominal"
-            },
-            "color": {
-                "field": "type",
-                "type": "nominal"
-            }
-        }
+  "input_data": [
+    {
+      "date": "04/17/2018",
+      "type": "Completed",
+      "count": 12,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/17/2018",
+      "type": "Missed",
+      "count": 13,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/17/2018",
+      "type": "Completed",
+      "count": 10,
+      "retailer": "Retailer2"
+    },
+    {
+      "date": "04/19/2018",
+      "type": "Completed",
+      "count": 10,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/19/2018",
+      "type": "Missed",
+      "count": 1,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/20/2018",
+      "type": "Completed",
+      "count": 2,
+      "retailer": "Retailer2"
+    },
+    {
+      "date": "04/20/2018",
+      "type": "Missed",
+      "count": 1,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/21/2018",
+      "type": "Completed",
+      "count": 2,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/21/2018",
+      "type": "Completed",
+      "count": 1,
+      "retailer": "Retailer2"
+    },
+    {
+      "date": "04/21/2018",
+      "type": "Missed",
+      "count": 1,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/23/2018",
+      "type": "Completed",
+      "count": 2,
+      "retailer": "Retailer1"
+    },
+    {
+      "date": "04/23/2018",
+      "type": "Missed",
+      "count": 2,
+      "retailer": "Retailer2"
     }
+  ],
+  "output_data_r": [
+    {
+      "date": "04/17/2018",
+      "retailer": "Retailer1",
+      "Completed": 12,
+      "Missed": 13,
+      "Total": 25
+    },
+    {
+      "date": "04/17/2018",
+      "retailer": "Retailer2",
+      "Completed": 10,
+      "Missed": 0,
+      "Total": 10
+    },
+    {
+      "date": "04/19/2018",
+      "retailer": "Retailer1",
+      "Completed": 10,
+      "Missed": 1,
+      "Total": 11
+    },
+    {
+      "date": "04/20/2018",
+      "retailer": "Retailer1",
+      "Completed": 0,
+      "Missed": 1,
+      "Total": 1
+    },
+    {
+      "date": "04/20/2018",
+      "retailer": "Retailer2",
+      "Completed": 2,
+      "Missed": 0,
+      "Total": 2
+    },
+    {
+      "date": "04/21/2018",
+      "retailer": "Retailer1",
+      "Completed": 2,
+      "Missed": 1,
+      "Total": 3
+    },
+    {
+      "date": "04/21/2018",
+      "retailer": "Retailer2",
+      "Completed": 1,
+      "Missed": 0,
+      "Total": 1
+    },
+    {
+      "date": "04/23/2018",
+      "retailer": "Retailer1",
+      "Completed": 2,
+      "Missed": 0,
+      "Total": 2
+    },
+    {
+      "date": "04/23/2018",
+      "retailer": "Retailer2",
+      "Completed": 0,
+      "Missed": 2,
+      "Total": 2
+    }
+  ],
+  "output_data": [
+    {
+      "count": 12,
+      "date": "04/17/2018",
+      "retailer": "Retailer1",
+      "type": "Completed"
+    },
+    {
+      "count": 13,
+      "date": "04/17/2018",
+      "retailer": "Retailer1",
+      "type": "Missed"
+    },
+    {
+      "count": 10,
+      "date": "04/17/2018",
+      "retailer": "Retailer2",
+      "type": "Completed"
+    },
+    {
+      "count": 10,
+      "date": "04/19/2018",
+      "retailer": "Retailer1",
+      "type": "Completed"
+    },
+    {
+      "count": 1,
+      "date": "04/19/2018",
+      "retailer": "Retailer1",
+      "type": "Missed"
+    },
+    {
+      "count": 2,
+      "date": "04/20/2018",
+      "retailer": "Retailer2",
+      "type": "Completed"
+    },
+    {
+      "count": 1,
+      "date": "04/20/2018",
+      "retailer": "Retailer1",
+      "type": "Missed"
+    },
+    {
+      "count": 2,
+      "date": "04/21/2018",
+      "retailer": "Retailer1",
+      "type": "Completed"
+    },
+    {
+      "count": 1,
+      "date": "04/21/2018",
+      "retailer": "Retailer2",
+      "type": "Completed"
+    },
+    {
+      "count": 1,
+      "date": "04/21/2018",
+      "retailer": "Retailer1",
+      "type": "Missed"
+    },
+    {
+      "count": 2,
+      "date": "04/23/2018",
+      "retailer": "Retailer1",
+      "type": "Completed"
+    },
+    {
+      "count": 2,
+      "date": "04/23/2018",
+      "retailer": "Retailer2",
+      "type": "Missed"
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {
+        "field": "count",
+        "type": "quantitative"
+      },
+      "y": {
+        "field": "date",
+        "type": "nominal"
+      },
+      "column": {
+        "field": "retailer",
+        "type": "nominal"
+      },
+      "color": {
+        "field": "type",
+        "type": "nominal"
+      }
+    }
+  }
 }

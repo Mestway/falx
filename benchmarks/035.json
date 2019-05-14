@@ -1,161 +1,161 @@
 {
-    "input_data": [
-        {
-            "DATA": "A",
-            "Value": 100,
-            "Lower": 80,
-            "Upper": 116
-        },
-        {
-            "DATA": "B",
-            "Value": 120,
-            "Lower": 103,
-            "Upper": 138
-        },
-        {
-            "DATA": "C",
-            "Value": 140,
-            "Lower": 106,
-            "Upper": 157
-        },
-        {
-            "DATA": "D",
-            "Value": 80,
-            "Lower": 75,
-            "Upper": 85
-        },
-        {
-            "DATA": "E",
-            "Value": 90,
-            "Lower": 85,
-            "Upper": 102
-        }
-    ],
-    "output_data": [
-        {
-            "DATA": "A",
-            "variable": "Lower",
-            "value": 80
-        },
-        {
-            "DATA": "B",
-            "variable": "Lower",
-            "value": 103
-        },
-        {
-            "DATA": "C",
-            "variable": "Lower",
-            "value": 106
-        },
-        {
-            "DATA": "D",
-            "variable": "Lower",
-            "value": 75
-        },
-        {
-            "DATA": "E",
-            "variable": "Lower",
-            "value": 85
-        },
-        {
-            "DATA": "A",
-            "variable": "Upper",
-            "value": 116
-        },
-        {
-            "DATA": "B",
-            "variable": "Upper",
-            "value": 138
-        },
-        {
-            "DATA": "C",
-            "variable": "Upper",
-            "value": 157
-        },
-        {
-            "DATA": "D",
-            "variable": "Upper",
-            "value": 85
-        },
-        {
-            "DATA": "E",
-            "variable": "Upper",
-            "value": 102
-        },
-        {
-            "DATA": "A",
-            "variable": "Value",
-            "value": 100
-        },
-        {
-            "DATA": "B",
-            "variable": "Value",
-            "value": 120
-        },
-        {
-            "DATA": "C",
-            "variable": "Value",
-            "value": 140
-        },
-        {
-            "DATA": "D",
-            "variable": "Value",
-            "value": 80
-        },
-        {
-            "DATA": "E",
-            "variable": "Value",
-            "value": 90
-        }
-    ],
-    "spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": {
-                    "type": "bar",
-                    "opacity": 0.5
-                },
-                "transform": [
-                    {
-                        "filter": "datum.variable == \"Value\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "DATA",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "type": "point"
-                },
-                "transform": [
-                    {
-                        "filter": "datum.variable != \"Value\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "DATA",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    },
-                    "color": {
-                        "field": "variable",
-                        "type": "nominal"
-                    }
-                }
-            }
-        ]
+  "input_data": [
+    {
+      "DATA": "A",
+      "Value": 100,
+      "Lower": 80,
+      "Upper": 116
+    },
+    {
+      "DATA": "B",
+      "Value": 120,
+      "Lower": 103,
+      "Upper": 138
+    },
+    {
+      "DATA": "C",
+      "Value": 140,
+      "Lower": 106,
+      "Upper": 157
+    },
+    {
+      "DATA": "D",
+      "Value": 80,
+      "Lower": 75,
+      "Upper": 85
+    },
+    {
+      "DATA": "E",
+      "Value": 90,
+      "Lower": 85,
+      "Upper": 102
     }
+  ],
+  "output_data": [
+    {
+      "DATA": "A",
+      "variable": "Lower",
+      "value": 80
+    },
+    {
+      "DATA": "B",
+      "variable": "Lower",
+      "value": 103
+    },
+    {
+      "DATA": "C",
+      "variable": "Lower",
+      "value": 106
+    },
+    {
+      "DATA": "D",
+      "variable": "Lower",
+      "value": 75
+    },
+    {
+      "DATA": "E",
+      "variable": "Lower",
+      "value": 85
+    },
+    {
+      "DATA": "A",
+      "variable": "Upper",
+      "value": 116
+    },
+    {
+      "DATA": "B",
+      "variable": "Upper",
+      "value": 138
+    },
+    {
+      "DATA": "C",
+      "variable": "Upper",
+      "value": 157
+    },
+    {
+      "DATA": "D",
+      "variable": "Upper",
+      "value": 85
+    },
+    {
+      "DATA": "E",
+      "variable": "Upper",
+      "value": 102
+    },
+    {
+      "DATA": "A",
+      "variable": "Value",
+      "value": 100
+    },
+    {
+      "DATA": "B",
+      "variable": "Value",
+      "value": 120
+    },
+    {
+      "DATA": "C",
+      "variable": "Value",
+      "value": 140
+    },
+    {
+      "DATA": "D",
+      "variable": "Value",
+      "value": 80
+    },
+    {
+      "DATA": "E",
+      "variable": "Value",
+      "value": 90
+    }
+  ],
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "opacity": 0.5
+        },
+        "transform": [
+          {
+            "filter": "datum.variable == \"Value\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "DATA",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "point"
+        },
+        "transform": [
+          {
+            "filter": "datum.variable != \"Value\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "DATA",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "variable",
+            "type": "nominal"
+          }
+        }
+      }
+    ]
+  }
 }

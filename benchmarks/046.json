@@ -1,1932 +1,1932 @@
 {
-    "input_data": [
-        {
-            "date": "2012-07-01",
-            "pce": 11074.8,
-            "pop": 314449,
-            "psavert": 6.6,
-            "uempmed": 17.5,
-            "unemploy": 12657
-        },
-        {
-            "date": "2001-09-01",
-            "pce": 7054.8,
-            "pop": 285843,
-            "psavert": 6.3,
-            "uempmed": 7.2,
-            "unemploy": 7142
-        },
-        {
-            "date": "2011-08-01",
-            "pce": 10745.6,
-            "pop": 312355,
-            "psavert": 6.2,
-            "uempmed": 22.4,
-            "unemploy": 13806
-        },
-        {
-            "date": "2005-07-01",
-            "pce": 8867.9,
-            "pop": 296186,
-            "psavert": 1.9,
-            "uempmed": 8.8,
-            "unemploy": 7406
-        },
-        {
-            "date": "1989-05-01",
-            "pce": 3567.5,
-            "pop": 246906,
-            "psavert": 7.6,
-            "uempmed": 5.3,
-            "unemploy": 6375
-        },
-        {
-            "date": "1985-03-01",
-            "pce": 2656.8,
-            "pop": 237732,
-            "psavert": 8.1,
-            "uempmed": 7.1,
-            "unemploy": 8339
-        },
-        {
-            "date": "1989-08-01",
-            "pce": 3636.8,
-            "pop": 247573,
-            "psavert": 7.1,
-            "uempmed": 5,
-            "unemploy": 6511
-        },
-        {
-            "date": "2008-11-01",
-            "pce": 9851.2,
-            "pop": 305786,
-            "psavert": 6.3,
-            "uempmed": 9.8,
-            "unemploy": 10538
-        },
-        {
-            "date": "2014-01-01",
-            "pce": 11663.9,
-            "pop": 318032,
-            "psavert": 4.9,
-            "uempmed": 15.9,
-            "unemploy": 10280
-        },
-        {
-            "date": "1987-09-01",
-            "pce": 3142.9,
-            "pop": 243223,
-            "psavert": 7,
-            "uempmed": 6,
-            "unemploy": 7102
-        },
-        {
-            "date": "2006-06-01",
-            "pce": 9283.8,
-            "pop": 298739,
-            "psavert": 3.4,
-            "uempmed": 7.3,
-            "unemploy": 7001
-        },
-        {
-            "date": "1992-07-01",
-            "pce": 4223,
-            "pop": 256894,
-            "psavert": 9.1,
-            "uempmed": 8.6,
-            "unemploy": 9850
-        },
-        {
-            "date": "1976-07-01",
-            "pce": 1152.1,
-            "pop": 218035,
-            "psavert": 11.2,
-            "uempmed": 7.7,
-            "unemploy": 7490
-        },
-        {
-            "date": "1973-06-01",
-            "pce": 845.8,
-            "pop": 211746,
-            "psavert": 13.2,
-            "uempmed": 5,
-            "unemploy": 4363
-        },
-        {
-            "date": "1967-09-01",
-            "pce": 516.3,
-            "pop": 199113,
-            "psavert": 11.7,
-            "uempmed": 4.6,
-            "unemploy": 2958
-        },
-        {
-            "date": "1995-06-01",
-            "pce": 4999,
-            "pop": 266270,
-            "psavert": 6.1,
-            "uempmed": 7.9,
-            "unemploy": 7427
-        },
-        {
-            "date": "1980-07-01",
-            "pce": 1751.2,
-            "pop": 227726,
-            "psavert": 10.5,
-            "uempmed": 7,
-            "unemploy": 8363
-        },
-        {
-            "date": "1970-01-01",
-            "pce": 629.6,
-            "pop": 203849,
-            "psavert": 11.7,
-            "uempmed": 4.6,
-            "unemploy": 3201
-        },
-        {
-            "date": "1967-08-01",
-            "pce": 510.5,
-            "pop": 198911,
-            "psavert": 12.5,
-            "uempmed": 4.7,
-            "unemploy": 2945
-        },
-        {
-            "date": "1995-08-01",
-            "pce": 5027.1,
-            "pop": 266843,
-            "psavert": 6.1,
-            "uempmed": 8.3,
-            "unemploy": 7484
-        },
-        {
-            "date": "1996-10-01",
-            "pce": 5351.5,
-            "pop": 270581,
-            "psavert": 5.8,
-            "uempmed": 8.3,
-            "unemploy": 7031
-        },
-        {
-            "date": "2012-09-01",
-            "pce": 11179.6,
-            "pop": 314909,
-            "psavert": 6.5,
-            "uempmed": 18.8,
-            "unemploy": 12106
-        },
-        {
-            "date": "2006-10-01",
-            "pce": 9413.3,
-            "pop": 299835,
-            "psavert": 3.1,
-            "uempmed": 7.9,
-            "unemploy": 6727
-        },
-        {
-            "date": "1994-07-01",
-            "pce": 4740.8,
-            "pop": 263436,
-            "psavert": 6.4,
-            "uempmed": 9,
-            "unemploy": 7946
-        },
-        {
-            "date": "2008-05-01",
-            "pce": 10093.3,
-            "pop": 304323,
-            "psavert": 7.9,
-            "uempmed": 7.9,
-            "unemploy": 8395
-        },
-        {
-            "date": "1975-10-01",
-            "pce": 1063.2,
-            "pop": 216587,
-            "psavert": 13,
-            "uempmed": 8.6,
-            "unemploy": 7897
-        },
-        {
-            "date": "1982-12-01",
-            "pce": 2167.4,
-            "pop": 233160,
-            "psavert": 10.3,
-            "uempmed": 10.2,
-            "unemploy": 12051
-        },
-        {
-            "date": "1976-01-01",
-            "pce": 1109.5,
-            "pop": 217095,
-            "psavert": 11.3,
-            "uempmed": 9,
-            "unemploy": 7534
-        },
-        {
-            "date": "1999-03-01",
-            "pce": 6159.7,
-            "pop": 278198,
-            "psavert": 5.3,
-            "uempmed": 6.8,
-            "unemploy": 5783
-        },
-        {
-            "date": "1973-08-01",
-            "pce": 854.9,
-            "pop": 212092,
-            "psavert": 13.6,
-            "uempmed": 4.9,
-            "unemploy": 4305
-        },
-        {
-            "date": "2010-11-01",
-            "pce": 10399.8,
-            "pop": 310657,
-            "psavert": 5.3,
-            "uempmed": 21,
-            "unemploy": 15081
-        },
-        {
-            "date": "1974-03-01",
-            "pce": 903.3,
-            "pop": 213211,
-            "psavert": 13,
-            "uempmed": 4.8,
-            "unemploy": 4634
-        },
-        {
-            "date": "1972-01-01",
-            "pce": 732.6,
-            "pop": 208917,
-            "psavert": 12.4,
-            "uempmed": 6.2,
-            "unemploy": 5019
-        },
-        {
-            "date": "1999-11-01",
-            "pce": 6467.2,
-            "pop": 280471,
-            "psavert": 4.1,
-            "uempmed": 6.2,
-            "unemploy": 5716
-        },
-        {
-            "date": "2012-03-01",
-            "pce": 10994.3,
-            "pop": 313705,
-            "psavert": 6.9,
-            "uempmed": 19.2,
-            "unemploy": 12696
-        },
-        {
-            "date": "2000-12-01",
-            "pce": 6979.1,
-            "pop": 283696,
-            "psavert": 3.5,
-            "uempmed": 6,
-            "unemploy": 5634
-        },
-        {
-            "date": "1977-05-01",
-            "pce": 1259.6,
-            "pop": 219859,
-            "psavert": 9.8,
-            "uempmed": 7.9,
-            "unemploy": 6911
-        },
-        {
-            "date": "2004-10-01",
-            "pce": 8417.9,
-            "pop": 294230,
-            "psavert": 3.8,
-            "uempmed": 9.5,
-            "unemploy": 8061
-        },
-        {
-            "date": "1986-09-01",
-            "pce": 2984.6,
-            "pop": 241068,
-            "psavert": 6.6,
-            "uempmed": 7.4,
-            "unemploy": 8310
-        },
-        {
-            "date": "1976-08-01",
-            "pce": 1160.5,
-            "pop": 218233,
-            "psavert": 11.2,
-            "uempmed": 7.9,
-            "unemploy": 7518
-        },
-        {
-            "date": "2001-02-01",
-            "pce": 7029.3,
-            "pop": 284137,
-            "psavert": 4.1,
-            "uempmed": 6.1,
-            "unemploy": 6089
-        },
-        {
-            "date": "2013-05-01",
-            "pce": 11407.1,
-            "pop": 316395,
-            "psavert": 5.2,
-            "uempmed": 17,
-            "unemploy": 11671
-        },
-        {
-            "date": "1982-07-01",
-            "pce": 2075.1,
-            "pop": 232188,
-            "psavert": 12,
-            "uempmed": 8.5,
-            "unemploy": 10849
-        },
-        {
-            "date": "1982-03-01",
-            "pce": 2024.4,
-            "pop": 231470,
-            "psavert": 11.7,
-            "uempmed": 7.7,
-            "unemploy": 9895
-        },
-        {
-            "date": "1987-08-01",
-            "pce": 3147,
-            "pop": 243012,
-            "psavert": 6.5,
-            "uempmed": 6.4,
-            "unemploy": 7261
-        },
-        {
-            "date": "2001-06-01",
-            "pce": 7097.1,
-            "pop": 285062,
-            "psavert": 3.7,
-            "uempmed": 6,
-            "unemploy": 6484
-        },
-        {
-            "date": "2007-10-01",
-            "pce": 9853.9,
-            "pop": 302807,
-            "psavert": 2.8,
-            "uempmed": 8.4,
-            "unemploy": 7237
-        },
-        {
-            "date": "1981-04-01",
-            "pce": 1909.1,
-            "pop": 229403,
-            "psavert": 10.3,
-            "uempmed": 7.4,
-            "unemploy": 7869
-        },
-        {
-            "date": "1984-08-01",
-            "pce": 2518.4,
-            "pop": 236549,
-            "psavert": 11.2,
-            "uempmed": 7.3,
-            "unemploy": 8519
-        },
-        {
-            "date": "1974-10-01",
-            "pce": 961,
-            "pop": 214451,
-            "psavert": 13,
-            "uempmed": 5.5,
-            "unemploy": 5523
-        }
-    ],
-    "output_data_r": [
-        {
-            "date": "2012-07-01",
-            "pce": 11074.8,
-            "pop": 314449,
-            "unemploy": 12657,
-            "indicator": "psavert",
-            "percentage": 6.6,
-            "Y2K": true
-        },
-        {
-            "date": "2001-09-01",
-            "pce": 7054.8,
-            "pop": 285843,
-            "unemploy": 7142,
-            "indicator": "psavert",
-            "percentage": 6.3,
-            "Y2K": true
-        },
-        {
-            "date": "2011-08-01",
-            "pce": 10745.6,
-            "pop": 312355,
-            "unemploy": 13806,
-            "indicator": "psavert",
-            "percentage": 6.2,
-            "Y2K": true
-        },
-        {
-            "date": "2005-07-01",
-            "pce": 8867.9,
-            "pop": 296186,
-            "unemploy": 7406,
-            "indicator": "psavert",
-            "percentage": 1.9,
-            "Y2K": true
-        },
-        {
-            "date": "1989-05-01",
-            "pce": 3567.5,
-            "pop": 246906,
-            "unemploy": 6375,
-            "indicator": "psavert",
-            "percentage": 7.6,
-            "Y2K": false
-        },
-        {
-            "date": "1985-03-01",
-            "pce": 2656.8,
-            "pop": 237732,
-            "unemploy": 8339,
-            "indicator": "psavert",
-            "percentage": 8.1,
-            "Y2K": false
-        },
-        {
-            "date": "1989-08-01",
-            "pce": 3636.8,
-            "pop": 247573,
-            "unemploy": 6511,
-            "indicator": "psavert",
-            "percentage": 7.1,
-            "Y2K": false
-        },
-        {
-            "date": "2008-11-01",
-            "pce": 9851.2,
-            "pop": 305786,
-            "unemploy": 10538,
-            "indicator": "psavert",
-            "percentage": 6.3,
-            "Y2K": true
-        },
-        {
-            "date": "2014-01-01",
-            "pce": 11663.9,
-            "pop": 318032,
-            "unemploy": 10280,
-            "indicator": "psavert",
-            "percentage": 4.9,
-            "Y2K": true
-        },
-        {
-            "date": "1987-09-01",
-            "pce": 3142.9,
-            "pop": 243223,
-            "unemploy": 7102,
-            "indicator": "psavert",
-            "percentage": 7,
-            "Y2K": false
-        },
-        {
-            "date": "2006-06-01",
-            "pce": 9283.8,
-            "pop": 298739,
-            "unemploy": 7001,
-            "indicator": "psavert",
-            "percentage": 3.4,
-            "Y2K": true
-        },
-        {
-            "date": "1992-07-01",
-            "pce": 4223,
-            "pop": 256894,
-            "unemploy": 9850,
-            "indicator": "psavert",
-            "percentage": 9.1,
-            "Y2K": false
-        },
-        {
-            "date": "1976-07-01",
-            "pce": 1152.1,
-            "pop": 218035,
-            "unemploy": 7490,
-            "indicator": "psavert",
-            "percentage": 11.2,
-            "Y2K": false
-        },
-        {
-            "date": "1973-06-01",
-            "pce": 845.8,
-            "pop": 211746,
-            "unemploy": 4363,
-            "indicator": "psavert",
-            "percentage": 13.2,
-            "Y2K": false
-        },
-        {
-            "date": "1967-09-01",
-            "pce": 516.3,
-            "pop": 199113,
-            "unemploy": 2958,
-            "indicator": "psavert",
-            "percentage": 11.7,
-            "Y2K": false
-        },
-        {
-            "date": "1995-06-01",
-            "pce": 4999,
-            "pop": 266270,
-            "unemploy": 7427,
-            "indicator": "psavert",
-            "percentage": 6.1,
-            "Y2K": false
-        },
-        {
-            "date": "1980-07-01",
-            "pce": 1751.2,
-            "pop": 227726,
-            "unemploy": 8363,
-            "indicator": "psavert",
-            "percentage": 10.5,
-            "Y2K": false
-        },
-        {
-            "date": "1970-01-01",
-            "pce": 629.6,
-            "pop": 203849,
-            "unemploy": 3201,
-            "indicator": "psavert",
-            "percentage": 11.7,
-            "Y2K": false
-        },
-        {
-            "date": "1967-08-01",
-            "pce": 510.5,
-            "pop": 198911,
-            "unemploy": 2945,
-            "indicator": "psavert",
-            "percentage": 12.5,
-            "Y2K": false
-        },
-        {
-            "date": "1995-08-01",
-            "pce": 5027.1,
-            "pop": 266843,
-            "unemploy": 7484,
-            "indicator": "psavert",
-            "percentage": 6.1,
-            "Y2K": false
-        },
-        {
-            "date": "1996-10-01",
-            "pce": 5351.5,
-            "pop": 270581,
-            "unemploy": 7031,
-            "indicator": "psavert",
-            "percentage": 5.8,
-            "Y2K": false
-        },
-        {
-            "date": "2012-09-01",
-            "pce": 11179.6,
-            "pop": 314909,
-            "unemploy": 12106,
-            "indicator": "psavert",
-            "percentage": 6.5,
-            "Y2K": true
-        },
-        {
-            "date": "2006-10-01",
-            "pce": 9413.3,
-            "pop": 299835,
-            "unemploy": 6727,
-            "indicator": "psavert",
-            "percentage": 3.1,
-            "Y2K": true
-        },
-        {
-            "date": "1994-07-01",
-            "pce": 4740.8,
-            "pop": 263436,
-            "unemploy": 7946,
-            "indicator": "psavert",
-            "percentage": 6.4,
-            "Y2K": false
-        },
-        {
-            "date": "2008-05-01",
-            "pce": 10093.3,
-            "pop": 304323,
-            "unemploy": 8395,
-            "indicator": "psavert",
-            "percentage": 7.9,
-            "Y2K": true
-        },
-        {
-            "date": "1975-10-01",
-            "pce": 1063.2,
-            "pop": 216587,
-            "unemploy": 7897,
-            "indicator": "psavert",
-            "percentage": 13,
-            "Y2K": false
-        },
-        {
-            "date": "1982-12-01",
-            "pce": 2167.4,
-            "pop": 233160,
-            "unemploy": 12051,
-            "indicator": "psavert",
-            "percentage": 10.3,
-            "Y2K": false
-        },
-        {
-            "date": "1976-01-01",
-            "pce": 1109.5,
-            "pop": 217095,
-            "unemploy": 7534,
-            "indicator": "psavert",
-            "percentage": 11.3,
-            "Y2K": false
-        },
-        {
-            "date": "1999-03-01",
-            "pce": 6159.7,
-            "pop": 278198,
-            "unemploy": 5783,
-            "indicator": "psavert",
-            "percentage": 5.3,
-            "Y2K": false
-        },
-        {
-            "date": "1973-08-01",
-            "pce": 854.9,
-            "pop": 212092,
-            "unemploy": 4305,
-            "indicator": "psavert",
-            "percentage": 13.6,
-            "Y2K": false
-        },
-        {
-            "date": "2010-11-01",
-            "pce": 10399.8,
-            "pop": 310657,
-            "unemploy": 15081,
-            "indicator": "psavert",
-            "percentage": 5.3,
-            "Y2K": true
-        },
-        {
-            "date": "1974-03-01",
-            "pce": 903.3,
-            "pop": 213211,
-            "unemploy": 4634,
-            "indicator": "psavert",
-            "percentage": 13,
-            "Y2K": false
-        },
-        {
-            "date": "1972-01-01",
-            "pce": 732.6,
-            "pop": 208917,
-            "unemploy": 5019,
-            "indicator": "psavert",
-            "percentage": 12.4,
-            "Y2K": false
-        },
-        {
-            "date": "1999-11-01",
-            "pce": 6467.2,
-            "pop": 280471,
-            "unemploy": 5716,
-            "indicator": "psavert",
-            "percentage": 4.1,
-            "Y2K": false
-        },
-        {
-            "date": "2012-03-01",
-            "pce": 10994.3,
-            "pop": 313705,
-            "unemploy": 12696,
-            "indicator": "psavert",
-            "percentage": 6.9,
-            "Y2K": true
-        },
-        {
-            "date": "2000-12-01",
-            "pce": 6979.1,
-            "pop": 283696,
-            "unemploy": 5634,
-            "indicator": "psavert",
-            "percentage": 3.5,
-            "Y2K": true
-        },
-        {
-            "date": "1977-05-01",
-            "pce": 1259.6,
-            "pop": 219859,
-            "unemploy": 6911,
-            "indicator": "psavert",
-            "percentage": 9.8,
-            "Y2K": false
-        },
-        {
-            "date": "2004-10-01",
-            "pce": 8417.9,
-            "pop": 294230,
-            "unemploy": 8061,
-            "indicator": "psavert",
-            "percentage": 3.8,
-            "Y2K": true
-        },
-        {
-            "date": "1986-09-01",
-            "pce": 2984.6,
-            "pop": 241068,
-            "unemploy": 8310,
-            "indicator": "psavert",
-            "percentage": 6.6,
-            "Y2K": false
-        },
-        {
-            "date": "1976-08-01",
-            "pce": 1160.5,
-            "pop": 218233,
-            "unemploy": 7518,
-            "indicator": "psavert",
-            "percentage": 11.2,
-            "Y2K": false
-        },
-        {
-            "date": "2001-02-01",
-            "pce": 7029.3,
-            "pop": 284137,
-            "unemploy": 6089,
-            "indicator": "psavert",
-            "percentage": 4.1,
-            "Y2K": true
-        },
-        {
-            "date": "2013-05-01",
-            "pce": 11407.1,
-            "pop": 316395,
-            "unemploy": 11671,
-            "indicator": "psavert",
-            "percentage": 5.2,
-            "Y2K": true
-        },
-        {
-            "date": "1982-07-01",
-            "pce": 2075.1,
-            "pop": 232188,
-            "unemploy": 10849,
-            "indicator": "psavert",
-            "percentage": 12,
-            "Y2K": false
-        },
-        {
-            "date": "1982-03-01",
-            "pce": 2024.4,
-            "pop": 231470,
-            "unemploy": 9895,
-            "indicator": "psavert",
-            "percentage": 11.7,
-            "Y2K": false
-        },
-        {
-            "date": "1987-08-01",
-            "pce": 3147,
-            "pop": 243012,
-            "unemploy": 7261,
-            "indicator": "psavert",
-            "percentage": 6.5,
-            "Y2K": false
-        },
-        {
-            "date": "2001-06-01",
-            "pce": 7097.1,
-            "pop": 285062,
-            "unemploy": 6484,
-            "indicator": "psavert",
-            "percentage": 3.7,
-            "Y2K": true
-        },
-        {
-            "date": "2007-10-01",
-            "pce": 9853.9,
-            "pop": 302807,
-            "unemploy": 7237,
-            "indicator": "psavert",
-            "percentage": 2.8,
-            "Y2K": true
-        },
-        {
-            "date": "1981-04-01",
-            "pce": 1909.1,
-            "pop": 229403,
-            "unemploy": 7869,
-            "indicator": "psavert",
-            "percentage": 10.3,
-            "Y2K": false
-        },
-        {
-            "date": "1984-08-01",
-            "pce": 2518.4,
-            "pop": 236549,
-            "unemploy": 8519,
-            "indicator": "psavert",
-            "percentage": 11.2,
-            "Y2K": false
-        },
-        {
-            "date": "1974-10-01",
-            "pce": 961,
-            "pop": 214451,
-            "unemploy": 5523,
-            "indicator": "psavert",
-            "percentage": 13,
-            "Y2K": false
-        },
-        {
-            "date": "2012-07-01",
-            "pce": 11074.8,
-            "pop": 314449,
-            "unemploy": 12657,
-            "indicator": "uempmed",
-            "percentage": 17.5,
-            "Y2K": true
-        },
-        {
-            "date": "2001-09-01",
-            "pce": 7054.8,
-            "pop": 285843,
-            "unemploy": 7142,
-            "indicator": "uempmed",
-            "percentage": 7.2,
-            "Y2K": true
-        },
-        {
-            "date": "2011-08-01",
-            "pce": 10745.6,
-            "pop": 312355,
-            "unemploy": 13806,
-            "indicator": "uempmed",
-            "percentage": 22.4,
-            "Y2K": true
-        },
-        {
-            "date": "2005-07-01",
-            "pce": 8867.9,
-            "pop": 296186,
-            "unemploy": 7406,
-            "indicator": "uempmed",
-            "percentage": 8.8,
-            "Y2K": true
-        },
-        {
-            "date": "1989-05-01",
-            "pce": 3567.5,
-            "pop": 246906,
-            "unemploy": 6375,
-            "indicator": "uempmed",
-            "percentage": 5.3,
-            "Y2K": false
-        },
-        {
-            "date": "1985-03-01",
-            "pce": 2656.8,
-            "pop": 237732,
-            "unemploy": 8339,
-            "indicator": "uempmed",
-            "percentage": 7.1,
-            "Y2K": false
-        },
-        {
-            "date": "1989-08-01",
-            "pce": 3636.8,
-            "pop": 247573,
-            "unemploy": 6511,
-            "indicator": "uempmed",
-            "percentage": 5,
-            "Y2K": false
-        },
-        {
-            "date": "2008-11-01",
-            "pce": 9851.2,
-            "pop": 305786,
-            "unemploy": 10538,
-            "indicator": "uempmed",
-            "percentage": 9.8,
-            "Y2K": true
-        },
-        {
-            "date": "2014-01-01",
-            "pce": 11663.9,
-            "pop": 318032,
-            "unemploy": 10280,
-            "indicator": "uempmed",
-            "percentage": 15.9,
-            "Y2K": true
-        },
-        {
-            "date": "1987-09-01",
-            "pce": 3142.9,
-            "pop": 243223,
-            "unemploy": 7102,
-            "indicator": "uempmed",
-            "percentage": 6,
-            "Y2K": false
-        },
-        {
-            "date": "2006-06-01",
-            "pce": 9283.8,
-            "pop": 298739,
-            "unemploy": 7001,
-            "indicator": "uempmed",
-            "percentage": 7.3,
-            "Y2K": true
-        },
-        {
-            "date": "1992-07-01",
-            "pce": 4223,
-            "pop": 256894,
-            "unemploy": 9850,
-            "indicator": "uempmed",
-            "percentage": 8.6,
-            "Y2K": false
-        },
-        {
-            "date": "1976-07-01",
-            "pce": 1152.1,
-            "pop": 218035,
-            "unemploy": 7490,
-            "indicator": "uempmed",
-            "percentage": 7.7,
-            "Y2K": false
-        },
-        {
-            "date": "1973-06-01",
-            "pce": 845.8,
-            "pop": 211746,
-            "unemploy": 4363,
-            "indicator": "uempmed",
-            "percentage": 5,
-            "Y2K": false
-        },
-        {
-            "date": "1967-09-01",
-            "pce": 516.3,
-            "pop": 199113,
-            "unemploy": 2958,
-            "indicator": "uempmed",
-            "percentage": 4.6,
-            "Y2K": false
-        },
-        {
-            "date": "1995-06-01",
-            "pce": 4999,
-            "pop": 266270,
-            "unemploy": 7427,
-            "indicator": "uempmed",
-            "percentage": 7.9,
-            "Y2K": false
-        },
-        {
-            "date": "1980-07-01",
-            "pce": 1751.2,
-            "pop": 227726,
-            "unemploy": 8363,
-            "indicator": "uempmed",
-            "percentage": 7,
-            "Y2K": false
-        },
-        {
-            "date": "1970-01-01",
-            "pce": 629.6,
-            "pop": 203849,
-            "unemploy": 3201,
-            "indicator": "uempmed",
-            "percentage": 4.6,
-            "Y2K": false
-        },
-        {
-            "date": "1967-08-01",
-            "pce": 510.5,
-            "pop": 198911,
-            "unemploy": 2945,
-            "indicator": "uempmed",
-            "percentage": 4.7,
-            "Y2K": false
-        },
-        {
-            "date": "1995-08-01",
-            "pce": 5027.1,
-            "pop": 266843,
-            "unemploy": 7484,
-            "indicator": "uempmed",
-            "percentage": 8.3,
-            "Y2K": false
-        },
-        {
-            "date": "1996-10-01",
-            "pce": 5351.5,
-            "pop": 270581,
-            "unemploy": 7031,
-            "indicator": "uempmed",
-            "percentage": 8.3,
-            "Y2K": false
-        },
-        {
-            "date": "2012-09-01",
-            "pce": 11179.6,
-            "pop": 314909,
-            "unemploy": 12106,
-            "indicator": "uempmed",
-            "percentage": 18.8,
-            "Y2K": true
-        },
-        {
-            "date": "2006-10-01",
-            "pce": 9413.3,
-            "pop": 299835,
-            "unemploy": 6727,
-            "indicator": "uempmed",
-            "percentage": 7.9,
-            "Y2K": true
-        },
-        {
-            "date": "1994-07-01",
-            "pce": 4740.8,
-            "pop": 263436,
-            "unemploy": 7946,
-            "indicator": "uempmed",
-            "percentage": 9,
-            "Y2K": false
-        },
-        {
-            "date": "2008-05-01",
-            "pce": 10093.3,
-            "pop": 304323,
-            "unemploy": 8395,
-            "indicator": "uempmed",
-            "percentage": 7.9,
-            "Y2K": true
-        },
-        {
-            "date": "1975-10-01",
-            "pce": 1063.2,
-            "pop": 216587,
-            "unemploy": 7897,
-            "indicator": "uempmed",
-            "percentage": 8.6,
-            "Y2K": false
-        },
-        {
-            "date": "1982-12-01",
-            "pce": 2167.4,
-            "pop": 233160,
-            "unemploy": 12051,
-            "indicator": "uempmed",
-            "percentage": 10.2,
-            "Y2K": false
-        },
-        {
-            "date": "1976-01-01",
-            "pce": 1109.5,
-            "pop": 217095,
-            "unemploy": 7534,
-            "indicator": "uempmed",
-            "percentage": 9,
-            "Y2K": false
-        },
-        {
-            "date": "1999-03-01",
-            "pce": 6159.7,
-            "pop": 278198,
-            "unemploy": 5783,
-            "indicator": "uempmed",
-            "percentage": 6.8,
-            "Y2K": false
-        },
-        {
-            "date": "1973-08-01",
-            "pce": 854.9,
-            "pop": 212092,
-            "unemploy": 4305,
-            "indicator": "uempmed",
-            "percentage": 4.9,
-            "Y2K": false
-        },
-        {
-            "date": "2010-11-01",
-            "pce": 10399.8,
-            "pop": 310657,
-            "unemploy": 15081,
-            "indicator": "uempmed",
-            "percentage": 21,
-            "Y2K": true
-        },
-        {
-            "date": "1974-03-01",
-            "pce": 903.3,
-            "pop": 213211,
-            "unemploy": 4634,
-            "indicator": "uempmed",
-            "percentage": 4.8,
-            "Y2K": false
-        },
-        {
-            "date": "1972-01-01",
-            "pce": 732.6,
-            "pop": 208917,
-            "unemploy": 5019,
-            "indicator": "uempmed",
-            "percentage": 6.2,
-            "Y2K": false
-        },
-        {
-            "date": "1999-11-01",
-            "pce": 6467.2,
-            "pop": 280471,
-            "unemploy": 5716,
-            "indicator": "uempmed",
-            "percentage": 6.2,
-            "Y2K": false
-        },
-        {
-            "date": "2012-03-01",
-            "pce": 10994.3,
-            "pop": 313705,
-            "unemploy": 12696,
-            "indicator": "uempmed",
-            "percentage": 19.2,
-            "Y2K": true
-        },
-        {
-            "date": "2000-12-01",
-            "pce": 6979.1,
-            "pop": 283696,
-            "unemploy": 5634,
-            "indicator": "uempmed",
-            "percentage": 6,
-            "Y2K": true
-        },
-        {
-            "date": "1977-05-01",
-            "pce": 1259.6,
-            "pop": 219859,
-            "unemploy": 6911,
-            "indicator": "uempmed",
-            "percentage": 7.9,
-            "Y2K": false
-        },
-        {
-            "date": "2004-10-01",
-            "pce": 8417.9,
-            "pop": 294230,
-            "unemploy": 8061,
-            "indicator": "uempmed",
-            "percentage": 9.5,
-            "Y2K": true
-        },
-        {
-            "date": "1986-09-01",
-            "pce": 2984.6,
-            "pop": 241068,
-            "unemploy": 8310,
-            "indicator": "uempmed",
-            "percentage": 7.4,
-            "Y2K": false
-        },
-        {
-            "date": "1976-08-01",
-            "pce": 1160.5,
-            "pop": 218233,
-            "unemploy": 7518,
-            "indicator": "uempmed",
-            "percentage": 7.9,
-            "Y2K": false
-        },
-        {
-            "date": "2001-02-01",
-            "pce": 7029.3,
-            "pop": 284137,
-            "unemploy": 6089,
-            "indicator": "uempmed",
-            "percentage": 6.1,
-            "Y2K": true
-        },
-        {
-            "date": "2013-05-01",
-            "pce": 11407.1,
-            "pop": 316395,
-            "unemploy": 11671,
-            "indicator": "uempmed",
-            "percentage": 17,
-            "Y2K": true
-        },
-        {
-            "date": "1982-07-01",
-            "pce": 2075.1,
-            "pop": 232188,
-            "unemploy": 10849,
-            "indicator": "uempmed",
-            "percentage": 8.5,
-            "Y2K": false
-        },
-        {
-            "date": "1982-03-01",
-            "pce": 2024.4,
-            "pop": 231470,
-            "unemploy": 9895,
-            "indicator": "uempmed",
-            "percentage": 7.7,
-            "Y2K": false
-        },
-        {
-            "date": "1987-08-01",
-            "pce": 3147,
-            "pop": 243012,
-            "unemploy": 7261,
-            "indicator": "uempmed",
-            "percentage": 6.4,
-            "Y2K": false
-        },
-        {
-            "date": "2001-06-01",
-            "pce": 7097.1,
-            "pop": 285062,
-            "unemploy": 6484,
-            "indicator": "uempmed",
-            "percentage": 6,
-            "Y2K": true
-        },
-        {
-            "date": "2007-10-01",
-            "pce": 9853.9,
-            "pop": 302807,
-            "unemploy": 7237,
-            "indicator": "uempmed",
-            "percentage": 8.4,
-            "Y2K": true
-        },
-        {
-            "date": "1981-04-01",
-            "pce": 1909.1,
-            "pop": 229403,
-            "unemploy": 7869,
-            "indicator": "uempmed",
-            "percentage": 7.4,
-            "Y2K": false
-        },
-        {
-            "date": "1984-08-01",
-            "pce": 2518.4,
-            "pop": 236549,
-            "unemploy": 8519,
-            "indicator": "uempmed",
-            "percentage": 7.3,
-            "Y2K": false
-        },
-        {
-            "date": "1974-10-01",
-            "pce": 961,
-            "pop": 214451,
-            "unemploy": 5523,
-            "indicator": "uempmed",
-            "percentage": 5.5,
-            "Y2K": false
-        }
-    ],
-    "output_data": [
-        {
-            "date": "2012-07-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.6
-        },
-        {
-            "date": "2001-09-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.3
-        },
-        {
-            "date": "2011-08-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.2
-        },
-        {
-            "date": "2005-07-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 1.9
-        },
-        {
-            "date": "1989-05-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 7.6
-        },
-        {
-            "date": "1985-03-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 8.1
-        },
-        {
-            "date": "1989-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 7.1
-        },
-        {
-            "date": "2008-11-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.3
-        },
-        {
-            "date": "2014-01-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 4.9
-        },
-        {
-            "date": "1987-09-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 7.0
-        },
-        {
-            "date": "2006-06-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 3.4
-        },
-        {
-            "date": "1992-07-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 9.1
-        },
-        {
-            "date": "1976-07-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.2
-        },
-        {
-            "date": "1973-06-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 13.2
-        },
-        {
-            "date": "1967-09-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.7
-        },
-        {
-            "date": "1995-06-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 6.1
-        },
-        {
-            "date": "1980-07-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 10.5
-        },
-        {
-            "date": "1970-01-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.7
-        },
-        {
-            "date": "1967-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 12.5
-        },
-        {
-            "date": "1995-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 6.1
-        },
-        {
-            "date": "1996-10-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 5.8
-        },
-        {
-            "date": "2012-09-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.5
-        },
-        {
-            "date": "2006-10-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 3.1
-        },
-        {
-            "date": "1994-07-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 6.4
-        },
-        {
-            "date": "2008-05-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 7.9
-        },
-        {
-            "date": "1975-10-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 13.0
-        },
-        {
-            "date": "1982-12-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 10.3
-        },
-        {
-            "date": "1976-01-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.3
-        },
-        {
-            "date": "1999-03-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 5.3
-        },
-        {
-            "date": "1973-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 13.6
-        },
-        {
-            "date": "2010-11-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 5.3
-        },
-        {
-            "date": "1974-03-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 13.0
-        },
-        {
-            "date": "1972-01-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 12.4
-        },
-        {
-            "date": "1999-11-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 4.1
-        },
-        {
-            "date": "2012-03-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 6.9
-        },
-        {
-            "date": "2000-12-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 3.5
-        },
-        {
-            "date": "1977-05-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 9.8
-        },
-        {
-            "date": "2004-10-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 3.8
-        },
-        {
-            "date": "1986-09-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 6.6
-        },
-        {
-            "date": "1976-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.2
-        },
-        {
-            "date": "2001-02-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 4.1
-        },
-        {
-            "date": "2013-05-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 5.2
-        },
-        {
-            "date": "1982-07-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 12.0
-        },
-        {
-            "date": "1982-03-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.7
-        },
-        {
-            "date": "1987-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 6.5
-        },
-        {
-            "date": "2001-06-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 3.7
-        },
-        {
-            "date": "2007-10-01",
-            "Y2K": true,
-            "variable": "psavert",
-            "value": 2.8
-        },
-        {
-            "date": "1981-04-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 10.3
-        },
-        {
-            "date": "1984-08-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 11.2
-        },
-        {
-            "date": "1974-10-01",
-            "Y2K": false,
-            "variable": "psavert",
-            "value": 13.0
-        },
-        {
-            "date": "2012-07-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 17.5
-        },
-        {
-            "date": "2001-09-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 7.2
-        },
-        {
-            "date": "2011-08-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 22.4
-        },
-        {
-            "date": "2005-07-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 8.8
-        },
-        {
-            "date": "1989-05-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 5.3
-        },
-        {
-            "date": "1985-03-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.1
-        },
-        {
-            "date": "1989-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 5.0
-        },
-        {
-            "date": "2008-11-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 9.8
-        },
-        {
-            "date": "2014-01-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 15.9
-        },
-        {
-            "date": "1987-09-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.0
-        },
-        {
-            "date": "2006-06-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 7.3
-        },
-        {
-            "date": "1992-07-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 8.6
-        },
-        {
-            "date": "1976-07-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.7
-        },
-        {
-            "date": "1973-06-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 5.0
-        },
-        {
-            "date": "1967-09-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 4.6
-        },
-        {
-            "date": "1995-06-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.9
-        },
-        {
-            "date": "1980-07-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.0
-        },
-        {
-            "date": "1970-01-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 4.6
-        },
-        {
-            "date": "1967-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 4.7
-        },
-        {
-            "date": "1995-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 8.3
-        },
-        {
-            "date": "1996-10-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 8.3
-        },
-        {
-            "date": "2012-09-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 18.8
-        },
-        {
-            "date": "2006-10-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 7.9
-        },
-        {
-            "date": "1994-07-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 9.0
-        },
-        {
-            "date": "2008-05-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 7.9
-        },
-        {
-            "date": "1975-10-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 8.6
-        },
-        {
-            "date": "1982-12-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 10.2
-        },
-        {
-            "date": "1976-01-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 9.0
-        },
-        {
-            "date": "1999-03-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.8
-        },
-        {
-            "date": "1973-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 4.9
-        },
-        {
-            "date": "2010-11-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 21.0
-        },
-        {
-            "date": "1974-03-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 4.8
-        },
-        {
-            "date": "1972-01-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.2
-        },
-        {
-            "date": "1999-11-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.2
-        },
-        {
-            "date": "2012-03-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 19.2
-        },
-        {
-            "date": "2000-12-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.0
-        },
-        {
-            "date": "1977-05-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.9
-        },
-        {
-            "date": "2004-10-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 9.5
-        },
-        {
-            "date": "1986-09-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.4
-        },
-        {
-            "date": "1976-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.9
-        },
-        {
-            "date": "2001-02-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 6.1
-        },
-        {
-            "date": "2013-05-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 17.0
-        },
-        {
-            "date": "1982-07-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 8.5
-        },
-        {
-            "date": "1982-03-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.7
-        },
-        {
-            "date": "1987-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 6.4
-        },
-        {
-            "date": "2001-06-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 6.0
-        },
-        {
-            "date": "2007-10-01",
-            "Y2K": true,
-            "variable": "uempmed",
-            "value": 8.4
-        },
-        {
-            "date": "1981-04-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.4
-        },
-        {
-            "date": "1984-08-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 7.3
-        },
-        {
-            "date": "1974-10-01",
-            "Y2K": false,
-            "variable": "uempmed",
-            "value": 5.5
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "line"
-        },
-        "encoding": {
-            "x": {
-                "field": "date",
-                "type": "temporal"
-            },
-            "color": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "opacity": {
-                "field": "Y2K",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "value",
-                "type": "quantitative"
-            }
-        }
+  "input_data": [
+    {
+      "date": "2012-07-01",
+      "pce": 11074.8,
+      "pop": 314449,
+      "psavert": 6.6,
+      "uempmed": 17.5,
+      "unemploy": 12657
+    },
+    {
+      "date": "2001-09-01",
+      "pce": 7054.8,
+      "pop": 285843,
+      "psavert": 6.3,
+      "uempmed": 7.2,
+      "unemploy": 7142
+    },
+    {
+      "date": "2011-08-01",
+      "pce": 10745.6,
+      "pop": 312355,
+      "psavert": 6.2,
+      "uempmed": 22.4,
+      "unemploy": 13806
+    },
+    {
+      "date": "2005-07-01",
+      "pce": 8867.9,
+      "pop": 296186,
+      "psavert": 1.9,
+      "uempmed": 8.8,
+      "unemploy": 7406
+    },
+    {
+      "date": "1989-05-01",
+      "pce": 3567.5,
+      "pop": 246906,
+      "psavert": 7.6,
+      "uempmed": 5.3,
+      "unemploy": 6375
+    },
+    {
+      "date": "1985-03-01",
+      "pce": 2656.8,
+      "pop": 237732,
+      "psavert": 8.1,
+      "uempmed": 7.1,
+      "unemploy": 8339
+    },
+    {
+      "date": "1989-08-01",
+      "pce": 3636.8,
+      "pop": 247573,
+      "psavert": 7.1,
+      "uempmed": 5,
+      "unemploy": 6511
+    },
+    {
+      "date": "2008-11-01",
+      "pce": 9851.2,
+      "pop": 305786,
+      "psavert": 6.3,
+      "uempmed": 9.8,
+      "unemploy": 10538
+    },
+    {
+      "date": "2014-01-01",
+      "pce": 11663.9,
+      "pop": 318032,
+      "psavert": 4.9,
+      "uempmed": 15.9,
+      "unemploy": 10280
+    },
+    {
+      "date": "1987-09-01",
+      "pce": 3142.9,
+      "pop": 243223,
+      "psavert": 7,
+      "uempmed": 6,
+      "unemploy": 7102
+    },
+    {
+      "date": "2006-06-01",
+      "pce": 9283.8,
+      "pop": 298739,
+      "psavert": 3.4,
+      "uempmed": 7.3,
+      "unemploy": 7001
+    },
+    {
+      "date": "1992-07-01",
+      "pce": 4223,
+      "pop": 256894,
+      "psavert": 9.1,
+      "uempmed": 8.6,
+      "unemploy": 9850
+    },
+    {
+      "date": "1976-07-01",
+      "pce": 1152.1,
+      "pop": 218035,
+      "psavert": 11.2,
+      "uempmed": 7.7,
+      "unemploy": 7490
+    },
+    {
+      "date": "1973-06-01",
+      "pce": 845.8,
+      "pop": 211746,
+      "psavert": 13.2,
+      "uempmed": 5,
+      "unemploy": 4363
+    },
+    {
+      "date": "1967-09-01",
+      "pce": 516.3,
+      "pop": 199113,
+      "psavert": 11.7,
+      "uempmed": 4.6,
+      "unemploy": 2958
+    },
+    {
+      "date": "1995-06-01",
+      "pce": 4999,
+      "pop": 266270,
+      "psavert": 6.1,
+      "uempmed": 7.9,
+      "unemploy": 7427
+    },
+    {
+      "date": "1980-07-01",
+      "pce": 1751.2,
+      "pop": 227726,
+      "psavert": 10.5,
+      "uempmed": 7,
+      "unemploy": 8363
+    },
+    {
+      "date": "1970-01-01",
+      "pce": 629.6,
+      "pop": 203849,
+      "psavert": 11.7,
+      "uempmed": 4.6,
+      "unemploy": 3201
+    },
+    {
+      "date": "1967-08-01",
+      "pce": 510.5,
+      "pop": 198911,
+      "psavert": 12.5,
+      "uempmed": 4.7,
+      "unemploy": 2945
+    },
+    {
+      "date": "1995-08-01",
+      "pce": 5027.1,
+      "pop": 266843,
+      "psavert": 6.1,
+      "uempmed": 8.3,
+      "unemploy": 7484
+    },
+    {
+      "date": "1996-10-01",
+      "pce": 5351.5,
+      "pop": 270581,
+      "psavert": 5.8,
+      "uempmed": 8.3,
+      "unemploy": 7031
+    },
+    {
+      "date": "2012-09-01",
+      "pce": 11179.6,
+      "pop": 314909,
+      "psavert": 6.5,
+      "uempmed": 18.8,
+      "unemploy": 12106
+    },
+    {
+      "date": "2006-10-01",
+      "pce": 9413.3,
+      "pop": 299835,
+      "psavert": 3.1,
+      "uempmed": 7.9,
+      "unemploy": 6727
+    },
+    {
+      "date": "1994-07-01",
+      "pce": 4740.8,
+      "pop": 263436,
+      "psavert": 6.4,
+      "uempmed": 9,
+      "unemploy": 7946
+    },
+    {
+      "date": "2008-05-01",
+      "pce": 10093.3,
+      "pop": 304323,
+      "psavert": 7.9,
+      "uempmed": 7.9,
+      "unemploy": 8395
+    },
+    {
+      "date": "1975-10-01",
+      "pce": 1063.2,
+      "pop": 216587,
+      "psavert": 13,
+      "uempmed": 8.6,
+      "unemploy": 7897
+    },
+    {
+      "date": "1982-12-01",
+      "pce": 2167.4,
+      "pop": 233160,
+      "psavert": 10.3,
+      "uempmed": 10.2,
+      "unemploy": 12051
+    },
+    {
+      "date": "1976-01-01",
+      "pce": 1109.5,
+      "pop": 217095,
+      "psavert": 11.3,
+      "uempmed": 9,
+      "unemploy": 7534
+    },
+    {
+      "date": "1999-03-01",
+      "pce": 6159.7,
+      "pop": 278198,
+      "psavert": 5.3,
+      "uempmed": 6.8,
+      "unemploy": 5783
+    },
+    {
+      "date": "1973-08-01",
+      "pce": 854.9,
+      "pop": 212092,
+      "psavert": 13.6,
+      "uempmed": 4.9,
+      "unemploy": 4305
+    },
+    {
+      "date": "2010-11-01",
+      "pce": 10399.8,
+      "pop": 310657,
+      "psavert": 5.3,
+      "uempmed": 21,
+      "unemploy": 15081
+    },
+    {
+      "date": "1974-03-01",
+      "pce": 903.3,
+      "pop": 213211,
+      "psavert": 13,
+      "uempmed": 4.8,
+      "unemploy": 4634
+    },
+    {
+      "date": "1972-01-01",
+      "pce": 732.6,
+      "pop": 208917,
+      "psavert": 12.4,
+      "uempmed": 6.2,
+      "unemploy": 5019
+    },
+    {
+      "date": "1999-11-01",
+      "pce": 6467.2,
+      "pop": 280471,
+      "psavert": 4.1,
+      "uempmed": 6.2,
+      "unemploy": 5716
+    },
+    {
+      "date": "2012-03-01",
+      "pce": 10994.3,
+      "pop": 313705,
+      "psavert": 6.9,
+      "uempmed": 19.2,
+      "unemploy": 12696
+    },
+    {
+      "date": "2000-12-01",
+      "pce": 6979.1,
+      "pop": 283696,
+      "psavert": 3.5,
+      "uempmed": 6,
+      "unemploy": 5634
+    },
+    {
+      "date": "1977-05-01",
+      "pce": 1259.6,
+      "pop": 219859,
+      "psavert": 9.8,
+      "uempmed": 7.9,
+      "unemploy": 6911
+    },
+    {
+      "date": "2004-10-01",
+      "pce": 8417.9,
+      "pop": 294230,
+      "psavert": 3.8,
+      "uempmed": 9.5,
+      "unemploy": 8061
+    },
+    {
+      "date": "1986-09-01",
+      "pce": 2984.6,
+      "pop": 241068,
+      "psavert": 6.6,
+      "uempmed": 7.4,
+      "unemploy": 8310
+    },
+    {
+      "date": "1976-08-01",
+      "pce": 1160.5,
+      "pop": 218233,
+      "psavert": 11.2,
+      "uempmed": 7.9,
+      "unemploy": 7518
+    },
+    {
+      "date": "2001-02-01",
+      "pce": 7029.3,
+      "pop": 284137,
+      "psavert": 4.1,
+      "uempmed": 6.1,
+      "unemploy": 6089
+    },
+    {
+      "date": "2013-05-01",
+      "pce": 11407.1,
+      "pop": 316395,
+      "psavert": 5.2,
+      "uempmed": 17,
+      "unemploy": 11671
+    },
+    {
+      "date": "1982-07-01",
+      "pce": 2075.1,
+      "pop": 232188,
+      "psavert": 12,
+      "uempmed": 8.5,
+      "unemploy": 10849
+    },
+    {
+      "date": "1982-03-01",
+      "pce": 2024.4,
+      "pop": 231470,
+      "psavert": 11.7,
+      "uempmed": 7.7,
+      "unemploy": 9895
+    },
+    {
+      "date": "1987-08-01",
+      "pce": 3147,
+      "pop": 243012,
+      "psavert": 6.5,
+      "uempmed": 6.4,
+      "unemploy": 7261
+    },
+    {
+      "date": "2001-06-01",
+      "pce": 7097.1,
+      "pop": 285062,
+      "psavert": 3.7,
+      "uempmed": 6,
+      "unemploy": 6484
+    },
+    {
+      "date": "2007-10-01",
+      "pce": 9853.9,
+      "pop": 302807,
+      "psavert": 2.8,
+      "uempmed": 8.4,
+      "unemploy": 7237
+    },
+    {
+      "date": "1981-04-01",
+      "pce": 1909.1,
+      "pop": 229403,
+      "psavert": 10.3,
+      "uempmed": 7.4,
+      "unemploy": 7869
+    },
+    {
+      "date": "1984-08-01",
+      "pce": 2518.4,
+      "pop": 236549,
+      "psavert": 11.2,
+      "uempmed": 7.3,
+      "unemploy": 8519
+    },
+    {
+      "date": "1974-10-01",
+      "pce": 961,
+      "pop": 214451,
+      "psavert": 13,
+      "uempmed": 5.5,
+      "unemploy": 5523
     }
+  ],
+  "output_data_r": [
+    {
+      "date": "2012-07-01",
+      "pce": 11074.8,
+      "pop": 314449,
+      "unemploy": 12657,
+      "indicator": "psavert",
+      "percentage": 6.6,
+      "Y2K": true
+    },
+    {
+      "date": "2001-09-01",
+      "pce": 7054.8,
+      "pop": 285843,
+      "unemploy": 7142,
+      "indicator": "psavert",
+      "percentage": 6.3,
+      "Y2K": true
+    },
+    {
+      "date": "2011-08-01",
+      "pce": 10745.6,
+      "pop": 312355,
+      "unemploy": 13806,
+      "indicator": "psavert",
+      "percentage": 6.2,
+      "Y2K": true
+    },
+    {
+      "date": "2005-07-01",
+      "pce": 8867.9,
+      "pop": 296186,
+      "unemploy": 7406,
+      "indicator": "psavert",
+      "percentage": 1.9,
+      "Y2K": true
+    },
+    {
+      "date": "1989-05-01",
+      "pce": 3567.5,
+      "pop": 246906,
+      "unemploy": 6375,
+      "indicator": "psavert",
+      "percentage": 7.6,
+      "Y2K": false
+    },
+    {
+      "date": "1985-03-01",
+      "pce": 2656.8,
+      "pop": 237732,
+      "unemploy": 8339,
+      "indicator": "psavert",
+      "percentage": 8.1,
+      "Y2K": false
+    },
+    {
+      "date": "1989-08-01",
+      "pce": 3636.8,
+      "pop": 247573,
+      "unemploy": 6511,
+      "indicator": "psavert",
+      "percentage": 7.1,
+      "Y2K": false
+    },
+    {
+      "date": "2008-11-01",
+      "pce": 9851.2,
+      "pop": 305786,
+      "unemploy": 10538,
+      "indicator": "psavert",
+      "percentage": 6.3,
+      "Y2K": true
+    },
+    {
+      "date": "2014-01-01",
+      "pce": 11663.9,
+      "pop": 318032,
+      "unemploy": 10280,
+      "indicator": "psavert",
+      "percentage": 4.9,
+      "Y2K": true
+    },
+    {
+      "date": "1987-09-01",
+      "pce": 3142.9,
+      "pop": 243223,
+      "unemploy": 7102,
+      "indicator": "psavert",
+      "percentage": 7,
+      "Y2K": false
+    },
+    {
+      "date": "2006-06-01",
+      "pce": 9283.8,
+      "pop": 298739,
+      "unemploy": 7001,
+      "indicator": "psavert",
+      "percentage": 3.4,
+      "Y2K": true
+    },
+    {
+      "date": "1992-07-01",
+      "pce": 4223,
+      "pop": 256894,
+      "unemploy": 9850,
+      "indicator": "psavert",
+      "percentage": 9.1,
+      "Y2K": false
+    },
+    {
+      "date": "1976-07-01",
+      "pce": 1152.1,
+      "pop": 218035,
+      "unemploy": 7490,
+      "indicator": "psavert",
+      "percentage": 11.2,
+      "Y2K": false
+    },
+    {
+      "date": "1973-06-01",
+      "pce": 845.8,
+      "pop": 211746,
+      "unemploy": 4363,
+      "indicator": "psavert",
+      "percentage": 13.2,
+      "Y2K": false
+    },
+    {
+      "date": "1967-09-01",
+      "pce": 516.3,
+      "pop": 199113,
+      "unemploy": 2958,
+      "indicator": "psavert",
+      "percentage": 11.7,
+      "Y2K": false
+    },
+    {
+      "date": "1995-06-01",
+      "pce": 4999,
+      "pop": 266270,
+      "unemploy": 7427,
+      "indicator": "psavert",
+      "percentage": 6.1,
+      "Y2K": false
+    },
+    {
+      "date": "1980-07-01",
+      "pce": 1751.2,
+      "pop": 227726,
+      "unemploy": 8363,
+      "indicator": "psavert",
+      "percentage": 10.5,
+      "Y2K": false
+    },
+    {
+      "date": "1970-01-01",
+      "pce": 629.6,
+      "pop": 203849,
+      "unemploy": 3201,
+      "indicator": "psavert",
+      "percentage": 11.7,
+      "Y2K": false
+    },
+    {
+      "date": "1967-08-01",
+      "pce": 510.5,
+      "pop": 198911,
+      "unemploy": 2945,
+      "indicator": "psavert",
+      "percentage": 12.5,
+      "Y2K": false
+    },
+    {
+      "date": "1995-08-01",
+      "pce": 5027.1,
+      "pop": 266843,
+      "unemploy": 7484,
+      "indicator": "psavert",
+      "percentage": 6.1,
+      "Y2K": false
+    },
+    {
+      "date": "1996-10-01",
+      "pce": 5351.5,
+      "pop": 270581,
+      "unemploy": 7031,
+      "indicator": "psavert",
+      "percentage": 5.8,
+      "Y2K": false
+    },
+    {
+      "date": "2012-09-01",
+      "pce": 11179.6,
+      "pop": 314909,
+      "unemploy": 12106,
+      "indicator": "psavert",
+      "percentage": 6.5,
+      "Y2K": true
+    },
+    {
+      "date": "2006-10-01",
+      "pce": 9413.3,
+      "pop": 299835,
+      "unemploy": 6727,
+      "indicator": "psavert",
+      "percentage": 3.1,
+      "Y2K": true
+    },
+    {
+      "date": "1994-07-01",
+      "pce": 4740.8,
+      "pop": 263436,
+      "unemploy": 7946,
+      "indicator": "psavert",
+      "percentage": 6.4,
+      "Y2K": false
+    },
+    {
+      "date": "2008-05-01",
+      "pce": 10093.3,
+      "pop": 304323,
+      "unemploy": 8395,
+      "indicator": "psavert",
+      "percentage": 7.9,
+      "Y2K": true
+    },
+    {
+      "date": "1975-10-01",
+      "pce": 1063.2,
+      "pop": 216587,
+      "unemploy": 7897,
+      "indicator": "psavert",
+      "percentage": 13,
+      "Y2K": false
+    },
+    {
+      "date": "1982-12-01",
+      "pce": 2167.4,
+      "pop": 233160,
+      "unemploy": 12051,
+      "indicator": "psavert",
+      "percentage": 10.3,
+      "Y2K": false
+    },
+    {
+      "date": "1976-01-01",
+      "pce": 1109.5,
+      "pop": 217095,
+      "unemploy": 7534,
+      "indicator": "psavert",
+      "percentage": 11.3,
+      "Y2K": false
+    },
+    {
+      "date": "1999-03-01",
+      "pce": 6159.7,
+      "pop": 278198,
+      "unemploy": 5783,
+      "indicator": "psavert",
+      "percentage": 5.3,
+      "Y2K": false
+    },
+    {
+      "date": "1973-08-01",
+      "pce": 854.9,
+      "pop": 212092,
+      "unemploy": 4305,
+      "indicator": "psavert",
+      "percentage": 13.6,
+      "Y2K": false
+    },
+    {
+      "date": "2010-11-01",
+      "pce": 10399.8,
+      "pop": 310657,
+      "unemploy": 15081,
+      "indicator": "psavert",
+      "percentage": 5.3,
+      "Y2K": true
+    },
+    {
+      "date": "1974-03-01",
+      "pce": 903.3,
+      "pop": 213211,
+      "unemploy": 4634,
+      "indicator": "psavert",
+      "percentage": 13,
+      "Y2K": false
+    },
+    {
+      "date": "1972-01-01",
+      "pce": 732.6,
+      "pop": 208917,
+      "unemploy": 5019,
+      "indicator": "psavert",
+      "percentage": 12.4,
+      "Y2K": false
+    },
+    {
+      "date": "1999-11-01",
+      "pce": 6467.2,
+      "pop": 280471,
+      "unemploy": 5716,
+      "indicator": "psavert",
+      "percentage": 4.1,
+      "Y2K": false
+    },
+    {
+      "date": "2012-03-01",
+      "pce": 10994.3,
+      "pop": 313705,
+      "unemploy": 12696,
+      "indicator": "psavert",
+      "percentage": 6.9,
+      "Y2K": true
+    },
+    {
+      "date": "2000-12-01",
+      "pce": 6979.1,
+      "pop": 283696,
+      "unemploy": 5634,
+      "indicator": "psavert",
+      "percentage": 3.5,
+      "Y2K": true
+    },
+    {
+      "date": "1977-05-01",
+      "pce": 1259.6,
+      "pop": 219859,
+      "unemploy": 6911,
+      "indicator": "psavert",
+      "percentage": 9.8,
+      "Y2K": false
+    },
+    {
+      "date": "2004-10-01",
+      "pce": 8417.9,
+      "pop": 294230,
+      "unemploy": 8061,
+      "indicator": "psavert",
+      "percentage": 3.8,
+      "Y2K": true
+    },
+    {
+      "date": "1986-09-01",
+      "pce": 2984.6,
+      "pop": 241068,
+      "unemploy": 8310,
+      "indicator": "psavert",
+      "percentage": 6.6,
+      "Y2K": false
+    },
+    {
+      "date": "1976-08-01",
+      "pce": 1160.5,
+      "pop": 218233,
+      "unemploy": 7518,
+      "indicator": "psavert",
+      "percentage": 11.2,
+      "Y2K": false
+    },
+    {
+      "date": "2001-02-01",
+      "pce": 7029.3,
+      "pop": 284137,
+      "unemploy": 6089,
+      "indicator": "psavert",
+      "percentage": 4.1,
+      "Y2K": true
+    },
+    {
+      "date": "2013-05-01",
+      "pce": 11407.1,
+      "pop": 316395,
+      "unemploy": 11671,
+      "indicator": "psavert",
+      "percentage": 5.2,
+      "Y2K": true
+    },
+    {
+      "date": "1982-07-01",
+      "pce": 2075.1,
+      "pop": 232188,
+      "unemploy": 10849,
+      "indicator": "psavert",
+      "percentage": 12,
+      "Y2K": false
+    },
+    {
+      "date": "1982-03-01",
+      "pce": 2024.4,
+      "pop": 231470,
+      "unemploy": 9895,
+      "indicator": "psavert",
+      "percentage": 11.7,
+      "Y2K": false
+    },
+    {
+      "date": "1987-08-01",
+      "pce": 3147,
+      "pop": 243012,
+      "unemploy": 7261,
+      "indicator": "psavert",
+      "percentage": 6.5,
+      "Y2K": false
+    },
+    {
+      "date": "2001-06-01",
+      "pce": 7097.1,
+      "pop": 285062,
+      "unemploy": 6484,
+      "indicator": "psavert",
+      "percentage": 3.7,
+      "Y2K": true
+    },
+    {
+      "date": "2007-10-01",
+      "pce": 9853.9,
+      "pop": 302807,
+      "unemploy": 7237,
+      "indicator": "psavert",
+      "percentage": 2.8,
+      "Y2K": true
+    },
+    {
+      "date": "1981-04-01",
+      "pce": 1909.1,
+      "pop": 229403,
+      "unemploy": 7869,
+      "indicator": "psavert",
+      "percentage": 10.3,
+      "Y2K": false
+    },
+    {
+      "date": "1984-08-01",
+      "pce": 2518.4,
+      "pop": 236549,
+      "unemploy": 8519,
+      "indicator": "psavert",
+      "percentage": 11.2,
+      "Y2K": false
+    },
+    {
+      "date": "1974-10-01",
+      "pce": 961,
+      "pop": 214451,
+      "unemploy": 5523,
+      "indicator": "psavert",
+      "percentage": 13,
+      "Y2K": false
+    },
+    {
+      "date": "2012-07-01",
+      "pce": 11074.8,
+      "pop": 314449,
+      "unemploy": 12657,
+      "indicator": "uempmed",
+      "percentage": 17.5,
+      "Y2K": true
+    },
+    {
+      "date": "2001-09-01",
+      "pce": 7054.8,
+      "pop": 285843,
+      "unemploy": 7142,
+      "indicator": "uempmed",
+      "percentage": 7.2,
+      "Y2K": true
+    },
+    {
+      "date": "2011-08-01",
+      "pce": 10745.6,
+      "pop": 312355,
+      "unemploy": 13806,
+      "indicator": "uempmed",
+      "percentage": 22.4,
+      "Y2K": true
+    },
+    {
+      "date": "2005-07-01",
+      "pce": 8867.9,
+      "pop": 296186,
+      "unemploy": 7406,
+      "indicator": "uempmed",
+      "percentage": 8.8,
+      "Y2K": true
+    },
+    {
+      "date": "1989-05-01",
+      "pce": 3567.5,
+      "pop": 246906,
+      "unemploy": 6375,
+      "indicator": "uempmed",
+      "percentage": 5.3,
+      "Y2K": false
+    },
+    {
+      "date": "1985-03-01",
+      "pce": 2656.8,
+      "pop": 237732,
+      "unemploy": 8339,
+      "indicator": "uempmed",
+      "percentage": 7.1,
+      "Y2K": false
+    },
+    {
+      "date": "1989-08-01",
+      "pce": 3636.8,
+      "pop": 247573,
+      "unemploy": 6511,
+      "indicator": "uempmed",
+      "percentage": 5,
+      "Y2K": false
+    },
+    {
+      "date": "2008-11-01",
+      "pce": 9851.2,
+      "pop": 305786,
+      "unemploy": 10538,
+      "indicator": "uempmed",
+      "percentage": 9.8,
+      "Y2K": true
+    },
+    {
+      "date": "2014-01-01",
+      "pce": 11663.9,
+      "pop": 318032,
+      "unemploy": 10280,
+      "indicator": "uempmed",
+      "percentage": 15.9,
+      "Y2K": true
+    },
+    {
+      "date": "1987-09-01",
+      "pce": 3142.9,
+      "pop": 243223,
+      "unemploy": 7102,
+      "indicator": "uempmed",
+      "percentage": 6,
+      "Y2K": false
+    },
+    {
+      "date": "2006-06-01",
+      "pce": 9283.8,
+      "pop": 298739,
+      "unemploy": 7001,
+      "indicator": "uempmed",
+      "percentage": 7.3,
+      "Y2K": true
+    },
+    {
+      "date": "1992-07-01",
+      "pce": 4223,
+      "pop": 256894,
+      "unemploy": 9850,
+      "indicator": "uempmed",
+      "percentage": 8.6,
+      "Y2K": false
+    },
+    {
+      "date": "1976-07-01",
+      "pce": 1152.1,
+      "pop": 218035,
+      "unemploy": 7490,
+      "indicator": "uempmed",
+      "percentage": 7.7,
+      "Y2K": false
+    },
+    {
+      "date": "1973-06-01",
+      "pce": 845.8,
+      "pop": 211746,
+      "unemploy": 4363,
+      "indicator": "uempmed",
+      "percentage": 5,
+      "Y2K": false
+    },
+    {
+      "date": "1967-09-01",
+      "pce": 516.3,
+      "pop": 199113,
+      "unemploy": 2958,
+      "indicator": "uempmed",
+      "percentage": 4.6,
+      "Y2K": false
+    },
+    {
+      "date": "1995-06-01",
+      "pce": 4999,
+      "pop": 266270,
+      "unemploy": 7427,
+      "indicator": "uempmed",
+      "percentage": 7.9,
+      "Y2K": false
+    },
+    {
+      "date": "1980-07-01",
+      "pce": 1751.2,
+      "pop": 227726,
+      "unemploy": 8363,
+      "indicator": "uempmed",
+      "percentage": 7,
+      "Y2K": false
+    },
+    {
+      "date": "1970-01-01",
+      "pce": 629.6,
+      "pop": 203849,
+      "unemploy": 3201,
+      "indicator": "uempmed",
+      "percentage": 4.6,
+      "Y2K": false
+    },
+    {
+      "date": "1967-08-01",
+      "pce": 510.5,
+      "pop": 198911,
+      "unemploy": 2945,
+      "indicator": "uempmed",
+      "percentage": 4.7,
+      "Y2K": false
+    },
+    {
+      "date": "1995-08-01",
+      "pce": 5027.1,
+      "pop": 266843,
+      "unemploy": 7484,
+      "indicator": "uempmed",
+      "percentage": 8.3,
+      "Y2K": false
+    },
+    {
+      "date": "1996-10-01",
+      "pce": 5351.5,
+      "pop": 270581,
+      "unemploy": 7031,
+      "indicator": "uempmed",
+      "percentage": 8.3,
+      "Y2K": false
+    },
+    {
+      "date": "2012-09-01",
+      "pce": 11179.6,
+      "pop": 314909,
+      "unemploy": 12106,
+      "indicator": "uempmed",
+      "percentage": 18.8,
+      "Y2K": true
+    },
+    {
+      "date": "2006-10-01",
+      "pce": 9413.3,
+      "pop": 299835,
+      "unemploy": 6727,
+      "indicator": "uempmed",
+      "percentage": 7.9,
+      "Y2K": true
+    },
+    {
+      "date": "1994-07-01",
+      "pce": 4740.8,
+      "pop": 263436,
+      "unemploy": 7946,
+      "indicator": "uempmed",
+      "percentage": 9,
+      "Y2K": false
+    },
+    {
+      "date": "2008-05-01",
+      "pce": 10093.3,
+      "pop": 304323,
+      "unemploy": 8395,
+      "indicator": "uempmed",
+      "percentage": 7.9,
+      "Y2K": true
+    },
+    {
+      "date": "1975-10-01",
+      "pce": 1063.2,
+      "pop": 216587,
+      "unemploy": 7897,
+      "indicator": "uempmed",
+      "percentage": 8.6,
+      "Y2K": false
+    },
+    {
+      "date": "1982-12-01",
+      "pce": 2167.4,
+      "pop": 233160,
+      "unemploy": 12051,
+      "indicator": "uempmed",
+      "percentage": 10.2,
+      "Y2K": false
+    },
+    {
+      "date": "1976-01-01",
+      "pce": 1109.5,
+      "pop": 217095,
+      "unemploy": 7534,
+      "indicator": "uempmed",
+      "percentage": 9,
+      "Y2K": false
+    },
+    {
+      "date": "1999-03-01",
+      "pce": 6159.7,
+      "pop": 278198,
+      "unemploy": 5783,
+      "indicator": "uempmed",
+      "percentage": 6.8,
+      "Y2K": false
+    },
+    {
+      "date": "1973-08-01",
+      "pce": 854.9,
+      "pop": 212092,
+      "unemploy": 4305,
+      "indicator": "uempmed",
+      "percentage": 4.9,
+      "Y2K": false
+    },
+    {
+      "date": "2010-11-01",
+      "pce": 10399.8,
+      "pop": 310657,
+      "unemploy": 15081,
+      "indicator": "uempmed",
+      "percentage": 21,
+      "Y2K": true
+    },
+    {
+      "date": "1974-03-01",
+      "pce": 903.3,
+      "pop": 213211,
+      "unemploy": 4634,
+      "indicator": "uempmed",
+      "percentage": 4.8,
+      "Y2K": false
+    },
+    {
+      "date": "1972-01-01",
+      "pce": 732.6,
+      "pop": 208917,
+      "unemploy": 5019,
+      "indicator": "uempmed",
+      "percentage": 6.2,
+      "Y2K": false
+    },
+    {
+      "date": "1999-11-01",
+      "pce": 6467.2,
+      "pop": 280471,
+      "unemploy": 5716,
+      "indicator": "uempmed",
+      "percentage": 6.2,
+      "Y2K": false
+    },
+    {
+      "date": "2012-03-01",
+      "pce": 10994.3,
+      "pop": 313705,
+      "unemploy": 12696,
+      "indicator": "uempmed",
+      "percentage": 19.2,
+      "Y2K": true
+    },
+    {
+      "date": "2000-12-01",
+      "pce": 6979.1,
+      "pop": 283696,
+      "unemploy": 5634,
+      "indicator": "uempmed",
+      "percentage": 6,
+      "Y2K": true
+    },
+    {
+      "date": "1977-05-01",
+      "pce": 1259.6,
+      "pop": 219859,
+      "unemploy": 6911,
+      "indicator": "uempmed",
+      "percentage": 7.9,
+      "Y2K": false
+    },
+    {
+      "date": "2004-10-01",
+      "pce": 8417.9,
+      "pop": 294230,
+      "unemploy": 8061,
+      "indicator": "uempmed",
+      "percentage": 9.5,
+      "Y2K": true
+    },
+    {
+      "date": "1986-09-01",
+      "pce": 2984.6,
+      "pop": 241068,
+      "unemploy": 8310,
+      "indicator": "uempmed",
+      "percentage": 7.4,
+      "Y2K": false
+    },
+    {
+      "date": "1976-08-01",
+      "pce": 1160.5,
+      "pop": 218233,
+      "unemploy": 7518,
+      "indicator": "uempmed",
+      "percentage": 7.9,
+      "Y2K": false
+    },
+    {
+      "date": "2001-02-01",
+      "pce": 7029.3,
+      "pop": 284137,
+      "unemploy": 6089,
+      "indicator": "uempmed",
+      "percentage": 6.1,
+      "Y2K": true
+    },
+    {
+      "date": "2013-05-01",
+      "pce": 11407.1,
+      "pop": 316395,
+      "unemploy": 11671,
+      "indicator": "uempmed",
+      "percentage": 17,
+      "Y2K": true
+    },
+    {
+      "date": "1982-07-01",
+      "pce": 2075.1,
+      "pop": 232188,
+      "unemploy": 10849,
+      "indicator": "uempmed",
+      "percentage": 8.5,
+      "Y2K": false
+    },
+    {
+      "date": "1982-03-01",
+      "pce": 2024.4,
+      "pop": 231470,
+      "unemploy": 9895,
+      "indicator": "uempmed",
+      "percentage": 7.7,
+      "Y2K": false
+    },
+    {
+      "date": "1987-08-01",
+      "pce": 3147,
+      "pop": 243012,
+      "unemploy": 7261,
+      "indicator": "uempmed",
+      "percentage": 6.4,
+      "Y2K": false
+    },
+    {
+      "date": "2001-06-01",
+      "pce": 7097.1,
+      "pop": 285062,
+      "unemploy": 6484,
+      "indicator": "uempmed",
+      "percentage": 6,
+      "Y2K": true
+    },
+    {
+      "date": "2007-10-01",
+      "pce": 9853.9,
+      "pop": 302807,
+      "unemploy": 7237,
+      "indicator": "uempmed",
+      "percentage": 8.4,
+      "Y2K": true
+    },
+    {
+      "date": "1981-04-01",
+      "pce": 1909.1,
+      "pop": 229403,
+      "unemploy": 7869,
+      "indicator": "uempmed",
+      "percentage": 7.4,
+      "Y2K": false
+    },
+    {
+      "date": "1984-08-01",
+      "pce": 2518.4,
+      "pop": 236549,
+      "unemploy": 8519,
+      "indicator": "uempmed",
+      "percentage": 7.3,
+      "Y2K": false
+    },
+    {
+      "date": "1974-10-01",
+      "pce": 961,
+      "pop": 214451,
+      "unemploy": 5523,
+      "indicator": "uempmed",
+      "percentage": 5.5,
+      "Y2K": false
+    }
+  ],
+  "output_data": [
+    {
+      "date": "2012-07-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.6
+    },
+    {
+      "date": "2001-09-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.3
+    },
+    {
+      "date": "2011-08-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.2
+    },
+    {
+      "date": "2005-07-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 1.9
+    },
+    {
+      "date": "1989-05-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 7.6
+    },
+    {
+      "date": "1985-03-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 8.1
+    },
+    {
+      "date": "1989-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 7.1
+    },
+    {
+      "date": "2008-11-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.3
+    },
+    {
+      "date": "2014-01-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 4.9
+    },
+    {
+      "date": "1987-09-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 7.0
+    },
+    {
+      "date": "2006-06-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 3.4
+    },
+    {
+      "date": "1992-07-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 9.1
+    },
+    {
+      "date": "1976-07-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.2
+    },
+    {
+      "date": "1973-06-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 13.2
+    },
+    {
+      "date": "1967-09-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.7
+    },
+    {
+      "date": "1995-06-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 6.1
+    },
+    {
+      "date": "1980-07-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 10.5
+    },
+    {
+      "date": "1970-01-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.7
+    },
+    {
+      "date": "1967-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 12.5
+    },
+    {
+      "date": "1995-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 6.1
+    },
+    {
+      "date": "1996-10-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 5.8
+    },
+    {
+      "date": "2012-09-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.5
+    },
+    {
+      "date": "2006-10-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 3.1
+    },
+    {
+      "date": "1994-07-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 6.4
+    },
+    {
+      "date": "2008-05-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 7.9
+    },
+    {
+      "date": "1975-10-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 13.0
+    },
+    {
+      "date": "1982-12-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 10.3
+    },
+    {
+      "date": "1976-01-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.3
+    },
+    {
+      "date": "1999-03-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 5.3
+    },
+    {
+      "date": "1973-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 13.6
+    },
+    {
+      "date": "2010-11-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 5.3
+    },
+    {
+      "date": "1974-03-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 13.0
+    },
+    {
+      "date": "1972-01-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 12.4
+    },
+    {
+      "date": "1999-11-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 4.1
+    },
+    {
+      "date": "2012-03-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 6.9
+    },
+    {
+      "date": "2000-12-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 3.5
+    },
+    {
+      "date": "1977-05-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 9.8
+    },
+    {
+      "date": "2004-10-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 3.8
+    },
+    {
+      "date": "1986-09-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 6.6
+    },
+    {
+      "date": "1976-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.2
+    },
+    {
+      "date": "2001-02-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 4.1
+    },
+    {
+      "date": "2013-05-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 5.2
+    },
+    {
+      "date": "1982-07-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 12.0
+    },
+    {
+      "date": "1982-03-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.7
+    },
+    {
+      "date": "1987-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 6.5
+    },
+    {
+      "date": "2001-06-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 3.7
+    },
+    {
+      "date": "2007-10-01",
+      "Y2K": true,
+      "variable": "psavert",
+      "value": 2.8
+    },
+    {
+      "date": "1981-04-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 10.3
+    },
+    {
+      "date": "1984-08-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 11.2
+    },
+    {
+      "date": "1974-10-01",
+      "Y2K": false,
+      "variable": "psavert",
+      "value": 13.0
+    },
+    {
+      "date": "2012-07-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 17.5
+    },
+    {
+      "date": "2001-09-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 7.2
+    },
+    {
+      "date": "2011-08-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 22.4
+    },
+    {
+      "date": "2005-07-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 8.8
+    },
+    {
+      "date": "1989-05-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 5.3
+    },
+    {
+      "date": "1985-03-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.1
+    },
+    {
+      "date": "1989-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 5.0
+    },
+    {
+      "date": "2008-11-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 9.8
+    },
+    {
+      "date": "2014-01-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 15.9
+    },
+    {
+      "date": "1987-09-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.0
+    },
+    {
+      "date": "2006-06-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 7.3
+    },
+    {
+      "date": "1992-07-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 8.6
+    },
+    {
+      "date": "1976-07-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.7
+    },
+    {
+      "date": "1973-06-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 5.0
+    },
+    {
+      "date": "1967-09-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 4.6
+    },
+    {
+      "date": "1995-06-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.9
+    },
+    {
+      "date": "1980-07-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.0
+    },
+    {
+      "date": "1970-01-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 4.6
+    },
+    {
+      "date": "1967-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 4.7
+    },
+    {
+      "date": "1995-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 8.3
+    },
+    {
+      "date": "1996-10-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 8.3
+    },
+    {
+      "date": "2012-09-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 18.8
+    },
+    {
+      "date": "2006-10-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 7.9
+    },
+    {
+      "date": "1994-07-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 9.0
+    },
+    {
+      "date": "2008-05-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 7.9
+    },
+    {
+      "date": "1975-10-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 8.6
+    },
+    {
+      "date": "1982-12-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 10.2
+    },
+    {
+      "date": "1976-01-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 9.0
+    },
+    {
+      "date": "1999-03-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.8
+    },
+    {
+      "date": "1973-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 4.9
+    },
+    {
+      "date": "2010-11-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 21.0
+    },
+    {
+      "date": "1974-03-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 4.8
+    },
+    {
+      "date": "1972-01-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.2
+    },
+    {
+      "date": "1999-11-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.2
+    },
+    {
+      "date": "2012-03-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 19.2
+    },
+    {
+      "date": "2000-12-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.0
+    },
+    {
+      "date": "1977-05-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.9
+    },
+    {
+      "date": "2004-10-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 9.5
+    },
+    {
+      "date": "1986-09-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.4
+    },
+    {
+      "date": "1976-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.9
+    },
+    {
+      "date": "2001-02-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 6.1
+    },
+    {
+      "date": "2013-05-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 17.0
+    },
+    {
+      "date": "1982-07-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 8.5
+    },
+    {
+      "date": "1982-03-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.7
+    },
+    {
+      "date": "1987-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 6.4
+    },
+    {
+      "date": "2001-06-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 6.0
+    },
+    {
+      "date": "2007-10-01",
+      "Y2K": true,
+      "variable": "uempmed",
+      "value": 8.4
+    },
+    {
+      "date": "1981-04-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.4
+    },
+    {
+      "date": "1984-08-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 7.3
+    },
+    {
+      "date": "1974-10-01",
+      "Y2K": false,
+      "variable": "uempmed",
+      "value": 5.5
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "line"
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal"
+      },
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "opacity": {
+        "field": "Y2K",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      }
+    }
+  }
 }

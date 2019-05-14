@@ -1,210 +1,210 @@
 {
-    "input_data": [
-        {
-            "Country": "Australia",
-            "Beans": "$14,433",
-            "Broccoli": "$17,953",
-            "Carrots": "$8,106",
-            "Total Result": "$40,492"
-        },
-        {
-            "Country": "Canada",
-            "Beans": "",
-            "Broccoli": "$12,407",
-            "Carrots": "",
-            "Total Result": "$12,407"
-        },
-        {
-            "Country": "France",
-            "Beans": "$680",
-            "Broccoli": "$5,341",
-            "Carrots": "$9,104",
-            "Total Result": "$15,125"
-        },
-        {
-            "Country": "Germany",
-            "Beans": "$29,905",
-            "Broccoli": "$37,197",
-            "Carrots": "$21,636",
-            "Total Result": "$88,738"
-        },
-        {
-            "Country": "New Zealand",
-            "Beans": "",
-            "Broccoli": "$4,390",
-            "Carrots": "",
-            "Total Result": "$4,390"
-        },
-        {
-            "Country": "United Kingdom",
-            "Beans": "$5,100",
-            "Broccoli": "$38,436",
-            "Carrots": "$41,815",
-            "Total Result": "$85,351"
-        },
-        {
-            "Country": "United States",
-            "Beans": "$7,163",
-            "Broccoli": "$26,715",
-            "Carrots": "$56,284",
-            "Total Result": "$90,162"
-        },
-        {
-            "Country": "Total Result",
-            "Beans": "$57,281",
-            "Broccoli": "$142,439",
-            "Carrots": "$136,945",
-            "Total Result": "$336,665"
-        }
-    ],
-    "output_data": [
-        {
-            "Country": "Australia",
-            "Total Result": 40492,
-            "variable": "Beans",
-            "value": 14433.0
-        },
-        {
-            "Country": "Canada",
-            "Total Result": 12407,
-            "variable": "Beans",
-            "value": null
-        },
-        {
-            "Country": "France",
-            "Total Result": 15125,
-            "variable": "Beans",
-            "value": 680.0
-        },
-        {
-            "Country": "Germany",
-            "Total Result": 88738,
-            "variable": "Beans",
-            "value": 29905.0
-        },
-        {
-            "Country": "New Zealand",
-            "Total Result": 4390,
-            "variable": "Beans",
-            "value": null
-        },
-        {
-            "Country": "United Kingdom",
-            "Total Result": 85351,
-            "variable": "Beans",
-            "value": 5100.0
-        },
-        {
-            "Country": "United States",
-            "Total Result": 90162,
-            "variable": "Beans",
-            "value": 7163.0
-        },
-        {
-            "Country": "Australia",
-            "Total Result": 40492,
-            "variable": "Broccoli",
-            "value": 17953.0
-        },
-        {
-            "Country": "Canada",
-            "Total Result": 12407,
-            "variable": "Broccoli",
-            "value": 12407.0
-        },
-        {
-            "Country": "France",
-            "Total Result": 15125,
-            "variable": "Broccoli",
-            "value": 5341.0
-        },
-        {
-            "Country": "Germany",
-            "Total Result": 88738,
-            "variable": "Broccoli",
-            "value": 37197.0
-        },
-        {
-            "Country": "New Zealand",
-            "Total Result": 4390,
-            "variable": "Broccoli",
-            "value": 4390.0
-        },
-        {
-            "Country": "United Kingdom",
-            "Total Result": 85351,
-            "variable": "Broccoli",
-            "value": 38436.0
-        },
-        {
-            "Country": "United States",
-            "Total Result": 90162,
-            "variable": "Broccoli",
-            "value": 26715.0
-        },
-        {
-            "Country": "Australia",
-            "Total Result": 40492,
-            "variable": "Carrots",
-            "value": 8106.0
-        },
-        {
-            "Country": "Canada",
-            "Total Result": 12407,
-            "variable": "Carrots",
-            "value": null
-        },
-        {
-            "Country": "France",
-            "Total Result": 15125,
-            "variable": "Carrots",
-            "value": 9104.0
-        },
-        {
-            "Country": "Germany",
-            "Total Result": 88738,
-            "variable": "Carrots",
-            "value": 21636.0
-        },
-        {
-            "Country": "New Zealand",
-            "Total Result": 4390,
-            "variable": "Carrots",
-            "value": null
-        },
-        {
-            "Country": "United Kingdom",
-            "Total Result": 85351,
-            "variable": "Carrots",
-            "value": 41815.0
-        },
-        {
-            "Country": "United States",
-            "Total Result": 90162,
-            "variable": "Carrots",
-            "value": 56284.0
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": "bar",
-        "encoding": {
-            "x": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "color": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "value",
-                "type": "quantitative"
-            },
-            "column": {
-                "field": "Country",
-                "type": "nominal"
-            }
-        }
+  "input_data": [
+    {
+      "Country": "Australia",
+      "Beans": "$14,433",
+      "Broccoli": "$17,953",
+      "Carrots": "$8,106",
+      "Total Result": "$40,492"
+    },
+    {
+      "Country": "Canada",
+      "Beans": "",
+      "Broccoli": "$12,407",
+      "Carrots": "",
+      "Total Result": "$12,407"
+    },
+    {
+      "Country": "France",
+      "Beans": "$680",
+      "Broccoli": "$5,341",
+      "Carrots": "$9,104",
+      "Total Result": "$15,125"
+    },
+    {
+      "Country": "Germany",
+      "Beans": "$29,905",
+      "Broccoli": "$37,197",
+      "Carrots": "$21,636",
+      "Total Result": "$88,738"
+    },
+    {
+      "Country": "New Zealand",
+      "Beans": "",
+      "Broccoli": "$4,390",
+      "Carrots": "",
+      "Total Result": "$4,390"
+    },
+    {
+      "Country": "United Kingdom",
+      "Beans": "$5,100",
+      "Broccoli": "$38,436",
+      "Carrots": "$41,815",
+      "Total Result": "$85,351"
+    },
+    {
+      "Country": "United States",
+      "Beans": "$7,163",
+      "Broccoli": "$26,715",
+      "Carrots": "$56,284",
+      "Total Result": "$90,162"
+    },
+    {
+      "Country": "Total Result",
+      "Beans": "$57,281",
+      "Broccoli": "$142,439",
+      "Carrots": "$136,945",
+      "Total Result": "$336,665"
     }
+  ],
+  "output_data": [
+    {
+      "Country": "Australia",
+      "Total Result": 40492,
+      "variable": "Beans",
+      "value": 14433.0
+    },
+    {
+      "Country": "Canada",
+      "Total Result": 12407,
+      "variable": "Beans",
+      "value": null
+    },
+    {
+      "Country": "France",
+      "Total Result": 15125,
+      "variable": "Beans",
+      "value": 680.0
+    },
+    {
+      "Country": "Germany",
+      "Total Result": 88738,
+      "variable": "Beans",
+      "value": 29905.0
+    },
+    {
+      "Country": "New Zealand",
+      "Total Result": 4390,
+      "variable": "Beans",
+      "value": null
+    },
+    {
+      "Country": "United Kingdom",
+      "Total Result": 85351,
+      "variable": "Beans",
+      "value": 5100.0
+    },
+    {
+      "Country": "United States",
+      "Total Result": 90162,
+      "variable": "Beans",
+      "value": 7163.0
+    },
+    {
+      "Country": "Australia",
+      "Total Result": 40492,
+      "variable": "Broccoli",
+      "value": 17953.0
+    },
+    {
+      "Country": "Canada",
+      "Total Result": 12407,
+      "variable": "Broccoli",
+      "value": 12407.0
+    },
+    {
+      "Country": "France",
+      "Total Result": 15125,
+      "variable": "Broccoli",
+      "value": 5341.0
+    },
+    {
+      "Country": "Germany",
+      "Total Result": 88738,
+      "variable": "Broccoli",
+      "value": 37197.0
+    },
+    {
+      "Country": "New Zealand",
+      "Total Result": 4390,
+      "variable": "Broccoli",
+      "value": 4390.0
+    },
+    {
+      "Country": "United Kingdom",
+      "Total Result": 85351,
+      "variable": "Broccoli",
+      "value": 38436.0
+    },
+    {
+      "Country": "United States",
+      "Total Result": 90162,
+      "variable": "Broccoli",
+      "value": 26715.0
+    },
+    {
+      "Country": "Australia",
+      "Total Result": 40492,
+      "variable": "Carrots",
+      "value": 8106.0
+    },
+    {
+      "Country": "Canada",
+      "Total Result": 12407,
+      "variable": "Carrots",
+      "value": null
+    },
+    {
+      "Country": "France",
+      "Total Result": 15125,
+      "variable": "Carrots",
+      "value": 9104.0
+    },
+    {
+      "Country": "Germany",
+      "Total Result": 88738,
+      "variable": "Carrots",
+      "value": 21636.0
+    },
+    {
+      "Country": "New Zealand",
+      "Total Result": 4390,
+      "variable": "Carrots",
+      "value": null
+    },
+    {
+      "Country": "United Kingdom",
+      "Total Result": 85351,
+      "variable": "Carrots",
+      "value": 41815.0
+    },
+    {
+      "Country": "United States",
+      "Total Result": 90162,
+      "variable": "Carrots",
+      "value": 56284.0
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      },
+      "column": {
+        "field": "Country",
+        "type": "nominal"
+      }
+    }
+  }
 }

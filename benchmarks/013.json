@@ -1,190 +1,190 @@
 {
-    "input_data": [
-        {
-            "Value": "A",
-            "alpha": 2,
-            "beta": 2,
-            "gamma": 3,
-            "Totals": 7
-        },
-        {
-            "Value": "B",
-            "alpha": 2,
-            "beta": 3,
-            "gamma": 3,
-            "Totals": 8
-        },
-        {
-            "Value": "C",
-            "alpha": 3,
-            "beta": 3,
-            "gamma": 3,
-            "Totals": 9
-        },
-        {
-            "Value": "D",
-            "alpha": 3,
-            "beta": 4,
-            "gamma": 2,
-            "Totals": 9
-        },
-        {
-            "Value": "E",
-            "alpha": 4,
-            "beta": 3,
-            "gamma": 2,
-            "Totals": 9
-        }
-    ],
-    "output_data": [
-        {
-            "Totals": 7,
-            "Value": "A",
-            "variable": "alpha",
-            "value": 2,
-            "cumsum": 2
-        },
-        {
-            "Totals": 8,
-            "Value": "B",
-            "variable": "alpha",
-            "value": 2,
-            "cumsum": 2
-        },
-        {
-            "Totals": 9,
-            "Value": "C",
-            "variable": "alpha",
-            "value": 3,
-            "cumsum": 3
-        },
-        {
-            "Totals": 9,
-            "Value": "D",
-            "variable": "alpha",
-            "value": 3,
-            "cumsum": 3
-        },
-        {
-            "Totals": 9,
-            "Value": "E",
-            "variable": "alpha",
-            "value": 4,
-            "cumsum": 4
-        },
-        {
-            "Totals": 7,
-            "Value": "A",
-            "variable": "beta",
-            "value": 2,
-            "cumsum": 4
-        },
-        {
-            "Totals": 8,
-            "Value": "B",
-            "variable": "beta",
-            "value": 3,
-            "cumsum": 5
-        },
-        {
-            "Totals": 9,
-            "Value": "C",
-            "variable": "beta",
-            "value": 3,
-            "cumsum": 6
-        },
-        {
-            "Totals": 9,
-            "Value": "D",
-            "variable": "beta",
-            "value": 4,
-            "cumsum": 7
-        },
-        {
-            "Totals": 9,
-            "Value": "E",
-            "variable": "beta",
-            "value": 3,
-            "cumsum": 7
-        },
-        {
-            "Totals": 7,
-            "Value": "A",
-            "variable": "gamma",
-            "value": 3,
-            "cumsum": 7
-        },
-        {
-            "Totals": 8,
-            "Value": "B",
-            "variable": "gamma",
-            "value": 3,
-            "cumsum": 8
-        },
-        {
-            "Totals": 9,
-            "Value": "C",
-            "variable": "gamma",
-            "value": 3,
-            "cumsum": 9
-        },
-        {
-            "Totals": 9,
-            "Value": "D",
-            "variable": "gamma",
-            "value": 2,
-            "cumsum": 9
-        },
-        {
-            "Totals": 9,
-            "Value": "E",
-            "variable": "gamma",
-            "value": 2,
-            "cumsum": 9
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": "bar",
-                "encoding": {
-                    "x": {
-                        "field": "Value",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    },
-                    "color": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "order": {
-                        "field": "variable",
-                        "type": "quantitative",
-                        "sort": "ascending"
-                    }
-                }
-            },
-            {
-                "mark": "text",
-                "encoding": {
-                    "x": {
-                        "field": "Value",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "cumsum",
-                        "type": "quantitative"
-                    },
-                    "text": {
-                        "field": "value",
-                        "type": "quantitative"
-                    }
-                }
-            }
-        ]
+  "input_data": [
+    {
+      "Value": "A",
+      "alpha": 2,
+      "beta": 2,
+      "gamma": 3,
+      "Totals": 7
+    },
+    {
+      "Value": "B",
+      "alpha": 2,
+      "beta": 3,
+      "gamma": 3,
+      "Totals": 8
+    },
+    {
+      "Value": "C",
+      "alpha": 3,
+      "beta": 3,
+      "gamma": 3,
+      "Totals": 9
+    },
+    {
+      "Value": "D",
+      "alpha": 3,
+      "beta": 4,
+      "gamma": 2,
+      "Totals": 9
+    },
+    {
+      "Value": "E",
+      "alpha": 4,
+      "beta": 3,
+      "gamma": 2,
+      "Totals": 9
     }
+  ],
+  "output_data": [
+    {
+      "Totals": 7,
+      "Value": "A",
+      "variable": "alpha",
+      "value": 2,
+      "cumsum": 2
+    },
+    {
+      "Totals": 8,
+      "Value": "B",
+      "variable": "alpha",
+      "value": 2,
+      "cumsum": 2
+    },
+    {
+      "Totals": 9,
+      "Value": "C",
+      "variable": "alpha",
+      "value": 3,
+      "cumsum": 3
+    },
+    {
+      "Totals": 9,
+      "Value": "D",
+      "variable": "alpha",
+      "value": 3,
+      "cumsum": 3
+    },
+    {
+      "Totals": 9,
+      "Value": "E",
+      "variable": "alpha",
+      "value": 4,
+      "cumsum": 4
+    },
+    {
+      "Totals": 7,
+      "Value": "A",
+      "variable": "beta",
+      "value": 2,
+      "cumsum": 4
+    },
+    {
+      "Totals": 8,
+      "Value": "B",
+      "variable": "beta",
+      "value": 3,
+      "cumsum": 5
+    },
+    {
+      "Totals": 9,
+      "Value": "C",
+      "variable": "beta",
+      "value": 3,
+      "cumsum": 6
+    },
+    {
+      "Totals": 9,
+      "Value": "D",
+      "variable": "beta",
+      "value": 4,
+      "cumsum": 7
+    },
+    {
+      "Totals": 9,
+      "Value": "E",
+      "variable": "beta",
+      "value": 3,
+      "cumsum": 7
+    },
+    {
+      "Totals": 7,
+      "Value": "A",
+      "variable": "gamma",
+      "value": 3,
+      "cumsum": 7
+    },
+    {
+      "Totals": 8,
+      "Value": "B",
+      "variable": "gamma",
+      "value": 3,
+      "cumsum": 8
+    },
+    {
+      "Totals": 9,
+      "Value": "C",
+      "variable": "gamma",
+      "value": 3,
+      "cumsum": 9
+    },
+    {
+      "Totals": 9,
+      "Value": "D",
+      "variable": "gamma",
+      "value": 2,
+      "cumsum": 9
+    },
+    {
+      "Totals": 9,
+      "Value": "E",
+      "variable": "gamma",
+      "value": 2,
+      "cumsum": 9
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Value",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "order": {
+            "field": "variable",
+            "type": "quantitative",
+            "sort": "ascending"
+          }
+        }
+      },
+      {
+        "mark": "text",
+        "encoding": {
+          "x": {
+            "field": "Value",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "cumsum",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "value",
+            "type": "quantitative"
+          }
+        }
+      }
+    ]
+  }
 }

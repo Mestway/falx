@@ -1,138 +1,138 @@
 {
-    "input_data": [
-        {
-            "Year": "2007",
-            "SOUTH-Choc": 10,
-            "SOUTH-Bisc": 4,
-            "WEST-Choc": 6,
-            "WEST-Bisc": 4,
-            "NORTH-Choc": 14,
-            "NORTH-Bisc": 6
-        },
-        {
-            "Year": "2008",
-            "SOUTH-Choc": 11,
-            "SOUTH-Bisc": 5,
-            "WEST-Choc": 10,
-            "WEST-Bisc": 5,
-            "NORTH-Choc": 18,
-            "NORTH-Bisc": 6.7
-        },
-        {
-            "Year": "2009",
-            "SOUTH-Choc": 14,
-            "SOUTH-Bisc": 5.7,
-            "WEST-Choc": 12,
-            "WEST-Bisc": 5.7,
-            "NORTH-Choc": 19,
-            "NORTH-Bisc": 7
-        },
-        {
-            "Year": "2010",
-            "SOUTH-Choc": 16,
-            "SOUTH-Bisc": 6,
-            "WEST-Choc": 15,
-            "WEST-Bisc": 6,
-            "NORTH-Choc": 21,
-            "NORTH-Bisc": 8
-        }
-    ],
-    "output_data": [
-        {
-            "Year": 2007,
-            "loc": "NORTH",
-            "Bisc": 6.0,
-            "Choc": 14.0
-        },
-        {
-            "Year": 2007,
-            "loc": "SOUTH",
-            "Bisc": 4.0,
-            "Choc": 10.0
-        },
-        {
-            "Year": 2007,
-            "loc": "WEST",
-            "Bisc": 4.0,
-            "Choc": 6.0
-        },
-        {
-            "Year": 2008,
-            "loc": "NORTH",
-            "Bisc": 6.7,
-            "Choc": 18.0
-        },
-        {
-            "Year": 2008,
-            "loc": "SOUTH",
-            "Bisc": 5.0,
-            "Choc": 11.0
-        },
-        {
-            "Year": 2008,
-            "loc": "WEST",
-            "Bisc": 5.0,
-            "Choc": 10.0
-        },
-        {
-            "Year": 2009,
-            "loc": "NORTH",
-            "Bisc": 7.0,
-            "Choc": 19.0
-        },
-        {
-            "Year": 2009,
-            "loc": "SOUTH",
-            "Bisc": 5.7,
-            "Choc": 14.0
-        },
-        {
-            "Year": 2009,
-            "loc": "WEST",
-            "Bisc": 5.7,
-            "Choc": 12.0
-        },
-        {
-            "Year": 2010,
-            "loc": "NORTH",
-            "Bisc": 8.0,
-            "Choc": 21.0
-        },
-        {
-            "Year": 2010,
-            "loc": "SOUTH",
-            "Bisc": 6.0,
-            "Choc": 16.0
-        },
-        {
-            "Year": 2010,
-            "loc": "WEST",
-            "Bisc": 6.0,
-            "Choc": 15.0
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "area"
-        },
-        "encoding": {
-            "x": {
-                "field": "Year",
-                "type": "ordinal"
-            },
-            "y": {
-                "field": "Bisc",
-                "type": "quantitative"
-            },
-            "y2": {
-                "field": "Choc",
-                "type": "quantitative"
-            },
-            "column": {
-                "field": "loc",
-                "type": "nominal"
-            }
-        }
+  "input_data": [
+    {
+      "Year": "2007",
+      "SOUTH-Choc": 10,
+      "SOUTH-Bisc": 4,
+      "WEST-Choc": 6,
+      "WEST-Bisc": 4,
+      "NORTH-Choc": 14,
+      "NORTH-Bisc": 6
+    },
+    {
+      "Year": "2008",
+      "SOUTH-Choc": 11,
+      "SOUTH-Bisc": 5,
+      "WEST-Choc": 10,
+      "WEST-Bisc": 5,
+      "NORTH-Choc": 18,
+      "NORTH-Bisc": 6.7
+    },
+    {
+      "Year": "2009",
+      "SOUTH-Choc": 14,
+      "SOUTH-Bisc": 5.7,
+      "WEST-Choc": 12,
+      "WEST-Bisc": 5.7,
+      "NORTH-Choc": 19,
+      "NORTH-Bisc": 7
+    },
+    {
+      "Year": "2010",
+      "SOUTH-Choc": 16,
+      "SOUTH-Bisc": 6,
+      "WEST-Choc": 15,
+      "WEST-Bisc": 6,
+      "NORTH-Choc": 21,
+      "NORTH-Bisc": 8
     }
+  ],
+  "output_data": [
+    {
+      "Year": 2007,
+      "loc": "NORTH",
+      "Bisc": 6.0,
+      "Choc": 14.0
+    },
+    {
+      "Year": 2007,
+      "loc": "SOUTH",
+      "Bisc": 4.0,
+      "Choc": 10.0
+    },
+    {
+      "Year": 2007,
+      "loc": "WEST",
+      "Bisc": 4.0,
+      "Choc": 6.0
+    },
+    {
+      "Year": 2008,
+      "loc": "NORTH",
+      "Bisc": 6.7,
+      "Choc": 18.0
+    },
+    {
+      "Year": 2008,
+      "loc": "SOUTH",
+      "Bisc": 5.0,
+      "Choc": 11.0
+    },
+    {
+      "Year": 2008,
+      "loc": "WEST",
+      "Bisc": 5.0,
+      "Choc": 10.0
+    },
+    {
+      "Year": 2009,
+      "loc": "NORTH",
+      "Bisc": 7.0,
+      "Choc": 19.0
+    },
+    {
+      "Year": 2009,
+      "loc": "SOUTH",
+      "Bisc": 5.7,
+      "Choc": 14.0
+    },
+    {
+      "Year": 2009,
+      "loc": "WEST",
+      "Bisc": 5.7,
+      "Choc": 12.0
+    },
+    {
+      "Year": 2010,
+      "loc": "NORTH",
+      "Bisc": 8.0,
+      "Choc": 21.0
+    },
+    {
+      "Year": 2010,
+      "loc": "SOUTH",
+      "Bisc": 6.0,
+      "Choc": 16.0
+    },
+    {
+      "Year": 2010,
+      "loc": "WEST",
+      "Bisc": 6.0,
+      "Choc": 15.0
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "area"
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal"
+      },
+      "y": {
+        "field": "Bisc",
+        "type": "quantitative"
+      },
+      "y2": {
+        "field": "Choc",
+        "type": "quantitative"
+      },
+      "column": {
+        "field": "loc",
+        "type": "nominal"
+      }
+    }
+  }
 }

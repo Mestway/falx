@@ -1,104 +1,104 @@
 {
-    "input_data": [
-        {
-            "Strongly Agree": "50%",
-            "Agree": "35%",
-            "Disagree": "8%",
-            "Strongly Disagree": "7%"
-        },
-        {
-            "Strongly Agree": "70%",
-            "Agree": "10%",
-            "Disagree": "10.00%",
-            "Strongly Disagree": "10%"
-        },
-        {
-            "Strongly Agree": "45%",
-            "Agree": "30%",
-            "Disagree": "15.00%",
-            "Strongly Disagree": "10%"
-        }
-    ],
-    "output_data": [
-        {
-            "id": 0,
-            "variable": "Strongly Disagree",
-            "value": 0.07
-        },
-        {
-            "id": 1,
-            "variable": "Strongly Disagree",
-            "value": 0.1
-        },
-        {
-            "id": 2,
-            "variable": "Strongly Disagree",
-            "value": 0.1
-        },
-        {
-            "id": 0,
-            "variable": "Agree",
-            "value": 0.35
-        },
-        {
-            "id": 1,
-            "variable": "Agree",
-            "value": 0.1
-        },
-        {
-            "id": 2,
-            "variable": "Agree",
-            "value": 0.3
-        },
-        {
-            "id": 0,
-            "variable": "Disagree",
-            "value": 0.08
-        },
-        {
-            "id": 1,
-            "variable": "Disagree",
-            "value": 0.1
-        },
-        {
-            "id": 2,
-            "variable": "Disagree",
-            "value": 0.15
-        },
-        {
-            "id": 0,
-            "variable": "Strongly Agree",
-            "value": 0.5
-        },
-        {
-            "id": 1,
-            "variable": "Strongly Agree",
-            "value": 0.7
-        },
-        {
-            "id": 2,
-            "variable": "Strongly Agree",
-            "value": 0.45
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": {
-            "type": "bar"
-        },
-        "encoding": {
-            "color": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "id",
-                "type": "nominal"
-            },
-            "x": {
-                "field": "value",
-                "type": "quantitative"
-            }
-        }
+  "input_data": [
+    {
+      "Strongly Agree": "50%",
+      "Agree": "35%",
+      "Disagree": "8%",
+      "Strongly Disagree": "7%"
+    },
+    {
+      "Strongly Agree": "70%",
+      "Agree": "10%",
+      "Disagree": "10.00%",
+      "Strongly Disagree": "10%"
+    },
+    {
+      "Strongly Agree": "45%",
+      "Agree": "30%",
+      "Disagree": "15.00%",
+      "Strongly Disagree": "10%"
     }
+  ],
+  "output_data": [
+    {
+      "id": 0,
+      "variable": "Strongly Disagree",
+      "value": 0.07
+    },
+    {
+      "id": 1,
+      "variable": "Strongly Disagree",
+      "value": 0.1
+    },
+    {
+      "id": 2,
+      "variable": "Strongly Disagree",
+      "value": 0.1
+    },
+    {
+      "id": 0,
+      "variable": "Agree",
+      "value": 0.35
+    },
+    {
+      "id": 1,
+      "variable": "Agree",
+      "value": 0.1
+    },
+    {
+      "id": 2,
+      "variable": "Agree",
+      "value": 0.3
+    },
+    {
+      "id": 0,
+      "variable": "Disagree",
+      "value": 0.08
+    },
+    {
+      "id": 1,
+      "variable": "Disagree",
+      "value": 0.1
+    },
+    {
+      "id": 2,
+      "variable": "Disagree",
+      "value": 0.15
+    },
+    {
+      "id": 0,
+      "variable": "Strongly Agree",
+      "value": 0.5
+    },
+    {
+      "id": 1,
+      "variable": "Strongly Agree",
+      "value": 0.7
+    },
+    {
+      "id": 2,
+      "variable": "Strongly Agree",
+      "value": 0.45
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "id",
+        "type": "nominal"
+      },
+      "x": {
+        "field": "value",
+        "type": "quantitative"
+      }
+    }
+  }
 }

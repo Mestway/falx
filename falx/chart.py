@@ -70,8 +70,17 @@ class VisDesign(object):
         return self.chart.eval(self.data)
 
     def update_field_names(self, mapping):
-        """Given a mapping between current field names to new field names, update all of their occurence"""
+        """Given a mapping between current field names to new field names, 
+            update all of their occurence
+        Args:
+            mapping: 
+                a dict that maps old names to new names if the chart is single layered
+                a list of dicts that maps each layer if multi-layered
+            Return: None
+                it updates names in place
+        """
         if isinstance(self.chart, (LayeredChart,)):
+            assert(isinstance(mapping, (list,)))
             for i, l in enumerate(self.chart.layers):
                 for key, e in l.encodings.items():
                     e.field = mapping[i][e.field]

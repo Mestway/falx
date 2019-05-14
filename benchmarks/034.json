@@ -1,249 +1,249 @@
 {
-    "input_data": [
-        {
-            "Timeline": "Jul-15",
-            "Values": 436,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Aug-15",
-            "Values": 500,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Sep-15",
-            "Values": 805,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Oct-15",
-            "Values": 5124,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Nov-15",
-            "Values": 1674,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Dec-15",
-            "Values": 300,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Jan-16",
-            "Values": 265,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Feb-16",
-            "Values": 742,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Mar-16",
-            "Values": 1955,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Apr-16",
-            "Values": 1466,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "May-16",
-            "Values": 584,
-            "Forecast": "",
-            "Lower Confidence Bound": "",
-            "Upper Confidence Bound": ""
-        },
-        {
-            "Timeline": "Jun-16",
-            "Values": 1097,
-            "Forecast": 1097,
-            "Lower Confidence Bound": 1097,
-            "Upper Confidence Bound": 1097
-        },
-        {
-            "Timeline": "Jul-16",
-            "Values": "",
-            "Forecast": 939.9246053,
-            "Lower Confidence Bound": -1913.98,
-            "Upper Confidence Bound": 3793.83
-        },
-        {
-            "Timeline": "Aug-16",
-            "Values": "",
-            "Forecast": 924.4956041,
-            "Lower Confidence Bound": -1952.33,
-            "Upper Confidence Bound": 3801.32
-        },
-        {
-            "Timeline": "Sep-16",
-            "Values": "",
-            "Forecast": 909.0666028,
-            "Lower Confidence Bound": -1990.86,
-            "Upper Confidence Bound": 3808.99
-        }
-    ],
-    "output_data": [
-        {
-            "Timeline": "Jun-16",
-            "variable": "Forecast",
-            "value": 1097
-        },
-        {
-            "Timeline": "Jul-16",
-            "variable": "Forecast",
-            "value": 939.9246053
-        },
-        {
-            "Timeline": "Aug-16",
-            "variable": "Forecast",
-            "value": 924.4956041
-        },
-        {
-            "Timeline": "Sep-16",
-            "variable": "Forecast",
-            "value": 909.0666028
-        },
-        {
-            "Timeline": "Jun-16",
-            "variable": "Lower Confidence Bound",
-            "value": 1097
-        },
-        {
-            "Timeline": "Jul-16",
-            "variable": "Lower Confidence Bound",
-            "value": -1913.98
-        },
-        {
-            "Timeline": "Aug-16",
-            "variable": "Lower Confidence Bound",
-            "value": -1952.33
-        },
-        {
-            "Timeline": "Sep-16",
-            "variable": "Lower Confidence Bound",
-            "value": -1990.86
-        },
-        {
-            "Timeline": "Jun-16",
-            "variable": "Upper Confidence Bound",
-            "value": 1097
-        },
-        {
-            "Timeline": "Jul-16",
-            "variable": "Upper Confidence Bound",
-            "value": 3793.83
-        },
-        {
-            "Timeline": "Aug-16",
-            "variable": "Upper Confidence Bound",
-            "value": 3801.32
-        },
-        {
-            "Timeline": "Sep-16",
-            "variable": "Upper Confidence Bound",
-            "value": 3808.99
-        },
-        {
-            "Timeline": "Jul-15",
-            "variable": "Values",
-            "value": 436
-        },
-        {
-            "Timeline": "Aug-15",
-            "variable": "Values",
-            "value": 500
-        },
-        {
-            "Timeline": "Sep-15",
-            "variable": "Values",
-            "value": 805
-        },
-        {
-            "Timeline": "Oct-15",
-            "variable": "Values",
-            "value": 5124
-        },
-        {
-            "Timeline": "Nov-15",
-            "variable": "Values",
-            "value": 1674
-        },
-        {
-            "Timeline": "Dec-15",
-            "variable": "Values",
-            "value": 300
-        },
-        {
-            "Timeline": "Jan-16",
-            "variable": "Values",
-            "value": 265
-        },
-        {
-            "Timeline": "Feb-16",
-            "variable": "Values",
-            "value": 742
-        },
-        {
-            "Timeline": "Mar-16",
-            "variable": "Values",
-            "value": 1955
-        },
-        {
-            "Timeline": "Apr-16",
-            "variable": "Values",
-            "value": 1466
-        },
-        {
-            "Timeline": "May-16",
-            "variable": "Values",
-            "value": 584
-        },
-        {
-            "Timeline": "Jun-16",
-            "variable": "Values",
-            "value": 1097
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": "line",
-        "encoding": {
-            "x": {
-                "field": "Timeline",
-                "type": "temporal"
-            },
-            "color": {
-                "field": "variable",
-                "type": "nominal"
-            },
-            "y": {
-                "field": "value",
-                "type": "quantitative"
-            }
-        }
+  "input_data": [
+    {
+      "Timeline": "Jul-15",
+      "Values": 436,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Aug-15",
+      "Values": 500,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Sep-15",
+      "Values": 805,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Oct-15",
+      "Values": 5124,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Nov-15",
+      "Values": 1674,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Dec-15",
+      "Values": 300,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Jan-16",
+      "Values": 265,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Feb-16",
+      "Values": 742,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Mar-16",
+      "Values": 1955,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Apr-16",
+      "Values": 1466,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "May-16",
+      "Values": 584,
+      "Forecast": "",
+      "Lower Confidence Bound": "",
+      "Upper Confidence Bound": ""
+    },
+    {
+      "Timeline": "Jun-16",
+      "Values": 1097,
+      "Forecast": 1097,
+      "Lower Confidence Bound": 1097,
+      "Upper Confidence Bound": 1097
+    },
+    {
+      "Timeline": "Jul-16",
+      "Values": "",
+      "Forecast": 939.9246053,
+      "Lower Confidence Bound": -1913.98,
+      "Upper Confidence Bound": 3793.83
+    },
+    {
+      "Timeline": "Aug-16",
+      "Values": "",
+      "Forecast": 924.4956041,
+      "Lower Confidence Bound": -1952.33,
+      "Upper Confidence Bound": 3801.32
+    },
+    {
+      "Timeline": "Sep-16",
+      "Values": "",
+      "Forecast": 909.0666028,
+      "Lower Confidence Bound": -1990.86,
+      "Upper Confidence Bound": 3808.99
     }
+  ],
+  "output_data": [
+    {
+      "Timeline": "Jun-16",
+      "variable": "Forecast",
+      "value": 1097
+    },
+    {
+      "Timeline": "Jul-16",
+      "variable": "Forecast",
+      "value": 939.9246053
+    },
+    {
+      "Timeline": "Aug-16",
+      "variable": "Forecast",
+      "value": 924.4956041
+    },
+    {
+      "Timeline": "Sep-16",
+      "variable": "Forecast",
+      "value": 909.0666028
+    },
+    {
+      "Timeline": "Jun-16",
+      "variable": "Lower Confidence Bound",
+      "value": 1097
+    },
+    {
+      "Timeline": "Jul-16",
+      "variable": "Lower Confidence Bound",
+      "value": -1913.98
+    },
+    {
+      "Timeline": "Aug-16",
+      "variable": "Lower Confidence Bound",
+      "value": -1952.33
+    },
+    {
+      "Timeline": "Sep-16",
+      "variable": "Lower Confidence Bound",
+      "value": -1990.86
+    },
+    {
+      "Timeline": "Jun-16",
+      "variable": "Upper Confidence Bound",
+      "value": 1097
+    },
+    {
+      "Timeline": "Jul-16",
+      "variable": "Upper Confidence Bound",
+      "value": 3793.83
+    },
+    {
+      "Timeline": "Aug-16",
+      "variable": "Upper Confidence Bound",
+      "value": 3801.32
+    },
+    {
+      "Timeline": "Sep-16",
+      "variable": "Upper Confidence Bound",
+      "value": 3808.99
+    },
+    {
+      "Timeline": "Jul-15",
+      "variable": "Values",
+      "value": 436
+    },
+    {
+      "Timeline": "Aug-15",
+      "variable": "Values",
+      "value": 500
+    },
+    {
+      "Timeline": "Sep-15",
+      "variable": "Values",
+      "value": 805
+    },
+    {
+      "Timeline": "Oct-15",
+      "variable": "Values",
+      "value": 5124
+    },
+    {
+      "Timeline": "Nov-15",
+      "variable": "Values",
+      "value": 1674
+    },
+    {
+      "Timeline": "Dec-15",
+      "variable": "Values",
+      "value": 300
+    },
+    {
+      "Timeline": "Jan-16",
+      "variable": "Values",
+      "value": 265
+    },
+    {
+      "Timeline": "Feb-16",
+      "variable": "Values",
+      "value": 742
+    },
+    {
+      "Timeline": "Mar-16",
+      "variable": "Values",
+      "value": 1955
+    },
+    {
+      "Timeline": "Apr-16",
+      "variable": "Values",
+      "value": 1466
+    },
+    {
+      "Timeline": "May-16",
+      "variable": "Values",
+      "value": 584
+    },
+    {
+      "Timeline": "Jun-16",
+      "variable": "Values",
+      "value": 1097
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "Timeline",
+        "type": "temporal"
+      },
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      }
+    }
+  }
 }

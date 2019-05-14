@@ -1,165 +1,165 @@
 {
-    "input_data": [
-        {
-            "2012": "20",
-            "2013": "12",
-            "2014": "13",
-            "2015": "12",
-            "Item": "Desktop Computers"
-        },
-        {
-            "2012": "34",
-            "2013": "45",
-            "2014": "40",
-            "2015": "39",
-            "Item": "Laptops"
-        },
-        {
-            "2012": "12",
-            "2013": "10",
-            "2014": "17",
-            "2015": "15",
-            "Item": "Monitors"
-        },
-        {
-            "2012": "78",
-            "2013": "13",
-            "2014": "90",
-            "2015": "14",
-            "Item": "Printers"
-        }
-    ],
-    "output_data": [
-        {
-            "Item": "Desktop Computers",
-            "variable": "2012",
-            "value": 20
-        },
-        {
-            "Item": "Laptops",
-            "variable": "2012",
-            "value": 34
-        },
-        {
-            "Item": "Monitors",
-            "variable": "2012",
-            "value": 12
-        },
-        {
-            "Item": "Printers",
-            "variable": "2012",
-            "value": 78
-        },
-        {
-            "Item": "Desktop Computers",
-            "variable": "2013",
-            "value": 12
-        },
-        {
-            "Item": "Laptops",
-            "variable": "2013",
-            "value": 45
-        },
-        {
-            "Item": "Monitors",
-            "variable": "2013",
-            "value": 10
-        },
-        {
-            "Item": "Printers",
-            "variable": "2013",
-            "value": 13
-        },
-        {
-            "Item": "Desktop Computers",
-            "variable": "2014",
-            "value": 13
-        },
-        {
-            "Item": "Laptops",
-            "variable": "2014",
-            "value": 40
-        },
-        {
-            "Item": "Monitors",
-            "variable": "2014",
-            "value": 17
-        },
-        {
-            "Item": "Printers",
-            "variable": "2014",
-            "value": 90
-        },
-        {
-            "Item": "Desktop Computers",
-            "variable": "2015",
-            "value": 12
-        },
-        {
-            "Item": "Laptops",
-            "variable": "2015",
-            "value": 39
-        },
-        {
-            "Item": "Monitors",
-            "variable": "2015",
-            "value": 15
-        },
-        {
-            "Item": "Printers",
-            "variable": "2015",
-            "value": 14
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": "bar",
-                "transform": [
-                    {
-                        "filter": "datum.Item == \"Desktop Computers\" || datum.Item == \"Laptops\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    },
-                    "color": {
-                        "field": "Item",
-                        "type": "nominal"
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "type": "line"
-                },
-                "transform": [
-                    {
-                        "filter": "datum.Item != \"Desktop Computers\" && datum.Item != \"Laptops\""
-                    }
-                ],
-                "encoding": {
-                    "x": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
-                    "y": {
-                        "field": "value",
-                        "type": "quantitative"
-                    },
-                    "color": {
-                        "field": "Item",
-                        "type": "nominal"
-                    }
-                }
-            }
-        ]
+  "input_data": [
+    {
+      "2012": "20",
+      "2013": "12",
+      "2014": "13",
+      "2015": "12",
+      "Item": "Desktop Computers"
+    },
+    {
+      "2012": "34",
+      "2013": "45",
+      "2014": "40",
+      "2015": "39",
+      "Item": "Laptops"
+    },
+    {
+      "2012": "12",
+      "2013": "10",
+      "2014": "17",
+      "2015": "15",
+      "Item": "Monitors"
+    },
+    {
+      "2012": "78",
+      "2013": "13",
+      "2014": "90",
+      "2015": "14",
+      "Item": "Printers"
     }
+  ],
+  "output_data": [
+    {
+      "Item": "Desktop Computers",
+      "variable": "2012",
+      "value": 20
+    },
+    {
+      "Item": "Laptops",
+      "variable": "2012",
+      "value": 34
+    },
+    {
+      "Item": "Monitors",
+      "variable": "2012",
+      "value": 12
+    },
+    {
+      "Item": "Printers",
+      "variable": "2012",
+      "value": 78
+    },
+    {
+      "Item": "Desktop Computers",
+      "variable": "2013",
+      "value": 12
+    },
+    {
+      "Item": "Laptops",
+      "variable": "2013",
+      "value": 45
+    },
+    {
+      "Item": "Monitors",
+      "variable": "2013",
+      "value": 10
+    },
+    {
+      "Item": "Printers",
+      "variable": "2013",
+      "value": 13
+    },
+    {
+      "Item": "Desktop Computers",
+      "variable": "2014",
+      "value": 13
+    },
+    {
+      "Item": "Laptops",
+      "variable": "2014",
+      "value": 40
+    },
+    {
+      "Item": "Monitors",
+      "variable": "2014",
+      "value": 17
+    },
+    {
+      "Item": "Printers",
+      "variable": "2014",
+      "value": 90
+    },
+    {
+      "Item": "Desktop Computers",
+      "variable": "2015",
+      "value": 12
+    },
+    {
+      "Item": "Laptops",
+      "variable": "2015",
+      "value": 39
+    },
+    {
+      "Item": "Monitors",
+      "variable": "2015",
+      "value": 15
+    },
+    {
+      "Item": "Printers",
+      "variable": "2015",
+      "value": 14
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": "bar",
+        "transform": [
+          {
+            "filter": "datum.Item == \"Desktop Computers\" || datum.Item == \"Laptops\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Item",
+            "type": "nominal"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line"
+        },
+        "transform": [
+          {
+            "filter": "datum.Item != \"Desktop Computers\" && datum.Item != \"Laptops\""
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "variable",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Item",
+            "type": "nominal"
+          }
+        }
+      }
+    ]
+  }
 }

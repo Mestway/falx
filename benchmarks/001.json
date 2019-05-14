@@ -1,87 +1,87 @@
 {
-    "input_data": [
-        {
-            "Quarter": "Quarter1",
-            "Number of Units": 23,
-            "Actual Profits": 3358
-        },
-        {
-            "Quarter": "Quarter2",
-            "Number of Units": 27,
-            "Actual Profits": 3829
-        },
-        {
-            "Quarter": "Quarter3",
-            "Number of Units": 15,
-            "Actual Profits": 2374
-        },
-        {
-            "Quarter": "Quarter4",
-            "Number of Units": 43,
-            "Actual Profits": 3373
-        }
-    ],
-    "output_data": [
-        {
-            "Actual Profits": 3358,
-            "Number of Units": 23,
-            "Quarter": "Quarter1"
-        },
-        {
-            "Actual Profits": 3829,
-            "Number of Units": 27,
-            "Quarter": "Quarter2"
-        },
-        {
-            "Actual Profits": 2374,
-            "Number of Units": 15,
-            "Quarter": "Quarter3"
-        },
-        {
-            "Actual Profits": 3373,
-            "Number of Units": 43,
-            "Quarter": "Quarter4"
-        }
-    ],
-    "vl_spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "layer": [
-            {
-                "mark": {
-                    "type": "line"
-                },
-                "encoding": {
-                    "y": {
-                        "field": "Number of Units",
-                        "type": "quantitative"
-                    },
-                    "x": {
-                        "field": "Quarter",
-                        "type": "nominal"
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "opacity": 0.4,
-                    "type": "bar"
-                },
-                "encoding": {
-                    "y": {
-                        "type": "quantitative",
-                        "field": "Actual Profits"
-                    },
-                    "x": {
-                        "field": "Quarter",
-                        "type": "nominal"
-                    }
-                }
-            }
-        ],
-        "resolve": {
-            "scale": {
-                "y": "independent"
-            }
-        }
+  "input_data": [
+    {
+      "Quarter": "Quarter1",
+      "Number of Units": 23,
+      "Actual Profits": 3358
+    },
+    {
+      "Quarter": "Quarter2",
+      "Number of Units": 27,
+      "Actual Profits": 3829
+    },
+    {
+      "Quarter": "Quarter3",
+      "Number of Units": 15,
+      "Actual Profits": 2374
+    },
+    {
+      "Quarter": "Quarter4",
+      "Number of Units": 43,
+      "Actual Profits": 3373
     }
+  ],
+  "output_data": [
+    {
+      "Actual Profits": 3358,
+      "Number of Units": 23,
+      "Quarter": "Quarter1"
+    },
+    {
+      "Actual Profits": 3829,
+      "Number of Units": 27,
+      "Quarter": "Quarter2"
+    },
+    {
+      "Actual Profits": 2374,
+      "Number of Units": 15,
+      "Quarter": "Quarter3"
+    },
+    {
+      "Actual Profits": 3373,
+      "Number of Units": 43,
+      "Quarter": "Quarter4"
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": {
+          "type": "line"
+        },
+        "encoding": {
+          "y": {
+            "field": "Number of Units",
+            "type": "quantitative"
+          },
+          "x": {
+            "field": "Quarter",
+            "type": "nominal"
+          }
+        }
+      },
+      {
+        "mark": {
+          "opacity": 0.4,
+          "type": "bar"
+        },
+        "encoding": {
+          "y": {
+            "type": "quantitative",
+            "field": "Actual Profits"
+          },
+          "x": {
+            "field": "Quarter",
+            "type": "nominal"
+          }
+        }
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "y": "independent"
+      }
+    }
+  }
 }
