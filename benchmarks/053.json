@@ -134,11 +134,11 @@
         "type": "nominal"
       },
       "color": {
-        "field": "classes",
+        "field": "class",
         "type": "nominal"
       },
       "x": {
-        "field": "score",
+        "field": "n",
         "type": "quantitative"
       }
     }

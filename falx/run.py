@@ -19,7 +19,7 @@ DATA_DIR = os.path.join(PROJ_DIR, "benchmarks")
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
-parser.add_argument("--data_id", dest="data_id", default="001", 
+parser.add_argument("--data_id", dest="data_id", default=None, 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 
 def test_benchmarks(data_dir, data_id):
@@ -45,6 +45,8 @@ def test_benchmarks(data_dir, data_id):
         input_data = table_utils.load_and_clean_table(data["input_data"])
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
+
+        continue
 
         result = Falx.synthesize(inputs=[input_data], vtrace=trace)
 

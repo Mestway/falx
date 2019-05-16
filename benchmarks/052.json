@@ -54,7 +54,8 @@
     },
     {
       "Country": "US",
-      "Car": "BMW X5"
+      "Car": "BMW X5",
+      "Value": null
     }
   ],
   "vl_spec": {
