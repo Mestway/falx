@@ -81,7 +81,8 @@
   "vl_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
     "mark": {
-      "type": "bar"
+      "type": "bar",
+      "opacity": 0.7
     },
     "encoding": {
       "color": {
@@ -96,9 +97,6 @@
       "x": {
         "field": "Bucket",
         "type": "nominal"
-      },
-      "opacity": {
-        "value": 0.7
       }
     }
   }

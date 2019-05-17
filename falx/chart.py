@@ -76,8 +76,10 @@ class VisDesign(object):
 
             script.append("p <- ggplot() + {}".format(self.chart.to_ggplot2(data_vars)))
         else:
-            script.append("data <- fromJSON('{}')".format(json.dumps(self.data)))
-            script.append("p <- ggplot() + {}".format(self.chart.to_ggplot2("data")))
+            data_var = "data"
+            script.append("{} <- fromJSON('{}')".format(data_var, json.dumps(self.data)))
+            script.append("{}$row_id <- as.numeric(row.names({}))".format(data_var, data_var))
+            script.append("p <- ggplot() + {}".format(self.chart.to_ggplot2(data_var)))
 
         script.append("p")
 
@@ -150,7 +152,7 @@ class VisDesign(object):
                 if "color" in lspec["encoding"]:
                     # stacked bar chart or layered bar chart
                     val_channel = "y" if orientation == "vertical" else "x"
-                    if "stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None:
+                    if ("x2" in lspec["encoding"] or "y2" in lspec["encoding"]) or ("stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None):
                         chart = BarChart(encodings, orientation)
                     else:
                         chart = StackedBarChart(orientation, encodings)                        
@@ -264,6 +266,12 @@ class BarChart(object):
     def to_vl_obj(self):
         mark = "bar"
         encodings =  {e:self.encodings[e].to_vl_obj() for e in self.encodings}
+        
+        if self.orientation == "horizontal":
+            encodings["y"]["sort"] = None
+        if self.orientation == "vertical":
+            encodings["x"]["sort"] = None
+
         if "color" in self.encodings:
             mark = {"type": "bar", "opacity": 0.8}
             if self.orientation == "horizontal":
@@ -277,26 +285,44 @@ class BarChart(object):
 
     def to_ggplot2(self, data_var, alpha=1):
 
-        channel_map = {
-            "color": "fill",
-        }
-        if self.orientation == "horizontal":
-            channel_map["x"] = "y"
-            channel_map["y"] = "x"
-        
-
-        channel_map = lambda c: "fill" if c == "color" else c
-        aes_pairs = {channel_map(channel):self.encodings[channel].field for channel in self.encodings}
-
+        mark = "geom_bar"
+        #default channel names
+        channel_map = { "color": "fill", 
+                        "x": "x", 
+                        "y": "y",
+                        "column": "column" }
         coord_flip = ""
-        if self.orientation == "horizontal":
-            coord_flip = " + coord_flip()"
-            temp = aes_pairs["y"]
-            aes_pairs["y"] = aes_pairs["x"]
-            aes_pairs["x"] = temp
-        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
+        if ("x2" not in self.encodings) and ("y2" not in self.encodings):
+            # normal bar chart
+            if self.orientation == "horizontal":
+                channel_map["x"] = "y"
+                channel_map["y"] = "x"
+                coord_flip = " + coord_flip()"
+            aes_pairs = {channel_map[channel]:"`{}`".format(enc.field) for channel, enc in self.encodings.items()}
+        else:
+            # bar chart with x1,x2
+            assert("column" not in self.encodings)
+            mark = "geom_rect"
+            if self.orientation == "horizontal":
+                channel_map["x"] = "ymin"
+                channel_map["x2"] = "ymax"
+                channel_map["y"] = "x"
+                coord_flip = " + coord_flip()"
+            else:
+                channel_map["y"] = "ymin" 
+                channel_map["y2"] = "ymax"
+            aes_pairs = {channel_map[channel]:"`{}`".format(enc.field) for channel, enc in self.encodings.items()}
+            aes_pairs["xmin"] = "`row_id`-0.45"
+            aes_pairs["xmax"] = "`row_id`+0.45"            
 
-        return "geom_bar(data={},aes({}),stat ='identity',alpha={}){}".format(data_var, aes_str, alpha, coord_flip)
+        facet = ""
+        if "column" in aes_pairs:
+            facet += " + facet_grid(cols = vars(`{}`))".format(aes_pairs["column"])
+            aes_pairs.pop("column")
+
+        aes_str = ",".join(["{}={}".format(p, aes_pairs[p]) for p in aes_pairs])
+
+        return "{}(data={},aes({}),stat ='identity',alpha={}) + scale_x_discrete(){}{}".format(mark, data_var, aes_str, alpha, coord_flip, facet)
 
     def eval(self, data):
         res = []
@@ -378,7 +404,7 @@ class StackedBarChart(object):
 
         aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
 
-        return "geom_bar(data={},aes({}),stat ='identity',alpha={}){}".format(data_var, aes_str, alpha, coord_flip)
+        return "geom_bar(data={},aes({}),stat ='identity',alpha={})+ scale_x_discrete(){}".format(data_var, aes_str, alpha, coord_flip)
 
 
     def eval(self, data):
@@ -611,20 +637,25 @@ class LineChart(object):
         
         # rename color to col
         channel_map = lambda c: "col" if c == "color" else c
-        aes_pairs = {channel_map(channel) : self.encodings[channel].field for channel in self.encodings}
+        aes_pairs = {channel_map(channel) : "`{}`".format(self.encodings[channel].field) for channel in self.encodings}
 
         if self.encodings["order"].field == self.encodings["x"].field:
             aes_pairs.pop("order")
         else:
             print('[error] geom_line does not support customized order')
 
+        facet = ""
+        if "column" in aes_pairs:
+            facet += " + facet_grid(cols = vars({}))".format(aes_pairs["column"])
+            aes_pairs.pop("column")
+
         #aes mappings, we need to add group
-        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
+        aes_str = ",".join(["{}={}".format(p, aes_pairs[p]) for p in aes_pairs])
         group_fields = [aes_pairs[f] for f in ["col", "size"] if f in aes_pairs]
-        group_str = "`{}`".format(",".join(group_fields)) if group_fields else "1"
+        group_str = "{}".format(",".join(group_fields)) if group_fields else "1"
         aes_str += ",group={}".format(group_str)            
 
-        return "geom_line(data={},aes({}),alpha={})".format(data_var, aes_str, alpha)
+        return "geom_line(data={},aes({}),alpha={}){}".format(data_var, aes_str, alpha, facet)
 
 
     def eval(self, data):

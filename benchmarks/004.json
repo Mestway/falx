@@ -604,8 +604,7 @@
     "encoding": {
       "y": {
         "field": "Age Group",
-        "type": "nominal",
-        "sort": "descending"
+        "type": "nominal"
       },
       "x": {
         "field": "value",
@@ -618,6 +617,10 @@
       "color": {
         "field": "year",
         "type": "ordinal"
+      },
+      "order": {
+        "field": "Age Group",
+        "type": "nominal"
       }
     }
   }
