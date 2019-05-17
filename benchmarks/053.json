@@ -63,64 +63,49 @@
   ],
   "output_data": [
     {
+      "classes": "english",
       "date": "9/1/11",
-      "class": "english",
-      "n": 1
+      "score": 1
     },
     {
+      "classes": "english",
       "date": "9/2/11",
-      "class": "english",
-      "n": 1
+      "score": 1
     },
     {
-      "date": "9/3/11",
-      "class": "english",
-      "n": 0
-    },
-    {
+      "classes": "english",
       "date": "9/5/11",
-      "class": "english",
-      "n": 2
+      "score": 2
     },
     {
+      "classes": "french",
       "date": "9/1/11",
-      "class": "french",
-      "n": 2
+      "score": 2
     },
     {
+      "classes": "french",
       "date": "9/2/11",
-      "class": "french",
-      "n": 1
+      "score": 1
     },
     {
-      "date": "9/3/11",
-      "class": "french",
-      "n": 0
-    },
-    {
+      "classes": "french",
       "date": "9/5/11",
-      "class": "french",
-      "n": 1
+      "score": 1
     },
     {
+      "classes": "spanish",
       "date": "9/1/11",
-      "class": "spanish",
-      "n": 1
+      "score": 1
     },
     {
-      "date": "9/2/11",
-      "class": "spanish",
-      "n": 0
-    },
-    {
+      "classes": "spanish",
       "date": "9/3/11",
-      "class": "spanish",
-      "n": 2
+      "score": 2
     },
     {
+      "classes": "spanish",
       "date": "9/5/11",
-      "class": "spanish",
-      "n": 1
+      "score": 1
     }
   ],
   "vl_spec": {
@@ -134,11 +119,11 @@
         "type": "nominal"
       },
       "color": {
-        "field": "class",
+        "field": "classes",
         "type": "nominal"
       },
       "x": {
-        "field": "n",
+        "field": "score",
         "type": "quantitative"
       }
     }

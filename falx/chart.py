@@ -63,6 +63,27 @@ class VisDesign(object):
 
         return chart_obj
 
+    def to_ggplot2(self):
+        script = [
+            "library(jsonlite)",
+            "library(ggplot2)"
+        ]
+        data_vars = ["data_{}".format(i) for i in range(len(self.data))]
+        if isinstance(self.chart, LayeredChart):
+            for i in range(len(self.data)):
+                script.append("{} <- fromJSON('{}')".format(data_vars[i], json.dumps(self.data[i])))
+                script.append("{}$row_id <- as.numeric(row.names({}))".format(data_vars[i], data_vars[i]))
+
+            script.append("p <- ggplot() + {}".format(self.chart.to_ggplot2(data_vars)))
+        else:
+            script.append("data <- fromJSON('{}')".format(json.dumps(self.data)))
+            script.append("p <- ggplot() + {}".format(self.chart.to_ggplot2("data")))
+
+        script.append("p")
+
+        return script
+        
+
     def to_vl_json(self, indent=4):
         return json.dumps(self.to_vl_obj(), indent=indent)
 
@@ -173,6 +194,9 @@ class LayeredChart(object):
         }
         return vl_obj
 
+    def to_ggplot2(self, data_vars):
+        return " + ".join([layer.to_ggplot2(data_var=data_vars[i],alpha=0.5) for i, layer in enumerate(self.layers)])
+
     def eval(self, data_list):
         """obtain elements in each layer and put them together. """
         result = []
@@ -251,6 +275,21 @@ class BarChart(object):
             "encoding": encodings
         }
 
+    def to_ggplot2(self, data_var,alpha=1):
+
+        channel_map = lambda c: "fill" if c == "color" else c
+        aes_pairs = {channel_map(channel):self.encodings[channel].field for channel in self.encodings}
+
+        coord_flip = ""
+        if self.orientation == "horizontal":
+            coord_flip = " + coord_flip()"
+            temp = aes_pairs["y"]
+            aes_pairs["y"] = aes_pairs["x"]
+            aes_pairs["x"] = temp
+        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
+
+        return "geom_bar(data={},aes({}),stat ='identity',alpha={}){}".format(data_var, aes_str, alpha, coord_flip)
+
     def eval(self, data):
         res = []
         for r in data:
@@ -317,6 +356,22 @@ class StackedBarChart(object):
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
         return vl_obj
+
+    def to_ggplot2(self, data_var, alpha=1):
+        channel_map = lambda c: "fill" if c == "color" else c
+        aes_pairs = {channel_map(channel):self.encodings[channel].field for channel in self.encodings}
+
+        coord_flip = ""
+        if self.orientation == "horizontal":
+            coord_flip = " + coord_flip()"
+            temp = aes_pairs["y"]
+            aes_pairs["y"] = aes_pairs["x"]
+            aes_pairs["x"] = temp
+
+        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
+
+        return "geom_bar(data={},aes({}),stat ='identity',alpha={}){}".format(data_var, aes_str, alpha, coord_flip)
+
 
     def eval(self, data):
         """first group data based on stack channel and then stack them """  
@@ -543,6 +598,26 @@ class LineChart(object):
             "mark": "line",
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
+
+    def to_ggplot2(self, data_var, alpha=1):
+        
+        # rename color to col
+        channel_map = lambda c: "col" if c == "color" else c
+        aes_pairs = {channel_map(channel) : self.encodings[channel].field for channel in self.encodings}
+
+        if self.encodings["order"].field == self.encodings["x"].field:
+            aes_pairs.pop("order")
+        else:
+            print('[error] geom_line does not support customized order')
+
+        #aes mappings, we need to add group
+        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
+        group_fields = [aes_pairs[f] for f in ["col", "size"] if f in aes_pairs]
+        group_str = "`{}`".format(",".join(group_fields)) if group_fields else "1"
+        aes_str += ",group={}".format(group_str)            
+
+        return "geom_line(data={},aes({}),alpha={})".format(data_var, aes_str, alpha)
+
 
     def eval(self, data):
         """ first group data based on color and width, and then connect them"""

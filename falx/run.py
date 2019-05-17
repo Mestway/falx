@@ -19,7 +19,7 @@ DATA_DIR = os.path.join(PROJ_DIR, "benchmarks")
 # arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
-parser.add_argument("--data_id", dest="data_id", default=None, 
+parser.add_argument("--data_id", dest="data_id", default="001", 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 
 def test_benchmarks(data_dir, data_id):
@@ -46,16 +46,16 @@ def test_benchmarks(data_dir, data_id):
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
 
-        continue
-
         result = Falx.synthesize(inputs=[input_data], vtrace=trace)
 
         print("## synthesize result for task {}".format(fname))
         for p, vis in result:
             print("table_prog:")
             print(p)
-            print("vis_spec:")
-            print(vis.to_vl_json(indent=2))
+            #print("vis_spec:")
+            #print(vis.to_vl_json(indent=2))
+            #ggplot_script = vis.to_ggplot2()
+            #print("\n".join(ggplot_script))
 
 if __name__ == '__main__':
     flags = parser.parse_args()
