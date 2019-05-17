@@ -275,7 +275,15 @@ class BarChart(object):
             "encoding": encodings
         }
 
-    def to_ggplot2(self, data_var,alpha=1):
+    def to_ggplot2(self, data_var, alpha=1):
+
+        channel_map = {
+            "color": "fill",
+        }
+        if self.orientation == "horizontal":
+            channel_map["x"] = "y"
+            channel_map["y"] = "x"
+        
 
         channel_map = lambda c: "fill" if c == "color" else c
         aes_pairs = {channel_map(channel):self.encodings[channel].field for channel in self.encodings}
