@@ -565,6 +565,26 @@ class AreaChart(object):
             "encoding": encodings
         }
 
+    def to_ggplot2(self, data_var, alpha=1):
+        
+        # rename color to col
+        channel_map = lambda c: "col" if c == "color" else c
+        aes_pairs = {channel_map(channel) : "`{}`".format(self.encodings[channel].field) for channel in self.encodings}
+
+        facet = ""
+        if "column" in aes_pairs:
+            facet += " + facet_grid(cols = vars({}))".format(aes_pairs["column"])
+            aes_pairs.pop("column")
+
+        #aes mappings, we need to add group
+        aes_str = ",".join(["{}={}".format(p, aes_pairs[p]) for p in aes_pairs])
+        group_fields = [aes_pairs[f] for f in ["col", "size"] if f in aes_pairs]
+        group_str = "{}".format(",".join(group_fields)) if group_fields else "1"
+        aes_str += ",group={}".format(group_str)            
+
+        return "geom_area(data={},aes({}),alpha={}){}".format(data_var, aes_str, alpha, facet)
+
+
     def eval(self, data):
         """ first group data based on color and column and then connect them"""
         get_group_key = lambda r: (r[self.encodings["color"].field] if "color" in self.encodings else None,
@@ -732,6 +752,26 @@ class ScatterPlot(object):
             "mark": self.mark_ty,
             "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
         }
+
+    def to_ggplot2(self, data_var, alpha=1):
+        
+        # rename color to col
+        channel_map = lambda c: "col" if c == "color" else c
+        aes_pairs = {channel_map(channel) : "`{}`".format(self.encodings[channel].field) for channel in self.encodings}
+
+        facet = ""
+        if "column" in aes_pairs:
+            facet += " + facet_grid(cols = vars({}))".format(aes_pairs["column"])
+            aes_pairs.pop("column")
+
+        #aes mappings, we need to add group
+        aes_str = ",".join(["{}={}".format(p, aes_pairs[p]) for p in aes_pairs])
+        group_fields = [aes_pairs[f] for f in ["col", "size"] if f in aes_pairs]
+        group_str = "{}".format(",".join(group_fields)) if group_fields else "1"
+        aes_str += ",group={}".format(group_str)            
+
+        return "geom_point(data={},aes({}),alpha={}){}".format(data_var, aes_str, alpha, facet)
+
 
     def eval(self, data):
         res = []
