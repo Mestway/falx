@@ -52,8 +52,8 @@ def test_benchmarks(data_dir, data_id):
         for p, vis in result:
             print("table_prog:")
             print(p)
-            #print("vis_spec:")
-            #print(vis.to_vl_json(indent=2))
+            print("vis_spec:")
+            print(vis.to_vl_json(indent=2))
             #ggplot_script = vis.to_ggplot2()
             #print("\n".join(ggplot_script))
 

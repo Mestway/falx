@@ -3,22 +3,14 @@ import copy
 from pprint import pprint
 
 import itertools
-from namedlist import namedlist
+
 import numpy as np
 
 from symbolic import SymTable, SymVal
 import table_utils
 
-# mutatable vtrace
-BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
-BarH = namedlist("BarH", ["x1", "x2", "y", "color", "column"], default=None)
-Point = namedlist("Point", ["shape", "x", "y", "size", "color", "column"], default=None)
-Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "column"], default=None)
-Area = namedlist("Area", ["x1", "yt1", "yb1", "x2", "yt2", "yb2", "color", "column"], default=None)
-Box = namedlist("Box", ["x", "min", "max", "Q1", "median", "Q3", "color", "column"], default=None)
-
-def get_vt_type(v):
-    return type(v).__name__
+import visual_trace
+from visual_trace import BarV, BarH, Point, Line, Area, Box
 
 def remove_unused_fields(data):
     # remove fields that contain none values
@@ -84,7 +76,6 @@ class VisDesign(object):
         script.append("p")
 
         return script
-        
 
     def to_vl_json(self, indent=4):
         return json.dumps(self.to_vl_obj(), indent=indent)
@@ -209,12 +200,7 @@ class LayeredChart(object):
     @staticmethod
     def inv_eval(vtrace):
         """returns a list of (abs_table, layer) pairs. """
-        trace_layer = {}
-        for v in vtrace:
-            vty = get_vt_type(v)
-            if vty not in trace_layer:
-                trace_layer[vty] = []
-            trace_layer[vty].append(v)
+        trace_layer = visual_trace.partition_trace(vtrace)
         
         layers = {}
         for vty in trace_layer:
