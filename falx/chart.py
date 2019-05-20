@@ -299,7 +299,7 @@ class BarChart(object):
                 channel_map["y2"] = "ymax"
             aes_pairs = {channel_map[channel]:"`{}`".format(enc.field) for channel, enc in self.encodings.items()}
             aes_pairs["xmin"] = "`row_id`-0.45"
-            aes_pairs["xmax"] = "`row_id`+0.45"            
+            aes_pairs["xmax"] = "`row_id`+0.45"
 
         facet = ""
         if "column" in aes_pairs:
