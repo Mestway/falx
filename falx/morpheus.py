@@ -3,8 +3,8 @@
 import argparse
 import tyrell.spec as S
 from tyrell.interpreter import PostOrderInterpreter, GeneralError
-from tyrell.enumerator import SmtEnumerator
-from tyrell.decider import Example, ExampleConstraintPruningDecider
+from tyrell.enumerator import BidirectEnumerator
+from tyrell.decider import Example, BidirectionalDecider
 from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 from rpy2.rinterface import RRuntimeWarning
@@ -409,8 +409,8 @@ def synthesize(inputs, output):
     logger.info('Building synthesizer ...')
     synthesizer = Synthesizer(
         #loc: # of function productions
-        enumerator=SmtEnumerator(spec, depth=depth_val, loc=loc_val),
-        decider=ExampleConstraintPruningDecider(
+        enumerator=BidirectEnumerator(spec, depth=depth_val, loc=loc_val),
+        decider=BidirectionalDecider(
             spec=spec,
             interpreter=MorpheusInterpreter(),
             examples=[
