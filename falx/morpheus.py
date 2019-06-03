@@ -11,6 +11,7 @@ from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects
 import warnings
 import json
+import numpy as np
 
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)
@@ -26,6 +27,9 @@ robjects.r('''
     library(jsonlite)
    ''')
 
+def default(o):
+    if isinstance(o, np.int64): return int(o)  
+    raise TypeError
 
 def evaluate(prog, inputs):
     """ evaluate a table transformation program on input tables
@@ -39,7 +43,7 @@ def evaluate(prog, inputs):
     for i in range(len(inputs)):
         name = "input_{}".format(i)
         tnames.append(name)
-        init_tbl_json_str(name, json.dumps(inputs[i]))
+        init_tbl_json_str(name, json.dumps(inputs[i], default=default))
 
     # call morpheusInterpreter to obtain result variable name in r
     res_id = MorpheusInterpreter().eval(prog[-1].ast, tnames)
@@ -378,7 +382,7 @@ def synthesize(inputs, output):
     #print("input table:\n", inputs[0])
     loc_val = 1
     output_data = json.dumps(output.instantiate())
-    input_data = json.dumps(inputs[0])
+    input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
     print(robjects.r('input0'))
