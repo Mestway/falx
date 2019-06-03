@@ -42,7 +42,7 @@ def evaluate(prog, inputs):
         init_tbl_json_str(name, json.dumps(inputs[i]))
 
     # call morpheusInterpreter to obtain result variable name in r
-    res_id = MorpheusInterpreter().eval(prog, tnames)
+    res_id = MorpheusInterpreter().eval(prog[-1].ast, tnames)
     # get the result out from r environment
     prog_output = robjects.r('toJSON({})'.format(res_id))[0]
     return json.loads(prog_output)
@@ -70,18 +70,6 @@ def get_type(df, index):
     _rscript = 'sapply({df_name}, class)[{pos}]'.format(df_name=df, pos=index)
     ret_val = robjects.r(_rscript)
     return ret_val[0]
-
-# def eq_r(actual, expect):
-#     _rscript = '''
-#     tmp1 <- sapply({lhs}, as.character)
-#     tmp2 <- sapply({rhs}, as.character)
-#     compare(tmp1, tmp2, ignoreOrder = TRUE)
-#     '''.format(lhs=actual, rhs=expect)
-#     # logger.info(robjects.r(actual))
-#     # logger.info(robjects.r(expect))
-#     ret_val = robjects.r(_rscript)
-#     return True == ret_val[0][0]
-
 
 def subset_eq(actual, expect):
     # logger.info(robjects.r(actual))
@@ -124,6 +112,8 @@ def get_content(df):
             content.add(e_val)
 
     return content
+
+
 
     
 class MorpheusInterpreter(PostOrderInterpreter):
@@ -349,21 +339,14 @@ class MorpheusInterpreter(PostOrderInterpreter):
         return df.ncol
 
     def apply_head(self, val):
-        input_df = robjects.r('input0')
         curr_df = robjects.r(val)
-
-        head_input = get_head(input_df)
-        content_input = get_content(input_df)
-        head_curr = get_head(curr_df)
-        return len(head_curr - head_input - content_input)
+        curr_head = get_head(curr_df)
+        return curr_head
 
     def apply_content(self, val):
-        input_df = robjects.r('input0')
         curr_df = robjects.r(val)
-
-        content_input = get_content(input_df)
-        content_curr = get_content(curr_df)
-        return len(content_curr - content_input)
+        curr_content = get_content(curr_df)
+        return curr_content
 
 def init_tbl_json_str(df_name, json_loc):
     cmd = '''
@@ -398,8 +381,8 @@ def synthesize(inputs, output):
     input_data = json.dumps(inputs[0])
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
-    #print(robjects.r('input0'))
-    #print(robjects.r('output'))
+    print(robjects.r('input0'))
+    print(robjects.r('output'))
 
     depth_val = loc_val + 1
     logger.info('Parsing spec ...')

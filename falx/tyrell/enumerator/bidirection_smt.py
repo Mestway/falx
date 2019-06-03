@@ -17,9 +17,11 @@ class Stmt:
         self.lhs = lhs
         #FIXME: assuming all statements return tables.
         self.type = 'Table'
+        self.ast = None
     
     def __repr__(self):
-        return str(self.lhs) + ' = ' + str(self.opcode) + '(' + str(self.args) + ')'
+        # return str(self.lhs) + ' = ' + str(self.opcode) + '(' + str(self.args) + ')'
+        return str(self.ast)
 
 
 class BidirectEnumerator(Enumerator):
@@ -147,27 +149,53 @@ class BidirectEnumerator(Enumerator):
 
     def buildProgram(self):
         self.program2tree.clear()
-        return self.stmtToAST(self.lines[-1])
+        prog = []
+        for idx, line in enumerate(self.lines):
+            opcode = line.opcode
+            opcode_val = self.model[opcode].as_long()
+            lhs = idx
+            args = []
+            children = []
 
-    def stmtToAST(self, stmt):
-        opcode = stmt.opcode
-        opcode_val = self.model[opcode].as_long()
-        args = stmt.args
-        children = []
-        for arg in args:
-            arg_val = self.model[arg].as_long()
-            if arg_val == -1:
-                break
-            if arg_val > 999:
-                children.append(self.stmtToAST(self.lines[arg_val - 1000]))
-            else:
-                child_node = self.builder.make_node(arg_val)
-                self.program2tree[child_node] = arg
-                children.append(child_node)
+            for arg in line.args:
+                arg_val = self.model[arg].as_long()
+                if arg_val > 999:
+                    args.append(arg_val)
+                    children.append(self.lines[arg_val - 1000].ast)
+                elif arg_val > 0:
+                    args.append(arg_val)
+                    child_node = self.builder.make_node(arg_val)
+                    children.append(child_node)
+                    self.program2tree[child_node] = arg
+                else: 
+                    break
+
+            st = Stmt(opcode_val, args, lhs)
+            st.ast = self.builder.make_node(opcode_val, children)
+            self.program2tree[st.ast] = opcode
+            prog.append(st)
+
+        return prog
+
+    # def stmtToAST(self, stmt):
+    #     opcode = stmt.opcode
+    #     opcode_val = self.model[opcode].as_long()
+    #     args = stmt.args
+    #     children = []
+    #     for arg in args:
+    #         arg_val = self.model[arg].as_long()
+    #         if arg_val == -1:
+    #             break
+    #         if arg_val > 999:
+    #             children.append(self.stmtToAST(self.lines[arg_val - 1000]))
+    #         else:
+    #             child_node = self.builder.make_node(arg_val)
+    #             self.program2tree[child_node] = arg
+    #             children.append(child_node)
                 
-        cur = self.builder.make_node(opcode_val, children)
-        self.program2tree[cur] = opcode
-        return cur
+    #     cur = self.builder.make_node(opcode_val, children)
+    #     self.program2tree[cur] = opcode
+    #     return cur
 
     def next(self):
         while True:
