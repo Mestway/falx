@@ -76,30 +76,31 @@ def get_type(df, index):
     return ret_val[0]
 
 def subset_eq(actual, expect):
-    # logger.info(robjects.r(actual))
-    # logger.info(robjects.r(expect))
+    logger.info(robjects.r(actual))
+    logger.info(robjects.r(expect))
     # cmd = 'toJSON({df_name})'.format(df_name=actual)
     # prog_output = robjects.r(cmd)[0]
-    all_ok = all([check_row(expect_row, robjects.r(actual)) for expect_row in robjects.r(expect).iter_row()])
+    all_ok = all([check_row(expect_col, robjects.r(actual)) for expect_col in robjects.r(expect)])
     if all_ok:
         cmd = 'toJSON({df_name})'.format(df_name=actual)
         # global prog_output
         # prog_output = robjects.r(cmd)[0]
     return all_ok
 
-def check_row(row, table):
-    for actual_row in table.iter_row():
-        list = []
-        for e in actual_row:
-            list.append(e)
-        all_ok = all(contain(elem, list) for elem in row)
-        if all_ok == True:
-            return True
+def check_row(col, table):
+    all_ok = any(check_col(col, elem) for elem in table)
+    return all_ok
 
-    return False
-
-def contain(elem, list):
-    return any((elem[0] == e[0]) for e in list)
+def check_col(col1, col2):
+    if type(col1) == type(col2):
+        if isinstance(col1[0], float):
+            col1_r = [round(x, 3) for x in col1]
+            col2_r = [round(x, 3) for x in col2]
+            return set(col1_r) <= set(col2_r)
+        else:
+            return set(col1) <= set(col2)
+    else:
+        return False
 
 def get_head(df):
     head = set()
