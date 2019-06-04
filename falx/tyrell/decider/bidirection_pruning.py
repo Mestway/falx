@@ -67,7 +67,7 @@ class AbstractPrune(GenericVisitor):
             flag = (int(str(key)) <= len(head_in)) and (content_out <= content_in)
         elif prod_name == 'inner_join':
             flag = content_out.issubset(content_in)
-        elif prod_name == 'gather':
+        elif prod_name == 'gather' or prod_name == 'gatherNeg':
             f_list = list(map(int, ast.children[1].data))
             self._blames.add(ast.children[1])
             if any([len(input.colnames) < abs(elem) for elem in f_list]):

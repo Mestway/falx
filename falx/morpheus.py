@@ -248,6 +248,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
             logger.error('Error in interpreting gather...')
             raise GeneralError()
 
+    def eval_gatherNeg(self, node, args):
+        return self.eval_gather(node, args)
+
     def eval_group_by(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
         self.assertArg(node, args,
