@@ -20,8 +20,10 @@ class Stmt:
         self.ast = None
     
     def __repr__(self):
-        # return str(self.lhs) + ' = ' + str(self.opcode) + '(' + str(self.args) + ')'
+        # if self.ast:
         return str(self.ast)
+        # else:
+            # return str(self.lhs) + ' = ' + str(self.opcode) + '(' + str(self.args) + ')'
 
 
 class BidirectEnumerator(Enumerator):
@@ -161,7 +163,9 @@ class BidirectEnumerator(Enumerator):
                 arg_val = self.model[arg].as_long()
                 if arg_val > 999:
                     args.append(arg_val)
-                    children.append(self.lines[arg_val - 1000].ast)
+                    c_node = self.lines[arg_val - 1000].ast
+                    assert not c_node == None, arg_val
+                    children.append(c_node)
                 elif arg_val > 0:
                     args.append(arg_val)
                     child_node = self.builder.make_node(arg_val)
@@ -172,6 +176,7 @@ class BidirectEnumerator(Enumerator):
 
             st = Stmt(opcode_val, args, lhs)
             st.ast = self.builder.make_node(opcode_val, children)
+            self.lines[idx].ast = st.ast
             self.program2tree[st.ast] = opcode
             prog.append(st)
 

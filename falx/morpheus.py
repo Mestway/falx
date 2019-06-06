@@ -76,8 +76,8 @@ def get_type(df, index):
     return ret_val[0]
 
 def subset_eq(actual, expect):
-    logger.info(robjects.r(actual))
-    logger.info(robjects.r(expect))
+    # logger.info(robjects.r(actual))
+    # logger.info(robjects.r(expect))
     # cmd = 'toJSON({df_name})'.format(df_name=actual)
     # prog_output = robjects.r(cmd)[0]
     all_ok = all([check_row(expect_col, robjects.r(actual)) for expect_col in robjects.r(expect)])
@@ -384,7 +384,7 @@ def synthesize(inputs, output):
     
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
-    loc_val = 1
+    loc_val = 2
     output_data = json.dumps(output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
@@ -398,25 +398,26 @@ def synthesize(inputs, output):
     logger.info('Parsing succeeded')
 
     logger.info('Building synthesizer ...')
-    synthesizer = Synthesizer(
-        #loc: # of function productions
-        enumerator=BidirectEnumerator(spec, depth=depth_val, loc=loc_val),
-        decider=BidirectionalDecider(
-            spec=spec,
-            interpreter=MorpheusInterpreter(),
-            examples=[
-                Example(input=['input0'], output='output'),
-            ],
-            equal_output=subset_eq
+    for loc in range(1, loc_val + 1):
+        synthesizer = Synthesizer(
+            #loc: # of function productions
+            enumerator=BidirectEnumerator(spec, depth=loc+1, loc=loc),
+            decider=BidirectionalDecider(
+                spec=spec,
+                interpreter=MorpheusInterpreter(),
+                examples=[
+                    Example(input=['input0'], output='output'),
+                ],
+                equal_output=subset_eq
+            )
         )
-    )
-    logger.info('Synthesizing programs ...')
+        logger.info('Synthesizing programs ...')
 
-    prog = synthesizer.synthesize()
-    if prog is not None:
-        logger.info('Solution found: {}'.format(prog))
-        return [prog]
-    else:
-        logger.info('Solution not found!')
+        prog = synthesizer.synthesize()
+        if prog is not None:
+            logger.info('Solution found: {}'.format(prog))
+            return [prog]
+        else:
+            logger.info('Solution not found!')
 
     return []

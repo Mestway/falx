@@ -15,87 +15,206 @@ from ..logger import get_logger
 from ..spec.expr import *
 from ..visitor import GenericVisitor
 import rpy2.robjects as robjects
+from functools import reduce
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
+
 
 class AbstractPrune(GenericVisitor):
     _interp: Interpreter
     _example: Example
     _blames: Set
+    _input: List 
+    _output: List
 
     def __init__(self, interp: Interpreter, example: Example):
         self._interp = interp
         self._example = example
         self._blames = set()
+        self._dummy = 'dummy'
+        ## FIXME: multiple inputs!
+        input = robjects.r(example.input[0])
+        output = robjects.r(example.output)
+        self._input = []
+        self._output = []
+        [self._input.append(col) for col in input]
+        [self._output.append(col) for col in output]
+    
     
     def is_unsat(self, prog: List[Any]) -> bool:
-        ast = prog[0].ast
-        prod_name = ast.name
+        ### First, do backward interpretation
+        err_back, tbl_in = self.backward_interp(prog)
+            
+        if err_back:
+            # print('prune by backward...')
+            return True
+
+        ### Second, do forward interpretation
+        err_forward, actual = self.forward_interp(prog)
+
+        if err_forward:
+            # print('prune by forward...')
+            return True
+        
+        if actual == None:
+            return False
+        
+        ### Third, check consistency
+        return self.is_consistent(actual, self._output)
+
+    def backward_interp(self, prog: List[Any]):
+
+        return self.backward_transform(prog[-1], self._output)
+
+    def forward_interp(self, prog: List[Any]):
+        out = None
+        tbl = self._input;
+
+        for stmt in prog:
+            error, out = self.forward_transform(stmt, tbl)
+            if error: 
+                return error, out
+            if out == None:
+                break
+            tbl = out
+
+        return False, out
+
+    def is_consistent(self, actual: List[Any], expect: List[Any]):
+        return all([self.is_subset(elem, actual) for elem in expect])
+
+    def is_subset(self, elem, actual):
+        return any([self.is_ok(elem, e) for e in actual])
+
+    def is_ok(self, elem, tgt):
+        if tgt == self._dummy:
+            return True
+        else: 
+            return (set(elem) <= set(tgt))
+
+    def has_index(self, sel_list, idx):
+        if sel_list[0] > 0:
+            return idx in sel_list
+        else: 
+            abs_list = list(map(abs, sel_list))
+            return idx not in abs_list
+
+
+    ## 1. Type-checking 2. Forward abstract interpretation.
+    def forward_transform(self, stmt, tbl):
+        assert not tbl == None, stmt
+        ast = stmt.ast
+        opcode = ast.name
         args = ast.args
-        fst_arg = args[0]
-        flag = False
-        input = robjects.r(self._example.input[0])
-        output = robjects.r(self._example.output)
-
-        head_out = set()
-        for cname in output.colnames:
-            head_out.add(cname)
-
-        content_out = set()
-        for o in output:
-            content_out.add(o[0])
-
-        head_in = set()
-        for cname in input.colnames:
-            head_in.add(cname)
-
-        content_in = set()
-        for o in input:
-            content_in.add(o[0])
-
-        # print('out=====', content_out, head_out, ' in======', content_in, head_in)
-        self._blames = set()
         self._blames.add(ast.children[0])
         self._blames.add(ast)
+        error = False
+        tbl_size = len(tbl)
 
-        if prod_name == 'group_by':
-            flag = (content_out == content_in)
-        elif prod_name == 'select':
-            flag =  (content_out < content_in)
-        elif prod_name == 'spread':
-            key = args[1]
-            flag = (int(str(key)) <= len(head_in)) and (content_out <= content_in)
-        elif prod_name == 'inner_join':
-            flag = content_out.issubset(content_in)
-        elif prod_name == 'gather' or prod_name == 'gatherNeg':
-            f_list = list(map(int, ast.children[1].data))
+        if opcode == 'group_by':
+            return error, tbl
+        elif opcode == 'filter':
+            return error, tbl
+        elif opcode == 'select':
             self._blames.add(ast.children[1])
-            if any([len(input.colnames) < abs(elem) for elem in f_list]):
-                return True
+            max_idx = max(list(map(abs, map(int, args[1].data))))
+            if max_idx > tbl_size:
+                return True, None
+            else:
+                sel_list = list(map(int, args[1].data))
+                tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
+                return False, tbl_out 
+        elif opcode == 'unite':
+            col1 = int(args[1].data)
+            col2 = int(args[2].data)
+            self._blames.add(ast.children[1])
+            self._blames.add(ast.children[2])
+            if col1 > tbl_size or col2 > tbl_size:
+                return True, None
+            else: 
+                return False, None
+            
+        elif opcode == 'separate':
+            return error, tbl
+        elif opcode == 'mutate':
+            return error, tbl
+        elif opcode == 'summarise':
+            return error, tbl
+        elif opcode == 'gather' or opcode == 'gatherNeg':
+            self._blames.add(ast.children[1])
+            max_idx = max(list(map(abs, map(int, args[1].data))))
+            if max_idx > tbl_size:
+                return True, None
+            else:
+                sel_list = list(map(int, args[1].data))
+                tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
+                return False, tbl
 
-            sel_list = list(o[1] for o in list(filter(lambda x: ((x[0] + 1) in f_list) if f_list[0] > 0  
-                              else  (not (-(x[0] + 1) in f_list)), enumerate(input.colnames))))
-            flag = any([set(col) == set(sel_list) for col in output])
-
-        elif prod_name == 'mutate':
-            flag = content_out.issubset(content_in)
-            self._blames.add(ast.children[1])
-        elif prod_name == 'unite':
-            flag = content_out.issubset(content_in)
-            self._blames.add(ast.children[1])
-        elif prod_name == 'separate':
-            flag = content_out.issubset(content_in)
-            self._blames.add(ast.children[1])
-        elif prod_name == 'summarise':
-            flag = content_out.issubset(content_in)
-            self._blames.add(ast.children[1])
-        elif prod_name == 'filter':
-            flag = content_out < content_in
-            self._blames.add(ast.children[1])
+        elif opcode == 'spread':
+            return error, tbl
+        elif opcode == 'inner_join':
+            return error, tbl
         else:
             assert False
-        
-        return not flag
+
+
+        return error, None
+
+    ## 1. Mostly for type-checking. 2. Backward abstract interpretation
+    def backward_transform(self, stmt, tbl_out):
+        ast = stmt.ast
+        opcode = ast.name
+        args = ast.args
+        self._blames.add(ast.children[0])
+        self._blames.add(ast)
+        error = False
+        tbl_in = None
+        tbl_size = len(tbl_out)
+
+        if opcode == 'group_by':
+            self._blames.add(ast.children[1])
+            max_idx = max(list(map(abs, map(int, args[1].data))))
+            if max_idx > tbl_size:
+                return True, None
+            else:
+                self._blames.clear()
+                return False, tbl_out
+
+        elif opcode == 'filter':
+            self._blames.add(ast.children[1])
+            if int(args[2].data) > tbl_size:
+                return True, None
+            else: 
+                self._blames.clear()
+                return False, tbl_out
+
+        elif opcode == 'select':
+            self._blames.clear()
+            return False, tbl_out
+
+        elif opcode == 'unite':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'separate':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'mutate':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'summarise':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'gather' or opcode == 'gatherNeg':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'spread':
+            self._blames.clear()
+            return False, tbl_out
+        elif opcode == 'inner_join':
+            self._blames.clear()
+            return False, tbl_out
+        else:
+            assert False
 
     def get_blame_nodes(self):
         return self._blames
