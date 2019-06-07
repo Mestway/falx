@@ -56,6 +56,7 @@ class Falx(object):
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(inputs, sym_data)
+
                 for p in candidate_progs:
                     output = morpheus.evaluate(p, inputs)
                     

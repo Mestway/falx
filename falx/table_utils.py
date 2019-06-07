@@ -31,7 +31,6 @@ def table_subset_eq(table1, table2):
 			return False
 	return True
 
-
 def clean_column_dtype(column_values):
 	dtype = pd.api.types.infer_dtype(column_values, skipna=True)
 

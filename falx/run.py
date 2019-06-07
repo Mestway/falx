@@ -5,8 +5,6 @@ import os
 from pprint import pprint
 
 from chart import VisDesign
-import design_validator
-import design_enumerator
 from interface import Falx
 import table_utils
 
