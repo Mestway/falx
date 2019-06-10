@@ -31,8 +31,8 @@ class VisDesign(object):
     def __init__(self, data, chart):
         # data can either be a list of tables (for layered chart) or a single table
         # each table is a list of named tuples:
-        #   e.g. {["a": 1, "b": 2, "c": 100],
-        #          "a": 2, "b"; 5, "c": 15]}
+        #   e.g. [{"a": 1, "b": 2, "c": 100},
+        #         {"a": 2, "b"; 5, "c": 15}]
         # is a table with 3 columns "a", "b", "c" and two rows
         self.data = data
         self.chart = chart
@@ -569,7 +569,6 @@ class AreaChart(object):
         aes_str += ",group={}".format(group_str)            
 
         return "geom_area(data={},aes({}),alpha={}){}".format(data_var, aes_str, alpha, facet)
-
 
     def eval(self, data):
         """ first group data based on color and column and then connect them"""

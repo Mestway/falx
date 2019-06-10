@@ -79,7 +79,6 @@ def clean_column_dtype(column_values):
 			break
 	return dtype, values
 
-
 def load_and_clean_dataframe(df):
 	"""infer type of each column and then update column value
 	Args:
@@ -91,7 +90,6 @@ def load_and_clean_dataframe(df):
 		dtype, new_col_values = clean_column_dtype(df[col])
 		df[col] = new_col_values
 	return df
-
 
 def load_and_clean_table(input_data, return_as_df=False):
 	"""load and clean table where the input format is a table record """

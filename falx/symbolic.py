@@ -17,6 +17,7 @@ class SymVal(object):
 		cls.id_counter += 1
 		return current_id
 
+
 class SymTable(object):
 
 	def __init__(self, values, constraints=None):
