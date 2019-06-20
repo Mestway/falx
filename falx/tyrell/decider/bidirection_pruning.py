@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import cast, Any, Callable, Dict, List, Tuple, Set, FrozenSet
 import z3
+import itertools
 
 from .assert_violation_handler import AssertionViolationHandler
 from .blame import Blame
@@ -48,12 +49,11 @@ class AbstractPrune(GenericVisitor):
         if err_back:
             # print('prune by backward...')
             return True
-
+        
         ### Second, do forward interpretation
         err_forward, actual = self.forward_interp(prog)
 
         if err_forward:
-            # print('prune by forward...')
             return True
         
         if actual == None:
@@ -63,8 +63,22 @@ class AbstractPrune(GenericVisitor):
         return self.is_consistent(actual, self._output)
 
     def backward_interp(self, prog: List[Any]):
+        per_list = list(itertools.permutations(self._output))
+        for out_list in per_list:
+            tbl_in = None
+            tbl = list(out_list)
+            for stmt in reversed(prog):
+                error, tbl_in = self.backward_transform(stmt, tbl)
+                if error:
+                    return error, tbl_in
+                if tbl_in == None:
+                    break
+                tbl = tbl_in
+            if self.is_consistent(self._input, tbl_in):
+                return False, None
 
-        return self.backward_transform(prog[-1], self._output)
+        return True, None
+        # return self.backward_transform(prog[-1], self._output)
 
     def forward_interp(self, prog: List[Any]):
         out = None
@@ -114,6 +128,7 @@ class AbstractPrune(GenericVisitor):
         if opcode == 'group_by':
             return error, tbl
         elif opcode == 'filter':
+            # assert False
             return error, tbl
         elif opcode == 'select':
             self._blames.add(ast.children[1])
@@ -135,10 +150,13 @@ class AbstractPrune(GenericVisitor):
                 return False, None
             
         elif opcode == 'separate':
+            # assert False
             return error, tbl
         elif opcode == 'mutate':
+            # assert False
             return error, tbl
         elif opcode == 'summarise':
+            # assert False
             return error, tbl
         elif opcode == 'gather' or opcode == 'gatherNeg':
             self._blames.add(ast.children[1])
@@ -148,11 +166,13 @@ class AbstractPrune(GenericVisitor):
             else:
                 sel_list = list(map(int, args[1].data))
                 tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
-                return False, tbl
+                return False, tbl_out
 
         elif opcode == 'spread':
+            # assert False
             return error, tbl
         elif opcode == 'inner_join':
+            # assert False
             return error, tbl
         else:
             assert False
@@ -171,47 +191,57 @@ class AbstractPrune(GenericVisitor):
         tbl_in = None
         tbl_size = len(tbl_out)
 
+        ##Done.
         if opcode == 'group_by':
-            self._blames.add(ast.children[1])
-            max_idx = max(list(map(abs, map(int, args[1].data))))
-            if max_idx > tbl_size:
-                return True, None
-            else:
-                self._blames.clear()
-                return False, tbl_out
-
+            return False, tbl_out
+        ##Done.
         elif opcode == 'filter':
-            self._blames.add(ast.children[1])
-            if int(args[2].data) > tbl_size:
+            return False, tbl_out
+
+        ##Done.
+        elif opcode == 'select':
+            return False, tbl_out
+        ##Done.
+        elif opcode == 'unite':
+            col1 = int(args[1].data)
+            col2 = int(args[2].data)
+            self._blames.add(ast.children[2])
+            if col2 > tbl_size:
                 return True, None
             else: 
-                self._blames.clear()
-                return False, tbl_out
-
-        elif opcode == 'select':
-            self._blames.clear()
-            return False, tbl_out
-
-        elif opcode == 'unite':
-            self._blames.clear()
-            return False, tbl_out
+                new_idx = col2 - 1
+                if col1 < col2:
+                    new_idx = new_idx - 1
+                assert new_idx >= 0
+                tbl_ret = tbl_out.copy()
+                tbl_ret.pop(new_idx)
+                return False, tbl_ret
+        #Done.
         elif opcode == 'separate':
-            self._blames.clear()
-            return False, tbl_out
+            col1 = int(args[1].data)
+            self._blames.add(ast.children[1])
+            if col1 > tbl_size:
+                return True, None
+            else:
+                ex_list = [col1-1, col1]
+                tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
+                return False, tbl_ret
         elif opcode == 'mutate':
-            self._blames.clear()
+            # self._blames.clear()
             return False, tbl_out
         elif opcode == 'summarise':
-            self._blames.clear()
+            # self._blames.clear()
             return False, tbl_out
+        #Done last two columns are new generated.
         elif opcode == 'gather' or opcode == 'gatherNeg':
-            self._blames.clear()
-            return False, tbl_out
+            return False, tbl_out[:-2]
         elif opcode == 'spread':
-            self._blames.clear()
+            col1 = int(args[1].data)
+            col2 = int(args[2].data)
             return False, tbl_out
+        #done.
         elif opcode == 'inner_join':
-            self._blames.clear()
+            self._blames.add(ast.children[1])
             return False, tbl_out
         else:
             assert False
