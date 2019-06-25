@@ -52,7 +52,8 @@ class Falx(object):
         # apply inverse semantics to obtain symbolic output table and vis programs
         abstract_designs = VisDesign.inv_eval(vtrace)
 
-        abstract_designs.sort(key=lambda x: len(x[0].values[0]))
+        # sort pairs based on complexity of tables
+        abstract_designs.sort(key=lambda x: len(x[0].values[0]) if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
 
         for sym_data, chart in abstract_designs:
             if not isinstance(sym_data, (list,)):
