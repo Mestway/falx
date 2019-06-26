@@ -45,6 +45,11 @@ class BidirectEnumerator(Enumerator):
             opcode = st.opcode
             ctr_opcode = reduce(lambda a,b: Or(a, b.id == opcode), functions, False)
             self.z3_solver.add(ctr_opcode)
+            nxt_loc = i_loc + 1
+            if nxt_loc < self.loc:
+                nxt_st = self.lines[nxt_loc]
+                nxt_opcode = nxt_st.opcode
+                self.z3_solver.add(nxt_opcode != opcode)
 
             # All vars defined beforehand.
             def_vars = list(map(lambda x: x.lhs, self.lines[:i_loc]))
