@@ -77,7 +77,7 @@ class AbstractPrune(GenericVisitor):
             if self.is_consistent(self._input, tbl_in):
                 return False, None
 
-        return True, None
+        return False, None
         # return self.backward_transform(prog[-1], self._output)
 
     def forward_interp(self, prog: List[Any]):
