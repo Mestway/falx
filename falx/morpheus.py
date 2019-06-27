@@ -257,13 +257,13 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 index=1,
                 cond=lambda x: max(list(map(lambda y: int(y), x))) <= n_cols,
                 capture_indices=[0])
-        self.assertArg(node, args,
-                index=1,
-                       cond=lambda x: len(x) == 1,
-                capture_indices=[0])
+        # self.assertArg(node, args,
+        #         index=1,
+        #                cond=lambda x: len(x) == 1,
+        #         capture_indices=[0])
 
         ret_df_name = get_fresh_name()
-        _script = '{ret_df} <- group_by({table}, {cols})'.format(
+        _script = '{ret_df} <- group_by_at({table}, {cols})'.format(
                    ret_df=ret_df_name, table=args[0], cols=get_collist(args[1]))
         try:
             ret_val = robjects.r(_script)
