@@ -293,11 +293,11 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: x <= n_cols,
                 capture_indices=[0])
 
-        # if not aggr_fun == 'n':
-        #     self.assertArg(node, args,
-        #             index=2,
-        #             cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
-        #             capture_indices=[0])
+        if not aggr_fun == 'n':
+            self.assertArg(node, args,
+                    index=2,
+                    cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
+                    capture_indices=[0])
 
         ret_df_name = get_fresh_name()
         _script = ''
@@ -306,12 +306,12 @@ class MorpheusInterpreter(PostOrderInterpreter):
                     ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun)
         else:
             aggr_col = input_cols[args[2]-1]
-            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} ({col}))'.format(
+            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} (`{col}`))'.format(
                     ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col)
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
-        except:
+        except Exception as e:
             logger.error('Error in interpreting summarise...')
             raise GeneralError()
 
