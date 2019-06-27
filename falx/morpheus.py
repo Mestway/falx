@@ -100,7 +100,17 @@ def check_col(col1, col2):
         else:
             return set(col1) <= set(col2)
     else:
-        return False
+        try:
+            if len(col1) == 0 or len(col2) == 0:
+                return False
+            if int(col1[0]) and int(col2[0]):
+                col1_r = [int(x) for x in col1]
+                col2_r = [int(x) for x in col2]
+                return set(col1_r) <= set(col2_r)
+            else:
+                return False
+        except ValueError:
+            return False
 
 def get_head(df):
     head = set()
@@ -279,10 +289,12 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 index=2,
                 cond=lambda x: x <= n_cols,
                 capture_indices=[0])
-        self.assertArg(node, args,
-                index=2,
-                cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
-                capture_indices=[0])
+
+        # if not aggr_fun == 'n':
+        #     self.assertArg(node, args,
+        #             index=2,
+        #             cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
+        #             capture_indices=[0])
 
         ret_df_name = get_fresh_name()
         _script = ''
