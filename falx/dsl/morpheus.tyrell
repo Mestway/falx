@@ -16,7 +16,7 @@ enumset ColNegList[2] {
 }
 
 enum Aggr {
-  "min", "max", "sum"
+  "mean", "sum", "n"
 }
 
 enum NumFunc {

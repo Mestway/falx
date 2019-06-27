@@ -274,6 +274,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
 
     def eval_summarise(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        aggr_fun = str(args[1])
         self.assertArg(node, args,
                 index=2,
                 cond=lambda x: x <= n_cols,
@@ -284,8 +285,13 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 capture_indices=[0])
 
         ret_df_name = get_fresh_name()
-        _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} (.[[{col}]]))'.format(
-                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=str(args[1]), col=str(args[2]))
+        _script = ''
+        if aggr_fun == 'n':
+            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} ())'.format(
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun)
+        else:
+            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} (.[[{col}]]))'.format(
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=str(args[2]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
