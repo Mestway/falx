@@ -283,7 +283,10 @@ class MorpheusInterpreter(PostOrderInterpreter):
             raise GeneralError()
 
     def eval_summarise(self, node, args):
-        n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        input_tbl = robjects.r(args[0])
+        input_cols = input_tbl.colnames
+        n_cols = len(input_cols)
+
         aggr_fun = str(args[1])
         self.assertArg(node, args,
                 index=2,
@@ -302,8 +305,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
             _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} ())'.format(
                     ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun)
         else:
-            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} (.[[{col}]]))'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=str(args[2]))
+            aggr_col = input_cols[args[2]-1]
+            _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} ({col}))'.format(
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col)
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
