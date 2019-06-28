@@ -45,7 +45,7 @@ def align_table_schema(table1, table2):
 class Falx(object):
 
     @staticmethod
-    def synthesize(inputs, vtrace):
+    def synthesize(inputs, vtrace, top_k=1):
         """synthesize table prog and vis prog from input and output traces"""
         candidates = []
 
@@ -70,7 +70,9 @@ class Falx(object):
                     vis_design.update_field_names(field_mapping)
 
                     candidates.append((p, vis_design))
-            else: 
+                    
+                    if len(candidates) >= top_k: break
+            else:
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                  # synthesize table transformation programs for each layer
@@ -91,5 +93,9 @@ class Falx(object):
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)
                     candidates.append((progs, vis_design))
+
+                    if len(candidates) >= top_k: break
+
+            if len(candidates) >= top_k: break
 
         return candidates
