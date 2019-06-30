@@ -64,6 +64,7 @@ class AbstractPrune(GenericVisitor):
 
     def backward_interp(self, prog: List[Any]):
         per_list = list(itertools.permutations(self._output))
+        has_error = True
         for out_list in per_list:
             tbl_in = None
             tbl = list(out_list)
@@ -72,12 +73,15 @@ class AbstractPrune(GenericVisitor):
                 if error:
                     return error, tbl_in
                 if tbl_in == None:
+                    has_error = False
                     break
                 tbl = tbl_in
+            
             if self.is_consistent(self._input, tbl_in):
-                return False, None
+                has_error = False
+                break
 
-        return False, None
+        return has_error, None
         # return self.backward_transform(prog[-1], self._output)
 
     def forward_interp(self, prog: List[Any]):
@@ -94,6 +98,7 @@ class AbstractPrune(GenericVisitor):
 
         return False, out
 
+    # 'actual' contains 'expect'
     def is_consistent(self, actual: List[Any], expect: List[Any]):
         return all([self.is_subset(elem, actual) for elem in expect])
 
@@ -164,9 +169,11 @@ class AbstractPrune(GenericVisitor):
             if max_idx > tbl_size:
                 return True, None
             else:
+                # FIXME
                 sel_list = list(map(int, args[1].data))
-                tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
-                return False, tbl_out
+                # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
+                # return False, tbl_out
+                return False, None
 
         elif opcode == 'spread':
             # assert False
