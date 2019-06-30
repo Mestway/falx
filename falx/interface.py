@@ -4,6 +4,7 @@ from falx.chart import VisDesign
 import morpheus
 import itertools
 from pprint import pprint
+import numpy as np
 
 def align_table_schema(table1, table2):
     """align table schema, assume that table1 is contained by table2"""
@@ -15,8 +16,13 @@ def align_table_schema(table1, table2):
         vals1 = [r[k1] for r in table1]
         for k2 in table2[0].keys():
             vals2 = [r[k2] for r in table2]
-            if all([vals1.count(v) <= vals2.count(v) for v in vals1]):
+            l1 = np.array(sorted(vals1))
+            l2 = np.array(sorted(vals2))
+            if l1.dtype == l2.dtype and all(l1 == l2):
                 mapping[k1].append(k2)
+            elif l1.dtype == np.float64 and l2.dtype == np.float64:
+                if np.allclose(l1, l2): 
+                    mapping[k1].append(k2)                  
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
@@ -29,6 +35,7 @@ def align_table_schema(table1, table2):
     if len(all_choices) == 1:
         return {key:mapping[key][0] for key in mapping}
 
+    assert("[align table] unimplemented error")
     for mapping_id_choices in all_choices:
         # the following is an instantiation of the the mapping
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
@@ -36,6 +43,7 @@ def align_table_schema(table1, table2):
         # distill the tables for checking
         frozen_table1 = [tuple([r[key] for key in t1_schema]) for r in table1]
         frozen_table2 = [tuple([r[inst[key]] for key in t1_schema]) for r in table2]
+
         if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
             return inst
             
@@ -62,6 +70,11 @@ class Falx(object):
 
                 for p in candidate_progs:
                     output = morpheus.evaluate(p, inputs)
+
+                    # print("******######******")
+                    # pprint(sym_data.values)
+                    # print("---")
+                    # pprint(output)
                     
                     field_mapping = align_table_schema(sym_data.values, output)
                     assert(field_mapping != None)
@@ -72,6 +85,7 @@ class Falx(object):
                     candidates.append((p, vis_design))
                     
                     if len(candidates) >= top_k: break
+
             else:
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
