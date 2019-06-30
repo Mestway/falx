@@ -9,20 +9,29 @@ import numpy as np
 def align_table_schema(table1, table2):
     """align table schema, assume that table1 is contained by table2"""
     assert(len(table1) <= len(table2))
-    
     mapping = {}
     for k1 in table1[0].keys():
         mapping[k1] = []
-        vals1 = [r[k1] for r in table1]
+        vals1 = np.array([r[k1] for r in table1])
         for k2 in table2[0].keys():
-            vals2 = [r[k2] for r in table2]
-            l1 = np.array(sorted(vals1))
-            l2 = np.array(sorted(vals2))
-            if l1.dtype == l2.dtype and all(l1 == l2):
-                mapping[k1].append(k2)
-            elif l1.dtype == np.float64 and l2.dtype == np.float64:
-                if np.allclose(l1, l2): 
-                    mapping[k1].append(k2)                  
+            vals2 = np.array([r[k2] for r in table2])
+            if vals1.dtype != vals2.dtype: 
+                continue
+
+            #check function between two values
+            if vals1.dtype == np.float64:
+                check_func = lambda x, y: np.isclose(x, y)
+            else:
+                check_func = lambda x, y: x == y
+
+            contained = True
+            for x in vals1:
+                cnt1 = len([y for y in vals1 if check_func(x, y)])
+                cnt2 = len([y for y in vals2 if check_func(x, y)])
+                if cnt1 > cnt2: 
+                    contained = False
+            if contained:
+                mapping[k1].append(k2)             
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
