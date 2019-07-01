@@ -32,6 +32,7 @@ class BidirectEnumerator(Enumerator):
 
     # z3 variables for each production node
     variables = []
+    sk_vars = []
 
     # map from internal k-tree to nodes of program
     program2tree = {}
@@ -110,6 +111,7 @@ class BidirectEnumerator(Enumerator):
             lines.append(st)
             self.variables.append(lhs)
             self.variables.append(opcode)
+            self.sk_vars.append(opcode)
             self.z3_solver.add(lhs == (1000 + l))
 
         return lines, None
@@ -117,6 +119,7 @@ class BidirectEnumerator(Enumerator):
     def __init__(self, spec, depth=None, loc=None):
         self.z3_solver = Solver()
         self.variables = []
+        self.sk_vars = []
         self.program2tree = {}
         self.spec = spec
         if depth <= 0:
@@ -187,26 +190,6 @@ class BidirectEnumerator(Enumerator):
 
         return prog
 
-    # def stmtToAST(self, stmt):
-    #     opcode = stmt.opcode
-    #     opcode_val = self.model[opcode].as_long()
-    #     args = stmt.args
-    #     children = []
-    #     for arg in args:
-    #         arg_val = self.model[arg].as_long()
-    #         if arg_val == -1:
-    #             break
-    #         if arg_val > 999:
-    #             children.append(self.stmtToAST(self.lines[arg_val - 1000]))
-    #         else:
-    #             child_node = self.builder.make_node(arg_val)
-    #             self.program2tree[child_node] = arg
-    #             children.append(child_node)
-                
-    #     cur = self.builder.make_node(opcode_val, children)
-    #     self.program2tree[cur] = opcode
-    #     return cur
-
     def next(self):
         while True:
             self.model = None
@@ -216,6 +199,36 @@ class BidirectEnumerator(Enumerator):
                 # print(self.model)
 
             if self.model is not None:
-                return self.buildProgram()
+                prog = self.buildProgram()
+                # Is this a valid sketch?
+                if self.checkSketch(prog):
+                    return prog 
             else:
                 return None
+            
+    def checkSketch(self, prog):
+        sketch = [stmt.ast.name for stmt in prog]
+        
+        if self.isBadSketch(sketch):
+            self.blockSketch()
+            return False
+        return True
+
+    def isBadSketch(self, sketch):
+        multi_gathers = [s for s in sketch if 'gather' in s]
+        if len(multi_gathers) > 1:
+            return True
+        
+        has_group = 'group_by' in sketch
+        has_summarise = 'summarise' in sketch
+        if has_group == has_summarise:
+            if has_group:
+                return (sketch.index('group_by') + 1) != sketch.index('summarise')
+        else:
+            return True
+        return False
+
+    def blockSketch(self):
+        # block the model using only the variables that correspond to productions
+        ctr = reduce(lambda a,b: Or(a, b != self.model[b]), self.sk_vars, False)
+        self.z3_solver.add(ctr)
