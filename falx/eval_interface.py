@@ -35,12 +35,23 @@ def sample_symbolic_table(symtable, size, strategy="diversity"):
 
     sample_values = [symtable.values[i] for i in chosen_indices]
     symtable_sample = SymTable(sample_values)
-    pprint(symtable_sample.values)
     return symtable_sample
 
 def pick_best_candidate_index(candidate_indices, chosen_indices, full_table):
     """according to current_chosen_row_indices and the full table, choose the best candidate that maximize """
-    return candidate_indices[0]
+    keys = list(full_table[0].keys())
+    cardinality = [len(set([r[key] for r in full_table])) for key in keys]
+    def card_score_func(card_1, card_2):
+        if card_1 == 1 and card_2 > 1:
+            return 0
+        return 1
+    scores = []
+    for x in candidate_indices:
+        temp_card = [len(set([full_table[i][key] for i in list(chosen_indices) + [x]])) for key in keys]
+        score = sum([card_score_func(temp_card[i], cardinality[i]) for i in range(len(keys))])
+        scores.append(score)
+    return candidate_indices[np.argmax(scores)]
+
 
 class FalxEvalInterface(object):
 
