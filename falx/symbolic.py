@@ -42,6 +42,10 @@ class SymTable(object):
 			return self.values[0].keys()
 		return None
 
+	def get_shape(self):
+		"""get shape of the data: num_row * num_col """
+		return (len(self.values), len(self.values[0]))
+
 	def consistent_with(table):
 		"""Check if the given table is consistent with the symbolic table """
 		return True
