@@ -50,6 +50,12 @@ def test_benchmarks(data_dir, data_id, mode):
 
         if mode == "eval":
             result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=4)
+            print("## synthesize result for task {}".format(fname))
+            for p, vis in result:
+                print("table_prog:")
+                print(p)
+                print("vis_spec:")
+                print(vis.to_vl_json(indent=2))
         else:
             result = Falx.synthesize(inputs=[input_data], vtrace=trace)
             print("## synthesize result for task {}".format(fname))
