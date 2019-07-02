@@ -9,6 +9,7 @@ from symbolic import SymTable
 
 import interface
 
+np.random.seed(2019)
 
 def sample_symbolic_table(symtable, size, strategy="diversity"):
     """given a symbolic table, sample a smaller symbolic table that is contained by it
@@ -28,7 +29,7 @@ def sample_symbolic_table(symtable, size, strategy="diversity"):
         chosen_indices = set()
         for i in range(size):
             pool = indices - chosen_indices
-            candidate_size = min([10, len(pool)])
+            candidate_size = min([20, len(pool)])
             candidates = np.random.choice(list(pool), size=candidate_size, replace=False)
             best_index = pick_best_candidate_index(candidates, chosen_indices, symtable.values)
             chosen_indices.add(best_index)
@@ -103,6 +104,13 @@ class FalxEvalInterface(object):
 
                     # apply each program on inputs to get output table for each layer
                     outputs = [morpheus.evaluate(p, inputs) for p in progs]
+
+                    # print("===========> Synthesis output")
+                    # for i in range(len(outputs)):
+                    #     pprint("====> table {}".format(i))
+                    #     pprint(outputs[i])
+                    #     print("---")
+                    #     pprint(full_sym_data[i].values)
 
                     field_mappings = [interface.align_table_schema(full_sym_data[k].values, output) for k, output in enumerate(outputs)]
 
