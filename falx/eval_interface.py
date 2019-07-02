@@ -9,14 +9,38 @@ from symbolic import SymTable
 
 import interface
 
-def sample_symbolic_table(symtable, size=2):
+
+def sample_symbolic_table(symtable, size, strategy="diversity"):
+    """given a symbolic table, sample a smaller symbolic table that is contained by it
+    Args:
+        symtable: the input symbolic table
+        size: the number of rows we want for the output table.
+    Returns:
+        the output table sample
+    """
     if size > len(symtable.values):
         size = len(symtable.values)
-    rand_indices = np.random.choice(list(range(len(symtable.values))), size, replace=False)
-    sample_values = [symtable.values[i] for i in rand_indices]
+
+    if strategy == "uniform":
+        chosen_indices = np.random.choice(list(range(len(symtable.values))), size, replace=False)
+    elif strategy == "diversity":
+        indices = set(range(len(symtable.values)))
+        chosen_indices = set()
+        for i in range(size):
+            pool = indices - chosen_indices
+            candidate_size = min([10, len(pool)])
+            candidates = np.random.choice(list(pool), size=candidate_size, replace=False)
+            best_index = pick_best_candidate_index(candidates, chosen_indices, symtable.values)
+            chosen_indices.add(best_index)
+
+    sample_values = [symtable.values[i] for i in chosen_indices]
     symtable_sample = SymTable(sample_values)
+    pprint(symtable_sample.values)
     return symtable_sample
 
+def pick_best_candidate_index(candidate_indices, chosen_indices, full_table):
+    """according to current_chosen_row_indices and the full table, choose the best candidate that maximize """
+    return candidate_indices[0]
 
 class FalxEvalInterface(object):
 
@@ -56,7 +80,7 @@ class FalxEvalInterface(object):
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
-                sym_tables = [(sample_symbolic_table(full_output), full_output, num_samples) for full_output in full_sym_data]
+                sym_tables = [(sample_symbolic_table(full_output, num_samples), full_output) for full_output in full_sym_data]
                 layer_candidate_progs = [morpheus.synthesize_with_oracle(inputs, p[0], p[1]) for p in sym_tables]
                    
                 # iterating over combinations for different layers
