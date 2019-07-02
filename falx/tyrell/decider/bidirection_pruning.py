@@ -210,6 +210,18 @@ class AbstractPrune(GenericVisitor):
             return False, tbl_out
         ##Done.
         elif opcode == 'unite':
+            checked = False
+            for col_vec in tbl_out:
+                fst_elem = col_vec[0]
+                if isinstance(col_vec[0], str) and ('-' in fst_elem) and (not str.isdigit(fst_elem.split('-')[0])):
+                    checked = True
+                    break
+            
+            if not checked:
+                self._blames.clear()
+                self._blames.add(ast)
+                return True, None
+
             col1 = int(args[1].data)
             col2 = int(args[2].data)
             self._blames.add(ast.children[2])
