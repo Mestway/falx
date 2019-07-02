@@ -20,6 +20,8 @@ logger = get_logger('tyrell')
 
 counter_ = 1
 
+full_table = None
+
 #library(compare)
 robjects.r('''
     library(dplyr)
@@ -75,17 +77,27 @@ def get_type(df, index):
     ret_val = robjects.r(_rscript)
     return ret_val[0]
 
+iter_num = 0
+
 def subset_eq(actual, expect):
     # logger.info(robjects.r(actual))
     # logger.info(robjects.r(expect))
+    row_num, col_num = full_table.get_shape()
+    actual_col = len(robjects.r(actual))
+    actual_row = len(robjects.r(actual)[0])
     # cmd = 'toJSON({df_name})'.format(df_name=actual)
     # prog_output = robjects.r(cmd)[0]
     all_ok = all([check_row(expect_col, robjects.r(actual)) for expect_col in robjects.r(expect)])
     if all_ok:
-        cmd = 'toJSON({df_name})'.format(df_name=actual)
-        # global prog_output
-        # prog_output = robjects.r(cmd)[0]
-    return all_ok
+        global iter_num
+        if actual_row != row_num:
+            iter_num = iter_num + 1
+            return False
+        else:
+            logger.info('#Candidates before getting the correct solution: {}'.format(iter_num))
+            return True
+    else:
+        return False
 
 def check_row(col, table):
     all_ok = any(check_col(col, elem) for elem in table)
@@ -397,9 +409,11 @@ def init_tbl_json_str(df_name, json_loc):
 def synthesize_with_oracle(inputs, sample_output, full_output):
     # TODO: synthesize a program that is not only consistent with the output 
     # but also matches the oracle output
-    return synthesize(inputs, sample_output)
+    global full_table 
+    full_table = full_output
+    return synthesize(inputs, sample_output, full_output)
 
-def synthesize(inputs, output):
+def synthesize(inputs, output, full_output):
     logger.setLevel('INFO')
     """ synthesizer table transformation programs from input-output examples
     Args:
