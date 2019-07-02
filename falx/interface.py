@@ -31,7 +31,7 @@ def align_table_schema(table1, table2):
                 if cnt1 > cnt2: 
                     contained = False
             if contained:
-                mapping[k1].append(k2)             
+                mapping[k1].append(k2)
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency

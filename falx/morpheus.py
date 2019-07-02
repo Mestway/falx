@@ -394,6 +394,11 @@ def init_tbl_json_str(df_name, json_loc):
         print('Parse error!!! Move on...')
     return None
 
+def synthesize_with_oracle(inputs, sample_output, full_output):
+    # TODO: synthesize a program that is not only consistent with the output 
+    # but also matches the oracle output
+    return synthesize(inputs, sample_output)
+
 def synthesize(inputs, output):
     logger.setLevel('INFO')
     """ synthesizer table transformation programs from input-output examples
