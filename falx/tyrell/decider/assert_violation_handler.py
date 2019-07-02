@@ -33,12 +33,13 @@ class AssertionViolationHandler:
         blames = list()
         arg_node = error.arg
         blame_base = self._compute_blame_base(error)
-        for alt_prod in self._spec.get_productions_with_lhs(prod.lhs):
-            alt_node = AtomNode(alt_prod)
-            # Inputs doesn't matter here as we don't have any ParamNode
-            value = self._interp.eval(alt_node, [])
-            if not error.reason(value):
-                blames.append(blame_base + [Blame(arg_node, alt_prod)])
+        blames.append(blame_base + [Blame(arg_node, prod)])
+        # for alt_prod in self._spec.get_productions_with_lhs(prod.lhs):
+        #     alt_node = AtomNode(alt_prod)
+        #     # Inputs doesn't matter here as we don't have any ParamNode
+        #     value = self._interp.eval(alt_node, [])
+        #     if not error.reason(value):
+        #         blames.append(blame_base + [Blame(arg_node, alt_prod)])
         return blames
 
     def handle_assertion_violation(self, error: AssertionViolation):
