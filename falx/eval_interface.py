@@ -55,7 +55,7 @@ def pick_best_candidate_index(candidate_indices, chosen_indices, full_table):
     return candidate_indices[np.argmax(scores)]
 
 
-def check_trace_consistency(orig_trace, vis_prog):
+def check_trace_consistency(vis_prog, orig_trace):
     """check whether the prog is consistent with the full trace"""
     tr = vis_prog.eval()
     orig_tr_table = visual_trace.trace_to_table(orig_trace)
@@ -137,7 +137,7 @@ class FalxEvalInterface(object):
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)
                     
-                    if check_trace_consistency(vis_design, full_trace)::
+                    if check_trace_consistency(vis_design, full_trace):
                         candidates.append((progs, vis_design))
                     else:
                         print("===> the program is not consistent with the trace, continue")
