@@ -102,289 +102,289 @@
       "C1": "Q1",
       "C2": "Targeted",
       "variable": "EMEA",
-      "value": 66.0
+      "value": 66
     },
     {
       "C1": "Q1",
       "C2": "Engaged",
       "variable": "EMEA",
-      "value": 65.0
+      "value": 65
     },
     {
       "C1": "Q1",
       "C2": "Pitched",
       "variable": "EMEA",
-      "value": 59.0
+      "value": 59
     },
     {
       "C1": "Q1",
       "C2": "Adopted",
       "variable": "EMEA",
-      "value": 52.0
+      "value": 52
     },
     {
       "C1": "Q2",
       "C2": "Targeted",
       "variable": "EMEA",
-      "value": 56.0
+      "value": 56
     },
     {
       "C1": "Q2",
       "C2": "Engaged",
       "variable": "EMEA",
-      "value": 54.0
+      "value": 54
     },
     {
       "C1": "Q2",
       "C2": "Pitched",
       "variable": "EMEA",
-      "value": 50.0
+      "value": 50
     },
     {
       "C1": "Q2",
       "C2": "Adopted",
       "variable": "EMEA",
-      "value": 42.0
+      "value": 42
     },
     {
       "C1": "Q3",
       "C2": "Targeted",
       "variable": "EMEA",
-      "value": 91.0
+      "value": 91
     },
     {
       "C1": "Q3",
       "C2": "Engaged",
       "variable": "EMEA",
-      "value": 78.0
+      "value": 78
     },
     {
       "C1": "Q3",
       "C2": "Pitched",
       "variable": "EMEA",
-      "value": 72.0
+      "value": 72
     },
     {
       "C1": "Q3",
       "C2": "Adopted",
       "variable": "EMEA",
-      "value": 62.0
+      "value": 62
     },
     {
       "C1": "Q1",
       "C2": "Targeted",
       "variable": "LATAM",
-      "value": 48.0
+      "value": 48
     },
     {
       "C1": "Q1",
       "C2": "Engaged",
       "variable": "LATAM",
-      "value": 48.0
+      "value": 48
     },
     {
       "C1": "Q1",
       "C2": "Pitched",
       "variable": "LATAM",
-      "value": 44.0
+      "value": 44
     },
     {
       "C1": "Q1",
       "C2": "Adopted",
       "variable": "LATAM",
-      "value": 31.0
+      "value": 31
     },
     {
       "C1": "Q2",
       "C2": "Targeted",
       "variable": "LATAM",
-      "value": 43.0
+      "value": 43
     },
     {
       "C1": "Q2",
       "C2": "Engaged",
       "variable": "LATAM",
-      "value": 41.0
+      "value": 41
     },
     {
       "C1": "Q2",
       "C2": "Pitched",
       "variable": "LATAM",
-      "value": 37.0
+      "value": 37
     },
     {
       "C1": "Q2",
       "C2": "Adopted",
       "variable": "LATAM",
-      "value": 26.0
+      "value": 26
     },
     {
       "C1": "Q3",
       "C2": "Targeted",
       "variable": "LATAM",
-      "value": 95.0
+      "value": 95
     },
     {
       "C1": "Q3",
       "C2": "Engaged",
       "variable": "LATAM",
-      "value": 80.0
+      "value": 80
     },
     {
       "C1": "Q3",
       "C2": "Pitched",
       "variable": "LATAM",
-      "value": 73.0
+      "value": 73
     },
     {
       "C1": "Q3",
       "C2": "Adopted",
       "variable": "LATAM",
-      "value": 53.0
+      "value": 53
     },
     {
       "C1": "Q1",
       "C2": "Targeted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 56
     },
     {
       "C1": "Q1",
       "C2": "Engaged",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 52
     },
     {
       "C1": "Q1",
       "C2": "Pitched",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 45
     },
     {
       "C1": "Q1",
       "C2": "Adopted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 36
     },
     {
       "C1": "Q2",
       "C2": "Targeted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 50
     },
     {
       "C1": "Q2",
       "C2": "Engaged",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 43
     },
     {
       "C1": "Q2",
       "C2": "Pitched",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 39
     },
     {
       "C1": "Q2",
       "C2": "Adopted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 31
     },
     {
       "C1": "Q3",
       "C2": "Targeted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 70
     },
     {
       "C1": "Q3",
       "C2": "Engaged",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 55
     },
     {
       "C1": "Q3",
       "C2": "Pitched",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 50
     },
     {
       "C1": "Q3",
       "C2": "Adopted",
-      "variable": "North America",
-      "value": "NaN"
+      "variable": "North_America",
+      "value": 40
     },
     {
       "C1": "Q1",
       "C2": "Targeted",
       "variable": "APAC",
-      "value": 48.0
+      "value": 48
     },
     {
       "C1": "Q1",
       "C2": "Engaged",
       "variable": "APAC",
-      "value": 47.0
+      "value": 47
     },
     {
       "C1": "Q1",
       "C2": "Pitched",
       "variable": "APAC",
-      "value": 45.0
+      "value": 45
     },
     {
       "C1": "Q1",
       "C2": "Adopted",
       "variable": "APAC",
-      "value": 38.0
+      "value": 38
     },
     {
       "C1": "Q2",
       "C2": "Targeted",
       "variable": "APAC",
-      "value": 39.0
+      "value": 39
     },
     {
       "C1": "Q2",
       "C2": "Engaged",
       "variable": "APAC",
-      "value": 37.0
+      "value": 37
     },
     {
       "C1": "Q2",
       "C2": "Pitched",
       "variable": "APAC",
-      "value": 35.0
+      "value": 35
     },
     {
       "C1": "Q2",
       "C2": "Adopted",
       "variable": "APAC",
-      "value": 27.0
+      "value": 27
     },
     {
       "C1": "Q3",
       "C2": "Targeted",
       "variable": "APAC",
-      "value": 87.0
+      "value": 87
     },
     {
       "C1": "Q3",
       "C2": "Engaged",
       "variable": "APAC",
-      "value": 75.0
+      "value": 75
     },
     {
       "C1": "Q3",
       "C2": "Pitched",
       "variable": "APAC",
-      "value": 74.0
+      "value": 74
     },
     {
       "C1": "Q3",
       "C2": "Adopted",
       "variable": "APAC",
-      "value": 59.0
+      "value": 59
     }
   ],
   "vl_spec": {

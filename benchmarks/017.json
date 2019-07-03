@@ -108,143 +108,232 @@
   ],
   "output_data": [
     {
-      "Actual": 1000.0,
-      "Projected": 0,
-      "Year": 2001
+      "Year": 2001,
+      "variable": "Actual",
+      "value": 1000
     },
     {
-      "Actual": 1050.0,
-      "Projected": 0,
-      "Year": 2002
+      "Year": 2002,
+      "variable": "Actual",
+      "value": 1050
     },
     {
-      "Actual": 1110.0,
-      "Projected": 0,
-      "Year": 2003
+      "Year": 2003,
+      "variable": "Actual",
+      "value": 1110
     },
     {
-      "Actual": 1180.0,
-      "Projected": 0,
-      "Year": 2004
+      "Year": 2004,
+      "variable": "Actual",
+      "value": 1180
     },
     {
-      "Actual": 1260.0,
-      "Projected": 0,
-      "Year": 2005
+      "Year": 2005,
+      "variable": "Actual",
+      "value": 1260
     },
     {
-      "Actual": 1350.0,
-      "Projected": 0,
-      "Year": 2006
+      "Year": 2006,
+      "variable": "Actual",
+      "value": 1350
     },
     {
-      "Actual": 1450.0,
-      "Projected": 0,
-      "Year": 2007
+      "Year": 2007,
+      "variable": "Actual",
+      "value": 1450
     },
     {
-      "Actual": 1560.0,
-      "Projected": 0,
-      "Year": 2008
+      "Year": 2008,
+      "variable": "Actual",
+      "value": 1560
     },
     {
-      "Actual": 1680.0,
-      "Projected": 0,
-      "Year": 2009
+      "Year": 2009,
+      "variable": "Actual",
+      "value": 1680
     },
     {
-      "Actual": 1810.0,
-      "Projected": 0,
-      "Year": 2010
+      "Year": 2010,
+      "variable": "Actual",
+      "value": 1810
     },
     {
-      "Actual": 1950.0,
-      "Projected": 0,
-      "Year": 2011
+      "Year": 2011,
+      "variable": "Actual",
+      "value": 1950
     },
     {
-      "Actual": 2100.0,
-      "Projected": 0,
-      "Year": 2012
+      "Year": 2012,
+      "variable": "Actual",
+      "value": 2100
     },
     {
-      "Actual": 2260.0,
-      "Projected": 0,
-      "Year": 2013
+      "Year": 2013,
+      "variable": "Actual",
+      "value": 2260
     },
     {
-      "Actual": 2430.0,
-      "Projected": 0,
-      "Year": 2014
+      "Year": 2014,
+      "variable": "Actual",
+      "value": 2430
     },
     {
-      "Actual": 2610.0,
-      "Projected": 0,
-      "Year": 2015
+      "Year": 2015,
+      "variable": "Actual",
+      "value": 2610
     },
     {
-      "Actual": 2800.0,
-      "Projected": 0,
-      "Year": 2016
+      "Year": 2016,
+      "variable": "Actual",
+      "value": 2800
     },
     {
-      "Actual": 3000.0,
-      "Projected": 0,
-      "Year": 2017
+      "Year": 2017,
+      "variable": "Actual",
+      "value": 3000
     },
     {
-      "Actual": 3210.0,
-      "Projected": 3210.0,
-      "Year": 2018
+      "Year": 2018,
+      "variable": "Actual",
+      "value": 3210
     },
     {
-      "Actual": 0,
-      "Projected": 4960.0,
-      "Year": 2025
+      "Year": 2025,
+      "variable": "Actual",
+      "value": 0
     },
     {
-      "Actual": 0,
-      "Projected": 6510.0,
-      "Year": 2030
+      "Year": 2030,
+      "variable": "Actual",
+      "value": 0
     },
     {
-      "Actual": 0,
-      "Projected": 10360.0,
-      "Year": 2040
+      "Year": 2040,
+      "variable": "Actual",
+      "value": 0
+    },
+    {
+      "Year": 2001,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2002,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2003,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2004,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2005,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2006,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2007,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2008,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2009,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2010,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2011,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2012,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2013,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2014,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2015,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2016,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2017,
+      "variable": "Projected",
+      "value": 0
+    },
+    {
+      "Year": 2018,
+      "variable": "Projected",
+      "value": 3210
+    },
+    {
+      "Year": 2025,
+      "variable": "Projected",
+      "value": 4960
+    },
+    {
+      "Year": 2030,
+      "variable": "Projected",
+      "value": 6510
+    },
+    {
+      "Year": 2040,
+      "variable": "Projected",
+      "value": 10360
     }
   ],
   "vl_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-    "layer": [
-      {
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "nominal"
-          },
-          "y": {
-            "field": "Actual",
-            "type": "quantitative"
-          }
-        }
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "nominal"
       },
-      {
-        "mark": {
-          "type": "line",
-          "color": "orange"
-        },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "nominal"
-          },
-          "y": {
-            "field": "Projected",
-            "type": "quantitative"
-          }
-        }
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "variable",
+        "type": "nominal"
       }
-    ]
+    }
   }
 }
