@@ -87,7 +87,6 @@ class FalxEvalInterface(object):
             #     full_trace_err = False
 
             if not isinstance(full_sym_data, (list,)):
-
                 sample_output = sample_symbolic_table(full_sym_data, num_samples)
 
                 # single-layer chart
@@ -105,7 +104,7 @@ class FalxEvalInterface(object):
                     # mapping = interface.align_table_schema(full_sym_data.values, output)
                     # print(mapping)
                 
-                    field_mapping = interface.align_table_schema(full_sym_data.values, output)
+                    field_mapping = interface.align_table_schema(full_sym_data.values, output, check_equivalence=True)
                     assert(field_mapping != None)
 
                     vis_design = VisDesign(data=output, chart=chart)

@@ -6,31 +6,37 @@ import itertools
 from pprint import pprint
 import numpy as np
 
-def align_table_schema(table1, table2):
+def construct_value_dict(values):
+    values = np.array(values)
+    try:
+        values = values.astype(np.float64)
+        values = np.round(values, 5)
+    except:
+        pass
+        
+    value_dict = {}
+    for x in values:
+        if not x in value_dict:
+            value_dict[x] = 0
+        value_dict[x] += 1
+    return value_dict
+
+def align_table_schema(table1, table2, check_equivalence=False):
     """align table schema, assume that table1 is contained by table2"""
     assert(len(table1) <= len(table2))
     mapping = {}
     for k1 in table1[0].keys():
         mapping[k1] = []
-        vals1 = np.array([r[k1] for r in table1])
+        vals1_dict = construct_value_dict([r[k1] for r in table1])
         for k2 in table2[0].keys():
-            vals2 = np.array([r[k2] for r in table2])
-
-            #check function between two values
-            if vals1.dtype == np.float64 or vals2.dtype == np.float64:
-                check_func = lambda x, y: np.isclose(x, y)
-            else:
-                check_func = lambda x, y: x == y
-
+            vals2_dict = construct_value_dict([r[k2] for r in table2])
             contained = True
-            try:
-                for x in vals1:
-                    cnt1 = len([y for y in vals1 if check_func(x, y)])
-                    cnt2 = len([y for y in vals2 if check_func(x, y)])
-                    if cnt1 > cnt2: 
-                        contained = False
-            except:
-                contained = False
+            for x in vals1_dict:
+                if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]) or (check_equivalence and  (vals2_dict[x]!= vals1_dict[x])):
+                    contained = False
+                if contained == False:
+                    break
+
             if contained:
                 mapping[k1].append(k2)
 
