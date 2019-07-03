@@ -94,8 +94,17 @@ class FalxEvalInterface(object):
                 candidate_progs = morpheus.synthesize_with_oracle(inputs, sample_output, full_sym_data)
 
                 for p in candidate_progs:
+                    pprint(inputs[0])
                     output = morpheus.evaluate(p, inputs)
-                    
+
+                    print("===========> Synthesis output")
+                    pprint("====> table")
+                    pprint(output)
+                    print("---")
+                    pprint(full_sym_data.values)
+                    mapping = interface.align_table_schema(full_sym_data.values, output)
+                    print(mapping)
+                
                     field_mapping = interface.align_table_schema(full_sym_data.values, output)
                     assert(field_mapping != None)
 
@@ -131,6 +140,8 @@ class FalxEvalInterface(object):
                     #     pprint(outputs[i])
                     #     print("---")
                     #     pprint(full_sym_data[i].values)
+                    #     mapping = interface.align_table_schema(full_sym_data[i].values, outputs[i])
+                    #     print(mapping)
 
                     field_mappings = [interface.align_table_schema(full_sym_data[k].values, output) for k, output in enumerate(outputs)]
 

@@ -15,23 +15,26 @@ def align_table_schema(table1, table2):
         vals1 = np.array([r[k1] for r in table1])
         for k2 in table2[0].keys():
             vals2 = np.array([r[k2] for r in table2])
-            if vals1.dtype != vals2.dtype: 
-                continue
 
             #check function between two values
-            if vals1.dtype == np.float64:
+            if vals1.dtype == np.float64 or vals2.dtype == np.float64:
                 check_func = lambda x, y: np.isclose(x, y)
             else:
                 check_func = lambda x, y: x == y
 
             contained = True
-            for x in vals1:
-                cnt1 = len([y for y in vals1 if check_func(x, y)])
-                cnt2 = len([y for y in vals2 if check_func(x, y)])
-                if cnt1 > cnt2: 
-                    contained = False
+            try:
+                for x in vals1:
+                    cnt1 = len([y for y in vals1 if check_func(x, y)])
+                    cnt2 = len([y for y in vals2 if check_func(x, y)])
+                    if cnt1 > cnt2: 
+                        contained = False
+            except:
+                contained = False
             if contained:
                 mapping[k1].append(k2)
+
+    print(mapping)
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency

@@ -3,7 +3,7 @@
     {
       "C1": "Q1",
       "C2": "Targeted",
-      "North America": "56%",
+      "North_America": "56%",
       "EMEA": "66%",
       "APAC": "48%",
       "LATAM": "48%"
@@ -11,7 +11,7 @@
     {
       "C1": "Q1",
       "C2": "Engaged",
-      "North America": "52%",
+      "North_America": "52%",
       "EMEA": "65%",
       "APAC": "47%",
       "LATAM": "48%"
@@ -19,7 +19,7 @@
     {
       "C1": "Q1",
       "C2": "Pitched",
-      "North America": "45%",
+      "North_America": "45%",
       "EMEA": "59%",
       "APAC": "45%",
       "LATAM": "44%"
@@ -27,7 +27,7 @@
     {
       "C1": "Q1",
       "C2": "Adopted",
-      "North America": "36%",
+      "North_America": "36%",
       "EMEA": "52%",
       "APAC": "38%",
       "LATAM": "31%"
@@ -35,7 +35,7 @@
     {
       "C1": "Q2",
       "C2": "Targeted",
-      "North America": "50%",
+      "North_America": "50%",
       "EMEA": "56%",
       "APAC": "39%",
       "LATAM": "43%"
@@ -43,7 +43,7 @@
     {
       "C1": "Q2",
       "C2": "Engaged",
-      "North America": "43%",
+      "North_America": "43%",
       "EMEA": "54%",
       "APAC": "37%",
       "LATAM": "41%"
@@ -51,7 +51,7 @@
     {
       "C1": "Q2",
       "C2": "Pitched",
-      "North America": "39%",
+      "North_America": "39%",
       "EMEA": "50%",
       "APAC": "35%",
       "LATAM": "37%"
@@ -59,7 +59,7 @@
     {
       "C1": "Q2",
       "C2": "Adopted",
-      "North America": "31%",
+      "North_America": "31%",
       "EMEA": "42%",
       "APAC": "27%",
       "LATAM": "26%"
@@ -67,7 +67,7 @@
     {
       "C1": "Q3",
       "C2": "Targeted",
-      "North America": "70%",
+      "North_America": "70%",
       "EMEA": "91%",
       "APAC": "87%",
       "LATAM": "95%"
@@ -75,7 +75,7 @@
     {
       "C1": "Q3",
       "C2": "Engaged",
-      "North America": "55%",
+      "North_America": "55%",
       "EMEA": "78%",
       "APAC": "75%",
       "LATAM": "80%"
@@ -83,7 +83,7 @@
     {
       "C1": "Q3",
       "C2": "Pitched",
-      "North America": "50%",
+      "North_America": "50%",
       "EMEA": "72%",
       "APAC": "74%",
       "LATAM": "73%"
@@ -91,7 +91,7 @@
     {
       "C1": "Q3",
       "C2": "Adopted",
-      "North America": "40%",
+      "North_America": "40%",
       "EMEA": "62%",
       "APAC": "59%",
       "LATAM": "53%"
@@ -245,73 +245,73 @@
     {
       "C1": "Q1",
       "C2": "Targeted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.56
     },
     {
       "C1": "Q1",
       "C2": "Engaged",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.52
     },
     {
       "C1": "Q1",
       "C2": "Pitched",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.45
     },
     {
       "C1": "Q1",
       "C2": "Adopted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.36
     },
     {
       "C1": "Q2",
       "C2": "Targeted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.5
     },
     {
       "C1": "Q2",
       "C2": "Engaged",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.43
     },
     {
       "C1": "Q2",
       "C2": "Pitched",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.39
     },
     {
       "C1": "Q2",
       "C2": "Adopted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.31
     },
     {
       "C1": "Q3",
       "C2": "Targeted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.7
     },
     {
       "C1": "Q3",
       "C2": "Engaged",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.55
     },
     {
       "C1": "Q3",
       "C2": "Pitched",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.5
     },
     {
       "C1": "Q3",
       "C2": "Adopted",
-      "variable": "North America",
+      "variable": "North_America",
       "value": 0.4
     },
     {
