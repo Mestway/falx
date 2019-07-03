@@ -1,0 +1,303 @@
+{
+  "input_data": [
+    {
+      "Month": "Apr-15",
+      "East": 86.4,
+      "West": 63.0,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "May-15",
+      "East": 45.8,
+      "West": 58.9,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Jun-15",
+      "East": 44.1,
+      "West": 81.6,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Jul-15",
+      "East": 77.6,
+      "West": 86.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Aug-15",
+      "East": 80.7,
+      "West": 95.0,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Sep-15",
+      "East": 83.7,
+      "West": 78.2,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Oct-15",
+      "East": 78.8,
+      "West": 98.9,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Nov-15",
+      "East": 76.0,
+      "West": 88.3,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Dec-15",
+      "East": 79.0,
+      "West": 75.5,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Jan-16",
+      "East": 77.0,
+      "West": 72.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Feb-16",
+      "East": 67.1,
+      "West": 93.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    },
+    {
+      "Month": "Mar-16",
+      "East": 45.8,
+      "West": 95.7,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
+    }
+  ],
+  "output_data": [
+    {
+      "Month": "Apr-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "May-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Jun-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Jul-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Aug-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Sep-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Oct-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Nov-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Dec-15",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Jan-16",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Feb-16",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Mar-16",
+      "variable": "Low (<50%}",
+      "value": 50.0
+    },
+    {
+      "Month": "Apr-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "May-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Jun-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Jul-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Aug-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Sep-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Oct-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Nov-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Dec-15",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Jan-16",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Feb-16",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Mar-16",
+      "variable": "Medium (50%-80%}",
+      "value": 30.0
+    },
+    {
+      "Month": "Apr-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "May-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Jun-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Jul-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Aug-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Sep-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Oct-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Nov-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Dec-15",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Jan-16",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Feb-16",
+      "variable": "High (>80%)",
+      "value": 20.0
+    },
+    {
+      "Month": "Mar-16",
+      "variable": "High (>80%)",
+      "value": 20.0
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "opacity": 0.4,
+      "type": "bar"
+    },
+    "encoding": {
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "Month",
+        "type": "nominal"
+      }
+    }
+  }
+}
