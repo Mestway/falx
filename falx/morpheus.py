@@ -348,7 +348,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
 
         ret_df_name = get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
-                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
+                ret_df=ret_df_name, table=args[0], TMP='mutate_a', op=args[1], col1=str(args[2]), col2=str(args[3]))
+        # _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
+        #           ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
