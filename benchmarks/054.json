@@ -102,5 +102,21 @@
       "DIAG_RATE_65_PLUS_LL": 66.3,
       "DIAG_RATE_65_PLUS_UL": 80
     }
-  ]
+  ],
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "errorbar"
+    },
+    "encoding": {
+      "y": {
+        "field": "VALUE",
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "ACH_DATE",
+        "type": "nominal"
+      }
+    }
+  }
 }

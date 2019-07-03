@@ -57,27 +57,23 @@
   ],
   "output_data": [
     {
-      "cuts": "(0, 20]",
-      "Number of students": 1
+      "cuts": "(19.0, 26.0]",
+      "Number of students": 9
     },
     {
-      "cuts": "(20, 25]",
-      "Number of students": 8
-    },
-    {
-      "cuts": "(25, 30]",
-      "Number of students": 2
-    },
-    {
-      "cuts": "(30, 35]",
-      "Number of students": 2
-    },
-    {
-      "cuts": "(35, 40]",
+      "cuts": "(26.0, 32.0]",
       "Number of students": 3
     },
     {
-      "cuts": "(40, 100]",
+      "cuts": "(32.0, 39.0]",
+      "Number of students": 2
+    },
+    {
+      "cuts": "(39.0, 45.0]",
+      "Number of students": 2
+    },
+    {
+      "cuts": "(45.0, 52.0]",
       "Number of students": 2
     }
   ],
