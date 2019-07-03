@@ -48,6 +48,7 @@ class AbstractPrune(GenericVisitor):
             
         if err_back:
             # print('prune by backward...')
+            # print(self._blames)
             return True
         
         ### Second, do forward interpretation
@@ -109,6 +110,11 @@ class AbstractPrune(GenericVisitor):
         if tgt == self._dummy:
             return True
         else: 
+            # primitive = (int, str, bool, float)
+            # if isinstance(elem, primitive):
+            #     return (elem in tgt)
+            # else: 
+            #     return (set(elem) <= set(tgt))
             return (set(elem) <= set(tgt))
 
     def has_index(self, sel_list, idx):
@@ -245,12 +251,12 @@ class AbstractPrune(GenericVisitor):
                 ex_list = [col1-1, col1]
                 tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
                 return False, tbl_ret
+        #Done
         elif opcode == 'mutate':
-            # self._blames.clear()
-            return False, tbl_out
+            return False, tbl_out[:-1]
         elif opcode == 'summarise':
             # self._blames.clear()
-            return False, tbl_out
+            return False, tbl_out[:-1]
         #Done last two columns are new generated.
         elif opcode == 'gather' or opcode == 'gatherNeg':
             return False, tbl_out[:-2]
@@ -258,6 +264,11 @@ class AbstractPrune(GenericVisitor):
             col1 = int(args[1].data)
             col2 = int(args[2].data)
             return False, tbl_out
+
+            # if len(tbl_out) > 0:
+            #     return False, tbl_out[0]
+            # else:
+            #     return False, []
         #done.
         elif opcode == 'inner_join':
             self._blames.add(ast.children[1])
