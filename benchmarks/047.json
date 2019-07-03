@@ -2,34 +2,42 @@
   "input_data": [
     {
       "label": "Label1",
+      "total": 1,
       "ok": 0
     },
     {
       "label": "Label2",
+      "total": 1,
       "ok": 0.5
     },
     {
       "label": "Label3",
+      "total": 1,
       "ok": 0.4
     },
     {
       "label": "Label4",
+      "total": 1,
       "ok": 0.9
     },
     {
       "label": "Label5",
+      "total": 1,
       "ok": 0.4
     },
     {
       "label": "Label6",
+      "total": 1,
       "ok": 0.9
     },
     {
       "label": "Label7",
+      "total": 1,
       "ok": 0.8
     },
     {
       "label": "Label8",
+      "total": 1,
       "ok": 0.8
     }
   ],
@@ -158,42 +166,42 @@
     },
     {
       "label": "Label1",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 1.0
     },
     {
       "label": "Label2",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.5
     },
     {
       "label": "Label3",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.6
     },
     {
       "label": "Label4",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.1
     },
     {
       "label": "Label5",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.6
     },
     {
       "label": "Label6",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.1
     },
     {
       "label": "Label7",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.2
     },
     {
       "label": "Label8",
-      "variable": "err",
+      "variable": "mutate_a",
       "value": 0.2
     }
   ],
