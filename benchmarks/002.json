@@ -423,7 +423,7 @@
           },
           "x": {
             "field": "Month",
-            "type": "temporal"
+            "type": "nominal"
           }
         }
       },
@@ -448,7 +448,7 @@
           },
           "x": {
             "field": "Month",
-            "type": "temporal"
+            "type": "nominal"
           }
         }
       }
