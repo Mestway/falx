@@ -55,6 +55,13 @@ def pick_best_candidate_index(candidate_indices, chosen_indices, full_table):
     return candidate_indices[np.argmax(scores)]
 
 
+def check_trace_consistency(orig_trace, vis_prog):
+    """check whether the prog is consistent with the full trace"""
+    tr = vis_prog.eval()
+    orig_tr_table = visual_trace.trace_to_table(orig_trace)
+    new_tr_table = visual_trace.trace_to_table(tr)
+    return all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) != None for key in new_tr_table])
+
 class FalxEvalInterface(object):
 
     @staticmethod
@@ -70,14 +77,14 @@ class FalxEvalInterface(object):
 
         for full_sym_data, chart in abstract_designs:
 
-            if len(abstract_designs) > 1:
-                data_value = full_sym_data.values if not isinstance(full_sym_data, (list,)) else [x.values for x in full_sym_data]
-                tr = VisDesign(data=data_value, chart=chart).eval()
-                orig_tr_table = visual_trace.trace_to_table(full_trace)
-                new_tr_table = visual_trace.trace_to_table(tr)
-                full_trace_err = all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) == None for key in new_tr_table])
-            else:
-                full_trace_err = False
+            # if len(abstract_designs) > 1:
+            #     data_value = full_sym_data.values if not isinstance(full_sym_data, (list,)) else [x.values for x in full_sym_data]
+            #     tr = VisDesign(data=data_value, chart=chart).eval()
+            #     orig_tr_table = visual_trace.trace_to_table(full_trace)
+            #     new_tr_table = visual_trace.trace_to_table(tr)
+            #     full_trace_err = all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) == None for key in new_tr_table])
+            # else:
+            #     full_trace_err = False
 
             if not isinstance(full_sym_data, (list,)):
 
@@ -95,7 +102,7 @@ class FalxEvalInterface(object):
                     vis_design = VisDesign(data=output, chart=chart)
                     vis_design.update_field_names(field_mapping)
 
-                    if not full_trace_err:
+                    if check_trace_consistency(vis_design, full_trace):
                         candidates.append((p, vis_design))
                     else:
                         print("===> the program is not consistent with the trace, continue")
@@ -130,7 +137,7 @@ class FalxEvalInterface(object):
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)
                     
-                    if not full_trace_err:
+                    if check_trace_consistency(vis_design, full_trace)::
                         candidates.append((progs, vis_design))
                     else:
                         print("===> the program is not consistent with the trace, continue")
