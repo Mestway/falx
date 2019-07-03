@@ -327,6 +327,24 @@ class MorpheusInterpreter(PostOrderInterpreter):
             logger.error('Error in interpreting summarise...')
             raise GeneralError()
 
+    def eval_mutateCustom(self, node, args):
+        n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        self.assertArg(node, args,
+                index=2,
+                cond=lambda x: x <= n_cols,
+                capture_indices=[0])
+
+        ret_df_name = get_fresh_name()
+        _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
+                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
+        try:
+            assert False, _script
+            ret_val = robjects.r(_script)
+            return ret_df_name
+        except:
+            logger.error('Error in interpreting mutateCustom...')
+            raise GeneralError()
+
     def eval_mutate(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
         self.assertArg(node, args,
