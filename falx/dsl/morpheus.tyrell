@@ -20,7 +20,7 @@ enum Aggr {
 }
 
 enum NumFunc {
-  "+", "/"
+  "+", "-", "/"
 }
 enum BoolFunc {
   "==", ">", "<"
