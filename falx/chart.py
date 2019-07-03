@@ -400,13 +400,17 @@ class StackedBarChart(object):
         # group based on stack_pos channel
         group_keys = set([r[self.encodings[stack_pos].field] for r in data])
         grouped_data = {key: [r for r in data if r[self.encodings[stack_pos].field] == key] for key in group_keys}
-        stack_order = self.encodings["color"].sort_order
+        if "color" in self.encodings:
+            stack_order = self.encodings["color"].sort_order
+        else:
+            stack_order = None
 
         res = []
         for key in grouped_data:
             vals = grouped_data[key]
-            vals.sort(key=lambda x: x[self.encodings["color"].field], 
-                      reverse=False if stack_order == 'ascending' else True)
+            if "color" in self.encodings:
+                vals.sort(key=lambda x: x[self.encodings["color"].field], 
+                          reverse=False if stack_order == 'ascending' else True)
 
             # only used when there is no interval value for x, y
             last_stack_val = 0

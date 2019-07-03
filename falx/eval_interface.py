@@ -6,6 +6,7 @@ import itertools
 from pprint import pprint
 import numpy as np
 from symbolic import SymTable
+import visual_trace
 
 import interface
 
@@ -69,6 +70,15 @@ class FalxEvalInterface(object):
 
         for full_sym_data, chart in abstract_designs:
 
+            if len(abstract_designs) > 1:
+                data_value = full_sym_data.values if not isinstance(full_sym_data, (list,)) else [x.values for x in full_sym_data]
+                tr = VisDesign(data=data_value, chart=chart).eval()
+                orig_tr_table = visual_trace.trace_to_table(full_trace)
+                new_tr_table = visual_trace.trace_to_table(tr)
+                full_trace_err = all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) == None for key in new_tr_table])
+            else:
+                full_trace_err = False
+
             if not isinstance(full_sym_data, (list,)):
 
                 sample_output = sample_symbolic_table(full_sym_data, num_samples)
@@ -85,8 +95,11 @@ class FalxEvalInterface(object):
                     vis_design = VisDesign(data=output, chart=chart)
                     vis_design.update_field_names(field_mapping)
 
-                    candidates.append((p, vis_design))
-                    
+                    if not full_trace_err:
+                        candidates.append((p, vis_design))
+                    else:
+                        print("===> the program is not consistent with the trace, continue")
+
                     if len(candidates) >= top_k: break
             else:
                 # multi-layer charts
@@ -116,7 +129,11 @@ class FalxEvalInterface(object):
 
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)
-                    candidates.append((progs, vis_design))
+                    
+                    if not full_trace_err:
+                        candidates.append((progs, vis_design))
+                    else:
+                        print("===> the program is not consistent with the trace, continue")
 
                     if len(candidates) >= top_k: break
 

@@ -28,10 +28,6 @@ class SymTable(object):
 					e.g. {["a": 1, "b": 2, "c": 100],
 					 	  ["a": 2, "b"; 5, "c": 15]} 
 					 contains two tuples
-				constraints:
-					forall r in T. p(t)
-					exists r in T. p(t)
-					p(column)
 		"""
 		self.values = values
 		self.constraints = constraints

@@ -1,4 +1,5 @@
 from namedlist import namedlist
+from pprint import pprint
 
 # mutatable vtrace
 BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
@@ -23,5 +24,20 @@ def partition_trace(vtrace):
 
 def trace_contain(tr1, tr2):
     """check whether tr1 is contained by tr2 """
-    
     pass
+
+def trace_to_table(vtrace):
+    trace_dict = partition_trace(vtrace)
+    for ty in trace_dict:
+        table = []
+        for v in trace_dict[ty]:
+            table.append(dict(v._asdict()))
+        to_del = []
+        for key in table[0].keys():
+            if all([r[key] == None for r in table]):
+                to_del.append(key)
+        for r in table:
+            for key in to_del:
+                r.pop(key)
+        trace_dict[ty] = table
+    return trace_dict
