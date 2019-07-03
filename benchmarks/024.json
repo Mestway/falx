@@ -2,101 +2,93 @@
   "input_data": [
     {
       "Parts": "Foundation",
-      "Start Date": "6/1/2000",
-      "Duration": "10"
+      "Start Date": 959842800,
+      "Duration": 864000
     },
     {
       "Parts": "Walls",
-      "Start Date": "6/12/2000",
-      "Duration": "7"
+      "Start Date": 960793200,
+      "Duration": 604800
     },
     {
       "Parts": "Roof",
-      "Start Date": "6/20/2000",
-      "Duration": "10"
+      "Start Date": 961484400,
+      "Duration": 864000
     },
     {
       "Parts": "Windows, Doors",
-      "Start Date": "7/1/2000",
-      "Duration": "5"
+      "Start Date": 962434800,
+      "Duration": 432000
     },
     {
       "Parts": "Plumbing",
-      "Start Date": "7/7/2000",
-      "Duration": "3"
+      "Start Date": 962953200,
+      "Duration": 259200
     },
     {
       "Parts": "Electric",
-      "Start Date": "7/7/2000",
-      "Duration": "3"
+      "Start Date": 962953200,
+      "Duration": 259200
     },
     {
       "Parts": "Painting",
-      "Start Date": "7/11/2000",
-      "Duration": "2"
+      "Start Date": 963298800,
+      "Duration": 172800
     },
     {
       "Parts": "Flooring",
-      "Start Date": "7/13/2000",
-      "Duration": "2"
+      "Start Date": 963471600,
+      "Duration": 172800
     }
   ],
   "output_data": [
     {
-      "Duration": 10,
+      "Duration": 864000,
       "Parts": "Foundation",
-      "Start Date": 959817600000,
-      "id": 0,
-      "End Date": 960681600000
+      "Start Date": 959842800,
+      "End Date": 960706800
     },
     {
-      "Duration": 7,
+      "Duration": 604800,
       "Parts": "Walls",
-      "Start Date": 960768000000,
-      "id": 1,
-      "End Date": 961372800000
+      "Start Date": 960793200,
+      "End Date": 961398000
     },
     {
-      "Duration": 10,
+      "Duration": 864000,
       "Parts": "Roof",
-      "Start Date": 961459200000,
-      "id": 2,
-      "End Date": 962323200000
+      "Start Date": 961484400,
+      "End Date": 962348400
     },
     {
-      "Duration": 5,
+      "Duration": 432000,
       "Parts": "Windows, Doors",
-      "Start Date": 962409600000,
-      "id": 3,
-      "End Date": 962841600000
+      "Start Date": 962434800,
+      "End Date": 962866800
     },
     {
-      "Duration": 3,
+      "Duration": 259200,
       "Parts": "Plumbing",
-      "Start Date": 962928000000,
-      "id": 4,
-      "End Date": 963187200000
+      "Start Date": 962953200,
+      "End Date": 963212400
     },
     {
-      "Duration": 3,
+      "Duration": 259200,
       "Parts": "Electric",
-      "Start Date": 962928000000,
-      "id": 5,
-      "End Date": 963187200000
+      "Start Date": 962953200,
+      "End Date": 963212400
     },
     {
-      "Duration": 2,
+      "Duration": 172800,
       "Parts": "Painting",
-      "Start Date": 963273600000,
-      "id": 6,
-      "End Date": 963446400000
+      "Start Date": 963298800,
+      "End Date": 963471600
     },
     {
-      "Duration": 2,
+      "Duration": 172800,
       "Parts": "Flooring",
-      "Start Date": 963446400000,
-      "id": 7,
-      "End Date": 963619200000
+      "Start Date": 963471600,
+      "End Date": 963644400
     }
   ],
   "vl_spec": {

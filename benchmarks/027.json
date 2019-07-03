@@ -1,306 +1,306 @@
 {
   "input_data": [
     {
-      "0": 120,
-      "1": 150,
-      "2": 240,
-      "3": 540,
-      "4": 210,
-      "5": 380,
-      "6": 120,
-      "7": 870,
-      "8": 250,
-      "9": 1100,
-      "10": 500,
-      "11": 950,
+      "c00": 120,
+      "c01": 150,
+      "c02": 240,
+      "c03": 540,
+      "c04": 210,
+      "c05": 380,
+      "c06": 120,
+      "c07": 870,
+      "c08": 250,
+      "c09": 1100,
+      "c10": 500,
+      "c11": 950,
       "Period": "Actual"
     },
     {
-      "0": 0,
-      "1": 135,
-      "2": 195,
-      "3": 390,
-      "4": 375,
-      "5": 295,
-      "6": 250,
-      "7": 495,
-      "8": 560,
-      "9": 675,
-      "10": 800,
-      "11": 725,
+      "c00": 0,
+      "c01": 135,
+      "c02": 195,
+      "c03": 390,
+      "c04": 375,
+      "c05": 295,
+      "c06": 250,
+      "c07": 495,
+      "c08": 560,
+      "c09": 675,
+      "c10": 800,
+      "c11": 725,
       "Period": "Interval = 2"
     },
     {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 262.5,
-      "4": 285,
-      "5": 342.5,
-      "6": 312.5,
-      "7": 395,
-      "8": 405,
-      "9": 585,
-      "10": 680,
-      "11": 700,
+      "c00": 0,
+      "c01": 0,
+      "c02": 0,
+      "c03": 262.5,
+      "c04": 285,
+      "c05": 342.5,
+      "c06": 312.5,
+      "c07": 395,
+      "c08": 405,
+      "c09": 585,
+      "c10": 680,
+      "c11": 700,
       "Period": "Interval = 4"
     },
     {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 273.333333333333,
-      "6": 273.333333333333,
-      "7": 393.333333333333,
-      "8": 395,
-      "9": 488.333333333333,
-      "10": 536.666666666667,
-      "11": 631.666666666667,
+      "c00": 0,
+      "c01": 0,
+      "c02": 0,
+      "c03": 0,
+      "c04": 0,
+      "c05": 273,
+      "c06": 273,
+      "c07": 393,
+      "c08": 395,
+      "c09": 488,
+      "c10": 536,
+      "c11": 631,
       "Period": "Interval = 6"
     }
   ],
   "output_data": [
     {
       "Period": "Actual",
-      "variable": "0",
+      "variable": "c00",
       "value": 120.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "0",
+      "variable": "c00",
       "value": 0.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "0",
+      "variable": "c00",
       "value": 0.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "0",
+      "variable": "c00",
       "value": 0.0
     },
     {
       "Period": "Actual",
-      "variable": "1",
+      "variable": "c01",
       "value": 150.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "1",
+      "variable": "c01",
       "value": 135.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "1",
+      "variable": "c01",
       "value": 0.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "1",
+      "variable": "c01",
       "value": 0.0
     },
     {
       "Period": "Actual",
-      "variable": "2",
+      "variable": "c02",
       "value": 240.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "2",
+      "variable": "c02",
       "value": 195.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "2",
+      "variable": "c02",
       "value": 0.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "2",
+      "variable": "c02",
       "value": 0.0
     },
     {
       "Period": "Actual",
-      "variable": "3",
+      "variable": "c03",
       "value": 540.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "3",
+      "variable": "c03",
       "value": 390.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "3",
+      "variable": "c03",
       "value": 262.5
     },
     {
       "Period": "Interval = 6",
-      "variable": "3",
+      "variable": "c03",
       "value": 0.0
     },
     {
       "Period": "Actual",
-      "variable": "4",
+      "variable": "c04",
       "value": 210.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "4",
+      "variable": "c04",
       "value": 375.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "4",
+      "variable": "c04",
       "value": 285.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "4",
+      "variable": "c04",
       "value": 0.0
     },
     {
       "Period": "Actual",
-      "variable": "5",
+      "variable": "c05",
       "value": 380.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "5",
+      "variable": "c05",
       "value": 295.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "5",
+      "variable": "c05",
       "value": 342.5
     },
     {
       "Period": "Interval = 6",
-      "variable": "5",
-      "value": 273.333333333333
+      "variable": "c05",
+      "value": 273.0
     },
     {
       "Period": "Actual",
-      "variable": "6",
+      "variable": "c06",
       "value": 120.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "6",
+      "variable": "c06",
       "value": 250.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "6",
+      "variable": "c06",
       "value": 312.5
     },
     {
       "Period": "Interval = 6",
-      "variable": "6",
-      "value": 273.333333333333
+      "variable": "c06",
+      "value": 273.0
     },
     {
       "Period": "Actual",
-      "variable": "7",
+      "variable": "c07",
       "value": 870.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "7",
+      "variable": "c07",
       "value": 495.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "7",
+      "variable": "c07",
       "value": 395.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "7",
-      "value": 393.333333333333
+      "variable": "c07",
+      "value": 393.0
     },
     {
       "Period": "Actual",
-      "variable": "8",
+      "variable": "c08",
       "value": 250.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "8",
+      "variable": "c08",
       "value": 560.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "8",
+      "variable": "c08",
       "value": 405.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "8",
+      "variable": "c08",
       "value": 395.0
     },
     {
       "Period": "Actual",
-      "variable": "9",
+      "variable": "c09",
       "value": 1100.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "9",
+      "variable": "c09",
       "value": 675.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "9",
+      "variable": "c09",
       "value": 585.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "9",
-      "value": 488.333333333333
+      "variable": "c09",
+      "value": 488.0
     },
     {
       "Period": "Actual",
-      "variable": "10",
+      "variable": "c10",
       "value": 500.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "10",
+      "variable": "c10",
       "value": 800.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "10",
+      "variable": "c10",
       "value": 680.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "10",
-      "value": 536.666666666667
+      "variable": "c10",
+      "value": 536.0
     },
     {
       "Period": "Actual",
-      "variable": "11",
+      "variable": "c11",
       "value": 950.0
     },
     {
       "Period": "Interval = 2",
-      "variable": "11",
+      "variable": "c11",
       "value": 725.0
     },
     {
       "Period": "Interval = 4",
-      "variable": "11",
+      "variable": "c11",
       "value": 700.0
     },
     {
       "Period": "Interval = 6",
-      "variable": "11",
-      "value": 631.666666666667
+      "variable": "c11",
+      "value": 631.0
     }
   ],
   "vl_spec": {
