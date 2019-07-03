@@ -15285,7 +15285,7 @@
   ],
   "output_data": [
     {
-      "cuts": "(-0.2, 10.0]",
+      "cuts": "(0,10]",
       "Customer ID": 533,
       "Duration": 533,
       "Purchase Amount": 533,
@@ -15293,7 +15293,7 @@
       "csum": 533
     },
     {
-      "cuts": "(10.0, 20.0]",
+      "cuts": "(10,20]",
       "Customer ID": 0,
       "Duration": 0,
       "Purchase Amount": 0,
@@ -15301,7 +15301,7 @@
       "csum": 533
     },
     {
-      "cuts": "(20.0, 30.0]",
+      "cuts": "(20,30]",
       "Customer ID": 0,
       "Duration": 0,
       "Purchase Amount": 0,
@@ -15309,7 +15309,7 @@
       "csum": 533
     },
     {
-      "cuts": "(30.0, 40.0]",
+      "cuts": "(30,40]",
       "Customer ID": 0,
       "Duration": 0,
       "Purchase Amount": 0,
@@ -15317,7 +15317,7 @@
       "csum": 533
     },
     {
-      "cuts": "(40.0, 50.0]",
+      "cuts": "(40,50]",
       "Customer ID": 72,
       "Duration": 72,
       "Purchase Amount": 72,
@@ -15325,7 +15325,7 @@
       "csum": 605
     },
     {
-      "cuts": "(50.0, 60.0]",
+      "cuts": "(50,60]",
       "Customer ID": 118,
       "Duration": 118,
       "Purchase Amount": 118,
@@ -15333,7 +15333,7 @@
       "csum": 723
     },
     {
-      "cuts": "(60.0, 70.0]",
+      "cuts": "(60,70]",
       "Customer ID": 127,
       "Duration": 127,
       "Purchase Amount": 127,
@@ -15341,7 +15341,7 @@
       "csum": 850
     },
     {
-      "cuts": "(70.0, 80.0]",
+      "cuts": "(70,80]",
       "Customer ID": 126,
       "Duration": 126,
       "Purchase Amount": 126,
@@ -15349,7 +15349,7 @@
       "csum": 976
     },
     {
-      "cuts": "(80.0, 90.0]",
+      "cuts": "(80,90]",
       "Customer ID": 123,
       "Duration": 123,
       "Purchase Amount": 123,
@@ -15357,7 +15357,7 @@
       "csum": 1099
     },
     {
-      "cuts": "(90.0, 100.0]",
+      "cuts": "(90,100]",
       "Customer ID": 113,
       "Duration": 113,
       "Purchase Amount": 113,
@@ -15365,7 +15365,7 @@
       "csum": 1212
     },
     {
-      "cuts": "(100.0, 110.0]",
+      "cuts": "(100,110]",
       "Customer ID": 132,
       "Duration": 132,
       "Purchase Amount": 132,
@@ -15373,7 +15373,7 @@
       "csum": 1344
     },
     {
-      "cuts": "(110.0, 120.0]",
+      "cuts": "(110,120]",
       "Customer ID": 115,
       "Duration": 115,
       "Purchase Amount": 115,
@@ -15381,7 +15381,7 @@
       "csum": 1459
     },
     {
-      "cuts": "(120.0, 130.0]",
+      "cuts": "(120,130]",
       "Customer ID": 138,
       "Duration": 138,
       "Purchase Amount": 138,
@@ -15389,7 +15389,7 @@
       "csum": 1597
     },
     {
-      "cuts": "(130.0, 140.0]",
+      "cuts": "(130,140]",
       "Customer ID": 127,
       "Duration": 127,
       "Purchase Amount": 127,
@@ -15397,7 +15397,7 @@
       "csum": 1724
     },
     {
-      "cuts": "(140.0, 150.0]",
+      "cuts": "(140,150]",
       "Customer ID": 126,
       "Duration": 126,
       "Purchase Amount": 126,
@@ -15405,7 +15405,7 @@
       "csum": 1850
     },
     {
-      "cuts": "(150.0, 160.0]",
+      "cuts": "(150,160]",
       "Customer ID": 142,
       "Duration": 142,
       "Purchase Amount": 142,
@@ -15413,7 +15413,7 @@
       "csum": 1992
     },
     {
-      "cuts": "(160.0, 170.0]",
+      "cuts": "(160,170]",
       "Customer ID": 136,
       "Duration": 136,
       "Purchase Amount": 136,
@@ -15421,7 +15421,7 @@
       "csum": 2128
     },
     {
-      "cuts": "(170.0, 180.0]",
+      "cuts": "(170,180]",
       "Customer ID": 136,
       "Duration": 136,
       "Purchase Amount": 136,
@@ -15429,7 +15429,7 @@
       "csum": 2264
     },
     {
-      "cuts": "(180.0, 190.0]",
+      "cuts": "(180,190]",
       "Customer ID": 130,
       "Duration": 130,
       "Purchase Amount": 130,
@@ -15437,15 +15437,14 @@
       "csum": 2394
     },
     {
-      "cuts": "(190.0, 200.0]",
+      "cuts": "(190,200]",
       "Customer ID": 153,
       "Duration": 153,
       "Purchase Amount": 153,
       "Representative": 153,
       "csum": 2547
     }
-  ]
-  ,
+  ],
   "vl_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
     "layer": [
