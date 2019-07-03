@@ -1,326 +1,326 @@
 {
   "input_data": [
     {
-      "Shift": "1",
-      "Period": "1",
-      "Start of Shift": "0:50 / 19:10",
-      "End of Shift": "1:50 / 18:10",
-      "Duration": "01:00"
+      "Shift": 1,
+      "Period": 1,
+      "Start of Shift": "50 / 1150",
+      "End of Shift": "110 / 1090",
+      "Duration": 60
     },
     {
-      "Shift": "2",
-      "Period": "1",
-      "Start of Shift": "3:44 / 16:16",
-      "End of Shift": "4:32 / 15:28",
-      "Duration": "00:48"
+      "Shift": 2,
+      "Period": 1,
+      "Start of Shift": "224 / 976",
+      "End of Shift": "272 / 928",
+      "Duration": 48
     },
     {
-      "Shift": "3",
-      "Period": "1",
-      "Start of Shift": "6:19 / 13:41",
-      "End of Shift": "6:59 / 13:01",
-      "Duration": "00:40"
+      "Shift": 3,
+      "Period": 1,
+      "Start of Shift": "379 / 821",
+      "End of Shift": "419 / 781",
+      "Duration": 40
     },
     {
-      "Shift": "4",
-      "Period": "1",
-      "Start of Shift": "9:05 / 10:55",
-      "End of Shift": "10:01 / 9:59",
-      "Duration": "00:56"
+      "Shift": 4,
+      "Period": 1,
+      "Start of Shift": "545 / 655",
+      "End of Shift": "601 / 599",
+      "Duration": 56
     },
     {
-      "Shift": "5",
-      "Period": "1",
-      "Start of Shift": "12:39 / 7:21",
-      "End of Shift": "14:00 / 6:00",
-      "Duration": "01:21"
+      "Shift": 5,
+      "Period": 1,
+      "Start of Shift": "759 / 441",
+      "End of Shift": "840 / 360",
+      "Duration": 81
     },
     {
-      "Shift": "6",
-      "Period": "1",
-      "Start of Shift": "16:06 / 3:54",
-      "End of Shift": "16:54 / 3:06",
-      "Duration": "00:48"
+      "Shift": 6,
+      "Period": 1,
+      "Start of Shift": "966 / 234",
+      "End of Shift": "1014 / 186",
+      "Duration": 48
     },
     {
-      "Shift": "7",
-      "Period": "1",
-      "Start of Shift": "18:04 / 1:56",
-      "End of Shift": "19:06 / 0:54",
-      "Duration": "01:02"
+      "Shift": 7,
+      "Period": 1,
+      "Start of Shift": "1084 / 116",
+      "End of Shift": "1146 / 54",
+      "Duration": 62
     },
     {
-      "Shift": "8",
-      "Period": "2",
-      "Start of Shift": "0:00 / 20:00",
-      "End of Shift": "1:00 / 19:00",
-      "Duration": "01:00"
+      "Shift": 8,
+      "Period": 2,
+      "Start of Shift": "0 / 1200",
+      "End of Shift": "60 / 1140",
+      "Duration": 60
     },
     {
-      "Shift": "9",
-      "Period": "2",
-      "Start of Shift": "2:37 / 17:23",
-      "End of Shift": "4:05 / 15:55",
-      "Duration": "01:28"
+      "Shift": 9,
+      "Period": 2,
+      "Start of Shift": "157 / 1043",
+      "End of Shift": "245 / 955",
+      "Duration": 88
     },
     {
-      "Shift": "10",
-      "Period": "2",
-      "Start of Shift": "9:18 / 10:42",
-      "End of Shift": "10:04 / 9:56",
-      "Duration": "00:46"
+      "Shift": 10,
+      "Period": 2,
+      "Start of Shift": "558 / 642",
+      "End of Shift": "604 / 596",
+      "Duration": 46
     },
     {
-      "Shift": "11",
-      "Period": "2",
-      "Start of Shift": "11:41 / 8:19",
-      "End of Shift": "12:47 / 7:13",
-      "Duration": "01:06"
+      "Shift": 11,
+      "Period": 2,
+      "Start of Shift": "701 / 499",
+      "End of Shift": "767 / 433",
+      "Duration": 66
     },
     {
-      "Shift": "12",
-      "Period": "2",
-      "Start of Shift": "13:50 / 6:10",
-      "End of Shift": "15:13 / 4:47",
-      "Duration": "01:23"
+      "Shift": 12,
+      "Period": 2,
+      "Start of Shift": "830 / 370",
+      "End of Shift": "913 / 287",
+      "Duration": 83
     },
     {
-      "Shift": "13",
-      "Period": "2",
-      "Start of Shift": "17:37 / 2:23",
-      "End of Shift": "19:00 / 1:00",
-      "Duration": "01:23"
+      "Shift": 13,
+      "Period": 2,
+      "Start of Shift": "1057 / 143",
+      "End of Shift": "1140 / 60",
+      "Duration": 83
     },
     {
-      "Shift": "14",
-      "Period": "3",
-      "Start of Shift": "0:39 / 19:21",
-      "End of Shift": "1:16 / 18:44",
-      "Duration": "00:37"
+      "Shift": 14,
+      "Period": 3,
+      "Start of Shift": "39 / 1161",
+      "End of Shift": "76 / 1124",
+      "Duration": 37
     },
     {
-      "Shift": "15",
-      "Period": "3",
-      "Start of Shift": "2:57 / 17:03 ",
-      "End of Shift": "3:25 / 16:35",
-      "Duration": "00:28"
+      "Shift": 15,
+      "Period": 3,
+      "Start of Shift": "177 / 1023",
+      "End of Shift": "205 / 995",
+      "Duration": 28
     },
     {
-      "Shift": "16",
-      "Period": "3",
-      "Start of Shift": "5:25 / 14:35",
-      "End of Shift": "6:16 / 13:44",
-      "Duration": "00:51"
+      "Shift": 16,
+      "Period": 3,
+      "Start of Shift": "325 / 875",
+      "End of Shift": "376 / 824",
+      "Duration": 51
     },
     {
-      "Shift": "17",
-      "Period": "3",
-      "Start of Shift": "9:01 / 10:59",
-      "End of Shift": "9:24 / 10:36",
-      "Duration": "00:23"
+      "Shift": 17,
+      "Period": 3,
+      "Start of Shift": "541 / 659",
+      "End of Shift": "564 / 636",
+      "Duration": 23
     },
     {
-      "Shift": "18",
-      "Period": "3",
-      "Start of Shift": "11:24 / 8:36",
-      "End of Shift": "11:34 / 8:26",
-      "Duration": "00:10"
+      "Shift": 18,
+      "Period": 3,
+      "Start of Shift": "684 / 516",
+      "End of Shift": "694 / 506",
+      "Duration": 10
     },
     {
-      "Shift": "19",
-      "Period": "3",
-      "Start of Shift": "11:35 / 8:25",
-      "End of Shift": "12:55 / 7:05",
-      "Duration": "01:20"
+      "Shift": 19,
+      "Period": 3,
+      "Start of Shift": "695 / 505",
+      "End of Shift": "775 / 425",
+      "Duration": 80
     },
     {
-      "Shift": "20",
-      "Period": "3",
-      "Start of Shift": "16:27 / 3:33",
-      "End of Shift": "20:00 / 0:00",
-      "Duration": "03:33"
+      "Shift": 20,
+      "Period": 3,
+      "Start of Shift": "987 / 213",
+      "End of Shift": "1200 / 0",
+      "Duration": 213
     }
   ],
   "output_data": [
     {
       "Duration": 60,
-      "End of Shift": "1:50 / 18:10",
+      "End of Shift": "110 / 1090",
       "Period": 1,
       "Shift": 1,
-      "Start of Shift": "0:50 / 19:10",
-      "s1": 110,
-      "s0": 50
+      "Start of Shift": "50 / 1150",
+      "s1": "110 ",
+      "s0": "50 "
     },
     {
       "Duration": 48,
-      "End of Shift": "4:32 / 15:28",
+      "End of Shift": "272 / 928",
       "Period": 1,
       "Shift": 2,
-      "Start of Shift": "3:44 / 16:16",
-      "s1": 272,
-      "s0": 224
+      "Start of Shift": "224 / 976",
+      "s1": "272 ",
+      "s0": "224 "
     },
     {
       "Duration": 40,
-      "End of Shift": "6:59 / 13:01",
+      "End of Shift": "419 / 781",
       "Period": 1,
       "Shift": 3,
-      "Start of Shift": "6:19 / 13:41",
-      "s1": 419,
-      "s0": 379
+      "Start of Shift": "379 / 821",
+      "s1": "419 ",
+      "s0": "379 "
     },
     {
       "Duration": 56,
-      "End of Shift": "10:01 / 9:59",
+      "End of Shift": "601 / 599",
       "Period": 1,
       "Shift": 4,
-      "Start of Shift": "9:05 / 10:55",
-      "s1": 601,
-      "s0": 545
+      "Start of Shift": "545 / 655",
+      "s1": "601 ",
+      "s0": "545 "
     },
     {
       "Duration": 81,
-      "End of Shift": "14:00 / 6:00",
+      "End of Shift": "840 / 360",
       "Period": 1,
       "Shift": 5,
-      "Start of Shift": "12:39 / 7:21",
-      "s1": 840,
-      "s0": 759
+      "Start of Shift": "759 / 441",
+      "s1": "840 ",
+      "s0": "759 "
     },
     {
       "Duration": 48,
-      "End of Shift": "16:54 / 3:06",
+      "End of Shift": "1014 / 186",
       "Period": 1,
       "Shift": 6,
-      "Start of Shift": "16:06 / 3:54",
-      "s1": 1014,
-      "s0": 966
+      "Start of Shift": "966 / 234",
+      "s1": "1014 ",
+      "s0": "966 "
     },
     {
       "Duration": 62,
-      "End of Shift": "19:06 / 0:54",
+      "End of Shift": "1146 / 54",
       "Period": 1,
       "Shift": 7,
-      "Start of Shift": "18:04 / 1:56",
-      "s1": 1146,
-      "s0": 1084
+      "Start of Shift": "1084 / 116",
+      "s1": "1146 ",
+      "s0": "1084 "
     },
     {
       "Duration": 60,
-      "End of Shift": "1:00 / 19:00",
+      "End of Shift": "60 / 1140",
       "Period": 2,
       "Shift": 8,
-      "Start of Shift": "0:00 / 20:00",
-      "s1": 60,
-      "s0": 0
+      "Start of Shift": "0 / 1200",
+      "s1": "60 ",
+      "s0": "0 "
     },
     {
       "Duration": 88,
-      "End of Shift": "4:05 / 15:55",
+      "End of Shift": "245 / 955",
       "Period": 2,
       "Shift": 9,
-      "Start of Shift": "2:37 / 17:23",
-      "s1": 245,
-      "s0": 157
+      "Start of Shift": "157 / 1043",
+      "s1": "245 ",
+      "s0": "157 "
     },
     {
       "Duration": 46,
-      "End of Shift": "10:04 / 9:56",
+      "End of Shift": "604 / 596",
       "Period": 2,
       "Shift": 10,
-      "Start of Shift": "9:18 / 10:42",
-      "s1": 604,
-      "s0": 558
+      "Start of Shift": "558 / 642",
+      "s1": "604 ",
+      "s0": "558 "
     },
     {
       "Duration": 66,
-      "End of Shift": "12:47 / 7:13",
+      "End of Shift": "767 / 433",
       "Period": 2,
       "Shift": 11,
-      "Start of Shift": "11:41 / 8:19",
-      "s1": 767,
-      "s0": 701
+      "Start of Shift": "701 / 499",
+      "s1": "767 ",
+      "s0": "701 "
     },
     {
       "Duration": 83,
-      "End of Shift": "15:13 / 4:47",
+      "End of Shift": "913 / 287",
       "Period": 2,
       "Shift": 12,
-      "Start of Shift": "13:50 / 6:10",
-      "s1": 913,
-      "s0": 830
+      "Start of Shift": "830 / 370",
+      "s1": "913 ",
+      "s0": "830 "
     },
     {
       "Duration": 83,
-      "End of Shift": "19:00 / 1:00",
+      "End of Shift": "1140 / 60",
       "Period": 2,
       "Shift": 13,
-      "Start of Shift": "17:37 / 2:23",
-      "s1": 1140,
-      "s0": 1057
+      "Start of Shift": "1057 / 143",
+      "s1": "1140 ",
+      "s0": "1057 "
     },
     {
       "Duration": 37,
-      "End of Shift": "1:16 / 18:44",
+      "End of Shift": "76 / 1124",
       "Period": 3,
       "Shift": 14,
-      "Start of Shift": "0:39 / 19:21",
-      "s1": 76,
-      "s0": 39
+      "Start of Shift": "39 / 1161",
+      "s1": "76 ",
+      "s0": "39 "
     },
     {
       "Duration": 28,
-      "End of Shift": "3:25 / 16:35",
+      "End of Shift": "205 / 995",
       "Period": 3,
       "Shift": 15,
-      "Start of Shift": "2:57 / 17:03 ",
-      "s1": 205,
-      "s0": 177
+      "Start of Shift": "177 / 1023",
+      "s1": "205 ",
+      "s0": "177 "
     },
     {
       "Duration": 51,
-      "End of Shift": "6:16 / 13:44",
+      "End of Shift": "376 / 824",
       "Period": 3,
       "Shift": 16,
-      "Start of Shift": "5:25 / 14:35",
-      "s1": 376,
-      "s0": 325
+      "Start of Shift": "325 / 875",
+      "s1": "376 ",
+      "s0": "325 "
     },
     {
       "Duration": 23,
-      "End of Shift": "9:24 / 10:36",
+      "End of Shift": "564 / 636",
       "Period": 3,
       "Shift": 17,
-      "Start of Shift": "9:01 / 10:59",
-      "s1": 564,
-      "s0": 541
+      "Start of Shift": "541 / 659",
+      "s1": "564 ",
+      "s0": "541 "
     },
     {
       "Duration": 10,
-      "End of Shift": "11:34 / 8:26",
+      "End of Shift": "694 / 506",
       "Period": 3,
       "Shift": 18,
-      "Start of Shift": "11:24 / 8:36",
-      "s1": 694,
-      "s0": 684
+      "Start of Shift": "684 / 516",
+      "s1": "694 ",
+      "s0": "684 "
     },
     {
       "Duration": 80,
-      "End of Shift": "12:55 / 7:05",
+      "End of Shift": "775 / 425",
       "Period": 3,
       "Shift": 19,
-      "Start of Shift": "11:35 / 8:25",
-      "s1": 775,
-      "s0": 695
+      "Start of Shift": "695 / 505",
+      "s1": "775 ",
+      "s0": "695 "
     },
     {
       "Duration": 213,
-      "End of Shift": "20:00 / 0:00",
+      "End of Shift": "1200 / 0",
       "Period": 3,
       "Shift": 20,
-      "Start of Shift": "16:27 / 3:33",
-      "s1": 1200,
-      "s0": 987
+      "Start of Shift": "987 / 213",
+      "s1": "1200 ",
+      "s0": "987 "
     }
   ],
   "vl_spec": {

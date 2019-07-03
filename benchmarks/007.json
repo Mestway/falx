@@ -2,86 +2,86 @@
   "input_data": [
     {
       "index": 0,
-      "Strongly Agree": "50%",
-      "Agree": "35%",
-      "Disagree": "8%",
-      "Strongly Disagree": "7%"
+      "Strongly Agree": 50,
+      "Agree": 35,
+      "Disagree": 8,
+      "Strongly Disagree": 7
     },
     {
       "index": 1,
-      "Strongly Agree": "70%",
-      "Agree": "10%",
-      "Disagree": "10.00%",
-      "Strongly Disagree": "10%"
+      "Strongly Agree": 70,
+      "Agree": 10,
+      "Disagree": 10.0,
+      "Strongly Disagree": 10
     },
     {
       "index": 2,
-      "Strongly Agree": "45%",
-      "Agree": "30%",
-      "Disagree": "15.00%",
-      "Strongly Disagree": "10%"
+      "Strongly Agree": 45,
+      "Agree": 30,
+      "Disagree": 15.0,
+      "Strongly Disagree": 10
     }
   ],
   "output_data": [
     {
       "id": 0,
       "variable": "Strongly Disagree",
-      "value": 0.07
+      "value": 7.0
     },
     {
       "id": 1,
       "variable": "Strongly Disagree",
-      "value": 0.1
+      "value": 10.0
     },
     {
       "id": 2,
       "variable": "Strongly Disagree",
-      "value": 0.1
+      "value": 10.0
     },
     {
       "id": 0,
       "variable": "Agree",
-      "value": 0.35
+      "value": 35.0
     },
     {
       "id": 1,
       "variable": "Agree",
-      "value": 0.1
+      "value": 10.0
     },
     {
       "id": 2,
       "variable": "Agree",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "id": 0,
       "variable": "Disagree",
-      "value": 0.08
+      "value": 8.0
     },
     {
       "id": 1,
       "variable": "Disagree",
-      "value": 0.1
+      "value": 10.0
     },
     {
       "id": 2,
       "variable": "Disagree",
-      "value": 0.15
+      "value": 15.0
     },
     {
       "id": 0,
       "variable": "Strongly Agree",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "id": 1,
       "variable": "Strongly Agree",
-      "value": 0.7
+      "value": 70.0
     },
     {
       "id": 2,
       "variable": "Strongly Agree",
-      "value": 0.45
+      "value": 45.0
     }
   ],
   "vl_spec": {

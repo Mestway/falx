@@ -1,119 +1,83 @@
 {
   "input_data": [
     {
-      "Number of students": "22"
+      "Number of students": 22
     },
     {
-      "Number of students": "29"
+      "Number of students": 29
     },
     {
-      "Number of students": "40"
+      "Number of students": 40
     },
     {
-      "Number of students": "30"
+      "Number of students": 30
     },
     {
-      "Number of students": "48"
+      "Number of students": 48
     },
     {
-      "Number of students": "24"
+      "Number of students": 24
     },
     {
-      "Number of students": "21"
+      "Number of students": 21
     },
     {
-      "Number of students": "19"
+      "Number of students": 19
     },
     {
-      "Number of students": "24"
+      "Number of students": 24
     },
     {
-      "Number of students": "22"
+      "Number of students": 22
     },
     {
-      "Number of students": "25"
+      "Number of students": 25
     },
     {
-      "Number of students": "52"
+      "Number of students": 52
     },
     {
-      "Number of students": "35"
+      "Number of students": 35
     },
     {
-      "Number of students": "40"
+      "Number of students": 40
     },
     {
-      "Number of students": "31"
+      "Number of students": 31
     },
     {
-      "Number of students": "37"
+      "Number of students": 37
     },
     {
-      "Number of students": "21"
+      "Number of students": 21
     },
     {
-      "Number of students": "23"
+      "Number of students": 23
     }
   ],
   "output_data": [
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 20,
-        "open_left": true,
-        "right": 20
-      },
+      "cuts": "(0, 20]",
       "Number of students": 1
     },
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 5,
-        "open_left": true,
-        "right": 25
-      },
+      "cuts": "(20, 25]",
       "Number of students": 8
     },
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 5,
-        "open_left": true,
-        "right": 30
-      },
+      "cuts": "(25, 30]",
       "Number of students": 2
     },
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 5,
-        "open_left": true,
-        "right": 35
-      },
+      "cuts": "(30, 35]",
       "Number of students": 2
     },
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 5,
-        "open_left": true,
-        "right": 40
-      },
+      "cuts": "(35, 40]",
       "Number of students": 3
     },
     {
-      "cuts": {
-        "closed": "right",
-        "closed_right": true,
-        "length": 60,
-        "open_left": true,
-        "right": 100
-      },
+      "cuts": "(40, 100]",
       "Number of students": 2
     }
   ],

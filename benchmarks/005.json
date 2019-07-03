@@ -5,42 +5,42 @@
       "Sales": 10,
       "Cost": 6,
       "Profit": 4,
-      "ROI": "66.67%"
+      "ROI": 66.67
     },
     {
       "Month": "Feb",
       "Sales": 20,
       "Cost": 15,
       "Profit": 5,
-      "ROI": "33.33%"
+      "ROI": 33.33
     },
     {
       "Month": "Mar",
       "Sales": 30,
       "Cost": 24,
       "Profit": 6,
-      "ROI": "25.00%"
+      "ROI": 25.0
     },
     {
       "Month": "Apr",
       "Sales": 40,
       "Cost": 33,
       "Profit": 7,
-      "ROI": "21.21%"
+      "ROI": 21.21
     },
     {
       "Month": "May",
       "Sales": 50,
       "Cost": 42,
       "Profit": 8,
-      "ROI": "19.05%"
+      "ROI": 19.05
     },
     {
       "Month": "Jun",
       "Sales": 60,
       "Cost": 51,
       "Profit": 9,
-      "ROI": "17.65%"
+      "ROI": 17.65
     }
   ],
   "output_data": [
@@ -107,32 +107,32 @@
     {
       "Month": "Jan",
       "variable": "ROI",
-      "value": 0.6667
+      "value": 66.67
     },
     {
       "Month": "Feb",
       "variable": "ROI",
-      "value": 0.3333
+      "value": 33.33
     },
     {
       "Month": "Mar",
       "variable": "ROI",
-      "value": 0.25
+      "value": 25.0
     },
     {
       "Month": "Apr",
       "variable": "ROI",
-      "value": 0.2121
+      "value": 21.21
     },
     {
       "Month": "May",
       "variable": "ROI",
-      "value": 0.1905
+      "value": 19.05
     },
     {
       "Month": "Jun",
       "variable": "ROI",
-      "value": 0.1765
+      "value": 17.65
     },
     {
       "Month": "Jan",

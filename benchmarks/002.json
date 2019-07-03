@@ -2,401 +2,401 @@
   "input_data": [
     {
       "Month": "Apr-15",
-      "East": "86.40%",
-      "West": "63.00%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 86.4,
+      "West": 63.0,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "May-15",
-      "East": "45.80%",
-      "West": "58.90%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 45.8,
+      "West": 58.9,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Jun-15",
-      "East": "44.10%",
-      "West": "81.60%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 44.1,
+      "West": 81.6,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Jul-15",
-      "East": "77.60%",
-      "West": "86.10%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 77.6,
+      "West": 86.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Aug-15",
-      "East": "80.70%",
-      "West": "95.00%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 80.7,
+      "West": 95.0,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Sep-15",
-      "East": "83.70%",
-      "West": "78.20%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 83.7,
+      "West": 78.2,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Oct-15",
-      "East": "78.80%",
-      "West": "98.90%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 78.8,
+      "West": 98.9,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Nov-15",
-      "East": "76.00%",
-      "West": "88.30%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 76.0,
+      "West": 88.3,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Dec-15",
-      "East": "79.00%",
-      "West": "75.50%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 79.0,
+      "West": 75.5,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Jan-16",
-      "East": "77.00%",
-      "West": "72.10%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 77.0,
+      "West": 72.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Feb-16",
-      "East": "67.10%",
-      "West": "93.10%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 67.1,
+      "West": 93.1,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     },
     {
       "Month": "Mar-16",
-      "East": "45.80%",
-      "West": "95.70%",
-      "Low (<50%}": "50%",
-      "Medium (50%-80%}": "30%",
-      "High (>80%)": "20%"
+      "East": 45.8,
+      "West": 95.7,
+      "Low (<50%}": 50,
+      "Medium (50%-80%}": 30,
+      "High (>80%)": 20
     }
   ],
   "output_data": [
     {
       "Month": "Apr-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "May-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Jun-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Jul-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Aug-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Sep-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Oct-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Nov-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Dec-15",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Jan-16",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Feb-16",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Mar-16",
       "variable": "Low (<50%}",
-      "value": 0.5
+      "value": 50.0
     },
     {
       "Month": "Apr-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "May-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Jun-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Jul-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Aug-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Sep-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Oct-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Nov-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Dec-15",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Jan-16",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Feb-16",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Mar-16",
       "variable": "Medium (50%-80%}",
-      "value": 0.3
+      "value": 30.0
     },
     {
       "Month": "Apr-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "May-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Jun-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Jul-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Aug-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Sep-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Oct-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Nov-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Dec-15",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Jan-16",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Feb-16",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Mar-16",
       "variable": "High (>80%)",
-      "value": 0.2
+      "value": 20.0
     },
     {
       "Month": "Apr-15",
       "variable": "East",
-      "value": 0.864
+      "value": 86.4
     },
     {
       "Month": "May-15",
       "variable": "East",
-      "value": 0.458
+      "value": 45.8
     },
     {
       "Month": "Jun-15",
       "variable": "East",
-      "value": 0.441
+      "value": 44.1
     },
     {
       "Month": "Jul-15",
       "variable": "East",
-      "value": 0.776
+      "value": 77.6
     },
     {
       "Month": "Aug-15",
       "variable": "East",
-      "value": 0.807
+      "value": 80.7
     },
     {
       "Month": "Sep-15",
       "variable": "East",
-      "value": 0.837
+      "value": 83.7
     },
     {
       "Month": "Oct-15",
       "variable": "East",
-      "value": 0.788
+      "value": 78.8
     },
     {
       "Month": "Nov-15",
       "variable": "East",
-      "value": 0.76
+      "value": 76.0
     },
     {
       "Month": "Dec-15",
       "variable": "East",
-      "value": 0.79
+      "value": 79.0
     },
     {
       "Month": "Jan-16",
       "variable": "East",
-      "value": 0.77
+      "value": 77.0
     },
     {
       "Month": "Feb-16",
       "variable": "East",
-      "value": 0.671
+      "value": 67.1
     },
     {
       "Month": "Mar-16",
       "variable": "East",
-      "value": 0.458
+      "value": 45.8
     },
     {
       "Month": "Apr-15",
       "variable": "West",
-      "value": 0.63
+      "value": 63.0
     },
     {
       "Month": "May-15",
       "variable": "West",
-      "value": 0.589
+      "value": 58.9
     },
     {
       "Month": "Jun-15",
       "variable": "West",
-      "value": 0.816
+      "value": 81.6
     },
     {
       "Month": "Jul-15",
       "variable": "West",
-      "value": 0.861
+      "value": 86.1
     },
     {
       "Month": "Aug-15",
       "variable": "West",
-      "value": 0.95
+      "value": 95.0
     },
     {
       "Month": "Sep-15",
       "variable": "West",
-      "value": 0.782
+      "value": 78.2
     },
     {
       "Month": "Oct-15",
       "variable": "West",
-      "value": 0.989
+      "value": 98.9
     },
     {
       "Month": "Nov-15",
       "variable": "West",
-      "value": 0.883
+      "value": 88.3
     },
     {
       "Month": "Dec-15",
       "variable": "West",
-      "value": 0.755
+      "value": 75.5
     },
     {
       "Month": "Jan-16",
       "variable": "West",
-      "value": 0.721
+      "value": 72.1
     },
     {
       "Month": "Feb-16",
       "variable": "West",
-      "value": 0.931
+      "value": 93.1
     },
     {
       "Month": "Mar-16",
       "variable": "West",
-      "value": 0.957
+      "value": 95.7
     }
   ],
   "vl_spec": {
