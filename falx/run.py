@@ -43,7 +43,7 @@ def test_benchmarks(data_dir, data_id, mode):
 
         print("# run synthesize {}".format(fname))
 
-        input_data = table_utils.load_and_clean_table(data["input_data"])
+        input_data = data["input_data"] #table_utils.load_and_clean_table(data["input_data"])
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
         pprint(trace)

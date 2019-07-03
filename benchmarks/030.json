@@ -10,8 +10,8 @@
       "Flexibility": 2.63,
       "Nerve": 2.75,
       "Durability": 2.13,
-      "Hand-Eye Coordination": 6.63,
-      "Analytical Aptitude": 3.25,
+      "Hand-Eye-Coordination": 6.63,
+      "Analytical-Aptitude": 3.25,
       "ATotal": 30.625,
       "ARank": 55
     },
@@ -25,8 +25,8 @@
       "Flexibility": 1.75,
       "Nerve": 9.88,
       "Durability": 4.38,
-      "Hand-Eye Coordination": 8,
-      "Analytical Aptitude": 7.5,
+      "Hand-Eye-Coordination": 8,
+      "Analytical-Aptitude": 7.5,
       "ATotal": 47.875,
       "ARank": 32
     },
@@ -40,8 +40,8 @@
       "Flexibility": 5.25,
       "Nerve": 1.25,
       "Durability": 2.63,
-      "Hand-Eye Coordination": 7.25,
-      "Analytical Aptitude": 6.13,
+      "Hand-Eye-Coordination": 7.25,
+      "Analytical-Aptitude": 6.13,
       "ATotal": 48,
       "ARank": 30
     },
@@ -55,8 +55,8 @@
       "Flexibility": 4.75,
       "Nerve": 5.13,
       "Durability": 5.63,
-      "Hand-Eye Coordination": 9.25,
-      "Analytical Aptitude": 6.25,
+      "Hand-Eye-Coordination": 9.25,
+      "Analytical-Aptitude": 6.25,
       "ATotal": 62.25,
       "ARank": 9
     },
@@ -70,8 +70,8 @@
       "Flexibility": 5.63,
       "Nerve": 4.13,
       "Durability": 7.75,
-      "Hand-Eye Coordination": 7.5,
-      "Analytical Aptitude": 7.38,
+      "Hand-Eye-Coordination": 7.5,
+      "Analytical-Aptitude": 7.38,
       "ATotal": 67.875,
       "ARank": 4
     },
@@ -85,8 +85,8 @@
       "Flexibility": 2.63,
       "Nerve": 1.63,
       "Durability": 0.75,
-      "Hand-Eye Coordination": 5.25,
-      "Analytical Aptitude": 5.75,
+      "Hand-Eye-Coordination": 5.25,
+      "Analytical-Aptitude": 5.75,
       "ATotal": 21.5,
       "ARank": 59
     },
@@ -100,8 +100,8 @@
       "Flexibility": 3.25,
       "Nerve": 7.75,
       "Durability": 3.5,
-      "Hand-Eye Coordination": 4.13,
-      "Analytical Aptitude": 4.25,
+      "Hand-Eye-Coordination": 4.13,
+      "Analytical-Aptitude": 4.25,
       "ATotal": 49.25,
       "ARank": 28
     },
@@ -115,8 +115,8 @@
       "Flexibility": 2.38,
       "Nerve": 1.63,
       "Durability": 1.25,
-      "Hand-Eye Coordination": 4.75,
-      "Analytical Aptitude": 4.13,
+      "Hand-Eye-Coordination": 4.75,
+      "Analytical-Aptitude": 4.13,
       "ATotal": 25.375,
       "ARank": 57
     },
@@ -130,8 +130,8 @@
       "Flexibility": 4.38,
       "Nerve": 8.88,
       "Durability": 8.5,
-      "Hand-Eye Coordination": 7,
-      "Analytical Aptitude": 5.63,
+      "Hand-Eye-Coordination": 7,
+      "Analytical-Aptitude": 5.63,
       "ATotal": 72.375,
       "ARank": 1
     },
@@ -145,8 +145,8 @@
       "Flexibility": 3.88,
       "Nerve": 3.63,
       "Durability": 3.25,
-      "Hand-Eye Coordination": 3.13,
-      "Analytical Aptitude": 4.25,
+      "Hand-Eye-Coordination": 3.13,
+      "Analytical-Aptitude": 4.25,
       "ATotal": 42,
       "ARank": 49
     },
@@ -160,8 +160,8 @@
       "Flexibility": 7.5,
       "Nerve": 3.63,
       "Durability": 3.38,
-      "Hand-Eye Coordination": 2.5,
-      "Analytical Aptitude": 2.25,
+      "Hand-Eye-Coordination": 2.5,
+      "Analytical-Aptitude": 2.25,
       "ATotal": 36.25,
       "ARank": 52
     },
@@ -175,8 +175,8 @@
       "Flexibility": 2.63,
       "Nerve": 1.75,
       "Durability": 1.5,
-      "Hand-Eye Coordination": 4.88,
-      "Analytical Aptitude": 5.63,
+      "Hand-Eye-Coordination": 4.88,
+      "Analytical-Aptitude": 5.63,
       "ATotal": 27.5,
       "ARank": 56
     },
@@ -190,8 +190,8 @@
       "Flexibility": 2.63,
       "Nerve": 5.88,
       "Durability": 6.88,
-      "Hand-Eye Coordination": 3,
-      "Analytical Aptitude": 4.88,
+      "Hand-Eye-Coordination": 3,
+      "Analytical-Aptitude": 4.88,
       "ATotal": 54.375,
       "ARank": 20
     },
@@ -205,8 +205,8 @@
       "Flexibility": 2.88,
       "Nerve": 4.75,
       "Durability": 4.5,
-      "Hand-Eye Coordination": 3.63,
-      "Analytical Aptitude": 4.5,
+      "Hand-Eye-Coordination": 3.63,
+      "Analytical-Aptitude": 4.5,
       "ATotal": 50,
       "ARank": 27
     },
@@ -220,8 +220,8 @@
       "Flexibility": 8.5,
       "Nerve": 8.38,
       "Durability": 5,
-      "Hand-Eye Coordination": 3,
-      "Analytical Aptitude": 3,
+      "Hand-Eye-Coordination": 3,
+      "Analytical-Aptitude": 3,
       "ATotal": 47,
       "ARank": 35
     },
@@ -235,8 +235,8 @@
       "Flexibility": 2.88,
       "Nerve": 6,
       "Durability": 2.75,
-      "Hand-Eye Coordination": 2.88,
-      "Analytical Aptitude": 5.13,
+      "Hand-Eye-Coordination": 2.88,
+      "Analytical-Aptitude": 5.13,
       "ATotal": 31.75,
       "ARank": 54
     },
@@ -250,8 +250,8 @@
       "Flexibility": 5.63,
       "Nerve": 4.88,
       "Durability": 4.25,
-      "Hand-Eye Coordination": 7.25,
-      "Analytical Aptitude": 6.88,
+      "Hand-Eye-Coordination": 7.25,
+      "Analytical-Aptitude": 6.88,
       "ATotal": 52.75,
       "ARank": 24
     },
@@ -265,8 +265,8 @@
       "Flexibility": 4.63,
       "Nerve": 3.75,
       "Durability": 5,
-      "Hand-Eye Coordination": 6.63,
-      "Analytical Aptitude": 6.5,
+      "Hand-Eye-Coordination": 6.63,
+      "Analytical-Aptitude": 6.5,
       "ATotal": 54.875,
       "ARank": 17
     },
@@ -280,8 +280,8 @@
       "Flexibility": 8.25,
       "Nerve": 4.88,
       "Durability": 4,
-      "Hand-Eye Coordination": 3.13,
-      "Analytical Aptitude": 4.25,
+      "Hand-Eye-Coordination": 3.13,
+      "Analytical-Aptitude": 4.25,
       "ATotal": 54.75,
       "ARank": 19
     },
@@ -295,8 +295,8 @@
       "Flexibility": 1.13,
       "Nerve": 0.88,
       "Durability": 0.88,
-      "Hand-Eye Coordination": 2.38,
-      "Analytical Aptitude": 2.88,
+      "Hand-Eye-Coordination": 2.38,
+      "Analytical-Aptitude": 2.88,
       "ATotal": 14.5,
       "ARank": 60
     },
@@ -310,8 +310,8 @@
       "Flexibility": 4.38,
       "Nerve": 7.25,
       "Durability": 8.5,
-      "Hand-Eye Coordination": 5.5,
-      "Analytical Aptitude": 7.13,
+      "Hand-Eye-Coordination": 5.5,
+      "Analytical-Aptitude": 7.13,
       "ATotal": 68.375,
       "ARank": 3
     },
@@ -325,8 +325,8 @@
       "Flexibility": 4,
       "Nerve": 2.5,
       "Durability": 2.38,
-      "Hand-Eye Coordination": 6,
-      "Analytical Aptitude": 6.38,
+      "Hand-Eye-Coordination": 6,
+      "Analytical-Aptitude": 6.38,
       "ATotal": 37.875,
       "ARank": 51
     },
@@ -340,8 +340,8 @@
       "Flexibility": 10,
       "Nerve": 7.5,
       "Durability": 6.88,
-      "Hand-Eye Coordination": 4.5,
-      "Analytical Aptitude": 4.13,
+      "Hand-Eye-Coordination": 4.5,
+      "Analytical-Aptitude": 4.13,
       "ATotal": 62.5,
       "ARank": 8
     },
@@ -355,8 +355,8 @@
       "Flexibility": 3.75,
       "Nerve": 8,
       "Durability": 4.5,
-      "Hand-Eye Coordination": 3.88,
-      "Analytical Aptitude": 6.5,
+      "Hand-Eye-Coordination": 3.88,
+      "Analytical-Aptitude": 6.5,
       "ATotal": 41.625,
       "ARank": 50
     },
@@ -370,8 +370,8 @@
       "Flexibility": 4.88,
       "Nerve": 6,
       "Durability": 8.25,
-      "Hand-Eye Coordination": 7.5,
-      "Analytical Aptitude": 7.5,
+      "Hand-Eye-Coordination": 7.5,
+      "Analytical-Aptitude": 7.5,
       "ATotal": 71.75,
       "ARank": 2
     },
@@ -385,8 +385,8 @@
       "Flexibility": 4.75,
       "Nerve": 4.38,
       "Durability": 6.13,
-      "Hand-Eye Coordination": 7.13,
-      "Analytical Aptitude": 6.88,
+      "Hand-Eye-Coordination": 7.13,
+      "Analytical-Aptitude": 6.88,
       "ATotal": 60.375,
       "ARank": 14
     },
@@ -400,8 +400,8 @@
       "Flexibility": 7,
       "Nerve": 6.63,
       "Durability": 5.88,
-      "Hand-Eye Coordination": 6,
-      "Analytical Aptitude": 6.88,
+      "Hand-Eye-Coordination": 6,
+      "Analytical-Aptitude": 6.88,
       "ATotal": 63.375,
       "ARank": 6
     },
@@ -415,8 +415,8 @@
       "Flexibility": 5.88,
       "Nerve": 2.38,
       "Durability": 2.88,
-      "Hand-Eye Coordination": 8.38,
-      "Analytical Aptitude": 6.5,
+      "Hand-Eye-Coordination": 8.38,
+      "Analytical-Aptitude": 6.5,
       "ATotal": 53.625,
       "ARank": 22
     },
@@ -430,8 +430,8 @@
       "Flexibility": 4.25,
       "Nerve": 9.5,
       "Durability": 7.38,
-      "Hand-Eye Coordination": 3.63,
-      "Analytical Aptitude": 3.13,
+      "Hand-Eye-Coordination": 3.63,
+      "Analytical-Aptitude": 3.13,
       "ATotal": 45.875,
       "ARank": 42
     },
@@ -445,8 +445,8 @@
       "Flexibility": 3.88,
       "Nerve": 4.88,
       "Durability": 3.75,
-      "Hand-Eye Coordination": 6.38,
-      "Analytical Aptitude": 3.75,
+      "Hand-Eye-Coordination": 6.38,
+      "Analytical-Aptitude": 3.75,
       "ATotal": 46,
       "ARank": 40
     },
@@ -460,8 +460,8 @@
       "Flexibility": 5,
       "Nerve": 7.88,
       "Durability": 6.88,
-      "Hand-Eye Coordination": 5.13,
-      "Analytical Aptitude": 4,
+      "Hand-Eye-Coordination": 5.13,
+      "Analytical-Aptitude": 4,
       "ATotal": 56.5,
       "ARank": 15
     },
@@ -475,8 +475,8 @@
       "Flexibility": 3.5,
       "Nerve": 2.63,
       "Durability": 3.38,
-      "Hand-Eye Coordination": 2.88,
-      "Analytical Aptitude": 2.63,
+      "Hand-Eye-Coordination": 2.88,
+      "Analytical-Aptitude": 2.63,
       "ATotal": 36.25,
       "ARank": 52
     },
@@ -490,8 +490,8 @@
       "Flexibility": 4,
       "Nerve": 1.75,
       "Durability": 4.38,
-      "Hand-Eye Coordination": 2.88,
-      "Analytical Aptitude": 3.63,
+      "Hand-Eye-Coordination": 2.88,
+      "Analytical-Aptitude": 3.63,
       "ATotal": 46.125,
       "ARank": 39
     },
@@ -505,8 +505,8 @@
       "Flexibility": 4.13,
       "Nerve": 6.5,
       "Durability": 7.88,
-      "Hand-Eye Coordination": 4.38,
-      "Analytical Aptitude": 5.63,
+      "Hand-Eye-Coordination": 4.38,
+      "Analytical-Aptitude": 5.63,
       "ATotal": 60.5,
       "ARank": 13
     },
@@ -520,8 +520,8 @@
       "Flexibility": 1.75,
       "Nerve": 2.38,
       "Durability": 1.88,
-      "Hand-Eye Coordination": 6.75,
-      "Analytical Aptitude": 4,
+      "Hand-Eye-Coordination": 6.75,
+      "Analytical-Aptitude": 4,
       "ATotal": 24.875,
       "ARank": 58
     },
@@ -535,8 +535,8 @@
       "Flexibility": 5.13,
       "Nerve": 6.5,
       "Durability": 5.25,
-      "Hand-Eye Coordination": 4.88,
-      "Analytical Aptitude": 3.13,
+      "Hand-Eye-Coordination": 4.88,
+      "Analytical-Aptitude": 3.13,
       "ATotal": 46.75,
       "ARank": 37
     },
@@ -550,8 +550,8 @@
       "Flexibility": 5,
       "Nerve": 9,
       "Durability": 4.63,
-      "Hand-Eye Coordination": 4.38,
-      "Analytical Aptitude": 3.5,
+      "Hand-Eye-Coordination": 4.38,
+      "Analytical-Aptitude": 3.5,
       "ATotal": 48.875,
       "ARank": 29
     },
@@ -565,8 +565,8 @@
       "Flexibility": 5.63,
       "Nerve": 8.38,
       "Durability": 6,
-      "Hand-Eye Coordination": 5.13,
-      "Analytical Aptitude": 5.63,
+      "Hand-Eye-Coordination": 5.13,
+      "Analytical-Aptitude": 5.63,
       "ATotal": 60.625,
       "ARank": 11
     },
@@ -580,8 +580,8 @@
       "Flexibility": 6.88,
       "Nerve": 6.63,
       "Durability": 5.13,
-      "Hand-Eye Coordination": 4.13,
-      "Analytical Aptitude": 3.88,
+      "Hand-Eye-Coordination": 4.13,
+      "Analytical-Aptitude": 3.88,
       "ATotal": 52.5,
       "ARank": 25
     },
@@ -595,8 +595,8 @@
       "Flexibility": 4,
       "Nerve": 2.75,
       "Durability": 5.5,
-      "Hand-Eye Coordination": 3.63,
-      "Analytical Aptitude": 3.88,
+      "Hand-Eye-Coordination": 3.63,
+      "Analytical-Aptitude": 3.88,
       "ATotal": 48,
       "ARank": 30
     },
@@ -610,8 +610,8 @@
       "Flexibility": 4.75,
       "Nerve": 3.63,
       "Durability": 6.25,
-      "Hand-Eye Coordination": 6.5,
-      "Analytical Aptitude": 7.5,
+      "Hand-Eye-Coordination": 6.5,
+      "Analytical-Aptitude": 7.5,
       "ATotal": 61.5,
       "ARank": 10
     },
@@ -625,8 +625,8 @@
       "Flexibility": 4.25,
       "Nerve": 4.5,
       "Durability": 4.63,
-      "Hand-Eye Coordination": 2.88,
-      "Analytical Aptitude": 3.5,
+      "Hand-Eye-Coordination": 2.88,
+      "Analytical-Aptitude": 3.5,
       "ATotal": 54.875,
       "ARank": 17
     },
@@ -640,8 +640,8 @@
       "Flexibility": 5.5,
       "Nerve": 8.25,
       "Durability": 5.5,
-      "Hand-Eye Coordination": 4.38,
-      "Analytical Aptitude": 4.88,
+      "Hand-Eye-Coordination": 4.38,
+      "Analytical-Aptitude": 4.88,
       "ATotal": 53.125,
       "ARank": 23
     },
@@ -655,8 +655,8 @@
       "Flexibility": 5.5,
       "Nerve": 2.63,
       "Durability": 4.63,
-      "Hand-Eye Coordination": 2.88,
-      "Analytical Aptitude": 3,
+      "Hand-Eye-Coordination": 2.88,
+      "Analytical-Aptitude": 3,
       "ATotal": 46.875,
       "ARank": 36
     },
@@ -670,8 +670,8 @@
       "Flexibility": 5.5,
       "Nerve": 2.5,
       "Durability": 3.25,
-      "Hand-Eye Coordination": 2.75,
-      "Analytical Aptitude": 3,
+      "Hand-Eye-Coordination": 2.75,
+      "Analytical-Aptitude": 3,
       "ATotal": 44.125,
       "ARank": 45
     },
@@ -685,8 +685,8 @@
       "Flexibility": 4.25,
       "Nerve": 1.38,
       "Durability": 1.88,
-      "Hand-Eye Coordination": 8.88,
-      "Analytical Aptitude": 6,
+      "Hand-Eye-Coordination": 8.88,
+      "Analytical-Aptitude": 6,
       "ATotal": 43,
       "ARank": 47
     },
@@ -700,8 +700,8 @@
       "Flexibility": 4.5,
       "Nerve": 3,
       "Durability": 3.88,
-      "Hand-Eye Coordination": 7.88,
-      "Analytical Aptitude": 5.88,
+      "Hand-Eye-Coordination": 7.88,
+      "Analytical-Aptitude": 5.88,
       "ATotal": 50.75,
       "ARank": 26
     },
@@ -715,8 +715,8 @@
       "Flexibility": 5.63,
       "Nerve": 3,
       "Durability": 5,
-      "Hand-Eye Coordination": 8.38,
-      "Analytical Aptitude": 6.75,
+      "Hand-Eye-Coordination": 8.38,
+      "Analytical-Aptitude": 6.75,
       "ATotal": 62.75,
       "ARank": 7
     },
@@ -730,8 +730,8 @@
       "Flexibility": 4.38,
       "Nerve": 2,
       "Durability": 5.75,
-      "Hand-Eye Coordination": 1.88,
-      "Analytical Aptitude": 4.13,
+      "Hand-Eye-Coordination": 1.88,
+      "Analytical-Aptitude": 4.13,
       "ATotal": 46,
       "ARank": 40
     },
@@ -745,8 +745,8 @@
       "Flexibility": 6.63,
       "Nerve": 3.5,
       "Durability": 3.5,
-      "Hand-Eye Coordination": 3.5,
-      "Analytical Aptitude": 2.88,
+      "Hand-Eye-Coordination": 3.5,
+      "Analytical-Aptitude": 2.88,
       "ATotal": 47.75,
       "ARank": 33
     },
@@ -760,8 +760,8 @@
       "Flexibility": 5.75,
       "Nerve": 2.75,
       "Durability": 3.25,
-      "Hand-Eye Coordination": 4,
-      "Analytical Aptitude": 3.13,
+      "Hand-Eye-Coordination": 4,
+      "Analytical-Aptitude": 3.13,
       "ATotal": 47.375,
       "ARank": 34
     },
@@ -775,8 +775,8 @@
       "Flexibility": 4.88,
       "Nerve": 2,
       "Durability": 4.75,
-      "Hand-Eye Coordination": 2.13,
-      "Analytical Aptitude": 3.75,
+      "Hand-Eye-Coordination": 2.13,
+      "Analytical-Aptitude": 3.75,
       "ATotal": 45.5,
       "ARank": 43
     },
@@ -790,8 +790,8 @@
       "Flexibility": 7,
       "Nerve": 6.63,
       "Durability": 4.25,
-      "Hand-Eye Coordination": 5.25,
-      "Analytical Aptitude": 3.75,
+      "Hand-Eye-Coordination": 5.25,
+      "Analytical-Aptitude": 3.75,
       "ATotal": 55.875,
       "ARank": 16
     },
@@ -805,8 +805,8 @@
       "Flexibility": 5.13,
       "Nerve": 2,
       "Durability": 4.13,
-      "Hand-Eye Coordination": 2.63,
-      "Analytical Aptitude": 2.38,
+      "Hand-Eye-Coordination": 2.63,
+      "Analytical-Aptitude": 2.38,
       "ATotal": 46.625,
       "ARank": 38
     },
@@ -820,8 +820,8 @@
       "Flexibility": 3,
       "Nerve": 2.25,
       "Durability": 3.63,
-      "Hand-Eye Coordination": 4,
-      "Analytical Aptitude": 2.88,
+      "Hand-Eye-Coordination": 4,
+      "Analytical-Aptitude": 2.88,
       "ATotal": 42.125,
       "ARank": 48
     },
@@ -835,8 +835,8 @@
       "Flexibility": 5.13,
       "Nerve": 2.88,
       "Durability": 4.63,
-      "Hand-Eye Coordination": 7.25,
-      "Analytical Aptitude": 5.88,
+      "Hand-Eye-Coordination": 7.25,
+      "Analytical-Aptitude": 5.88,
       "ATotal": 54.375,
       "ARank": 20
     },
@@ -850,8 +850,8 @@
       "Flexibility": 5,
       "Nerve": 4.25,
       "Durability": 6.38,
-      "Hand-Eye Coordination": 6.25,
-      "Analytical Aptitude": 5.63,
+      "Hand-Eye-Coordination": 6.25,
+      "Analytical-Aptitude": 5.63,
       "ATotal": 60.625,
       "ARank": 11
     },
@@ -865,8 +865,8 @@
       "Flexibility": 4.75,
       "Nerve": 5.88,
       "Durability": 4.63,
-      "Hand-Eye Coordination": 4.13,
-      "Analytical Aptitude": 3.25,
+      "Hand-Eye-Coordination": 4.13,
+      "Analytical-Aptitude": 3.25,
       "ATotal": 44,
       "ARank": 46
     },
@@ -880,8 +880,8 @@
       "Flexibility": 3.38,
       "Nerve": 4,
       "Durability": 4.75,
-      "Hand-Eye Coordination": 2.25,
-      "Analytical Aptitude": 2.38,
+      "Hand-Eye-Coordination": 2.25,
+      "Analytical-Aptitude": 2.38,
       "ATotal": 45,
       "ARank": 44
     },
@@ -895,8 +895,8 @@
       "Flexibility": 7.5,
       "Nerve": 5,
       "Durability": 6.75,
-      "Hand-Eye Coordination": 4.25,
-      "Analytical Aptitude": 6.38,
+      "Hand-Eye-Coordination": 4.25,
+      "Analytical-Aptitude": 6.38,
       "ATotal": 63.5,
       "ARank": 5
     }
@@ -4265,840 +4265,840 @@
     {
       "Sport": "Archery",
       "ARank": 55,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.63,
       "Archery": true
     },
     {
       "Sport": "Auto Racing",
       "ARank": 32,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 8.0,
       "Archery": false
     },
     {
       "Sport": "Badminton",
       "ARank": 30,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.25,
       "Archery": false
     },
     {
       "Sport": "Baseball/Softball",
       "ARank": 9,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 9.25,
       "Archery": false
     },
     {
       "Sport": "Basketball",
       "ARank": 4,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.5,
       "Archery": false
     },
     {
       "Sport": "Billiards",
       "ARank": 59,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 5.25,
       "Archery": false
     },
     {
       "Sport": "Bobsledding/Luge",
       "ARank": 28,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Bowling",
       "ARank": 57,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.75,
       "Archery": false
     },
     {
       "Sport": "Boxing",
       "ARank": 1,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.0,
       "Archery": false
     },
     {
       "Sport": "Canoe/Kayak",
       "ARank": 49,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.13,
       "Archery": false
     },
     {
       "Sport": "Cheerleading",
       "ARank": 52,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.5,
       "Archery": false
     },
     {
       "Sport": "Curling",
       "ARank": 56,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.88,
       "Archery": false
     },
     {
       "Sport": "Cycling: Distance",
       "ARank": 20,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.0,
       "Archery": false
     },
     {
       "Sport": "Cycling: Sprints",
       "ARank": 27,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.63,
       "Archery": false
     },
     {
       "Sport": "Diving",
       "ARank": 35,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.0,
       "Archery": false
     },
     {
       "Sport": "Equestrian",
       "ARank": 54,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Fencing",
       "ARank": 24,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.25,
       "Archery": false
     },
     {
       "Sport": "Field Hockey",
       "ARank": 17,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.63,
       "Archery": false
     },
     {
       "Sport": "Figure Skating",
       "ARank": 19,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.13,
       "Archery": false
     },
     {
       "Sport": "Fishing",
       "ARank": 60,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.38,
       "Archery": false
     },
     {
       "Sport": "Football",
       "ARank": 3,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 5.5,
       "Archery": false
     },
     {
       "Sport": "Golf",
       "ARank": 51,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.0,
       "Archery": false
     },
     {
       "Sport": "Gymnastics",
       "ARank": 8,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.5,
       "Archery": false
     },
     {
       "Sport": "Horse Racing",
       "ARank": 50,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.88,
       "Archery": false
     },
     {
       "Sport": "Ice Hockey",
       "ARank": 2,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.5,
       "Archery": false
     },
     {
       "Sport": "Lacrosse",
       "ARank": 14,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.13,
       "Archery": false
     },
     {
       "Sport": "Martial Arts",
       "ARank": 6,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.0,
       "Archery": false
     },
     {
       "Sport": "Racquetball/Squash",
       "ARank": 22,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 8.38,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Bull/Bareback/Bronc Riding",
       "ARank": 42,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.63,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Calf Roping",
       "ARank": 40,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.38,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Steer Wrestling",
       "ARank": 15,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 5.13,
       "Archery": false
     },
     {
       "Sport": "Roller Skating",
       "ARank": 52,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Rowing",
       "ARank": 39,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Rugby",
       "ARank": 13,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.38,
       "Archery": false
     },
     {
       "Sport": "Shooting",
       "ARank": 58,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.75,
       "Archery": false
     },
     {
       "Sport": "Skateboarding",
       "ARank": 37,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.88,
       "Archery": false
     },
     {
       "Sport": "Ski Jumping",
       "ARank": 29,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.38,
       "Archery": false
     },
     {
       "Sport": "Skiing: Alpine",
       "ARank": 11,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 5.13,
       "Archery": false
     },
     {
       "Sport": "Skiing: Freestyle",
       "ARank": 25,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Skiing: Nordic",
       "ARank": 30,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.63,
       "Archery": false
     },
     {
       "Sport": "Soccer",
       "ARank": 10,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.5,
       "Archery": false
     },
     {
       "Sport": "Speed Skating",
       "ARank": 17,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Surfing",
       "ARank": 23,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.38,
       "Archery": false
     },
     {
       "Sport": "Swimming (all strokes): Distance",
       "ARank": 36,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Swimming (all strokes): Sprints",
       "ARank": 45,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.75,
       "Archery": false
     },
     {
       "Sport": "Table Tennis",
       "ARank": 47,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 8.88,
       "Archery": false
     },
     {
       "Sport": "Team Handball",
       "ARank": 26,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.88,
       "Archery": false
     },
     {
       "Sport": "Tennis",
       "ARank": 7,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 8.38,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Distance",
       "ARank": 40,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 1.88,
       "Archery": false
     },
     {
       "Sport": "Track and Field: High Jump",
       "ARank": 33,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 3.5,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Long, Triple jumps",
       "ARank": 34,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.0,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Middle Distance",
       "ARank": 43,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.13,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Pole Vault",
       "ARank": 16,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 5.25,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Sprints",
       "ARank": 38,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.63,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Weights",
       "ARank": 48,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.0,
       "Archery": false
     },
     {
       "Sport": "Volleyball",
       "ARank": 20,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 7.25,
       "Archery": false
     },
     {
       "Sport": "Water Polo",
       "ARank": 11,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 6.25,
       "Archery": false
     },
     {
       "Sport": "Water Skiing",
       "ARank": 46,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Weight-Lifting",
       "ARank": 44,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 2.25,
       "Archery": false
     },
     {
       "Sport": "Wrestling",
       "ARank": 5,
-      "variable": "Hand-Eye Coordination",
+      "variable": "Hand-Eye-Coordination",
       "value": 4.25,
       "Archery": false
     },
     {
       "Sport": "Archery",
       "ARank": 55,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.25,
       "Archery": true
     },
     {
       "Sport": "Auto Racing",
       "ARank": 32,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 7.5,
       "Archery": false
     },
     {
       "Sport": "Badminton",
       "ARank": 30,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.13,
       "Archery": false
     },
     {
       "Sport": "Baseball/Softball",
       "ARank": 9,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.25,
       "Archery": false
     },
     {
       "Sport": "Basketball",
       "ARank": 4,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 7.38,
       "Archery": false
     },
     {
       "Sport": "Billiards",
       "ARank": 59,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.75,
       "Archery": false
     },
     {
       "Sport": "Bobsledding/Luge",
       "ARank": 28,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.25,
       "Archery": false
     },
     {
       "Sport": "Bowling",
       "ARank": 57,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Boxing",
       "ARank": 1,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.63,
       "Archery": false
     },
     {
       "Sport": "Canoe/Kayak",
       "ARank": 49,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.25,
       "Archery": false
     },
     {
       "Sport": "Cheerleading",
       "ARank": 52,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.25,
       "Archery": false
     },
     {
       "Sport": "Curling",
       "ARank": 56,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.63,
       "Archery": false
     },
     {
       "Sport": "Cycling: Distance",
       "ARank": 20,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.88,
       "Archery": false
     },
     {
       "Sport": "Cycling: Sprints",
       "ARank": 27,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.5,
       "Archery": false
     },
     {
       "Sport": "Diving",
       "ARank": 35,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.0,
       "Archery": false
     },
     {
       "Sport": "Equestrian",
       "ARank": 54,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.13,
       "Archery": false
     },
     {
       "Sport": "Fencing",
       "ARank": 24,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.88,
       "Archery": false
     },
     {
       "Sport": "Field Hockey",
       "ARank": 17,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.5,
       "Archery": false
     },
     {
       "Sport": "Figure Skating",
       "ARank": 19,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.25,
       "Archery": false
     },
     {
       "Sport": "Fishing",
       "ARank": 60,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Football",
       "ARank": 3,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 7.13,
       "Archery": false
     },
     {
       "Sport": "Golf",
       "ARank": 51,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.38,
       "Archery": false
     },
     {
       "Sport": "Gymnastics",
       "ARank": 8,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Horse Racing",
       "ARank": 50,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.5,
       "Archery": false
     },
     {
       "Sport": "Ice Hockey",
       "ARank": 2,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 7.5,
       "Archery": false
     },
     {
       "Sport": "Lacrosse",
       "ARank": 14,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.88,
       "Archery": false
     },
     {
       "Sport": "Martial Arts",
       "ARank": 6,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.88,
       "Archery": false
     },
     {
       "Sport": "Racquetball/Squash",
       "ARank": 22,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.5,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Bull/Bareback/Bronc Riding",
       "ARank": 42,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.13,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Calf Roping",
       "ARank": 40,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.75,
       "Archery": false
     },
     {
       "Sport": "Rodeo: Steer Wrestling",
       "ARank": 15,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.0,
       "Archery": false
     },
     {
       "Sport": "Roller Skating",
       "ARank": 52,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.63,
       "Archery": false
     },
     {
       "Sport": "Rowing",
       "ARank": 39,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.63,
       "Archery": false
     },
     {
       "Sport": "Rugby",
       "ARank": 13,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.63,
       "Archery": false
     },
     {
       "Sport": "Shooting",
       "ARank": 58,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.0,
       "Archery": false
     },
     {
       "Sport": "Skateboarding",
       "ARank": 37,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.13,
       "Archery": false
     },
     {
       "Sport": "Ski Jumping",
       "ARank": 29,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.5,
       "Archery": false
     },
     {
       "Sport": "Skiing: Alpine",
       "ARank": 11,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.63,
       "Archery": false
     },
     {
       "Sport": "Skiing: Freestyle",
       "ARank": 25,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.88,
       "Archery": false
     },
     {
       "Sport": "Skiing: Nordic",
       "ARank": 30,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.88,
       "Archery": false
     },
     {
       "Sport": "Soccer",
       "ARank": 10,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 7.5,
       "Archery": false
     },
     {
       "Sport": "Speed Skating",
       "ARank": 17,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.5,
       "Archery": false
     },
     {
       "Sport": "Surfing",
       "ARank": 23,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.88,
       "Archery": false
     },
     {
       "Sport": "Swimming (all strokes): Distance",
       "ARank": 36,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.0,
       "Archery": false
     },
     {
       "Sport": "Swimming (all strokes): Sprints",
       "ARank": 45,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.0,
       "Archery": false
     },
     {
       "Sport": "Table Tennis",
       "ARank": 47,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.0,
       "Archery": false
     },
     {
       "Sport": "Team Handball",
       "ARank": 26,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.88,
       "Archery": false
     },
     {
       "Sport": "Tennis",
       "ARank": 7,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.75,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Distance",
       "ARank": 40,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 4.13,
       "Archery": false
     },
     {
       "Sport": "Track and Field: High Jump",
       "ARank": 33,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Long, Triple jumps",
       "ARank": 34,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.13,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Middle Distance",
       "ARank": 43,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.75,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Pole Vault",
       "ARank": 16,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.75,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Sprints",
       "ARank": 38,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.38,
       "Archery": false
     },
     {
       "Sport": "Track and Field: Weights",
       "ARank": 48,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.88,
       "Archery": false
     },
     {
       "Sport": "Volleyball",
       "ARank": 20,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.88,
       "Archery": false
     },
     {
       "Sport": "Water Polo",
       "ARank": 11,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 5.63,
       "Archery": false
     },
     {
       "Sport": "Water Skiing",
       "ARank": 46,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 3.25,
       "Archery": false
     },
     {
       "Sport": "Weight-Lifting",
       "ARank": 44,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 2.38,
       "Archery": false
     },
     {
       "Sport": "Wrestling",
       "ARank": 5,
-      "variable": "Analytical Aptitude",
+      "variable": "Analytical-Aptitude",
       "value": 6.38,
       "Archery": false
     }
