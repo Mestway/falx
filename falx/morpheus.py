@@ -335,14 +335,14 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 capture_indices=[0])
 
         ret_df_name = get_fresh_name()
-        _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
+        _script = '{ret_df} <- {table} %>% mutate({TMP}=(.[[{col1}]] {op} "{col2}"))'.format(
                   ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
         try:
-            assert False, _script
             ret_val = robjects.r(_script)
             return ret_df_name
-        except:
-            logger.error('Error in interpreting mutateCustom...')
+        except Exception as e:
+            logger.error('Error in interpreting mutateCustom...', _script)
+            # assert False, e
             raise GeneralError()
 
     def eval_mutate(self, node, args):
