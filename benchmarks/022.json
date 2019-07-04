@@ -237,7 +237,7 @@
             "value": 83
         }
     ],
-    "spec": {
+    "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
         "mark": "circle",
         "encoding": {
