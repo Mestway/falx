@@ -96,7 +96,7 @@ class FalxEvalInterface(object):
                     #pprint(inputs[0])
                     output = morpheus.evaluate(p, inputs)
 
-                    # print("===========> Synthesis output")
+                    #print("===========> Synthesis output")
                     # pprint("====> table")
                     # pprint(output)
                     # print("---")
@@ -104,7 +104,7 @@ class FalxEvalInterface(object):
                     # mapping = interface.align_table_schema(full_sym_data.values, output)
                     # print(mapping)
                 
-                    field_mapping = interface.align_table_schema(full_sym_data.values, output, check_equivalence=True)
+                    field_mapping = interface.align_table_schema(full_sym_data.values, output)
                     assert(field_mapping != None)
 
                     vis_design = VisDesign(data=output, chart=chart)

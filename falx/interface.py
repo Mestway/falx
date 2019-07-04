@@ -10,10 +10,9 @@ def construct_value_dict(values):
     values = np.array(values)
     try:
         values = values.astype(np.float64)
-        values = np.round(values, 5)
+        values = np.round(values, 3)
     except:
         pass
-        
     value_dict = {}
     for x in values:
         if not x in value_dict:
@@ -25,18 +24,20 @@ def align_table_schema(table1, table2, check_equivalence=False):
     """align table schema, assume that table1 is contained by table2"""
     assert(len(table1) <= len(table2))
     mapping = {}
+    vals2_dicts = {}
+    for k2 in table2[0].keys():
+        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2])
     for k1 in table1[0].keys():
         mapping[k1] = []
         vals1_dict = construct_value_dict([r[k1] for r in table1])
         for k2 in table2[0].keys():
-            vals2_dict = construct_value_dict([r[k2] for r in table2])
+            vals2_dict = vals2_dicts[k2]
             contained = True
             for x in vals1_dict:
                 if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]) or (check_equivalence and  (vals2_dict[x]!= vals1_dict[x])):
                     contained = False
                 if contained == False:
                     break
-
             if contained:
                 mapping[k1].append(k2)
 
