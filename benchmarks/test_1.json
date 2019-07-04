@@ -85,6 +85,296 @@
             "bar 3": 28
         }
     ],
-    "output_data": [],
-    "spec": {}
+    "output_data": [
+        {
+            "x": "Label_1",
+            "variable": "bar 1",
+            "value": 77
+        },
+        {
+            "x": "Label_2",
+            "variable": "bar 1",
+            "value": 94
+        },
+        {
+            "x": "Label_3",
+            "variable": "bar 1",
+            "value": 79
+        },
+        {
+            "x": "Label_4",
+            "variable": "bar 1",
+            "value": 87
+        },
+        {
+            "x": "Label_5",
+            "variable": "bar 1",
+            "value": 51
+        },
+        {
+            "x": "Label_6",
+            "variable": "bar 1",
+            "value": 54
+        },
+        {
+            "x": "Label_7",
+            "variable": "bar 1",
+            "value": 74
+        },
+        {
+            "x": "Label_8",
+            "variable": "bar 1",
+            "value": 100
+        },
+        {
+            "x": "Label_9",
+            "variable": "bar 1",
+            "value": 84
+        },
+        {
+            "x": "Label_10",
+            "variable": "bar 1",
+            "value": 92
+        },
+        {
+            "x": "Label_11",
+            "variable": "bar 1",
+            "value": 61
+        },
+        {
+            "x": "Label_12",
+            "variable": "bar 1",
+            "value": 74
+        },
+        {
+            "x": "Label_1",
+            "variable": "bar 2",
+            "value": 21
+        },
+        {
+            "x": "Label_2",
+            "variable": "bar 2",
+            "value": 38
+        },
+        {
+            "x": "Label_3",
+            "variable": "bar 2",
+            "value": 31
+        },
+        {
+            "x": "Label_4",
+            "variable": "bar 2",
+            "value": 30
+        },
+        {
+            "x": "Label_5",
+            "variable": "bar 2",
+            "value": 20
+        },
+        {
+            "x": "Label_6",
+            "variable": "bar 2",
+            "value": 26
+        },
+        {
+            "x": "Label_7",
+            "variable": "bar 2",
+            "value": 25
+        },
+        {
+            "x": "Label_8",
+            "variable": "bar 2",
+            "value": 34
+        },
+        {
+            "x": "Label_9",
+            "variable": "bar 2",
+            "value": 24
+        },
+        {
+            "x": "Label_10",
+            "variable": "bar 2",
+            "value": 30
+        },
+        {
+            "x": "Label_11",
+            "variable": "bar 2",
+            "value": 20
+        },
+        {
+            "x": "Label_12",
+            "variable": "bar 2",
+            "value": 26
+        },
+        {
+            "x": "Label_1",
+            "variable": "bar 3",
+            "value": 20
+        },
+        {
+            "x": "Label_2",
+            "variable": "bar 3",
+            "value": 17
+        },
+        {
+            "x": "Label_3",
+            "variable": "bar 3",
+            "value": 26
+        },
+        {
+            "x": "Label_4",
+            "variable": "bar 3",
+            "value": 16
+        },
+        {
+            "x": "Label_5",
+            "variable": "bar 3",
+            "value": 29
+        },
+        {
+            "x": "Label_6",
+            "variable": "bar 3",
+            "value": 19
+        },
+        {
+            "x": "Label_7",
+            "variable": "bar 3",
+            "value": 15
+        },
+        {
+            "x": "Label_8",
+            "variable": "bar 3",
+            "value": 26
+        },
+        {
+            "x": "Label_9",
+            "variable": "bar 3",
+            "value": 25
+        },
+        {
+            "x": "Label_10",
+            "variable": "bar 3",
+            "value": 21
+        },
+        {
+            "x": "Label_11",
+            "variable": "bar 3",
+            "value": 23
+        },
+        {
+            "x": "Label_12",
+            "variable": "bar 3",
+            "value": 28
+        },
+        {
+            "x": "Label_1",
+            "variable": "bar 0",
+            "value": 100
+        },
+        {
+            "x": "Label_2",
+            "variable": "bar 0",
+            "value": 114
+        },
+        {
+            "x": "Label_3",
+            "variable": "bar 0",
+            "value": 151
+        },
+        {
+            "x": "Label_4",
+            "variable": "bar 0",
+            "value": 175
+        },
+        {
+            "x": "Label_5",
+            "variable": "bar 0",
+            "value": 178
+        },
+        {
+            "x": "Label_6",
+            "variable": "bar 0",
+            "value": 187
+        },
+        {
+            "x": "Label_7",
+            "variable": "bar 0",
+            "value": 113
+        },
+        {
+            "x": "Label_8",
+            "variable": "bar 0",
+            "value": 140
+        },
+        {
+            "x": "Label_9",
+            "variable": "bar 0",
+            "value": 119
+        },
+        {
+            "x": "Label_10",
+            "variable": "bar 0",
+            "value": 113
+        },
+        {
+            "x": "Label_11",
+            "variable": "bar 0",
+            "value": 179
+        },
+        {
+            "x": "Label_12",
+            "variable": "bar 0",
+            "value": 143
+        }
+    ],
+    "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "bar"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "x",
+                        "type": "nominal"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"bar 1\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "type": "quantitative",
+                        "field": "value"
+                    },
+                    "x": {
+                        "field": "x",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ],
+        "resolve": {
+            "scale": {
+                "y": "independent"
+            }
+        }
+    }
 }
