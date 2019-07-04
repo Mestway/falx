@@ -15,6 +15,10 @@ enumset ColList[3] {
   "1","2","3","4","5","6"
 }
 
+enumset ColList2[2] {
+  "1","2","3","4","5","6"
+}
+
 enumset ColNegList[3] {
   "-1","-2","-3","-4","-5","-6"
 }
@@ -55,7 +59,7 @@ func unite: Table r -> Table a, ColInt b, ColInt c {
   col(r) == col(a) - 1;
 }
 
-func group_by: Table r -> Table a, ColList b {
+func group_by: Table r -> Table a, ColList2 b {
   row(r) == row(a);
   col(r) == col(a);
 }
