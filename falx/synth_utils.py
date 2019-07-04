@@ -2,19 +2,6 @@ import json
 import itertools
 import numpy as np
 
-def construct_value_dict(values):
-    values = np.array(values)
-    try:
-        values = values.astype(np.float64)
-        values = np.round(values, 3)
-    except:
-        pass
-    value_dict = {}
-    for x in values:
-        if not x in value_dict:
-            value_dict[x] = 0
-        value_dict[x] += 1
-    return value_dict
 
 def check_table_inclusion(table1, table2):
     """check table inclusion, this is sound but not complete: if it thinks two tbales are not equal, they absolutely inequal"""
