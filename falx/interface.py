@@ -23,8 +23,12 @@ def construct_value_dict(values):
 def align_table_schema(table1, table2, check_equivalence=False, boolean_result=False):
     """align table schema, assume that table1 is contained by table2"""
     if len(table1) > len(table2):
+        # cannot find any mapping
         return None
-    #assert(len(table1) <= len(table2))
+
+    if boolean_result and len(table1) == 0:
+        return True
+
     mapping = {}
     vals2_dicts = {}
     for k2 in table2[0].keys():
@@ -43,8 +47,6 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
             if contained:
                 mapping[k1].append(k2)
 
-    #print(mapping)
-
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
     t1_schema = list(mapping.keys())
@@ -52,8 +54,7 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
     all_choices = list(itertools.product(*mapping_id_lists))
 
-    if boolean_result:
-        return len(all_choices) > 0
+    if boolean_result: return len(all_choices) > 0
 
     # directly return if there is only one choice
     if len(all_choices) == 1:
@@ -70,7 +71,7 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
         if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
             return inst
-            
+
     return None
 
 
