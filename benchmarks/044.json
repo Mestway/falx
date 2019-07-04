@@ -1,1053 +1,1053 @@
 {
   "input_data": [
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 51,
+      "Sepal.Width": 35,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.9,
+      "Sepal.Length": 49,
       "Sepal.Width": 3,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.7,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 47,
+      "Sepal.Width": 32,
+      "Petal.Length": 13,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.6,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 46,
+      "Sepal.Width": 31,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.6,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Width": 36,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.4,
-      "Sepal.Width": 3.9,
-      "Petal.Length": 1.7,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 54,
+      "Sepal.Width": 39,
+      "Petal.Length": 17,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.6,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.3,
+      "Sepal.Length": 46,
+      "Sepal.Width": 34,
+      "Petal.Length": 14,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Width": 34,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.4,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 44,
+      "Sepal.Width": 29,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.9,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.1,
+      "Sepal.Length": 49,
+      "Sepal.Width": 31,
+      "Petal.Length": 15,
+      "Petal.Width": 1,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.4,
-      "Sepal.Width": 3.7,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 54,
+      "Sepal.Width": 37,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.8,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 48,
+      "Sepal.Width": 34,
+      "Petal.Length": 16,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.8,
+      "Sepal.Length": 48,
       "Sepal.Width": 3,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.1,
+      "Petal.Length": 14,
+      "Petal.Width": 1,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.3,
+      "Sepal.Length": 43,
       "Sepal.Width": 3,
-      "Petal.Length": 1.1,
-      "Petal.Width": 0.1,
+      "Petal.Length": 11,
+      "Petal.Width": 1,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.8,
+      "Sepal.Length": 58,
       "Sepal.Width": 4,
-      "Petal.Length": 1.2,
-      "Petal.Width": 0.2,
+      "Petal.Length": 12,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 4.4,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 57,
+      "Sepal.Width": 44,
+      "Petal.Length": 15,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.4,
-      "Sepal.Width": 3.9,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 54,
+      "Sepal.Width": 39,
+      "Petal.Length": 13,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.3,
+      "Sepal.Length": 51,
+      "Sepal.Width": 35,
+      "Petal.Length": 14,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 1.7,
-      "Petal.Width": 0.3,
+      "Sepal.Length": 57,
+      "Sepal.Width": 38,
+      "Petal.Length": 17,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.3,
+      "Sepal.Length": 51,
+      "Sepal.Width": 38,
+      "Petal.Length": 15,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.4,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.7,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 54,
+      "Sepal.Width": 34,
+      "Petal.Length": 17,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.7,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 51,
+      "Sepal.Width": 37,
+      "Petal.Length": 15,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.6,
-      "Sepal.Width": 3.6,
+      "Sepal.Length": 46,
+      "Sepal.Width": 36,
       "Petal.Length": 1,
-      "Petal.Width": 0.2,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.3,
-      "Petal.Length": 1.7,
-      "Petal.Width": 0.5,
+      "Sepal.Length": 51,
+      "Sepal.Width": 33,
+      "Petal.Length": 17,
+      "Petal.Width": 5,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.8,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.9,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 48,
+      "Sepal.Width": 34,
+      "Petal.Length": 19,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
       "Sepal.Width": 3,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.2,
+      "Petal.Length": 16,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.4,
+      "Sepal.Width": 34,
+      "Petal.Length": 16,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.2,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 52,
+      "Sepal.Width": 35,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.2,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 52,
+      "Sepal.Width": 34,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.7,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 47,
+      "Sepal.Width": 32,
+      "Petal.Length": 16,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.8,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 48,
+      "Sepal.Width": 31,
+      "Petal.Length": 16,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.4,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 54,
+      "Sepal.Width": 34,
+      "Petal.Length": 15,
+      "Petal.Width": 4,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.2,
-      "Sepal.Width": 4.1,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.1,
+      "Sepal.Length": 52,
+      "Sepal.Width": 41,
+      "Petal.Length": 15,
+      "Petal.Width": 1,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 4.2,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 55,
+      "Sepal.Width": 42,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.9,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 49,
+      "Sepal.Width": 31,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 1.2,
-      "Petal.Width": 0.2,
+      "Sepal.Width": 32,
+      "Petal.Length": 12,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 55,
+      "Sepal.Width": 35,
+      "Petal.Length": 13,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.9,
-      "Sepal.Width": 3.6,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.1,
+      "Sepal.Length": 49,
+      "Sepal.Width": 36,
+      "Petal.Length": 14,
+      "Petal.Width": 1,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.4,
+      "Sepal.Length": 44,
       "Sepal.Width": 3,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.2,
+      "Petal.Length": 13,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
-      "Species": "setosa"
-    },
-    {
-      "Sepal.Length": 5,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.3,
-      "Species": "setosa"
-    },
-    {
-      "Sepal.Length": 4.5,
-      "Sepal.Width": 2.3,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.3,
-      "Species": "setosa"
-    },
-    {
-      "Sepal.Length": 4.4,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 1.3,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 51,
+      "Sepal.Width": 34,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.5,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.6,
+      "Sepal.Width": 35,
+      "Petal.Length": 13,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 1.9,
-      "Petal.Width": 0.4,
+      "Sepal.Length": 45,
+      "Sepal.Width": 23,
+      "Petal.Length": 13,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.8,
+      "Sepal.Length": 44,
+      "Sepal.Width": 32,
+      "Petal.Length": 13,
+      "Petal.Width": 2,
+      "Species": "setosa"
+    },
+    {
+      "Sepal.Length": 5,
+      "Sepal.Width": 35,
+      "Petal.Length": 16,
+      "Petal.Width": 6,
+      "Species": "setosa"
+    },
+    {
+      "Sepal.Length": 51,
+      "Sepal.Width": 38,
+      "Petal.Length": 19,
+      "Petal.Width": 4,
+      "Species": "setosa"
+    },
+    {
+      "Sepal.Length": 48,
       "Sepal.Width": 3,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.3,
+      "Petal.Length": 14,
+      "Petal.Width": 3,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 1.6,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 51,
+      "Sepal.Width": 38,
+      "Petal.Length": 16,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 4.6,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 46,
+      "Sepal.Width": 32,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
-      "Sepal.Length": 5.3,
-      "Sepal.Width": 3.7,
-      "Petal.Length": 1.5,
-      "Petal.Width": 0.2,
+      "Sepal.Length": 53,
+      "Sepal.Width": 37,
+      "Petal.Length": 15,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 3.3,
-      "Petal.Length": 1.4,
-      "Petal.Width": 0.2,
+      "Sepal.Width": 33,
+      "Petal.Length": 14,
+      "Petal.Width": 2,
       "Species": "setosa"
     },
     {
       "Sepal.Length": 7,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 4.7,
-      "Petal.Width": 1.4,
+      "Sepal.Width": 32,
+      "Petal.Length": 47,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 64,
+      "Sepal.Width": 32,
+      "Petal.Length": 45,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.9,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 4.9,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 69,
+      "Sepal.Width": 31,
+      "Petal.Length": 49,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 2.3,
+      "Sepal.Length": 55,
+      "Sepal.Width": 23,
       "Petal.Length": 4,
-      "Petal.Width": 1.3,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.5,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.6,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 65,
+      "Sepal.Width": 28,
+      "Petal.Length": 46,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 57,
+      "Sepal.Width": 28,
+      "Petal.Length": 45,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 3.3,
-      "Petal.Length": 4.7,
-      "Petal.Width": 1.6,
+      "Sepal.Length": 63,
+      "Sepal.Width": 33,
+      "Petal.Length": 47,
+      "Petal.Width": 16,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 4.9,
-      "Sepal.Width": 2.4,
-      "Petal.Length": 3.3,
+      "Sepal.Length": 49,
+      "Sepal.Width": 24,
+      "Petal.Length": 33,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.6,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.6,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 66,
+      "Sepal.Width": 29,
+      "Petal.Length": 46,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.2,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 3.9,
-      "Petal.Width": 1.4,
+      "Sepal.Length": 52,
+      "Sepal.Width": 27,
+      "Petal.Length": 39,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 5,
       "Sepal.Width": 2,
-      "Petal.Length": 3.5,
+      "Petal.Length": 35,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.9,
+      "Sepal.Length": 59,
       "Sepal.Width": 3,
-      "Petal.Length": 4.2,
-      "Petal.Width": 1.5,
+      "Petal.Length": 42,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 6,
-      "Sepal.Width": 2.2,
+      "Sepal.Width": 22,
       "Petal.Length": 4,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.1,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.7,
-      "Petal.Width": 1.4,
+      "Sepal.Length": 61,
+      "Sepal.Width": 29,
+      "Petal.Length": 47,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.6,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 3.6,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 56,
+      "Sepal.Width": 29,
+      "Petal.Length": 36,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 4.4,
-      "Petal.Width": 1.4,
+      "Sepal.Length": 67,
+      "Sepal.Width": 31,
+      "Petal.Length": 44,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.6,
+      "Sepal.Length": 56,
       "Sepal.Width": 3,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.5,
+      "Petal.Length": 45,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 4.1,
+      "Sepal.Length": 58,
+      "Sepal.Width": 27,
+      "Petal.Length": 41,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.2,
-      "Sepal.Width": 2.2,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 62,
+      "Sepal.Width": 22,
+      "Petal.Length": 45,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.6,
-      "Sepal.Width": 2.5,
-      "Petal.Length": 3.9,
-      "Petal.Width": 1.1,
+      "Sepal.Length": 56,
+      "Sepal.Width": 25,
+      "Petal.Length": 39,
+      "Petal.Width": 11,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.9,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 4.8,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 59,
+      "Sepal.Width": 32,
+      "Petal.Length": 48,
+      "Petal.Width": 18,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.1,
-      "Sepal.Width": 2.8,
+      "Sepal.Length": 61,
+      "Sepal.Width": 28,
       "Petal.Length": 4,
-      "Petal.Width": 1.3,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.5,
-      "Petal.Length": 4.9,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 63,
+      "Sepal.Width": 25,
+      "Petal.Length": 49,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.1,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.7,
-      "Petal.Width": 1.2,
+      "Sepal.Length": 61,
+      "Sepal.Width": 28,
+      "Petal.Length": 47,
+      "Petal.Width": 12,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.3,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 64,
+      "Sepal.Width": 29,
+      "Petal.Length": 43,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.6,
+      "Sepal.Length": 66,
       "Sepal.Width": 3,
-      "Petal.Length": 4.4,
-      "Petal.Width": 1.4,
+      "Petal.Length": 44,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.8,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.8,
-      "Petal.Width": 1.4,
+      "Sepal.Length": 68,
+      "Sepal.Width": 28,
+      "Petal.Length": 48,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.7,
+      "Sepal.Length": 67,
       "Sepal.Width": 3,
       "Petal.Length": 5,
-      "Petal.Width": 1.7,
+      "Petal.Width": 17,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 6,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.5,
+      "Sepal.Width": 29,
+      "Petal.Length": 45,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 2.6,
-      "Petal.Length": 3.5,
+      "Sepal.Length": 57,
+      "Sepal.Width": 26,
+      "Petal.Length": 35,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 2.4,
-      "Petal.Length": 3.8,
-      "Petal.Width": 1.1,
+      "Sepal.Length": 55,
+      "Sepal.Width": 24,
+      "Petal.Length": 38,
+      "Petal.Width": 11,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 2.4,
-      "Petal.Length": 3.7,
+      "Sepal.Length": 55,
+      "Sepal.Width": 24,
+      "Petal.Length": 37,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 3.9,
-      "Petal.Width": 1.2,
+      "Sepal.Length": 58,
+      "Sepal.Width": 27,
+      "Petal.Length": 39,
+      "Petal.Width": 12,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 6,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 5.1,
-      "Petal.Width": 1.6,
+      "Sepal.Width": 27,
+      "Petal.Length": 51,
+      "Petal.Width": 16,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.4,
+      "Sepal.Length": 54,
       "Sepal.Width": 3,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.5,
+      "Petal.Length": 45,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 6,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.6,
+      "Sepal.Width": 34,
+      "Petal.Length": 45,
+      "Petal.Width": 16,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 4.7,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 67,
+      "Sepal.Width": 31,
+      "Petal.Length": 47,
+      "Petal.Width": 15,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.3,
-      "Petal.Length": 4.4,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 63,
+      "Sepal.Width": 23,
+      "Petal.Length": 44,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.6,
+      "Sepal.Length": 56,
       "Sepal.Width": 3,
-      "Petal.Length": 4.1,
-      "Petal.Width": 1.3,
+      "Petal.Length": 41,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 2.5,
+      "Sepal.Length": 55,
+      "Sepal.Width": 25,
       "Petal.Length": 4,
-      "Petal.Width": 1.3,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.5,
-      "Sepal.Width": 2.6,
-      "Petal.Length": 4.4,
-      "Petal.Width": 1.2,
+      "Sepal.Length": 55,
+      "Sepal.Width": 26,
+      "Petal.Length": 44,
+      "Petal.Width": 12,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.1,
+      "Sepal.Length": 61,
       "Sepal.Width": 3,
-      "Petal.Length": 4.6,
-      "Petal.Width": 1.4,
+      "Petal.Length": 46,
+      "Petal.Width": 14,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.6,
+      "Sepal.Length": 58,
+      "Sepal.Width": 26,
       "Petal.Length": 4,
-      "Petal.Width": 1.2,
+      "Petal.Width": 12,
       "Species": "versicolor"
     },
     {
       "Sepal.Length": 5,
-      "Sepal.Width": 2.3,
-      "Petal.Length": 3.3,
+      "Sepal.Width": 23,
+      "Petal.Length": 33,
       "Petal.Width": 1,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.6,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 4.2,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 56,
+      "Sepal.Width": 27,
+      "Petal.Length": 42,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.7,
+      "Sepal.Length": 57,
       "Sepal.Width": 3,
-      "Petal.Length": 4.2,
-      "Petal.Width": 1.2,
+      "Petal.Length": 42,
+      "Petal.Width": 12,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.2,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 57,
+      "Sepal.Width": 29,
+      "Petal.Length": 42,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.2,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 4.3,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 62,
+      "Sepal.Width": 29,
+      "Petal.Length": 43,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.1,
-      "Sepal.Width": 2.5,
+      "Sepal.Length": 51,
+      "Sepal.Width": 25,
       "Petal.Length": 3,
-      "Petal.Width": 1.1,
+      "Petal.Width": 11,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.1,
-      "Petal.Width": 1.3,
+      "Sepal.Length": 57,
+      "Sepal.Width": 28,
+      "Petal.Length": 41,
+      "Petal.Width": 13,
       "Species": "versicolor"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 3.3,
+      "Sepal.Length": 63,
+      "Sepal.Width": 33,
       "Petal.Length": 6,
-      "Petal.Width": 2.5,
+      "Petal.Width": 25,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 5.1,
-      "Petal.Width": 1.9,
+      "Sepal.Length": 58,
+      "Sepal.Width": 27,
+      "Petal.Length": 51,
+      "Petal.Width": 19,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.1,
+      "Sepal.Length": 71,
       "Sepal.Width": 3,
-      "Petal.Length": 5.9,
-      "Petal.Width": 2.1,
+      "Petal.Length": 59,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 5.6,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 63,
+      "Sepal.Width": 29,
+      "Petal.Length": 56,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.5,
+      "Sepal.Length": 65,
       "Sepal.Width": 3,
-      "Petal.Length": 5.8,
-      "Petal.Width": 2.2,
+      "Petal.Length": 58,
+      "Petal.Width": 22,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.6,
+      "Sepal.Length": 76,
       "Sepal.Width": 3,
-      "Petal.Length": 6.6,
-      "Petal.Width": 2.1,
+      "Petal.Length": 66,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 4.9,
-      "Sepal.Width": 2.5,
-      "Petal.Length": 4.5,
-      "Petal.Width": 1.7,
+      "Sepal.Length": 49,
+      "Sepal.Width": 25,
+      "Petal.Length": 45,
+      "Petal.Width": 17,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.3,
-      "Sepal.Width": 2.9,
-      "Petal.Length": 6.3,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 73,
+      "Sepal.Width": 29,
+      "Petal.Length": 63,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 2.5,
-      "Petal.Length": 5.8,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 67,
+      "Sepal.Width": 25,
+      "Petal.Length": 58,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.2,
-      "Sepal.Width": 3.6,
-      "Petal.Length": 6.1,
-      "Petal.Width": 2.5,
+      "Sepal.Length": 72,
+      "Sepal.Width": 36,
+      "Petal.Length": 61,
+      "Petal.Width": 25,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.5,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 5.1,
+      "Sepal.Length": 65,
+      "Sepal.Width": 32,
+      "Petal.Length": 51,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 5.3,
-      "Petal.Width": 1.9,
+      "Sepal.Length": 64,
+      "Sepal.Width": 27,
+      "Petal.Length": 53,
+      "Petal.Width": 19,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.8,
+      "Sepal.Length": 68,
       "Sepal.Width": 3,
-      "Petal.Length": 5.5,
-      "Petal.Width": 2.1,
+      "Petal.Length": 55,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.7,
-      "Sepal.Width": 2.5,
+      "Sepal.Length": 57,
+      "Sepal.Width": 25,
       "Petal.Length": 5,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 5.1,
-      "Petal.Width": 2.4,
+      "Sepal.Length": 58,
+      "Sepal.Width": 28,
+      "Petal.Length": 51,
+      "Petal.Width": 24,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 5.3,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 64,
+      "Sepal.Width": 32,
+      "Petal.Length": 53,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.5,
+      "Sepal.Length": 65,
       "Sepal.Width": 3,
-      "Petal.Length": 5.5,
-      "Petal.Width": 1.8,
+      "Petal.Length": 55,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.7,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 6.7,
-      "Petal.Width": 2.2,
+      "Sepal.Length": 77,
+      "Sepal.Width": 38,
+      "Petal.Length": 67,
+      "Petal.Width": 22,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.7,
-      "Sepal.Width": 2.6,
-      "Petal.Length": 6.9,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 77,
+      "Sepal.Width": 26,
+      "Petal.Length": 69,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
       "Sepal.Length": 6,
-      "Sepal.Width": 2.2,
+      "Sepal.Width": 22,
       "Petal.Length": 5,
-      "Petal.Width": 1.5,
+      "Petal.Width": 15,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.9,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 5.7,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 69,
+      "Sepal.Width": 32,
+      "Petal.Length": 57,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.6,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.9,
+      "Sepal.Length": 56,
+      "Sepal.Width": 28,
+      "Petal.Length": 49,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.7,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 6.7,
+      "Sepal.Length": 77,
+      "Sepal.Width": 28,
+      "Petal.Length": 67,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 4.9,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 63,
+      "Sepal.Width": 27,
+      "Petal.Length": 49,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 3.3,
-      "Petal.Length": 5.7,
-      "Petal.Width": 2.1,
+      "Sepal.Length": 67,
+      "Sepal.Width": 33,
+      "Petal.Length": 57,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.2,
-      "Sepal.Width": 3.2,
+      "Sepal.Length": 72,
+      "Sepal.Width": 32,
       "Petal.Length": 6,
-      "Petal.Width": 1.8,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.2,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 4.8,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 62,
+      "Sepal.Width": 28,
+      "Petal.Length": 48,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.1,
+      "Sepal.Length": 61,
       "Sepal.Width": 3,
-      "Petal.Length": 4.9,
-      "Petal.Width": 1.8,
+      "Petal.Length": 49,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 5.6,
-      "Petal.Width": 2.1,
+      "Sepal.Length": 64,
+      "Sepal.Width": 28,
+      "Petal.Length": 56,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.2,
+      "Sepal.Length": 72,
       "Sepal.Width": 3,
-      "Petal.Length": 5.8,
-      "Petal.Width": 1.6,
+      "Petal.Length": 58,
+      "Petal.Width": 16,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.4,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 6.1,
-      "Petal.Width": 1.9,
+      "Sepal.Length": 74,
+      "Sepal.Width": 28,
+      "Petal.Length": 61,
+      "Petal.Width": 19,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.9,
-      "Sepal.Width": 3.8,
-      "Petal.Length": 6.4,
+      "Sepal.Length": 79,
+      "Sepal.Width": 38,
+      "Petal.Length": 64,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 5.6,
-      "Petal.Width": 2.2,
+      "Sepal.Length": 64,
+      "Sepal.Width": 28,
+      "Petal.Length": 56,
+      "Petal.Width": 22,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.8,
-      "Petal.Length": 5.1,
-      "Petal.Width": 1.5,
+      "Sepal.Length": 63,
+      "Sepal.Width": 28,
+      "Petal.Length": 51,
+      "Petal.Width": 15,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.1,
-      "Sepal.Width": 2.6,
-      "Petal.Length": 5.6,
-      "Petal.Width": 1.4,
+      "Sepal.Length": 61,
+      "Sepal.Width": 26,
+      "Petal.Length": 56,
+      "Petal.Width": 14,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 7.7,
+      "Sepal.Length": 77,
       "Sepal.Width": 3,
-      "Petal.Length": 6.1,
-      "Petal.Width": 2.3,
+      "Petal.Length": 61,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 5.6,
-      "Petal.Width": 2.4,
+      "Sepal.Length": 63,
+      "Sepal.Width": 34,
+      "Petal.Length": 56,
+      "Petal.Width": 24,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.4,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 5.5,
-      "Petal.Width": 1.8,
+      "Sepal.Length": 64,
+      "Sepal.Width": 31,
+      "Petal.Length": 55,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
       "Sepal.Length": 6,
       "Sepal.Width": 3,
-      "Petal.Length": 4.8,
-      "Petal.Width": 1.8,
+      "Petal.Length": 48,
+      "Petal.Width": 18,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.9,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 5.4,
-      "Petal.Width": 2.1,
+      "Sepal.Length": 69,
+      "Sepal.Width": 31,
+      "Petal.Length": 54,
+      "Petal.Width": 21,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 5.6,
-      "Petal.Width": 2.4,
+      "Sepal.Length": 67,
+      "Sepal.Width": 31,
+      "Petal.Length": 56,
+      "Petal.Width": 24,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.9,
-      "Sepal.Width": 3.1,
-      "Petal.Length": 5.1,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 69,
+      "Sepal.Width": 31,
+      "Petal.Length": 51,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.8,
-      "Sepal.Width": 2.7,
-      "Petal.Length": 5.1,
-      "Petal.Width": 1.9,
+      "Sepal.Length": 58,
+      "Sepal.Width": 27,
+      "Petal.Length": 51,
+      "Petal.Width": 19,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.8,
-      "Sepal.Width": 3.2,
-      "Petal.Length": 5.9,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 68,
+      "Sepal.Width": 32,
+      "Petal.Length": 59,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.7,
-      "Sepal.Width": 3.3,
-      "Petal.Length": 5.7,
-      "Petal.Width": 2.5,
+      "Sepal.Length": 67,
+      "Sepal.Width": 33,
+      "Petal.Length": 57,
+      "Petal.Width": 25,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.7,
+      "Sepal.Length": 67,
       "Sepal.Width": 3,
-      "Petal.Length": 5.2,
-      "Petal.Width": 2.3,
+      "Petal.Length": 52,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.3,
-      "Sepal.Width": 2.5,
+      "Sepal.Length": 63,
+      "Sepal.Width": 25,
       "Petal.Length": 5,
-      "Petal.Width": 1.9,
+      "Petal.Width": 19,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.5,
+      "Sepal.Length": 65,
       "Sepal.Width": 3,
-      "Petal.Length": 5.2,
+      "Petal.Length": 52,
       "Petal.Width": 2,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 6.2,
-      "Sepal.Width": 3.4,
-      "Petal.Length": 5.4,
-      "Petal.Width": 2.3,
+      "Sepal.Length": 62,
+      "Sepal.Width": 34,
+      "Petal.Length": 54,
+      "Petal.Width": 23,
       "Species": "virginica"
     },
     {
-      "Sepal.Length": 5.9,
+      "Sepal.Length": 59,
       "Sepal.Width": 3,
-      "Petal.Length": 5.1,
-      "Petal.Width": 1.8,
+      "Petal.Length": 51,
+      "Petal.Width": 18,
       "Species": "virginica"
     }
   ],
@@ -1055,124 +1055,124 @@
     {
       "Species": "setosa",
       "attribute": "Petal.Length",
-      "attr_mean": 1.462
+      "attr_mean": 1462
     },
     {
       "Species": "setosa",
       "attribute": "Petal.Width",
-      "attr_mean": 0.246
+      "attr_mean": 246
     },
     {
       "Species": "setosa",
       "attribute": "Sepal.Length",
-      "attr_mean": 5.006
+      "attr_mean": 5006
     },
     {
       "Species": "setosa",
       "attribute": "Sepal.Width",
-      "attr_mean": 3.428
+      "attr_mean": 3428
     },
     {
       "Species": "versicolor",
       "attribute": "Petal.Length",
-      "attr_mean": 4.26
+      "attr_mean": 426
     },
     {
       "Species": "versicolor",
       "attribute": "Petal.Width",
-      "attr_mean": 1.326
+      "attr_mean": 1326
     },
     {
       "Species": "versicolor",
       "attribute": "Sepal.Length",
-      "attr_mean": 5.936
+      "attr_mean": 5936
     },
     {
       "Species": "versicolor",
       "attribute": "Sepal.Width",
-      "attr_mean": 2.77
+      "attr_mean": 277
     },
     {
       "Species": "virginica",
       "attribute": "Petal.Length",
-      "attr_mean": 5.552
+      "attr_mean": 5552
     },
     {
       "Species": "virginica",
       "attribute": "Petal.Width",
-      "attr_mean": 2.026
+      "attr_mean": 2026
     },
     {
       "Species": "virginica",
       "attribute": "Sepal.Length",
-      "attr_mean": 6.588
+      "attr_mean": 6588
     },
     {
       "Species": "virginica",
       "attribute": "Sepal.Width",
-      "attr_mean": 2.974
+      "attr_mean": 2974
     }
   ],
   "output_data": [
     {
       "Species": "setosa",
       "variable": "Petal.Length",
-      "value": 1.462
+      "value": 722
     },
     {
       "Species": "setosa",
       "variable": "Petal.Width",
-      "value": 0.246
+      "value": 123
     },
     {
       "Species": "setosa",
       "variable": "Sepal.Length",
-      "value": 5.006
+      "value": 2143
     },
     {
       "Species": "setosa",
       "variable": "Sepal.Width",
-      "value": 3.428
+      "value": 1516
     },
     {
       "Species": "versicolor",
       "variable": "Petal.Length",
-      "value": 4.26
+      "value": 1878
     },
     {
       "Species": "versicolor",
       "variable": "Petal.Width",
-      "value": 1.326
+      "value": 600
     },
     {
       "Species": "versicolor",
       "variable": "Sepal.Length",
-      "value": 5.936
+      "value": 2599
     },
     {
       "Species": "versicolor",
       "variable": "Sepal.Width",
-      "value": 2.77
+      "value": 1151
     },
     {
       "Species": "virginica",
       "variable": "Petal.Length",
-      "value": 5.552
+      "value": 2533
     },
     {
       "Species": "virginica",
       "variable": "Petal.Width",
-      "value": 2.026
+      "value": 905
     },
     {
       "Species": "virginica",
       "variable": "Sepal.Length",
-      "value": 6.588
+      "value": 3186
     },
     {
       "Species": "virginica",
       "variable": "Sepal.Width",
-      "value": 2.974
+      "value": 1163
     }
   ],
   "vl_spec": {
