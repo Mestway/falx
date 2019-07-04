@@ -9,6 +9,8 @@ from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects
+from rpy2.robjects import pandas2ri
+pandas2ri.activate()
 import warnings
 import json
 import numpy as np
@@ -88,8 +90,8 @@ def subset_eq(actual, expect):
     table2 = json.loads(table2)
 
     row_num, col_num = full_table.get_shape()
-    actual_col = len(robjects.r(actual))
-    actual_row = len(robjects.r(actual)[0])
+    actual_col = robjects.r(actual).shape[1]
+    actual_row = robjects.r(actual).shape[0]
     # print(table1)
     # print(table2)
     all_ok = interface.align_table_schema(table1, table2) != None

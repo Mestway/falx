@@ -17,6 +17,8 @@ from ..spec.expr import *
 from ..visitor import GenericVisitor
 import rpy2.robjects as robjects
 from functools import reduce
+import interface
+import json
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
@@ -25,8 +27,8 @@ class AbstractPrune(GenericVisitor):
     _interp: Interpreter
     _example: Example
     _blames: Set
-    _input: List 
-    _output: List
+    _input: None 
+    _output: None
 
     def __init__(self, interp: Interpreter, example: Example):
         self._interp = interp
@@ -36,10 +38,10 @@ class AbstractPrune(GenericVisitor):
         ## FIXME: multiple inputs!
         input = robjects.r(example.input[0])
         output = robjects.r(example.output)
-        self._input = []
-        self._output = []
-        [self._input.append(col) for col in input]
-        [self._output.append(col) for col in output]
+        self._input = input
+        self._output = output
+        # [self._input.append(col) for col in input]
+        # [self._output.append(col) for col in output]
     
     
     def is_unsat(self, prog: List[Any]) -> bool:
@@ -48,7 +50,6 @@ class AbstractPrune(GenericVisitor):
             
         if err_back:
             # print('prune by backward...')
-            # print(self._blames)
             return True
         
         ### Second, do forward interpretation
@@ -57,7 +58,7 @@ class AbstractPrune(GenericVisitor):
         if err_forward:
             return True
         
-        if actual == None:
+        if actual is None:
             return False
         
         ### Third, check consistency
@@ -68,12 +69,12 @@ class AbstractPrune(GenericVisitor):
         has_error = True
         for out_list in per_list:
             tbl_in = None
-            tbl = list(out_list)
+            tbl = self._output[list(out_list)]
             for stmt in reversed(prog):
                 error, tbl_in = self.backward_transform(stmt, tbl)
                 if error:
                     return error, tbl_in
-                if tbl_in == None:
+                if tbl_in is None:
                     has_error = False
                     break
                 tbl = tbl_in
@@ -93,21 +94,19 @@ class AbstractPrune(GenericVisitor):
             error, out = self.forward_transform(stmt, tbl)
             if error: 
                 return error, out
-            if out == None:
+            if out is None:
                 break
             tbl = out
 
         return False, out
 
     # 'actual' contains 'expect'
-    def is_consistent(self, actual: List[Any], expect: List[Any]):
-        if not expect:
-            return True
+    def is_consistent(self, actual, expect):
+        table1 = json.loads(actual.to_json(orient='records'))
+        table2 = json.loads(expect.to_json(orient='records'))
 
-        if self.is_primitive(expect[0]):
-            return self.is_subset(expect, actual)
-        else: 
-            return all([self.is_subset(elem, actual) for elem in expect])
+        all_ok = interface.align_table_schema(table2, table1, boolean_result=True)
+        return all_ok
 
     def is_primitive(self, var):
         basic_types = (int, str, bool, float)
@@ -132,7 +131,7 @@ class AbstractPrune(GenericVisitor):
 
     ## 1. Type-checking 2. Forward abstract interpretation.
     def forward_transform(self, stmt, tbl):
-        assert not tbl == None, stmt
+        # assert not tbl == None, stmt
         ast = stmt.ast
         opcode = ast.name
         args = ast.args
@@ -153,7 +152,9 @@ class AbstractPrune(GenericVisitor):
                 return True, None
             else:
                 sel_list = list(map(int, args[1].data))
-                tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
+                cols = tbl.columns
+                tbl_out = tbl[cols[sel_list]]
+                # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
                 return False, tbl_out 
         elif opcode == 'unite':
             col1 = int(args[1].data)
@@ -255,10 +256,13 @@ class AbstractPrune(GenericVisitor):
             else:
                 # ex_list = [col1-1, col1]
                 # tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
-                if len(tbl_out) == 0 or self.is_primitive(tbl_out[0]):
+                # print(tbl_out[tbl_out.columns[0]] )
+                if len(tbl_out) == 0:
                     return False, tbl_out
                 else:
-                    return False, tbl_out[0]
+                    cols = tbl_out.columns
+                    tbl_new = tbl_out[[cols[0]]]
+                    return False, tbl_new
         #Done
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             return False, tbl_out[:-1]
@@ -271,7 +275,10 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'spread':
             col1 = int(args[1].data)
             col2 = int(args[2].data)
-            return False, tbl_out
+            cols = tbl_out.columns.values
+            tbl_new = tbl_out[cols[1:]]
+            tp = tbl_new.T
+            return False, tp
 
             # if len(tbl_out) > 0:
             #     return False, tbl_out[0]
