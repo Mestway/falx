@@ -43,53 +43,53 @@
   ],
   "output_data": [
     {
+      "Complaint Type": "Too noisy",
+      "Count": 27,
+      "cumsum": 27
+    },
+    {
       "Complaint Type": "Overpriced",
       "Count": 789,
-      "cumsum": 789
-    },
-    {
-      "Complaint Type": "Small portions",
-      "Count": 621,
-      "cumsum": 1410
-    },
-    {
-      "Complaint Type": "Wait time",
-      "Count": 109,
-      "cumsum": 1519
+      "cumsum": 816
     },
     {
       "Complaint Type": "Food is tasteless",
       "Count": 65,
-      "cumsum": 1584
-    },
-    {
-      "Complaint Type": "No atmosphere",
-      "Count": 45,
-      "cumsum": 1629
-    },
-    {
-      "Complaint Type": "Not clean",
-      "Count": 30,
-      "cumsum": 1659
-    },
-    {
-      "Complaint Type": "Too noisy",
-      "Count": 27,
-      "cumsum": 1686
-    },
-    {
-      "Complaint Type": "Food is too salty",
-      "Count": 15,
-      "cumsum": 1701
-    },
-    {
-      "Complaint Type": "Unfriendly staff",
-      "Count": 12,
-      "cumsum": 1713
+      "cumsum": 881
     },
     {
       "Complaint Type": "Food not fresh",
       "Count": 9,
+      "cumsum": 890
+    },
+    {
+      "Complaint Type": "Food is too salty",
+      "Count": 15,
+      "cumsum": 905
+    },
+    {
+      "Complaint Type": "Not clean",
+      "Count": 30,
+      "cumsum": 935
+    },
+    {
+      "Complaint Type": "Unfriendly staff",
+      "Count": 12,
+      "cumsum": 947
+    },
+    {
+      "Complaint Type": "Wait time",
+      "Count": 109,
+      "cumsum": 1056
+    },
+    {
+      "Complaint Type": "No atmosphere",
+      "Count": 45,
+      "cumsum": 1101
+    },
+    {
+      "Complaint Type": "Small portions",
+      "Count": 621,
       "cumsum": 1722
     }
   ],
