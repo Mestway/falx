@@ -115,7 +115,9 @@ class FalxEvalInterface(object):
                     if check_trace_consistency(vis_design, full_trace):
                         candidates.append((p, vis_design))
                     else:
-                        print("===> the program is not consistent with the trace, continue")
+                        print("===> the program is not consistent with the trace")
+                        print(" {}".format(p))
+                        print("===> continue...")
 
                     if len(candidates) >= top_k: break
             else:

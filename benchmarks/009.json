@@ -1,274 +1,274 @@
 {
   "input_data": [
     {
+      "Location": "United States",
+      "Rae": "White",
       "2009": 13.3,
       "2010": 13.7,
       "2011": 13.4,
       "2012": 13.1,
       "2013": 12.9,
-      "2014": 10.4,
-      "Location": "United States",
-      "Rae": "White"
+      "2014": 10.4
     },
     {
+      "Location": "United States",
+      "Rae": "Black or African American",
       "2009": 18.1,
       "2010": 18.2,
       "2011": 17.7,
       "2012": 17.3,
       "2013": 17.1,
-      "2014": 13.6,
-      "Location": "United States",
-      "Rae": "Black or African American"
+      "2014": 13.6
     },
     {
+      "Location": "United States",
+      "Rae": "American Indian or Alaska Native",
       "2009": 29.2,
       "2010": 29.2,
       "2011": 27.6,
       "2012": 27.4,
       "2013": 26.9,
-      "2014": 23.1,
-      "Location": "United States",
-      "Rae": "American Indian or Alaska Native"
+      "2014": 23.1
     },
     {
+      "Location": "United States",
+      "Rae": "Asian",
       "2009": 14.8,
       "2010": 15.7,
       "2011": 15.4,
-      "2012": 15.0,
+      "2012": 15,
       "2013": 14.6,
-      "2014": 10.6,
-      "Location": "United States",
-      "Rae": "Asian"
+      "2014": 10.6
     },
     {
+      "Location": "United States",
+      "Rae": "Native Hawaiian or Pacific Islander",
       "2009": 17.3,
       "2010": 17.4,
       "2011": 18.5,
-      "2012": 18.0,
+      "2012": 18,
       "2013": 17.9,
-      "2014": 13.5,
-      "Location": "United States",
-      "Rae": "Native Hawaiian or Pacific Islander"
+      "2014": 13.5
     },
     {
+      "Location": "United States",
+      "Rae": "Other Race",
       "2009": 34.1,
       "2010": 34.6,
       "2011": 33.6,
       "2012": 32.3,
       "2013": 31.7,
-      "2014": 26.1,
-      "Location": "United States",
-      "Rae": "Other Race"
+      "2014": 26.1
     },
     {
+      "Location": "United States",
+      "Rae": "Two or more races",
       "2009": 14.5,
       "2010": 14.9,
       "2011": 14.4,
-      "2012": 14.0,
+      "2012": 14,
       "2013": 13.2,
-      "2014": 10.4,
-      "Location": "United States",
-      "Rae": "Two or more races"
+      "2014": 10.4
     },
     {
+      "Location": "United States",
+      "Rae": "White,not Hispanic or Latino",
       "2009": 10.7,
       "2010": 10.9,
       "2011": 10.7,
       "2012": 10.4,
       "2013": 10.2,
-      "2014": 8.1,
-      "Location": "United States",
-      "Rae": "White,not Hispanic or Latino"
+      "2014": 8.1
     },
     {
-      "2009": 31.0,
+      "Location": "United States",
+      "Rae": "Hispanic or Latino",
+      "2009": 31,
       "2010": 30.9,
       "2011": 29.8,
-      "2012": 29.0,
+      "2012": 29,
       "2013": 28.4,
-      "2014": 23.5,
-      "Location": "United States",
-      "Rae": "Hispanic or Latino"
+      "2014": 23.5
     },
     {
+      "Location": "Arizona",
+      "Rae": "White",
       "2009": 16.3,
       "2010": 15.6,
       "2011": 15.7,
-      "2012": 16.0,
+      "2012": 16,
       "2013": 15.7,
-      "2014": 12.2,
-      "Location": "Arizona",
-      "Rae": "White"
+      "2014": 12.2
     },
     {
+      "Location": "Arizona",
+      "Rae": "Black or African American",
       "2009": 15.9,
       "2010": 15.3,
       "2011": 18.2,
       "2012": 16.2,
       "2013": 17.4,
-      "2014": 11.1,
-      "Location": "Arizona",
-      "Rae": "Black or African American"
+      "2014": 11.1
     },
     {
+      "Location": "Arizona",
+      "Rae": "American Indian or Alaska Native",
       "2009": 30.6,
       "2010": 30.8,
       "2011": 27.5,
       "2012": 29.3,
       "2013": 26.9,
-      "2014": 24.1,
-      "Location": "Arizona",
-      "Rae": "American Indian or Alaska Native"
+      "2014": 24.1
     },
     {
-      "2009": 15.0,
+      "Location": "Arizona",
+      "Rae": "Asian",
+      "2009": 15,
       "2010": 12.1,
       "2011": 15.1,
       "2012": 16.2,
       "2013": 15.1,
-      "2014": 11.0,
-      "Location": "Arizona",
-      "Rae": "Asian"
+      "2014": 11
     },
     {
+      "Location": "Arizona",
+      "Rae": "Native Hawaiian or Pacific Islander",
       "2009": 25.5,
       "2010": 11.9,
       "2011": 30.2,
       "2012": 16.6,
       "2013": 21.3,
-      "2014": 18.4,
-      "Location": "Arizona",
-      "Rae": "Native Hawaiian or Pacific Islander"
+      "2014": 18.4
     },
     {
+      "Location": "Arizona",
+      "Rae": "Other Race",
       "2009": 23.7,
       "2010": 27.1,
       "2011": 28.4,
-      "2012": 31.0,
+      "2012": 31,
       "2013": 30.1,
-      "2014": 27.2,
-      "Location": "Arizona",
-      "Rae": "Other Race"
+      "2014": 27.2
     },
     {
+      "Location": "Arizona",
+      "Rae": "Two or more races",
       "2009": 14.3,
       "2010": 14.7,
       "2011": 18.2,
       "2012": 16.5,
       "2013": 15.2,
-      "2014": 13.2,
-      "Location": "Arizona",
-      "Rae": "Two or more races"
+      "2014": 13.2
     },
     {
+      "Location": "Arizona",
+      "Rae": "White,not Hispanic or Latino",
       "2009": 11.1,
       "2010": 10.9,
       "2011": 10.9,
       "2012": 11.3,
       "2013": 11.2,
-      "2014": 8.6,
-      "Location": "Arizona",
-      "Rae": "White,not Hispanic or Latino"
+      "2014": 8.6
     },
     {
+      "Location": "Arizona",
+      "Rae": "Hispanic or Latino",
       "2009": 27.9,
       "2010": 27.4,
       "2011": 27.8,
       "2012": 28.3,
       "2013": 27.5,
-      "2014": 22.2,
-      "Location": "Arizona",
-      "Rae": "Hispanic or Latino"
+      "2014": 22.2
     },
     {
+      "Location": "Maricopa",
+      "Rae": "White",
       "2009": 17.6,
       "2010": 16.2,
       "2011": 16.2,
       "2012": 16.4,
       "2013": 16.3,
-      "2014": 12.4,
-      "Location": "Maricopa",
-      "Rae": "White"
+      "2014": 12.4
     },
     {
+      "Location": "Maricopa",
+      "Rae": "Black or African American",
       "2009": 16.4,
       "2010": 16.3,
       "2011": 18.7,
       "2012": 16.9,
       "2013": 17.9,
-      "2014": 11.6,
-      "Location": "Maricopa",
-      "Rae": "Black or African American"
+      "2014": 11.6
     },
     {
+      "Location": "Maricopa",
+      "Rae": "American Indian or Alaska Native",
       "2009": 16.4,
       "2010": 40.5,
       "2011": 33.9,
       "2012": 30.8,
       "2013": 14.8,
-      "2014": 29.6,
-      "Location": "Maricopa",
-      "Rae": "American Indian or Alaska Native"
+      "2014": 29.6
     },
     {
+      "Location": "Maricopa",
+      "Rae": "Asian",
       "2009": 37.6,
       "2010": 11.1,
       "2011": 16.2,
       "2012": 17.3,
-      "2013": 15.0,
-      "2014": 10.2,
-      "Location": "Maricopa",
-      "Rae": "Asian"
+      "2013": 15,
+      "2014": 10.2
     },
     {
+      "Location": "Maricopa",
+      "Rae": "Native Hawaiian or Pacific Islander",
       "2009": 14.5,
       "2010": 13.1,
       "2011": 31.4,
       "2012": 16.1,
       "2013": 29.9,
-      "2014": 14.6,
-      "Location": "Maricopa",
-      "Rae": "Native Hawaiian or Pacific Islander"
+      "2014": 14.6
     },
     {
+      "Location": "Maricopa",
+      "Rae": "Other Race",
       "2009": 23.3,
       "2010": 28.4,
       "2011": 32.9,
       "2012": 32.1,
       "2013": 32.8,
-      "2014": 27.6,
-      "Location": "Maricopa",
-      "Rae": "Other Race"
+      "2014": 27.6
     },
     {
+      "Location": "Maricopa",
+      "Rae": "Two or more races",
       "2009": 25.3,
       "2010": 14.1,
       "2011": 18.7,
       "2012": 14.3,
       "2013": 15.3,
-      "2014": 13.9,
-      "Location": "Maricopa",
-      "Rae": "Two or more races"
+      "2014": 13.9
     },
     {
+      "Location": "Maricopa",
+      "Rae": "White,not Hispanic or Latino",
       "2009": 15.1,
       "2010": 10.6,
       "2011": 10.5,
       "2012": 10.8,
       "2013": 10.9,
-      "2014": 8.1,
-      "Location": "Maricopa",
-      "Rae": "White,not Hispanic or Latino"
+      "2014": 8.1
     },
     {
-      "2009": 11.0,
+      "Location": "Maricopa",
+      "Rae": "Hispanic or Latino",
+      "2009": 11,
       "2010": 29.9,
       "2011": 30.6,
       "2012": 30.6,
       "2013": 30.3,
-      "2014": 23.9,
-      "Location": "Maricopa",
-      "Rae": "Hispanic or Latino"
+      "2014": 23.9
     }
   ],
   "output_data": [
