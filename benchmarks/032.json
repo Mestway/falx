@@ -1,0 +1,309 @@
+{
+  "input_data": [
+    {
+      "Serie1_y": 63,
+      "Serie2_y": 98,
+      "id": 0
+    },
+    {
+      "Serie1_y": 123,
+      "Serie2_y": 129,
+      "id": 1
+    },
+    {
+      "Serie1_y": 213,
+      "Serie2_y": 164,
+      "id": 2
+    },
+    {
+      "Serie1_y": 234,
+      "Serie2_y": 198,
+      "id": 3
+    },
+    {
+      "Serie1_y": 322,
+      "Serie2_y": 296,
+      "id": 4
+    },
+    {
+      "Serie1_y": 410,
+      "Serie2_y": 351,
+      "id": 5
+    },
+    {
+      "Serie1_y": 473,
+      "Serie2_y": 411,
+      "id": 6
+    },
+    {
+      "Serie1_y": 484,
+      "Serie2_y": 435,
+      "id": 7
+    },
+    {
+      "Serie1_y": 529,
+      "Serie2_y": 448,
+      "id": 8
+    },
+    {
+      "Serie1_y": 543,
+      "Serie2_y": 534,
+      "id": 9
+    },
+    {
+      "Serie1_y": 592,
+      "Serie2_y": 602,
+      "id": 10
+    },
+    {
+      "Serie1_y": 669,
+      "Serie2_y": 650,
+      "id": 11
+    },
+    {
+      "Serie1_y": 670,
+      "Serie2_y": 658,
+      "id": 12
+    },
+    {
+      "Serie1_y": 693,
+      "Serie2_y": 711,
+      "id": 13
+    },
+    {
+      "Serie1_y": 736,
+      "Serie2_y": 772,
+      "id": 14
+    },
+    {
+      "Serie1_y": 778,
+      "Serie2_y": 799,
+      "id": 15
+    },
+    {
+      "Serie1_y": 786,
+      "Serie2_y": 882,
+      "id": 16
+    },
+    {
+      "Serie1_y": 879,
+      "Serie2_y": 976,
+      "id": 17
+    },
+    {
+      "Serie1_y": 968,
+      "Serie2_y": 990,
+      "id": 18
+    }
+  ],
+  "output_data": [
+    {
+      "id": 0,
+      "variable": "Serie1_y",
+      "value": 63
+    },
+    {
+      "id": 1,
+      "variable": "Serie1_y",
+      "value": 123
+    },
+    {
+      "id": 2,
+      "variable": "Serie1_y",
+      "value": 213
+    },
+    {
+      "id": 3,
+      "variable": "Serie1_y",
+      "value": 234
+    },
+    {
+      "id": 4,
+      "variable": "Serie1_y",
+      "value": 322
+    },
+    {
+      "id": 5,
+      "variable": "Serie1_y",
+      "value": 410
+    },
+    {
+      "id": 6,
+      "variable": "Serie1_y",
+      "value": 473
+    },
+    {
+      "id": 7,
+      "variable": "Serie1_y",
+      "value": 484
+    },
+    {
+      "id": 8,
+      "variable": "Serie1_y",
+      "value": 529
+    },
+    {
+      "id": 9,
+      "variable": "Serie1_y",
+      "value": 543
+    },
+    {
+      "id": 10,
+      "variable": "Serie1_y",
+      "value": 592
+    },
+    {
+      "id": 11,
+      "variable": "Serie1_y",
+      "value": 669
+    },
+    {
+      "id": 12,
+      "variable": "Serie1_y",
+      "value": 670
+    },
+    {
+      "id": 13,
+      "variable": "Serie1_y",
+      "value": 693
+    },
+    {
+      "id": 14,
+      "variable": "Serie1_y",
+      "value": 736
+    },
+    {
+      "id": 15,
+      "variable": "Serie1_y",
+      "value": 778
+    },
+    {
+      "id": 16,
+      "variable": "Serie1_y",
+      "value": 786
+    },
+    {
+      "id": 17,
+      "variable": "Serie1_y",
+      "value": 879
+    },
+    {
+      "id": 18,
+      "variable": "Serie1_y",
+      "value": 968
+    },
+    {
+      "id": 0,
+      "variable": "Serie2_y",
+      "value": 98
+    },
+    {
+      "id": 1,
+      "variable": "Serie2_y",
+      "value": 129
+    },
+    {
+      "id": 2,
+      "variable": "Serie2_y",
+      "value": 164
+    },
+    {
+      "id": 3,
+      "variable": "Serie2_y",
+      "value": 198
+    },
+    {
+      "id": 4,
+      "variable": "Serie2_y",
+      "value": 296
+    },
+    {
+      "id": 5,
+      "variable": "Serie2_y",
+      "value": 351
+    },
+    {
+      "id": 6,
+      "variable": "Serie2_y",
+      "value": 411
+    },
+    {
+      "id": 7,
+      "variable": "Serie2_y",
+      "value": 435
+    },
+    {
+      "id": 8,
+      "variable": "Serie2_y",
+      "value": 448
+    },
+    {
+      "id": 9,
+      "variable": "Serie2_y",
+      "value": 534
+    },
+    {
+      "id": 10,
+      "variable": "Serie2_y",
+      "value": 602
+    },
+    {
+      "id": 11,
+      "variable": "Serie2_y",
+      "value": 650
+    },
+    {
+      "id": 12,
+      "variable": "Serie2_y",
+      "value": 658
+    },
+    {
+      "id": 13,
+      "variable": "Serie2_y",
+      "value": 711
+    },
+    {
+      "id": 14,
+      "variable": "Serie2_y",
+      "value": 772
+    },
+    {
+      "id": 15,
+      "variable": "Serie2_y",
+      "value": 799
+    },
+    {
+      "id": 16,
+      "variable": "Serie2_y",
+      "value": 882
+    },
+    {
+      "id": 17,
+      "variable": "Serie2_y",
+      "value": 976
+    },
+    {
+      "id": 18,
+      "variable": "Serie2_y",
+      "value": 990
+    }
+  ],
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "id",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "variable",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      }
+    }
+  }
+}
