@@ -1,278 +1,258 @@
 {
-  "input_data": [
-    {
-      "#": 1,
-      "Year": 1995,
-      "Coverage": 81,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 2,
-      "Year": 1996,
-      "Coverage": 81,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 3,
-      "Year": 1997,
-      "Coverage": 81,
-      "Event": "Medicaid coverage for kids",
-      "Event_line": 81
-    },
-    {
-      "#": 4,
-      "Year": 1998,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 5,
-      "Year": 1999,
-      "Coverage": 81,
-      "Event": "Patient bill of rights",
-      "Event_line": 81
-    },
-    {
-      "#": 6,
-      "Year": 2000,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 7,
-      "Year": 2001,
-      "Coverage": 85,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 8,
-      "Year": 2002,
-      "Coverage": 85,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 9,
-      "Year": 2003,
-      "Coverage": 84,
-      "Event": "Medicare Part D",
-      "Event_line": 84
-    },
-    {
-      "#": 10,
-      "Year": 2004,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 11,
-      "Year": 2005,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 12,
-      "Year": 2006,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 13,
-      "Year": 2007,
-      "Coverage": 84,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 14,
-      "Year": 2008,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 15,
-      "Year": 2009,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0
-    },
-    {
-      "#": 16,
-      "Year": 2010,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0
+    "input_data": [
+        {
+            "label": "Category 1",
+            "2008": 61,
+            "2009": 70,
+            "2010": 4,
+            "2011": 55,
+            "2012": 144,
+            "2013": 132
+        },
+        {
+            "label": "Category 2",
+            "2008": 128,
+            "2009": 22,
+            "2010": 91,
+            "2011": 61,
+            "2012": 55,
+            "2013": 47
+        },
+        {
+            "label": "Category 3",
+            "2008": 12,
+            "2009": 95,
+            "2010": 35,
+            "2011": 12,
+            "2012": 22,
+            "2013": 82
+        },
+        {
+            "label": "Category 4",
+            "2008": 93,
+            "2009": 24,
+            "2010": 16,
+            "2011": 27,
+            "2012": 55,
+            "2013": 13
+        },
+        {
+            "label": "Category 5",
+            "2008": 88,
+            "2009": 73,
+            "2010": 129,
+            "2011": 23,
+            "2012": 101,
+            "2013": 23
+        },
+        {
+            "label": "Category 6",
+            "2008": 22,
+            "2009": 28,
+            "2010": 94,
+            "2011": 74,
+            "2012": 60,
+            "2013": 83
+        }
+    ],
+    "output_data": [
+        {
+            "label": "Category 1",
+            "variable": "2008",
+            "value": 61
+        },
+        {
+            "label": "Category 2",
+            "variable": "2008",
+            "value": 128
+        },
+        {
+            "label": "Category 3",
+            "variable": "2008",
+            "value": 12
+        },
+        {
+            "label": "Category 4",
+            "variable": "2008",
+            "value": 93
+        },
+        {
+            "label": "Category 5",
+            "variable": "2008",
+            "value": 88
+        },
+        {
+            "label": "Category 6",
+            "variable": "2008",
+            "value": 22
+        },
+        {
+            "label": "Category 1",
+            "variable": "2009",
+            "value": 70
+        },
+        {
+            "label": "Category 2",
+            "variable": "2009",
+            "value": 22
+        },
+        {
+            "label": "Category 3",
+            "variable": "2009",
+            "value": 95
+        },
+        {
+            "label": "Category 4",
+            "variable": "2009",
+            "value": 24
+        },
+        {
+            "label": "Category 5",
+            "variable": "2009",
+            "value": 73
+        },
+        {
+            "label": "Category 6",
+            "variable": "2009",
+            "value": 28
+        },
+        {
+            "label": "Category 1",
+            "variable": "2010",
+            "value": 4
+        },
+        {
+            "label": "Category 2",
+            "variable": "2010",
+            "value": 91
+        },
+        {
+            "label": "Category 3",
+            "variable": "2010",
+            "value": 35
+        },
+        {
+            "label": "Category 4",
+            "variable": "2010",
+            "value": 16
+        },
+        {
+            "label": "Category 5",
+            "variable": "2010",
+            "value": 129
+        },
+        {
+            "label": "Category 6",
+            "variable": "2010",
+            "value": 94
+        },
+        {
+            "label": "Category 1",
+            "variable": "2011",
+            "value": 55
+        },
+        {
+            "label": "Category 2",
+            "variable": "2011",
+            "value": 61
+        },
+        {
+            "label": "Category 3",
+            "variable": "2011",
+            "value": 12
+        },
+        {
+            "label": "Category 4",
+            "variable": "2011",
+            "value": 27
+        },
+        {
+            "label": "Category 5",
+            "variable": "2011",
+            "value": 23
+        },
+        {
+            "label": "Category 6",
+            "variable": "2011",
+            "value": 74
+        },
+        {
+            "label": "Category 1",
+            "variable": "2012",
+            "value": 144
+        },
+        {
+            "label": "Category 2",
+            "variable": "2012",
+            "value": 55
+        },
+        {
+            "label": "Category 3",
+            "variable": "2012",
+            "value": 22
+        },
+        {
+            "label": "Category 4",
+            "variable": "2012",
+            "value": 55
+        },
+        {
+            "label": "Category 5",
+            "variable": "2012",
+            "value": 101
+        },
+        {
+            "label": "Category 6",
+            "variable": "2012",
+            "value": 60
+        },
+        {
+            "label": "Category 1",
+            "variable": "2013",
+            "value": 132
+        },
+        {
+            "label": "Category 2",
+            "variable": "2013",
+            "value": 47
+        },
+        {
+            "label": "Category 3",
+            "variable": "2013",
+            "value": 82
+        },
+        {
+            "label": "Category 4",
+            "variable": "2013",
+            "value": 13
+        },
+        {
+            "label": "Category 5",
+            "variable": "2013",
+            "value": 23
+        },
+        {
+            "label": "Category 6",
+            "variable": "2013",
+            "value": 83
+        }
+    ],
+    "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "circle",
+        "encoding": {
+            "x": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "size": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "y": {
+                "field": "label",
+                "type": "nominal"
+            }
+        }
     }
-  ],
-  "output_data": [
-    {
-      "#": 1,
-      "Coverage": 81,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 1995
-    },
-    {
-      "#": 2,
-      "Coverage": 81,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 1996
-    },
-    {
-      "#": 3,
-      "Coverage": 81,
-      "Event": "Medicaid coverage for kids",
-      "Event_line": 81,
-      "Year": 1997
-    },
-    {
-      "#": 4,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 1998
-    },
-    {
-      "#": 5,
-      "Coverage": 81,
-      "Event": "Patient bill of rights",
-      "Event_line": 81,
-      "Year": 1999
-    },
-    {
-      "#": 6,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2000
-    },
-    {
-      "#": 7,
-      "Coverage": 85,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2001
-    },
-    {
-      "#": 8,
-      "Coverage": 85,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2002
-    },
-    {
-      "#": 9,
-      "Coverage": 84,
-      "Event": "Medicare Part D",
-      "Event_line": 84,
-      "Year": 2003
-    },
-    {
-      "#": 10,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2004
-    },
-    {
-      "#": 11,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2005
-    },
-    {
-      "#": 12,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2006
-    },
-    {
-      "#": 13,
-      "Coverage": 84,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2007
-    },
-    {
-      "#": 14,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2008
-    },
-    {
-      "#": 15,
-      "Coverage": 83,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2009
-    },
-    {
-      "#": 16,
-      "Coverage": 82,
-      "Event": "",
-      "Event_line": 0,
-      "Year": 2010
-    }
-  ],
-  "vl_spec": {
-    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-    "layer": [
-      {
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "quantitative"
-          },
-          "y": {
-            "field": "Coverage",
-            "type": "quantitative"
-          }
-        }
-      },
-      {
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "quantitative"
-          },
-          "y": {
-            "field": "Event_line",
-            "type": "quantitative"
-          }
-        }
-      },
-      {
-        "mark": "text",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "quantitative"
-          },
-          "y": {
-            "field": "Event_line",
-            "type": "quantitative"
-          },
-          "text": {
-            "field": "Event",
-            "type": "nominal"
-          }
-        }
-      }
-    ]
-  }
 }
