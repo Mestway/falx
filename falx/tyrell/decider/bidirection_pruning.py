@@ -163,7 +163,7 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'separate':
             # assert False
             return error, tbl
-        elif opcode == 'mutate' or opcode == 'mutateCustom':
+        elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             # assert False
             return error, tbl
         elif opcode == 'summarise':
@@ -252,7 +252,7 @@ class AbstractPrune(GenericVisitor):
                 tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
                 return False, tbl_ret
         #Done
-        elif opcode == 'mutate' or opcode == 'mutateCustom':
+        elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             return False, tbl_out[:-1]
         elif opcode == 'summarise':
             # self._blames.clear()

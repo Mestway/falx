@@ -103,3 +103,8 @@ func summarise: Table r -> Table a, Aggr b, ColInt c {
 func inner_join: Table r -> Table a, Table b {
   col(r) < col(a) + col(b);
 }
+
+func cumsum: Table r -> Table a, ColInt b {
+   row(r) == row(a);
+   col(r) == col(a) + 1;
+}

@@ -371,6 +371,24 @@ class MorpheusInterpreter(PostOrderInterpreter):
             # assert False, e
             raise GeneralError()
 
+    def eval_cumsum(self, node, args):
+        n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        self.assertArg(node, args,
+                index=1,
+                cond=lambda x: x <= n_cols,
+                capture_indices=[0])
+
+        ret_df_name = get_fresh_name()
+        _script = '{ret_df} <- {table} %>% mutate({TMP}=cumsum(.[[{col1}]]))'.format(
+                  ret_df=ret_df_name, table=args[0], TMP='cumsum', col1=str(args[1]))
+        try:
+            ret_val = robjects.r(_script)
+            return ret_df_name
+        except Exception as e:
+            logger.error('Error in interpreting cumsum...', _script)
+            assert False, e
+            raise GeneralError()
+
     def eval_mutate(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
         self.assertArg(node, args,
