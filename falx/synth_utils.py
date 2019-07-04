@@ -1,5 +1,6 @@
 import json
 import itertools
+import numpy as np
 
 def construct_value_dict(values):
     values = np.array(values)
@@ -15,13 +16,9 @@ def construct_value_dict(values):
         value_dict[x] += 1
     return value_dict
 
-def check_table_inclusion(table1, table2, set_semantics=False):
+def check_table_inclusion(table1, table2):
     """check table inclusion, this is sound but not complete: if it thinks two tbales are not equal, they absolutely inequal"""
-    if len(table1) > len(table2):
-        # cannot find any mapping
-        return False
-
-    if boolean_result and len(table1) == 0:
+    if len(table1) == 0:
         return True
 
     mapping = {}
@@ -35,9 +32,7 @@ def check_table_inclusion(table1, table2, set_semantics=False):
             vals2_dict = vals2_dicts[k2]
             contained = True
             for x in vals1_dict:
-                if not set_semantics and ((x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x])):
-                    contained = False
-                if set_semantics and (x not in vals2_dict):
+                if x not in vals2_dict:
                     contained = False
                 if contained == False:
                     break

@@ -17,7 +17,7 @@ from ..spec.expr import *
 from ..visitor import GenericVisitor
 import rpy2.robjects as robjects
 from functools import reduce
-import interface
+import falx.synth_utils
 import json
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
@@ -105,7 +105,7 @@ class AbstractPrune(GenericVisitor):
         table1 = json.loads(actual.to_json(orient='records'))
         table2 = json.loads(expect.to_json(orient='records'))
 
-        all_ok = interface.align_table_schema(table2, table1, boolean_result=True)
+        all_ok = falx.synth_utils.check_table_inclusion(table2, table1)
         return all_ok
 
     def is_primitive(self, var):
@@ -138,7 +138,7 @@ class AbstractPrune(GenericVisitor):
         self._blames.add(ast.children[0])
         self._blames.add(ast)
         error = False
-        tbl_size = len(tbl)
+        tbl_size = len(tbl.columns)
 
         if opcode == 'group_by':
             return error, tbl
@@ -151,9 +151,10 @@ class AbstractPrune(GenericVisitor):
             if max_idx > tbl_size:
                 return True, None
             else:
-                sel_list = list(map(int, args[1].data))
+                # sel_list = list(map(int, args[1].data))
+                sel_list = list(map(lambda x: int(x) - 1, args[1].data))
                 cols = tbl.columns
-                tbl_out = tbl[[cols[k] for k in sel_list]]
+                tbl_out = tbl[cols[sel_list]]
                 # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
                 return False, tbl_out 
         elif opcode == 'unite':
@@ -208,7 +209,7 @@ class AbstractPrune(GenericVisitor):
         self._blames.add(ast)
         error = False
         tbl_in = None
-        tbl_size = len(tbl_out)
+        tbl_size = len(tbl_out.columns)
 
         ##Done.
         if opcode == 'group_by':
@@ -222,14 +223,21 @@ class AbstractPrune(GenericVisitor):
             return False, tbl_out
         ##Done.
         elif opcode == 'unite':
-            checked = False
-            for col_vec in tbl_out:
-                fst_elem = col_vec[0]
-                if isinstance(col_vec[0], str) and ('-' in fst_elem) and (not str.isdigit(fst_elem.split('-')[0])):
-                    checked = True
+            new_col = -1
+            fst_row = tbl_out.iloc[0,]
+            for idx, item in enumerate(fst_row):
+                if isinstance(item, str) and ('-' in item) and (not str.isdigit(item.split('-')[0])):
+                    new_col = idx
                     break
+
+            # assert False, tbl_out
+            # for col_vec in tbl_out:
+            #     fst_elem = col_vec[0]
+            #     if isinstance(col_vec[0], str) and ('-' in fst_elem) and (not str.isdigit(fst_elem.split('-')[0])):
+            #         checked = True
+            #         break
             
-            if not checked:
+            if new_col == -1:
                 self._blames.clear()
                 self._blames.add(ast)
                 return True, None
@@ -240,12 +248,10 @@ class AbstractPrune(GenericVisitor):
             if col2 > tbl_size:
                 return True, None
             else: 
-                new_idx = col2 - 1
-                if col1 < col2:
-                    new_idx = new_idx - 1
-                assert new_idx >= 0
-                tbl_ret = tbl_out.copy()
-                tbl_ret.pop(new_idx)
+                assert new_col != -1
+                cols = tbl_out.columns.values
+                sel_list = [col for idx, col in enumerate(cols) if idx != new_col]
+                tbl_ret = tbl_out[sel_list]
                 return False, tbl_ret
         #Done.
         elif opcode == 'separate':
@@ -265,13 +271,16 @@ class AbstractPrune(GenericVisitor):
                     return False, tbl_new
         #Done
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
-            return False, tbl_out[:-1]
+            tbl_ret = tbl_out.iloc[:,:-1]
+            return False, tbl_ret
         elif opcode == 'summarise':
             # self._blames.clear()
-            return False, tbl_out[:-1]
+            tbl_ret = tbl_out.iloc[:,:-1]
+            return False, tbl_ret
         #Done last two columns are new generated.
         elif opcode == 'gather' or opcode == 'gatherNeg':
-            return False, tbl_out[:-2]
+            tbl_ret = tbl_out.iloc[:,:-2]
+            return False, tbl_ret
         elif opcode == 'spread':
             col1 = int(args[1].data)
             col2 = int(args[2].data)
