@@ -7,6 +7,10 @@ enum SmallInt {
   "1", "2", "3"
 }
 
+enum SmallStr {
+  "", "Archery"
+}
+
 enumset ColList[3] {
   "1","2","3","4","5","6"
 }
@@ -20,10 +24,10 @@ enum Aggr {
 }
 
 enum NumFunc {
-  "+", "-", "/"
+  "+", "-"
 }
 enum BoolFunc {
-  "==", ">", "<"
+  "!=", "=="
 }
 
 value Table {
@@ -81,7 +85,12 @@ func mutate: Table r -> Table a, NumFunc b, ColInt c, ColInt d {
   col(r) == col(a) + 1;
 }
 
-func filter: Table r -> Table a, BoolFunc b, ColInt c, SmallInt d {
+func mutateCustom: Table r -> Table a, BoolFunc b, ColInt c, SmallStr d {
+  row(r) == row(a);
+  col(r) == col(a) + 1;
+}
+
+func filter: Table r -> Table a, BoolFunc b, ColInt c, SmallStr d {
   row(r) < row(a);
   col(r) == col(a);
 }

@@ -115,9 +115,9 @@ def check_col(col1, col2):
         try:
             if len(col1) == 0 or len(col2) == 0:
                 return False
-            if int(col1[0]) and int(col2[0]):
-                col1_r = [int(x) for x in col1]
-                col2_r = [int(x) for x in col2]
+            if float(col1[0]) and float(col2[0]):
+                col1_r = [round(float(x), 3) for x in col1]
+                col2_r = [round(float(x), 3) for x in col2]
                 return set(col1_r) <= set(col2_r)
             else:
                 return False
@@ -205,13 +205,13 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 capture_indices=[0])
 
         ret_df_name = get_fresh_name()
-        _script = '{ret_df} <- {table} %>% filter(.[[{col}]] {op} {const})'.format(
+        _script = '{ret_df} <- {table} %>% filter(.[[{col}]] {op} "{const}")'.format(
                   ret_df=ret_df_name, table=args[0], op=args[1], col=str(args[2]), const=str(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
-        except:
-            logger.error('Error in interpreting filter...')
+        except Exception as e:
+            logger.error('Error in interpreting filter...', e)
             raise GeneralError()
 
     def eval_separate(self, node, args):
@@ -325,6 +325,24 @@ class MorpheusInterpreter(PostOrderInterpreter):
             return ret_df_name
         except Exception as e:
             logger.error('Error in interpreting summarise...')
+            raise GeneralError()
+
+    def eval_mutateCustom(self, node, args):
+        n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        self.assertArg(node, args,
+                index=2,
+                cond=lambda x: x <= n_cols,
+                capture_indices=[0])
+
+        ret_df_name = get_fresh_name()
+        _script = '{ret_df} <- {table} %>% mutate({TMP}=(.[[{col1}]] {op} "{col2}"))'.format(
+                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
+        try:
+            ret_val = robjects.r(_script)
+            return ret_df_name
+        except Exception as e:
+            logger.error('Error in interpreting mutateCustom...', _script)
+            # assert False, e
             raise GeneralError()
 
     def eval_mutate(self, node, args):
