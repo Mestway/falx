@@ -81,8 +81,9 @@ def get_type(df, index):
 iter_num = 0
 
 def subset_eq(actual, expect):
-
-    #interface.align_table_schema(table1, table2, check_equivalence=True)
+    table1 = robjects.r(expect)
+    table2 = robjects.r(actual)
+    interface.align_table_schema(table1, table2, check_equivalence=True)
 
     # logger.info(robjects.r(actual))
     # logger.info(robjects.r(expect))
