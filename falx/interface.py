@@ -5,20 +5,7 @@ import morpheus
 import itertools
 from pprint import pprint
 import numpy as np
-
-def construct_value_dict(values):
-    values = np.array(values)
-    try:
-        values = values.astype(np.float64)
-        values = np.round(values, 3)
-    except:
-        pass
-    value_dict = {}
-    for x in values:
-        if not x in value_dict:
-            value_dict[x] = 0
-        value_dict[x] += 1
-    return value_dict
+import synth_utils
 
 def align_table_schema(table1, table2, check_equivalence=False, boolean_result=False):
     """align table schema, assume that table1 is contained by table2"""
@@ -32,10 +19,10 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
     mapping = {}
     vals2_dicts = {}
     for k2 in table2[0].keys():
-        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
+        vals2_dicts[k2] = synth_utils.construct_value_dict([r[k2] for r in table2 if k2 in r])
     for k1 in table1[0].keys():
         mapping[k1] = []
-        vals1_dict = construct_value_dict([r[k1] for r in table1 if k1 in r])
+        vals1_dict = synth_utils.construct_value_dict([r[k1] for r in table1 if k1 in r])
         for k2 in table2[0].keys():
             vals2_dict = vals2_dicts[k2]
             contained = True
