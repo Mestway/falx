@@ -2,6 +2,19 @@ import json
 import itertools
 import numpy as np
 
+def construct_value_dict(values):
+    values = np.array(values)
+    try:
+        values = values.astype(np.float64)
+        values = np.round(values, 3)
+    except:
+        pass
+    value_dict = {}
+    for x in values:
+        if not x in value_dict:
+            value_dict[x] = 0
+        value_dict[x] += 1
+    return value_dict
 
 def check_table_inclusion(table1, table2):
     """check table inclusion, this is sound but not complete: if it thinks two tbales are not equal, they absolutely inequal"""
@@ -9,25 +22,28 @@ def check_table_inclusion(table1, table2):
         return True
 
     mapping = {}
-    v2sets = {}
+    vals2_dicts = {}
     for k2 in table2[0].keys():
-        v2sets[k2] = set([r[k2] for r in table2 if k2 in r])
-    check_ok = True
+        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
     for k1 in table1[0].keys():
         mapping[k1] = []
-        v1set = set([r[k2] for r in table2 if k2 in r])
+        vals1_dict = construct_value_dict([r[k1] for r in table1 if k1 in r])
         for k2 in table2[0].keys():
-            v2set = v2sets[k2]
+            vals2_dict = vals2_dicts[k2]
             contained = True
-            for x in v1set:
-                if x not in v2set:
+            for x in vals1_dict:
+                if x not in vals2_dict:
                     contained = False
+                if contained == False:
                     break
             if contained:
                 mapping[k1].append(k2)
-        if mapping[k1] == []:
-            check_ok = False
-            break
+
+    # distill plausible mappings from the table
+    # not all choices generated from the approach above generalize, we need to check consistency
+    t1_schema = list(mapping.keys())
+    mapping_id_lists = [list(range(len(mapping[key]))) for key in t1_schema]
+    check_ok = all([len(l) > 0 for l in mapping_id_lists])
     return check_ok
 
 def table_to_inv_map(table):
