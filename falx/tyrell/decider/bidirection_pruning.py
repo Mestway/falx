@@ -153,7 +153,7 @@ class AbstractPrune(GenericVisitor):
             else:
                 sel_list = list(map(int, args[1].data))
                 cols = tbl.columns
-                tbl_out = tbl[cols[sel_list]]
+                tbl_out = tbl[[cols[k] for k in sel_list]]
                 # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
                 return False, tbl_out 
         elif opcode == 'unite':
