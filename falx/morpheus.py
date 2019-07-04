@@ -324,7 +324,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
 
     def eval_summarise(self, node, args):
         input_tbl = robjects.r(args[0])
-        input_cols = input_tbl.colnames
+        input_cols = input_tbl.columns.values
         n_cols = len(input_cols)
 
         aggr_fun = str(args[1])
