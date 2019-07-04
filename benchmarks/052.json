@@ -327,7 +327,7 @@
             "value": 28
         }
     ],
-    "spec": {
+    "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
         "layer": [
             {
