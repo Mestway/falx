@@ -12,6 +12,7 @@ import rpy2.robjects as robjects
 import warnings
 import json
 import numpy as np
+import interface
 
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)
@@ -80,6 +81,9 @@ def get_type(df, index):
 iter_num = 0
 
 def subset_eq(actual, expect):
+
+    #interface.align_table_schema(table1, table2, check_equivalence=True)
+
     # logger.info(robjects.r(actual))
     # logger.info(robjects.r(expect))
     row_num, col_num = full_table.get_shape()

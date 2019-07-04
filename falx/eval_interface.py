@@ -96,13 +96,15 @@ class FalxEvalInterface(object):
                     #pprint(inputs[0])
                     output = morpheus.evaluate(p, inputs)
 
-                    #print("===========> Synthesis output")
+                    print("===========> Synthesis output")
                     # pprint("====> table")
                     # pprint(output)
                     # print("---")
                     # pprint(full_sym_data.values)
                     # mapping = interface.align_table_schema(full_sym_data.values, output)
                     # print(mapping)
+                    print(interface.construct_value_dict([r["KEY"] for r in output]))
+                    print(interface.construct_value_dict([r["c_color"] for r in full_sym_data.values]))
                 
                     field_mapping = interface.align_table_schema(full_sym_data.values, output)
                     assert(field_mapping != None)
