@@ -164,8 +164,8 @@
         "type": "quantitative"
       },
       "color": {
-        "field": "d",
-        "type": "nominal"
+        "field": "c",
+        "type": "quantitative"
       }
     }
   }
