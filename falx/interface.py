@@ -65,8 +65,8 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
 
         # distill the tables for checking
-        frozen_table1 = [tuple([r[key] for key in t1_schema]) for r in table1]
-        frozen_table2 = [tuple([r[inst[key]] for key in t1_schema]) for r in table2]
+        frozen_table1 = [tuple([r[key] for key in t1_schema if key in r]) for r in table1]
+        frozen_table2 = [tuple([r[inst[key]] for key in t1_schema if inst[key] in r]) for r in table2]
 
         if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
             return inst
