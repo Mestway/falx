@@ -10,7 +10,7 @@ def construct_value_dict(values):
     values = np.array(values)
     try:
         values = values.astype(np.float64)
-        values = np.round(values, 5)
+        values = np.round(values, 3)
     except:
         pass
     value_dict = {}
@@ -20,28 +20,30 @@ def construct_value_dict(values):
         value_dict[x] += 1
     return value_dict
 
-def align_table_schema(table1, table2, check_equivalence=False):
+def align_table_schema(table1, table2, check_equivalence=False, boolean_result=False):
     """align table schema, assume that table1 is contained by table2"""
-    assert(len(table1) <= len(table2))
+    if len(table1) > len(table2):
+        return None
+    #assert(len(table1) <= len(table2))
     mapping = {}
     vals2_dicts = {}
     for k2 in table2[0].keys():
-        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2])
+        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
     for k1 in table1[0].keys():
         mapping[k1] = []
-        vals1_dict = construct_value_dict([r[k1] for r in table1])
+        vals1_dict = construct_value_dict([r[k1] for r in table1 if k1 in r])
         for k2 in table2[0].keys():
             vals2_dict = vals2_dicts[k2]
             contained = True
             for x in vals1_dict:
-                if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]) or (check_equivalence and  (vals2_dict[x]!= vals1_dict[x])):
+                if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]) or (check_equivalence and ((vals2_dict[x] != vals1_dict[x]))):
                     contained = False
                 if contained == False:
                     break
             if contained:
                 mapping[k1].append(k2)
 
-    print(mapping)
+    #print(mapping)
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
@@ -50,11 +52,14 @@ def align_table_schema(table1, table2, check_equivalence=False):
 
     all_choices = list(itertools.product(*mapping_id_lists))
 
+    if boolean_result:
+        return len(all_choices) > 0
+
     # directly return if there is only one choice
     if len(all_choices) == 1:
         return {key:mapping[key][0] for key in mapping}
 
-    assert("[align table] unimplemented error")
+    #assert("[align table] unimplemented error")
     for mapping_id_choices in all_choices:
         # the following is an instantiation of the the mapping
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}

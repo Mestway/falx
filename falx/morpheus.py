@@ -13,6 +13,7 @@ import warnings
 import json
 import numpy as np
 import interface
+import pandas as pd
 
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)
@@ -81,28 +82,48 @@ def get_type(df, index):
 iter_num = 0
 
 def subset_eq(actual, expect):
-    table1 = robjects.r(expect)
-    table2 = robjects.r(actual)
-    interface.align_table_schema(table1, table2, check_equivalence=True)
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
+    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
+    table1 = json.loads(table1)
+    table2 = json.loads(table2)
 
-    # logger.info(robjects.r(actual))
-    # logger.info(robjects.r(expect))
     row_num, col_num = full_table.get_shape()
     actual_col = len(robjects.r(actual))
     actual_row = len(robjects.r(actual)[0])
-    # cmd = 'toJSON({df_name})'.format(df_name=actual)
-    # prog_output = robjects.r(cmd)[0]
-    all_ok = all([check_row(expect_col, robjects.r(actual)) for expect_col in robjects.r(expect)])
+    # print(table1)
+    # print(table2)
+    all_ok = interface.align_table_schema(table1, table2) != None
+
     if all_ok:
         global iter_num
-        if actual_row != row_num:
+        full_table_ok = interface.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
+
+        if not full_table_ok:
             iter_num = iter_num + 1
             return False
         else:
             logger.info('#Candidates before getting the correct solution: {}'.format(iter_num))
             return True
-    else:
-        return False
+    return False
+
+    # # logger.info(robjects.r(actual))
+    # # logger.info(robjects.r(expect))
+    # row_num, col_num = full_table.get_shape()
+    # actual_col = len(robjects.r(actual))
+    # actual_row = len(robjects.r(actual)[0])
+    # # cmd = 'toJSON({df_name})'.format(df_name=actual)
+    # # prog_output = robjects.r(cmd)[0]
+    # all_ok = all([check_row(expect_col, robjects.r(actual)) for expect_col in robjects.r(expect)])
+    # if all_ok:
+    #     global iter_num
+    #     if actual_row != row_num:
+    #         iter_num = iter_num + 1
+    #         return False
+    #     else:
+    #         logger.info('#Candidates before getting the correct solution: {}'.format(iter_num))
+    #         return True
+    # else:
+    #     return False
 
 def check_row(col, table):
     all_ok = any(check_col(col, elem) for elem in table)
