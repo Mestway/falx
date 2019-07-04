@@ -164,7 +164,7 @@
         "type": "quantitative"
       },
       "color": {
-        "field": "c",
+        "field": "Net Cash Flow",
         "type": "quantitative"
       }
     }
