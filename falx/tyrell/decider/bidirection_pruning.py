@@ -101,7 +101,17 @@ class AbstractPrune(GenericVisitor):
 
     # 'actual' contains 'expect'
     def is_consistent(self, actual: List[Any], expect: List[Any]):
-        return all([self.is_subset(elem, actual) for elem in expect])
+        if not expect:
+            return True
+
+        if self.is_primitive(expect[0]):
+            return self.is_subset(expect, actual)
+        else: 
+            return all([self.is_subset(elem, actual) for elem in expect])
+
+    def is_primitive(self, var):
+        basic_types = (int, str, bool, float)
+        return isinstance(var, basic_types)
 
     def is_subset(self, elem, actual):
         return any([self.is_ok(elem, e) for e in actual])
@@ -110,11 +120,6 @@ class AbstractPrune(GenericVisitor):
         if tgt == self._dummy:
             return True
         else: 
-            # primitive = (int, str, bool, float)
-            # if isinstance(elem, primitive):
-            #     return (elem in tgt)
-            # else: 
-            #     return (set(elem) <= set(tgt))
             return (set(elem) <= set(tgt))
 
     def has_index(self, sel_list, idx):
@@ -248,9 +253,12 @@ class AbstractPrune(GenericVisitor):
             if col1 > tbl_size:
                 return True, None
             else:
-                ex_list = [col1-1, col1]
-                tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
-                return False, tbl_ret
+                # ex_list = [col1-1, col1]
+                # tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
+                if len(tbl_out) == 0 or self.is_primitive(tbl_out[0]):
+                    return False, tbl_out
+                else:
+                    return False, tbl_out[0]
         #Done
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             return False, tbl_out[:-1]

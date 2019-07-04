@@ -2,6 +2,7 @@ from z3 import *
 from collections import deque
 from .enumerator import Enumerator
 from functools import reduce
+import collections
 
 
 from .. import dsl as D
@@ -46,11 +47,11 @@ class BidirectEnumerator(Enumerator):
             opcode = st.opcode
             ctr_opcode = reduce(lambda a,b: Or(a, b.id == opcode), functions, False)
             self.z3_solver.add(ctr_opcode)
-            nxt_loc = i_loc + 1
-            if nxt_loc < self.loc:
-                nxt_st = self.lines[nxt_loc]
-                nxt_opcode = nxt_st.opcode
-                self.z3_solver.add(nxt_opcode != opcode)
+            # nxt_loc = i_loc + 1
+            # if nxt_loc < self.loc:
+            #     nxt_st = self.lines[nxt_loc]
+            #     nxt_opcode = nxt_st.opcode
+            #     self.z3_solver.add(nxt_opcode != opcode)
 
             # All vars defined beforehand.
             def_vars = list(map(lambda x: x.lhs, self.lines[:i_loc]))
@@ -226,6 +227,13 @@ class BidirectEnumerator(Enumerator):
                 return (sketch.index('group_by') + 1) != sketch.index('summarise')
         else:
             return True
+
+        # No repetitive component except for separate.
+        rep_list = [item for item, count in collections.Counter(sketch).items() if count > 1]
+        if len(rep_list) > 0 and (not 'separate' in rep_list):
+            # print('bad sketch....', sketch)
+            return True
+
         return False
 
     def blockSketch(self):
