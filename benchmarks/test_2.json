@@ -1,0 +1,1783 @@
+{
+    "input_data": [
+        {
+            "Country": "Spain",
+            "1_1": 0.306,
+            "1_2": 0.331,
+            "1_3": 0.327,
+            "1_4": 0.32,
+            "1_5": 0.295,
+            "1_6": 0.301,
+            "1_7": 0.277,
+            "1_8": 0.26,
+            "1_9": 0.26,
+            "1_10": 0.263,
+            "1_11": 0.286,
+            "1_12": 0.295,
+            "2_1": 0.315,
+            "2_2": 0.325,
+            "2_3": 0.334,
+            "2_4": 0.344,
+            "2_5": 0.355,
+            "2_6": 0.365,
+            "2_7": 0.376,
+            "2_8": 0.388,
+            "2_9": 0.399,
+            "2_10": 0.411,
+            "2_11": 0.424,
+            "2_12": 0.436
+        },
+        {
+            "Country": "France",
+            "1_1": 0.233,
+            "1_2": 0.229,
+            "1_3": 0.223,
+            "1_4": 0.216,
+            "1_5": 0.225,
+            "1_6": 0.214,
+            "1_7": 0.192,
+            "1_8": 0.181,
+            "1_9": 0.168,
+            "1_10": 0.183,
+            "1_11": 0.176,
+            "1_12": 0.19,
+            "2_1": 0.247,
+            "2_2": 0.252,
+            "2_3": 0.257,
+            "2_4": 0.262,
+            "2_5": 0.267,
+            "2_6": 0.273,
+            "2_7": 0.278,
+            "2_8": 0.284,
+            "2_9": 0.289,
+            "2_10": 0.295,
+            "2_11": 0.301,
+            "2_12": 0.307
+        },
+        {
+            "Country": "US",
+            "1_1": 0.185,
+            "1_2": 0.181,
+            "1_3": 0.176,
+            "1_4": 0.185,
+            "1_5": 0.196,
+            "1_6": 0.18,
+            "1_7": 0.164,
+            "1_8": 0.159,
+            "1_9": 0.167,
+            "1_10": 0.184,
+            "1_11": 0.18,
+            "1_12": 0.189,
+            "2_1": 0.185,
+            "2_2": 0.167,
+            "2_3": 0.15,
+            "2_4": 0.135,
+            "2_5": 0.121,
+            "2_6": 0.109,
+            "2_7": 0.098,
+            "2_8": 0.088,
+            "2_9": 0.08,
+            "2_10": 0.072,
+            "2_11": 0.065,
+            "2_12": 0.058
+        },
+        {
+            "Country": "Greece",
+            "1_1": 0.323,
+            "1_2": 0.336,
+            "1_3": 0.338,
+            "1_4": 0.318,
+            "1_5": 0.327,
+            "1_6": 0.344,
+            "1_7": 0.364,
+            "1_8": 0.39,
+            "1_9": 0.355,
+            "1_10": 0.355,
+            "1_11": 0.383,
+            "1_12": 0.417,
+            "2_1": 0.307,
+            "2_2": 0.307,
+            "2_3": 0.307,
+            "2_4": 0.307,
+            "2_5": 0.307,
+            "2_6": 0.307,
+            "2_7": 0.307,
+            "2_8": 0.307,
+            "2_9": 0.307,
+            "2_10": 0.307,
+            "2_11": 0.307,
+            "2_12": 0.307
+        },
+        {
+            "Country": "Belgium",
+            "1_1": 0.329,
+            "1_2": 0.342,
+            "1_3": 0.334,
+            "1_4": 0.311,
+            "1_5": 0.332,
+            "1_6": 0.309,
+            "1_7": 0.315,
+            "1_8": 0.318,
+            "1_9": 0.309,
+            "1_10": 0.3,
+            "1_11": 0.291,
+            "1_12": 0.288,
+            "2_1": 0.319,
+            "2_2": 0.341,
+            "2_3": 0.365,
+            "2_4": 0.391,
+            "2_5": 0.418,
+            "2_6": 0.448,
+            "2_7": 0.479,
+            "2_8": 0.512,
+            "2_9": 0.548,
+            "2_10": 0.587,
+            "2_11": 0.628,
+            "2_12": 0.672
+        },
+        {
+            "Country": "Costa Rica",
+            "1_1": 0.366,
+            "1_2": 0.374,
+            "1_3": 0.389,
+            "1_4": 0.354,
+            "1_5": 0.358,
+            "1_6": 0.383,
+            "1_7": 0.375,
+            "1_8": 0.36,
+            "1_9": 0.346,
+            "1_10": 0.332,
+            "1_11": 0.335,
+            "1_12": 0.352,
+            "2_1": 0.399,
+            "2_2": 0.407,
+            "2_3": 0.415,
+            "2_4": 0.423,
+            "2_5": 0.432,
+            "2_6": 0.44,
+            "2_7": 0.449,
+            "2_8": 0.458,
+            "2_9": 0.467,
+            "2_10": 0.477,
+            "2_11": 0.486,
+            "2_12": 0.496
+        },
+        {
+            "Country": "Germany",
+            "1_1": 0.086,
+            "1_2": 0.084,
+            "1_3": 0.081,
+            "1_4": 0.077,
+            "1_5": 0.075,
+            "1_6": 0.068,
+            "1_7": 0.073,
+            "1_8": 0.074,
+            "1_9": 0.082,
+            "1_10": 0.08,
+            "1_11": 0.084,
+            "1_12": 0.08,
+            "2_1": 0.083,
+            "2_2": 0.075,
+            "2_3": 0.068,
+            "2_4": 0.061,
+            "2_5": 0.055,
+            "2_6": 0.049,
+            "2_7": 0.044,
+            "2_8": 0.04,
+            "2_9": 0.036,
+            "2_10": 0.032,
+            "2_11": 0.029,
+            "2_12": 0.026
+        },
+        {
+            "Country": "Switzerland",
+            "1_1": 0.52,
+            "1_2": 0.523,
+            "1_3": 0.537,
+            "1_4": 0.499,
+            "1_5": 0.504,
+            "1_6": 0.555,
+            "1_7": 0.538,
+            "1_8": 0.56,
+            "1_9": 0.588,
+            "1_10": 0.529,
+            "1_11": 0.555,
+            "1_12": 0.555,
+            "2_1": 0.572,
+            "2_2": 0.589,
+            "2_3": 0.607,
+            "2_4": 0.625,
+            "2_5": 0.644,
+            "2_6": 0.663,
+            "2_7": 0.683,
+            "2_8": 0.703,
+            "2_9": 0.725,
+            "2_10": 0.746,
+            "2_11": 0.769,
+            "2_12": 0.792
+        },
+        {
+            "Country": "Austria",
+            "1_1": 0.477,
+            "1_2": 0.488,
+            "1_3": 0.494,
+            "1_4": 0.524,
+            "1_5": 0.576,
+            "1_6": 0.524,
+            "1_7": 0.503,
+            "1_8": 0.498,
+            "1_9": 0.498,
+            "1_10": 0.468,
+            "1_11": 0.487,
+            "1_12": 0.482,
+            "2_1": 0.491,
+            "2_2": 0.491,
+            "2_3": 0.491,
+            "2_4": 0.491,
+            "2_5": 0.491,
+            "2_6": 0.491,
+            "2_7": 0.491,
+            "2_8": 0.491,
+            "2_9": 0.491,
+            "2_10": 0.491,
+            "2_11": 0.491,
+            "2_12": 0.491
+        }
+    ],
+    "output_data": [
+        {
+            "Country": "Spain",
+            "variable": "1_1",
+            "value": 0.306,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "France",
+            "variable": "1_1",
+            "value": 0.233,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "US",
+            "variable": "1_1",
+            "value": 0.185,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_1",
+            "value": 0.323,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_1",
+            "value": 0.329,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_1",
+            "value": 0.366,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_1",
+            "value": 0.086,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_1",
+            "value": 0.52,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_1",
+            "value": 0.477,
+            "l1": "1",
+            "l2": "1"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_2",
+            "value": 0.331,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "France",
+            "variable": "1_2",
+            "value": 0.229,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "US",
+            "variable": "1_2",
+            "value": 0.181,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_2",
+            "value": 0.336,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_2",
+            "value": 0.342,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_2",
+            "value": 0.374,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_2",
+            "value": 0.084,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_2",
+            "value": 0.523,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_2",
+            "value": 0.488,
+            "l1": "1",
+            "l2": "2"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_3",
+            "value": 0.327,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "France",
+            "variable": "1_3",
+            "value": 0.223,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "US",
+            "variable": "1_3",
+            "value": 0.176,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_3",
+            "value": 0.338,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_3",
+            "value": 0.334,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_3",
+            "value": 0.389,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_3",
+            "value": 0.081,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_3",
+            "value": 0.537,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_3",
+            "value": 0.494,
+            "l1": "1",
+            "l2": "3"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_4",
+            "value": 0.32,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "France",
+            "variable": "1_4",
+            "value": 0.216,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "US",
+            "variable": "1_4",
+            "value": 0.185,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_4",
+            "value": 0.318,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_4",
+            "value": 0.311,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_4",
+            "value": 0.354,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_4",
+            "value": 0.077,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_4",
+            "value": 0.499,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_4",
+            "value": 0.524,
+            "l1": "1",
+            "l2": "4"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_5",
+            "value": 0.295,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "France",
+            "variable": "1_5",
+            "value": 0.225,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "US",
+            "variable": "1_5",
+            "value": 0.196,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_5",
+            "value": 0.327,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_5",
+            "value": 0.332,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_5",
+            "value": 0.358,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_5",
+            "value": 0.075,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_5",
+            "value": 0.504,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_5",
+            "value": 0.576,
+            "l1": "1",
+            "l2": "5"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_6",
+            "value": 0.301,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "France",
+            "variable": "1_6",
+            "value": 0.214,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "US",
+            "variable": "1_6",
+            "value": 0.18,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_6",
+            "value": 0.344,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_6",
+            "value": 0.309,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_6",
+            "value": 0.383,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_6",
+            "value": 0.068,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_6",
+            "value": 0.555,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_6",
+            "value": 0.524,
+            "l1": "1",
+            "l2": "6"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_7",
+            "value": 0.277,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "France",
+            "variable": "1_7",
+            "value": 0.192,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "US",
+            "variable": "1_7",
+            "value": 0.164,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_7",
+            "value": 0.364,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_7",
+            "value": 0.315,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_7",
+            "value": 0.375,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_7",
+            "value": 0.073,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_7",
+            "value": 0.538,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_7",
+            "value": 0.503,
+            "l1": "1",
+            "l2": "7"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_8",
+            "value": 0.26,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "France",
+            "variable": "1_8",
+            "value": 0.181,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "US",
+            "variable": "1_8",
+            "value": 0.159,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_8",
+            "value": 0.39,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_8",
+            "value": 0.318,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_8",
+            "value": 0.36,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_8",
+            "value": 0.074,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_8",
+            "value": 0.56,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_8",
+            "value": 0.498,
+            "l1": "1",
+            "l2": "8"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_9",
+            "value": 0.26,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "France",
+            "variable": "1_9",
+            "value": 0.168,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "US",
+            "variable": "1_9",
+            "value": 0.167,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_9",
+            "value": 0.355,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_9",
+            "value": 0.309,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_9",
+            "value": 0.346,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_9",
+            "value": 0.082,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_9",
+            "value": 0.588,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_9",
+            "value": 0.498,
+            "l1": "1",
+            "l2": "9"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_10",
+            "value": 0.263,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "France",
+            "variable": "1_10",
+            "value": 0.183,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "US",
+            "variable": "1_10",
+            "value": 0.184,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_10",
+            "value": 0.355,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_10",
+            "value": 0.3,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_10",
+            "value": 0.332,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_10",
+            "value": 0.08,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_10",
+            "value": 0.529,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_10",
+            "value": 0.468,
+            "l1": "1",
+            "l2": "10"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_11",
+            "value": 0.286,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "France",
+            "variable": "1_11",
+            "value": 0.176,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "US",
+            "variable": "1_11",
+            "value": 0.18,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_11",
+            "value": 0.383,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_11",
+            "value": 0.291,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_11",
+            "value": 0.335,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_11",
+            "value": 0.084,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_11",
+            "value": 0.555,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_11",
+            "value": 0.487,
+            "l1": "1",
+            "l2": "11"
+        },
+        {
+            "Country": "Spain",
+            "variable": "1_12",
+            "value": 0.295,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "France",
+            "variable": "1_12",
+            "value": 0.19,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "US",
+            "variable": "1_12",
+            "value": 0.189,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Greece",
+            "variable": "1_12",
+            "value": 0.417,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "1_12",
+            "value": 0.288,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "1_12",
+            "value": 0.352,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Germany",
+            "variable": "1_12",
+            "value": 0.08,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "1_12",
+            "value": 0.555,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Austria",
+            "variable": "1_12",
+            "value": 0.482,
+            "l1": "1",
+            "l2": "12"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_1",
+            "value": 0.315,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "France",
+            "variable": "2_1",
+            "value": 0.247,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "US",
+            "variable": "2_1",
+            "value": 0.185,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_1",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_1",
+            "value": 0.319,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_1",
+            "value": 0.399,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_1",
+            "value": 0.083,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_1",
+            "value": 0.572,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_1",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "1"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_2",
+            "value": 0.325,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "France",
+            "variable": "2_2",
+            "value": 0.252,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "US",
+            "variable": "2_2",
+            "value": 0.167,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_2",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_2",
+            "value": 0.341,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_2",
+            "value": 0.407,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_2",
+            "value": 0.075,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_2",
+            "value": 0.589,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_2",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "2"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_3",
+            "value": 0.334,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "France",
+            "variable": "2_3",
+            "value": 0.257,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "US",
+            "variable": "2_3",
+            "value": 0.15,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_3",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_3",
+            "value": 0.365,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_3",
+            "value": 0.415,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_3",
+            "value": 0.068,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_3",
+            "value": 0.607,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_3",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "3"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_4",
+            "value": 0.344,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "France",
+            "variable": "2_4",
+            "value": 0.262,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "US",
+            "variable": "2_4",
+            "value": 0.135,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_4",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_4",
+            "value": 0.391,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_4",
+            "value": 0.423,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_4",
+            "value": 0.061,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_4",
+            "value": 0.625,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_4",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "4"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_5",
+            "value": 0.355,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "France",
+            "variable": "2_5",
+            "value": 0.267,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "US",
+            "variable": "2_5",
+            "value": 0.121,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_5",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_5",
+            "value": 0.418,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_5",
+            "value": 0.432,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_5",
+            "value": 0.055,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_5",
+            "value": 0.644,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_5",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "5"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_6",
+            "value": 0.365,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "France",
+            "variable": "2_6",
+            "value": 0.273,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "US",
+            "variable": "2_6",
+            "value": 0.109,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_6",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_6",
+            "value": 0.448,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_6",
+            "value": 0.44,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_6",
+            "value": 0.049,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_6",
+            "value": 0.663,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_6",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "6"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_7",
+            "value": 0.376,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "France",
+            "variable": "2_7",
+            "value": 0.278,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "US",
+            "variable": "2_7",
+            "value": 0.098,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_7",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_7",
+            "value": 0.479,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_7",
+            "value": 0.449,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_7",
+            "value": 0.044,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_7",
+            "value": 0.683,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_7",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "7"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_8",
+            "value": 0.388,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "France",
+            "variable": "2_8",
+            "value": 0.284,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "US",
+            "variable": "2_8",
+            "value": 0.088,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_8",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_8",
+            "value": 0.512,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_8",
+            "value": 0.458,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_8",
+            "value": 0.04,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_8",
+            "value": 0.703,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_8",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "8"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_9",
+            "value": 0.399,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "France",
+            "variable": "2_9",
+            "value": 0.289,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "US",
+            "variable": "2_9",
+            "value": 0.08,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_9",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_9",
+            "value": 0.548,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_9",
+            "value": 0.467,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_9",
+            "value": 0.036,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_9",
+            "value": 0.725,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_9",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "9"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_10",
+            "value": 0.411,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "France",
+            "variable": "2_10",
+            "value": 0.295,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "US",
+            "variable": "2_10",
+            "value": 0.072,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_10",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_10",
+            "value": 0.587,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_10",
+            "value": 0.477,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_10",
+            "value": 0.032,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_10",
+            "value": 0.746,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_10",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "10"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_11",
+            "value": 0.424,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "France",
+            "variable": "2_11",
+            "value": 0.301,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "US",
+            "variable": "2_11",
+            "value": 0.065,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_11",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_11",
+            "value": 0.628,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_11",
+            "value": 0.486,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_11",
+            "value": 0.029,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_11",
+            "value": 0.769,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_11",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "11"
+        },
+        {
+            "Country": "Spain",
+            "variable": "2_12",
+            "value": 0.436,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "France",
+            "variable": "2_12",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "US",
+            "variable": "2_12",
+            "value": 0.058,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Greece",
+            "variable": "2_12",
+            "value": 0.307,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Belgium",
+            "variable": "2_12",
+            "value": 0.672,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Costa Rica",
+            "variable": "2_12",
+            "value": 0.496,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Germany",
+            "variable": "2_12",
+            "value": 0.026,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Switzerland",
+            "variable": "2_12",
+            "value": 0.792,
+            "l1": "2",
+            "l2": "12"
+        },
+        {
+            "Country": "Austria",
+            "variable": "2_12",
+            "value": 0.491,
+            "l1": "2",
+            "l2": "12"
+        }
+    ],
+    "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "line",
+        "encoding": {
+            "x": {
+                "field": "l2",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "l1",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "Country",
+                "type": "nominal"
+            }
+        }
+    }
+}
