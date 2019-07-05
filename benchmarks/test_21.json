@@ -1,0 +1,747 @@
+{
+    "input_data": [
+        {
+            "Country Name": "Bangladesh",
+            "Date": "1/5/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Egypt",
+            "Date": "1/14/14",
+            "Type": "Referendum"
+        },
+        {
+            "Country Name": "Costa Rica",
+            "Date": "2/2/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Costa Rica",
+            "Date": "2/2/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "El Salvador",
+            "Date": "2/2/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Thailand",
+            "Date": "2/2/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Switzerland",
+            "Date": "2/9/14",
+            "Type": "Referendum"
+        },
+        {
+            "Country Name": "Macedonia",
+            "Date": "3/1/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "North Korea",
+            "Date": "3/9/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Slovakia",
+            "Date": "3/15/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Guinea-Bissau",
+            "Date": "3/16/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Guinea-Bissau",
+            "Date": "3/16/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Maldives",
+            "Date": "3/22/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Algeria",
+            "Date": "4/1/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Hungary",
+            "Date": "4/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "South Africa",
+            "Date": "4/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Afghanistan",
+            "Date": "4/5/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Iraq",
+            "Date": "4/30/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "India",
+            "Date": "5/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "New Caledonia",
+            "Date": "5/4/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Panama",
+            "Date": "5/4/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Panama",
+            "Date": "5/4/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Lithuania",
+            "Date": "5/11/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Dominican Republic",
+            "Date": "5/16/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Malawi",
+            "Date": "5/20/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Malawi",
+            "Date": "5/20/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "European Union",
+            "Date": "5/22/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Belgium",
+            "Date": "5/25/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Colombia",
+            "Date": "5/25/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Colombia",
+            "Date": "5/25/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Indonesia",
+            "Date": "7/9/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Indonesia",
+            "Date": "7/9/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "Referendum"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Turkey",
+            "Date": "8/1/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Fiji",
+            "Date": "9/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Kosovo",
+            "Date": "9/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Sweden",
+            "Date": "9/14/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Scotland",
+            "Date": "9/18/14",
+            "Type": "Referendum"
+        },
+        {
+            "Country Name": "Latvia",
+            "Date": "10/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Lebanon",
+            "Date": "10/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Bolivia",
+            "Date": "10/5/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Bolivia",
+            "Date": "10/5/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Bosnia",
+            "Date": "10/5/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Brazil",
+            "Date": "10/5/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Brazil",
+            "Date": "10/5/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Mozambique",
+            "Date": "10/15/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Mozambique",
+            "Date": "10/15/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Uruguay",
+            "Date": "10/26/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "Uruguay",
+            "Date": "10/26/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Moldova",
+            "Date": "11/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Namibia",
+            "Date": "11/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "New Zeland",
+            "Date": "11/1/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Romania",
+            "Date": "11/1/14",
+            "Type": "President"
+        },
+        {
+            "Country Name": "American Samoa",
+            "Date": "11/4/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Guam",
+            "Date": "11/4/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "United States",
+            "Date": "11/4/14",
+            "Type": "Legislative"
+        },
+        {
+            "Country Name": "Catalonia",
+            "Date": "11/9/14",
+            "Type": "Referendum"
+        },
+        {
+            "Country Name": "Tonga",
+            "Date": "11/25/14",
+            "Type": "Legislative"
+        }
+    ],
+    "output_data": [
+        {
+            "Country Name": "Bangladesh",
+            "Date": "1/5/14",
+            "Type": "Legislative",
+            "month": "1",
+            "day": "5"
+        },
+        {
+            "Country Name": "Egypt",
+            "Date": "1/14/14",
+            "Type": "Referendum",
+            "month": "1",
+            "day": "14"
+        },
+        {
+            "Country Name": "Costa Rica",
+            "Date": "2/2/14",
+            "Type": "President",
+            "month": "2",
+            "day": "2"
+        },
+        {
+            "Country Name": "Costa Rica",
+            "Date": "2/2/14",
+            "Type": "Legislative",
+            "month": "2",
+            "day": "2"
+        },
+        {
+            "Country Name": "El Salvador",
+            "Date": "2/2/14",
+            "Type": "President",
+            "month": "2",
+            "day": "2"
+        },
+        {
+            "Country Name": "Thailand",
+            "Date": "2/2/14",
+            "Type": "Legislative",
+            "month": "2",
+            "day": "2"
+        },
+        {
+            "Country Name": "Switzerland",
+            "Date": "2/9/14",
+            "Type": "Referendum",
+            "month": "2",
+            "day": "9"
+        },
+        {
+            "Country Name": "Macedonia",
+            "Date": "3/1/14",
+            "Type": "President",
+            "month": "3",
+            "day": "1"
+        },
+        {
+            "Country Name": "North Korea",
+            "Date": "3/9/14",
+            "Type": "Legislative",
+            "month": "3",
+            "day": "9"
+        },
+        {
+            "Country Name": "Slovakia",
+            "Date": "3/15/14",
+            "Type": "President",
+            "month": "3",
+            "day": "15"
+        },
+        {
+            "Country Name": "Guinea-Bissau",
+            "Date": "3/16/14",
+            "Type": "President",
+            "month": "3",
+            "day": "16"
+        },
+        {
+            "Country Name": "Guinea-Bissau",
+            "Date": "3/16/14",
+            "Type": "Legislative",
+            "month": "3",
+            "day": "16"
+        },
+        {
+            "Country Name": "Maldives",
+            "Date": "3/22/14",
+            "Type": "Legislative",
+            "month": "3",
+            "day": "22"
+        },
+        {
+            "Country Name": "Algeria",
+            "Date": "4/1/14",
+            "Type": "President",
+            "month": "4",
+            "day": "1"
+        },
+        {
+            "Country Name": "Hungary",
+            "Date": "4/1/14",
+            "Type": "Legislative",
+            "month": "4",
+            "day": "1"
+        },
+        {
+            "Country Name": "South Africa",
+            "Date": "4/1/14",
+            "Type": "Legislative",
+            "month": "4",
+            "day": "1"
+        },
+        {
+            "Country Name": "Afghanistan",
+            "Date": "4/5/14",
+            "Type": "President",
+            "month": "4",
+            "day": "5"
+        },
+        {
+            "Country Name": "Iraq",
+            "Date": "4/30/14",
+            "Type": "Legislative",
+            "month": "4",
+            "day": "30"
+        },
+        {
+            "Country Name": "India",
+            "Date": "5/1/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "1"
+        },
+        {
+            "Country Name": "New Caledonia",
+            "Date": "5/4/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "4"
+        },
+        {
+            "Country Name": "Panama",
+            "Date": "5/4/14",
+            "Type": "President",
+            "month": "5",
+            "day": "4"
+        },
+        {
+            "Country Name": "Panama",
+            "Date": "5/4/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "4"
+        },
+        {
+            "Country Name": "Lithuania",
+            "Date": "5/11/14",
+            "Type": "President",
+            "month": "5",
+            "day": "11"
+        },
+        {
+            "Country Name": "Dominican Republic",
+            "Date": "5/16/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "16"
+        },
+        {
+            "Country Name": "Malawi",
+            "Date": "5/20/14",
+            "Type": "President",
+            "month": "5",
+            "day": "20"
+        },
+        {
+            "Country Name": "Malawi",
+            "Date": "5/20/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "20"
+        },
+        {
+            "Country Name": "European Union",
+            "Date": "5/22/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "22"
+        },
+        {
+            "Country Name": "Belgium",
+            "Date": "5/25/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "25"
+        },
+        {
+            "Country Name": "Colombia",
+            "Date": "5/25/14",
+            "Type": "President",
+            "month": "5",
+            "day": "25"
+        },
+        {
+            "Country Name": "Colombia",
+            "Date": "5/25/14",
+            "Type": "Legislative",
+            "month": "5",
+            "day": "25"
+        },
+        {
+            "Country Name": "Indonesia",
+            "Date": "7/9/14",
+            "Type": "President",
+            "month": "7",
+            "day": "9"
+        },
+        {
+            "Country Name": "Indonesia",
+            "Date": "7/9/14",
+            "Type": "Legislative",
+            "month": "7",
+            "day": "9"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "Referendum",
+            "month": "8",
+            "day": "1"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "President",
+            "month": "8",
+            "day": "1"
+        },
+        {
+            "Country Name": "Italia",
+            "Date": "8/1/14",
+            "Type": "Legislative",
+            "month": "8",
+            "day": "1"
+        },
+        {
+            "Country Name": "Turkey",
+            "Date": "8/1/14",
+            "Type": "President",
+            "month": "8",
+            "day": "1"
+        },
+        {
+            "Country Name": "Fiji",
+            "Date": "9/1/14",
+            "Type": "Legislative",
+            "month": "9",
+            "day": "1"
+        },
+        {
+            "Country Name": "Kosovo",
+            "Date": "9/1/14",
+            "Type": "Legislative",
+            "month": "9",
+            "day": "1"
+        },
+        {
+            "Country Name": "Sweden",
+            "Date": "9/14/14",
+            "Type": "Legislative",
+            "month": "9",
+            "day": "14"
+        },
+        {
+            "Country Name": "Scotland",
+            "Date": "9/18/14",
+            "Type": "Referendum",
+            "month": "9",
+            "day": "18"
+        },
+        {
+            "Country Name": "Latvia",
+            "Date": "10/1/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "1"
+        },
+        {
+            "Country Name": "Lebanon",
+            "Date": "10/1/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "1"
+        },
+        {
+            "Country Name": "Bolivia",
+            "Date": "10/5/14",
+            "Type": "President",
+            "month": "10",
+            "day": "5"
+        },
+        {
+            "Country Name": "Bolivia",
+            "Date": "10/5/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "5"
+        },
+        {
+            "Country Name": "Bosnia",
+            "Date": "10/5/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "5"
+        },
+        {
+            "Country Name": "Brazil",
+            "Date": "10/5/14",
+            "Type": "President",
+            "month": "10",
+            "day": "5"
+        },
+        {
+            "Country Name": "Brazil",
+            "Date": "10/5/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "5"
+        },
+        {
+            "Country Name": "Mozambique",
+            "Date": "10/15/14",
+            "Type": "President",
+            "month": "10",
+            "day": "15"
+        },
+        {
+            "Country Name": "Mozambique",
+            "Date": "10/15/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "15"
+        },
+        {
+            "Country Name": "Uruguay",
+            "Date": "10/26/14",
+            "Type": "President",
+            "month": "10",
+            "day": "26"
+        },
+        {
+            "Country Name": "Uruguay",
+            "Date": "10/26/14",
+            "Type": "Legislative",
+            "month": "10",
+            "day": "26"
+        },
+        {
+            "Country Name": "Moldova",
+            "Date": "11/1/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "1"
+        },
+        {
+            "Country Name": "Namibia",
+            "Date": "11/1/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "1"
+        },
+        {
+            "Country Name": "New Zeland",
+            "Date": "11/1/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "1"
+        },
+        {
+            "Country Name": "Romania",
+            "Date": "11/1/14",
+            "Type": "President",
+            "month": "11",
+            "day": "1"
+        },
+        {
+            "Country Name": "American Samoa",
+            "Date": "11/4/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "4"
+        },
+        {
+            "Country Name": "Guam",
+            "Date": "11/4/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "4"
+        },
+        {
+            "Country Name": "United States",
+            "Date": "11/4/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "4"
+        },
+        {
+            "Country Name": "Catalonia",
+            "Date": "11/9/14",
+            "Type": "Referendum",
+            "month": "11",
+            "day": "9"
+        },
+        {
+            "Country Name": "Tonga",
+            "Date": "11/25/14",
+            "Type": "Legislative",
+            "month": "11",
+            "day": "25"
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "circle"
+        },
+        "encoding": {
+            "x": {
+                "field": "Country Name",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "Type",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "month",
+                "type": "nominal"
+            }
+        }
+    }
+}

@@ -1,0 +1,679 @@
+{
+    "input_data": [
+        {
+            "Q1": 10,
+            "Q2": 5,
+            "Q3": 5,
+            "Q4": 3,
+            "product": "Product1_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 2,
+            "Q2": 5,
+            "Q3": 7,
+            "Q4": 5,
+            "product": "Product2_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 7,
+            "Q2": 10,
+            "Q3": 9,
+            "Q4": 3,
+            "product": "Product3_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 1,
+            "Q2": 8,
+            "Q3": 2,
+            "Q4": 3,
+            "product": "Product4_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 6,
+            "Q2": 1,
+            "Q3": 7,
+            "Q4": 1,
+            "product": "Product5_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 1,
+            "Q2": 6,
+            "Q3": 1,
+            "Q4": 9,
+            "product": "Product6_2011",
+            "year": 2011
+        },
+        {
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 3,
+            "Q4": 3,
+            "product": "Product1_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 3,
+            "Q4": 4,
+            "product": "Product2_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 6,
+            "Q4": 3,
+            "product": "Product3_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 1,
+            "Q2": 6,
+            "Q3": 10,
+            "Q4": 4,
+            "product": "Product4_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 7,
+            "Q2": 4,
+            "Q3": 5,
+            "Q4": 8,
+            "product": "Product5_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 6,
+            "Q2": 8,
+            "Q3": 8,
+            "Q4": 8,
+            "product": "Product6_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 9,
+            "Q2": 3,
+            "Q3": 2,
+            "Q4": 10,
+            "product": "Product1_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 7,
+            "Q2": 7,
+            "Q3": 6,
+            "Q4": 8,
+            "product": "Product2_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 9,
+            "Q2": 4,
+            "Q3": 8,
+            "Q4": 9,
+            "product": "Product3_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 2,
+            "Q2": 5,
+            "Q3": 9,
+            "Q4": 5,
+            "product": "Product4_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 4,
+            "Q2": 2,
+            "Q3": 5,
+            "Q4": 1,
+            "product": "Product5_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 10,
+            "Q4": 8,
+            "product": "Product6_2013",
+            "year": 2013
+        }
+    ],
+    "output_data": [
+        {
+            "prod": "Product1",
+            "year": "2011",
+            "product": "Product1_2011",
+            "variable": "Q1",
+            "value": 10
+        },
+        {
+            "prod": "Product2",
+            "year": "2011",
+            "product": "Product2_2011",
+            "variable": "Q1",
+            "value": 2
+        },
+        {
+            "prod": "Product3",
+            "year": "2011",
+            "product": "Product3_2011",
+            "variable": "Q1",
+            "value": 7
+        },
+        {
+            "prod": "Product4",
+            "year": "2011",
+            "product": "Product4_2011",
+            "variable": "Q1",
+            "value": 1
+        },
+        {
+            "prod": "Product5",
+            "year": "2011",
+            "product": "Product5_2011",
+            "variable": "Q1",
+            "value": 6
+        },
+        {
+            "prod": "Product6",
+            "year": "2011",
+            "product": "Product6_2011",
+            "variable": "Q1",
+            "value": 1
+        },
+        {
+            "prod": "Product1",
+            "year": "2012",
+            "product": "Product1_2012",
+            "variable": "Q1",
+            "value": 4
+        },
+        {
+            "prod": "Product2",
+            "year": "2012",
+            "product": "Product2_2012",
+            "variable": "Q1",
+            "value": 4
+        },
+        {
+            "prod": "Product3",
+            "year": "2012",
+            "product": "Product3_2012",
+            "variable": "Q1",
+            "value": 4
+        },
+        {
+            "prod": "Product4",
+            "year": "2012",
+            "product": "Product4_2012",
+            "variable": "Q1",
+            "value": 1
+        },
+        {
+            "prod": "Product5",
+            "year": "2012",
+            "product": "Product5_2012",
+            "variable": "Q1",
+            "value": 7
+        },
+        {
+            "prod": "Product6",
+            "year": "2012",
+            "product": "Product6_2012",
+            "variable": "Q1",
+            "value": 6
+        },
+        {
+            "prod": "Product1",
+            "year": "2013",
+            "product": "Product1_2013",
+            "variable": "Q1",
+            "value": 9
+        },
+        {
+            "prod": "Product2",
+            "year": "2013",
+            "product": "Product2_2013",
+            "variable": "Q1",
+            "value": 7
+        },
+        {
+            "prod": "Product3",
+            "year": "2013",
+            "product": "Product3_2013",
+            "variable": "Q1",
+            "value": 9
+        },
+        {
+            "prod": "Product4",
+            "year": "2013",
+            "product": "Product4_2013",
+            "variable": "Q1",
+            "value": 2
+        },
+        {
+            "prod": "Product5",
+            "year": "2013",
+            "product": "Product5_2013",
+            "variable": "Q1",
+            "value": 4
+        },
+        {
+            "prod": "Product6",
+            "year": "2013",
+            "product": "Product6_2013",
+            "variable": "Q1",
+            "value": 4
+        },
+        {
+            "prod": "Product1",
+            "year": "2011",
+            "product": "Product1_2011",
+            "variable": "Q2",
+            "value": 5
+        },
+        {
+            "prod": "Product2",
+            "year": "2011",
+            "product": "Product2_2011",
+            "variable": "Q2",
+            "value": 5
+        },
+        {
+            "prod": "Product3",
+            "year": "2011",
+            "product": "Product3_2011",
+            "variable": "Q2",
+            "value": 10
+        },
+        {
+            "prod": "Product4",
+            "year": "2011",
+            "product": "Product4_2011",
+            "variable": "Q2",
+            "value": 8
+        },
+        {
+            "prod": "Product5",
+            "year": "2011",
+            "product": "Product5_2011",
+            "variable": "Q2",
+            "value": 1
+        },
+        {
+            "prod": "Product6",
+            "year": "2011",
+            "product": "Product6_2011",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product1",
+            "year": "2012",
+            "product": "Product1_2012",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product2",
+            "year": "2012",
+            "product": "Product2_2012",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product3",
+            "year": "2012",
+            "product": "Product3_2012",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product4",
+            "year": "2012",
+            "product": "Product4_2012",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product5",
+            "year": "2012",
+            "product": "Product5_2012",
+            "variable": "Q2",
+            "value": 4
+        },
+        {
+            "prod": "Product6",
+            "year": "2012",
+            "product": "Product6_2012",
+            "variable": "Q2",
+            "value": 8
+        },
+        {
+            "prod": "Product1",
+            "year": "2013",
+            "product": "Product1_2013",
+            "variable": "Q2",
+            "value": 3
+        },
+        {
+            "prod": "Product2",
+            "year": "2013",
+            "product": "Product2_2013",
+            "variable": "Q2",
+            "value": 7
+        },
+        {
+            "prod": "Product3",
+            "year": "2013",
+            "product": "Product3_2013",
+            "variable": "Q2",
+            "value": 4
+        },
+        {
+            "prod": "Product4",
+            "year": "2013",
+            "product": "Product4_2013",
+            "variable": "Q2",
+            "value": 5
+        },
+        {
+            "prod": "Product5",
+            "year": "2013",
+            "product": "Product5_2013",
+            "variable": "Q2",
+            "value": 2
+        },
+        {
+            "prod": "Product6",
+            "year": "2013",
+            "product": "Product6_2013",
+            "variable": "Q2",
+            "value": 6
+        },
+        {
+            "prod": "Product1",
+            "year": "2011",
+            "product": "Product1_2011",
+            "variable": "Q3",
+            "value": 5
+        },
+        {
+            "prod": "Product2",
+            "year": "2011",
+            "product": "Product2_2011",
+            "variable": "Q3",
+            "value": 7
+        },
+        {
+            "prod": "Product3",
+            "year": "2011",
+            "product": "Product3_2011",
+            "variable": "Q3",
+            "value": 9
+        },
+        {
+            "prod": "Product4",
+            "year": "2011",
+            "product": "Product4_2011",
+            "variable": "Q3",
+            "value": 2
+        },
+        {
+            "prod": "Product5",
+            "year": "2011",
+            "product": "Product5_2011",
+            "variable": "Q3",
+            "value": 7
+        },
+        {
+            "prod": "Product6",
+            "year": "2011",
+            "product": "Product6_2011",
+            "variable": "Q3",
+            "value": 1
+        },
+        {
+            "prod": "Product1",
+            "year": "2012",
+            "product": "Product1_2012",
+            "variable": "Q3",
+            "value": 3
+        },
+        {
+            "prod": "Product2",
+            "year": "2012",
+            "product": "Product2_2012",
+            "variable": "Q3",
+            "value": 3
+        },
+        {
+            "prod": "Product3",
+            "year": "2012",
+            "product": "Product3_2012",
+            "variable": "Q3",
+            "value": 6
+        },
+        {
+            "prod": "Product4",
+            "year": "2012",
+            "product": "Product4_2012",
+            "variable": "Q3",
+            "value": 10
+        },
+        {
+            "prod": "Product5",
+            "year": "2012",
+            "product": "Product5_2012",
+            "variable": "Q3",
+            "value": 5
+        },
+        {
+            "prod": "Product6",
+            "year": "2012",
+            "product": "Product6_2012",
+            "variable": "Q3",
+            "value": 8
+        },
+        {
+            "prod": "Product1",
+            "year": "2013",
+            "product": "Product1_2013",
+            "variable": "Q3",
+            "value": 2
+        },
+        {
+            "prod": "Product2",
+            "year": "2013",
+            "product": "Product2_2013",
+            "variable": "Q3",
+            "value": 6
+        },
+        {
+            "prod": "Product3",
+            "year": "2013",
+            "product": "Product3_2013",
+            "variable": "Q3",
+            "value": 8
+        },
+        {
+            "prod": "Product4",
+            "year": "2013",
+            "product": "Product4_2013",
+            "variable": "Q3",
+            "value": 9
+        },
+        {
+            "prod": "Product5",
+            "year": "2013",
+            "product": "Product5_2013",
+            "variable": "Q3",
+            "value": 5
+        },
+        {
+            "prod": "Product6",
+            "year": "2013",
+            "product": "Product6_2013",
+            "variable": "Q3",
+            "value": 10
+        },
+        {
+            "prod": "Product1",
+            "year": "2011",
+            "product": "Product1_2011",
+            "variable": "Q4",
+            "value": 3
+        },
+        {
+            "prod": "Product2",
+            "year": "2011",
+            "product": "Product2_2011",
+            "variable": "Q4",
+            "value": 5
+        },
+        {
+            "prod": "Product3",
+            "year": "2011",
+            "product": "Product3_2011",
+            "variable": "Q4",
+            "value": 3
+        },
+        {
+            "prod": "Product4",
+            "year": "2011",
+            "product": "Product4_2011",
+            "variable": "Q4",
+            "value": 3
+        },
+        {
+            "prod": "Product5",
+            "year": "2011",
+            "product": "Product5_2011",
+            "variable": "Q4",
+            "value": 1
+        },
+        {
+            "prod": "Product6",
+            "year": "2011",
+            "product": "Product6_2011",
+            "variable": "Q4",
+            "value": 9
+        },
+        {
+            "prod": "Product1",
+            "year": "2012",
+            "product": "Product1_2012",
+            "variable": "Q4",
+            "value": 3
+        },
+        {
+            "prod": "Product2",
+            "year": "2012",
+            "product": "Product2_2012",
+            "variable": "Q4",
+            "value": 4
+        },
+        {
+            "prod": "Product3",
+            "year": "2012",
+            "product": "Product3_2012",
+            "variable": "Q4",
+            "value": 3
+        },
+        {
+            "prod": "Product4",
+            "year": "2012",
+            "product": "Product4_2012",
+            "variable": "Q4",
+            "value": 4
+        },
+        {
+            "prod": "Product5",
+            "year": "2012",
+            "product": "Product5_2012",
+            "variable": "Q4",
+            "value": 8
+        },
+        {
+            "prod": "Product6",
+            "year": "2012",
+            "product": "Product6_2012",
+            "variable": "Q4",
+            "value": 8
+        },
+        {
+            "prod": "Product1",
+            "year": "2013",
+            "product": "Product1_2013",
+            "variable": "Q4",
+            "value": 10
+        },
+        {
+            "prod": "Product2",
+            "year": "2013",
+            "product": "Product2_2013",
+            "variable": "Q4",
+            "value": 8
+        },
+        {
+            "prod": "Product3",
+            "year": "2013",
+            "product": "Product3_2013",
+            "variable": "Q4",
+            "value": 9
+        },
+        {
+            "prod": "Product4",
+            "year": "2013",
+            "product": "Product4_2013",
+            "variable": "Q4",
+            "value": 5
+        },
+        {
+            "prod": "Product5",
+            "year": "2013",
+            "product": "Product5_2013",
+            "variable": "Q4",
+            "value": 1
+        },
+        {
+            "prod": "Product6",
+            "year": "2013",
+            "product": "Product6_2013",
+            "variable": "Q4",
+            "value": 8
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 1,
+            "type": "rect"
+        },
+        "encoding": {
+            "color": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "prod",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "year",
+                "type": "nominal"
+            }
+        }
+    }
+}
