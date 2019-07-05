@@ -62,7 +62,8 @@ class AbstractPrune(GenericVisitor):
             return False
         
         ### Third, check consistency
-        return self.is_consistent(actual, self._output)
+        sat = self.is_consistent(actual, self._output)
+        return not sat
 
     def backward_interp(self, prog: List[Any]):
         per_list = list(itertools.permutations(self._output))
@@ -169,10 +170,10 @@ class AbstractPrune(GenericVisitor):
             
         elif opcode == 'separate':
             # assert False
-            return error, tbl
+            return error, None
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             # assert False
-            return error, tbl
+            return error, None
         elif opcode == 'summarise':
             # assert False
             return error, tbl
@@ -190,7 +191,7 @@ class AbstractPrune(GenericVisitor):
 
         elif opcode == 'spread':
             # assert False
-            return error, tbl
+            return error, None
         elif opcode == 'inner_join':
             # assert False
             return error, tbl
