@@ -1,34 +1,44 @@
 {
     "input_data": [
         {
-            "data": 16
+            "data": 16,
+            "id": 0
         },
         {
-            "data": 14
+            "data": 14,
+            "id": 1
         },
         {
-            "data": 12
+            "data": 12,
+            "id": 2
         },
         {
-            "data": 13
+            "data": 13,
+            "id": 3
         },
         {
-            "data": 12
+            "data": 12,
+            "id": 4
         },
         {
-            "data": 16
+            "data": 16,
+            "id": 5
         },
         {
-            "data": 18
+            "data": 18,
+            "id": 6
         },
         {
-            "data": 17
+            "data": 17,
+            "id": 7
         },
         {
-            "data": 12
+            "data": 12,
+            "id": 8
         },
         {
-            "data": 18
+            "data": 18,
+            "id": 9
         }
     ],
     "output_data": [
@@ -85,7 +95,7 @@
     ],
     "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-        "mark": "trail",
+        "mark": "bar",
         "encoding": {
             "x": {
                 "field": "id",

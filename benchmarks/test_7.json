@@ -890,7 +890,7 @@
     "vl_spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
         "mark": {
-            "type": "bar"
+            "type": "point"
         },
         "encoding": {
             "x": {
