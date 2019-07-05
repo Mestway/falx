@@ -5,188 +5,290 @@
             "Q2": 5,
             "Q3": 5,
             "Q4": 3,
-            "product": "Product1_2011"
+            "product": "Product1_2011",
+            "year": 2011
         },
         {
             "Q1": 2,
             "Q2": 5,
             "Q3": 7,
             "Q4": 5,
-            "product": "Product2_2011"
+            "product": "Product2_2011",
+            "year": 2011
         },
         {
             "Q1": 7,
             "Q2": 10,
             "Q3": 9,
             "Q4": 3,
-            "product": "Product3_2011"
+            "product": "Product3_2011",
+            "year": 2011
         },
         {
             "Q1": 1,
             "Q2": 8,
             "Q3": 2,
             "Q4": 3,
-            "product": "Product4_2011"
+            "product": "Product4_2011",
+            "year": 2011
         },
         {
             "Q1": 6,
             "Q2": 1,
             "Q3": 7,
             "Q4": 1,
-            "product": "Product5_2011"
+            "product": "Product5_2011",
+            "year": 2011
         },
         {
             "Q1": 1,
             "Q2": 6,
             "Q3": 1,
             "Q4": 9,
-            "product": "Product6_2011"
+            "product": "Product6_2011",
+            "year": 2011
         },
         {
             "Q1": 4,
             "Q2": 6,
             "Q3": 3,
             "Q4": 3,
-            "product": "Product1_2012"
+            "product": "Product1_2012",
+            "year": 2012
         },
         {
             "Q1": 4,
             "Q2": 6,
             "Q3": 3,
             "Q4": 4,
-            "product": "Product2_2012"
+            "product": "Product2_2012",
+            "year": 2012
         },
         {
             "Q1": 4,
             "Q2": 6,
             "Q3": 6,
             "Q4": 3,
-            "product": "Product3_2012"
+            "product": "Product3_2012",
+            "year": 2012
         },
         {
             "Q1": 1,
             "Q2": 6,
             "Q3": 10,
             "Q4": 4,
-            "product": "Product4_2012"
+            "product": "Product4_2012",
+            "year": 2012
         },
         {
             "Q1": 7,
             "Q2": 4,
             "Q3": 5,
             "Q4": 8,
-            "product": "Product5_2012"
+            "product": "Product5_2012",
+            "year": 2012
         },
         {
             "Q1": 6,
             "Q2": 8,
             "Q3": 8,
             "Q4": 8,
-            "product": "Product6_2012"
+            "product": "Product6_2012",
+            "year": 2012
         },
         {
             "Q1": 9,
             "Q2": 3,
             "Q3": 2,
             "Q4": 10,
-            "product": "Product1_2013"
+            "product": "Product1_2013",
+            "year": 2013
         },
         {
             "Q1": 7,
             "Q2": 7,
             "Q3": 6,
             "Q4": 8,
-            "product": "Product2_2013"
+            "product": "Product2_2013",
+            "year": 2013
         },
         {
             "Q1": 9,
             "Q2": 4,
             "Q3": 8,
             "Q4": 9,
-            "product": "Product3_2013"
+            "product": "Product3_2013",
+            "year": 2013
         },
         {
             "Q1": 2,
             "Q2": 5,
             "Q3": 9,
             "Q4": 5,
-            "product": "Product4_2013"
+            "product": "Product4_2013",
+            "year": 2013
         },
         {
             "Q1": 4,
             "Q2": 2,
             "Q3": 5,
             "Q4": 1,
-            "product": "Product5_2013"
+            "product": "Product5_2013",
+            "year": 2013
         },
         {
             "Q1": 4,
             "Q2": 6,
             "Q3": 10,
             "Q4": 8,
-            "product": "Product6_2013"
+            "product": "Product6_2013",
+            "year": 2013
         }
     ],
     "output_data": [
         {
-            "year": 2011,
-            "variable": "Q1",
-            "value": 27
+            "Q1": 10,
+            "Q2": 5,
+            "Q3": 5,
+            "Q4": 3,
+            "product": "Product1_2011",
+            "year": 2011
         },
         {
-            "year": 2011,
-            "variable": "Q2",
-            "value": 35
+            "Q1": 2,
+            "Q2": 5,
+            "Q3": 7,
+            "Q4": 5,
+            "product": "Product2_2011",
+            "year": 2011
         },
         {
-            "year": 2011,
-            "variable": "Q3",
-            "value": 31
+            "Q1": 7,
+            "Q2": 10,
+            "Q3": 9,
+            "Q4": 3,
+            "product": "Product3_2011",
+            "year": 2011
         },
         {
-            "year": 2011,
-            "variable": "Q4",
-            "value": 24
+            "Q1": 1,
+            "Q2": 8,
+            "Q3": 2,
+            "Q4": 3,
+            "product": "Product4_2011",
+            "year": 2011
         },
         {
-            "year": 2012,
-            "variable": "Q1",
-            "value": 26
+            "Q1": 6,
+            "Q2": 1,
+            "Q3": 7,
+            "Q4": 1,
+            "product": "Product5_2011",
+            "year": 2011
         },
         {
-            "year": 2012,
-            "variable": "Q2",
-            "value": 36
+            "Q1": 1,
+            "Q2": 6,
+            "Q3": 1,
+            "Q4": 9,
+            "product": "Product6_2011",
+            "year": 2011
         },
         {
-            "year": 2012,
-            "variable": "Q3",
-            "value": 35
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 3,
+            "Q4": 3,
+            "product": "Product1_2012",
+            "year": 2012
         },
         {
-            "year": 2012,
-            "variable": "Q4",
-            "value": 30
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 3,
+            "Q4": 4,
+            "product": "Product2_2012",
+            "year": 2012
         },
         {
-            "year": 2013,
-            "variable": "Q1",
-            "value": 35
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 6,
+            "Q4": 3,
+            "product": "Product3_2012",
+            "year": 2012
         },
         {
-            "year": 2013,
-            "variable": "Q2",
-            "value": 27
+            "Q1": 1,
+            "Q2": 6,
+            "Q3": 10,
+            "Q4": 4,
+            "product": "Product4_2012",
+            "year": 2012
         },
         {
-            "year": 2013,
-            "variable": "Q3",
-            "value": 40
+            "Q1": 7,
+            "Q2": 4,
+            "Q3": 5,
+            "Q4": 8,
+            "product": "Product5_2012",
+            "year": 2012
         },
         {
-            "year": 2013,
-            "variable": "Q4",
-            "value": 41
+            "Q1": 6,
+            "Q2": 8,
+            "Q3": 8,
+            "Q4": 8,
+            "product": "Product6_2012",
+            "year": 2012
+        },
+        {
+            "Q1": 9,
+            "Q2": 3,
+            "Q3": 2,
+            "Q4": 10,
+            "product": "Product1_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 7,
+            "Q2": 7,
+            "Q3": 6,
+            "Q4": 8,
+            "product": "Product2_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 9,
+            "Q2": 4,
+            "Q3": 8,
+            "Q4": 9,
+            "product": "Product3_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 2,
+            "Q2": 5,
+            "Q3": 9,
+            "Q4": 5,
+            "product": "Product4_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 4,
+            "Q2": 2,
+            "Q3": 5,
+            "Q4": 1,
+            "product": "Product5_2013",
+            "year": 2013
+        },
+        {
+            "Q1": 4,
+            "Q2": 6,
+            "Q3": 10,
+            "Q4": 8,
+            "product": "Product6_2013",
+            "year": 2013
         }
     ],
     "vl_spec": {
