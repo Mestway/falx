@@ -44,7 +44,7 @@
             "id": "valore1",
             "qt": 5,
             "range": 10,
-            "label": "0_10"
+            "label": "0.0_10.0"
         },
         {
             "ageFrom": 10,
@@ -52,7 +52,7 @@
             "id": "valore2",
             "qt": 12,
             "range": 5,
-            "label": "10_15"
+            "label": "10.0_15.0"
         },
         {
             "ageFrom": 15,
@@ -60,7 +60,7 @@
             "id": "valore3",
             "qt": 74,
             "range": 15,
-            "label": "15_30"
+            "label": "15.0_30.0"
         },
         {
             "ageFrom": 30,
@@ -68,7 +68,7 @@
             "id": "valore4",
             "qt": 12,
             "range": 10,
-            "label": "30_40"
+            "label": "30.0_40.0"
         },
         {
             "ageFrom": 40,
@@ -76,7 +76,7 @@
             "id": "valore5",
             "qt": 8,
             "range": 59,
-            "label": "40_99"
+            "label": "40.0_99.0"
         },
         {
             "ageFrom": 99,
@@ -84,7 +84,7 @@
             "id": "valore6",
             "qt": 15,
             "range": 21,
-            "label": "99_120"
+            "label": "99.0_120.0"
         }
     ],
     "vl_spec": {
