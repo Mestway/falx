@@ -4,91 +4,78 @@
             "Product": "Prod1",
             "Sales growth": 6,
             "Profit %": 42,
-            "Sales volume": 40000,
             "Sales Increase": 29
         },
         {
             "Product": "Prod2",
             "Sales growth": 0,
             "Profit %": 48,
-            "Sales volume": 25000,
             "Sales Increase": 18
         },
         {
             "Product": "Prod3",
             "Sales growth": -3,
             "Profit %": 10,
-            "Sales volume": 10000,
             "Sales Increase": 7
         },
         {
             "Product": "Prod4",
             "Sales growth": 15,
             "Profit %": 16,
-            "Sales volume": 15000,
             "Sales Increase": 11
         },
         {
             "Product": "Prod5",
             "Sales growth": -6,
             "Profit %": 10,
-            "Sales volume": 3000,
             "Sales Increase": 2
         },
         {
             "Product": "Prod6",
             "Sales growth": 11,
             "Profit %": 45,
-            "Sales volume": 20000,
             "Sales Increase": 14
         },
         {
             "Product": "Prod7",
             "Sales growth": 2,
             "Profit %": 50,
-            "Sales volume": 50000,
             "Sales Increase": 36
         },
         {
             "Product": "Prod8",
             "Sales growth": 1,
             "Profit %": 39,
-            "Sales volume": 35000,
             "Sales Increase": 25
         },
         {
             "Product": "Prod9",
             "Sales growth": -4,
             "Profit %": 30,
-            "Sales volume": 10000,
             "Sales Increase": 7
         },
         {
             "Product": "Prod10",
             "Sales growth": 15,
             "Profit %": 12,
-            "Sales volume": 14000,
             "Sales Increase": 10
         },
         {
             "Product": "Prod11",
             "Sales growth": 25,
             "Profit %": 55,
-            "Sales volume": 4500,
             "Sales Increase": 3
         },
         {
             "Product": "Prod12",
             "Sales growth": 18,
             "Profit %": 18,
-            "Sales volume": 11000,
             "Sales Increase": 8
         },
         {
             "Product": "Prod13",
             "Sales growth": 19,
             "Profit %": 15,
-            "Sales volume": 19000,
             "Sales Increase": 14
         }
     ],
