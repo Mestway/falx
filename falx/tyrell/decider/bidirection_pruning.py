@@ -227,7 +227,7 @@ class AbstractPrune(GenericVisitor):
             new_col = -1
             fst_row = tbl_out.iloc[0,]
             for idx, item in enumerate(fst_row):
-                if isinstance(item, str) and ('-' in item or '_' in item) and (not str.isdigit(item.split('-')[0])):
+                if isinstance(item, str) and ('_' in item):
                     new_col = idx
                     break
 
