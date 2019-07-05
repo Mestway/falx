@@ -96,158 +96,184 @@
         {
             "Product": "Prod1",
             "Profit %": 42,
-            "variable": "Sales growth",
-            "value": 6
-        },
-        {
-            "Product": "Prod2",
-            "Profit %": 48,
-            "variable": "Sales growth",
-            "value": 0
-        },
-        {
-            "Product": "Prod3",
-            "Profit %": 10,
-            "variable": "Sales growth",
-            "value": -3
-        },
-        {
-            "Product": "Prod4",
-            "Profit %": 16,
-            "variable": "Sales growth",
-            "value": 15
-        },
-        {
-            "Product": "Prod5",
-            "Profit %": 10,
-            "variable": "Sales growth",
-            "value": -6
-        },
-        {
-            "Product": "Prod6",
-            "Profit %": 45,
-            "variable": "Sales growth",
-            "value": 11
-        },
-        {
-            "Product": "Prod7",
-            "Profit %": 50,
-            "variable": "Sales growth",
-            "value": 2
-        },
-        {
-            "Product": "Prod8",
-            "Profit %": 39,
-            "variable": "Sales growth",
-            "value": 1
-        },
-        {
-            "Product": "Prod9",
-            "Profit %": 30,
-            "variable": "Sales growth",
-            "value": -4
-        },
-        {
-            "Product": "Prod10",
-            "Profit %": 12,
-            "variable": "Sales growth",
-            "value": 15
-        },
-        {
-            "Product": "Prod11",
-            "Profit %": 55,
-            "variable": "Sales growth",
-            "value": 25
-        },
-        {
-            "Product": "Prod12",
-            "Profit %": 18,
-            "variable": "Sales growth",
-            "value": 18
-        },
-        {
-            "Product": "Prod13",
-            "Profit %": 15,
-            "variable": "Sales growth",
-            "value": 19
-        },
-        {
-            "Product": "Prod1",
-            "Profit %": 42,
+            "Sales growth": 6,
             "variable": "Sales Increase",
             "value": 29
         },
         {
             "Product": "Prod2",
             "Profit %": 48,
+            "Sales growth": 0,
             "variable": "Sales Increase",
             "value": 18
         },
         {
             "Product": "Prod3",
             "Profit %": 10,
+            "Sales growth": -3,
             "variable": "Sales Increase",
             "value": 7
         },
         {
             "Product": "Prod4",
             "Profit %": 16,
+            "Sales growth": 15,
             "variable": "Sales Increase",
             "value": 11
         },
         {
             "Product": "Prod5",
             "Profit %": 10,
+            "Sales growth": -6,
             "variable": "Sales Increase",
             "value": 2
         },
         {
             "Product": "Prod6",
             "Profit %": 45,
+            "Sales growth": 11,
             "variable": "Sales Increase",
             "value": 14
         },
         {
             "Product": "Prod7",
             "Profit %": 50,
+            "Sales growth": 2,
             "variable": "Sales Increase",
             "value": 36
         },
         {
             "Product": "Prod8",
             "Profit %": 39,
+            "Sales growth": 1,
             "variable": "Sales Increase",
             "value": 25
         },
         {
             "Product": "Prod9",
             "Profit %": 30,
+            "Sales growth": -4,
             "variable": "Sales Increase",
             "value": 7
         },
         {
             "Product": "Prod10",
             "Profit %": 12,
+            "Sales growth": 15,
             "variable": "Sales Increase",
             "value": 10
         },
         {
             "Product": "Prod11",
             "Profit %": 55,
+            "Sales growth": 25,
             "variable": "Sales Increase",
             "value": 3
         },
         {
             "Product": "Prod12",
             "Profit %": 18,
+            "Sales growth": 18,
             "variable": "Sales Increase",
             "value": 8
         },
         {
             "Product": "Prod13",
             "Profit %": 15,
+            "Sales growth": 19,
             "variable": "Sales Increase",
             "value": 14
+        },
+        {
+            "Product": "Prod1",
+            "Profit %": 42,
+            "Sales growth": 6,
+            "variable": "mutate_a",
+            "value": 35
+        },
+        {
+            "Product": "Prod2",
+            "Profit %": 48,
+            "Sales growth": 0,
+            "variable": "mutate_a",
+            "value": 18
+        },
+        {
+            "Product": "Prod3",
+            "Profit %": 10,
+            "Sales growth": -3,
+            "variable": "mutate_a",
+            "value": 4
+        },
+        {
+            "Product": "Prod4",
+            "Profit %": 16,
+            "Sales growth": 15,
+            "variable": "mutate_a",
+            "value": 26
+        },
+        {
+            "Product": "Prod5",
+            "Profit %": 10,
+            "Sales growth": -6,
+            "variable": "mutate_a",
+            "value": -4
+        },
+        {
+            "Product": "Prod6",
+            "Profit %": 45,
+            "Sales growth": 11,
+            "variable": "mutate_a",
+            "value": 25
+        },
+        {
+            "Product": "Prod7",
+            "Profit %": 50,
+            "Sales growth": 2,
+            "variable": "mutate_a",
+            "value": 38
+        },
+        {
+            "Product": "Prod8",
+            "Profit %": 39,
+            "Sales growth": 1,
+            "variable": "mutate_a",
+            "value": 26
+        },
+        {
+            "Product": "Prod9",
+            "Profit %": 30,
+            "Sales growth": -4,
+            "variable": "mutate_a",
+            "value": 3
+        },
+        {
+            "Product": "Prod10",
+            "Profit %": 12,
+            "Sales growth": 15,
+            "variable": "mutate_a",
+            "value": 25
+        },
+        {
+            "Product": "Prod11",
+            "Profit %": 55,
+            "Sales growth": 25,
+            "variable": "mutate_a",
+            "value": 28
+        },
+        {
+            "Product": "Prod12",
+            "Profit %": 18,
+            "Sales growth": 18,
+            "variable": "mutate_a",
+            "value": 26
+        },
+        {
+            "Product": "Prod13",
+            "Profit %": 15,
+            "Sales growth": 19,
+            "variable": "mutate_a",
+            "value": 33
         }
     ],
     "vl_spec": {
@@ -279,7 +305,7 @@
                 },
                 "transform": [
                     {
-                        "filter": "datum.variable == \"Sales growth\""
+                        "filter": "datum.variable == \"Sales Increase\""
                     }
                 ],
                 "encoding": {

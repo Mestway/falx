@@ -10,7 +10,7 @@
             "int x3": 0,
             "int y1": 46.34,
             "int y2": 42.3,
-            "int y3": -78
+            "int y3": 78
         },
         {
             "label": 2,
@@ -20,7 +20,7 @@
             "int x1": 0,
             "int x2": 24.21,
             "int x3": 0,
-            "int y1": -9,
+            "int y1": 9,
             "int y2": 39.57,
             "int y3": 50.5
         },
@@ -226,7 +226,7 @@
         {
             "label": 2,
             "variable": "int y1",
-            "value": -9.0
+            "value": 9.0
         },
         {
             "label": 3,
