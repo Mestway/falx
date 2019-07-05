@@ -1,0 +1,1830 @@
+{
+    "input_data": [
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 12,
+            "1000": -488,
+            "1500": -988,
+            "2000": -1488,
+            "2500": -1988
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 212,
+            "1000": -288,
+            "1500": -788,
+            "2000": -1288,
+            "2500": -1788
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 530,
+            "1000": 30,
+            "1500": -470,
+            "2000": -970,
+            "2500": -1470
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1578,
+            "1000": 1078,
+            "1500": 578,
+            "2000": 78,
+            "2500": -422
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1662,
+            "1000": 1162,
+            "1500": 662,
+            "2000": 162,
+            "2500": -338
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1214,
+            "1000": 714,
+            "1500": 214,
+            "2000": -286,
+            "2500": -786
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1049,
+            "1000": 549,
+            "1500": 49,
+            "2000": -451,
+            "2500": -951
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 988,
+            "1000": 488,
+            "1500": -12,
+            "2000": -512,
+            "2500": -1012
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1012,
+            "1000": 512,
+            "1500": 12,
+            "2000": -488,
+            "2500": -988
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1187,
+            "1000": 687,
+            "1500": 187,
+            "2000": -313,
+            "2500": -813
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1362,
+            "1000": 862,
+            "1500": 362,
+            "2000": -138,
+            "2500": -638
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1652,
+            "1000": 1152,
+            "1500": 652,
+            "2000": 152,
+            "2500": -348
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1839,
+            "1000": 1339,
+            "1500": 839,
+            "2000": 339,
+            "2500": -161
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 1805,
+            "1000": 1305,
+            "1500": 805,
+            "2000": 305,
+            "2500": -195
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 2168,
+            "1000": 1668,
+            "1500": 1168,
+            "2000": 668,
+            "2500": 168
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 942,
+            "1000": 442,
+            "1500": -58,
+            "2000": -558,
+            "2500": -1058
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 696,
+            "1000": 196,
+            "1500": -304,
+            "2000": -804,
+            "2500": -1304
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 413,
+            "1000": -87,
+            "1500": -587,
+            "2000": -1087,
+            "2500": -1587
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "500": 246,
+            "1000": -254,
+            "1500": -754,
+            "2000": -1254,
+            "2500": -1754
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 109,
+            "1000": -391,
+            "1500": -891,
+            "2000": -1391,
+            "2500": -1891
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 2,
+            "1000": -498,
+            "1500": -998,
+            "2000": -1498,
+            "2500": -1998
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 16,
+            "1000": -484,
+            "1500": -984,
+            "2000": -1484,
+            "2500": -1984
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 48,
+            "1000": -452,
+            "1500": -952,
+            "2000": -1452,
+            "2500": -1952
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 69,
+            "1000": -431,
+            "1500": -931,
+            "2000": -1431,
+            "2500": -1931
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 81,
+            "1000": -419,
+            "1500": -919,
+            "2000": -1419,
+            "2500": -1919
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 129,
+            "1000": -371,
+            "1500": -871,
+            "2000": -1371,
+            "2500": -1871
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 163,
+            "1000": -337,
+            "1500": -837,
+            "2000": -1337,
+            "2500": -1837
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 224,
+            "1000": -276,
+            "1500": -776,
+            "2000": -1276,
+            "2500": -1776
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 205,
+            "1000": -295,
+            "1500": -795,
+            "2000": -1295,
+            "2500": -1795
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 285,
+            "1000": -215,
+            "1500": -715,
+            "2000": -1215,
+            "2500": -1715
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 272,
+            "1000": -228,
+            "1500": -728,
+            "2000": -1228,
+            "2500": -1728
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 342,
+            "1000": -158,
+            "1500": -658,
+            "2000": -1158,
+            "2500": -1658
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 644,
+            "1000": 144,
+            "1500": -356,
+            "2000": -856,
+            "2500": -1356
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 416,
+            "1000": -84,
+            "1500": -584,
+            "2000": -1084,
+            "2500": -1584
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 396,
+            "1000": -104,
+            "1500": -604,
+            "2000": -1104,
+            "2500": -1604
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 221,
+            "1000": -279,
+            "1500": -779,
+            "2000": -1279,
+            "2500": -1779
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 149,
+            "1000": -351,
+            "1500": -851,
+            "2000": -1351,
+            "2500": -1851
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 121,
+            "1000": -379,
+            "1500": -879,
+            "2000": -1379,
+            "2500": -1879
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 67,
+            "1000": -433,
+            "1500": -933,
+            "2000": -1433,
+            "2500": -1933
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "500": 30,
+            "1000": -470,
+            "1500": -970,
+            "2000": -1470,
+            "2500": -1970
+        }
+    ],
+    "output_data": [
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 12
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 212
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 530
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1578
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1662
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1214
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1049
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 988
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1012
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1187
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1362
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1652
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1839
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 1805
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 2168
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 942
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 696
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 413
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "500",
+            "value": 246
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 109
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 2
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 16
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 48
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 69
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 81
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 129
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 163
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 224
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 205
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 285
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 272
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 342
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 644
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 416
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 396
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 221
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 149
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 121
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 67
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "500",
+            "value": 30
+        },
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": -488
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": -288
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 30
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1078
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1162
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 714
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 549
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 488
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 512
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 687
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 862
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1152
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1339
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1305
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 1668
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 442
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": 196
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": -87
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1000",
+            "value": -254
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -391
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -498
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -484
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -452
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -431
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -419
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -371
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -337
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -276
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -295
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -215
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -228
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -158
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": 144
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -84
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -104
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -279
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -351
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -379
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -433
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1000",
+            "value": -470
+        },
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -988
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -788
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -470
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 578
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 662
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 214
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 49
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -12
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 12
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 187
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 362
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 652
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 839
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 805
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": 1168
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -58
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -304
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -587
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "1500",
+            "value": -754
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -891
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -998
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -984
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -952
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -931
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -919
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -871
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -837
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -776
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -795
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -715
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -728
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -658
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -356
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -584
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -604
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -779
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -851
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -879
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -933
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "1500",
+            "value": -970
+        },
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -1488
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -1288
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -970
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 78
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 162
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -286
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -451
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -512
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -488
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -313
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -138
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 152
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 339
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 305
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": 668
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -558
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -804
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -1087
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2000",
+            "value": -1254
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1391
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1498
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1484
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1452
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1431
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1419
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1371
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1337
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1276
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1295
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1215
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1228
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1158
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -856
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1084
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1104
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1279
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1351
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1379
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1433
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2000",
+            "value": -1470
+        },
+        {
+            "time": "5:00",
+            "Passengers": 12,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1988
+        },
+        {
+            "time": "6:00",
+            "Passengers": 212,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1788
+        },
+        {
+            "time": "7:00",
+            "Passengers": 530,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1470
+        },
+        {
+            "time": "8:00",
+            "Passengers": 1578,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -422
+        },
+        {
+            "time": "9:00",
+            "Passengers": 1662,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -338
+        },
+        {
+            "time": "10:00",
+            "Passengers": 1214,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -786
+        },
+        {
+            "time": "11:00",
+            "Passengers": 1049,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -951
+        },
+        {
+            "time": "12:00",
+            "Passengers": 988,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1012
+        },
+        {
+            "time": "13:00",
+            "Passengers": 1012,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -988
+        },
+        {
+            "time": "14:00",
+            "Passengers": 1187,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -813
+        },
+        {
+            "time": "15:00",
+            "Passengers": 1362,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -638
+        },
+        {
+            "time": "16:00",
+            "Passengers": 1652,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -348
+        },
+        {
+            "time": "17:00",
+            "Passengers": 1839,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -161
+        },
+        {
+            "time": "18:00",
+            "Passengers": 1805,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -195
+        },
+        {
+            "time": "19:00",
+            "Passengers": 2168,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": 168
+        },
+        {
+            "time": "20:00",
+            "Passengers": 942,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1058
+        },
+        {
+            "time": "21:00",
+            "Passengers": 696,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1304
+        },
+        {
+            "time": "22:00",
+            "Passengers": 413,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1587
+        },
+        {
+            "time": "23:00",
+            "Passengers": 246,
+            "Station": "Deák tér - Bajcsi-Zsilinszky út",
+            "variable": "2500",
+            "value": -1754
+        },
+        {
+            "time": "0:00",
+            "Passengers": 109,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1891
+        },
+        {
+            "time": "5:00",
+            "Passengers": 2,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1998
+        },
+        {
+            "time": "6:00",
+            "Passengers": 16,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1984
+        },
+        {
+            "time": "7:00",
+            "Passengers": 48,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1952
+        },
+        {
+            "time": "8:00",
+            "Passengers": 69,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1931
+        },
+        {
+            "time": "9:00",
+            "Passengers": 81,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1919
+        },
+        {
+            "time": "10:00",
+            "Passengers": 129,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1871
+        },
+        {
+            "time": "11:00",
+            "Passengers": 163,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1837
+        },
+        {
+            "time": "12:00",
+            "Passengers": 224,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1776
+        },
+        {
+            "time": "13:00",
+            "Passengers": 205,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1795
+        },
+        {
+            "time": "14:00",
+            "Passengers": 285,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1715
+        },
+        {
+            "time": "15:00",
+            "Passengers": 272,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1728
+        },
+        {
+            "time": "16:00",
+            "Passengers": 342,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1658
+        },
+        {
+            "time": "17:00",
+            "Passengers": 644,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1356
+        },
+        {
+            "time": "18:00",
+            "Passengers": 416,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1584
+        },
+        {
+            "time": "19:00",
+            "Passengers": 396,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1604
+        },
+        {
+            "time": "20:00",
+            "Passengers": 221,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1779
+        },
+        {
+            "time": "21:00",
+            "Passengers": 149,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1851
+        },
+        {
+            "time": "22:00",
+            "Passengers": 121,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1879
+        },
+        {
+            "time": "23:00",
+            "Passengers": 67,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1933
+        },
+        {
+            "time": "0:00",
+            "Passengers": 30,
+            "Station": "Vörösmarty tér - Deák tér",
+            "variable": "2500",
+            "value": -1970
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "area"
+        },
+        "encoding": {
+            "x": {
+                "field": "time",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "ordinal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "column": {
+                "field": "Station",
+                "type": "nominal"
+            }
+        }
+    }
+}

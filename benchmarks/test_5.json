@@ -1,0 +1,662 @@
+{
+    "input_data": [
+        {
+            "id": 1,
+            "cat 1": 49554,
+            "cat 2": 19837,
+            "cat 3": 19890,
+            "cat 4": 36555,
+            "cat 5": 37865,
+            "cat 6": 44323
+        },
+        {
+            "id": 2,
+            "cat 1": 15787,
+            "cat 2": 5987,
+            "cat 3": 7989,
+            "cat 4": 14989,
+            "cat 5": 3425,
+            "cat 6": 43421
+        },
+        {
+            "id": 3,
+            "cat 1": 2525,
+            "cat 2": 1214,
+            "cat 3": 7762,
+            "cat 4": 5647,
+            "cat 5": 3321,
+            "cat 6": 21010
+        },
+        {
+            "id": 4,
+            "cat 1": 1678,
+            "cat 2": 1226,
+            "cat 3": 5643,
+            "cat 4": 3968,
+            "cat 5": -10210,
+            "cat 6": 9875
+        },
+        {
+            "id": 5,
+            "cat 1": 1514,
+            "cat 2": 542,
+            "cat 3": 4991,
+            "cat 4": 1987,
+            "cat 5": -13289,
+            "cat 6": 7674
+        },
+        {
+            "id": 6,
+            "cat 1": 987,
+            "cat 2": 120,
+            "cat 3": -363,
+            "cat 4": 1494,
+            "cat 5": 0,
+            "cat 6": 5534
+        },
+        {
+            "id": 7,
+            "cat 1": 574,
+            "cat 2": 69,
+            "cat 3": -2114,
+            "cat 4": 896,
+            "cat 5": 0,
+            "cat 6": 2331
+        },
+        {
+            "id": 8,
+            "cat 1": -331,
+            "cat 2": 0,
+            "cat 3": -3711,
+            "cat 4": 698,
+            "cat 5": 0,
+            "cat 6": 453
+        },
+        {
+            "id": 9,
+            "cat 1": -7652,
+            "cat 2": 0,
+            "cat 3": 0,
+            "cat 4": 124,
+            "cat 5": 0,
+            "cat 6": 411
+        },
+        {
+            "id": 10,
+            "cat 1": -11234,
+            "cat 2": 0,
+            "cat 3": 0,
+            "cat 4": -408,
+            "cat 5": 0,
+            "cat 6": -7674
+        },
+        {
+            "id": 11,
+            "cat 1": -18214,
+            "cat 2": 0,
+            "cat 3": 0,
+            "cat 4": -6564,
+            "cat 5": 0,
+            "cat 6": -8723
+        },
+        {
+            "id": 12,
+            "cat 1": 0,
+            "cat 2": 0,
+            "cat 3": 0,
+            "cat 4": -12268,
+            "cat 5": 0,
+            "cat 6": -32111
+        }
+    ],
+    "output_data": [
+        {
+            "id_x": 1,
+            "variable": "cat 1",
+            "value_x": 49554,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 1",
+            "value_x": 15787,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 1",
+            "value_x": 2525,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 1",
+            "value_x": 1678,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 1",
+            "value_x": 1514,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 1",
+            "value_x": 987,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 1",
+            "value_x": 574,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 1",
+            "value_x": -331,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 1",
+            "value_x": -7652,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 1",
+            "value_x": -11234,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 1",
+            "value_x": -18214,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 1",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 35188
+        },
+        {
+            "id_x": 1,
+            "variable": "cat 2",
+            "value_x": 19837,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 2",
+            "value_x": 5987,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 2",
+            "value_x": 1214,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 2",
+            "value_x": 1226,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 2",
+            "value_x": 542,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 2",
+            "value_x": 120,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 2",
+            "value_x": 69,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 2",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 2",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 2",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 2",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 2",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 28995
+        },
+        {
+            "id_x": 1,
+            "variable": "cat 3",
+            "value_x": 19890,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 3",
+            "value_x": 7989,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 3",
+            "value_x": 7762,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 3",
+            "value_x": 5643,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 3",
+            "value_x": 4991,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 3",
+            "value_x": -363,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 3",
+            "value_x": -2114,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 3",
+            "value_x": -3711,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 3",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 3",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 3",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 3",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 40087
+        },
+        {
+            "id_x": 1,
+            "variable": "cat 4",
+            "value_x": 36555,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 4",
+            "value_x": 14989,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 4",
+            "value_x": 5647,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 4",
+            "value_x": 3968,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 4",
+            "value_x": 1987,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 4",
+            "value_x": 1494,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 4",
+            "value_x": 896,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 4",
+            "value_x": 698,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 4",
+            "value_x": 124,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 4",
+            "value_x": -408,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 4",
+            "value_x": -6564,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 4",
+            "value_x": -12268,
+            "id_y": 78,
+            "value_y": 47118
+        },
+        {
+            "id_x": 1,
+            "variable": "cat 5",
+            "value_x": 37865,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 5",
+            "value_x": 3425,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 5",
+            "value_x": 3321,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 5",
+            "value_x": -10210,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 5",
+            "value_x": -13289,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 5",
+            "value_x": 0,
+            "id_y": 78,
+            "value_y": 21112
+        },
+        {
+            "id_x": 1,
+            "variable": "cat 6",
+            "value_x": 44323,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 2,
+            "variable": "cat 6",
+            "value_x": 43421,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 3,
+            "variable": "cat 6",
+            "value_x": 21010,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 4,
+            "variable": "cat 6",
+            "value_x": 9875,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 5,
+            "variable": "cat 6",
+            "value_x": 7674,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 6,
+            "variable": "cat 6",
+            "value_x": 5534,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 7,
+            "variable": "cat 6",
+            "value_x": 2331,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 8,
+            "variable": "cat 6",
+            "value_x": 453,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 9,
+            "variable": "cat 6",
+            "value_x": 411,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 10,
+            "variable": "cat 6",
+            "value_x": -7674,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 11,
+            "variable": "cat 6",
+            "value_x": -8723,
+            "id_y": 78,
+            "value_y": 86524
+        },
+        {
+            "id_x": 12,
+            "variable": "cat 6",
+            "value_x": -32111,
+            "id_y": 78,
+            "value_y": 86524
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "type": "bar"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "value_x",
+                        "type": "quantitative"
+                    },
+                    "column": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "x": {
+                        "field": "id_x",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "area"
+                },
+                "encoding": {
+                    "y": {
+                        "type": "quantitative",
+                        "field": "value_y"
+                    },
+                    "column": {
+                        "field": "variable",
+                        "type": "nominal"
+                    },
+                    "x": {
+                        "field": "id_x",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ]
+    }
+}

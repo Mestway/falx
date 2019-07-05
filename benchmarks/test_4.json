@@ -1,0 +1,594 @@
+{
+    "input_data": [
+        {
+            "Period": 1,
+            "APPRENTICE": 8.8,
+            "CLERICAL": 14.7,
+            "ENGINEERING SPECIALIST": 13.2,
+            "MAJOR EXECUTIVE": 22,
+            "SKILLED LABOR": 11.8,
+            "MINOR EXECUTIVE": 16,
+            "SALESMAN": 5.1,
+            "NO CLASS": 5.9,
+            "MISC.": 1.9
+        },
+        {
+            "Period": 2,
+            "APPRENTICE": 4.2,
+            "CLERICAL": 9.7,
+            "ENGINEERING SPECIALIST": 16.6,
+            "MAJOR EXECUTIVE": 29.2,
+            "SKILLED LABOR": 5.5,
+            "MINOR EXECUTIVE": 25,
+            "SALESMAN": 5.5,
+            "NO CLASS": 4.2,
+            "MISC.": 0
+        },
+        {
+            "Period": 3,
+            "APPRENTICE": 1,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 14.3,
+            "MAJOR EXECUTIVE": 43,
+            "SKILLED LABOR": 1.6,
+            "MINOR EXECUTIVE": 30.4,
+            "SALESMAN": 5.5,
+            "NO CLASS": 4.2,
+            "MISC.": 0
+        },
+        {
+            "Period": 4,
+            "APPRENTICE": 1,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 9,
+            "MAJOR EXECUTIVE": 51,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 28.8,
+            "SALESMAN": 5.5,
+            "NO CLASS": 4,
+            "MISC.": 0.7
+        },
+        {
+            "Period": 5,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 10.7,
+            "MAJOR EXECUTIVE": 57,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 21.4,
+            "SALESMAN": 7.2,
+            "NO CLASS": 1.8,
+            "MISC.": 1.9
+        },
+        {
+            "Period": 6,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 10.9,
+            "MAJOR EXECUTIVE": 65,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 13.2,
+            "SALESMAN": 6.6,
+            "NO CLASS": 2.8,
+            "MISC.": 1.8
+        },
+        {
+            "Period": 7,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 7.1,
+            "MAJOR EXECUTIVE": 67,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 14.1,
+            "SALESMAN": 4.4,
+            "NO CLASS": 2.4,
+            "MISC.": 4.4
+        },
+        {
+            "Period": 8,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 2.8,
+            "MAJOR EXECUTIVE": 75,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 11.2,
+            "SALESMAN": 2.4,
+            "NO CLASS": 2.8,
+            "MISC.": 5.6
+        },
+        {
+            "Period": 9,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 4.5,
+            "MAJOR EXECUTIVE": 77,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 9,
+            "SALESMAN": 4.5,
+            "NO CLASS": 0,
+            "MISC.": 4.5
+        },
+        {
+            "Period": 10,
+            "APPRENTICE": 0,
+            "CLERICAL": 0,
+            "ENGINEERING SPECIALIST": 5.6,
+            "MAJOR EXECUTIVE": 88.8,
+            "SKILLED LABOR": 0,
+            "MINOR EXECUTIVE": 0,
+            "SALESMAN": 5.6,
+            "NO CLASS": 0,
+            "MISC.": 0
+        }
+    ],
+    "output_data": [
+        {
+            "Period": 1,
+            "variable": "APPRENTICE",
+            "value": 8.8
+        },
+        {
+            "Period": 2,
+            "variable": "APPRENTICE",
+            "value": 4.2
+        },
+        {
+            "Period": 3,
+            "variable": "APPRENTICE",
+            "value": 1.0
+        },
+        {
+            "Period": 4,
+            "variable": "APPRENTICE",
+            "value": 1.0
+        },
+        {
+            "Period": 5,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 6,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 7,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 8,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 9,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 10,
+            "variable": "APPRENTICE",
+            "value": 0.0
+        },
+        {
+            "Period": 1,
+            "variable": "CLERICAL",
+            "value": 14.7
+        },
+        {
+            "Period": 2,
+            "variable": "CLERICAL",
+            "value": 9.7
+        },
+        {
+            "Period": 3,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 4,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 5,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 6,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 7,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 8,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 9,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 10,
+            "variable": "CLERICAL",
+            "value": 0.0
+        },
+        {
+            "Period": 1,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 13.2
+        },
+        {
+            "Period": 2,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 16.6
+        },
+        {
+            "Period": 3,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 14.3
+        },
+        {
+            "Period": 4,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 9.0
+        },
+        {
+            "Period": 5,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 10.7
+        },
+        {
+            "Period": 6,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 10.9
+        },
+        {
+            "Period": 7,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 7.1
+        },
+        {
+            "Period": 8,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 2.8
+        },
+        {
+            "Period": 9,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 4.5
+        },
+        {
+            "Period": 10,
+            "variable": "ENGINEERING SPECIALIST",
+            "value": 5.6
+        },
+        {
+            "Period": 1,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 22.0
+        },
+        {
+            "Period": 2,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 29.2
+        },
+        {
+            "Period": 3,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 43.0
+        },
+        {
+            "Period": 4,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 51.0
+        },
+        {
+            "Period": 5,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 57.0
+        },
+        {
+            "Period": 6,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 65.0
+        },
+        {
+            "Period": 7,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 67.0
+        },
+        {
+            "Period": 8,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 75.0
+        },
+        {
+            "Period": 9,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 77.0
+        },
+        {
+            "Period": 10,
+            "variable": "MAJOR EXECUTIVE",
+            "value": 88.8
+        },
+        {
+            "Period": 1,
+            "variable": "SKILLED LABOR",
+            "value": 11.8
+        },
+        {
+            "Period": 2,
+            "variable": "SKILLED LABOR",
+            "value": 5.5
+        },
+        {
+            "Period": 3,
+            "variable": "SKILLED LABOR",
+            "value": 1.6
+        },
+        {
+            "Period": 4,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 5,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 6,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 7,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 8,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 9,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 10,
+            "variable": "SKILLED LABOR",
+            "value": 0.0
+        },
+        {
+            "Period": 1,
+            "variable": "MINOR EXECUTIVE",
+            "value": 16.0
+        },
+        {
+            "Period": 2,
+            "variable": "MINOR EXECUTIVE",
+            "value": 25.0
+        },
+        {
+            "Period": 3,
+            "variable": "MINOR EXECUTIVE",
+            "value": 30.4
+        },
+        {
+            "Period": 4,
+            "variable": "MINOR EXECUTIVE",
+            "value": 28.8
+        },
+        {
+            "Period": 5,
+            "variable": "MINOR EXECUTIVE",
+            "value": 21.4
+        },
+        {
+            "Period": 6,
+            "variable": "MINOR EXECUTIVE",
+            "value": 13.2
+        },
+        {
+            "Period": 7,
+            "variable": "MINOR EXECUTIVE",
+            "value": 14.1
+        },
+        {
+            "Period": 8,
+            "variable": "MINOR EXECUTIVE",
+            "value": 11.2
+        },
+        {
+            "Period": 9,
+            "variable": "MINOR EXECUTIVE",
+            "value": 9.0
+        },
+        {
+            "Period": 10,
+            "variable": "MINOR EXECUTIVE",
+            "value": 0.0
+        },
+        {
+            "Period": 1,
+            "variable": "SALESMAN",
+            "value": 5.1
+        },
+        {
+            "Period": 2,
+            "variable": "SALESMAN",
+            "value": 5.5
+        },
+        {
+            "Period": 3,
+            "variable": "SALESMAN",
+            "value": 5.5
+        },
+        {
+            "Period": 4,
+            "variable": "SALESMAN",
+            "value": 5.5
+        },
+        {
+            "Period": 5,
+            "variable": "SALESMAN",
+            "value": 7.2
+        },
+        {
+            "Period": 6,
+            "variable": "SALESMAN",
+            "value": 6.6
+        },
+        {
+            "Period": 7,
+            "variable": "SALESMAN",
+            "value": 4.4
+        },
+        {
+            "Period": 8,
+            "variable": "SALESMAN",
+            "value": 2.4
+        },
+        {
+            "Period": 9,
+            "variable": "SALESMAN",
+            "value": 4.5
+        },
+        {
+            "Period": 10,
+            "variable": "SALESMAN",
+            "value": 5.6
+        },
+        {
+            "Period": 1,
+            "variable": "NO CLASS",
+            "value": 5.9
+        },
+        {
+            "Period": 2,
+            "variable": "NO CLASS",
+            "value": 4.2
+        },
+        {
+            "Period": 3,
+            "variable": "NO CLASS",
+            "value": 4.2
+        },
+        {
+            "Period": 4,
+            "variable": "NO CLASS",
+            "value": 4.0
+        },
+        {
+            "Period": 5,
+            "variable": "NO CLASS",
+            "value": 1.8
+        },
+        {
+            "Period": 6,
+            "variable": "NO CLASS",
+            "value": 2.8
+        },
+        {
+            "Period": 7,
+            "variable": "NO CLASS",
+            "value": 2.4
+        },
+        {
+            "Period": 8,
+            "variable": "NO CLASS",
+            "value": 2.8
+        },
+        {
+            "Period": 9,
+            "variable": "NO CLASS",
+            "value": 0.0
+        },
+        {
+            "Period": 10,
+            "variable": "NO CLASS",
+            "value": 0.0
+        },
+        {
+            "Period": 1,
+            "variable": "MISC.",
+            "value": 1.9
+        },
+        {
+            "Period": 2,
+            "variable": "MISC.",
+            "value": 0.0
+        },
+        {
+            "Period": 3,
+            "variable": "MISC.",
+            "value": 0.0
+        },
+        {
+            "Period": 4,
+            "variable": "MISC.",
+            "value": 0.7
+        },
+        {
+            "Period": 5,
+            "variable": "MISC.",
+            "value": 1.9
+        },
+        {
+            "Period": 6,
+            "variable": "MISC.",
+            "value": 1.8
+        },
+        {
+            "Period": 7,
+            "variable": "MISC.",
+            "value": 4.4
+        },
+        {
+            "Period": 8,
+            "variable": "MISC.",
+            "value": 5.6
+        },
+        {
+            "Period": 9,
+            "variable": "MISC.",
+            "value": 4.5
+        },
+        {
+            "Period": 10,
+            "variable": "MISC.",
+            "value": 0.0
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": "bar",
+        "encoding": {
+            "x": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "Period",
+                "type": "nominal"
+            }
+        }
+    }
+}
