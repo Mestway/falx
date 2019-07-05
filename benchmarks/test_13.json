@@ -1,0 +1,467 @@
+{
+    "input_data": [
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "MS Excel": 0,
+            "MS Access": 0,
+            "VBA": 0,
+            "SAP Scripting": 0,
+            "SAP": 0
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "MS Excel": 1,
+            "MS Access": 0,
+            "VBA": 0,
+            "SAP Scripting": 0,
+            "SAP": 1
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "MS Excel": 2,
+            "MS Access": 0,
+            "VBA": 0,
+            "SAP Scripting": 0,
+            "SAP": 2
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "MS Excel": 3,
+            "MS Access": 0,
+            "VBA": 0,
+            "SAP Scripting": 0,
+            "SAP": 3
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "MS Excel": 5,
+            "MS Access": 0,
+            "VBA": 0,
+            "SAP Scripting": 0,
+            "SAP": 4
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "MS Excel": 6,
+            "MS Access": 1,
+            "VBA": 1,
+            "SAP Scripting": 0,
+            "SAP": 4
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "MS Excel": 7,
+            "MS Access": 2,
+            "VBA": 1,
+            "SAP Scripting": 0,
+            "SAP": 4
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "MS Excel": 7,
+            "MS Access": 2,
+            "VBA": 2,
+            "SAP Scripting": 1,
+            "SAP": 4
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "MS Excel": 8,
+            "MS Access": 2,
+            "VBA": 3,
+            "SAP Scripting": 1,
+            "SAP": 4
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "MS Excel": 11,
+            "MS Access": 3,
+            "VBA": 4,
+            "SAP Scripting": 1,
+            "SAP": 4
+        }
+    ],
+    "output_data": [
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "variable": "MS Excel",
+            "value": 0,
+            "label": "2003_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "variable": "MS Excel",
+            "value": 1,
+            "label": "2004_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "variable": "MS Excel",
+            "value": 2,
+            "label": "2005_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "variable": "MS Excel",
+            "value": 3,
+            "label": "2006_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "variable": "MS Excel",
+            "value": 5,
+            "label": "2007_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "variable": "MS Excel",
+            "value": 6,
+            "label": "2008_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "variable": "MS Excel",
+            "value": 7,
+            "label": "2009_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "variable": "MS Excel",
+            "value": 7,
+            "label": "2010_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "variable": "MS Excel",
+            "value": 8,
+            "label": "2011_Finance Operations Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "variable": "MS Excel",
+            "value": 11,
+            "label": "2012_Finance Operations Analyst"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "variable": "MS Access",
+            "value": 0,
+            "label": "2003_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "variable": "MS Access",
+            "value": 0,
+            "label": "2004_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "variable": "MS Access",
+            "value": 0,
+            "label": "2005_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "variable": "MS Access",
+            "value": 0,
+            "label": "2006_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "variable": "MS Access",
+            "value": 0,
+            "label": "2007_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "variable": "MS Access",
+            "value": 1,
+            "label": "2008_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "variable": "MS Access",
+            "value": 2,
+            "label": "2009_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "variable": "MS Access",
+            "value": 2,
+            "label": "2010_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "variable": "MS Access",
+            "value": 2,
+            "label": "2011_Finance Operations Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "variable": "MS Access",
+            "value": 3,
+            "label": "2012_Finance Operations Analyst"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "variable": "VBA",
+            "value": 0,
+            "label": "2003_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "variable": "VBA",
+            "value": 0,
+            "label": "2004_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "variable": "VBA",
+            "value": 0,
+            "label": "2005_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "variable": "VBA",
+            "value": 0,
+            "label": "2006_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "variable": "VBA",
+            "value": 0,
+            "label": "2007_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "variable": "VBA",
+            "value": 1,
+            "label": "2008_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "variable": "VBA",
+            "value": 1,
+            "label": "2009_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "variable": "VBA",
+            "value": 2,
+            "label": "2010_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "variable": "VBA",
+            "value": 3,
+            "label": "2011_Finance Operations Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "variable": "VBA",
+            "value": 4,
+            "label": "2012_Finance Operations Analyst"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2003_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2004_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2005_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2006_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2007_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2008_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "variable": "SAP Scripting",
+            "value": 0,
+            "label": "2009_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "variable": "SAP Scripting",
+            "value": 1,
+            "label": "2010_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "variable": "SAP Scripting",
+            "value": 1,
+            "label": "2011_Finance Operations Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "variable": "SAP Scripting",
+            "value": 1,
+            "label": "2012_Finance Operations Analyst"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2003,
+            "variable": "SAP",
+            "value": 0,
+            "label": "2003_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Financial Accounting Assistant Manager",
+            "year": 2004,
+            "variable": "SAP",
+            "value": 1,
+            "label": "2004_Financial Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2005,
+            "variable": "SAP",
+            "value": 2,
+            "label": "2005_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Management Accounting Assistant Manager",
+            "year": 2006,
+            "variable": "SAP",
+            "value": 3,
+            "label": "2006_Management Accounting Assistant Manager"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2007,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2007_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2008,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2008_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2009,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2009_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Indirect Controlling and Reporting Analyst",
+            "year": 2010,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2010_Indirect Controlling and Reporting Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2011,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2011_Finance Operations Analyst"
+        },
+        {
+            "Title": "Finance Operations Analyst",
+            "year": 2012,
+            "variable": "SAP",
+            "value": 4,
+            "label": "2012_Finance Operations Analyst"
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "area"
+        },
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "label",
+                "type": "ordinal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            }
+        }
+    }
+}

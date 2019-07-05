@@ -1,0 +1,813 @@
+{
+    "input_data": [
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "2010-1": 813,
+            "2010-2": 194,
+            "2010-3": 937,
+            "2010-4": 719,
+            "2011-1": 840,
+            "2011-2": 322,
+            "2011-3": 326,
+            "2011-4": 567,
+            "2012-1": 333
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "2010-1": 242,
+            "2010-2": 486,
+            "2010-3": 531,
+            "2010-4": 556,
+            "2011-1": 858,
+            "2011-2": 792,
+            "2011-3": 637,
+            "2011-4": 343,
+            "2012-1": 771
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "2010-1": 258,
+            "2010-2": 171,
+            "2010-3": 848,
+            "2010-4": 979,
+            "2011-1": 690,
+            "2011-2": 598,
+            "2011-3": 651,
+            "2011-4": 731,
+            "2012-1": 149
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "2010-1": 903,
+            "2010-2": 653,
+            "2010-3": 800,
+            "2010-4": 465,
+            "2011-1": 149,
+            "2011-2": 656,
+            "2011-3": 958,
+            "2011-4": 309,
+            "2012-1": 465
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "2010-1": 339,
+            "2010-2": 113,
+            "2010-3": 670,
+            "2010-4": 561,
+            "2011-1": 385,
+            "2011-2": 178,
+            "2011-3": 458,
+            "2011-4": 946,
+            "2012-1": 983
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "2010-1": 311,
+            "2010-2": 242,
+            "2010-3": 309,
+            "2010-4": 196,
+            "2011-1": 162,
+            "2011-2": 337,
+            "2011-3": 701,
+            "2011-4": 998,
+            "2012-1": 507
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "2010-1": 338,
+            "2010-2": 840,
+            "2010-3": 447,
+            "2010-4": 294,
+            "2011-1": 442,
+            "2011-2": 665,
+            "2011-3": 316,
+            "2011-4": 449,
+            "2012-1": 781
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "2010-1": 706,
+            "2010-2": 485,
+            "2010-3": 980,
+            "2010-4": 487,
+            "2011-1": 347,
+            "2011-2": 846,
+            "2011-3": 121,
+            "2011-4": 532,
+            "2012-1": 674
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "2010-1": 573,
+            "2010-2": 705,
+            "2010-3": 984,
+            "2010-4": 525,
+            "2011-1": 699,
+            "2011-2": 904,
+            "2011-3": 723,
+            "2011-4": 419,
+            "2012-1": 878
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "2010-1": 494,
+            "2010-2": 198,
+            "2010-3": 727,
+            "2010-4": 148,
+            "2011-1": 887,
+            "2011-2": 847,
+            "2011-3": 350,
+            "2011-4": 912,
+            "2012-1": 595
+        }
+    ],
+    "output_data": [
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2010-1",
+            "value": 813,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2010-1",
+            "value": 242,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2010-1",
+            "value": 258,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2010-1",
+            "value": 903,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2010-1",
+            "value": 339,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2010-1",
+            "value": 311,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2010-1",
+            "value": 338,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2010-1",
+            "value": 706,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2010-1",
+            "value": 573,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2010-1",
+            "value": 494,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2010-2",
+            "value": 194,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2010-2",
+            "value": 486,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2010-2",
+            "value": 171,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2010-2",
+            "value": 653,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2010-2",
+            "value": 113,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2010-2",
+            "value": 242,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2010-2",
+            "value": 840,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2010-2",
+            "value": 485,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2010-2",
+            "value": 705,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2010-2",
+            "value": 198,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2010-3",
+            "value": 937,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2010-3",
+            "value": 531,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2010-3",
+            "value": 848,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2010-3",
+            "value": 800,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2010-3",
+            "value": 670,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2010-3",
+            "value": 309,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2010-3",
+            "value": 447,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2010-3",
+            "value": 980,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2010-3",
+            "value": 984,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2010-3",
+            "value": 727,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2010-4",
+            "value": 719,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2010-4",
+            "value": 556,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2010-4",
+            "value": 979,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2010-4",
+            "value": 465,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2010-4",
+            "value": 561,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2010-4",
+            "value": 196,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2010-4",
+            "value": 294,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2010-4",
+            "value": 487,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2010-4",
+            "value": 525,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2010-4",
+            "value": 148,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2011-1",
+            "value": 840,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2011-1",
+            "value": 858,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2011-1",
+            "value": 690,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2011-1",
+            "value": 149,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2011-1",
+            "value": 385,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2011-1",
+            "value": 162,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2011-1",
+            "value": 442,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2011-1",
+            "value": 347,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2011-1",
+            "value": 699,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2011-1",
+            "value": 887,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2011-2",
+            "value": 322,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2011-2",
+            "value": 792,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2011-2",
+            "value": 598,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2011-2",
+            "value": 656,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2011-2",
+            "value": 178,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2011-2",
+            "value": 337,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2011-2",
+            "value": 665,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2011-2",
+            "value": 846,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2011-2",
+            "value": 904,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2011-2",
+            "value": 847,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2011-3",
+            "value": 326,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2011-3",
+            "value": 637,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2011-3",
+            "value": 651,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2011-3",
+            "value": 958,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2011-3",
+            "value": 458,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2011-3",
+            "value": 701,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2011-3",
+            "value": 316,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2011-3",
+            "value": 121,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2011-3",
+            "value": 723,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2011-3",
+            "value": 350,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2011-4",
+            "value": 567,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2011-4",
+            "value": 343,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2011-4",
+            "value": 731,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2011-4",
+            "value": 309,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2011-4",
+            "value": 946,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2011-4",
+            "value": 998,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2011-4",
+            "value": 449,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2011-4",
+            "value": 532,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2011-4",
+            "value": 419,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2011-4",
+            "value": 912,
+            "label": "Group_3Vendor_10"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_1",
+            "variable": "2012-1",
+            "value": 333,
+            "label": "Group_1Vendor_1"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_2",
+            "variable": "2012-1",
+            "value": 771,
+            "label": "Group_1Vendor_2"
+        },
+        {
+            "Group": "Group_1",
+            "Venditor": "Vendor_3",
+            "variable": "2012-1",
+            "value": 149,
+            "label": "Group_1Vendor_3"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_4",
+            "variable": "2012-1",
+            "value": 465,
+            "label": "Group_2Vendor_4"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_5",
+            "variable": "2012-1",
+            "value": 983,
+            "label": "Group_2Vendor_5"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_6",
+            "variable": "2012-1",
+            "value": 507,
+            "label": "Group_2Vendor_6"
+        },
+        {
+            "Group": "Group_2",
+            "Venditor": "Vendor_7",
+            "variable": "2012-1",
+            "value": 781,
+            "label": "Group_2Vendor_7"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_8",
+            "variable": "2012-1",
+            "value": 674,
+            "label": "Group_3Vendor_8"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_9",
+            "variable": "2012-1",
+            "value": 878,
+            "label": "Group_3Vendor_9"
+        },
+        {
+            "Group": "Group_3",
+            "Venditor": "Vendor_10",
+            "variable": "2012-1",
+            "value": 595,
+            "label": "Group_3Vendor_10"
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "bar"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"2010-1\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "label",
+                        "type": "ordinal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "stroke": "red"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"2010-1\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "label",
+                        "type": "ordinal"
+                    }
+                }
+            }
+        ]
+    }
+}

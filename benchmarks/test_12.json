@@ -1,0 +1,160 @@
+{
+    "input_data": [
+        {
+            "Quarter": "Q1",
+            "CATEGORIA_1": 19,
+            "CATEGORIA_2": 26,
+            "CATEGORIA_3": 34
+        },
+        {
+            "Quarter": "Q2",
+            "CATEGORIA_1": 41,
+            "CATEGORIA_2": 48,
+            "CATEGORIA_3": 30
+        },
+        {
+            "Quarter": "Q3",
+            "CATEGORIA_1": 25,
+            "CATEGORIA_2": 38,
+            "CATEGORIA_3": 13
+        },
+        {
+            "Quarter": "Q4",
+            "CATEGORIA_1": 47,
+            "CATEGORIA_2": 35,
+            "CATEGORIA_3": 41
+        }
+    ],
+    "output_data": [
+        {
+            "Quarter": "Q1",
+            "variable": "CATEGORIA_1",
+            "value": 19
+        },
+        {
+            "Quarter": "Q2",
+            "variable": "CATEGORIA_1",
+            "value": 41
+        },
+        {
+            "Quarter": "Q3",
+            "variable": "CATEGORIA_1",
+            "value": 25
+        },
+        {
+            "Quarter": "Q4",
+            "variable": "CATEGORIA_1",
+            "value": 47
+        },
+        {
+            "Quarter": "Q1",
+            "variable": "CATEGORIA_2",
+            "value": 26
+        },
+        {
+            "Quarter": "Q2",
+            "variable": "CATEGORIA_2",
+            "value": 48
+        },
+        {
+            "Quarter": "Q3",
+            "variable": "CATEGORIA_2",
+            "value": 38
+        },
+        {
+            "Quarter": "Q4",
+            "variable": "CATEGORIA_2",
+            "value": 35
+        },
+        {
+            "Quarter": "Q1",
+            "variable": "CATEGORIA_3",
+            "value": 34
+        },
+        {
+            "Quarter": "Q2",
+            "variable": "CATEGORIA_3",
+            "value": 30
+        },
+        {
+            "Quarter": "Q3",
+            "variable": "CATEGORIA_3",
+            "value": 13
+        },
+        {
+            "Quarter": "Q4",
+            "variable": "CATEGORIA_3",
+            "value": 41
+        },
+        {
+            "Quarter": "Q1",
+            "variable": "sum",
+            "value": 79
+        },
+        {
+            "Quarter": "Q2",
+            "variable": "sum",
+            "value": 119
+        },
+        {
+            "Quarter": "Q3",
+            "variable": "sum",
+            "value": 76
+        },
+        {
+            "Quarter": "Q4",
+            "variable": "sum",
+            "value": 123
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "bar"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"sum\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Quarter",
+                        "type": "ordinal"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"sum\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "Quarter",
+                        "type": "ordinal"
+                    }
+                }
+            }
+        ]
+    }
+}
