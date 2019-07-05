@@ -1,0 +1,267 @@
+{
+    "input_data": [
+        {
+            "From": "YAHOO",
+            "YAHOO": 0,
+            "MICROSOFT": 3.6,
+            "GOOGLE": 3.2,
+            "APPLE": 7.6,
+            "LINKEDIN": 43,
+            "FACEBOOK": 10.5,
+            "Total": 100
+        },
+        {
+            "From": "MICROSOFT",
+            "YAHOO": 0,
+            "MICROSOFT": 0,
+            "GOOGLE": 5.2,
+            "APPLE": 5,
+            "LINKEDIN": 22,
+            "FACEBOOK": 30.5,
+            "Total": 100
+        },
+        {
+            "From": "GOOGLE",
+            "YAHOO": 0,
+            "MICROSOFT": 0,
+            "GOOGLE": 0,
+            "APPLE": 0,
+            "LINKEDIN": 4.8,
+            "FACEBOOK": 15.5,
+            "Total": 100
+        },
+        {
+            "From": "APPLE",
+            "YAHOO": 0,
+            "MICROSOFT": 0,
+            "GOOGLE": 1.3,
+            "APPLE": 0,
+            "LINKEDIN": 1,
+            "FACEBOOK": 11,
+            "Total": 100
+        },
+        {
+            "From": "LINKEDIN",
+            "YAHOO": 0,
+            "MICROSOFT": 0,
+            "GOOGLE": 0,
+            "APPLE": 1,
+            "LINKEDIN": 0,
+            "FACEBOOK": 2,
+            "Total": 100
+        },
+        {
+            "From": "FACEBOOK",
+            "YAHOO": 0,
+            "MICROSOFT": 0,
+            "GOOGLE": 0,
+            "APPLE": 0,
+            "LINKEDIN": 0,
+            "FACEBOOK": 0,
+            "Total": 100
+        }
+    ],
+    "output_data": [
+        {
+            "From": "YAHOO",
+            "variable": "APPLE",
+            "value": 7.6
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "APPLE",
+            "value": 5.0
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "APPLE",
+            "value": 0.0
+        },
+        {
+            "From": "APPLE",
+            "variable": "APPLE",
+            "value": 0.0
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "APPLE",
+            "value": 1.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "APPLE",
+            "value": 0.0
+        },
+        {
+            "From": "YAHOO",
+            "variable": "FACEBOOK",
+            "value": 10.5
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "FACEBOOK",
+            "value": 30.5
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "FACEBOOK",
+            "value": 15.5
+        },
+        {
+            "From": "APPLE",
+            "variable": "FACEBOOK",
+            "value": 11.0
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "FACEBOOK",
+            "value": 2.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "FACEBOOK",
+            "value": 0.0
+        },
+        {
+            "From": "YAHOO",
+            "variable": "GOOGLE",
+            "value": 3.2
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "GOOGLE",
+            "value": 5.2
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "GOOGLE",
+            "value": 0.0
+        },
+        {
+            "From": "APPLE",
+            "variable": "GOOGLE",
+            "value": 1.3
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "GOOGLE",
+            "value": 0.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "GOOGLE",
+            "value": 0.0
+        },
+        {
+            "From": "YAHOO",
+            "variable": "LINKEDIN",
+            "value": 43.0
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "LINKEDIN",
+            "value": 22.0
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "LINKEDIN",
+            "value": 4.8
+        },
+        {
+            "From": "APPLE",
+            "variable": "LINKEDIN",
+            "value": 1.0
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "LINKEDIN",
+            "value": 0.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "LINKEDIN",
+            "value": 0.0
+        },
+        {
+            "From": "YAHOO",
+            "variable": "MICROSOFT",
+            "value": 3.6
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "MICROSOFT",
+            "value": 0.0
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "MICROSOFT",
+            "value": 0.0
+        },
+        {
+            "From": "APPLE",
+            "variable": "MICROSOFT",
+            "value": 0.0
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "MICROSOFT",
+            "value": 0.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "MICROSOFT",
+            "value": 0.0
+        },
+        {
+            "From": "YAHOO",
+            "variable": "YAHOO",
+            "value": 0.0
+        },
+        {
+            "From": "MICROSOFT",
+            "variable": "YAHOO",
+            "value": 0.0
+        },
+        {
+            "From": "GOOGLE",
+            "variable": "YAHOO",
+            "value": 0.0
+        },
+        {
+            "From": "APPLE",
+            "variable": "YAHOO",
+            "value": 0.0
+        },
+        {
+            "From": "LINKEDIN",
+            "variable": "YAHOO",
+            "value": 0.0
+        },
+        {
+            "From": "FACEBOOK",
+            "variable": "YAHOO",
+            "value": 0.0
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "bar"
+        },
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "From",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            }
+        }
+    }
+}

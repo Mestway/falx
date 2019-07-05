@@ -1,0 +1,342 @@
+{
+    "input_data": [
+        {
+            "label": "lbl_1",
+            "values": 0.153551431,
+            "total": 1
+        },
+        {
+            "label": "lbl_2",
+            "values": 0.741805486,
+            "total": 1
+        },
+        {
+            "label": "lbl_3",
+            "values": 0.32381391,
+            "total": 1
+        },
+        {
+            "label": "lbl_4",
+            "values": 0.075620532,
+            "total": 1
+        },
+        {
+            "label": "lbl_5",
+            "values": 0.176296896,
+            "total": 1
+        },
+        {
+            "label": "lbl_6",
+            "values": 0.005438126,
+            "total": 1
+        },
+        {
+            "label": "lbl_7",
+            "values": 0.117604158,
+            "total": 1
+        },
+        {
+            "label": "lbl_8",
+            "values": 0.159467748,
+            "total": 1
+        },
+        {
+            "label": "lbl_9",
+            "values": 0.5882263,
+            "total": 1
+        },
+        {
+            "label": "lbl_10",
+            "values": 0.381706123,
+            "total": 1
+        },
+        {
+            "label": "lbl_11",
+            "values": 0.669449386,
+            "total": 1
+        },
+        {
+            "label": "lbl_12",
+            "values": 0.494091711,
+            "total": 1
+        },
+        {
+            "label": "lbl_13",
+            "values": 0.963445705,
+            "total": 1
+        },
+        {
+            "label": "lbl_14",
+            "values": 0.385517587,
+            "total": 1
+        },
+        {
+            "label": "lbl_15",
+            "values": 0.353419627,
+            "total": 1
+        },
+        {
+            "label": "lbl_16",
+            "values": 0.844584991,
+            "total": 1
+        },
+        {
+            "label": "lbl_17",
+            "values": 0.345930413,
+            "total": 1
+        },
+        {
+            "label": "lbl_18",
+            "values": 0.36552746,
+            "total": 1
+        },
+        {
+            "label": "lbl_19",
+            "values": 0.606771366,
+            "total": 1
+        },
+        {
+            "label": "lbl_20",
+            "values": 0.62852597,
+            "total": 1
+        },
+        {
+            "label": "lbl_21",
+            "values": 0.969146287,
+            "total": 1
+        }
+    ],
+    "output_data": [
+        {
+            "label": "lbl_1",
+            "variable": "rest",
+            "value": 0.846448569
+        },
+        {
+            "label": "lbl_2",
+            "variable": "rest",
+            "value": 0.25819451400000004
+        },
+        {
+            "label": "lbl_3",
+            "variable": "rest",
+            "value": 0.6761860900000001
+        },
+        {
+            "label": "lbl_4",
+            "variable": "rest",
+            "value": 0.924379468
+        },
+        {
+            "label": "lbl_5",
+            "variable": "rest",
+            "value": 0.823703104
+        },
+        {
+            "label": "lbl_6",
+            "variable": "rest",
+            "value": 0.994561874
+        },
+        {
+            "label": "lbl_7",
+            "variable": "rest",
+            "value": 0.882395842
+        },
+        {
+            "label": "lbl_8",
+            "variable": "rest",
+            "value": 0.840532252
+        },
+        {
+            "label": "lbl_9",
+            "variable": "rest",
+            "value": 0.4117737
+        },
+        {
+            "label": "lbl_10",
+            "variable": "rest",
+            "value": 0.6182938769999999
+        },
+        {
+            "label": "lbl_11",
+            "variable": "rest",
+            "value": 0.33055061399999996
+        },
+        {
+            "label": "lbl_12",
+            "variable": "rest",
+            "value": 0.505908289
+        },
+        {
+            "label": "lbl_13",
+            "variable": "rest",
+            "value": 0.03655429499999996
+        },
+        {
+            "label": "lbl_14",
+            "variable": "rest",
+            "value": 0.614482413
+        },
+        {
+            "label": "lbl_15",
+            "variable": "rest",
+            "value": 0.6465803729999999
+        },
+        {
+            "label": "lbl_16",
+            "variable": "rest",
+            "value": 0.15541500900000005
+        },
+        {
+            "label": "lbl_17",
+            "variable": "rest",
+            "value": 0.654069587
+        },
+        {
+            "label": "lbl_18",
+            "variable": "rest",
+            "value": 0.63447254
+        },
+        {
+            "label": "lbl_19",
+            "variable": "rest",
+            "value": 0.39322863399999997
+        },
+        {
+            "label": "lbl_20",
+            "variable": "rest",
+            "value": 0.37147403
+        },
+        {
+            "label": "lbl_21",
+            "variable": "rest",
+            "value": 0.03085371299999995
+        },
+        {
+            "label": "lbl_1",
+            "variable": "values",
+            "value": 0.153551431
+        },
+        {
+            "label": "lbl_2",
+            "variable": "values",
+            "value": 0.741805486
+        },
+        {
+            "label": "lbl_3",
+            "variable": "values",
+            "value": 0.32381391
+        },
+        {
+            "label": "lbl_4",
+            "variable": "values",
+            "value": 0.075620532
+        },
+        {
+            "label": "lbl_5",
+            "variable": "values",
+            "value": 0.176296896
+        },
+        {
+            "label": "lbl_6",
+            "variable": "values",
+            "value": 0.005438126
+        },
+        {
+            "label": "lbl_7",
+            "variable": "values",
+            "value": 0.117604158
+        },
+        {
+            "label": "lbl_8",
+            "variable": "values",
+            "value": 0.159467748
+        },
+        {
+            "label": "lbl_9",
+            "variable": "values",
+            "value": 0.5882263
+        },
+        {
+            "label": "lbl_10",
+            "variable": "values",
+            "value": 0.381706123
+        },
+        {
+            "label": "lbl_11",
+            "variable": "values",
+            "value": 0.669449386
+        },
+        {
+            "label": "lbl_12",
+            "variable": "values",
+            "value": 0.494091711
+        },
+        {
+            "label": "lbl_13",
+            "variable": "values",
+            "value": 0.963445705
+        },
+        {
+            "label": "lbl_14",
+            "variable": "values",
+            "value": 0.385517587
+        },
+        {
+            "label": "lbl_15",
+            "variable": "values",
+            "value": 0.353419627
+        },
+        {
+            "label": "lbl_16",
+            "variable": "values",
+            "value": 0.844584991
+        },
+        {
+            "label": "lbl_17",
+            "variable": "values",
+            "value": 0.345930413
+        },
+        {
+            "label": "lbl_18",
+            "variable": "values",
+            "value": 0.36552746
+        },
+        {
+            "label": "lbl_19",
+            "variable": "values",
+            "value": 0.606771366
+        },
+        {
+            "label": "lbl_20",
+            "variable": "values",
+            "value": 0.62852597
+        },
+        {
+            "label": "lbl_21",
+            "variable": "values",
+            "value": 0.969146287
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "bar"
+        },
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "label",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+{
+    "input_data": [
+        {
+            "title": "Preparing monthly forecast",
+            "work": 20,
+            "hobby": 0
+        },
+        {
+            "title": "Margin and Product cost analysis",
+            "work": 15,
+            "hobby": 0
+        },
+        {
+            "title": "Excel and Access development",
+            "work": 10,
+            "hobby": 0
+        },
+        {
+            "title": "Excel trainings",
+            "work": 5,
+            "hobby": 50
+        },
+        {
+            "title": "Beadworks",
+            "work": 50,
+            "hobby": 8
+        },
+        {
+            "title": "Sewing",
+            "work": 0,
+            "hobby": 9
+        },
+        {
+            "title": "Fiddling with Excel",
+            "work": 0,
+            "hobby": 18
+        },
+        {
+            "title": "Managing Excel Hero group on Linked In",
+            "work": 0,
+            "hobby": 16
+        }
+    ],
+    "output_data": [
+        {
+            "title": "Preparing monthly forecast",
+            "variable": "work",
+            "value": 20
+        },
+        {
+            "title": "Margin and Product cost analysis",
+            "variable": "work",
+            "value": 15
+        },
+        {
+            "title": "Excel and Access development",
+            "variable": "work",
+            "value": 10
+        },
+        {
+            "title": "Excel trainings",
+            "variable": "work",
+            "value": 5
+        },
+        {
+            "title": "Beadworks",
+            "variable": "work",
+            "value": 50
+        },
+        {
+            "title": "Sewing",
+            "variable": "work",
+            "value": 0
+        },
+        {
+            "title": "Fiddling with Excel",
+            "variable": "work",
+            "value": 0
+        },
+        {
+            "title": "Managing Excel Hero group on Linked In",
+            "variable": "work",
+            "value": 0
+        },
+        {
+            "title": "Preparing monthly forecast",
+            "variable": "hobby",
+            "value": 0
+        },
+        {
+            "title": "Margin and Product cost analysis",
+            "variable": "hobby",
+            "value": 0
+        },
+        {
+            "title": "Excel and Access development",
+            "variable": "hobby",
+            "value": 0
+        },
+        {
+            "title": "Excel trainings",
+            "variable": "hobby",
+            "value": 50
+        },
+        {
+            "title": "Beadworks",
+            "variable": "hobby",
+            "value": 8
+        },
+        {
+            "title": "Sewing",
+            "variable": "hobby",
+            "value": 9
+        },
+        {
+            "title": "Fiddling with Excel",
+            "variable": "hobby",
+            "value": 18
+        },
+        {
+            "title": "Managing Excel Hero group on Linked In",
+            "variable": "hobby",
+            "value": 16
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "bar"
+        },
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "title",
+                "type": "nominal"
+            }
+        }
+    }
+}

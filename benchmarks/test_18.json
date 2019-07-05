@@ -1,0 +1,472 @@
+{
+    "input_data": [
+        {
+            "label": 1,
+            "y0": 50,
+            "y1": 46,
+            "y2": 14,
+            "int x1": 0,
+            "int x2": 0,
+            "int x3": 0,
+            "int y1": 46.34,
+            "int y2": 42.3,
+            "int y3": -78
+        },
+        {
+            "label": 2,
+            "y0": 82,
+            "y1": 43,
+            "y2": 37,
+            "int x1": 0,
+            "int x2": 24.21,
+            "int x3": 0,
+            "int y1": -9,
+            "int y2": 39.57,
+            "int y3": 50.5
+        },
+        {
+            "label": 3,
+            "y0": 54,
+            "y1": 27,
+            "y2": 49,
+            "int x1": 25.93,
+            "int x2": 25.28,
+            "int x3": 0,
+            "int y1": 81.93,
+            "int y2": 43.64,
+            "int y3": 50.93
+        },
+        {
+            "label": 4,
+            "y0": 84,
+            "y1": 86,
+            "y2": 30,
+            "int x1": 26.33,
+            "int x2": 26.5,
+            "int x3": 26.51,
+            "int y1": 58.66,
+            "int y2": 44.25,
+            "int y3": 44.53
+        },
+        {
+            "label": 5,
+            "y0": 8,
+            "y1": 4,
+            "y2": 58,
+            "int x1": 27.08,
+            "int x2": 27.78,
+            "int x3": 0,
+            "int y1": 11.33,
+            "int y2": 72.86,
+            "int y3": 103.23
+        },
+        {
+            "label": 6,
+            "y0": 48,
+            "y1": 92,
+            "y2": 77,
+            "int x1": 28.53,
+            "int x2": 28.31,
+            "int x3": 28.85,
+            "int y1": 62.48,
+            "int y2": 74.81,
+            "int y3": 71.02
+        },
+        {
+            "label": 7,
+            "y0": 75,
+            "y1": 37,
+            "y2": 70,
+            "int x1": 0,
+            "int x2": 0,
+            "int x3": 0,
+            "int y1": 84.5,
+            "int y2": 13.42,
+            "int y3": 75.45
+        },
+        {
+            "label": 8,
+            "y0": 74,
+            "y1": 32,
+            "y2": 58,
+            "int x1": 0,
+            "int x2": 0,
+            "int x3": 0,
+            "int y1": 0,
+            "int y2": 0,
+            "int y3": 0
+        }
+    ],
+    "output_data": [
+        {
+            "label": 1,
+            "variable": "int x1",
+            "value": 0.0
+        },
+        {
+            "label": 2,
+            "variable": "int x1",
+            "value": 0.0
+        },
+        {
+            "label": 3,
+            "variable": "int x1",
+            "value": 25.93
+        },
+        {
+            "label": 4,
+            "variable": "int x1",
+            "value": 26.33
+        },
+        {
+            "label": 5,
+            "variable": "int x1",
+            "value": 27.08
+        },
+        {
+            "label": 6,
+            "variable": "int x1",
+            "value": 28.53
+        },
+        {
+            "label": 7,
+            "variable": "int x1",
+            "value": 0.0
+        },
+        {
+            "label": 8,
+            "variable": "int x1",
+            "value": 0.0
+        },
+        {
+            "label": 1,
+            "variable": "int x2",
+            "value": 0.0
+        },
+        {
+            "label": 2,
+            "variable": "int x2",
+            "value": 24.21
+        },
+        {
+            "label": 3,
+            "variable": "int x2",
+            "value": 25.28
+        },
+        {
+            "label": 4,
+            "variable": "int x2",
+            "value": 26.5
+        },
+        {
+            "label": 5,
+            "variable": "int x2",
+            "value": 27.78
+        },
+        {
+            "label": 6,
+            "variable": "int x2",
+            "value": 28.31
+        },
+        {
+            "label": 7,
+            "variable": "int x2",
+            "value": 0.0
+        },
+        {
+            "label": 8,
+            "variable": "int x2",
+            "value": 0.0
+        },
+        {
+            "label": 1,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 2,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 3,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 4,
+            "variable": "int x3",
+            "value": 26.51
+        },
+        {
+            "label": 5,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 6,
+            "variable": "int x3",
+            "value": 28.85
+        },
+        {
+            "label": 7,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 8,
+            "variable": "int x3",
+            "value": 0.0
+        },
+        {
+            "label": 1,
+            "variable": "int y1",
+            "value": 46.34
+        },
+        {
+            "label": 2,
+            "variable": "int y1",
+            "value": -9.0
+        },
+        {
+            "label": 3,
+            "variable": "int y1",
+            "value": 81.93
+        },
+        {
+            "label": 4,
+            "variable": "int y1",
+            "value": 58.66
+        },
+        {
+            "label": 5,
+            "variable": "int y1",
+            "value": 11.33
+        },
+        {
+            "label": 6,
+            "variable": "int y1",
+            "value": 62.48
+        },
+        {
+            "label": 7,
+            "variable": "int y1",
+            "value": 84.5
+        },
+        {
+            "label": 8,
+            "variable": "int y1",
+            "value": 0.0
+        },
+        {
+            "label": 1,
+            "variable": "int y2",
+            "value": 42.3
+        },
+        {
+            "label": 2,
+            "variable": "int y2",
+            "value": 39.57
+        },
+        {
+            "label": 3,
+            "variable": "int y2",
+            "value": 43.64
+        },
+        {
+            "label": 4,
+            "variable": "int y2",
+            "value": 44.25
+        },
+        {
+            "label": 5,
+            "variable": "int y2",
+            "value": 72.86
+        },
+        {
+            "label": 6,
+            "variable": "int y2",
+            "value": 74.81
+        },
+        {
+            "label": 7,
+            "variable": "int y2",
+            "value": 13.42
+        },
+        {
+            "label": 8,
+            "variable": "int y2",
+            "value": 0.0
+        },
+        {
+            "label": 1,
+            "variable": "y0",
+            "value": 50.0
+        },
+        {
+            "label": 2,
+            "variable": "y0",
+            "value": 82.0
+        },
+        {
+            "label": 3,
+            "variable": "y0",
+            "value": 54.0
+        },
+        {
+            "label": 4,
+            "variable": "y0",
+            "value": 84.0
+        },
+        {
+            "label": 5,
+            "variable": "y0",
+            "value": 8.0
+        },
+        {
+            "label": 6,
+            "variable": "y0",
+            "value": 48.0
+        },
+        {
+            "label": 7,
+            "variable": "y0",
+            "value": 75.0
+        },
+        {
+            "label": 8,
+            "variable": "y0",
+            "value": 74.0
+        },
+        {
+            "label": 1,
+            "variable": "y1",
+            "value": 46.0
+        },
+        {
+            "label": 2,
+            "variable": "y1",
+            "value": 43.0
+        },
+        {
+            "label": 3,
+            "variable": "y1",
+            "value": 27.0
+        },
+        {
+            "label": 4,
+            "variable": "y1",
+            "value": 86.0
+        },
+        {
+            "label": 5,
+            "variable": "y1",
+            "value": 4.0
+        },
+        {
+            "label": 6,
+            "variable": "y1",
+            "value": 92.0
+        },
+        {
+            "label": 7,
+            "variable": "y1",
+            "value": 37.0
+        },
+        {
+            "label": 8,
+            "variable": "y1",
+            "value": 32.0
+        },
+        {
+            "label": 1,
+            "variable": "y2",
+            "value": 14.0
+        },
+        {
+            "label": 2,
+            "variable": "y2",
+            "value": 37.0
+        },
+        {
+            "label": 3,
+            "variable": "y2",
+            "value": 49.0
+        },
+        {
+            "label": 4,
+            "variable": "y2",
+            "value": 30.0
+        },
+        {
+            "label": 5,
+            "variable": "y2",
+            "value": 58.0
+        },
+        {
+            "label": 6,
+            "variable": "y2",
+            "value": 77.0
+        },
+        {
+            "label": 7,
+            "variable": "y2",
+            "value": 70.0
+        },
+        {
+            "label": 8,
+            "variable": "y2",
+            "value": 58.0
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "layer": [
+            {
+                "mark": {
+                    "opacity": 0.4,
+                    "type": "line"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"y0\" || datum.variable == \"y1\" || datum.variable == \"y2\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "label",
+                        "type": "ordinal"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "point"
+                },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"y0\" && datum.variable != \"y1\" && datum.variable != \"y2\""
+                    }
+                ],
+                "encoding": {
+                    "y": {
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "x": {
+                        "field": "label",
+                        "type": "ordinal"
+                    }
+                }
+            }
+        ]
+    }
+}

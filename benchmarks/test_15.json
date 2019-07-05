@@ -1,0 +1,117 @@
+{
+    "input_data": [
+        {
+            "Age": "0-18",
+            "FEMALE 37%": 3,
+            "MALE 63%": 6
+        },
+        {
+            "Age": "18-24",
+            "FEMALE 37%": 8,
+            "MALE 63%": 15
+        },
+        {
+            "Age": "25-34",
+            "FEMALE 37%": 13,
+            "MALE 63%": 22
+        },
+        {
+            "Age": "35-44",
+            "FEMALE 37%": 5,
+            "MALE 63%": 10
+        },
+        {
+            "Age": "24-54",
+            "FEMALE 37%": 5,
+            "MALE 63%": 6
+        },
+        {
+            "Age": "55+",
+            "FEMALE 37%": 3,
+            "MALE 63%": 4
+        }
+    ],
+    "output_data": [
+        {
+            "Age": "0-18",
+            "variable": "FEMALE 37%",
+            "value": 3
+        },
+        {
+            "Age": "18-24",
+            "variable": "FEMALE 37%",
+            "value": 8
+        },
+        {
+            "Age": "25-34",
+            "variable": "FEMALE 37%",
+            "value": 13
+        },
+        {
+            "Age": "35-44",
+            "variable": "FEMALE 37%",
+            "value": 5
+        },
+        {
+            "Age": "24-54",
+            "variable": "FEMALE 37%",
+            "value": 5
+        },
+        {
+            "Age": "55+",
+            "variable": "FEMALE 37%",
+            "value": 3
+        },
+        {
+            "Age": "0-18",
+            "variable": "MALE 63%",
+            "value": 6
+        },
+        {
+            "Age": "18-24",
+            "variable": "MALE 63%",
+            "value": 15
+        },
+        {
+            "Age": "25-34",
+            "variable": "MALE 63%",
+            "value": 22
+        },
+        {
+            "Age": "35-44",
+            "variable": "MALE 63%",
+            "value": 10
+        },
+        {
+            "Age": "24-54",
+            "variable": "MALE 63%",
+            "value": 6
+        },
+        {
+            "Age": "55+",
+            "variable": "MALE 63%",
+            "value": 4
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "opacity": 0.4,
+            "type": "bar"
+        },
+        "encoding": {
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            },
+            "x": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "Age",
+                "type": "nominal"
+            }
+        }
+    }
+}
