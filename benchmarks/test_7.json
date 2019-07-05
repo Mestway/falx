@@ -1,0 +1,914 @@
+{
+    "input_data": [
+        {
+            "name": "Mister_1",
+            "category": "Freshman",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_3",
+            "category": "Freshman",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_4",
+            "category": "Freshman",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_5",
+            "category": "Freshman",
+            "sport": "Climbing",
+            "priority": 1
+        },
+        {
+            "name": "Mister_6",
+            "category": "Freshman",
+            "sport": "Climbing",
+            "priority": 1
+        },
+        {
+            "name": "Mister_7",
+            "category": "Freshman",
+            "sport": "Climbing",
+            "priority": 1
+        },
+        {
+            "name": "Mister_6",
+            "category": "Freshman",
+            "sport": "Fencing",
+            "priority": 2
+        },
+        {
+            "name": "Mister_7",
+            "category": "Freshman",
+            "sport": "Fencing",
+            "priority": 2
+        },
+        {
+            "name": "Mister_2",
+            "category": "Freshman",
+            "sport": "Football",
+            "priority": 1
+        },
+        {
+            "name": "Mister_1",
+            "category": "Freshman",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_4",
+            "category": "Freshman",
+            "sport": "Golf",
+            "priority": 2
+        },
+        {
+            "name": "Mister_6",
+            "category": "Freshman",
+            "sport": "Golf",
+            "priority": 3
+        },
+        {
+            "name": "Mister_7",
+            "category": "Freshman",
+            "sport": "Golf",
+            "priority": 3
+        },
+        {
+            "name": "Mister_6",
+            "category": "Freshman",
+            "sport": "Gymnastics",
+            "priority": 4
+        },
+        {
+            "name": "Mister_7",
+            "category": "Freshman",
+            "sport": "Gymnastics",
+            "priority": 4
+        },
+        {
+            "name": "Mister_3",
+            "category": "Freshman",
+            "sport": "Sci",
+            "priority": 2
+        },
+        {
+            "name": "Mister_3",
+            "category": "Freshman",
+            "sport": "Swimming",
+            "priority": 3
+        },
+        {
+            "name": "Mister_4",
+            "category": "Freshman",
+            "sport": "Swimming",
+            "priority": 3
+        },
+        {
+            "name": "Mister_4",
+            "category": "Freshman",
+            "sport": "Tennis",
+            "priority": 4
+        },
+        {
+            "name": "Mister_6",
+            "category": "Freshman",
+            "sport": "Tennis",
+            "priority": 5
+        },
+        {
+            "name": "Mister_7",
+            "category": "Freshman",
+            "sport": "Tennis",
+            "priority": 5
+        },
+        {
+            "name": "Mister_3",
+            "category": "Freshman",
+            "sport": "Volleyball",
+            "priority": 4
+        },
+        {
+            "name": "Mister_4",
+            "category": "Freshman",
+            "sport": "Volleyball",
+            "priority": 5
+        },
+        {
+            "name": "Mister_8",
+            "category": "Sophomores",
+            "sport": "Climbing",
+            "priority": 1
+        },
+        {
+            "name": "Mister_9",
+            "category": "Sophomores",
+            "sport": "Fencing",
+            "priority": 1
+        },
+        {
+            "name": "Mister_8",
+            "category": "Sophomores",
+            "sport": "Fencing",
+            "priority": 2
+        },
+        {
+            "name": "Mister_9",
+            "category": "Sophomores",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_11",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_12",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_14",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_16",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_17",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_18",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_19",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_20",
+            "category": "Juniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_10",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 1
+        },
+        {
+            "name": "Mister_13",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 1
+        },
+        {
+            "name": "Mister_15",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 1
+        },
+        {
+            "name": "Mister_11",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_12",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_14",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_16",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_17",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_18",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_19",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_20",
+            "category": "Juniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_11",
+            "category": "Juniors",
+            "sport": "Golf",
+            "priority": 3
+        },
+        {
+            "name": "Mister_20",
+            "category": "Juniors",
+            "sport": "Golf",
+            "priority": 3
+        },
+        {
+            "name": "Mister_12",
+            "category": "Juniors",
+            "sport": "Gymnastics",
+            "priority": 3
+        },
+        {
+            "name": "Mister_14",
+            "category": "Juniors",
+            "sport": "Gymnastics",
+            "priority": 3
+        },
+        {
+            "name": "Mister_11",
+            "category": "Juniors",
+            "sport": "Gymnastics",
+            "priority": 4
+        },
+        {
+            "name": "Mister_12",
+            "category": "Juniors",
+            "sport": "Sci",
+            "priority": 4
+        },
+        {
+            "name": "Mister_11",
+            "category": "Juniors",
+            "sport": "Tennis",
+            "priority": 5
+        },
+        {
+            "name": "Mister_19",
+            "category": "Juniors",
+            "sport": "Volleyball",
+            "priority": 3
+        },
+        {
+            "name": "Mister_20",
+            "category": "Juniors",
+            "sport": "Volleyball",
+            "priority": 4
+        },
+        {
+            "name": "Mister_21",
+            "category": "Seniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_22",
+            "category": "Seniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_23",
+            "category": "Seniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_24",
+            "category": "Seniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_25",
+            "category": "Seniors",
+            "sport": "Basket",
+            "priority": 1
+        },
+        {
+            "name": "Mister_21",
+            "category": "Seniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_22",
+            "category": "Seniors",
+            "sport": "Football",
+            "priority": 2
+        },
+        {
+            "name": "Mister_23",
+            "category": "Seniors",
+            "sport": "Swimming",
+            "priority": 2
+        },
+        {
+            "name": "Mister_24",
+            "category": "Seniors",
+            "sport": "Swimming",
+            "priority": 2
+        },
+        {
+            "name": "Mister_25",
+            "category": "Seniors",
+            "sport": "Swimming",
+            "priority": 2
+        },
+        {
+            "name": "Mister_22",
+            "category": "Seniors",
+            "sport": "Volleyball",
+            "priority": 3
+        },
+        {
+            "name": "Mister_23",
+            "category": "Seniors",
+            "sport": "Volleyball",
+            "priority": 3
+        },
+        {
+            "name": "Mister_24",
+            "category": "Seniors",
+            "sport": "Volleyball",
+            "priority": 3
+        }
+    ],
+    "output_data": [
+        {
+            "category": "Freshman",
+            "name": "Mister_1",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_3",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_4",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_5",
+            "priority": 1,
+            "sport": "Climbing",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_6",
+            "priority": 1,
+            "sport": "Climbing",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_7",
+            "priority": 1,
+            "sport": "Climbing",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_6",
+            "priority": 2,
+            "sport": "Fencing",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_7",
+            "priority": 2,
+            "sport": "Fencing",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_2",
+            "priority": 1,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_1",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_4",
+            "priority": 2,
+            "sport": "Golf",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_6",
+            "priority": 3,
+            "sport": "Golf",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_7",
+            "priority": 3,
+            "sport": "Golf",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_6",
+            "priority": 4,
+            "sport": "Gymnastics",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_7",
+            "priority": 4,
+            "sport": "Gymnastics",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_3",
+            "priority": 2,
+            "sport": "Sci",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_3",
+            "priority": 3,
+            "sport": "Swimming",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_4",
+            "priority": 3,
+            "sport": "Swimming",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_4",
+            "priority": 4,
+            "sport": "Tennis",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_6",
+            "priority": 5,
+            "sport": "Tennis",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_7",
+            "priority": 5,
+            "sport": "Tennis",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_3",
+            "priority": 4,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Freshman",
+            "name": "Mister_4",
+            "priority": 5,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Sophomores",
+            "name": "Mister_8",
+            "priority": 1,
+            "sport": "Climbing",
+            "highlight": true
+        },
+        {
+            "category": "Sophomores",
+            "name": "Mister_9",
+            "priority": 1,
+            "sport": "Fencing",
+            "highlight": true
+        },
+        {
+            "category": "Sophomores",
+            "name": "Mister_8",
+            "priority": 2,
+            "sport": "Fencing",
+            "highlight": true
+        },
+        {
+            "category": "Sophomores",
+            "name": "Mister_9",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": true
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_11",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_12",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_14",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_16",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_17",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_18",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_19",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_20",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_10",
+            "priority": 1,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_13",
+            "priority": 1,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_15",
+            "priority": 1,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_11",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_12",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_14",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_16",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_17",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_18",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_19",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_20",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_11",
+            "priority": 3,
+            "sport": "Golf",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_20",
+            "priority": 3,
+            "sport": "Golf",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_12",
+            "priority": 3,
+            "sport": "Gymnastics",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_14",
+            "priority": 3,
+            "sport": "Gymnastics",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_11",
+            "priority": 4,
+            "sport": "Gymnastics",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_12",
+            "priority": 4,
+            "sport": "Sci",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_11",
+            "priority": 5,
+            "sport": "Tennis",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_19",
+            "priority": 3,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Juniors",
+            "name": "Mister_20",
+            "priority": 4,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_21",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_22",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_23",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_24",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_25",
+            "priority": 1,
+            "sport": "Basket",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_21",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_22",
+            "priority": 2,
+            "sport": "Football",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_23",
+            "priority": 2,
+            "sport": "Swimming",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_24",
+            "priority": 2,
+            "sport": "Swimming",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_25",
+            "priority": 2,
+            "sport": "Swimming",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_22",
+            "priority": 3,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_23",
+            "priority": 3,
+            "sport": "Volleyball",
+            "highlight": false
+        },
+        {
+            "category": "Seniors",
+            "name": "Mister_24",
+            "priority": 3,
+            "sport": "Volleyball",
+            "highlight": false
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "sport",
+                "type": "nominal"
+            },
+            "color": {
+                "field": "highlight",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "category",
+                "type": "nominal"
+            },
+            "column": {
+                "field": "priority",
+                "type": "nominal"
+            }
+        }
+    }
+}

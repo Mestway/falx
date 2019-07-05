@@ -1,0 +1,110 @@
+{
+    "input_data": [
+        {
+            "id": "valore1",
+            "ageFrom": 0,
+            "ageTo": 10,
+            "qt": 5
+        },
+        {
+            "id": "valore2",
+            "ageFrom": 10,
+            "ageTo": 15,
+            "qt": 12
+        },
+        {
+            "id": "valore3",
+            "ageFrom": 15,
+            "ageTo": 30,
+            "qt": 74
+        },
+        {
+            "id": "valore4",
+            "ageFrom": 30,
+            "ageTo": 40,
+            "qt": 12
+        },
+        {
+            "id": "valore5",
+            "ageFrom": 40,
+            "ageTo": 99,
+            "qt": 8
+        },
+        {
+            "id": "valore6",
+            "ageFrom": 99,
+            "ageTo": 120,
+            "qt": 15
+        }
+    ],
+    "output_data": [
+        {
+            "ageFrom": 0,
+            "ageTo": 10,
+            "id": "valore1",
+            "qt": 5,
+            "range": 10,
+            "label": "0_10"
+        },
+        {
+            "ageFrom": 10,
+            "ageTo": 15,
+            "id": "valore2",
+            "qt": 12,
+            "range": 5,
+            "label": "10_15"
+        },
+        {
+            "ageFrom": 15,
+            "ageTo": 30,
+            "id": "valore3",
+            "qt": 74,
+            "range": 15,
+            "label": "15_30"
+        },
+        {
+            "ageFrom": 30,
+            "ageTo": 40,
+            "id": "valore4",
+            "qt": 12,
+            "range": 10,
+            "label": "30_40"
+        },
+        {
+            "ageFrom": 40,
+            "ageTo": 99,
+            "id": "valore5",
+            "qt": 8,
+            "range": 59,
+            "label": "40_99"
+        },
+        {
+            "ageFrom": 99,
+            "ageTo": 120,
+            "id": "valore6",
+            "qt": 15,
+            "range": 21,
+            "label": "99_120"
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "bar"
+        },
+        "encoding": {
+            "x": {
+                "field": "label",
+                "type": "ordinal"
+            },
+            "size": {
+                "field": "range",
+                "type": "quantitative"
+            },
+            "y": {
+                "field": "qt",
+                "type": "quantitative"
+            }
+        }
+    }
+}
