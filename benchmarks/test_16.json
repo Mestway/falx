@@ -2,320 +2,320 @@
     "input_data": [
         {
             "label": "lbl_1",
-            "values": 0.153551431,
-            "total": 1
+            "values": 15,
+            "total": 100
         },
         {
             "label": "lbl_2",
-            "values": 0.741805486,
-            "total": 1
+            "values": 74,
+            "total": 100
         },
         {
             "label": "lbl_3",
-            "values": 0.32381391,
-            "total": 1
+            "values": 32,
+            "total": 100
         },
         {
             "label": "lbl_4",
-            "values": 0.075620532,
-            "total": 1
+            "values": 7,
+            "total": 100
         },
         {
             "label": "lbl_5",
-            "values": 0.176296896,
-            "total": 1
+            "values": 17,
+            "total": 100
         },
         {
             "label": "lbl_6",
-            "values": 0.005438126,
-            "total": 1
+            "values": 0,
+            "total": 100
         },
         {
             "label": "lbl_7",
-            "values": 0.117604158,
-            "total": 1
+            "values": 11,
+            "total": 100
         },
         {
             "label": "lbl_8",
-            "values": 0.159467748,
-            "total": 1
+            "values": 15,
+            "total": 100
         },
         {
             "label": "lbl_9",
-            "values": 0.5882263,
-            "total": 1
+            "values": 58,
+            "total": 100
         },
         {
             "label": "lbl_10",
-            "values": 0.381706123,
-            "total": 1
+            "values": 38,
+            "total": 100
         },
         {
             "label": "lbl_11",
-            "values": 0.669449386,
-            "total": 1
+            "values": 66,
+            "total": 100
         },
         {
             "label": "lbl_12",
-            "values": 0.494091711,
-            "total": 1
+            "values": 49,
+            "total": 100
         },
         {
             "label": "lbl_13",
-            "values": 0.963445705,
-            "total": 1
+            "values": 96,
+            "total": 100
         },
         {
             "label": "lbl_14",
-            "values": 0.385517587,
-            "total": 1
+            "values": 38,
+            "total": 100
         },
         {
             "label": "lbl_15",
-            "values": 0.353419627,
-            "total": 1
+            "values": 35,
+            "total": 100
         },
         {
             "label": "lbl_16",
-            "values": 0.844584991,
-            "total": 1
+            "values": 84,
+            "total": 100
         },
         {
             "label": "lbl_17",
-            "values": 0.345930413,
-            "total": 1
+            "values": 34,
+            "total": 100
         },
         {
             "label": "lbl_18",
-            "values": 0.36552746,
-            "total": 1
+            "values": 36,
+            "total": 100
         },
         {
             "label": "lbl_19",
-            "values": 0.606771366,
-            "total": 1
+            "values": 60,
+            "total": 100
         },
         {
             "label": "lbl_20",
-            "values": 0.62852597,
-            "total": 1
+            "values": 62,
+            "total": 100
         },
         {
             "label": "lbl_21",
-            "values": 0.969146287,
-            "total": 1
+            "values": 96,
+            "total": 100
         }
     ],
     "output_data": [
         {
             "label": "lbl_1",
             "variable": "mutate_a",
-            "value": 0.846448569
+            "value": 85
         },
         {
             "label": "lbl_2",
             "variable": "mutate_a",
-            "value": 0.25819451400000004
+            "value": 26
         },
         {
             "label": "lbl_3",
             "variable": "mutate_a",
-            "value": 0.6761860900000001
+            "value": 68
         },
         {
             "label": "lbl_4",
             "variable": "mutate_a",
-            "value": 0.924379468
+            "value": 93
         },
         {
             "label": "lbl_5",
             "variable": "mutate_a",
-            "value": 0.823703104
+            "value": 83
         },
         {
             "label": "lbl_6",
             "variable": "mutate_a",
-            "value": 0.994561874
+            "value": 100
         },
         {
             "label": "lbl_7",
             "variable": "mutate_a",
-            "value": 0.882395842
+            "value": 89
         },
         {
             "label": "lbl_8",
             "variable": "mutate_a",
-            "value": 0.840532252
+            "value": 85
         },
         {
             "label": "lbl_9",
             "variable": "mutate_a",
-            "value": 0.4117737
+            "value": 42
         },
         {
             "label": "lbl_10",
             "variable": "mutate_a",
-            "value": 0.6182938769999999
+            "value": 62
         },
         {
             "label": "lbl_11",
             "variable": "mutate_a",
-            "value": 0.33055061399999996
+            "value": 34
         },
         {
             "label": "lbl_12",
             "variable": "mutate_a",
-            "value": 0.505908289
+            "value": 51
         },
         {
             "label": "lbl_13",
             "variable": "mutate_a",
-            "value": 0.03655429499999996
+            "value": 4
         },
         {
             "label": "lbl_14",
             "variable": "mutate_a",
-            "value": 0.614482413
+            "value": 62
         },
         {
             "label": "lbl_15",
             "variable": "mutate_a",
-            "value": 0.6465803729999999
+            "value": 65
         },
         {
             "label": "lbl_16",
             "variable": "mutate_a",
-            "value": 0.15541500900000005
+            "value": 16
         },
         {
             "label": "lbl_17",
             "variable": "mutate_a",
-            "value": 0.654069587
+            "value": 66
         },
         {
             "label": "lbl_18",
             "variable": "mutate_a",
-            "value": 0.63447254
+            "value": 64
         },
         {
             "label": "lbl_19",
             "variable": "mutate_a",
-            "value": 0.39322863399999997
+            "value": 40
         },
         {
             "label": "lbl_20",
             "variable": "mutate_a",
-            "value": 0.37147403
+            "value": 38
         },
         {
             "label": "lbl_21",
             "variable": "mutate_a",
-            "value": 0.03085371299999995
+            "value": 4
         },
         {
             "label": "lbl_1",
             "variable": "values",
-            "value": 0.153551431
+            "value": 15
         },
         {
             "label": "lbl_2",
             "variable": "values",
-            "value": 0.741805486
+            "value": 74
         },
         {
             "label": "lbl_3",
             "variable": "values",
-            "value": 0.32381391
+            "value": 32
         },
         {
             "label": "lbl_4",
             "variable": "values",
-            "value": 0.075620532
+            "value": 7
         },
         {
             "label": "lbl_5",
             "variable": "values",
-            "value": 0.176296896
+            "value": 17
         },
         {
             "label": "lbl_6",
             "variable": "values",
-            "value": 0.005438126
+            "value": 0
         },
         {
             "label": "lbl_7",
             "variable": "values",
-            "value": 0.117604158
+            "value": 11
         },
         {
             "label": "lbl_8",
             "variable": "values",
-            "value": 0.159467748
+            "value": 15
         },
         {
             "label": "lbl_9",
             "variable": "values",
-            "value": 0.5882263
+            "value": 58
         },
         {
             "label": "lbl_10",
             "variable": "values",
-            "value": 0.381706123
+            "value": 38
         },
         {
             "label": "lbl_11",
             "variable": "values",
-            "value": 0.669449386
+            "value": 66
         },
         {
             "label": "lbl_12",
             "variable": "values",
-            "value": 0.494091711
+            "value": 49
         },
         {
             "label": "lbl_13",
             "variable": "values",
-            "value": 0.963445705
+            "value": 96
         },
         {
             "label": "lbl_14",
             "variable": "values",
-            "value": 0.385517587
+            "value": 38
         },
         {
             "label": "lbl_15",
             "variable": "values",
-            "value": 0.353419627
+            "value": 35
         },
         {
             "label": "lbl_16",
             "variable": "values",
-            "value": 0.844584991
+            "value": 84
         },
         {
             "label": "lbl_17",
             "variable": "values",
-            "value": 0.345930413
+            "value": 34
         },
         {
             "label": "lbl_18",
             "variable": "values",
-            "value": 0.36552746
+            "value": 36
         },
         {
             "label": "lbl_19",
             "variable": "values",
-            "value": 0.606771366
+            "value": 60
         },
         {
             "label": "lbl_20",
             "variable": "values",
-            "value": 0.62852597
+            "value": 62
         },
         {
             "label": "lbl_21",
             "variable": "values",
-            "value": 0.969146287
+            "value": 96
         }
     ],
     "vl_spec": {
