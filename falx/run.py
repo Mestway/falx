@@ -2,7 +2,9 @@ import argparse
 import json
 import pandas as pd
 import os
+import datetime
 from pprint import pprint
+import subprocess
 
 from chart import VisDesign
 from eval_interface import FalxEvalInterface
@@ -20,8 +22,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
 parser.add_argument("--data_id", dest="data_id", default="001", 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
+parser.add_argument("--num_samples", dest="num_samples", default=4, type=int, help="the number of samples")
 
-def test_benchmarks(data_dir, data_id, num_samples=4):
+def test_benchmarks(data_dir, data_id, num_samples):
     """load the dataset into panda dataframes """
     test_targets = None
     if data_id is not None:
@@ -62,8 +65,8 @@ def test_benchmarks(data_dir, data_id, num_samples=4):
             data = vl_obj.pop("data")["values"]
             print("    {}".format(vl_obj))
             print("# time used (s): {:.4f}".format(end - start))
-   
+
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir, flags.data_id)
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples)
