@@ -41,6 +41,8 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
             if contained:
                 mapping[k1].append(k2)
+    
+    #print(mapping)
 
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
@@ -143,3 +145,5 @@ class Falx(object):
             if len(candidates) >= top_k: break
 
         return candidates
+
+

@@ -910,5 +910,8 @@
                 "type": "nominal"
             }
         }
-    }
+    },
+    "constants": [
+        "Sophomores"
+    ]
 }

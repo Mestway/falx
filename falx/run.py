@@ -22,10 +22,8 @@ parser.add_argument("--data_id", dest="data_id", default="001",
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 parser.add_argument("--mode", dest="mode", default="eval", 
                     help="Enter the running mode: [eval] or [run]")
-parser.add_argument("--consts", dest="extra_consts", nargs="*", type=str, default=[], 
-                    help="add addition constants for the synthesizer")
 
-def test_benchmarks(data_dir, data_id, mode, extra_consts):
+def test_benchmarks(data_dir, data_id, mode):
     """load the dataset into panda dataframes """
     test_targets = None
     if data_id is not None:
@@ -45,7 +43,9 @@ def test_benchmarks(data_dir, data_id, mode, extra_consts):
 
         print("# run synthesize {}".format(fname))
 
-        input_data = data["input_data"] #table_utils.load_and_clean_table(data["input_data"])
+        # read the dataset and create visualization
+        input_data = data["input_data"]
+        extra_consts = data["constants"] if "constants" in data else []
         vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
         trace = vis.eval()
         #pprint(trace)
@@ -71,4 +71,4 @@ def test_benchmarks(data_dir, data_id, mode, extra_consts):
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir, flags.data_id, flags.mode, flags.extra_consts)
+    test_benchmarks(flags.data_dir, flags.data_id, flags.mode)

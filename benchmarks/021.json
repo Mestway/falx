@@ -202,5 +202,6 @@
         "type": "nominal"
       }
     }
-  }
+  },
+  "constants": ["Total Result"]
 }

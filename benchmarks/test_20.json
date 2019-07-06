@@ -20791,5 +20791,8 @@
                         "type": "nominal"
                   }
             }
-      }
+      },
+      "constants": [
+            "Latin America and Caribbean"
+      ]
 }
