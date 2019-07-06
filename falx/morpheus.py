@@ -505,6 +505,8 @@ def synthesize(inputs, output, full_output):
     logger.info('Parsing succeeded')
 
     logger.info('Building synthesizer ...')
+    global iter_num
+    iter_num = 0
     for loc in range(1, loc_val + 1):
         synthesizer = Synthesizer(
             #loc: # of function productions
