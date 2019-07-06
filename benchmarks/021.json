@@ -193,10 +193,6 @@
         "field": "variable",
         "type": "nominal"
       },
-      "color": {
-        "field": "variable",
-        "type": "nominal"
-      },
       "y": {
         "field": "value",
         "type": "quantitative"

@@ -8,7 +8,7 @@ enum SmallInt {
 }
 
 enum SmallStr {
-  "", "Archery", "Sophomores", "Vendor_1", "Sales Increase", "Latin America and Caribbean"
+  "", "Archery", "Sophomores", "Vendor_1", "Sales Increase", "Latin America and Caribbean", "Total Result"
 }
 
 enumset ColList[3] {
