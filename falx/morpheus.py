@@ -105,7 +105,8 @@ def subset_eq(actual, expect):
             iter_num = iter_num + 1
             return False
         else:
-            logger.info('#Candidates before getting the correct solution: {}'.format(iter_num))
+            logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
+            print('# candidates before getting the correct solution: {}'.format(iter_num))
             return True
     return False
 
