@@ -45,11 +45,6 @@ program Morpheus(Table) -> Table;
 # Finally, specify the production rules
 func empty: Empty -> Empty;
 
-func select: Table r -> Table a, ColList b {
-  row(r) == row(a);
-  col(r) < col(a);
-}
-
 func unite: Table r -> Table a, ColInt b, ColInt c {
   row(r) == row(a);
   col(r) == col(a) - 1;
