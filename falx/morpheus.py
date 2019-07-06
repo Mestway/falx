@@ -395,10 +395,16 @@ class MorpheusInterpreter(PostOrderInterpreter):
 
     def eval_mutateCustom(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        col_idx = args[2] - 1
         self.assertArg(node, args,
                 index=2,
                 cond=lambda x: x <= n_cols,
                 capture_indices=[0])
+
+        input_tbl = robjects.r(args[0])
+        col_type = input_tbl.dtypes[col_idx]
+        if col_type == np.float64 or col_type == np.int64:
+            raise GeneralError()
 
         ret_df_name = get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=(.[[{col1}]] {op} "{col2}"))'.format(
