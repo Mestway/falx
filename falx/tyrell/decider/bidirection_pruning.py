@@ -256,20 +256,13 @@ class AbstractPrune(GenericVisitor):
                 return False, tbl_ret
         #Done.
         elif opcode == 'separate':
-            col1 = int(args[1].data)
             self._blames.add(ast.children[1])
-            if col1 > tbl_size:
-                return True, None
+            if len(tbl_out) == 0:
+                return False, tbl_out
             else:
-                # ex_list = [col1-1, col1]
-                # tbl_ret = [col for idx, col in enumerate(tbl_out) if not (idx in ex_list)]
-                # print(tbl_out[tbl_out.columns[0]] )
-                if len(tbl_out) == 0:
-                    return False, tbl_out
-                else:
-                    cols = tbl_out.columns
-                    tbl_new = tbl_out[[cols[0]]]
-                    return False, tbl_new
+                cols = tbl_out.columns
+                tbl_new = tbl_out[[cols[0]]]
+                return False, tbl_new
         #Done
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             tbl_ret = tbl_out.iloc[:,:-1]
