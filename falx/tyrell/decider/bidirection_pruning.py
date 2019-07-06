@@ -145,7 +145,12 @@ class AbstractPrune(GenericVisitor):
         if opcode == 'group_by':
             return error, tbl
         elif opcode == 'filter':
-            # assert False
+            col_idx = int(args[2].data) - 1
+            if np.float64 == tbl.dtypes[col_idx]:
+                self._blames.clear()
+                self._blames.add(ast.children[2])
+                self._blames.add(ast)
+                return True, None
             return error, tbl
         elif opcode == 'select':
             self._blames.add(ast.children[1])
@@ -271,7 +276,7 @@ class AbstractPrune(GenericVisitor):
                 self._blames.clear()
                 self._blames.add(ast)
                 return True, None
-                
+
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'mutate' or opcode == 'cumsum':
