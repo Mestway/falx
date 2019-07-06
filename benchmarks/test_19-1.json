@@ -8,7 +8,7 @@
         },
         {
             "Product": "Prod2",
-            "Sales growth": 0,
+            "Sales growth": 2,
             "Profit %": 48,
             "Sales Increase": 18
         },
@@ -90,7 +90,7 @@
         {
             "Product": "Prod2",
             "Profit %": 48,
-            "Sales growth": 0,
+            "Sales growth": 2,
             "variable": "Sales Increase",
             "value": 18
         },
@@ -181,9 +181,9 @@
         {
             "Product": "Prod2",
             "Profit %": 48,
-            "Sales growth": 0,
+            "Sales growth": 1,
             "variable": "mutate_a",
-            "value": 18
+            "value": 20
         },
         {
             "Product": "Prod3",
