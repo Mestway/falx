@@ -151,6 +151,7 @@ class AbstractPrune(GenericVisitor):
                 self._blames.add(ast.children[2])
                 self._blames.add(ast)
                 return True, None
+
             return error, tbl
         elif opcode == 'select':
             self._blames.add(ast.children[1])
@@ -274,7 +275,7 @@ class AbstractPrune(GenericVisitor):
         #Done
         elif opcode == 'mutateCustom':
             any_bool = any([np.issubdtype(dt, np.int32) for dt in tbl_out.dtypes])
-            if any_bool:
+            if not any_bool:
                 self._blames.clear()
                 self._blames.add(ast)
                 return True, None
