@@ -267,6 +267,8 @@ class AbstractPrune(GenericVisitor):
                 return False, tbl_out
             else:
                 cols = tbl_out.columns
+                if tbl_out.empty:
+                    return False, tbl_out
                 tbl_new = tbl_out[[cols[0]]]
                 return False, tbl_new
         #Done

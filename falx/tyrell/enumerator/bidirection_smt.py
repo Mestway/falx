@@ -236,6 +236,9 @@ class BidirectEnumerator(Enumerator):
 
         if ('groupSum') in sketch and (sketch[-1] != 'groupSum'):
             return True
+        
+        if ('mutateCustom') in sketch and (sketch[-1] != 'mutateCustom'):
+            return True
 
         return False
 
