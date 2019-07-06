@@ -66,6 +66,21 @@ class AbstractPrune(GenericVisitor):
         sat = self.is_consistent(actual, self._output)
         return not sat
 
+    def needSeparate(self):
+        has_sep = False
+        sel_list = [val for val in self._input.columns.values if ('-' in val or '_' in val or '/' in val)]
+        has_sep = has_sep or (len(sel_list) > 0)
+        for col in self._input.columns:
+            if self._input[col].dtype == np.object:
+                for vv in self._input[col]:
+                    if '-' in vv or '_' in vv or '/' in vv:
+                        return False
+
+        return has_sep
+
+    def hasNewValues(self):
+        return True
+
     def backward_interp(self, prog: List[Any]):
         per_list = list(itertools.permutations(self._output))
         has_error = True
@@ -275,6 +290,10 @@ class AbstractPrune(GenericVisitor):
                 return False, tbl_ret
         #Done.
         elif opcode == 'separate':
+            
+            if not self.needSeparate():
+                return True, None
+
             self._blames.add(ast.children[1])
             if len(tbl_out) == 0:
                 return False, tbl_out
