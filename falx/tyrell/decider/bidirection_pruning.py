@@ -66,6 +66,35 @@ class AbstractPrune(GenericVisitor):
         sat = self.is_consistent(actual, self._output)
         return not sat
 
+    def needSeparate(self):
+        has_sep = False
+        sel_list = [val for val in self._input.columns.values if ('-' in val or '_' in val or '/' in val)]
+        has_sep = has_sep or (len(sel_list) > 0)
+        for col in self._input.columns:
+            if self._input[col].dtype == np.object:
+                for vv in self._input[col]:
+                    if '-' in vv or '_' in vv or '/' in vv:
+                        return True
+
+        return has_sep
+
+    def hasNewValues(self):
+        in_set = set()
+        out_set = set()
+
+        for col in self._output.columns:
+            if self._output[col].dtype != np.object:
+                for vv in self._output[col]:
+                    out_set.add(vv)
+
+        for col in self._input.columns:
+            if self._input[col].dtype != np.object:
+                for vv in self._input[col]:
+                    in_set.add(vv)
+
+        diff = out_set - in_set
+        return len(diff) > 0
+
     def backward_interp(self, prog: List[Any]):
         per_list = list(itertools.permutations(self._output))
         has_error = True
@@ -275,6 +304,10 @@ class AbstractPrune(GenericVisitor):
                 return False, tbl_ret
         #Done.
         elif opcode == 'separate':
+
+            if not self.needSeparate():
+                return True, None
+
             self._blames.add(ast.children[1])
             if len(tbl_out) == 0:
                 return False, tbl_out
@@ -295,9 +328,15 @@ class AbstractPrune(GenericVisitor):
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'mutate' or opcode == 'cumsum':
+            # if not self.hasNewValues():
+            #     return True, None
+
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'summarise' or opcode == 'groupSum':
+            # if not self.hasNewValues():
+            #     return True, None
+
             all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
             if all_numeric:
                 self._blames.clear()
