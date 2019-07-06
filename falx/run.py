@@ -6,7 +6,6 @@ from pprint import pprint
 
 from chart import VisDesign
 from eval_interface import FalxEvalInterface
-from interface import Falx
 import table_utils
 
 import morpheus
@@ -50,24 +49,14 @@ def test_benchmarks(data_dir, data_id, mode):
         trace = vis.eval()
         #pprint(trace)
 
-        if mode == "eval":
-            result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=4, extra_consts=extra_consts)
-            print("## synthesize result for task {}".format(fname))
-            for p, vis in result:
-                print("table_prog:")
-                print(p)
-                print("vis_spec:")
-                print(vis.to_vl_json(indent=2))
-        else:
-            result = Falx.synthesize(inputs=[input_data], vtrace=trace)
-            print("## synthesize result for task {}".format(fname))
-            for p, vis in result:
-                print("table_prog:")
-                print(p)
-                print("vis_spec:")
-                print(vis.to_vl_json(indent=2))
-            #ggplot_script = vis.to_ggplot2()
-            #print("\n".join(ggplot_script))
+        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=4, extra_consts=extra_consts)
+        print("## synthesize result for task {}".format(fname))
+        for p, vis in result:
+            print("table_prog:")
+            print(p)
+            print("vis_spec:")
+            print(vis.to_vl_json(indent=2))
+   
 
 if __name__ == '__main__':
     flags = parser.parse_args()

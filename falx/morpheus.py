@@ -14,7 +14,6 @@ pandas2ri.activate()
 import warnings
 import json
 import numpy as np
-import interface
 import pandas as pd
 
 from falx import synth_utils
@@ -96,11 +95,11 @@ def subset_eq(actual, expect):
     actual_row = robjects.r(actual).shape[0]
     # print(table1)
     # print(table2)
-    all_ok = interface.align_table_schema(table1, table2) != None
+    all_ok = synth_utils.align_table_schema(table1, table2) != None
 
     if all_ok:
         global iter_num
-        full_table_ok = interface.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
+        full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
 
         if not full_table_ok:
             iter_num = iter_num + 1

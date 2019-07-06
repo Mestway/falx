@@ -5,62 +5,20 @@ import morpheus
 import itertools
 from pprint import pprint
 import numpy as np
-from symbolic import SymTable
 import visual_trace
 
-import interface
+import synth_utils
+import eval_utils
 
 np.random.seed(2019)
-
-def sample_symbolic_table(symtable, size, strategy="diversity"):
-    """given a symbolic table, sample a smaller symbolic table that is contained by it
-    Args:
-        symtable: the input symbolic table
-        size: the number of rows we want for the output table.
-    Returns:
-        the output table sample
-    """
-    if size > len(symtable.values):
-        size = len(symtable.values)
-
-    if strategy == "uniform":
-        chosen_indices = np.random.choice(list(range(len(symtable.values))), size, replace=False)
-    elif strategy == "diversity":
-        indices = set(range(len(symtable.values)))
-        chosen_indices = set()
-        for i in range(size):
-            pool = indices - chosen_indices
-            candidate_size = min([20, len(pool)])
-            candidates = np.random.choice(list(pool), size=candidate_size, replace=False)
-            best_index = pick_best_candidate_index(candidates, chosen_indices, symtable.values)
-            chosen_indices.add(best_index)
-
-    sample_values = [symtable.values[i] for i in chosen_indices]
-    symtable_sample = SymTable(sample_values)
-    return symtable_sample
-
-def pick_best_candidate_index(candidate_indices, chosen_indices, full_table):
-    """according to current_chosen_row_indices and the full table, choose the best candidate that maximize """
-    keys = list(full_table[0].keys())
-    cardinality = [len(set([r[key] for r in full_table])) for key in keys]
-    def card_score_func(card_1, card_2):
-        if card_1 == 1 and card_2 > 1:
-            return 0
-        return 1
-    scores = []
-    for x in candidate_indices:
-        temp_card = [len(set([full_table[i][key] for i in list(chosen_indices) + [x]])) for key in keys]
-        score = sum([card_score_func(temp_card[i], cardinality[i]) for i in range(len(keys))])
-        scores.append(score)
-    return candidate_indices[np.argmax(scores)]
-
 
 def check_trace_consistency(vis_prog, orig_trace):
     """check whether the prog is consistent with the full trace"""
     tr = vis_prog.eval()
     orig_tr_table = visual_trace.trace_to_table(orig_trace)
     new_tr_table = visual_trace.trace_to_table(tr)
-    return all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) != None for key in new_tr_table])
+    return all([synth_utils.align_table_schema(new_tr_table[key], orig_tr_table[key]) != None for key in new_tr_table])
+
 
 class FalxEvalInterface(object):
 
@@ -82,12 +40,12 @@ class FalxEvalInterface(object):
             #     tr = VisDesign(data=data_value, chart=chart).eval()
             #     orig_tr_table = visual_trace.trace_to_table(full_trace)
             #     new_tr_table = visual_trace.trace_to_table(tr)
-            #     full_trace_err = all([interface.align_table_schema(new_tr_table[key], orig_tr_table[key]) == None for key in new_tr_table])
+            #     full_trace_err = all([synth_utils.align_table_schema(new_tr_table[key], orig_tr_table[key]) == None for key in new_tr_table])
             # else:
             #     full_trace_err = False
 
             if not isinstance(full_sym_data, (list,)):
-                sample_output = sample_symbolic_table(full_sym_data, num_samples)
+                sample_output = eval_utils.sample_symbolic_table(full_sym_data, num_samples)
 
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, extra_consts=extra_consts)
@@ -101,12 +59,10 @@ class FalxEvalInterface(object):
                     # pprint(output)
                     # print("---")
                     # pprint(full_sym_data.values)
-                    # mapping = interface.align_table_schema(full_sym_data.values, output)
+                    # mapping = synth_utils.align_table_schema(full_sym_data.values, output)
                     # print(mapping)
-                    # print(interface.construct_value_dict([r["KEY"] for r in output]))
-                    # print(interface.construct_value_dict([r["c_color"] for r in full_sym_data.values]))
-                
-                    field_mapping = interface.align_table_schema(full_sym_data.values, output)
+                  
+                    field_mapping = synth_utils.align_table_schema(full_sym_data.values, output)
                     assert(field_mapping != None)
 
                     vis_design = VisDesign(data=output, chart=chart)
@@ -124,7 +80,7 @@ class FalxEvalInterface(object):
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
-                sym_tables = [(sample_symbolic_table(full_output, num_samples), full_output) for full_output in full_sym_data]
+                sym_tables = [(eval_utils.sample_symbolic_table(full_output, num_samples), full_output) for full_output in full_sym_data]
                 layer_candidate_progs = [morpheus.synthesize(inputs, p[0], p[1], extra_consts=extra_consts) for p in sym_tables]
 
                 # iterating over combinations for different layers
@@ -143,10 +99,10 @@ class FalxEvalInterface(object):
                     #     pprint(outputs[i])
                     #     print("---")
                     #     pprint(full_sym_data[i].values)
-                    #     mapping = interface.align_table_schema(full_sym_data[i].values, outputs[i])
+                    #     mapping = synth_utils.align_table_schema(full_sym_data[i].values, outputs[i])
                     #     print(mapping)
 
-                    field_mappings = [interface.align_table_schema(full_sym_data[k].values, output) for k, output in enumerate(outputs)]
+                    field_mappings = [synth_utils.align_table_schema(full_sym_data[k].values, output) for k, output in enumerate(outputs)]
 
                     vis_design = VisDesign(data=outputs, chart=chart)
                     vis_design.update_field_names(field_mappings)
