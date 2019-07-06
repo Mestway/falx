@@ -348,7 +348,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
         _script = ''
         if aggr_fun == 'n':
             _script = '{ret_df} <- group_by_at({table}, {cols})  %>% summarise({TMP} = {aggr} ())'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, cols=get_collist(args[1]))
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, cols=get_collist(args[3]))
         else:
             aggr_col = input_cols[args[2]-1]
             _script = '{ret_df} <- group_by_at({table}, {cols}) %>% summarise({TMP} = {aggr} (`{col}`))'.format(

@@ -176,7 +176,7 @@ class AbstractPrune(GenericVisitor):
             return error, None
         elif opcode == 'summarise' or opcode == 'groupSum':
             # assert False
-            return error, tbl
+            return error, None
         elif opcode == 'gather' or opcode == 'gatherNeg':
             self._blames.add(ast.children[1])
             max_idx = max(list(map(abs, map(int, args[1].data))))
