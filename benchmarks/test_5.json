@@ -111,508 +111,424 @@
     ],
     "output_data": [
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 1",
-            "value_x": 49554,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 49554
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 1",
-            "value_x": 15787,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 15787
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 1",
-            "value_x": 2525,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 2525
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 1",
-            "value_x": 1678,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 1678
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 1",
-            "value_x": 1514,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 1514
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 1",
-            "value_x": 987,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 987
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 1",
-            "value_x": 574,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 574
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 1",
-            "value_x": -331,
-            "id_y": 78,
-            "value_y": 35188
+            "value": -331
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 1",
-            "value_x": -7652,
-            "id_y": 78,
-            "value_y": 35188
+            "value": -7652
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 1",
-            "value_x": -11234,
-            "id_y": 78,
-            "value_y": 35188
+            "value": -11234
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 1",
-            "value_x": -18214,
-            "id_y": 78,
-            "value_y": 35188
+            "value": -18214
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 1",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 35188
+            "value": 0
         },
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 2",
-            "value_x": 19837,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 19837
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 2",
-            "value_x": 5987,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 5987
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 2",
-            "value_x": 1214,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 1214
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 2",
-            "value_x": 1226,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 1226
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 2",
-            "value_x": 542,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 542
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 2",
-            "value_x": 120,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 120
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 2",
-            "value_x": 69,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 69
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 2",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 0
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 2",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 0
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 2",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 0
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 2",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 0
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 2",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 28995
+            "value": 0
         },
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 3",
-            "value_x": 19890,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 19890
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 3",
-            "value_x": 7989,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 7989
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 3",
-            "value_x": 7762,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 7762
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 3",
-            "value_x": 5643,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 5643
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 3",
-            "value_x": 4991,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 4991
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 3",
-            "value_x": -363,
-            "id_y": 78,
-            "value_y": 40087
+            "value": -363
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 3",
-            "value_x": -2114,
-            "id_y": 78,
-            "value_y": 40087
+            "value": -2114
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 3",
-            "value_x": -3711,
-            "id_y": 78,
-            "value_y": 40087
+            "value": -3711
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 3",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 0
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 3",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 0
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 3",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 0
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 3",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 40087
+            "value": 0
         },
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 4",
-            "value_x": 36555,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 36555
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 4",
-            "value_x": 14989,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 14989
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 4",
-            "value_x": 5647,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 5647
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 4",
-            "value_x": 3968,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 3968
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 4",
-            "value_x": 1987,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 1987
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 4",
-            "value_x": 1494,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 1494
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 4",
-            "value_x": 896,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 896
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 4",
-            "value_x": 698,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 698
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 4",
-            "value_x": 124,
-            "id_y": 78,
-            "value_y": 47118
+            "value": 124
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 4",
-            "value_x": -408,
-            "id_y": 78,
-            "value_y": 47118
+            "value": -408
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 4",
-            "value_x": -6564,
-            "id_y": 78,
-            "value_y": 47118
+            "value": -6564
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 4",
-            "value_x": -12268,
-            "id_y": 78,
-            "value_y": 47118
+            "value": -12268
         },
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 5",
-            "value_x": 37865,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 37865
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 5",
-            "value_x": 3425,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 3425
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 5",
-            "value_x": 3321,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 3321
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 5",
-            "value_x": -10210,
-            "id_y": 78,
-            "value_y": 21112
+            "value": -10210
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 5",
-            "value_x": -13289,
-            "id_y": 78,
-            "value_y": 21112
+            "value": -13289
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 5",
-            "value_x": 0,
-            "id_y": 78,
-            "value_y": 21112
+            "value": 0
         },
         {
-            "id_x": 1,
+            "id": 1,
             "variable": "cat 6",
-            "value_x": 44323,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 44323
         },
         {
-            "id_x": 2,
+            "id": 2,
             "variable": "cat 6",
-            "value_x": 43421,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 43421
         },
         {
-            "id_x": 3,
+            "id": 3,
             "variable": "cat 6",
-            "value_x": 21010,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 21010
         },
         {
-            "id_x": 4,
+            "id": 4,
             "variable": "cat 6",
-            "value_x": 9875,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 9875
         },
         {
-            "id_x": 5,
+            "id": 5,
             "variable": "cat 6",
-            "value_x": 7674,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 7674
         },
         {
-            "id_x": 6,
+            "id": 6,
             "variable": "cat 6",
-            "value_x": 5534,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 5534
         },
         {
-            "id_x": 7,
+            "id": 7,
             "variable": "cat 6",
-            "value_x": 2331,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 2331
         },
         {
-            "id_x": 8,
+            "id": 8,
             "variable": "cat 6",
-            "value_x": 453,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 453
         },
         {
-            "id_x": 9,
+            "id": 9,
             "variable": "cat 6",
-            "value_x": 411,
-            "id_y": 78,
-            "value_y": 86524
+            "value": 411
         },
         {
-            "id_x": 10,
+            "id": 10,
             "variable": "cat 6",
-            "value_x": -7674,
-            "id_y": 78,
-            "value_y": 86524
+            "value": -7674
         },
         {
-            "id_x": 11,
+            "id": 11,
             "variable": "cat 6",
-            "value_x": -8723,
-            "id_y": 78,
-            "value_y": 86524
+            "value": -8723
         },
         {
-            "id_x": 12,
+            "id": 12,
             "variable": "cat 6",
-            "value_x": -32111,
-            "id_y": 78,
-            "value_y": 86524
+            "value": -32111
+        },
+        {
+            "id": 1,
+            "variable": "sum",
+            "value": 208024
+        },
+        {
+            "id": 2,
+            "variable": "sum",
+            "value": 91598
+        },
+        {
+            "id": 3,
+            "variable": "sum",
+            "value": 41479
+        },
+        {
+            "id": 4,
+            "variable": "sum",
+            "value": 12180
+        },
+        {
+            "id": 5,
+            "variable": "sum",
+            "value": 3419
+        },
+        {
+            "id": 6,
+            "variable": "sum",
+            "value": 7772
+        },
+        {
+            "id": 7,
+            "variable": "sum",
+            "value": 1756
+        },
+        {
+            "id": 8,
+            "variable": "sum",
+            "value": -2891
+        },
+        {
+            "id": 9,
+            "variable": "sum",
+            "value": -7117
+        },
+        {
+            "id": 10,
+            "variable": "sum",
+            "value": -19316
+        },
+        {
+            "id": 11,
+            "variable": "sum",
+            "value": -33501
+        },
+        {
+            "id": 12,
+            "variable": "sum",
+            "value": -44379
         }
     ],
     "vl_spec": {
@@ -622,17 +538,22 @@
                 "mark": {
                     "type": "bar"
                 },
+                "transform": [
+                    {
+                        "filter": "datum.variable != \"sum\""
+                    }
+                ],
                 "encoding": {
                     "y": {
-                        "field": "value_x",
+                        "field": "value",
                         "type": "quantitative"
                     },
-                    "column": {
+                    "color": {
                         "field": "variable",
                         "type": "nominal"
                     },
                     "x": {
-                        "field": "id_x",
+                        "field": "id",
                         "type": "nominal"
                     }
                 }
@@ -642,17 +563,22 @@
                     "opacity": 0.4,
                     "type": "area"
                 },
+                "transform": [
+                    {
+                        "filter": "datum.variable == \"sum\""
+                    }
+                ],
                 "encoding": {
                     "y": {
                         "type": "quantitative",
-                        "field": "value_y"
+                        "field": "value"
                     },
-                    "column": {
+                    "color": {
                         "field": "variable",
                         "type": "nominal"
                     },
                     "x": {
-                        "field": "id_x",
+                        "field": "id",
                         "type": "nominal"
                     }
                 }
