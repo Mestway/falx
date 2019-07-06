@@ -19,6 +19,7 @@ import rpy2.robjects as robjects
 from functools import reduce
 import falx.synth_utils
 import json
+import numpy as np
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
@@ -268,7 +269,12 @@ class AbstractPrune(GenericVisitor):
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'summarise' or opcode == 'groupSum':
-            # self._blames.clear()
+            all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
+            if all_numeric:
+                self._blames.clear()
+                self._blames.add(ast)
+                return True, None
+                
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         #Done last two columns are new generated.
