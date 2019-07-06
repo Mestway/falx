@@ -59,11 +59,6 @@ func unite: Table r -> Table a, ColInt b, ColInt c {
   col(r) == col(a) - 1;
 }
 
-func group_by: Table r -> Table a, ColList2 b {
-  row(r) == row(a);
-  col(r) == col(a);
-}
-
 func gatherNeg: Table r -> Table a, ColNegList b {
   row(r) >= row(a);
   col(r) <= col(a);
@@ -99,7 +94,7 @@ func filter: Table r -> Table a, BoolFunc b, ColInt c, SmallStr d {
   col(r) == col(a);
 }
 
-func summarise: Table r -> Table a, Aggr b, ColInt c {
+func groupSum: Table r -> Table a, Aggr b, ColInt c, ColList2 d {
   row(r) < row(a);
   col(r) <= col(a) + 1;
 }
