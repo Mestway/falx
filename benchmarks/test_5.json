@@ -573,10 +573,6 @@
                         "type": "quantitative",
                         "field": "value"
                     },
-                    "color": {
-                        "field": "variable",
-                        "type": "nominal"
-                    },
                     "x": {
                         "field": "id",
                         "type": "nominal"
