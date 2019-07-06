@@ -97,7 +97,10 @@ class VisDesign(object):
             assert(isinstance(mapping, (list,)))
             for i, l in enumerate(self.chart.layers):
                 for key, e in l.encodings.items():
-                    e.field = mapping[i][e.field]
+                    try:
+                        e.field = mapping[i][e.field]
+                    except:
+                        pass
         else:
             for key, e in self.chart.encodings.items():
                 e.field = mapping[e.field]
