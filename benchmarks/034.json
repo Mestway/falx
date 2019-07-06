@@ -245,5 +245,6 @@
         "type": "quantitative"
       }
     }
-  }
+  },
+  "constants": [""]
 }
