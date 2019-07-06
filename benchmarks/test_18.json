@@ -464,6 +464,10 @@
                     "x": {
                         "field": "label",
                         "type": "ordinal"
+                    },
+                    "color": {
+                        "field": "variable",
+                        "type": "nominal"
                     }
                 }
             }

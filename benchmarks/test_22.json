@@ -1,130 +1,130 @@
 {
     "input_data": [
         {
-            "Q1": 10,
-            "Q2": 5,
-            "Q3": 5,
+            "product": "Product1_2011",
             "Q4": 3,
-            "product": "Product1_2011"
-        },
-        {
-            "Q1": 2,
+            "Q3": 5,
             "Q2": 5,
-            "Q3": 7,
-            "Q4": 5,
-            "product": "Product2_2011"
+            "Q1": 10
         },
         {
-            "Q1": 7,
+            "product": "Product2_2011",
+            "Q4": 5,
+            "Q3": 7,
+            "Q2": 5,
+            "Q1": 2
+        },
+        {
+            "product": "Product3_2011",
+            "Q4": 3,
+            "Q3": 9,
             "Q2": 10,
-            "Q3": 9,
-            "Q4": 3,
-            "product": "Product3_2011"
+            "Q1": 7
         },
         {
-            "Q1": 1,
-            "Q2": 8,
+            "product": "Product4_2011",
+            "Q4": 3,
             "Q3": 2,
-            "Q4": 3,
-            "product": "Product4_2011"
+            "Q2": 8,
+            "Q1": 1
         },
         {
-            "Q1": 6,
-            "Q2": 1,
+            "product": "Product5_2011",
+            "Q4": 1,
             "Q3": 7,
-            "Q4": 1,
-            "product": "Product5_2011"
+            "Q2": 1,
+            "Q1": 6
         },
         {
-            "Q1": 1,
-            "Q2": 6,
+            "product": "Product6_2011",
+            "Q4": 9,
             "Q3": 1,
-            "Q4": 9,
-            "product": "Product6_2011"
+            "Q2": 6,
+            "Q1": 1
         },
         {
-            "Q1": 4,
-            "Q2": 6,
-            "Q3": 3,
+            "product": "Product1_2012",
             "Q4": 3,
-            "product": "Product1_2012"
-        },
-        {
-            "Q1": 4,
-            "Q2": 6,
             "Q3": 3,
-            "Q4": 4,
-            "product": "Product2_2012"
+            "Q2": 6,
+            "Q1": 4
         },
         {
-            "Q1": 4,
+            "product": "Product2_2012",
+            "Q4": 4,
+            "Q3": 3,
             "Q2": 6,
+            "Q1": 4
+        },
+        {
+            "product": "Product3_2012",
+            "Q4": 3,
             "Q3": 6,
-            "Q4": 3,
-            "product": "Product3_2012"
-        },
-        {
-            "Q1": 1,
             "Q2": 6,
-            "Q3": 10,
+            "Q1": 4
+        },
+        {
+            "product": "Product4_2012",
             "Q4": 4,
-            "product": "Product4_2012"
+            "Q3": 10,
+            "Q2": 6,
+            "Q1": 1
         },
         {
-            "Q1": 7,
-            "Q2": 4,
-            "Q3": 5,
+            "product": "Product5_2012",
             "Q4": 8,
-            "product": "Product5_2012"
+            "Q3": 5,
+            "Q2": 4,
+            "Q1": 7
         },
         {
-            "Q1": 6,
+            "product": "Product6_2012",
+            "Q4": 8,
+            "Q3": 8,
             "Q2": 8,
-            "Q3": 8,
-            "Q4": 8,
-            "product": "Product6_2012"
+            "Q1": 6
         },
         {
-            "Q1": 9,
-            "Q2": 3,
-            "Q3": 2,
+            "product": "Product1_2013",
             "Q4": 10,
-            "product": "Product1_2013"
+            "Q3": 2,
+            "Q2": 3,
+            "Q1": 9
         },
         {
-            "Q1": 7,
-            "Q2": 7,
+            "product": "Product2_2013",
+            "Q4": 8,
             "Q3": 6,
-            "Q4": 8,
-            "product": "Product2_2013"
+            "Q2": 7,
+            "Q1": 7
         },
         {
-            "Q1": 9,
-            "Q2": 4,
-            "Q3": 8,
+            "product": "Product3_2013",
             "Q4": 9,
-            "product": "Product3_2013"
+            "Q3": 8,
+            "Q2": 4,
+            "Q1": 9
         },
         {
-            "Q1": 2,
-            "Q2": 5,
-            "Q3": 9,
+            "product": "Product4_2013",
             "Q4": 5,
-            "product": "Product4_2013"
+            "Q3": 9,
+            "Q2": 5,
+            "Q1": 2
         },
         {
-            "Q1": 4,
-            "Q2": 2,
-            "Q3": 5,
+            "product": "Product5_2013",
             "Q4": 1,
-            "product": "Product5_2013"
+            "Q3": 5,
+            "Q2": 2,
+            "Q1": 4
         },
         {
-            "Q1": 4,
-            "Q2": 6,
-            "Q3": 10,
+            "product": "Product6_2013",
             "Q4": 8,
-            "product": "Product6_2013"
+            "Q3": 10,
+            "Q2": 6,
+            "Q1": 4
         }
     ],
     "output_data": [
