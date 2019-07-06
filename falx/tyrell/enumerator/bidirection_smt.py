@@ -234,6 +234,9 @@ class BidirectEnumerator(Enumerator):
             # print('bad sketch....', sketch)
             return True
 
+        if ('groupSum') in sketch and (sketch[-1] != 'groupSum'):
+            return True
+
         return False
 
     def blockSketch(self):
