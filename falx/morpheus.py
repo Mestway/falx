@@ -322,6 +322,45 @@ class MorpheusInterpreter(PostOrderInterpreter):
             logger.error('Error in interpreting group_by...')
             raise GeneralError()
 
+    def eval_groupSum(self, node, args):
+        input_tbl = robjects.r(args[0])
+        input_cols = input_tbl.columns.values
+        n_cols = len(input_cols)
+
+        self.assertArg(node, args,
+                index=3,
+                cond=lambda x: max(list(map(lambda y: int(y), x))) <= n_cols,
+                capture_indices=[0])
+
+        aggr_fun = str(args[1])
+        self.assertArg(node, args,
+                index=2,
+                cond=lambda x: x <= n_cols,
+                capture_indices=[0])
+
+        if not aggr_fun == 'n':
+            self.assertArg(node, args,
+                    index=2,
+                    cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
+                    capture_indices=[0])
+
+        ret_df_name = get_fresh_name()
+        _script = ''
+        if aggr_fun == 'n':
+            _script = '{ret_df} <- group_by_at({table}, {cols})  %>% summarise({TMP} = {aggr} ())'.format(
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, cols=get_collist(args[1]))
+        else:
+            aggr_col = input_cols[args[2]-1]
+            _script = '{ret_df} <- group_by_at({table}, {cols}) %>% summarise({TMP} = {aggr} (`{col}`))'.format(
+                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col, cols=get_collist(args[3]))
+        try:
+            print(_script)
+            ret_val = robjects.r(_script)
+            return ret_df_name
+        except Exception as e:
+            logger.error('Error in interpreting eval_groupSum...')
+            raise GeneralError()
+
     def eval_summarise(self, node, args):
         input_tbl = robjects.r(args[0])
         input_cols = input_tbl.columns.values

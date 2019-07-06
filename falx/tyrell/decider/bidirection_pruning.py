@@ -174,7 +174,7 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             # assert False
             return error, None
-        elif opcode == 'summarise':
+        elif opcode == 'summarise' or opcode == 'groupSum':
             # assert False
             return error, tbl
         elif opcode == 'gather' or opcode == 'gatherNeg':
@@ -274,7 +274,7 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
-        elif opcode == 'summarise':
+        elif opcode == 'summarise' or opcode == 'groupSum':
             # self._blames.clear()
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
