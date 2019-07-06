@@ -354,7 +354,6 @@ class MorpheusInterpreter(PostOrderInterpreter):
             _script = '{ret_df} <- group_by_at({table}, {cols}) %>% summarise({TMP} = {aggr} (`{col}`))'.format(
                     ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col, cols=get_collist(args[3]))
         try:
-            print(_script)
             ret_val = robjects.r(_script)
             return ret_df_name
         except Exception as e:
