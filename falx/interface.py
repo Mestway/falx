@@ -27,10 +27,18 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
             vals2_dict = vals2_dicts[k2]
             contained = True
             for x in vals1_dict:
-                if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]) or (check_equivalence and ((vals2_dict[x] != vals1_dict[x]))):
+                if (x not in vals2_dict) or (vals2_dict[x] < vals1_dict[x]):
+                    contained = False
+                if check_equivalence and (x not in vals2_dict or vals2_dict[x] != vals1_dict[x]):
                     contained = False
                 if contained == False:
                     break
+            if contained and check_equivalence:
+                for x in vals2_dict:
+                    if x not in vals1_dict:
+                        contained = False
+                        break
+
             if contained:
                 mapping[k1].append(k2)
 
@@ -52,9 +60,19 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
         # the following is an instantiation of the the mapping
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
 
+        def value_handling_func(val):
+            if isinstance(val, (int, str,)):
+                return val
+            try:
+                val = float(val)
+                val = np.round(val, 5)
+            except:
+                pass
+            return val
+
         # distill the tables for checking
-        frozen_table1 = [tuple([r[key] for key in t1_schema if key in r]) for r in table1]
-        frozen_table2 = [tuple([r[inst[key]] for key in t1_schema if inst[key] in r]) for r in table2]
+        frozen_table1 = [tuple([value_handling_func(r[key]) for key in t1_schema if key in r]) for r in table1]
+        frozen_table2 = [tuple([value_handling_func(r[inst[key]]) for key in t1_schema if inst[key] in r]) for r in table2]
 
         if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
             return inst
