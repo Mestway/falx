@@ -17,6 +17,8 @@ import numpy as np
 import interface
 import pandas as pd
 
+from falx import synth_utils
+
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)
 
@@ -515,19 +517,19 @@ def init_tbl_json_str(df_name, json_loc):
         print('Parse error!!! Move on...')
     return None
 
-def synthesize_with_oracle(inputs, sample_output, full_output):
-    # TODO: synthesize a program that is not only consistent with the output 
-    # but also matches the oracle output
-    global full_table 
-    full_table = full_output
-    return synthesize(inputs, sample_output, full_output)
 
-def synthesize(inputs, output, full_output):
+def synthesize(inputs, output, oracle_output, extra_consts):
+
+    global full_table 
+    full_table = oracle_output
+
     logger.setLevel('INFO')
     """ synthesizer table transformation programs from input-output examples
     Args:
         inputs: a list of input tables (represented as a list of named tuples)
         output: a symbolic table (of class symbolic.SymTable)
+        full_output:  the oracle output table, the task would need to generalize to it
+        extra_consts: extra constants provided to the solver
     Returns:
         a list of transformation programs s.t. p(inputs) = output
     """
@@ -544,7 +546,13 @@ def synthesize(inputs, output, full_output):
 
     depth_val = loc_val + 1
     logger.info('Parsing spec ...')
-    spec = S.parse_file('dsl/morpheus.tyrell')
+
+    # provide additional string constants to the solver
+    grammar_base = "dsl/tidyverse.tyrell.base"
+    grammar_file = "dsl/tidyverse.tyrell"
+    synth_utils.update_search_grammar(extra_consts, grammar_base, grammar_file)
+
+    spec = S.parse_file(grammar_file)
     logger.info('Parsing succeeded')
 
     logger.info('Building synthesizer ...')

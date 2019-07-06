@@ -65,7 +65,7 @@ def check_trace_consistency(vis_prog, orig_trace):
 class FalxEvalInterface(object):
 
     @staticmethod
-    def synthesize(inputs, full_trace, num_samples=2, top_k=1):
+    def synthesize(inputs, full_trace, num_samples=2, extra_consts=[]):
         """synthesize table prog and vis prog from input and output traces"""
         candidates = []
 
@@ -90,7 +90,7 @@ class FalxEvalInterface(object):
                 sample_output = sample_symbolic_table(full_sym_data, num_samples)
 
                 # single-layer chart
-                candidate_progs = morpheus.synthesize_with_oracle(inputs, sample_output, full_sym_data)
+                candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, extra_consts=extra_consts)
 
                 for p in candidate_progs:
                     #pprint(inputs[0])
@@ -119,7 +119,7 @@ class FalxEvalInterface(object):
                         print(" {}".format(p))
                         print("===> continue...")
 
-                    if len(candidates) >= top_k: break
+                    if len(candidates) > 0: break
             else:
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
@@ -156,8 +156,8 @@ class FalxEvalInterface(object):
                     else:
                         print("===> the program is not consistent with the trace, continue")
 
-                    if len(candidates) >= top_k: break
+                    if len(candidates) > 0: break
 
-            if len(candidates) >= top_k: break
+            if len(candidates) > 0: break
 
         return candidates
