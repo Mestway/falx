@@ -549,7 +549,7 @@ def synthesize(inputs, output, oracle_output, extra_consts):
 
     # provide additional string constants to the solver
     grammar_base = "dsl/tidyverse.tyrell.base"
-    grammar_file = "dsl/tidyverse.tyrell"
+    grammar_file = "dsl/__tidyverse__.tyrell"
     synth_utils.update_search_grammar(extra_consts, grammar_base, grammar_file)
 
     spec = S.parse_file(grammar_file)
