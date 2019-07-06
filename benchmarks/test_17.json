@@ -2,63 +2,63 @@
     "input_data": [
         {
             "From": "YAHOO",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 3.6,
             "GOOGLE": 3.2,
             "APPLE": 7.6,
             "LINKEDIN": 43,
-            "FACEBOOK": 10.5,
-            "Total": 100
+            "FACEBOOK": 10.5
         },
         {
             "From": "MICROSOFT",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 0,
             "GOOGLE": 5.2,
             "APPLE": 5,
             "LINKEDIN": 22,
-            "FACEBOOK": 30.5,
-            "Total": 100
+            "FACEBOOK": 30.5
         },
         {
             "From": "GOOGLE",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 0,
             "GOOGLE": 0,
             "APPLE": 0,
             "LINKEDIN": 4.8,
-            "FACEBOOK": 15.5,
-            "Total": 100
+            "FACEBOOK": 15.5
         },
         {
             "From": "APPLE",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 0,
             "GOOGLE": 1.3,
             "APPLE": 0,
             "LINKEDIN": 1,
-            "FACEBOOK": 11,
-            "Total": 100
+            "FACEBOOK": 11
         },
         {
             "From": "LINKEDIN",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 0,
             "GOOGLE": 0,
             "APPLE": 1,
             "LINKEDIN": 0,
-            "FACEBOOK": 2,
-            "Total": 100
+            "FACEBOOK": 2
         },
         {
             "From": "FACEBOOK",
+            "Total": 100,
             "YAHOO": 0,
             "MICROSOFT": 0,
             "GOOGLE": 0,
             "APPLE": 0,
             "LINKEDIN": 0,
-            "FACEBOOK": 0,
-            "Total": 100
+            "FACEBOOK": 0
         }
     ],
     "output_data": [

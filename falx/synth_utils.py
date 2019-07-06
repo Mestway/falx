@@ -6,7 +6,7 @@ def construct_value_dict(values):
     values = np.array(values)
     try:
         values = values.astype(np.float64)
-        values = np.round(values, 3)
+        values = np.round(values, 5)
     except:
         pass
     value_dict = {}
