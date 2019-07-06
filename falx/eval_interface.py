@@ -125,7 +125,7 @@ class FalxEvalInterface(object):
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
                 sym_tables = [(sample_symbolic_table(full_output, num_samples), full_output) for full_output in full_sym_data]
-                layer_candidate_progs = [morpheus.synthesize_with_oracle(inputs, p[0], p[1]) for p in sym_tables]
+                layer_candidate_progs = [morpheus.synthesize(inputs, p[0], p[1], extra_consts=extra_consts) for p in sym_tables]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
