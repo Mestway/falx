@@ -176,6 +176,7 @@ class AbstractPrune(GenericVisitor):
                 return False, None
             
         elif opcode == 'separate':
+            # fst_row = tbl.iloc[0, :].values
             # assert False
             return error, None
         elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
@@ -190,8 +191,19 @@ class AbstractPrune(GenericVisitor):
             if max_idx > tbl_size:
                 return True, None
             else:
-                # FIXME
                 sel_list = list(map(int, args[1].data))
+                if sel_list[0] < 0:
+                    sel_list = list(map(lambda x: abs(x) - 1, sel_list))
+                    sel_list = [col for col in list(range(0, tbl_size)) if not col in sel_list]
+                else: 
+                    sel_list = list(map(lambda x: x - 1, sel_list))
+
+                has_numeric = any([np.issubdtype(dt, np.number) for dt in tbl.dtypes[sel_list]])
+                has_str = any([(dt == np.object) for dt in tbl.dtypes[sel_list]])
+                # print('select types**********', tbl.dtypes[sel_list], tbl.dtypes.values[sel_list])
+                # print('sel:', sel_list)
+                if has_str and has_numeric:
+                    return True, None
                 # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
                 # return False, tbl_out
                 return False, None
