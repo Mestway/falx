@@ -7,6 +7,7 @@ from pprint import pprint
 from chart import VisDesign
 from eval_interface import FalxEvalInterface
 import table_utils
+from timeit import default_timer as timer
 
 import morpheus
 
@@ -40,7 +41,8 @@ def test_benchmarks(data_dir, data_id, mode):
             # ignore cases that do not have vl specs
             continue
 
-        print("# run synthesize {}".format(fname))
+        start = timer()
+        print("====> run synthesize {}".format(fname))
 
         # read the dataset and create visualization
         input_data = data["input_data"]
@@ -50,12 +52,17 @@ def test_benchmarks(data_dir, data_id, mode):
         #pprint(trace)
 
         result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=4, extra_consts=extra_consts)
+        end = timer()
+
         print("## synthesize result for task {}".format(fname))
         for p, vis in result:
-            print("table_prog:")
-            print(p)
-            print("vis_spec:")
-            print(vis.to_vl_json(indent=2))
+            print("# table_prog:")
+            print("  {}".format(p))
+            print("# vis_spec:")
+            vl_obj = vis.to_vl_obj()
+            data = vl_obj.pop("data")["values"]
+            print("    {}".format(vl_obj))
+            print("# time used (s): {:.4f}".format(end - start))
    
 
 if __name__ == '__main__':
