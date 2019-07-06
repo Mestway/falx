@@ -265,7 +265,16 @@ class AbstractPrune(GenericVisitor):
                 tbl_new = tbl_out[[cols[0]]]
                 return False, tbl_new
         #Done
-        elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
+        elif opcode == 'mutateCustom':
+            any_bool = any([np.issubdtype(dt, np.int32) for dt in tbl_out.dtypes])
+            if any_bool:
+                self._blames.clear()
+                self._blames.add(ast)
+                return True, None
+                
+            tbl_ret = tbl_out.iloc[:,:-1]
+            return False, tbl_ret
+        elif opcode == 'mutate' or opcode == 'cumsum':
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'summarise' or opcode == 'groupSum':
