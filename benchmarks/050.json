@@ -1,1653 +1,278 @@
 {
-  "input_data": [
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 2.4235,
-      "id": 1
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 6.4549,
-      "id": 1
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 3.3342,
-      "id": 1
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 3.5926,
-      "id": 2
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.2545,
-      "id": 2
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 4.3301,
-      "id": 2
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 3.6026,
-      "id": 3
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.0253,
-      "id": 3
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 6.178,
-      "id": 3
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 1.4638,
-      "id": 4
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.6206,
-      "id": 4
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 5.2518,
-      "id": 4
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 0.3727,
-      "id": 5
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 4.1261,
-      "id": 5
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 3.3226,
-      "id": 5
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 3.619,
-      "id": 6
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 0.8029,
-      "id": 6
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 4.6945,
-      "id": 6
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 8.4886,
-      "id": 7
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.3565,
-      "id": 7
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 4.3946,
-      "id": 7
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 4.6844,
-      "id": 8
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.9121,
-      "id": 8
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 5.5387,
-      "id": 8
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 1.8839,
-      "id": 9
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 6.4268,
-      "id": 9
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 5.361,
-      "id": 9
-    },
-    {
-      "prod": "product a",
-      "ing": "protein",
-      "mg": 3.7449,
-      "id": 10
-    },
-    {
-      "prod": "product a",
-      "ing": "fat",
-      "mg": 5.4572,
-      "id": 10
-    },
-    {
-      "prod": "product a",
-      "ing": "starch",
-      "mg": 4.4172,
-      "id": 10
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 4.5086,
-      "id": 1
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 3.3036,
-      "id": 1
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 2.3356,
-      "id": 1
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 5.0247,
-      "id": 2
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 2.4634,
-      "id": 2
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 0.8542,
-      "id": 2
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 8.7981,
-      "id": 3
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 6.7764,
-      "id": 3
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 5.6279,
-      "id": 3
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 0.4138,
-      "id": 4
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 4.4232,
-      "id": 4
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 7.721,
-      "id": 4
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 4.9421,
-      "id": 5
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 8.3948,
-      "id": 5
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 3.7147,
-      "id": 5
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 5.686,
-      "id": 6
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 5.1854,
-      "id": 6
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 7.4029,
-      "id": 6
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 6.0182,
-      "id": 7
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 4.6739,
-      "id": 7
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 3.9988,
-      "id": 7
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 5.969,
-      "id": 8
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 6.342,
-      "id": 8
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 6.3182,
-      "id": 8
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 5.5226,
-      "id": 9
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 2.1174,
-      "id": 9
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 4.3048,
-      "id": 9
-    },
-    {
-      "prod": "product b",
-      "ing": "protein",
-      "mg": 7.539,
-      "id": 10
-    },
-    {
-      "prod": "product b",
-      "ing": "fat",
-      "mg": 6.1142,
-      "id": 10
-    },
-    {
-      "prod": "product b",
-      "ing": "starch",
-      "mg": 4.1073,
-      "id": 10
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 4.9599,
-      "id": 1
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 7.3693,
-      "id": 1
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 5.0396,
-      "id": 1
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 5.9312,
-      "id": 2
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 3.5856,
-      "id": 2
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 5.3306,
-      "id": 2
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 6.7339,
-      "id": 3
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 6.4677,
-      "id": 3
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 8.4248,
-      "id": 3
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 5.3906,
-      "id": 4
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 3.3562,
-      "id": 4
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 7.708,
-      "id": 4
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 0.3147,
-      "id": 5
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 2.7084,
-      "id": 5
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 2.3752,
-      "id": 5
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 8.0279,
-      "id": 6
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 7.5775,
-      "id": 6
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 5.2019,
-      "id": 6
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 5.1973,
-      "id": 7
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 4.622,
-      "id": 7
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 6.7146,
-      "id": 7
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 1.3305,
-      "id": 8
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 3.3113,
-      "id": 8
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 1.922,
-      "id": 8
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 4.8479,
-      "id": 9
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 3.5826,
-      "id": 9
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 6.1353,
-      "id": 9
-    },
-    {
-      "prod": "product c",
-      "ing": "protein",
-      "mg": 5.5974,
-      "id": 10
-    },
-    {
-      "prod": "product c",
-      "ing": "fat",
-      "mg": 5.0795,
-      "id": 10
-    },
-    {
-      "prod": "product c",
-      "ing": "starch",
-      "mg": 7.6485,
-      "id": 10
+    "input_data": [
+        {
+            "Consuntivo 2010": 42560,
+            "Consuntivo 2011": 64146,
+            "Obiettivo 2011": 51072.0,
+            "id": 0
+        },
+        {
+            "Consuntivo 2010": 46368,
+            "Consuntivo 2011": 74043,
+            "Obiettivo 2011": 64915.2,
+            "id": 1
+        },
+        {
+            "Consuntivo 2010": 46826,
+            "Consuntivo 2011": 110358,
+            "Obiettivo 2011": 65556.4,
+            "id": 2
+        },
+        {
+            "Consuntivo 2010": 53090,
+            "Consuntivo 2011": 132409,
+            "Obiettivo 2011": 74326.0,
+            "id": 3
+        },
+        {
+            "Consuntivo 2010": 60331,
+            "Consuntivo 2011": 162675,
+            "Obiettivo 2011": 84463.4,
+            "id": 4
+        },
+        {
+            "Consuntivo 2010": 64501,
+            "Consuntivo 2011": 171886,
+            "Obiettivo 2011": 90301.4,
+            "id": 5
+        },
+        {
+            "Consuntivo 2010": 69244,
+            "Consuntivo 2011": 184259,
+            "Obiettivo 2011": 96941.6,
+            "id": 6
+        },
+        {
+            "Consuntivo 2010": 73102,
+            "Consuntivo 2011": 188505,
+            "Obiettivo 2011": 102342.8,
+            "id": 7
+        },
+        {
+            "Consuntivo 2010": 80000,
+            "Consuntivo 2011": 204907,
+            "Obiettivo 2011": 112000.0,
+            "id": 8
+        },
+        {
+            "Consuntivo 2010": 83922,
+            "Consuntivo 2011": 212013,
+            "Obiettivo 2011": 117490.8,
+            "id": 9
+        },
+        {
+            "Consuntivo 2010": 86729,
+            "Consuntivo 2011": 221144,
+            "Obiettivo 2011": 121420.6,
+            "id": 10
+        },
+        {
+            "Consuntivo 2010": 88889,
+            "Consuntivo 2011": 221709,
+            "Obiettivo 2011": 124444.6,
+            "id": 11
+        }
+    ],
+    "output_data": [
+        {
+            "id": 0,
+            "variable": "Consuntivo 2010",
+            "value": 42560.0
+        },
+        {
+            "id": 1,
+            "variable": "Consuntivo 2010",
+            "value": 46368.0
+        },
+        {
+            "id": 2,
+            "variable": "Consuntivo 2010",
+            "value": 46826.0
+        },
+        {
+            "id": 3,
+            "variable": "Consuntivo 2010",
+            "value": 53090.0
+        },
+        {
+            "id": 4,
+            "variable": "Consuntivo 2010",
+            "value": 60331.0
+        },
+        {
+            "id": 5,
+            "variable": "Consuntivo 2010",
+            "value": 64501.0
+        },
+        {
+            "id": 6,
+            "variable": "Consuntivo 2010",
+            "value": 69244.0
+        },
+        {
+            "id": 7,
+            "variable": "Consuntivo 2010",
+            "value": 73102.0
+        },
+        {
+            "id": 8,
+            "variable": "Consuntivo 2010",
+            "value": 80000.0
+        },
+        {
+            "id": 9,
+            "variable": "Consuntivo 2010",
+            "value": 83922.0
+        },
+        {
+            "id": 10,
+            "variable": "Consuntivo 2010",
+            "value": 86729.0
+        },
+        {
+            "id": 11,
+            "variable": "Consuntivo 2010",
+            "value": 88889.0
+        },
+        {
+            "id": 0,
+            "variable": "Consuntivo 2011",
+            "value": 64146.0
+        },
+        {
+            "id": 1,
+            "variable": "Consuntivo 2011",
+            "value": 74043.0
+        },
+        {
+            "id": 2,
+            "variable": "Consuntivo 2011",
+            "value": 110358.0
+        },
+        {
+            "id": 3,
+            "variable": "Consuntivo 2011",
+            "value": 132409.0
+        },
+        {
+            "id": 4,
+            "variable": "Consuntivo 2011",
+            "value": 162675.0
+        },
+        {
+            "id": 5,
+            "variable": "Consuntivo 2011",
+            "value": 171886.0
+        },
+        {
+            "id": 6,
+            "variable": "Consuntivo 2011",
+            "value": 184259.0
+        },
+        {
+            "id": 7,
+            "variable": "Consuntivo 2011",
+            "value": 188505.0
+        },
+        {
+            "id": 8,
+            "variable": "Consuntivo 2011",
+            "value": 204907.0
+        },
+        {
+            "id": 9,
+            "variable": "Consuntivo 2011",
+            "value": 212013.0
+        },
+        {
+            "id": 10,
+            "variable": "Consuntivo 2011",
+            "value": 221144.0
+        },
+        {
+            "id": 11,
+            "variable": "Consuntivo 2011",
+            "value": 221709.0
+        },
+        {
+            "id": 0,
+            "variable": "Obiettivo 2011",
+            "value": 51072.0
+        },
+        {
+            "id": 1,
+            "variable": "Obiettivo 2011",
+            "value": 64915.2
+        },
+        {
+            "id": 2,
+            "variable": "Obiettivo 2011",
+            "value": 65556.4
+        },
+        {
+            "id": 3,
+            "variable": "Obiettivo 2011",
+            "value": 74326.0
+        },
+        {
+            "id": 4,
+            "variable": "Obiettivo 2011",
+            "value": 84463.4
+        },
+        {
+            "id": 5,
+            "variable": "Obiettivo 2011",
+            "value": 90301.4
+        },
+        {
+            "id": 6,
+            "variable": "Obiettivo 2011",
+            "value": 96941.6
+        },
+        {
+            "id": 7,
+            "variable": "Obiettivo 2011",
+            "value": 102342.8
+        },
+        {
+            "id": 8,
+            "variable": "Obiettivo 2011",
+            "value": 112000.0
+        },
+        {
+            "id": 9,
+            "variable": "Obiettivo 2011",
+            "value": 117490.8
+        },
+        {
+            "id": 10,
+            "variable": "Obiettivo 2011",
+            "value": 121420.6
+        },
+        {
+            "id": 11,
+            "variable": "Obiettivo 2011",
+            "value": 124444.6
+        }
+    ],
+    "vl_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+        "mark": {
+            "type": "line"
+        },
+        "encoding": {
+            "x": {
+                "field": "id",
+                "type": "ordinal"
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal"
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative"
+            }
+        }
     }
-  ],
-  "output_data_r": [
-    {
-      "prod": "product a",
-      "id": 1,
-      "ing": "fat",
-      "mg": 6.4549
-    },
-    {
-      "prod": "product a",
-      "id": 2,
-      "ing": "fat",
-      "mg": 5.2545
-    },
-    {
-      "prod": "product a",
-      "id": 3,
-      "ing": "fat",
-      "mg": 5.0253
-    },
-    {
-      "prod": "product a",
-      "id": 4,
-      "ing": "fat",
-      "mg": 5.6206
-    },
-    {
-      "prod": "product a",
-      "id": 5,
-      "ing": "fat",
-      "mg": 4.1261
-    },
-    {
-      "prod": "product a",
-      "id": 6,
-      "ing": "fat",
-      "mg": 0.8029
-    },
-    {
-      "prod": "product a",
-      "id": 7,
-      "ing": "fat",
-      "mg": 5.3565
-    },
-    {
-      "prod": "product a",
-      "id": 8,
-      "ing": "fat",
-      "mg": 5.9121
-    },
-    {
-      "prod": "product a",
-      "id": 9,
-      "ing": "fat",
-      "mg": 6.4268
-    },
-    {
-      "prod": "product a",
-      "id": 10,
-      "ing": "fat",
-      "mg": 5.4572
-    },
-    {
-      "prod": "product b",
-      "id": 1,
-      "ing": "fat",
-      "mg": 3.3036
-    },
-    {
-      "prod": "product b",
-      "id": 2,
-      "ing": "fat",
-      "mg": 2.4634
-    },
-    {
-      "prod": "product b",
-      "id": 3,
-      "ing": "fat",
-      "mg": 6.7764
-    },
-    {
-      "prod": "product b",
-      "id": 4,
-      "ing": "fat",
-      "mg": 4.4232
-    },
-    {
-      "prod": "product b",
-      "id": 5,
-      "ing": "fat",
-      "mg": 8.3948
-    },
-    {
-      "prod": "product b",
-      "id": 6,
-      "ing": "fat",
-      "mg": 5.1854
-    },
-    {
-      "prod": "product b",
-      "id": 7,
-      "ing": "fat",
-      "mg": 4.6739
-    },
-    {
-      "prod": "product b",
-      "id": 8,
-      "ing": "fat",
-      "mg": 6.342
-    },
-    {
-      "prod": "product b",
-      "id": 9,
-      "ing": "fat",
-      "mg": 2.1174
-    },
-    {
-      "prod": "product b",
-      "id": 10,
-      "ing": "fat",
-      "mg": 6.1142
-    },
-    {
-      "prod": "product c",
-      "id": 1,
-      "ing": "fat",
-      "mg": 7.3693
-    },
-    {
-      "prod": "product c",
-      "id": 2,
-      "ing": "fat",
-      "mg": 3.5856
-    },
-    {
-      "prod": "product c",
-      "id": 3,
-      "ing": "fat",
-      "mg": 6.4677
-    },
-    {
-      "prod": "product c",
-      "id": 4,
-      "ing": "fat",
-      "mg": 3.3562
-    },
-    {
-      "prod": "product c",
-      "id": 5,
-      "ing": "fat",
-      "mg": 2.7084
-    },
-    {
-      "prod": "product c",
-      "id": 6,
-      "ing": "fat",
-      "mg": 7.5775
-    },
-    {
-      "prod": "product c",
-      "id": 7,
-      "ing": "fat",
-      "mg": 4.622
-    },
-    {
-      "prod": "product c",
-      "id": 8,
-      "ing": "fat",
-      "mg": 3.3113
-    },
-    {
-      "prod": "product c",
-      "id": 9,
-      "ing": "fat",
-      "mg": 3.5826
-    },
-    {
-      "prod": "product c",
-      "id": 10,
-      "ing": "fat",
-      "mg": 5.0795
-    },
-    {
-      "prod": "product a",
-      "id": 1,
-      "ing": "protein",
-      "mg": 2.4235
-    },
-    {
-      "prod": "product a",
-      "id": 2,
-      "ing": "protein",
-      "mg": 3.5926
-    },
-    {
-      "prod": "product a",
-      "id": 3,
-      "ing": "protein",
-      "mg": 3.6026
-    },
-    {
-      "prod": "product a",
-      "id": 4,
-      "ing": "protein",
-      "mg": 1.4638
-    },
-    {
-      "prod": "product a",
-      "id": 5,
-      "ing": "protein",
-      "mg": 0.3727
-    },
-    {
-      "prod": "product a",
-      "id": 6,
-      "ing": "protein",
-      "mg": 3.619
-    },
-    {
-      "prod": "product a",
-      "id": 7,
-      "ing": "protein",
-      "mg": 8.4886
-    },
-    {
-      "prod": "product a",
-      "id": 8,
-      "ing": "protein",
-      "mg": 4.6844
-    },
-    {
-      "prod": "product a",
-      "id": 9,
-      "ing": "protein",
-      "mg": 1.8839
-    },
-    {
-      "prod": "product a",
-      "id": 10,
-      "ing": "protein",
-      "mg": 3.7449
-    },
-    {
-      "prod": "product b",
-      "id": 1,
-      "ing": "protein",
-      "mg": 4.5086
-    },
-    {
-      "prod": "product b",
-      "id": 2,
-      "ing": "protein",
-      "mg": 5.0247
-    },
-    {
-      "prod": "product b",
-      "id": 3,
-      "ing": "protein",
-      "mg": 8.7981
-    },
-    {
-      "prod": "product b",
-      "id": 4,
-      "ing": "protein",
-      "mg": 0.4138
-    },
-    {
-      "prod": "product b",
-      "id": 5,
-      "ing": "protein",
-      "mg": 4.9421
-    },
-    {
-      "prod": "product b",
-      "id": 6,
-      "ing": "protein",
-      "mg": 5.686
-    },
-    {
-      "prod": "product b",
-      "id": 7,
-      "ing": "protein",
-      "mg": 6.0182
-    },
-    {
-      "prod": "product b",
-      "id": 8,
-      "ing": "protein",
-      "mg": 5.969
-    },
-    {
-      "prod": "product b",
-      "id": 9,
-      "ing": "protein",
-      "mg": 5.5226
-    },
-    {
-      "prod": "product b",
-      "id": 10,
-      "ing": "protein",
-      "mg": 7.539
-    },
-    {
-      "prod": "product c",
-      "id": 1,
-      "ing": "protein",
-      "mg": 4.9599
-    },
-    {
-      "prod": "product c",
-      "id": 2,
-      "ing": "protein",
-      "mg": 5.9312
-    },
-    {
-      "prod": "product c",
-      "id": 3,
-      "ing": "protein",
-      "mg": 6.7339
-    },
-    {
-      "prod": "product c",
-      "id": 4,
-      "ing": "protein",
-      "mg": 5.3906
-    },
-    {
-      "prod": "product c",
-      "id": 5,
-      "ing": "protein",
-      "mg": 0.3147
-    },
-    {
-      "prod": "product c",
-      "id": 6,
-      "ing": "protein",
-      "mg": 8.0279
-    },
-    {
-      "prod": "product c",
-      "id": 7,
-      "ing": "protein",
-      "mg": 5.1973
-    },
-    {
-      "prod": "product c",
-      "id": 8,
-      "ing": "protein",
-      "mg": 1.3305
-    },
-    {
-      "prod": "product c",
-      "id": 9,
-      "ing": "protein",
-      "mg": 4.8479
-    },
-    {
-      "prod": "product c",
-      "id": 10,
-      "ing": "protein",
-      "mg": 5.5974
-    },
-    {
-      "prod": "product a",
-      "id": 1,
-      "ing": "starch",
-      "mg": 3.3342
-    },
-    {
-      "prod": "product a",
-      "id": 2,
-      "ing": "starch",
-      "mg": 4.3301
-    },
-    {
-      "prod": "product a",
-      "id": 3,
-      "ing": "starch",
-      "mg": 6.178
-    },
-    {
-      "prod": "product a",
-      "id": 4,
-      "ing": "starch",
-      "mg": 5.2518
-    },
-    {
-      "prod": "product a",
-      "id": 5,
-      "ing": "starch",
-      "mg": 3.3226
-    },
-    {
-      "prod": "product a",
-      "id": 6,
-      "ing": "starch",
-      "mg": 4.6945
-    },
-    {
-      "prod": "product a",
-      "id": 7,
-      "ing": "starch",
-      "mg": 4.3946
-    },
-    {
-      "prod": "product a",
-      "id": 8,
-      "ing": "starch",
-      "mg": 5.5387
-    },
-    {
-      "prod": "product a",
-      "id": 9,
-      "ing": "starch",
-      "mg": 5.361
-    },
-    {
-      "prod": "product a",
-      "id": 10,
-      "ing": "starch",
-      "mg": 4.4172
-    },
-    {
-      "prod": "product b",
-      "id": 1,
-      "ing": "starch",
-      "mg": 2.3356
-    },
-    {
-      "prod": "product b",
-      "id": 2,
-      "ing": "starch",
-      "mg": 0.8542
-    },
-    {
-      "prod": "product b",
-      "id": 3,
-      "ing": "starch",
-      "mg": 5.6279
-    },
-    {
-      "prod": "product b",
-      "id": 4,
-      "ing": "starch",
-      "mg": 7.721
-    },
-    {
-      "prod": "product b",
-      "id": 5,
-      "ing": "starch",
-      "mg": 3.7147
-    },
-    {
-      "prod": "product b",
-      "id": 6,
-      "ing": "starch",
-      "mg": 7.4029
-    },
-    {
-      "prod": "product b",
-      "id": 7,
-      "ing": "starch",
-      "mg": 3.9988
-    },
-    {
-      "prod": "product b",
-      "id": 8,
-      "ing": "starch",
-      "mg": 6.3182
-    },
-    {
-      "prod": "product b",
-      "id": 9,
-      "ing": "starch",
-      "mg": 4.3048
-    },
-    {
-      "prod": "product b",
-      "id": 10,
-      "ing": "starch",
-      "mg": 4.1073
-    },
-    {
-      "prod": "product c",
-      "id": 1,
-      "ing": "starch",
-      "mg": 5.0396
-    },
-    {
-      "prod": "product c",
-      "id": 2,
-      "ing": "starch",
-      "mg": 5.3306
-    },
-    {
-      "prod": "product c",
-      "id": 3,
-      "ing": "starch",
-      "mg": 8.4248
-    },
-    {
-      "prod": "product c",
-      "id": 4,
-      "ing": "starch",
-      "mg": 7.708
-    },
-    {
-      "prod": "product c",
-      "id": 5,
-      "ing": "starch",
-      "mg": 2.3752
-    },
-    {
-      "prod": "product c",
-      "id": 6,
-      "ing": "starch",
-      "mg": 5.2019
-    },
-    {
-      "prod": "product c",
-      "id": 7,
-      "ing": "starch",
-      "mg": 6.7146
-    },
-    {
-      "prod": "product c",
-      "id": 8,
-      "ing": "starch",
-      "mg": 1.922
-    },
-    {
-      "prod": "product c",
-      "id": 9,
-      "ing": "starch",
-      "mg": 6.1353
-    },
-    {
-      "prod": "product c",
-      "id": 10,
-      "ing": "starch",
-      "mg": 7.6485
-    }
-  ],
-  "output_data": [
-    {
-      "id": 1,
-      "ing": "protein",
-      "mg": 2.4235,
-      "prod": "product a"
-    },
-    {
-      "id": 1,
-      "ing": "fat",
-      "mg": 6.4549,
-      "prod": "product a"
-    },
-    {
-      "id": 1,
-      "ing": "starch",
-      "mg": 3.3342,
-      "prod": "product a"
-    },
-    {
-      "id": 2,
-      "ing": "protein",
-      "mg": 3.5926,
-      "prod": "product a"
-    },
-    {
-      "id": 2,
-      "ing": "fat",
-      "mg": 5.2545,
-      "prod": "product a"
-    },
-    {
-      "id": 2,
-      "ing": "starch",
-      "mg": 4.3301,
-      "prod": "product a"
-    },
-    {
-      "id": 3,
-      "ing": "protein",
-      "mg": 3.6026,
-      "prod": "product a"
-    },
-    {
-      "id": 3,
-      "ing": "fat",
-      "mg": 5.0253,
-      "prod": "product a"
-    },
-    {
-      "id": 3,
-      "ing": "starch",
-      "mg": 6.178,
-      "prod": "product a"
-    },
-    {
-      "id": 4,
-      "ing": "protein",
-      "mg": 1.4638,
-      "prod": "product a"
-    },
-    {
-      "id": 4,
-      "ing": "fat",
-      "mg": 5.6206,
-      "prod": "product a"
-    },
-    {
-      "id": 4,
-      "ing": "starch",
-      "mg": 5.2518,
-      "prod": "product a"
-    },
-    {
-      "id": 5,
-      "ing": "protein",
-      "mg": 0.3727,
-      "prod": "product a"
-    },
-    {
-      "id": 5,
-      "ing": "fat",
-      "mg": 4.1261,
-      "prod": "product a"
-    },
-    {
-      "id": 5,
-      "ing": "starch",
-      "mg": 3.3226,
-      "prod": "product a"
-    },
-    {
-      "id": 6,
-      "ing": "protein",
-      "mg": 3.619,
-      "prod": "product a"
-    },
-    {
-      "id": 6,
-      "ing": "fat",
-      "mg": 0.8029,
-      "prod": "product a"
-    },
-    {
-      "id": 6,
-      "ing": "starch",
-      "mg": 4.6945,
-      "prod": "product a"
-    },
-    {
-      "id": 7,
-      "ing": "protein",
-      "mg": 8.4886,
-      "prod": "product a"
-    },
-    {
-      "id": 7,
-      "ing": "fat",
-      "mg": 5.3565,
-      "prod": "product a"
-    },
-    {
-      "id": 7,
-      "ing": "starch",
-      "mg": 4.3946,
-      "prod": "product a"
-    },
-    {
-      "id": 8,
-      "ing": "protein",
-      "mg": 4.6844,
-      "prod": "product a"
-    },
-    {
-      "id": 8,
-      "ing": "fat",
-      "mg": 5.9121,
-      "prod": "product a"
-    },
-    {
-      "id": 8,
-      "ing": "starch",
-      "mg": 5.5387,
-      "prod": "product a"
-    },
-    {
-      "id": 9,
-      "ing": "protein",
-      "mg": 1.8839,
-      "prod": "product a"
-    },
-    {
-      "id": 9,
-      "ing": "fat",
-      "mg": 6.4268,
-      "prod": "product a"
-    },
-    {
-      "id": 9,
-      "ing": "starch",
-      "mg": 5.361,
-      "prod": "product a"
-    },
-    {
-      "id": 10,
-      "ing": "protein",
-      "mg": 3.7449,
-      "prod": "product a"
-    },
-    {
-      "id": 10,
-      "ing": "fat",
-      "mg": 5.4572,
-      "prod": "product a"
-    },
-    {
-      "id": 10,
-      "ing": "starch",
-      "mg": 4.4172,
-      "prod": "product a"
-    },
-    {
-      "id": 1,
-      "ing": "protein",
-      "mg": 4.5086,
-      "prod": "product b"
-    },
-    {
-      "id": 1,
-      "ing": "fat",
-      "mg": 3.3036,
-      "prod": "product b"
-    },
-    {
-      "id": 1,
-      "ing": "starch",
-      "mg": 2.3356,
-      "prod": "product b"
-    },
-    {
-      "id": 2,
-      "ing": "protein",
-      "mg": 5.0247,
-      "prod": "product b"
-    },
-    {
-      "id": 2,
-      "ing": "fat",
-      "mg": 2.4634,
-      "prod": "product b"
-    },
-    {
-      "id": 2,
-      "ing": "starch",
-      "mg": 0.8542,
-      "prod": "product b"
-    },
-    {
-      "id": 3,
-      "ing": "protein",
-      "mg": 8.7981,
-      "prod": "product b"
-    },
-    {
-      "id": 3,
-      "ing": "fat",
-      "mg": 6.7764,
-      "prod": "product b"
-    },
-    {
-      "id": 3,
-      "ing": "starch",
-      "mg": 5.6279,
-      "prod": "product b"
-    },
-    {
-      "id": 4,
-      "ing": "protein",
-      "mg": 0.4138,
-      "prod": "product b"
-    },
-    {
-      "id": 4,
-      "ing": "fat",
-      "mg": 4.4232,
-      "prod": "product b"
-    },
-    {
-      "id": 4,
-      "ing": "starch",
-      "mg": 7.721,
-      "prod": "product b"
-    },
-    {
-      "id": 5,
-      "ing": "protein",
-      "mg": 4.9421,
-      "prod": "product b"
-    },
-    {
-      "id": 5,
-      "ing": "fat",
-      "mg": 8.3948,
-      "prod": "product b"
-    },
-    {
-      "id": 5,
-      "ing": "starch",
-      "mg": 3.7147,
-      "prod": "product b"
-    },
-    {
-      "id": 6,
-      "ing": "protein",
-      "mg": 5.686,
-      "prod": "product b"
-    },
-    {
-      "id": 6,
-      "ing": "fat",
-      "mg": 5.1854,
-      "prod": "product b"
-    },
-    {
-      "id": 6,
-      "ing": "starch",
-      "mg": 7.4029,
-      "prod": "product b"
-    },
-    {
-      "id": 7,
-      "ing": "protein",
-      "mg": 6.0182,
-      "prod": "product b"
-    },
-    {
-      "id": 7,
-      "ing": "fat",
-      "mg": 4.6739,
-      "prod": "product b"
-    },
-    {
-      "id": 7,
-      "ing": "starch",
-      "mg": 3.9988,
-      "prod": "product b"
-    },
-    {
-      "id": 8,
-      "ing": "protein",
-      "mg": 5.969,
-      "prod": "product b"
-    },
-    {
-      "id": 8,
-      "ing": "fat",
-      "mg": 6.342,
-      "prod": "product b"
-    },
-    {
-      "id": 8,
-      "ing": "starch",
-      "mg": 6.3182,
-      "prod": "product b"
-    },
-    {
-      "id": 9,
-      "ing": "protein",
-      "mg": 5.5226,
-      "prod": "product b"
-    },
-    {
-      "id": 9,
-      "ing": "fat",
-      "mg": 2.1174,
-      "prod": "product b"
-    },
-    {
-      "id": 9,
-      "ing": "starch",
-      "mg": 4.3048,
-      "prod": "product b"
-    },
-    {
-      "id": 10,
-      "ing": "protein",
-      "mg": 7.539,
-      "prod": "product b"
-    },
-    {
-      "id": 10,
-      "ing": "fat",
-      "mg": 6.1142,
-      "prod": "product b"
-    },
-    {
-      "id": 10,
-      "ing": "starch",
-      "mg": 4.1073,
-      "prod": "product b"
-    },
-    {
-      "id": 1,
-      "ing": "protein",
-      "mg": 4.9599,
-      "prod": "product c"
-    },
-    {
-      "id": 1,
-      "ing": "fat",
-      "mg": 7.3693,
-      "prod": "product c"
-    },
-    {
-      "id": 1,
-      "ing": "starch",
-      "mg": 5.0396,
-      "prod": "product c"
-    },
-    {
-      "id": 2,
-      "ing": "protein",
-      "mg": 5.9312,
-      "prod": "product c"
-    },
-    {
-      "id": 2,
-      "ing": "fat",
-      "mg": 3.5856,
-      "prod": "product c"
-    },
-    {
-      "id": 2,
-      "ing": "starch",
-      "mg": 5.3306,
-      "prod": "product c"
-    },
-    {
-      "id": 3,
-      "ing": "protein",
-      "mg": 6.7339,
-      "prod": "product c"
-    },
-    {
-      "id": 3,
-      "ing": "fat",
-      "mg": 6.4677,
-      "prod": "product c"
-    },
-    {
-      "id": 3,
-      "ing": "starch",
-      "mg": 8.4248,
-      "prod": "product c"
-    },
-    {
-      "id": 4,
-      "ing": "protein",
-      "mg": 5.3906,
-      "prod": "product c"
-    },
-    {
-      "id": 4,
-      "ing": "fat",
-      "mg": 3.3562,
-      "prod": "product c"
-    },
-    {
-      "id": 4,
-      "ing": "starch",
-      "mg": 7.708,
-      "prod": "product c"
-    },
-    {
-      "id": 5,
-      "ing": "protein",
-      "mg": 0.3147,
-      "prod": "product c"
-    },
-    {
-      "id": 5,
-      "ing": "fat",
-      "mg": 2.7084,
-      "prod": "product c"
-    },
-    {
-      "id": 5,
-      "ing": "starch",
-      "mg": 2.3752,
-      "prod": "product c"
-    },
-    {
-      "id": 6,
-      "ing": "protein",
-      "mg": 8.0279,
-      "prod": "product c"
-    },
-    {
-      "id": 6,
-      "ing": "fat",
-      "mg": 7.5775,
-      "prod": "product c"
-    },
-    {
-      "id": 6,
-      "ing": "starch",
-      "mg": 5.2019,
-      "prod": "product c"
-    },
-    {
-      "id": 7,
-      "ing": "protein",
-      "mg": 5.1973,
-      "prod": "product c"
-    },
-    {
-      "id": 7,
-      "ing": "fat",
-      "mg": 4.622,
-      "prod": "product c"
-    },
-    {
-      "id": 7,
-      "ing": "starch",
-      "mg": 6.7146,
-      "prod": "product c"
-    },
-    {
-      "id": 8,
-      "ing": "protein",
-      "mg": 1.3305,
-      "prod": "product c"
-    },
-    {
-      "id": 8,
-      "ing": "fat",
-      "mg": 3.3113,
-      "prod": "product c"
-    },
-    {
-      "id": 8,
-      "ing": "starch",
-      "mg": 1.922,
-      "prod": "product c"
-    },
-    {
-      "id": 9,
-      "ing": "protein",
-      "mg": 4.8479,
-      "prod": "product c"
-    },
-    {
-      "id": 9,
-      "ing": "fat",
-      "mg": 3.5826,
-      "prod": "product c"
-    },
-    {
-      "id": 9,
-      "ing": "starch",
-      "mg": 6.1353,
-      "prod": "product c"
-    },
-    {
-      "id": 10,
-      "ing": "protein",
-      "mg": 5.5974,
-      "prod": "product c"
-    },
-    {
-      "id": 10,
-      "ing": "fat",
-      "mg": 5.0795,
-      "prod": "product c"
-    },
-    {
-      "id": 10,
-      "ing": "starch",
-      "mg": 7.6485,
-      "prod": "product c"
-    }
-  ],
-  "vl_spec": {
-    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-    "mark": {
-      "type": "boxplot",
-      "extent": "min-max"
-    },
-    "encoding": {
-      "x": {
-        "field": "ing",
-        "type": "nominal"
-      },
-      "color": {
-        "field": "ing",
-        "type": "nominal"
-      },
-      "y": {
-        "field": "mg",
-        "type": "quantitative"
-      },
-      "column": {
-        "field": "prod",
-        "type": "nominal"
-      }
-    }
-  }
 }

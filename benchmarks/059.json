@@ -3,162 +3,88 @@
     {
       "ID": "1",
       "name": "A",
-      "persons_g1_0min": 1,
-      "persons_g1_10min": 4,
-      "persons_g1_30min": 7,
-      "persons_g2_0min": 10,
-      "persons_g2_10min": 13,
-      "persons_g2_30min": 16
+      "personsg1_0min": 1,
+      "personsg1_10min": 4,
+      "personsg1_30min": 7,
+      "personsg2_0min": 10,
+      "personsg2_10min": 13,
+      "personsg2_30min": 16
     },
     {
       "ID": "2",
       "name": "A",
-      "persons_g1_0min": 2,
-      "persons_g1_10min": 5,
-      "persons_g1_30min": 8,
-      "persons_g2_0min": 11,
-      "persons_g2_10min": 14,
-      "persons_g2_30min": 17
+      "personsg1_0min": 2,
+      "personsg1_10min": 5,
+      "personsg1_30min": 8,
+      "personsg2_0min": 11,
+      "personsg2_10min": 14,
+      "personsg2_30min": 17
     },
     {
       "ID": "3",
       "name": "C",
-      "persons_g1_0min": 3,
-      "persons_g1_10min": 6,
-      "persons_g1_30min": 9,
-      "persons_g2_0min": 12,
-      "persons_g2_10min": 15,
-      "persons_g2_30min": 18
-    }
-  ],
-  "output_data_r": [
-    {
-      "ID": "1",
-      "name": "A",
-      "A": "persons",
-      "Time": "0min",
-      "g1": 1,
-      "g2": 10
-    },
-    {
-      "ID": "1",
-      "name": "A",
-      "A": "persons",
-      "Time": "10min",
-      "g1": 4,
-      "g2": 13
-    },
-    {
-      "ID": "1",
-      "name": "A",
-      "A": "persons",
-      "Time": "30min",
-      "g1": 7,
-      "g2": 16
-    },
-    {
-      "ID": "2",
-      "name": "A",
-      "A": "persons",
-      "Time": "0min",
-      "g1": 2,
-      "g2": 11
-    },
-    {
-      "ID": "2",
-      "name": "A",
-      "A": "persons",
-      "Time": "10min",
-      "g1": 5,
-      "g2": 14
-    },
-    {
-      "ID": "2",
-      "name": "A",
-      "A": "persons",
-      "Time": "30min",
-      "g1": 8,
-      "g2": 17
-    },
-    {
-      "ID": "3",
-      "name": "C",
-      "A": "persons",
-      "Time": "0min",
-      "g1": 3,
-      "g2": 12
-    },
-    {
-      "ID": "3",
-      "name": "C",
-      "A": "persons",
-      "Time": "10min",
-      "g1": 6,
-      "g2": 15
-    },
-    {
-      "ID": "3",
-      "name": "C",
-      "A": "persons",
-      "Time": "30min",
-      "g1": 9,
-      "g2": 18
+      "personsg1_0min": 3,
+      "personsg1_10min": 6,
+      "personsg1_30min": 9,
+      "personsg2_0min": 12,
+      "personsg2_10min": 15,
+      "personsg2_30min": 18
     }
   ],
   "output_data": [
     {
-      "ID": 1,
+      "ID": "1",
       "time": "0min",
-      "g1": 1,
-      "g2": 10
+      "personsg1": 1,
+      "personsg2": 10
     },
     {
-      "ID": 1,
+      "ID": "1",
       "time": "10min",
-      "g1": 4,
-      "g2": 13
+      "personsg1": 4,
+      "personsg2": 13
     },
     {
-      "ID": 1,
+      "ID": "1",
       "time": "30min",
-      "g1": 7,
-      "g2": 16
+      "personsg1": 7,
+      "personsg2": 16
     },
     {
-      "ID": 2,
+      "ID": "2",
       "time": "0min",
-      "g1": 2,
-      "g2": 11
+      "personsg1": 2,
+      "personsg2": 11
     },
     {
-      "ID": 2,
+      "ID": "2",
       "time": "10min",
-      "g1": 5,
-      "g2": 14
+      "personsg1": 5,
+      "personsg2": 14
     },
     {
-      "ID": 2,
+      "ID": "2",
       "time": "30min",
-      "g1": 8,
-      "g2": 17
+      "personsg1": 8,
+      "personsg2": 17
     },
     {
-      "ID": 3,
+      "ID": "3",
       "time": "0min",
-      "g1": 3,
-      "g2": 12
+      "personsg1": 3,
+      "personsg2": 12
     },
     {
-      "ID": 3,
+      "ID": "3",
       "time": "10min",
-      "g1": 6,
-      "g2": 15
+      "personsg1": 6,
+      "personsg2": 15
     },
     {
-      "ID": 3,
+      "ID": "3",
       "time": "30min",
-      "g1": 9,
-      "g2": 18
+      "personsg1": 9,
+      "personsg2": 18
     }
   ],
   "vl_spec": {
@@ -168,11 +94,11 @@
     },
     "encoding": {
       "x": {
-        "field": "g1",
+        "field": "personsg1",
         "type": "quantitative"
       },
       "y": {
-        "field": "g2",
+        "field": "personsg2",
         "type": "quantitative"
       },
       "column": {
