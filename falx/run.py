@@ -20,10 +20,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the directory of all benchmarks")
 parser.add_argument("--data_id", dest="data_id", default="001", 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
-parser.add_argument("--mode", dest="mode", default="eval", 
-                    help="Enter the running mode: [eval] or [run]")
 
-def test_benchmarks(data_dir, data_id, mode):
+def test_benchmarks(data_dir, data_id, num_samples=4):
     """load the dataset into panda dataframes """
     test_targets = None
     if data_id is not None:
@@ -43,6 +41,7 @@ def test_benchmarks(data_dir, data_id, mode):
 
         start = timer()
         print("====> run synthesize {}".format(fname))
+        print("# num samples per layer: {}".format(num_samples))
 
         # read the dataset and create visualization
         input_data = data["input_data"]
@@ -51,7 +50,7 @@ def test_benchmarks(data_dir, data_id, mode):
         trace = vis.eval()
         #pprint(trace)
 
-        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=4, extra_consts=extra_consts)
+        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts)
         end = timer()
 
         print("## synthesize result for task {}".format(fname))
@@ -67,4 +66,4 @@ def test_benchmarks(data_dir, data_id, mode):
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir, flags.data_id, flags.mode)
+    test_benchmarks(flags.data_dir, flags.data_id)
