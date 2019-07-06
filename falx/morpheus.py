@@ -426,7 +426,6 @@ class MorpheusInterpreter(PostOrderInterpreter):
             return ret_df_name
         except Exception as e:
             logger.error('Error in interpreting cumsum...', _script)
-            assert False, e
             raise GeneralError()
 
     def eval_mutate(self, node, args):
