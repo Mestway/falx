@@ -31,6 +31,9 @@ class AbstractPrune(GenericVisitor):
     _blames: Set
     _input: None 
     _output: None
+    new_value: True
+    need_separate: True
+    need_spearate2: True
 
     def __init__(self, interp: Interpreter, example: Example):
         self._interp = interp
@@ -42,6 +45,9 @@ class AbstractPrune(GenericVisitor):
         output = robjects.r(example.output)
         self._input = input
         self._output = output
+        self.new_value = self.computeNewValue()
+        self.need_separate = self.compSeparate()
+        self.need_spearate2 = self.compSeparate2()
         # [self._input.append(col) for col in input]
         # [self._output.append(col) for col in output]
     
@@ -67,7 +73,7 @@ class AbstractPrune(GenericVisitor):
         sat = self.is_consistent(actual, self._output)
         return not sat
 
-    def needSeparate(self):
+    def compSeparate(self):
         has_sep = False
         sel_list = [val for val in self._input.columns.values if ('-' in val or '_' in val or '/' in val)]
         has_sep = has_sep or (len(sel_list) > 0)
@@ -79,7 +85,7 @@ class AbstractPrune(GenericVisitor):
 
         return has_sep
 
-    def needSeparate2(self):
+    def compSeparate2(self):
         has_sep = False
         for col in self._input.columns:
             if self._input[col].dtype == np.object:
@@ -89,9 +95,11 @@ class AbstractPrune(GenericVisitor):
 
         return has_sep
 
-    def hasNewValues(self):
+    def computeNewValue(self):
         in_set = set()
         out_set = set()
+        if self._input.shape[1] < 4:
+            return True
 
         for col in self._output.columns:
             if self._output[col].dtype != np.object:
@@ -324,7 +332,7 @@ class AbstractPrune(GenericVisitor):
                 return False, tbl_ret
         #Done.
         elif opcode == 'separate':
-            if not self.needSeparate():
+            if not self.need_separate:
                 return True, None
 
             self._blames.add(ast.children[1])
@@ -347,13 +355,13 @@ class AbstractPrune(GenericVisitor):
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'mutate' or opcode == 'cumsum':
-            if not self.hasNewValues():
+            if not self.new_value:
                 return True, None
 
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'summarise' or opcode == 'groupSum':
-            if not self.hasNewValues():
+            if not self.new_value:
                 return True, None
 
             all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
@@ -375,7 +383,7 @@ class AbstractPrune(GenericVisitor):
             tbl_new = tbl_out[cols[1:]]
             tp = tbl_new.T
             # Hack
-            if self.needSeparate2():
+            if self.need_spearate2:
                 return False, pd.DataFrame()
             return False, tp
 
