@@ -14,7 +14,7 @@ import table_utils
 
 import visual_trace
 from visual_trace import BarV, BarH, Point, Line, Area, Box
-import chart
+from chart import VisDesign, remove_unused_fields
 
 def build_color_map(values):
     distinct_vals = list(set(values))
@@ -87,6 +87,23 @@ class MpMultiLayer(object):
                 layers[vty] = MpLineChart.inv_eval(trace_layer[vty])
             elif vty == "Area":
                 layers[vty] = MpAreaChart.inv_eval(trace_layer[vty])
+
+        if len(layers) == 1:
+            # directly return the layer if there is only one layer
+            return layers[list(layers.keys())[0]]
+        else:
+            res = []
+            layer_candidates = [layers[vty] for vty in layers]
+            sizes = [list(range(len(l))) for l in layer_candidates]
+            
+            # iterating over combinations for different layers
+            for id_list in itertools.product(*sizes):
+                #id_list[i] is the candidate (data, layer) pair for layer i
+                data_layer_pairs = [layer_candidates[i][id_list[i]] for i in range(len(id_list))]
+                data_for_all_layers = [cl[0] for cl in data_layer_pairs]
+                all_layers = [cl[1] for cl in data_layer_pairs]
+                res.append((data_for_all_layers, MpMultiLayer(charts=all_layers)))
+            return  res
 
 
 class MpSubplot(object):
@@ -168,9 +185,25 @@ class MpBarChart(object):
 
     @staticmethod
     def inv_eval(vtrace, orientation):
+        data_values = []
+        if orientation == "vertical":
+            for vt in vtrace:
+                bot = None if vt.y2 is None else vt.y1
+                height = vt.y1 if vt.y2 is None else vt.y2 - vt.y1
+                data_values.append({"c_x": vt.x, "c_bot": bot, "c_height": height, "c_color": vt.color})
+        if orientation == "horizontal":
+            for vt in vtrace:
+                bot = None if vt.x2 is None else vt.yx
+                height = vt.x1 if vt.x2 is None else vt.x2 - vt.x1
+                data_values.append({"c_x": vt.y, "c_bot": bot, "c_height": height, "c_color": vt.color})
+               
+        # remove fields that contain none values
+        unused_fields = remove_unused_fields(data_values)
 
-        pprint(vtrace)
-        print("===")
+        bar_chart = MpBarChart(c_x="c_x", c_bot="c_bot" if "c_bot" not in unused_fields else None, 
+                               c_height="c_height", c_color="c_color" if "c_color" not in unused_fields else None,
+                               orient=orientation)
+        return [(SymTable(values=data_values), bar_chart)]
 
 
 class MpGroupBarChart(object):
@@ -203,6 +236,28 @@ class MpGroupBarChart(object):
         kind = "barh" if self.orient == "horizontal" else "bar"
         df.plot(kind=kind, x=self.c_x, y=self.c_ys, stacked=self.stacked, ax=ax)
 
+    @staticmethod
+    def inv_eval(vtrace, orientation):
+        assert orientation == "vertical"
+        # map x to multiple y
+        table_dict = {}
+        y_cols = list(set([vt.color for vt in vtrace]))
+        for vt in vtrace:
+            if vt.x not in table_dict:
+                table_dict[vt.x] = {"c_x": vt.x}
+            if vt.y2 is None or vt.color is None:
+                return []
+            table_dict[vt.x][vt.color] = vt.y2 - vt.y1
+
+        table_content = []
+        for x in table_dict:
+            table_content.append(table_dict[x])
+            if len(table_dict[x]) != len(y_cols) + 1:
+                # cannot  represented in mp format
+                return []
+
+        return [(SymTable(values=table_content), MpGroupBarChart("c_x", y_cols, orient=orientation))]
+
 
 class MpScatterPlot(object):
     def __init__(self, c_x, c_ys, c_size=None):
@@ -231,6 +286,47 @@ class MpScatterPlot(object):
             size = df[self.c_size] if self.c_size is not None else None
             ax.scatter(x=df[self.c_x], y=df[c_y], s=size, color=color_map[c_y], label=c_y)
 
+    @staticmethod
+    def inv_eval(vtrace):
+        pprint(vtrace)
+        table_dict = {}
+        y_cols = list(set([vt.color for vt in vtrace]))
+
+        size_used = any([vt.size != None for vt in vtrace])
+
+        if any([vt.shape != None for vt in vtrace]) or (len(y_cols) > 1 and size_used):
+            # does not support shape or size + color
+            return []
+
+        if len(y_cols) > 1:
+            # map x to multiple y
+            table_dict = {}
+            for vt in vtrace:
+                if vt.x not in table_dict:
+                    table_dict[vt.x] = {"c_x": vt.x}
+                table_dict[vt.x][str(vt.color)] = vt.y
+
+            table_content = []
+            for x in table_dict:
+                table_content.append(table_dict[x])
+                if len(table_dict[x]) != len(y_cols) + 1:
+                    # we require table to contain NA values
+                    return []
+            chart = MpScatterPlot("c_x", [str(y) for y in y_cols])
+            return [(SymTable(values=table_content), chart)]
+        else:
+            table_content = []
+            for vt in vtrace:
+                r = {"c_x": vt.x, "c_y": vt.y}
+                if size_used:
+                    r["c_size"] = vt.size
+                    c_size = "c_size"
+                else:
+                    c_size = None
+
+                table_content.append()
+                chart = MpScatterPlot("c_x", ["c_y"], c_size)
+                return [(SymTable(values=table_content), chart)]
 
 class MpLineChart(object):
     def __init__(self, c_x, c_ys):
@@ -273,7 +369,7 @@ class MpLineChart(object):
 
         data_values = [json.loads(r) for r in frozen_data]
 
-        unused_fields = chart.remove_unused_fields(data_values)
+        unused_fields = remove_unused_fields(data_values)
 
         if "c_color" not in unused_fields and "c_size" not in unused_fields:
             assert False
@@ -286,21 +382,23 @@ class MpLineChart(object):
             # map x to multiple y
             table_dict = {}
             for r in data_values:
-                if [r["c_x"]] not in table_dict:
+                if r["c_x"] not in table_dict:
                     table_dict[r["c_x"]] = {"c_x": r["c_x"]}
                 table_dict[r["c_x"]][r["c_color"]] = r["c_y"]
+
             table_content = []
             for x in table_dict:
                 table_content.append(table_dict[x])
                 if len(table_dict[x]) != col_num:
-                    assert False
+                    # we require table to contain NA values
+                    return []
         else:
             y_cols = ["c_y"]
             if "c_size" not in unused_fields:
                 y_cols.append(["c_size"])
             table_content = data_values
 
-        return [(SymTable(values=data_values, constraints=[]), MpLineChart("c_x", y_cols))]
+        return [(SymTable(values=table_content, constraints=[]), MpLineChart("c_x", y_cols))]
 
 
 
@@ -343,23 +441,63 @@ class MpAreaChart(object):
             for c_top in self.c_tops:
                 ax.fill_between(df[self.c_x], df[c_top], label=c_top)
 
+    @staticmethod
+    def inv_eval(vtrace):
+        use_color = all([vt.color != None for vt in vtrace])
+        if not use_color:
+            # simple viusal trace
+            all_start_from_zero = all([vt.yb1 == 0 and vt.yb2 == 0 for vt in vtrace])
+            table_content = []
+            for vt in vtrace:
+                if all_start_from_zero:
+                    table_content.append({"c_x": vt.x1, "c_top": vt.yt1})
+                    table_content.append({"c_x": vt.x2, "c_top": vt.yt2})
+                else:
+                    table_content.append({"c_x": vt.x1, "c_top": vt.yt1, "c_bot": vt.yb1})
+                    table_content.append({"c_x": vt.x2, "c_top": vt.yt2, "c_bot": vt.yb2})
+            chart = MpAreaChart(c_x="c_x", c_tops=["c_top"], c_bots=None if all_start_from_zero else ["c_bot"])
+            return [(SymTable(values=table_content), chart)]
+        else:
+            # map x to multiple y
+            color_names = list(set([vt.color for vt in vtrace]))
+            table_dict = {}
+            for vt in vtrace:
+                if vt.x1 not in table_dict:
+                    table_dict[vt.x1] = {"c_x": vt.x1}
+                if vt.x2 not in table_dict:
+                    table_dict[vt.x2] = {"c_x": vt.x2}
+                table_dict[vt.x1]["{}".format(str(vt.color))] = (vt.yt1 - vt.yb1) if vt.yb1 is not None else vt.yt1
+                table_dict[vt.x2]["{}".format(str(vt.color))] = (vt.yt2 - vt.yb2) if vt.yb2 is not None else vt.yt2
+
+            table_content = []
+            for x in table_dict:
+                table_content.append(table_dict[x])
+                if len(table_dict[x]) != len(color_names) + 1:
+                    # we require table to contain NA values
+                    return []
+            chart = MpScatterPlot("c_x", ["{}".format(c) for c in color_names])
+            return [(SymTable(values=table_content), chart)]
+
 import os
 import json
 
 data_dir = "../benchmarks"
 
 if __name__ == '__main__':
-    test_target = ["001.json", "002.json", "003.json", "004.json"]
+    test_target = ["038.json", "002.json", "003.json", "004.json"]
     for fname in test_target:
         with open(os.path.join(data_dir, fname), "r") as f:
             data = json.load(f)
-            vis = chart.VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
+            vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
             trace = vis.eval()
-            abstract_designs = MatplotlibChart.inv_eval(trace)
-            break
+            ad_list = [VisDesign.inv_eval(trace), MatplotlibChart.inv_eval(trace)]
+            for abstract_designs in ad_list:
+                print('---')
+                for full_sym_data, chart in abstract_designs:
+                    if isinstance(full_sym_data, (list,)):
+                        for sym_data in full_sym_data:
+                            pprint(sym_data.values[:min([len(sym_data.values), 10])])
+                    else:
+                        pprint(full_sym_data.values[:min([len(full_sym_data.values), 50])])
 
-
-
-
-
-
+        break
