@@ -29,7 +29,8 @@ class Stmt:
 
 class BidirectEnumerator(Enumerator):
     # z3 solver
-    z3_solver = Optimize()
+    # z3_solver = Optimize()
+    z3_solver = None
 
     # z3 variables for each production node
     variables = []
@@ -132,7 +133,12 @@ class BidirectEnumerator(Enumerator):
         return lines, None
 
     def __init__(self, spec, depth=None, loc=None):
-        self.z3_solver = Optimize()
+        self.z3_solver = Solver()
+        custom_list = spec.get_productions_with_lhs('SmallStr')
+        if len(custom_list) > 0:
+            # Switch to optimizer
+            self.z3_solver = Optimize()
+
         self.variables = []
         self.sk_vars = []
         self.program2tree = {}
