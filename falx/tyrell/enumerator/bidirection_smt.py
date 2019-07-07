@@ -29,7 +29,7 @@ class Stmt:
 
 class BidirectEnumerator(Enumerator):
     # z3 solver
-    z3_solver = Solver()
+    z3_solver = Optimize()
 
     # z3 variables for each production node
     variables = []
@@ -41,6 +41,7 @@ class BidirectEnumerator(Enumerator):
     def createStmtConstraints(self):
         functions = list(filter(lambda x: x.is_function() and x.id > 0, self.spec.productions()))
         
+        custom_fun = []
         for i_loc in range(0, self.loc):
             st = self.lines[i_loc]
             # Opcode has to be one of the high-order functions
@@ -64,6 +65,8 @@ class BidirectEnumerator(Enumerator):
                     if i < len(p.rhs):
                         child_type = str(p.rhs[i])
                         child_prods = self.spec.get_productions_with_lhs(child_type)
+                        if child_type == 'SmallStr':
+                            custom_fun.append(p.id)
                         child_prods=list(o.id for o in filter(lambda x: (not x.is_function()), child_prods))
                         if child_type == st.type:
                             child_prods = child_prods + def_vars
@@ -71,6 +74,17 @@ class BidirectEnumerator(Enumerator):
                         self.z3_solver.add(Implies(opcode == p.id, ctr_arg))
                     else:
                         self.z3_solver.add(Implies(opcode == p.id, arg == -1))
+
+        # Objective function   
+        if len(custom_fun) > 0:
+            obj_function = 0
+            for line in self.lines:
+                custom_list = reduce(lambda a,b: Or(a, b == line.opcode), custom_fun, False)
+                # print('opcode:', line.opcode, custom_list)
+                obj_function = obj_function + If(custom_list, 1, 0) 
+
+            h = self.z3_solver.maximize(obj_function)
+
 
     def createDefuseConstraints(self):
         '''All input and intermediate vars will appear at least once in the program'''
@@ -118,7 +132,7 @@ class BidirectEnumerator(Enumerator):
         return lines, None
 
     def __init__(self, spec, depth=None, loc=None):
-        self.z3_solver = Solver()
+        self.z3_solver = Optimize()
         self.variables = []
         self.sk_vars = []
         self.program2tree = {}

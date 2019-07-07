@@ -261,6 +261,24 @@ class MorpheusInterpreter(PostOrderInterpreter):
             logger.error('Error in interpreting separate...')
             raise GeneralError()
 
+    def eval_separate2(self, node, args):
+        n_cols = robjects.r('ncol(' + args[0] + ')')[0]
+        self.assertArg(node, args,
+                index=1,
+                cond=lambda x: x <= n_cols,
+                capture_indices=[0])
+
+        ret_df_name = get_fresh_name()
+        _script = '{ret_df} <- separate({table}, {col1}, c("{TMP1}", "{TMP2}", "{TMP3}"), sep = "_")'.format(
+                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=get_fresh_col(), TMP2=get_fresh_col(), TMP3=get_fresh_col())
+        try:
+            ret_val = robjects.r(_script)
+            print(ret_val)
+            return ret_df_name
+        except:
+            logger.error('Error in interpreting separate...')
+            raise GeneralError()
+
     def eval_spread(self, node, args):
         n_cols = robjects.r('ncol(' + args[0] + ')')[0]
         first_idx = int(args[1])
