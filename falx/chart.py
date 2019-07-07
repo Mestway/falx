@@ -150,7 +150,8 @@ class VisDesign(object):
                 if "color" in lspec["encoding"]:
                     # stacked bar chart or layered bar chart
                     val_channel = "y" if orientation == "vertical" else "x"
-                    if ("x2" in lspec["encoding"] or "y2" in lspec["encoding"]) or ("stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None):
+                    if (("x2" in lspec["encoding"] or "y2" in lspec["encoding"])
+                         or ("stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None)):
                         chart = BarChart(encodings, orientation)
                     else:
                         chart = StackedBarChart(orientation, encodings)                        

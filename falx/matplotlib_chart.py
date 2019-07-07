@@ -14,6 +14,7 @@ import table_utils
 
 import visual_trace
 from visual_trace import BarV, BarH, Point, Line, Area, Box
+import chart
 
 def build_color_map(values):
     distinct_vals = list(set(values))
@@ -33,12 +34,24 @@ class MatplotlibChart(object):
     def eval(self):
         return self.chart.eval(self.df)
 
+    @staticmethod
+    def inv_eval(vtrace):
+        res = []
+        for data, chart in MpMultiLayer.inv_eval(vtrace):
+            if isinstance(data, (list,)):
+                for d in data:
+                    d.values.sort(key=lambda x: json.dumps(x))
+            else:
+                data.values.sort(key=lambda x: json.dumps(x))
+            res.append((data, chart))
+        return res
+
     def render(self):
         self.chart.render(self.df)
         plt.legend()
 
 
-class MultiLayer(object):
+class MpMultiLayer(object):
     def __init__(self, charts):
         self.charts = charts
 
@@ -53,8 +66,30 @@ class MultiLayer(object):
         for chart in self.charts:
             chart.render(df, ax)
 
+    @staticmethod
+    def inv_eval(vtrace):
+        """returns a list of (abs_table, layer) pairs. """
+        trace_layer = visual_trace.partition_trace(vtrace)
+        
+        layers = {}
+        for vty in trace_layer:
+            if vty == "BarV":
+                l1 = MpBarChart.inv_eval(trace_layer[vty], orientation="vertical")
+                l2 = MpGroupBarChart.inv_eval(trace_layer[vty], orientation="vertical")
+                layers[vty] = l1 + l2
+            elif vty == "BarH":
+                l1 = MpBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
+                l2 = MpGroupBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
+                layers[vty] = l1 + l2
+            elif vty == "Point":
+                layers[vty] = MpScatterPlot.inv_eval(trace_layer[vty])
+            elif vty == "Line":
+                layers[vty] = MpLineChart.inv_eval(trace_layer[vty])
+            elif vty == "Area":
+                layers[vty] = MpAreaChart.inv_eval(trace_layer[vty])
 
-class Subplot(object):
+
+class MpSubplot(object):
     def __init__(self, chart, column):
         self.chart = chart
         self.column = column
@@ -84,7 +119,7 @@ class Subplot(object):
             ax.set_xlabel(g)
     
 
-class BarChart(object):
+class MpBarChart(object):
     def __init__(self, c_x, c_height, c_bot=None, 
                  c_color=None, orient="vertical"):
         self.c_x = c_x
@@ -132,8 +167,8 @@ class BarChart(object):
                 ax.barh(y=df[self.c_x], width=df[self.c_height], left=df[self.c_bot], label=self.c_height)        
 
 
-class GroupBarChart(object):
-    def __init__(self, c_x, c_ys, stacked=False, orient="vertical"):
+class MpGroupBarChart(object):
+    def __init__(self, c_x, c_ys, stacked=True, orient="vertical"):
         self.c_x = c_x
         self.c_ys = c_ys
         self.stacked=stacked
@@ -163,7 +198,7 @@ class GroupBarChart(object):
         df.plot(kind=kind, x=self.c_x, y=self.c_ys, stacked=self.stacked, ax=ax)
 
 
-class ScatterPlot(object):
+class MpScatterPlot(object):
     def __init__(self, c_x, c_ys, c_size=None):
         assert(isinstance(c_ys, (list,tuple,)))
         self.c_x = c_x
@@ -191,7 +226,7 @@ class ScatterPlot(object):
             ax.scatter(x=df[self.c_x], y=df[c_y], s=size, color=color_map[c_y], label=c_y)
 
 
-class LineChart(object):
+class MpLineChart(object):
     def __init__(self, c_x, c_ys):
         assert(isinstance(c_ys, (list,tuple,)))
         self.c_x = c_x
@@ -219,8 +254,38 @@ class LineChart(object):
         for c_y in self.c_ys:
             ax.plot(df[self.c_x], df[c_y], color=color_map[c_y], label=c_y)
 
+    @staticmethod
+    def inv_eval(vtrace):
+        # frozen data used for removing duplicate points
+        frozen_data = []
+        for vt in vtrace:
+            # each end of an point will only be added once
+            p1 = json.dumps({"c_x": vt.x1, "c_y": vt.y1, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+            p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+            if p1 not in frozen_data: frozen_data.append(p1)
+            if p2 not in frozen_data: frozen_data.append(p2)
 
-class AreaChart(object):
+        data_values = [json.loads(r) for r in frozen_data]
+
+        unused_fields = chart.remove_unused_fields(data_values)
+
+        if "c_color" not in unused_fields and "c_size" not in unused_fields:
+            assert False
+
+        col_num = 2
+        if "c_color" not in unused_fields:
+            color_vals = list(set([r["c_color"] for r in data_values]))
+            col_num = 1 + len(color_vals)
+            table = []
+
+        print(data_values)
+        print(unused_fields)
+
+        pprint(vtrace)
+        print("===")
+
+
+class MpAreaChart(object):
     def __init__(self, c_x, c_tops, c_bots=None):
         self.c_x = c_x
         self.c_tops = c_tops
@@ -258,3 +323,24 @@ class AreaChart(object):
         else:
             for c_top in self.c_tops:
                 ax.fill_between(df[self.c_x], df[c_top], label=c_top)
+
+import os
+import json
+
+data_dir = "../benchmarks"
+
+if __name__ == '__main__':
+    test_target = ["001.json", "002.json", "003.json", "004.json"]
+    for fname in test_target:
+        with open(os.path.join(data_dir, fname), "r") as f:
+            data = json.load(f)
+            vis = chart.VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
+            trace = vis.eval()
+            abstract_designs = MatplotlibChart.inv_eval(trace)
+            break
+
+
+
+
+
+
