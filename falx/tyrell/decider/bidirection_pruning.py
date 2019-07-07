@@ -269,6 +269,10 @@ class AbstractPrune(GenericVisitor):
                 else: 
                     sel_list = list(map(lambda x: x - 1, sel_list))
 
+                if len(sel_list) < 2:
+                    self._blames.add(ast.children[1])
+                    return True, None
+
                 has_numeric = any([np.issubdtype(dt, np.number) for dt in tbl.dtypes[sel_list]])
                 has_str = any([(dt == np.object) for dt in tbl.dtypes[sel_list]])
                 # print('select types**********', tbl.dtypes[sel_list], tbl.dtypes.values[sel_list])
