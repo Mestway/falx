@@ -328,14 +328,14 @@ class AbstractPrune(GenericVisitor):
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'mutate' or opcode == 'cumsum':
-            # if not self.hasNewValues():
-            #     return True, None
+            if not self.hasNewValues():
+                return True, None
 
             tbl_ret = tbl_out.iloc[:,:-1]
             return False, tbl_ret
         elif opcode == 'summarise' or opcode == 'groupSum':
-            # if not self.hasNewValues():
-            #     return True, None
+            if not self.hasNewValues():
+                return True, None
 
             all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
             if all_numeric:
