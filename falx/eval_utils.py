@@ -17,6 +17,7 @@ def sample_symbolic_table(symtable, size, strategy="diversity"):
     Returns:
         the output table sample
     """
+
     if size > len(symtable.values):
         size = len(symtable.values)
 
