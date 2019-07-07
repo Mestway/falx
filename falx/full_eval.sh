@@ -12,7 +12,7 @@ dt=$(date '+%Y%m%d_%H%M%S')
 output_dir="../output/exp_"$dt
 dirname="../benchmarks/"
 num_samples=4
-time_limit=2
+time_limit=300
 
 data_list=(
     #easy noes

@@ -100,21 +100,15 @@
   "output_data": [
     {
       "row": "0.5",
-      "drain": "None",
-      "measured": 40.0,
-      "simulated": 41.0
-    },
-    {
-      "row": "0.5",
       "drain": "drain",
       "measured": 40.0,
       "simulated": 39.9
     },
     {
-      "row": "0.8",
-      "drain": "None",
-      "measured": 55.0,
-      "simulated": 56.0
+      "row": "0.5",
+      "drain": "nodrain",
+      "measured": 40.0,
+      "simulated": 41.0
     },
     {
       "row": "0.8",
@@ -123,10 +117,10 @@
       "simulated": 55.3
     },
     {
-      "row": "adj21",
-      "drain": "None",
-      "measured": 23.0,
-      "simulated": 22.0
+      "row": "0.8",
+      "drain": "nodrain",
+      "measured": 55.0,
+      "simulated": 56.0
     },
     {
       "row": "adj21",
@@ -135,10 +129,10 @@
       "simulated": 23.4
     },
     {
-      "row": "adj22",
-      "drain": "None",
-      "measured": 27.0,
-      "simulated": 27.5
+      "row": "adj21",
+      "drain": "nodrain",
+      "measured": 23.0,
+      "simulated": 22.0
     },
     {
       "row": "adj22",
@@ -147,10 +141,10 @@
       "simulated": 27.2
     },
     {
-      "row": "raw21",
-      "drain": "None",
-      "measured": 55.0,
-      "simulated": 54.0
+      "row": "adj22",
+      "drain": "nodrain",
+      "measured": 27.0,
+      "simulated": 27.5
     },
     {
       "row": "raw21",
@@ -159,16 +153,22 @@
       "simulated": 54.5
     },
     {
-      "row": "raw22",
-      "drain": "None",
-      "measured": 60.0,
-      "simulated": 59.0
+      "row": "raw21",
+      "drain": "nodrain",
+      "measured": 55.0,
+      "simulated": 54.0
     },
     {
       "row": "raw22",
       "drain": "drain",
       "measured": 60.0,
       "simulated": 60.2
+    },
+    {
+      "row": "raw22",
+      "drain": "nodrain",
+      "measured": 60.0,
+      "simulated": 59.0
     }
   ],
   "vl_spec": {
