@@ -166,6 +166,12 @@ class MpBarChart(object):
             else:
                 ax.barh(y=df[self.c_x], width=df[self.c_height], left=df[self.c_bot], label=self.c_height)        
 
+    @staticmethod
+    def inv_eval(vtrace, orientation):
+
+        pprint(vtrace)
+        print("===")
+
 
 class MpGroupBarChart(object):
     def __init__(self, c_x, c_ys, stacked=True, orient="vertical"):
@@ -273,16 +279,29 @@ class MpLineChart(object):
             assert False
 
         col_num = 2
+        y_cols = None
         if "c_color" not in unused_fields:
-            color_vals = list(set([r["c_color"] for r in data_values]))
-            col_num = 1 + len(color_vals)
-            table = []
+            y_cols = list(set([r["c_color"] for r in data_values]))
+            col_num = 1 + len(y_cols)
+            # map x to multiple y
+            table_dict = {}
+            for r in data_values:
+                if [r["c_x"]] not in table_dict:
+                    table_dict[r["c_x"]] = {"c_x": r["c_x"]}
+                table_dict[r["c_x"]][r["c_color"]] = r["c_y"]
+            table_content = []
+            for x in table_dict:
+                table_content.append(table_dict[x])
+                if len(table_dict[x]) != col_num:
+                    assert False
+        else:
+            y_cols = ["c_y"]
+            if "c_size" not in unused_fields:
+                y_cols.append(["c_size"])
+            table_content = data_values
 
-        print(data_values)
-        print(unused_fields)
+        return [(SymTable(values=data_values, constraints=[]), MpLineChart("c_x", y_cols))]
 
-        pprint(vtrace)
-        print("===")
 
 
 class MpAreaChart(object):
