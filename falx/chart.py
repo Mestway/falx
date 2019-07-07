@@ -461,6 +461,10 @@ class StackedBarChart(object):
         # remove fields that contain none values
         unused_fields = remove_unused_fields(data_values)
 
+        # this is the current strategy: the user have to provide full color information
+        if "c_color" in unused_fields:
+            return []
+
         encodings = []
         for channel, enc_ty in channel_types:
             field_name = "c_{}".format(channel)

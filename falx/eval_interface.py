@@ -16,13 +16,10 @@ np.random.seed(2019)
 
 def check_trace_consistency(vis_prog, orig_trace):
     """check whether the prog is consistent with the full trace"""
-    try:
-        tr = vis_prog.eval()
-        orig_tr_table = visual_trace.trace_to_table(orig_trace)
-        new_tr_table = visual_trace.trace_to_table(tr)
-        return all([synth_utils.align_table_schema(new_tr_table[key], orig_tr_table[key]) != None for key in new_tr_table])
-    except:
-        return False
+    tr = vis_prog.eval()
+    orig_tr_table = visual_trace.trace_to_table(orig_trace)
+    new_tr_table = visual_trace.trace_to_table(tr)
+    return all([synth_utils.align_table_schema(new_tr_table[key], orig_tr_table[key]) != None for key in new_tr_table])
 
 class FalxEvalInterface(object):
 
