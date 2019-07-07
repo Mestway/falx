@@ -140,7 +140,6 @@ class VisDesign(object):
             mark_ty = lspec["mark"] if not isinstance(lspec["mark"], (dict,)) else lspec["mark"]["type"]
             encodings = [Encoding(channel, get_value(enc, "field"), get_value(enc, "type"), get_value(enc, "sort")) 
                             for channel, enc in lspec["encoding"].items()]
-            
             if mark_ty == "bar":
                 orientation = "horizontal" if lspec["encoding"]["y"]["type"] == "nominal" else "vertical"
                 if "color" in lspec["encoding"]:

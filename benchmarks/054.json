@@ -154,7 +154,7 @@
           },
           "y2": {
             "field": "y2",
-            "type": "nominal"
+            "type": "quantitative"
           }
         }
       },
