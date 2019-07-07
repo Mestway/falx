@@ -152,19 +152,24 @@ class MpSubplot(object):
             partition[vt.column].append(vt)
 
         res = []
-        chart = None
-        table = []
+        chart_by_type = {}
         for col in partition:
             layer_cand = synth_per_case(partition[col], vty)
             if layer_cand == []:
                 return []
-            col_table = layer_cand[0][0].values
-            if chart == None:
-                chart = layer_cand[0][1]
-            for r in col_table:
-                r["c_column"] = col
-            table = table + col_table
-        return [(SymTable(values=table), MpSubplot(chart, "c_column"))]
+            for l in layer_cand:
+                table, chart = l
+                if type(chart) not in chart_by_type:
+                    chart_by_type[type(chart)] = {
+                        "table": [],
+                        "chart": chart
+                    }
+                col_table = table.values
+                for r in col_table:
+                    r["c_column"] = col
+                chart_by_type[type(chart)]["table"] += col_table
+            
+        return [(SymTable(values=chart_by_type[chart_ty]["table"]), MpSubplot(chart_by_type[chart_ty]["chart"], "c_column")) for chart_ty in chart_by_type]
 
     
 
@@ -521,15 +526,13 @@ import json
 data_dir = "../benchmarks"
 
 if __name__ == '__main__':
-    test_target = ["048.json"]#["{:03d}.json".format(i) for i in range(1, 61)] #["038.json", "002.json", "003.json", "004.json"]
+    test_target = ["051.json"]#["{:03d}.json".format(i) for i in range(1, 61)] #["038.json", "002.json", "003.json", "004.json"]
     for fname in test_target:
         with open(os.path.join(data_dir, fname), "r") as f:
             data = json.load(f)
             vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
             trace = vis.eval()
             ad_list = [VisDesign.inv_eval(trace), MatplotlibChart.inv_eval(trace)]
-            print("========")
-            print(fname)
             for abstract_designs in ad_list:
                 print('---')
                 for full_sym_data, chart in abstract_designs:
