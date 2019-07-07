@@ -273,7 +273,6 @@ class MorpheusInterpreter(PostOrderInterpreter):
                   ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=get_fresh_col(), TMP2=get_fresh_col(), TMP3=get_fresh_col())
         try:
             ret_val = robjects.r(_script)
-            print(ret_val)
             return ret_df_name
         except:
             logger.error('Error in interpreting separate...')
