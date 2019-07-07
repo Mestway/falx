@@ -224,6 +224,10 @@ class AbstractPrune(GenericVisitor):
                 return False, None
             
         elif opcode == 'separate':
+            if int(args[1].data) > tbl_size:
+                self._blames.add(ast.children[1])
+                return True, None
+
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             test_val = col[0]
@@ -242,6 +246,10 @@ class AbstractPrune(GenericVisitor):
             return error, None
 
         elif opcode == 'cumsum':
+            if int(args[1].data) > tbl_size:
+                self._blames.add(ast.children[1])
+                return True, None
+
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             if not np.issubdtype(col.dtype, np.number):
@@ -284,6 +292,14 @@ class AbstractPrune(GenericVisitor):
                 return False, None
 
         elif opcode == 'spread':
+            if int(args[1].data) > tbl_size:
+                self._blames.add(ast.children[1])
+                return True, None
+
+            if int(args[2].data) > tbl_size:
+                self._blames.add(ast.children[2])
+                return True, None
+
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             if np.issubdtype(col.dtype, np.number):
