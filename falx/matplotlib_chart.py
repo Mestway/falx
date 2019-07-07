@@ -73,20 +73,7 @@ class MpMultiLayer(object):
         
         layers = {}
         for vty in trace_layer:
-            if vty == "BarV":
-                l1 = MpBarChart.inv_eval(trace_layer[vty], orientation="vertical")
-                l2 = MpGroupBarChart.inv_eval(trace_layer[vty], orientation="vertical")
-                layers[vty] = l1 + l2
-            elif vty == "BarH":
-                l1 = MpBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
-                l2 = MpGroupBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
-                layers[vty] = l1 + l2
-            elif vty == "Point":
-                layers[vty] = MpScatterPlot.inv_eval(trace_layer[vty])
-            elif vty == "Line":
-                layers[vty] = MpLineChart.inv_eval(trace_layer[vty])
-            elif vty == "Area":
-                layers[vty] = MpAreaChart.inv_eval(trace_layer[vty])
+            layers[vty] = MpSubplot.inv_eval(trace_layer[vty], vty)
 
         if len(layers) == 1:
             # directly return the layer if there is only one layer
@@ -134,6 +121,51 @@ class MpSubplot(object):
             sub_df = df.loc[i]
             self.chart.render(sub_df, ax)
             ax.set_xlabel(g)
+
+    @staticmethod
+    def inv_eval(vtrace, vty):
+
+        def synth_per_case(_vtrace, _vty):
+            if _vty == "BarV":
+                l2 = MpGroupBarChart.inv_eval(_vtrace, orientation="vertical")
+                l1 = MpBarChart.inv_eval(_vtrace, orientation="vertical")
+                return l1 + l2
+            elif _vty == "BarH":
+                l2 = MpGroupBarChart.inv_eval(_vtrace, orientation="horizontal")
+                l1 = MpBarChart.inv_eval(_vtrace, orientation="horizontal")
+                return l1 + l2
+            elif _vty == "Point":
+                return MpScatterPlot.inv_eval(_vtrace)
+            elif _vty == "Line":
+                return MpLineChart.inv_eval(_vtrace)
+            elif _vty == "Area":
+                return MpAreaChart.inv_eval(_vtrace)
+
+        use_column = any([vt.column is not None for vt in vtrace])
+        if not use_column:
+            return synth_per_case(vtrace, vty)
+
+        partition = {}
+        for vt in vtrace:
+            if vt.column not in partition:
+                partition[vt.column] = []
+            partition[vt.column].append(vt)
+
+        res = []
+        chart = None
+        table = []
+        for col in partition:
+            layer_cand = synth_per_case(partition[col], vty)
+            if layer_cand == []:
+                return []
+            col_table = layer_cand[0][0].values
+            if chart == None:
+                chart = layer_cand[0][1]
+            for r in col_table:
+                r["c_column"] = col
+            table = table + col_table
+        return [(SymTable(values=table), MpSubplot(chart, "c_column"))]
+
     
 
 class MpBarChart(object):
@@ -239,6 +271,7 @@ class MpGroupBarChart(object):
     @staticmethod
     def inv_eval(vtrace, orientation):
         # map x to multiple y
+        print(vtrace)
         table_dict = {}
         y_cols = list(set([vt.color for vt in vtrace]))
         for vt in vtrace:
@@ -254,7 +287,6 @@ class MpGroupBarChart(object):
                 if vt.x2 is None or vt.color is None:
                     return []
                 table_dict[vt.y][vt.color] = vt.x2 - vt.x1
-
         table_content = []
         for x in table_dict:
             table_content.append(table_dict[x])
@@ -294,7 +326,6 @@ class MpScatterPlot(object):
 
     @staticmethod
     def inv_eval(vtrace):
-        pprint(vtrace)
         table_dict = {}
         y_cols = list(set([vt.color for vt in vtrace]))
 
@@ -332,7 +363,7 @@ class MpScatterPlot(object):
 
                 table_content.append(r)
                 chart = MpScatterPlot("c_x", ["c_y"], c_size)
-                return [(SymTable(values=table_content), chart)]
+            return [(SymTable(values=table_content), chart)]
 
 class MpLineChart(object):
     def __init__(self, c_x, c_ys):
@@ -490,13 +521,15 @@ import json
 data_dir = "../benchmarks"
 
 if __name__ == '__main__':
-    test_target = ["{:03d}.json".format(i) for i in range(1, 61)] #["038.json", "002.json", "003.json", "004.json"]
+    test_target = ["048.json"]#["{:03d}.json".format(i) for i in range(1, 61)] #["038.json", "002.json", "003.json", "004.json"]
     for fname in test_target:
         with open(os.path.join(data_dir, fname), "r") as f:
             data = json.load(f)
             vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
             trace = vis.eval()
             ad_list = [VisDesign.inv_eval(trace), MatplotlibChart.inv_eval(trace)]
+            print("========")
+            print(fname)
             for abstract_designs in ad_list:
                 print('---')
                 for full_sym_data, chart in abstract_designs:
@@ -504,5 +537,5 @@ if __name__ == '__main__':
                         for sym_data in full_sym_data:
                             pprint(sym_data.values[:min([len(sym_data.values), 10])])
                     else:
-                        pprint(full_sym_data.values[:min([len(full_sym_data.values), 50])])
+                        pprint(full_sym_data.values[:min([len(full_sym_data.values), 10])])
 
