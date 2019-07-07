@@ -193,7 +193,7 @@ class MpBarChart(object):
                 data_values.append({"c_x": vt.x, "c_bot": bot, "c_height": height, "c_color": vt.color})
         if orientation == "horizontal":
             for vt in vtrace:
-                bot = None if vt.x2 is None else vt.yx
+                bot = None if vt.x2 is None else vt.x1
                 height = vt.x1 if vt.x2 is None else vt.x2 - vt.x1
                 data_values.append({"c_x": vt.y, "c_bot": bot, "c_height": height, "c_color": vt.color})
                
@@ -238,16 +238,22 @@ class MpGroupBarChart(object):
 
     @staticmethod
     def inv_eval(vtrace, orientation):
-        assert orientation == "vertical"
         # map x to multiple y
         table_dict = {}
         y_cols = list(set([vt.color for vt in vtrace]))
         for vt in vtrace:
-            if vt.x not in table_dict:
-                table_dict[vt.x] = {"c_x": vt.x}
-            if vt.y2 is None or vt.color is None:
-                return []
-            table_dict[vt.x][vt.color] = vt.y2 - vt.y1
+            if orientation == "vertical":
+                if vt.x not in table_dict:
+                    table_dict[vt.x] = {"c_x": vt.x}
+                if vt.y2 is None or vt.color is None:
+                    return []
+                table_dict[vt.x][vt.color] = vt.y2 - vt.y1
+            else:
+                if vt.y not in table_dict:
+                    table_dict[vt.y] = {"c_x": vt.y}
+                if vt.x2 is None or vt.color is None:
+                    return []
+                table_dict[vt.y][vt.color] = vt.x2 - vt.x1
 
         table_content = []
         for x in table_dict:
@@ -324,7 +330,7 @@ class MpScatterPlot(object):
                 else:
                     c_size = None
 
-                table_content.append()
+                table_content.append(r)
                 chart = MpScatterPlot("c_x", ["c_y"], c_size)
                 return [(SymTable(values=table_content), chart)]
 
@@ -484,7 +490,7 @@ import json
 data_dir = "../benchmarks"
 
 if __name__ == '__main__':
-    test_target = ["038.json", "002.json", "003.json", "004.json"]
+    test_target = ["{:03d}.json".format(i) for i in range(1, 61)] #["038.json", "002.json", "003.json", "004.json"]
     for fname in test_target:
         with open(os.path.join(data_dir, fname), "r") as f:
             data = json.load(f)
@@ -500,4 +506,3 @@ if __name__ == '__main__':
                     else:
                         pprint(full_sym_data.values[:min([len(full_sym_data.values), 50])])
 
-        break
