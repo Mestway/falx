@@ -224,8 +224,13 @@ class AbstractPrune(GenericVisitor):
                 return False, None
             
         elif opcode == 'separate':
-            # fst_row = tbl.iloc[0, :].values
-            # assert False
+            col_idx = int(args[1].data) - 1
+            col = tbl[tbl.columns[col_idx]]
+            test_val = col[0]
+            if not ((col.dtype == np.object) and ('_' in test_val or '-' in test_val  or '/' in test_val)):
+                self._blames.add(ast.children[1])
+                return True, None
+
             return error, None
         elif opcode == 'mutate':
             col1 = int(args[2].data)
@@ -236,9 +241,18 @@ class AbstractPrune(GenericVisitor):
                 return True, None
             return error, None
 
-        elif opcode == 'mutateCustom' or opcode == 'cumsum':
-            # assert False
+        elif opcode == 'cumsum':
+            col_idx = int(args[1].data) - 1
+            col = tbl[tbl.columns[col_idx]]
+            if not np.issubdtype(col.dtype, np.number):
+                self._blames.add(ast.children[1])
+                return True, None
+                
             return error, None
+
+        elif opcode == 'mutateCustom':
+            return error, None
+        
         elif opcode == 'summarise' or opcode == 'groupSum':
             # assert False
             return error, None
@@ -266,7 +280,12 @@ class AbstractPrune(GenericVisitor):
                 return False, None
 
         elif opcode == 'spread':
-            # assert False
+            col_idx = int(args[1].data) - 1
+            col = tbl[tbl.columns[col_idx]]
+            if np.issubdtype(col.dtype, np.number):
+                self._blames.add(ast.children[1])
+                return True, None
+
             return error, None
         elif opcode == 'inner_join':
             # assert False
