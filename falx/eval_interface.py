@@ -12,6 +12,7 @@ import eval_utils
 
 from pprint import pprint
 
+np.random.seed(2019)
 
 def check_trace_consistency(vis_prog, orig_trace):
     """check whether the prog is consistent with the full trace"""
@@ -71,15 +72,12 @@ class FalxEvalInterface(object):
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
-                np.random.seed(0)
                 sym_tables = []
                 for full_output in full_sym_data:
                     sample_table = eval_utils.sample_symbolic_table(full_output, num_samples)
                     sym_tables.append((sample_table, full_output))
 
                 layer_candidate_progs = [morpheus.synthesize(inputs, p[0], p[1], extra_consts=extra_consts) for p in sym_tables]
-
-               
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]

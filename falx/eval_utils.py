@@ -9,7 +9,7 @@ import subprocess
 from symbolic import SymTable
 
 
-def sample_symbolic_table(symtable, size, strategy="uniform"):
+def sample_symbolic_table(symtable, size, strategy="diversity"):
     """given a symbolic table, sample a smaller symbolic table that is contained by it
     Args:
         symtable: the input symbolic table
@@ -17,6 +17,7 @@ def sample_symbolic_table(symtable, size, strategy="uniform"):
     Returns:
         the output table sample
     """
+
     if size > len(symtable.values):
         size = len(symtable.values)
 

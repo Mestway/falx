@@ -113,6 +113,11 @@ class VisDesign(object):
         """
         res = []
         for data, chart in LayeredChart.inv_eval(vtrace):
+            if isinstance(data, (list,)):
+                for d in data:
+                    d.values.sort(key=lambda x: json.dumps(x))
+            else:
+                data.values.sort(key=lambda x: json.dumps(x))
             res.append((data, chart))
         return res
 
