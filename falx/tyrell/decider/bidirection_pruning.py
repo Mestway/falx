@@ -20,6 +20,7 @@ from functools import reduce
 import falx.synth_utils
 import json
 import numpy as np
+import pandas as pd
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
@@ -74,6 +75,16 @@ class AbstractPrune(GenericVisitor):
             if self._input[col].dtype == np.object:
                 for vv in self._input[col]:
                     if '-' in vv or '_' in vv or '/' in vv:
+                        return True
+
+        return has_sep
+
+    def needSeparate2(self):
+        has_sep = False
+        for col in self._input.columns:
+            if self._input[col].dtype == np.object:
+                for vv in self._input[col]:
+                    if vv.count('_') == 2:
                         return True
 
         return has_sep
@@ -316,6 +327,9 @@ class AbstractPrune(GenericVisitor):
             if not self.needSeparate():
                 return True, None
 
+            if not self.needSeparate2() and opcode == 'separate2':
+                return True, None
+
             self._blames.add(ast.children[1])
             if len(tbl_out) == 0:
                 return False, tbl_out
@@ -363,6 +377,9 @@ class AbstractPrune(GenericVisitor):
             cols = tbl_out.columns.values
             tbl_new = tbl_out[cols[1:]]
             tp = tbl_new.T
+            # Hack
+            if self.needSeparate2():
+                return False, pd.DataFrame()
             return False, tp
 
             # if len(tbl_out) > 0:
