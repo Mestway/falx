@@ -7,6 +7,7 @@ from pprint import pprint
 import subprocess
 
 from chart import VisDesign
+from matplotlib_chart import MatplotlibChart
 from eval_interface import FalxEvalInterface
 import table_utils
 from timeit import default_timer as timer
@@ -23,8 +24,9 @@ parser.add_argument("--data_dir", dest="data_dir", default=DATA_DIR, help="the d
 parser.add_argument("--data_id", dest="data_id", default="001", 
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 parser.add_argument("--num_samples", dest="num_samples", default=4, type=int, help="the number of samples")
+parser.add_argument("--backend", dest="backend", default="vegalite", type=str, help="visualization backend")
 
-def test_benchmarks(data_dir, data_id, num_samples):
+def test_benchmarks(data_dir, data_id, num_samples, backend):
     """load the dataset into panda dataframes """
     test_targets = None
     if data_id is not None:
@@ -53,7 +55,7 @@ def test_benchmarks(data_dir, data_id, num_samples):
         trace = vis.eval()
         #pprint(trace)
 
-        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts)
+        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend)
         end = timer()
 
         print("## synthesize result for task {}".format(fname))
@@ -61,12 +63,15 @@ def test_benchmarks(data_dir, data_id, num_samples):
             print("# table_prog:")
             print("  {}".format(p))
             print("# vis_spec:")
-            vl_obj = vis.to_vl_obj()
-            data = vl_obj.pop("data")["values"]
-            print("    {}".format(vl_obj))
+            if backend == "vegalite":
+                vl_obj = vis.to_vl_obj()
+                data = vl_obj.pop("data")["values"]
+                print("    {}".format(vl_obj))
+            else:
+                print(vis)
             print("# time used (s): {:.4f}".format(end - start))
 
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples)
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend)

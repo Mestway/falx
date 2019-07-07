@@ -1,6 +1,8 @@
 import json
 
 from falx.chart import VisDesign
+from falx.matplotlib_chart import MatplotlibChart
+
 import morpheus
 import itertools
 from pprint import pprint
@@ -24,12 +26,13 @@ def check_trace_consistency(vis_prog, orig_trace):
 class FalxEvalInterface(object):
 
     @staticmethod
-    def synthesize(inputs, full_trace, num_samples=2, extra_consts=[]):
+    def synthesize(inputs, full_trace, num_samples=2, extra_consts=[], backend="vegalite"):
         """synthesize table prog and vis prog from input and output traces"""
+        assert backend == "vegalite" or backend == "matplotlib"
         candidates = []
 
         # apply inverse semantics to obtain symbolic output table and vis programs
-        abstract_designs = VisDesign.inv_eval(full_trace)
+        abstract_designs = VisDesign.inv_eval(full_trace) if backend == "vegalite" else MatplotlibChart.inv_eval(full_trace)
 
         # sort pairs based on complexity of tables
         abstract_designs.sort(key=lambda x: len(x[0].values[0]) if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
@@ -57,15 +60,18 @@ class FalxEvalInterface(object):
                     field_mapping = synth_utils.align_table_schema(full_sym_data.values, output)
                     assert(field_mapping != None)
 
-                    vis_design = VisDesign(data=output, chart=chart)
-                    vis_design.update_field_names(field_mapping)
-
-                    if check_trace_consistency(vis_design, full_trace):
-                        candidates.append((p, vis_design))
+                    if backend == "vegalite":
+                        vis_design = VisDesign(data=output, chart=chart)
+                        vis_design.update_field_names(field_mapping)
+                        if check_trace_consistency(vis_design, full_trace):
+                            candidates.append((p, vis_design))
+                        else:
+                            print("===> the program is not consistent with the trace")
+                            print(" {}".format(p))
+                            print("===> continue...")
                     else:
-                        print("===> the program is not consistent with the trace")
-                        print(" {}".format(p))
-                        print("===> continue...")
+                        vis_design = MatplotlibChart(output,chart)
+                        candidates.append((p, vis_design.to_string_spec(field_mapping)))
 
                     if len(candidates) > 0: break
             else:
@@ -100,14 +106,16 @@ class FalxEvalInterface(object):
 
                     field_mappings = [synth_utils.align_table_schema(full_sym_data[k].values, output) for k, output in enumerate(outputs)]
 
-                    vis_design = VisDesign(data=outputs, chart=chart)
-                    vis_design.update_field_names(field_mappings)
-                    
-                    if check_trace_consistency(vis_design, full_trace):
-                        candidates.append((progs, vis_design))
+                    if backend == "vegalite":
+                        vis_design = VisDesign(data=outputs, chart=chart)
+                        vis_design.update_field_names(field_mappings)
+                        if check_trace_consistency(vis_design, full_trace):
+                            candidates.append((progs, vis_design))
+                        else:
+                            print("===> the program is not consistent with the trace, continue")
                     else:
-                        print("===> the program is not consistent with the trace, continue")
-
+                        vis_design = MatplotlibChart(outputs,chart)
+                        candidates.append((progs, vis_design.to_string_spec(field_mappings)))
                     if len(candidates) > 0: break
 
             if len(candidates) > 0: break

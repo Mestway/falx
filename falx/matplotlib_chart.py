@@ -50,6 +50,9 @@ class MatplotlibChart(object):
         self.chart.render(self.df)
         plt.legend()
 
+    def to_string_spec(self, mapping):
+        return self.chart.to_string_spec(mapping)
+
 
 class MpMultiLayer(object):
     def __init__(self, charts):
@@ -91,6 +94,9 @@ class MpMultiLayer(object):
                 all_layers = [cl[1] for cl in data_layer_pairs]
                 res.append((data_for_all_layers, MpMultiLayer(charts=all_layers)))
             return  res
+
+    def to_string_spec(self, mapping):
+        return " + ".join([chart.to_string_spec(mapping[i]) for i,chart in enumerate(self.charts)])
 
 
 class MpSubplot(object):
@@ -171,7 +177,8 @@ class MpSubplot(object):
             
         return [(SymTable(values=chart_by_type[chart_ty]["table"]), MpSubplot(chart_by_type[chart_ty]["chart"], "c_column")) for chart_ty in chart_by_type]
 
-    
+    def to_string_spec(self, mapping):
+        return "Subplot({}, {})".format(self.chart.to_string_spec(mapping), mapping[self.column])
 
 class MpBarChart(object):
     def __init__(self, c_x, c_height, c_bot=None, 
@@ -242,6 +249,13 @@ class MpBarChart(object):
                                orient=orientation)
         return [(SymTable(values=data_values), bar_chart)]
 
+    def to_string_spec(self, mapping):
+        cols = []
+        for v in [self.c_x, self.c_height, self.c_bot, self.c_color]:
+            if v != None:
+                cols.append(mapping[v])
+        return "MpBarChart({})".format(",".join(cols))
+
 
 class MpGroupBarChart(object):
     def __init__(self, c_x, c_ys, stacked=True, orient="vertical"):
@@ -300,6 +314,15 @@ class MpGroupBarChart(object):
                 return []
 
         return [(SymTable(values=table_content), MpGroupBarChart("c_x", y_cols, orient=orientation))]
+
+    def to_string_spec(self, mapping):
+        cols = []
+        for v in [self.c_x, self.c_ys]:
+            if v != None and not isinstance(v, (list,)):
+                cols.append(mapping[v])
+            elif isinstance(v, (list,)):
+                cols += [mapping[v2] for v2 in v] 
+        return "MpGroupBar({})".format(",".join(cols))
 
 
 class MpScatterPlot(object):
@@ -369,6 +392,15 @@ class MpScatterPlot(object):
                 table_content.append(r)
                 chart = MpScatterPlot("c_x", ["c_y"], c_size)
             return [(SymTable(values=table_content), chart)]
+
+    def to_string_spec(self, mapping):
+        cols = []
+        for v in [self.c_x, self.c_size, self.c_ys]:
+            if v != None and not isinstance(v, (list,)):
+                cols.append(mapping[v])
+            elif isinstance(v, (list,)):
+                cols += [mapping[v2] for v2 in v]
+        return "MpScatter({})".format(",".join(cols))
 
 class MpLineChart(object):
     def __init__(self, c_x, c_ys):
@@ -443,6 +475,15 @@ class MpLineChart(object):
         return [(SymTable(values=table_content, constraints=[]), MpLineChart("c_x", y_cols))]
 
 
+    def to_string_spec(self, mapping):
+        cols = []
+        for v in [self.c_x, self.c_ys]:
+            if v != None and not isinstance(v, (list,)):
+                cols.append(mapping[v])
+            elif isinstance(v, (list,)):
+                cols += [mapping[v2] for v2 in v] 
+
+        return "MpScatter({})".format(",".join(cols))
 
 class MpAreaChart(object):
     def __init__(self, c_x, c_tops, c_bots=None):
@@ -519,6 +560,15 @@ class MpAreaChart(object):
                     return []
             chart = MpScatterPlot("c_x", ["{}".format(c) for c in color_names])
             return [(SymTable(values=table_content), chart)]
+
+    def to_string_spec(self, mapping):
+        cols = []
+        for v in [self.c_x, self,tops, self.bots]:
+            if v != None and not isinstance(v, (list,)):
+                cols.append(mapping[v])
+            elif isinstance(v, (list,)):
+                cols += [mapping[v2] for v2 in v] 
+        return "MpAreaChart({})".format(",".join(cols))
 
 import os
 import json
