@@ -70,6 +70,11 @@ func separate: Table r -> Table a, ColInt b {
   col(r) == col(a) + 1;
 }
 
+func separate2: Table r -> Table a, ColInt b {
+  row(r) == row(a);
+  col(r) == col(a) + 2;
+}
+
 func mutate: Table r -> Table a, NumFunc b, ColInt c, ColInt d {
   row(r) == row(a);
   col(r) == col(a) + 1;

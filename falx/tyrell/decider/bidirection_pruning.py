@@ -204,7 +204,7 @@ class AbstractPrune(GenericVisitor):
             else: 
                 return False, None
             
-        elif opcode == 'separate':
+        elif opcode == 'separate' or opcode == 'separate2':
             # fst_row = tbl.iloc[0, :].values
             # assert False
             return error, None
@@ -312,8 +312,7 @@ class AbstractPrune(GenericVisitor):
                 tbl_ret = tbl_out[sel_list]
                 return False, tbl_ret
         #Done.
-        elif opcode == 'separate':
-
+        elif opcode == 'separate' or opcode == 'separate2':
             if not self.needSeparate():
                 return True, None
 
