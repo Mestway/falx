@@ -208,7 +208,16 @@ class AbstractPrune(GenericVisitor):
             # fst_row = tbl.iloc[0, :].values
             # assert False
             return error, None
-        elif opcode == 'mutate' or opcode == 'mutateCustom' or opcode == 'cumsum':
+        elif opcode == 'mutate':
+            col1 = int(args[2].data)
+            col2 = int(args[3].data)
+            if col1 == col2:
+                self._blames.add(ast.children[2])
+                self._blames.add(ast.children[3])
+                return True, None
+            return error, None
+
+        elif opcode == 'mutateCustom' or opcode == 'cumsum':
             # assert False
             return error, None
         elif opcode == 'summarise' or opcode == 'groupSum':
