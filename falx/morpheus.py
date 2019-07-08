@@ -3,8 +3,8 @@
 import argparse
 import tyrell.spec as S
 from tyrell.interpreter import PostOrderInterpreter, GeneralError
-from tyrell.enumerator import BidirectEnumerator
-from tyrell.decider import Example, BidirectionalDecider
+from tyrell.enumerator import BidirectEnumerator, SmtEnumerator
+from tyrell.decider import Example, BidirectionalDecider, ExampleConstraintPruningDecider
 from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 from rpy2.rinterface import RRuntimeWarning
@@ -156,7 +156,7 @@ def check_col(col1, col2):
 
 def get_head(df):
     head = set()
-    for h in df.colnames:
+    for h in df.columns.values:
         head.add(h)
 
     return head
@@ -492,24 +492,21 @@ class MorpheusInterpreter(PostOrderInterpreter):
     ## Abstract interpreter
     def apply_row(self, val):
         df = robjects.r(val)
-        row = df.nrow
-        if val == 'output':
-            row = -1
-        return row
+        return df.shape[0]
 
     def apply_col(self, val):
         df = robjects.r(val)
-        return df.ncol
+        return df.shape[1]
 
-    def apply_head(self, val):
-        curr_df = robjects.r(val)
-        curr_head = get_head(curr_df)
-        return curr_head
+    # def apply_head(self, val):
+    #     curr_df = robjects.r(val)
+    #     curr_head = get_head(curr_df)
+    #     return curr_head
 
-    def apply_content(self, val):
-        curr_df = robjects.r(val)
-        curr_content = get_content(curr_df)
-        return curr_content
+    # def apply_content(self, val):
+    #     curr_df = robjects.r(val)
+    #     curr_content = get_content(curr_df)
+    #     return curr_content
 
 def init_tbl_json_str(df_name, json_loc):
     cmd = '''
@@ -548,9 +545,13 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
     #print("input table:\n", inputs[0])
     loc_val = 2
     output_data = json.dumps(output.instantiate())
+    full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
-    init_tbl_json_str('output', output_data)
+    if prune == 'morpheus':
+        init_tbl_json_str('output', full_data)
+    else:
+        init_tbl_json_str('output', output_data)
     print(robjects.r('input0'))
     print(robjects.r('output'))
 
@@ -569,18 +570,29 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
     global iter_num
     iter_num = 0
     for loc in range(1, loc_val + 1):
-        synthesizer = Synthesizer(
-            #loc: # of function productions
-            enumerator=BidirectEnumerator(spec, depth=loc+1, loc=loc),
-            decider=BidirectionalDecider(
+        enumerator = BidirectEnumerator(spec, depth=loc+1, loc=loc)
+        decider=BidirectionalDecider(
                 spec=spec,
                 interpreter=MorpheusInterpreter(),
                 examples=[
                     Example(input=['input0'], output='output'),
                 ],
+                prune=prune,
                 equal_output=subset_eq
             )
-        )
+        if prune == 'morpheus':
+            enumerator=SmtEnumerator(spec, depth=loc+1, loc=loc)
+            decider=ExampleConstraintPruningDecider(
+                spec=spec,
+                interpreter=MorpheusInterpreter(),
+                examples=[
+                    # Example(input=[DataFrame2(benchmark1_input)], output=benchmark1_output),
+                    Example(input=['input0'], output='output'),
+                ],
+                equal_output=subset_eq
+            )
+
+        synthesizer = Synthesizer(enumerator=enumerator, decider=decider)
         logger.info('Synthesizing programs ...')
 
         prog = synthesizer.synthesize()

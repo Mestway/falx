@@ -35,7 +35,7 @@ class AbstractPrune(GenericVisitor):
     need_separate: True
     need_spearate2: True
 
-    def __init__(self, interp: Interpreter, example: Example):
+    def __init__(self, interp: Interpreter, example: Example, prune: str):
         self._interp = interp
         self._example = example
         self._blames = set()
@@ -48,17 +48,18 @@ class AbstractPrune(GenericVisitor):
         self.new_value = self.computeNewValue()
         self.need_separate = self.compSeparate()
         self.need_spearate2 = self.compSeparate2()
+        self.prune = prune
         # [self._input.append(col) for col in input]
         # [self._output.append(col) for col in output]
     
     
     def is_unsat(self, prog: List[Any]) -> bool:
         ### First, do backward interpretation
-        err_back, tbl_in = self.backward_interp(prog)
-            
-        if err_back:
-            # print('prune by backward...')
-            return True
+        if self.prune == 'falx':
+            err_back, tbl_in = self.backward_interp(prog)
+                
+            if err_back:
+                return True
         
         ### Second, do forward interpretation
         err_forward, actual = self.forward_interp(prog)
@@ -495,8 +496,8 @@ class BlameFinder:
     def _get_blames(self) -> List[List[Blame]]:
         return [list(x) for x in self._blames_collection]
 
-    def process_examples(self, examples: List[Example], equal_output: Callable[[Any, Any], bool]):
-        all_ok = all([self.process_example(example, equal_output) for example in examples])
+    def process_examples(self, examples: List[Example], equal_output: Callable[[Any, Any], bool], prune: str):
+        all_ok = all([self.process_example(example, equal_output, prune) for example in examples])
         if all_ok:
             return ok()
         else:
@@ -507,8 +508,8 @@ class BlameFinder:
                 return bad(why=blames)
 
 
-    def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool]):
-        prune = AbstractPrune(self._interp, example)
+    def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool], prune: str):
+        prune = AbstractPrune(self._interp, example, prune)
 
         if prune.is_unsat(self._prog):
             # If abstract semantics cannot be satisfiable, perform blame analysis
@@ -532,13 +533,15 @@ class BidirectionalDecider(ExampleDecider):
                  spec: TyrellSpec,
                  interpreter: Interpreter,
                  examples: List[Example],
+                 prune: str,
                  equal_output: Callable[[Any, Any], bool]=lambda x, y: x == y):
         super().__init__(interpreter, examples, equal_output)
         self._assert_handler = AssertionViolationHandler(spec, interpreter)
+        self.prune = prune
 
     def analyze_interpreter_error(self, error: InterpreterError):
         return self._assert_handler.handle_interpreter_error(error)
 
     def analyze(self, prog):
         blame_finder = BlameFinder(self.interpreter, prog)
-        return blame_finder.process_examples(self.examples, self.equal_output)
+        return blame_finder.process_examples(self.examples, self.equal_output, self.prune)

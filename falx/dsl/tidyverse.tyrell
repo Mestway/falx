@@ -1,3 +1,6 @@
+enum SmallStr {
+  "Sophomores" 
+}
 # First, specify the types that will be used
 enum ColInt {
   "1","2","3","4","5","6"
@@ -33,6 +36,8 @@ enum BoolFunc {
 value Table {
   col: int;
   row: int;
+  head: int;
+  content: int;
 }
 
 value Empty;
@@ -42,6 +47,11 @@ program Morpheus(Table) -> Table;
 
 # Finally, specify the production rules
 func empty: Empty -> Empty;
+
+func select: Table r -> Table a, ColList b {
+  row(r) == row(a);
+  col(r) < col(a);
+}
 
 func unite: Table r -> Table a, ColInt b, ColInt c {
   row(r) == row(a);
@@ -78,7 +88,22 @@ func groupSum: Table r -> Table a, Aggr b, ColInt c, ColList2 d {
   col(r) <= col(a) + 1;
 }
 
+func inner_join: Table r -> Table a, Table b {
+  col(r) < col(a) + col(b);
+}
+
 func cumsum: Table r -> Table a, ColInt b {
    row(r) == row(a);
    col(r) == col(a) + 1;
 }
+
+
+        func mutateCustom: Table r -> Table a, BoolFunc b, ColInt c, SmallStr d {
+          row(r) == row(a);
+          col(r) == col(a) + 1;
+        }
+
+        func filter: Table r -> Table a, BoolFunc b, ColInt c, SmallStr d {
+          row(r) < row(a);
+          col(r) == col(a);
+        }
