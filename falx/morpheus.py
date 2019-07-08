@@ -528,7 +528,7 @@ def init_tbl_json_str(df_name, json_loc):
     return None
 
 
-def synthesize(inputs, output, oracle_output, extra_consts):
+def synthesize(inputs, output, oracle_output, prune, extra_consts):
 
     global full_table 
     full_table = oracle_output

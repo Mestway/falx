@@ -25,8 +25,9 @@ parser.add_argument("--data_id", dest="data_id", default="001",
                     help="the id of the benchmark, if None, it runs for all tests in the data_dir")
 parser.add_argument("--num_samples", dest="num_samples", default=4, type=int, help="the number of samples")
 parser.add_argument("--backend", dest="backend", default="vegalite", type=str, help="visualization backend")
+parser.add_argument("--prune", dest="prune", default="falx", type=str, help="prune strategy (falx, forward, morpheus)")
 
-def test_benchmarks(data_dir, data_id, num_samples, backend):
+def test_benchmarks(data_dir, data_id, num_samples, backend, prune):
     """load the dataset into panda dataframes """
     test_targets = None
     if data_id is not None:
@@ -55,7 +56,7 @@ def test_benchmarks(data_dir, data_id, num_samples, backend):
         trace = vis.eval()
         #pprint(trace)
 
-        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend)
+        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
         end = timer()
 
         print("## synthesize result for task {}".format(fname))
@@ -74,4 +75,4 @@ def test_benchmarks(data_dir, data_id, num_samples, backend):
 
 if __name__ == '__main__':
     flags = parser.parse_args()
-    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend)
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
