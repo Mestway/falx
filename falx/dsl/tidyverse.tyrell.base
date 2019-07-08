@@ -50,12 +50,10 @@ func unite: Table r -> Table a, ColInt b, ColInt c {
 
 func gatherNeg: Table r -> Table a, ColNegList b {
   row(r) >= row(a);
-  col(r) <= col(a);
 }
 
 func gather: Table r -> Table a, ColList b {
   row(r) >= row(a);
-  col(r) <= col(a);
 }
 
 func spread: Table r -> Table a, ColInt b, ColInt c {

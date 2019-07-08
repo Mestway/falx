@@ -53,7 +53,11 @@ def evaluate(prog, inputs):
         init_tbl_json_str(name, json.dumps(inputs[i], default=default))
 
     # call morpheusInterpreter to obtain result variable name in r
-    res_id = MorpheusInterpreter().eval(prog[-1].ast, tnames)
+    if type(prog) is list:
+        res_id = MorpheusInterpreter().eval(prog[-1].ast, tnames)
+    else:
+        res_id = MorpheusInterpreter().eval(prog, tnames)
+
     # get the result out from r environment
     prog_output = robjects.r('toJSON({})'.format(res_id))[0]
     return json.loads(prog_output)
