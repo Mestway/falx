@@ -45,7 +45,6 @@ func empty: Empty -> Empty;
 
 func unite: Table r -> Table a, ColInt b, ColInt c {
   row(r) == row(a);
-  col(r) == col(a) - 1;
 }
 
 func gatherNeg: Table r -> Table a, ColNegList b {
@@ -58,25 +57,20 @@ func gather: Table r -> Table a, ColList b {
 
 func spread: Table r -> Table a, ColInt b, ColInt c {
   row(r) <= row(a);
-  col(r) >= col(a);
 }
 
 func separate: Table r -> Table a, ColInt b {
   row(r) == row(a);
-  col(r) == col(a) + 1;
 }
 
 func mutate: Table r -> Table a, NumFunc b, ColInt c, ColInt d {
   row(r) == row(a);
-  col(r) == col(a) + 1;
 }
 
 func groupSum: Table r -> Table a, Aggr b, ColInt c, ColList2 d {
   row(r) < row(a);
-  col(r) <= col(a) + 1;
 }
 
 func cumsum: Table r -> Table a, ColInt b {
    row(r) == row(a);
-   col(r) == col(a) + 1;
 }
