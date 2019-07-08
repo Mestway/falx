@@ -1,0 +1,32 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gather(@param0, ['2', '3'])]
+====> run synthesize 006.json
+# num samples per layer: 4
+     Bucket  Budgeted  Actual
+0  Bucket E     100.0   115.0
+1  Bucket D     100.0    90.0
+2  Bucket C     125.0   115.0
+3  Bucket B     125.0   140.0
+4  Bucket A     140.0   150.0
+        c_x    c_y   c_color
+0  Bucket E  115.0    Actual
+1  Bucket B  140.0    Actual
+2  Bucket C  115.0    Actual
+3  Bucket C  125.0  Budgeted
+# candidates before getting the correct solution: 0
+## synthesize result for task 006.json
+# table_prog:
+  [gather(@param0, ['2', '3'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'Bucket', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 0.3923
+
+real	0m1.930s
+user	0m1.870s
+sys	0m0.163s

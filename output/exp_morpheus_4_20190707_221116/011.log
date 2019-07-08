@@ -1,0 +1,83 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-1', '-2'])
+====> run synthesize 011.json
+# num samples per layer: 4
+    C1        C2  North_America  EMEA  APAC  LATAM
+0   Q1  Targeted           56.0  66.0  48.0   48.0
+1   Q1   Engaged           52.0  65.0  47.0   48.0
+2   Q1   Pitched           45.0  59.0  45.0   44.0
+3   Q1   Adopted           36.0  52.0  38.0   31.0
+4   Q2  Targeted           50.0  56.0  39.0   43.0
+5   Q2   Engaged           43.0  54.0  37.0   41.0
+6   Q2   Pitched           39.0  50.0  35.0   37.0
+7   Q2   Adopted           31.0  42.0  27.0   26.0
+8   Q3  Targeted           70.0  91.0  87.0   95.0
+9   Q3   Engaged           55.0  78.0  75.0   80.0
+10  Q3   Pitched           50.0  72.0  74.0   73.0
+11  Q3   Adopted           40.0  62.0  59.0   53.0
+         c_x   c_y       c_column
+0    Adopted  26.0          LATAM
+1    Adopted  27.0           APAC
+2    Adopted  31.0          LATAM
+3    Adopted  31.0  North_America
+4    Adopted  36.0  North_America
+5    Adopted  38.0           APAC
+6    Adopted  40.0  North_America
+7    Adopted  42.0           EMEA
+8    Adopted  52.0           EMEA
+9    Adopted  53.0          LATAM
+10   Adopted  59.0           APAC
+11   Adopted  62.0           EMEA
+12   Engaged  37.0           APAC
+13   Engaged  41.0          LATAM
+14   Engaged  43.0  North_America
+15   Engaged  47.0           APAC
+16   Engaged  48.0          LATAM
+17   Engaged  52.0  North_America
+18   Engaged  54.0           EMEA
+19   Engaged  55.0  North_America
+20   Engaged  65.0           EMEA
+21   Engaged  75.0           APAC
+22   Engaged  78.0           EMEA
+23   Engaged  80.0          LATAM
+24   Pitched  35.0           APAC
+25   Pitched  37.0          LATAM
+26   Pitched  39.0  North_America
+27   Pitched  44.0          LATAM
+28   Pitched  45.0           APAC
+29   Pitched  45.0  North_America
+30   Pitched  50.0           EMEA
+31   Pitched  50.0  North_America
+32   Pitched  59.0           EMEA
+33   Pitched  72.0           EMEA
+34   Pitched  73.0          LATAM
+35   Pitched  74.0           APAC
+36  Targeted  39.0           APAC
+37  Targeted  43.0          LATAM
+38  Targeted  48.0           APAC
+39  Targeted  48.0          LATAM
+40  Targeted  50.0  North_America
+41  Targeted  56.0           EMEA
+42  Targeted  56.0  North_America
+43  Targeted  66.0           EMEA
+44  Targeted  70.0  North_America
+45  Targeted  87.0           APAC
+46  Targeted  91.0           EMEA
+47  Targeted  95.0          LATAM
+# candidates before getting the correct solution: 0
+## synthesize result for task 011.json
+# table_prog:
+  gatherNeg(@param0, ['-1', '-2'])
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'C2', 'type': 'nominal', 'sort': None}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'column': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 1.2285
+
+real	0m3.245s
+user	0m3.044s
+sys	0m0.239s

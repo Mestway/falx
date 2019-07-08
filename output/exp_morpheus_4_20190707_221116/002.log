@@ -1,0 +1,116 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-1', '-2', '-3'])
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gather(@param0, ['2', '3'])
+====> run synthesize 002.json
+# num samples per layer: 4
+     Month  East  West  Low (<50%}  Medium (50%-80%}  High (>80%)
+0   Apr-15  86.4  63.0        50.0              30.0         20.0
+1   May-15  45.8  58.9        50.0              30.0         20.0
+2   Jun-15  44.1  81.6        50.0              30.0         20.0
+3   Jul-15  77.6  86.1        50.0              30.0         20.0
+4   Aug-15  80.7  95.0        50.0              30.0         20.0
+5   Sep-15  83.7  78.2        50.0              30.0         20.0
+6   Oct-15  78.8  98.9        50.0              30.0         20.0
+7   Nov-15  76.0  88.3        50.0              30.0         20.0
+8   Dec-15  79.0  75.5        50.0              30.0         20.0
+9   Jan-16  77.0  72.1        50.0              30.0         20.0
+10  Feb-16  67.1  93.1        50.0              30.0         20.0
+11  Mar-16  45.8  95.7        50.0              30.0         20.0
+       c_x   c_y           c_color
+0   Apr-15  20.0       High (>80%)
+1   Apr-15  30.0  Medium (50%-80%}
+2   Apr-15  50.0        Low (<50%}
+3   Aug-15  20.0       High (>80%)
+4   Aug-15  30.0  Medium (50%-80%}
+5   Aug-15  50.0        Low (<50%}
+6   Dec-15  20.0       High (>80%)
+7   Dec-15  30.0  Medium (50%-80%}
+8   Dec-15  50.0        Low (<50%}
+9   Feb-16  20.0       High (>80%)
+10  Feb-16  30.0  Medium (50%-80%}
+11  Feb-16  50.0        Low (<50%}
+12  Jan-16  20.0       High (>80%)
+13  Jan-16  30.0  Medium (50%-80%}
+14  Jan-16  50.0        Low (<50%}
+15  Jul-15  20.0       High (>80%)
+16  Jul-15  30.0  Medium (50%-80%}
+17  Jul-15  50.0        Low (<50%}
+18  Jun-15  20.0       High (>80%)
+19  Jun-15  30.0  Medium (50%-80%}
+20  Jun-15  50.0        Low (<50%}
+21  Mar-16  20.0       High (>80%)
+22  Mar-16  30.0  Medium (50%-80%}
+23  Mar-16  50.0        Low (<50%}
+24  May-15  20.0       High (>80%)
+25  May-15  30.0  Medium (50%-80%}
+26  May-15  50.0        Low (<50%}
+27  Nov-15  20.0       High (>80%)
+28  Nov-15  30.0  Medium (50%-80%}
+29  Nov-15  50.0        Low (<50%}
+30  Oct-15  20.0       High (>80%)
+31  Oct-15  30.0  Medium (50%-80%}
+32  Oct-15  50.0        Low (<50%}
+33  Sep-15  20.0       High (>80%)
+34  Sep-15  30.0  Medium (50%-80%}
+35  Sep-15  50.0        Low (<50%}
+# candidates before getting the correct solution: 0
+     Month  East  West  Low (<50%}  Medium (50%-80%}  High (>80%)
+0   Apr-15  86.4  63.0        50.0              30.0         20.0
+1   May-15  45.8  58.9        50.0              30.0         20.0
+2   Jun-15  44.1  81.6        50.0              30.0         20.0
+3   Jul-15  77.6  86.1        50.0              30.0         20.0
+4   Aug-15  80.7  95.0        50.0              30.0         20.0
+5   Sep-15  83.7  78.2        50.0              30.0         20.0
+6   Oct-15  78.8  98.9        50.0              30.0         20.0
+7   Nov-15  76.0  88.3        50.0              30.0         20.0
+8   Dec-15  79.0  75.5        50.0              30.0         20.0
+9   Jan-16  77.0  72.1        50.0              30.0         20.0
+10  Feb-16  67.1  93.1        50.0              30.0         20.0
+11  Mar-16  45.8  95.7        50.0              30.0         20.0
+   c_color     c_x   c_y
+0     East  Apr-15  86.4
+1     East  Aug-15  80.7
+2     East  Dec-15  79.0
+3     East  Feb-16  67.1
+4     East  Jan-16  77.0
+5     East  Jul-15  77.6
+6     East  Jun-15  44.1
+7     East  Mar-16  45.8
+8     East  May-15  45.8
+9     East  Nov-15  76.0
+10    East  Oct-15  78.8
+11    East  Sep-15  83.7
+12    West  Apr-15  63.0
+13    West  Aug-15  95.0
+14    West  Dec-15  75.5
+15    West  Feb-16  93.1
+16    West  Jan-16  72.1
+17    West  Jul-15  86.1
+18    West  Jun-15  81.6
+19    West  Mar-16  95.7
+20    West  May-15  58.9
+21    West  Nov-15  88.3
+22    West  Oct-15  98.9
+23    West  Sep-15  78.2
+# candidates before getting the correct solution: 0
+## synthesize result for task 002.json
+# table_prog:
+  [ApplyNode(gatherNeg, [ParamNode(0), AtomNode(['-1', '-2', '-3'])]), ApplyNode(gather, [ParamNode(0), AtomNode(['2', '3'])])]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'bar', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Month', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Month', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'Month', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 2.9011
+
+real	0m4.709s
+user	0m4.559s
+sys	0m0.234s

@@ -1,0 +1,94 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [groupSum(@param0, sum, 4, ['2', '6'])]
+====> run synthesize 020.json
+# num samples per layer: 8
+     Order ID   Product    Category  Amount        Date         Country
+0         1.0   Carrots  Vegetables  4270.0    1/6/2012   United States
+1         2.0  Broccoli  Vegetables  8239.0    1/7/2012  United Kingdom
+2         3.0    Banana       Fruit   617.0    1/8/2012   United States
+3         4.0    Banana       Fruit  8384.0   1/10/2012          Canada
+4         5.0     Beans  Vegetables  2626.0   1/10/2012         Germany
+5         6.0    Orange       Fruit  3610.0   1/11/2012   United States
+6         7.0  Broccoli  Vegetables  9062.0   1/11/2012       Australia
+7         8.0    Banana       Fruit  6906.0   1/16/2012     New Zealand
+8         9.0     Apple       Fruit  2417.0   1/16/2012          France
+9        10.0     Apple       Fruit  7431.0   1/16/2012          Canada
+10       11.0    Banana       Fruit  8250.0   1/16/2012         Germany
+11       12.0  Broccoli  Vegetables  7012.0   1/18/2012   United States
+12       13.0   Carrots  Vegetables  1903.0   1/20/2012         Germany
+13       14.0  Broccoli  Vegetables  2824.0   1/22/2012          Canada
+14       15.0     Apple       Fruit  6946.0   1/24/2012          France
+15       16.0    Banana       Fruit  2320.0   1/27/2012  United Kingdom
+16       17.0    Banana       Fruit  2116.0   1/28/2012   United States
+17       18.0    Banana       Fruit  1135.0   1/30/2012  United Kingdom
+18       19.0  Broccoli  Vegetables  3595.0   1/30/2012  United Kingdom
+19       20.0     Apple       Fruit  1161.0    2/2/2012   United States
+20       21.0    Orange       Fruit  2256.0    2/4/2012          France
+21       22.0    Banana       Fruit  1004.0   2/11/2012     New Zealand
+22       23.0    Banana       Fruit  3642.0   2/14/2012          Canada
+23       24.0    Banana       Fruit  4582.0   2/17/2012   United States
+24       25.0     Beans  Vegetables  3559.0   2/17/2012  United Kingdom
+25       26.0   Carrots  Vegetables  5154.0   2/17/2012       Australia
+26       27.0     Mango       Fruit  7388.0   2/18/2012          France
+27       28.0     Beans  Vegetables  7163.0   2/18/2012   United States
+28       29.0     Beans  Vegetables  5101.0   2/20/2012         Germany
+29       30.0     Apple       Fruit  7602.0   2/21/2012          France
+..        ...       ...         ...     ...         ...             ...
+183     184.0    Banana       Fruit  8894.0  11/15/2012   United States
+184     185.0   Carrots  Vegetables  4846.0  11/25/2012  United Kingdom
+185     186.0  Broccoli  Vegetables   284.0  11/25/2012         Germany
+186     187.0    Orange       Fruit  8283.0  11/26/2012  United Kingdom
+187     188.0    Orange       Fruit  9990.0  11/28/2012          Canada
+188     189.0    Banana       Fruit  9014.0  11/28/2012       Australia
+189     190.0     Apple       Fruit  1942.0  11/29/2012          France
+190     191.0    Banana       Fruit  7223.0  11/30/2012   United States
+191     192.0   Carrots  Vegetables  4673.0   12/2/2012   United States
+192     193.0   Carrots  Vegetables  9104.0   12/4/2012          France
+193     194.0     Apple       Fruit  6078.0   12/5/2012   United States
+194     195.0     Beans  Vegetables  3278.0   12/6/2012         Germany
+195     196.0    Banana       Fruit   136.0  12/12/2012          Canada
+196     197.0    Banana       Fruit  8377.0  12/12/2012       Australia
+197     198.0    Banana       Fruit  2382.0  12/12/2012   United States
+198     199.0    Banana       Fruit  8702.0  12/15/2012         Germany
+199     200.0    Banana       Fruit  5021.0  12/16/2012   United States
+200     201.0     Apple       Fruit  1760.0  12/16/2012       Australia
+201     202.0    Banana       Fruit  4766.0  12/18/2012         Germany
+202     203.0     Beans  Vegetables  1541.0  12/19/2012  United Kingdom
+203     204.0    Orange       Fruit  2782.0  12/20/2012  United Kingdom
+204     205.0     Apple       Fruit  2455.0  12/20/2012          Canada
+205     206.0     Apple       Fruit  4512.0  12/22/2012     New Zealand
+206     207.0     Apple       Fruit  8752.0  12/22/2012         Germany
+207     208.0   Carrots  Vegetables  9127.0  12/25/2012   United States
+208     209.0     Apple       Fruit  1777.0  12/28/2012          France
+209     210.0     Beans  Vegetables   680.0  12/28/2012          France
+210     211.0    Orange       Fruit   958.0  12/29/2012   United States
+211     212.0   Carrots  Vegetables  2613.0  12/29/2012       Australia
+212     213.0   Carrots  Vegetables   339.0  12/30/2012       Australia
+
+[213 rows x 6 columns]
+              c_x      c_y   c_color
+0  United Kingdom  41815.0   Carrots
+1       Australia   8106.0   Carrots
+2   United States  22363.0     Mango
+3   United States  95061.0    Banana
+4          France   5341.0  Broccoli
+5         Germany  37197.0  Broccoli
+6         Germany  39686.0    Banana
+7     New Zealand  10332.0     Apple
+# candidates before getting the correct solution: 0
+## synthesize result for task 020.json
+# table_prog:
+  [groupSum(@param0, sum, 4, ['2', '6'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'Country', 'type': 'nominal'}, 'y': {'field': 'COL85', 'type': 'quantitative'}, 'color': {'field': 'Product', 'type': 'nominal'}}}
+# time used (s): 2.7615
+
+real	0m4.445s
+user	0m4.516s
+sys	0m0.215s

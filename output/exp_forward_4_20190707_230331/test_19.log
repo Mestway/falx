@@ -1,0 +1,68 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 11
+[info] Solution found: [mutate(@param0, +, 2, 4), gather(mutate(@param0, +, 2, 4), ['4', '5'])]
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [cumsum(@param0, 2)]
+====> run synthesize test_19.json
+# num samples per layer: 4
+   Product  Sales growth  Profit %  Sales Increase
+0    Prod1           6.0      42.0            29.0
+1    Prod2           1.0      48.0            18.0
+2    Prod3          -3.0      10.0             7.0
+3    Prod4          15.0      16.0            11.0
+4    Prod5          -6.0      10.0             2.0
+5    Prod6          11.0      45.0            14.0
+6    Prod7           2.0      50.0            36.0
+7    Prod8           1.0      39.0            25.0
+8    Prod9          -4.0      30.0             7.0
+9   Prod10          15.0      12.0            10.0
+10  Prod11          25.0      55.0             3.0
+11  Prod12          18.0      18.0             8.0
+12  Prod13          19.0      15.0            14.0
+  c_color   c_x   c_y
+0   Prod6  45.0  25.0
+1  Prod11  55.0  28.0
+2  Prod12  18.0  26.0
+3   Prod8  39.0  26.0
+# candidates before getting the correct solution: 11
+   Product  Sales growth  Profit %  Sales Increase
+0    Prod1           6.0      42.0            29.0
+1    Prod2           1.0      48.0            18.0
+2    Prod3          -3.0      10.0             7.0
+3    Prod4          15.0      16.0            11.0
+4    Prod5          -6.0      10.0             2.0
+5    Prod6          11.0      45.0            14.0
+6    Prod7           2.0      50.0            36.0
+7    Prod8           1.0      39.0            25.0
+8    Prod9          -4.0      30.0             7.0
+9   Prod10          15.0      12.0            10.0
+10  Prod11          25.0      55.0             3.0
+11  Prod12          18.0      18.0             8.0
+12  Prod13          19.0      15.0            14.0
+    c_x   c_y c_color
+0  42.0  29.0   Prod1
+1  10.0   7.0   Prod3
+2  12.0  10.0  Prod10
+3  15.0  14.0  Prod13
+# candidates before getting the correct solution: 0
+## synthesize result for task test_19.json
+# table_prog:
+  [[mutate(@param0, +, 2, 4), gather(mutate(@param0, +, 2, 4), ['4', '5'])], [cumsum(@param0, 2)]]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Profit %', 'type': 'quantitative'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'Product', 'type': 'nominal'}, 'order': {'field': 'Profit %', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'point', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Profit %', 'type': 'quantitative'}, 'y': {'field': 'Sales Increase', 'type': 'quantitative'}, 'color': {'field': 'Product', 'type': 'nominal'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 18.9342
+
+real	0m20.890s
+user	0m20.640s
+sys	0m0.527s

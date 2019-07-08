@@ -1,0 +1,94 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [separate(@param0, 1)]
+====> run synthesize 023.json
+# num samples per layer: 8
+     data_ora      site      type  value
+0         6_0    e90e50  computer   22.0
+1         6_0    e90e50    mobile    8.0
+2         6_0  e90e50fx  computer   17.0
+3         6_0  e90e50fx    mobile    5.0
+4         6_1    e90e50  computer    8.0
+5         6_1    e90e50    mobile    7.0
+6         6_1  e90e50fx  computer   22.0
+7         6_1  e90e50fx    mobile    6.0
+8         6_2    e90e50  computer   18.0
+9         6_2    e90e50    mobile    5.0
+10        6_2  e90e50fx  computer   17.0
+11        6_2  e90e50fx    mobile   11.0
+12        6_3    e90e50  computer   19.0
+13        6_3    e90e50    mobile   10.0
+14        6_3  e90e50fx  computer   14.0
+15        6_3  e90e50fx    mobile    7.0
+16        6_4    e90e50  computer    8.0
+17        6_4    e90e50    mobile   12.0
+18        6_4  e90e50fx  computer   22.0
+19        6_4  e90e50fx    mobile    7.0
+20        6_5    e90e50  computer   19.0
+21        6_5    e90e50    mobile   10.0
+22        6_5  e90e50fx  computer    8.0
+23        6_5  e90e50fx    mobile    6.0
+24        6_6    e90e50  computer   19.0
+25        6_6    e90e50    mobile    8.0
+26        6_6  e90e50fx  computer   12.0
+27        6_6  e90e50fx    mobile    8.0
+28        6_7    e90e50  computer    8.0
+29        6_7    e90e50    mobile    8.0
+...       ...       ...       ...    ...
+1956     30_9    e90e50  computer   11.0
+1957     30_9    e90e50    mobile    0.0
+1958     30_9  e90e50fx  computer   12.0
+1959     30_9  e90e50fx    mobile    0.0
+1960    30_10    e90e50  computer    4.0
+1961    30_10    e90e50    mobile    0.0
+1962    30_10  e90e50fx  computer   12.0
+1963    30_10  e90e50fx    mobile    6.0
+1964    30_11    e90e50  computer    0.0
+1965    30_11    e90e50    mobile    6.0
+1966    30_11  e90e50fx  computer   11.0
+1967    30_11  e90e50fx    mobile    4.0
+1968    30_12    e90e50  computer    0.0
+1969    30_12    e90e50    mobile    5.0
+1970    30_12  e90e50fx  computer    4.0
+1971    30_12  e90e50fx    mobile    4.0
+1972    30_13    e90e50  computer    8.0
+1973    30_13    e90e50    mobile    6.0
+1974    30_13  e90e50fx  computer    4.0
+1975    30_13  e90e50fx    mobile    0.0
+1976    30_14    e90e50  computer    0.0
+1977    30_14    e90e50    mobile    6.0
+1978    30_14  e90e50fx  computer    0.0
+1979    30_14  e90e50fx    mobile    5.0
+1980    30_15    e90e50  computer    9.0
+1981    30_15    e90e50    mobile    9.0
+1982    30_15  e90e50fx  computer    9.0
+1983    30_15  e90e50fx    mobile    8.0
+1984    30_16    e90e50  computer   21.0
+1985    30_16    e90e50    mobile   14.0
+
+[1986 rows x 4 columns]
+  c_x c_y  c_color  c_column
+0  28  23      8.0    e90e50
+1  24  23      8.0  e90e50fx
+2  14   1     20.0  e90e50fx
+3  16  18     20.0    e90e50
+4  21   4     11.0    e90e50
+5  16   5      6.0    e90e50
+6  20   2      4.0  e90e50fx
+7  16   8      4.0    e90e50
+# candidates before getting the correct solution: 0
+## synthesize result for task 023.json
+# table_prog:
+  [separate(@param0, 1)]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'COL6', 'type': 'nominal'}, 'y': {'field': 'COL7', 'type': 'nominal'}, 'color': {'field': 'value', 'type': 'nominal'}, 'column': {'field': 'site', 'type': 'nominal'}}}
+# time used (s): 0.6458
+
+real	0m2.399s
+user	0m2.494s
+sys	0m0.184s

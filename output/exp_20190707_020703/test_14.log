@@ -1,0 +1,39 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gather(@param0, ['2', '3'])]
+====> run synthesize test_14.json
+# num samples per layer: 8
+                                    title  work  hobby
+0              Preparing monthly forecast  20.0    0.0
+1        Margin and Product cost analysis  15.0    0.0
+2            Excel and Access development  10.0    0.0
+3                         Excel trainings   5.0   50.0
+4                               Beadworks  50.0    8.0
+5                                  Sewing   0.0    9.0
+6                     Fiddling with Excel   0.0   18.0
+7  Managing Excel Hero group on Linked In   0.0   16.0
+     c_x   c_y                           c_color
+0  hobby   0.0      Excel and Access development
+1  hobby   0.0  Margin and Product cost analysis
+2  hobby   0.0        Preparing monthly forecast
+3  hobby  50.0                   Excel trainings
+4  hobby   8.0                         Beadworks
+5   work   0.0               Fiddling with Excel
+6   work   0.0                            Sewing
+7   work  20.0        Preparing monthly forecast
+# candidates before getting the correct solution: 0
+## synthesize result for task test_14.json
+# table_prog:
+  [gather(@param0, ['2', '3'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'title', 'type': 'nominal'}}}
+# time used (s): 0.7406
+
+real	0m2.590s
+user	0m2.667s
+sys	0m0.200s

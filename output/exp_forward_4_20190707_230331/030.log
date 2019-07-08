@@ -1,0 +1,158 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+[info] Solution not found!
+[info] Synthesizing programs ...
+CUT 2
+CUT 3
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 5
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 5
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 3
+CUT 2
+CUT 3
+CUT 2
+CUT 2
+CUT 5
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 2
+CUT 3
+CUT 2
+CUT 2
+CUT 7
+CUT 2
+CUT 2
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2', '-3']), mutateCustom(gatherNeg(@param0, ['-1', '-2', '-3']), ==, 2, Archery)]
+====> run synthesize 030.json
+# num samples per layer: 4
+    Rank                                Sport   Total  ...  Power  Speed  Strength
+0   55.0                              Archery  30.625  ...   3.13   1.13      4.50
+1   32.0                          Auto Racing  47.875  ...   2.63   1.63      3.50
+2   30.0                            Badminton  48.000  ...   4.00   5.63      3.25
+3    9.0                    Baseball/Softball  62.250  ...   7.63   6.50      5.75
+4    4.0                           Basketball  67.875  ...   6.50   7.25      6.25
+5   59.0                            Billiards  21.500  ...   1.75   0.75      1.00
+6   28.0                     Bobsledding/Luge  49.250  ...   6.50   6.75      5.50
+7   57.0                              Bowling  25.375  ...   3.38   1.00      2.75
+8    1.0                               Boxing  72.375  ...   8.63   6.38      8.13
+9   49.0                          Canoe/Kayak  42.000  ...   5.63   3.50      5.25
+10  52.0                         Cheerleading  36.250  ...   3.38   2.25      3.63
+11  56.0                              Curling  27.500  ...   2.50   1.50      2.63
+12  20.0                    Cycling: Distance  54.375  ...   6.25   5.13      6.38
+13  27.0                     Cycling: Sprints  50.000  ...   7.88   7.50      6.13
+14  35.0                               Diving  47.000  ...   4.63   3.00      5.13
+15  54.0                           Equestrian  31.750  ...   1.75   1.25      3.25
+16  24.0                              Fencing  52.750  ...   4.25   5.13      3.75
+17  17.0                         Field Hockey  54.875  ...   5.38   6.00      4.50
+18  19.0                       Figure Skating  54.750  ...   6.63   5.13      5.25
+19  60.0                              Fishing  14.500  ...   1.25   0.63      1.63
+20   3.0                             Football  68.375  ...   8.13   7.13      8.63
+21  51.0                                 Golf  37.875  ...   6.13   1.63      3.88
+22   8.0                           Gymnastics  62.500  ...   6.63   5.00      6.13
+23  50.0                         Horse Racing  41.625  ...   2.88   1.38      3.88
+24   2.0                           Ice Hockey  71.750  ...   7.88   7.75      7.13
+25  14.0                             Lacrosse  60.375  ...   5.75   7.00      5.13
+26   6.0                         Martial Arts  63.375  ...   7.75   6.38      5.88
+27  22.0                   Racquetball/Squash  53.625  ...   5.00   5.50      3.75
+28  42.0    Rodeo: Bull/Bareback/Bronc Riding  45.875  ...   4.00   1.75      5.38
+29  40.0                   Rodeo: Calf Roping  46.000  ...   5.00   4.25      5.38
+30  15.0               Rodeo: Steer Wrestling  56.500  ...   7.88   3.88      7.00
+31  52.0                       Roller Skating  36.250  ...   4.00   5.13      3.38
+32  39.0                               Rowing  46.125  ...   7.13   4.00      7.75
+33  13.0                                Rugby  60.500  ...   6.38   5.88      7.00
+34  58.0                             Shooting  24.875  ...   1.38   0.88      2.50
+35  37.0                        Skateboarding  46.750  ...   3.75   4.13      3.75
+36  29.0                          Ski Jumping  48.875  ...   5.75   4.63      4.50
+37  11.0                       Skiing: Alpine  60.625  ...   6.00   7.38      5.25
+38  25.0                    Skiing: Freestyle  52.500  ...   4.88   5.13      5.13
+39  30.0                       Skiing: Nordic  48.000  ...   4.38   5.13      5.75
+40  10.0                               Soccer  61.500  ...   5.13   7.25      4.50
+41  17.0                        Speed Skating  54.875  ...   7.38   8.88      7.25
+42  23.0                              Surfing  53.125  ...   4.13   4.25      5.00
+43  36.0     Swimming (all strokes): Distance  46.875  ...   4.63   5.50      5.25
+44  45.0      Swimming (all strokes): Sprints  44.125  ...   6.25   7.88      5.25
+45  47.0                         Table Tennis  43.000  ...   4.63   4.13      2.50
+46  26.0                        Team Handball  50.750  ...   5.38   5.50      3.88
+47   7.0                               Tennis  62.750  ...   7.13   6.75      5.13
+48  40.0            Track and Field: Distance  46.000  ...   3.75   6.00      5.25
+49  33.0           Track and Field: High Jump  47.750  ...   7.00   6.13      6.00
+50  34.0  Track and Field: Long, Triple jumps  47.375  ...   7.13   6.75      5.63
+51  43.0     Track and Field: Middle Distance  45.500  ...   5.13   7.75      5.13
+52  16.0          Track and Field: Pole Vault  55.875  ...   7.25   6.13      6.88
+53  38.0             Track and Field: Sprints  46.625  ...   7.25   9.88      5.13
+54  48.0             Track and Field: Weights  42.125  ...   9.13   3.00      7.88
+55  20.0                           Volleyball  54.375  ...   6.63   5.00      4.88
+56  11.0                           Water Polo  60.625  ...   6.88   5.38      6.63
+57  46.0                         Water Skiing  44.000  ...   4.50   3.00      5.00
+58  44.0                       Weight-Lifting  45.000  ...   9.75   2.63      9.25
+59   5.0                            Wrestling  63.500  ...   7.13   5.13      8.38
+
+[60 rows x 13 columns]
+    c_y  c_size               c_column
+0  7.25       0  Hand-Eye-Coordination
+1  2.88       1              Endurance
+2  5.13       0             Durability
+3  1.25       0                  Power
+# candidates before getting the correct solution: 0
+## synthesize result for task 030.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-2', '-3']), mutateCustom(gatherNeg(@param0, ['-1', '-2', '-3']), ==, 2, Archery)]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'y': {'field': 'VALUE', 'type': 'quantitative'}, 'size': {'field': 'COL5948', 'type': 'quantitative'}, 'column': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 165.7649
+
+real	2m47.546s
+user	2m46.354s
+sys	0m1.156s

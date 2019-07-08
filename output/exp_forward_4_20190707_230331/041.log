@@ -1,0 +1,33 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 2
+[info] Solution found: [gatherNeg(@param0, ['-1'])]
+====> run synthesize 041.json
+# num samples per layer: 4
+     Year  Crustaceans        Cod        Tuna     Herring  Scorpion.fishes
+0  1950.0   58578630.0  2716706.0  69690537.0  87161396.0       15250015.0
+1  1951.0   59194582.0  3861166.0  34829755.0  51215349.0       15454659.0
+2  1952.0   47562941.0  4396174.0  31061481.0  13962479.0       12541484.0
+3  1953.0   68432658.0  3901176.0  23225423.0  13229061.0        9524564.0
+4  1954.0   64395489.0  4412721.0  20798126.0  25285539.0        9890656.0
+5  1955.0   76111004.0  4774045.0  13992697.0  18910756.0        8446391.0
+           c_color     c_x         c_y
+0  Scorpion.fishes  1952.0  12541484.0
+1  Scorpion.fishes  1951.0  15454659.0
+2          Herring  1950.0  87161396.0
+3             Tuna  1955.0  13992697.0
+# candidates before getting the correct solution: 2
+## synthesize result for task 041.json
+# table_prog:
+  [gatherNeg(@param0, ['-1'])]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'Year', 'type': 'quantitative'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'Year', 'type': 'quantitative'}}}
+# time used (s): 0.5791
+
+real	0m2.579s
+user	0m2.650s
+sys	0m0.206s

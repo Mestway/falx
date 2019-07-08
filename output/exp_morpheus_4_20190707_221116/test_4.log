@@ -1,0 +1,98 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-1'])
+====> run synthesize test_4.json
+# num samples per layer: 4
+   Period  APPRENTICE  CLERICAL  ...    SALESMAN  NO CLASS  MISC.
+0     1.0         8.8      14.7  ...         5.1       5.9    1.9
+1     2.0         4.2       9.7  ...         5.5       4.2    0.0
+2     3.0         1.0       0.0  ...         5.5       4.2    0.0
+3     4.0         1.0       0.0  ...         5.5       4.0    0.7
+4     5.0         0.0       0.0  ...         7.2       1.8    1.9
+5     6.0         0.0       0.0  ...         6.6       2.8    1.8
+6     7.0         0.0       0.0  ...         4.4       2.4    4.4
+7     8.0         0.0       0.0  ...         2.4       2.8    5.6
+8     9.0         0.0       0.0  ...         4.5       0.0    4.5
+9    10.0         0.0       0.0  ...         5.6       0.0    0.0
+
+[10 rows x 10 columns]
+     c_x   c_y                 c_color
+0    0.0  10.0              APPRENTICE
+1    0.0  10.0                CLERICAL
+2    0.0  10.0         MINOR EXECUTIVE
+3    0.0  10.0                   MISC.
+4    0.0  10.0                NO CLASS
+5    0.0  10.0           SKILLED LABOR
+6    0.0   2.0                   MISC.
+7    0.0   3.0                CLERICAL
+8    0.0   3.0                   MISC.
+9    0.0   4.0                CLERICAL
+10   0.0   4.0           SKILLED LABOR
+11   0.0   5.0              APPRENTICE
+12   0.0   5.0                CLERICAL
+13   0.0   5.0           SKILLED LABOR
+14   0.0   6.0              APPRENTICE
+15   0.0   6.0                CLERICAL
+16   0.0   6.0           SKILLED LABOR
+17   0.0   7.0              APPRENTICE
+18   0.0   7.0                CLERICAL
+19   0.0   7.0           SKILLED LABOR
+20   0.0   8.0              APPRENTICE
+21   0.0   8.0                CLERICAL
+22   0.0   8.0           SKILLED LABOR
+23   0.0   9.0              APPRENTICE
+24   0.0   9.0                CLERICAL
+25   0.0   9.0                NO CLASS
+26   0.0   9.0           SKILLED LABOR
+27   0.7   4.0                   MISC.
+28   1.0   3.0              APPRENTICE
+29   1.0   4.0              APPRENTICE
+..   ...   ...                     ...
+60   4.2   2.0              APPRENTICE
+61   4.4   7.0                   MISC.
+62   4.4   7.0                SALESMAN
+63   4.5   9.0  ENGINEERING SPECIALIST
+64   4.5   9.0                   MISC.
+65   4.5   9.0                SALESMAN
+66  43.0   3.0         MAJOR EXECUTIVE
+67   5.1   1.0                SALESMAN
+68   5.5   2.0                SALESMAN
+69   5.5   2.0           SKILLED LABOR
+70   5.5   3.0                SALESMAN
+71   5.5   4.0                SALESMAN
+72   5.6  10.0  ENGINEERING SPECIALIST
+73   5.6  10.0                SALESMAN
+74   5.6   8.0                   MISC.
+75   5.9   1.0                NO CLASS
+76  51.0   4.0         MAJOR EXECUTIVE
+77  57.0   5.0         MAJOR EXECUTIVE
+78   6.6   6.0                SALESMAN
+79  65.0   6.0         MAJOR EXECUTIVE
+80  67.0   7.0         MAJOR EXECUTIVE
+81   7.1   7.0  ENGINEERING SPECIALIST
+82   7.2   5.0                SALESMAN
+83  75.0   8.0         MAJOR EXECUTIVE
+84  77.0   9.0         MAJOR EXECUTIVE
+85   8.8   1.0              APPRENTICE
+86  88.8  10.0         MAJOR EXECUTIVE
+87   9.0   4.0  ENGINEERING SPECIALIST
+88   9.0   9.0         MINOR EXECUTIVE
+89   9.7   2.0                CLERICAL
+
+[90 rows x 3 columns]
+# candidates before getting the correct solution: 0
+## synthesize result for task test_4.json
+# table_prog:
+  gatherNeg(@param0, ['-1'])
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'VALUE', 'type': 'quantitative'}, 'y': {'field': 'Period', 'type': 'nominal'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 1.4960
+
+real	0m4.278s
+user	0m3.564s
+sys	0m0.398s

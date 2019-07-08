@@ -1,0 +1,50 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [mutate(@param0, -, 3, 2), gatherNeg(mutate(@param0, -, 3, 2), ['-1', '-3'])]
+====> run synthesize test_16.json
+# num samples per layer: 4
+     label  values  total
+0    lbl_1    15.0  100.0
+1    lbl_2    74.0  100.0
+2    lbl_3    32.0  100.0
+3    lbl_4     7.0  100.0
+4    lbl_5    17.0  100.0
+5    lbl_6     0.0  100.0
+6    lbl_7    11.0  100.0
+7    lbl_8    15.0  100.0
+8    lbl_9    58.0  100.0
+9   lbl_10    38.0  100.0
+10  lbl_11    66.0  100.0
+11  lbl_12    49.0  100.0
+12  lbl_13    96.0  100.0
+13  lbl_14    38.0  100.0
+14  lbl_15    35.0  100.0
+15  lbl_16    84.0  100.0
+16  lbl_17    34.0  100.0
+17  lbl_18    36.0  100.0
+18  lbl_19    60.0  100.0
+19  lbl_20    62.0  100.0
+20  lbl_21    96.0  100.0
+     c_x   c_y   c_color
+0  lbl_9  58.0    values
+1  lbl_7  11.0    values
+2  lbl_2  26.0  mutate_a
+3  lbl_8  85.0  mutate_a
+# candidates before getting the correct solution: 0
+## synthesize result for task test_16.json
+# table_prog:
+  [mutate(@param0, -, 3, 2), gatherNeg(mutate(@param0, -, 3, 2), ['-1', '-3'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'label', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 31.5512
+
+real	0m33.577s
+user	0m33.068s
+sys	0m0.785s

@@ -1,0 +1,115 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-1', '-2'])
+====> run synthesize 009.json
+# num samples per layer: 4
+         Location                                  Rae  ...   2013  2014
+0   United States                                White  ...   12.9  10.4
+1   United States            Black or African American  ...   17.1  13.6
+2   United States     American Indian or Alaska Native  ...   26.9  23.1
+3   United States                                Asian  ...   14.6  10.6
+4   United States  Native Hawaiian or Pacific Islander  ...   17.9  13.5
+5   United States                           Other Race  ...   31.7  26.1
+6   United States                    Two or more races  ...   13.2  10.4
+7   United States         White,not Hispanic or Latino  ...   10.2   8.1
+8   United States                   Hispanic or Latino  ...   28.4  23.5
+9         Arizona                                White  ...   15.7  12.2
+10        Arizona            Black or African American  ...   17.4  11.1
+11        Arizona     American Indian or Alaska Native  ...   26.9  24.1
+12        Arizona                                Asian  ...   15.1  11.0
+13        Arizona  Native Hawaiian or Pacific Islander  ...   21.3  18.4
+14        Arizona                           Other Race  ...   30.1  27.2
+15        Arizona                    Two or more races  ...   15.2  13.2
+16        Arizona         White,not Hispanic or Latino  ...   11.2   8.6
+17        Arizona                   Hispanic or Latino  ...   27.5  22.2
+18       Maricopa                                White  ...   16.3  12.4
+19       Maricopa            Black or African American  ...   17.9  11.6
+20       Maricopa     American Indian or Alaska Native  ...   14.8  29.6
+21       Maricopa                                Asian  ...   15.0  10.2
+22       Maricopa  Native Hawaiian or Pacific Islander  ...   29.9  14.6
+23       Maricopa                           Other Race  ...   32.8  27.6
+24       Maricopa                    Two or more races  ...   15.3  13.9
+25       Maricopa         White,not Hispanic or Latino  ...   10.9   8.1
+26       Maricopa                   Hispanic or Latino  ...   30.3  23.9
+
+[27 rows x 8 columns]
+      c_x                 ...                                              c_column
+0    2009                 ...                          White,not Hispanic or Latino
+1    2009                 ...                                    Hispanic or Latino
+2    2009                 ...                          White,not Hispanic or Latino
+3    2009                 ...                                                 White
+4    2009                 ...                                     Two or more races
+5    2009                 ...                   Native Hawaiian or Pacific Islander
+6    2009                 ...                                     Two or more races
+7    2009                 ...                                                 Asian
+8    2009                 ...                                                 Asian
+9    2009                 ...                          White,not Hispanic or Latino
+10   2009                 ...                             Black or African American
+11   2009                 ...                                                 White
+12   2009                 ...                      American Indian or Alaska Native
+13   2009                 ...                             Black or African American
+14   2009                 ...                   Native Hawaiian or Pacific Islander
+15   2009                 ...                                                 White
+16   2009                 ...                             Black or African American
+17   2009                 ...                                            Other Race
+18   2009                 ...                                            Other Race
+19   2009                 ...                                     Two or more races
+20   2009                 ...                   Native Hawaiian or Pacific Islander
+21   2009                 ...                                    Hispanic or Latino
+22   2009                 ...                      American Indian or Alaska Native
+23   2009                 ...                      American Indian or Alaska Native
+24   2009                 ...                                    Hispanic or Latino
+25   2009                 ...                                            Other Race
+26   2009                 ...                                                 Asian
+27   2010                 ...                          White,not Hispanic or Latino
+28   2010                 ...                          White,not Hispanic or Latino
+29   2010                 ...                          White,not Hispanic or Latino
+..    ...                 ...                                                   ...
+132  2013                 ...                                    Hispanic or Latino
+133  2013                 ...                                            Other Race
+134  2013                 ...                                            Other Race
+135  2014                 ...                                                 Asian
+136  2014                 ...                                     Two or more races
+137  2014                 ...                                                 White
+138  2014                 ...                                                 Asian
+139  2014                 ...                                                 Asian
+140  2014                 ...                             Black or African American
+141  2014                 ...                             Black or African American
+142  2014                 ...                                                 White
+143  2014                 ...                                                 White
+144  2014                 ...                                     Two or more races
+145  2014                 ...                   Native Hawaiian or Pacific Islander
+146  2014                 ...                             Black or African American
+147  2014                 ...                                     Two or more races
+148  2014                 ...                   Native Hawaiian or Pacific Islander
+149  2014                 ...                   Native Hawaiian or Pacific Islander
+150  2014                 ...                                    Hispanic or Latino
+151  2014                 ...                      American Indian or Alaska Native
+152  2014                 ...                                    Hispanic or Latino
+153  2014                 ...                                    Hispanic or Latino
+154  2014                 ...                      American Indian or Alaska Native
+155  2014                 ...                                            Other Race
+156  2014                 ...                                            Other Race
+157  2014                 ...                                            Other Race
+158  2014                 ...                      American Indian or Alaska Native
+159  2014                 ...                          White,not Hispanic or Latino
+160  2014                 ...                          White,not Hispanic or Latino
+161  2014                 ...                          White,not Hispanic or Latino
+
+[162 rows x 4 columns]
+# candidates before getting the correct solution: 0
+## synthesize result for task 009.json
+# table_prog:
+  gatherNeg(@param0, ['-1', '-2'])
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'Location', 'type': 'nominal'}, 'column': {'field': 'Rae', 'type': 'nominal'}}}
+# time used (s): 1.3891
+
+real	0m3.156s
+user	0m3.055s
+sys	0m0.188s

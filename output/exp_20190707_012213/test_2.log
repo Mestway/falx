@@ -1,0 +1,40 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 2)]
+====> run synthesize test_2.json
+# num samples per layer: 4
+       Country    1_1    1_2    1_3  ...      2_9   2_10   2_11   2_12
+0        Spain  0.306  0.331  0.327  ...    0.399  0.411  0.424  0.436
+1       France  0.233  0.229  0.223  ...    0.289  0.295  0.301  0.307
+2           US  0.185  0.181  0.176  ...    0.080  0.072  0.065  0.058
+3       Greece  0.323  0.336  0.338  ...    0.307  0.307  0.307  0.307
+4      Belgium  0.329  0.342  0.334  ...    0.548  0.587  0.628  0.672
+5   Costa Rica  0.366  0.374  0.389  ...    0.467  0.477  0.486  0.496
+6      Germany  0.086  0.084  0.081  ...    0.036  0.032  0.029  0.026
+7  Switzerland  0.520  0.523  0.537  ...    0.725  0.746  0.769  0.792
+8      Austria  0.477  0.488  0.494  ...    0.491  0.491  0.491  0.491
+
+[9 rows x 25 columns]
+  c_color    c_column c_x    c_y
+0       1      France   2  0.229
+1       1  Costa Rica   7  0.375
+2       2     Germany   5  0.055
+3       2       Spain  10  0.411
+# candidates before getting the correct solution: 0
+## synthesize result for task test_2.json
+# table_prog:
+  [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 2)]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'COL3754', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'COL3753', 'type': 'nominal'}, 'column': {'field': 'Country', 'type': 'nominal'}, 'order': {'field': 'COL3754', 'type': 'quantitative'}}}
+# time used (s): 42.3878
+
+real	0m44.034s
+user	0m43.205s
+sys	0m0.858s

@@ -1,0 +1,71 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-4', '-5', '-6'])
+====> run synthesize 050.json
+# num samples per layer: 4
+    Consuntivo 2010  Consuntivo 2011  Obiettivo 2011    id
+0           42560.0          64146.0         51072.0   0.0
+1           46368.0          74043.0         64915.2   1.0
+2           46826.0         110358.0         65556.4   2.0
+3           53090.0         132409.0         74326.0   3.0
+4           60331.0         162675.0         84463.4   4.0
+5           64501.0         171886.0         90301.4   5.0
+6           69244.0         184259.0         96941.6   6.0
+7           73102.0         188505.0        102342.8   7.0
+8           80000.0         204907.0        112000.0   8.0
+9           83922.0         212013.0        117490.8   9.0
+10          86729.0         221144.0        121420.6  10.0
+11          88889.0         221709.0        124444.6  11.0
+            c_color   c_x       c_y
+0   Consuntivo 2010   0.0   42560.0
+1   Consuntivo 2010   1.0   46368.0
+2   Consuntivo 2010  10.0   86729.0
+3   Consuntivo 2010  11.0   88889.0
+4   Consuntivo 2010   2.0   46826.0
+5   Consuntivo 2010   3.0   53090.0
+6   Consuntivo 2010   4.0   60331.0
+7   Consuntivo 2010   5.0   64501.0
+8   Consuntivo 2010   6.0   69244.0
+9   Consuntivo 2010   7.0   73102.0
+10  Consuntivo 2010   8.0   80000.0
+11  Consuntivo 2010   9.0   83922.0
+12  Consuntivo 2011   0.0   64146.0
+13  Consuntivo 2011   1.0   74043.0
+14  Consuntivo 2011  10.0  221144.0
+15  Consuntivo 2011  11.0  221709.0
+16  Consuntivo 2011   2.0  110358.0
+17  Consuntivo 2011   3.0  132409.0
+18  Consuntivo 2011   4.0  162675.0
+19  Consuntivo 2011   5.0  171886.0
+20  Consuntivo 2011   6.0  184259.0
+21  Consuntivo 2011   7.0  188505.0
+22  Consuntivo 2011   8.0  204907.0
+23  Consuntivo 2011   9.0  212013.0
+24   Obiettivo 2011   0.0   51072.0
+25   Obiettivo 2011   1.0   64915.2
+26   Obiettivo 2011  10.0  121420.6
+27   Obiettivo 2011  11.0  124444.6
+28   Obiettivo 2011   2.0   65556.4
+29   Obiettivo 2011   3.0   74326.0
+30   Obiettivo 2011   4.0   84463.4
+31   Obiettivo 2011   5.0   90301.4
+32   Obiettivo 2011   6.0   96941.6
+33   Obiettivo 2011   7.0  102342.8
+34   Obiettivo 2011   8.0  112000.0
+35   Obiettivo 2011   9.0  117490.8
+# candidates before getting the correct solution: 0
+## synthesize result for task 050.json
+# table_prog:
+  gatherNeg(@param0, ['-4', '-5', '-6'])
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'id', 'type': 'quantitative'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'id', 'type': 'quantitative'}}}
+# time used (s): 0.6644
+
+real	0m2.692s
+user	0m2.471s
+sys	0m0.212s

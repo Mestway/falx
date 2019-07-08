@@ -1,0 +1,116 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gatherNeg(@param0, ['-1', '-2'])
+====> run synthesize 033.json
+# num samples per layer: 4
+      Peak                           activity    ...           1430       1435
+0   1320.0                  Playing billiards    ...       3647.150   3172.450
+1   1290.0                            Dancing    ...      16784.600  16784.600
+2   1170.0                           Softball    ...          0.000      0.000
+3      0.0                            Bowling    ...       1154.160   1154.160
+4   1165.0                 Playing volleyball    ...          0.000      0.000
+5   1150.0      Participating in martial arts    ...          0.000      0.000
+6   1140.0             Playing racquet sports    ...          0.000      0.000
+7   1110.0                             Biking    ...          0.000      0.000
+8   1080.0    Weightlifting/strength training    ...       2177.590   2177.590
+9      0.0                         Doing yoga    ...        539.279    539.279
+10  1055.0                     Playing soccer    ...          0.000      0.000
+11  1020.0                   Playing football    ...          0.000      0.000
+12     0.0                 Playing basketball    ...          0.000      0.000
+13   990.0                   Playing baseball    ...          0.000      0.000
+14     0.0                            Hunting    ...       2579.880   2579.880
+15   930.0             Vehicle touring/racing    ...        628.606    628.606
+16     0.0                      Rollerblading    ...        812.615    812.615
+17   900.0      Participating in water sports    ...        822.386    822.386
+18     0.0                            Fishing    ...       3380.190   3380.190
+19   860.0                            Boating    ...       2018.270   2018.270
+20   840.0  Skiing, ice skating, snowboarding    ...          0.000      0.000
+21   780.0                             Hiking    ...          0.000      0.000
+22   690.0                            Golfing    ...          0.000      0.000
+23   540.0                     Doing aerobics    ...          0.000      0.000
+24   510.0                            Walking    ...       2834.590   4370.690
+25   480.0                            Running    ...       1386.220   1386.220
+26   360.0           Working out, unspecified    ...       3763.080   3485.720
+27     0.0     Using cardiovascular equipment    ...        894.043    894.043
+
+[28 rows x 290 columns]
+      c_x                ...                                           c_column
+0       0                ...                                             Biking
+1       0                ...                                     Doing aerobics
+2       0                ...                                            Golfing
+3       0                ...                                             Hiking
+4       0                ...                      Participating in martial arts
+5       0                ...                                   Playing baseball
+6       0                ...                                 Playing basketball
+7       0                ...                                   Playing football
+8       0                ...                             Playing racquet sports
+9       0                ...                                     Playing soccer
+10      0                ...                                 Playing volleyball
+11      0                ...                  Skiing, ice skating, snowboarding
+12      0                ...                                           Softball
+13      0                ...                                            Bowling
+14      0                ...                                            Running
+15      0                ...                                            Dancing
+16      0                ...                                            Boating
+17      0                ...                      Participating in water sports
+18      0                ...                                            Hunting
+19      0                ...                    Weightlifting/strength training
+20      0                ...                                      Rollerblading
+21      0                ...                     Using cardiovascular equipment
+22      0                ...                                  Playing billiards
+23      0                ...                                            Fishing
+24      0                ...                                         Doing yoga
+25      0                ...                             Vehicle touring/racing
+26      0                ...                                            Walking
+27      0                ...                           Working out, unspecified
+28     10                ...                                             Biking
+29     10                ...                                            Bowling
+...   ...                ...                                                ...
+8034  990                ...                                  Playing billiards
+8035  990                ...                                            Fishing
+8036  995                ...                                            Hunting
+8037  995                ...                                            Bowling
+8038  995                ...                    Weightlifting/strength training
+8039  995                ...                      Participating in water sports
+8040  995                ...                                     Doing aerobics
+8041  995                ...                                 Playing basketball
+8042  995                ...                                      Rollerblading
+8043  995                ...                             Vehicle touring/racing
+8044  995                ...                           Working out, unspecified
+8045  995                ...                                   Playing baseball
+8046  995                ...                                            Boating
+8047  995                ...                                         Doing yoga
+8048  995                ...                      Participating in martial arts
+8049  995                ...                                            Walking
+8050  995                ...                                   Playing football
+8051  995                ...                                             Hiking
+8052  995                ...                                             Biking
+8053  995                ...                             Playing racquet sports
+8054  995                ...                                 Playing volleyball
+8055  995                ...                                            Dancing
+8056  995                ...                                     Playing soccer
+8057  995                ...                                           Softball
+8058  995                ...                                            Golfing
+8059  995                ...                                            Running
+8060  995                ...                                  Playing billiards
+8061  995                ...                                            Fishing
+8062  995                ...                     Using cardiovascular equipment
+8063  995                ...                  Skiing, ice skating, snowboarding
+
+[8064 rows x 3 columns]
+# candidates before getting the correct solution: 0
+## synthesize result for task 033.json
+# table_prog:
+  gatherNeg(@param0, ['-1', '-2'])
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal', 'sort': None}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'column': {'field': 'activity', 'type': 'nominal'}}}
+# time used (s): 12.9695
+
+real	0m15.951s
+user	0m13.592s
+sys	0m0.490s
