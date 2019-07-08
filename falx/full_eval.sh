@@ -9,10 +9,12 @@ echo ${timeout_cmd}
 
 dt=$(date '+%Y%m%d_%H%M%S')
 
-output_dir="../output/exp_"$dt
 dirname="../benchmarks/"
 num_samples=4
 time_limit=300
+###falx | forward | morpheus
+prune=morpheus
+output_dir="../output/exp_"$prune"_"$num_samples"_"$dt
 
 data_list=(
     #easy noes
@@ -38,7 +40,7 @@ echo "## number of sample used: "$num_samples
 mkdir $output_dir
 for i in "${data_list[@]}"; do
 	echo "# running benchamrk $i"
-    { time stdbuf -oL $timeout_cmd $time_limit python run.py --data_id=$i --num_samples=$num_samples ; } >& "$output_dir/$i.log"
+    { time stdbuf -oL $timeout_cmd $time_limit python run.py --data_id=$i --num_samples=$num_samples --prune=$prune ; } >& "$output_dir/$i.log"
 done
 
 
