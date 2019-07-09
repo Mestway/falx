@@ -29,7 +29,7 @@ class FalxEvalInterface(object):
     def synthesize(inputs, full_trace, num_samples=2, extra_consts=[], backend="vegalite", prune="falx"):
         """synthesize table prog and vis prog from input and output traces"""
         assert backend == "vegalite" or backend == "matplotlib"
-        assert prune == "falx" or prune == "morpheus" or prune == "forward"
+        assert prune == "falx" or prune == "morpheus" or prune == "forward" or prune == "none" or prune == "backward"
         candidates = []
 
         # apply inverse semantics to obtain symbolic output table and vis programs

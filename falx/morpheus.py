@@ -15,6 +15,7 @@ import warnings
 import json
 import numpy as np
 import pandas as pd
+from itertools import combinations 
 
 from falx import synth_utils
 
@@ -87,6 +88,50 @@ def get_type(df, index):
     return ret_val[0]
 
 iter_num = 0
+
+# Only for no pruning 
+def proj_eq(actual, expect):
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
+    table2 = json.loads(table2)
+
+    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
+    table1 = json.loads(table1)
+
+    row_num, col_num = full_table.get_shape()
+    actual_tbl = robjects.r(actual)
+    actual_col = actual_tbl.shape[1]
+    actual_row = actual_tbl.shape[0]
+
+    expect_col = robjects.r(expect).shape[1]
+
+    if actual_col < expect_col:
+        return False
+    else:
+        domain = range(actual_col)
+        candidates = list(combinations(domain, expect_col))
+        for sel_list in candidates:
+            sel_list = list(sel_list)
+            cols = actual_tbl.columns
+            proj_out = actual_tbl[cols[sel_list]]
+            table2 = json.loads(proj_out.to_json(orient='records'))
+
+            all_ok = synth_utils.align_table_schema(table1, table2) != None
+
+            if all_ok:
+                global iter_num
+                full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
+
+                if not full_table_ok:
+                    iter_num = iter_num + 1
+                    return False
+                else:
+                    logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
+                    print('# candidates before getting the correct solution: {}'.format(iter_num))
+                    return True
+
+        return False
+            
+
 
 def subset_eq(actual, expect):
     table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
@@ -574,6 +619,10 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
     global iter_num
     iter_num = 0
     for loc in range(1, loc_val + 1):
+        eq_fun = subset_eq
+        if prune == 'none':
+            eq_fun = proj_eq
+
         enumerator = BidirectEnumerator(spec, depth=loc+1, loc=loc)
         decider=BidirectionalDecider(
                 spec=spec,
@@ -582,7 +631,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
                     Example(input=['input0'], output='output'),
                 ],
                 prune=prune,
-                equal_output=subset_eq
+                equal_output=eq_fun
             )
         if prune == 'morpheus':
             enumerator=SmtEnumerator(spec, depth=loc+1, loc=loc)
@@ -593,7 +642,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
                     # Example(input=[DataFrame2(benchmark1_input)], output=benchmark1_output),
                     Example(input=['input0'], output='output'),
                 ],
-                equal_output=subset_eq
+                equal_output=eq_fun
             )
 
         synthesizer = Synthesizer(enumerator=enumerator, decider=decider)

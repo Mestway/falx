@@ -54,25 +54,31 @@ class AbstractPrune(GenericVisitor):
     
     
     def is_unsat(self, prog: List[Any]) -> bool:
+        if self.prune == 'none':
+            return False
         ### First, do backward interpretation
-        if self.prune == 'falx':
+        if self.prune == 'falx' or self.prune == 'backward':
             err_back, tbl_in = self.backward_interp(prog)
                 
             if err_back:
                 return True
         
         ### Second, do forward interpretation
-        err_forward, actual = self.forward_interp(prog)
-
-        if err_forward:
-            return True
-        
-        if actual is None:
+        if self.prune == 'backward':
             return False
-        
-        ### Third, check consistency
-        sat = self.is_consistent(actual, self._output)
-        return not sat
+        else:
+            assert 'forward' == self.prune or 'falx' == self.prune
+            err_forward, actual = self.forward_interp(prog)
+
+            if err_forward:
+                return True
+            
+            if actual is None:
+                return False
+            
+            ### Third, check consistency
+            sat = self.is_consistent(actual, self._output)
+            return not sat
 
     def compSeparate(self):
         has_sep = False
