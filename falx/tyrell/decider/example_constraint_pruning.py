@@ -58,7 +58,11 @@ class Z3Encoder(GenericVisitor):
                 self._interp, self._example.input, self._example.output, expected_expr)
             if expected == -1:
                 expected = self.get_z3_var(node, pname + '_sym', pty)
-            self._solver.add(actual == expected)
+            if index == 0:
+                # for table sketch
+                self._solver.add(actual >= expected) 
+            else:
+                self._solver.add(actual == expected)
 
     def encode_output_alignment(self, prog: Node):
         out_ty = cast(ValueType, prog.type)

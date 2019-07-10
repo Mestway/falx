@@ -597,10 +597,11 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
     full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
-    if prune == 'morpheus':
-        init_tbl_json_str('output', full_data)
-    else:
-        init_tbl_json_str('output', output_data)
+    init_tbl_json_str('output', output_data)
+    # if prune == 'morpheus':
+    #     init_tbl_json_str('output', full_data)
+    # else:
+    #     init_tbl_json_str('output', output_data)
     print(robjects.r('input0'))
     print(robjects.r('output'))
 
