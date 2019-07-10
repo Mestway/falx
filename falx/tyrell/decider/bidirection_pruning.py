@@ -347,6 +347,9 @@ class AbstractPrune(GenericVisitor):
         ##Done.
         elif opcode == 'unite':
             new_col = -1
+            if tbl_out.empty:
+                return False, tbl_out
+
             fst_row = tbl_out.iloc[0,]
             for idx, item in enumerate(fst_row):
                 if isinstance(item, str) and ('_' in item):
