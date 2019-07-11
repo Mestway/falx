@@ -1,0 +1,94 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 4
+[info] Solution found: [gather(@param0, ['2'])]
+====> run synthesize 031.json
+# num samples per layer: 6
+      Emp Num       Performance Rating       ...       Ratings X  Total Increase
+0     11505.0   Successful Performance       ...          46.098            #N/A
+1     11529.0   Successful Performance       ...          46.329            1644
+2     11537.0  Outstanding Performance       ...          49.389            #N/A
+3     11538.0              Not Meeting       ...          40.844            #N/A
+4     11539.0            Achieved Most       ...          43.528            #N/A
+5     11559.0   Successful Performance       ...          46.771             822
+6     11564.0   Successful Performance       ...          45.871            2272
+7     11582.0   Successful Performance       ...          46.883            4600
+8     11585.0            Achieved Most       ...          43.869             625
+9     11587.0   Successful Performance       ...          46.261             563
+10    11606.0   Successful Performance       ...          46.514            2438
+11    11623.0   Successful Performance       ...          45.884            1632
+12    11636.0   Successful Performance       ...          46.027            2089
+13    11649.0  Outstanding Performance       ...          49.257            1885
+14    11665.0   Successful Performance       ...          45.800            2905
+15    11683.0   Successful Performance       ...          45.569            2312
+16    11699.0  Outstanding Performance       ...          48.501            4845
+17    11706.0  Outstanding Performance       ...          49.245            3085
+18    11718.0   Successful Performance       ...          46.733            2830
+19    11722.0   Successful Performance       ...          45.733             757
+20    11738.0   Successful Performance       ...          46.625            1361
+21    11742.0   Successful Performance       ...          26.609             686
+22    11761.0            Achieved Most       ...          43.935            2585
+23    11777.0  Outstanding Performance       ...          28.210            1942
+24    11785.0  Outstanding Performance       ...          49.284            1798
+25    11794.0  Outstanding Performance       ...          48.168            2927
+26    11811.0   Successful Performance       ...          46.617            2513
+27    11829.0   Successful Performance       ...          46.150            2821
+28    11856.0   Successful Performance       ...          46.192            5073
+29    11865.0  Outstanding Performance       ...          48.878            1707
+...       ...                      ...       ...             ...             ...
+3656  53286.0                  unrated       ...          50.825            #N/A
+3657  53302.0   Successful Performance       ...          46.801            #N/A
+3658  53316.0   Successful Performance       ...          46.843            #N/A
+3659  53319.0   Successful Performance       ...          46.661            #N/A
+3660  53335.0            Achieved Most       ...          44.180            #N/A
+3661  53347.0            Achieved Most       ...          44.064            #N/A
+3662  53364.0                  unrated       ...          51.115            #N/A
+3663  53398.0                  unrated       ...          51.637            #N/A
+3664  53400.0                  unrated       ...          50.890            #N/A
+3665  53410.0   Successful Performance       ...          16.486            #N/A
+3666  53417.0   Successful Performance       ...          15.648            1259
+3667  53430.0  Outstanding Performance       ...          68.455            #N/A
+3668  53437.0   Successful Performance       ...          66.668            1421
+3669  53448.0   Successful Performance       ...          66.316             789
+3670  53475.0   Successful Performance       ...          66.906            1570
+3671  53485.0   Successful Performance       ...          66.631            1212
+3672  53505.0   Successful Performance       ...          66.531             651
+3673  53510.0   Successful Performance       ...          66.492            1550
+3674  53529.0   Successful Performance       ...          65.669            #N/A
+3675  53544.0   Successful Performance       ...          66.305            1878
+3676  53545.0   Successful Performance       ...          66.489            #N/A
+3677  53560.0                  unrated       ...          71.663            #N/A
+3678  53586.0   Successful Performance       ...          66.109            2761
+3679  53602.0   Successful Performance       ...          66.160            1879
+3680  53616.0   Successful Performance       ...          65.835            2146
+3681  53633.0   Successful Performance       ...          65.761            1256
+3682  53644.0   Successful Performance       ...          45.969             527
+3683  53657.0   Successful Performance       ...          65.743            1621
+3684  53659.0            Achieved Most       ...          63.781            #N/A
+3685  53669.0   Successful Performance       ...          66.900            #N/A
+
+[3686 rows x 9 columns]
+                       c_x     ...          c_column
+0                  unrated     ...       Development
+1   Successful Performance     ...           Support
+2            Achieved Most     ...                HR
+3   Successful Performance     ...       Development
+4  Outstanding Performance     ...        Operations
+5   Successful Performance     ...                HR
+
+[6 rows x 4 columns]
+# candidates before getting the correct solution: 4
+## synthesize result for task 031.json
+# table_prog:
+  [gather(@param0, ['2'])]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'VALUE', 'type': 'nominal'}, 'y': {'field': 'Salary Increase $', 'type': 'quantitative'}, 'color': {'field': 'VALUE', 'type': 'nominal'}, 'column': {'field': 'Group Name', 'type': 'nominal'}}}
+# time used (s): 11.6857
+
+real	0m13.828s
+user	0m12.696s
+sys	0m0.448s

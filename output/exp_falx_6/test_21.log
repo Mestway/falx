@@ -1,0 +1,89 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [separate(@param0, 2)]
+====> run synthesize test_21.json
+# num samples per layer: 6
+          Country Name      Date         Type
+0           Bangladesh    1/5/14  Legislative
+1                Egypt   1/14/14   Referendum
+2           Costa Rica    2/2/14    President
+3           Costa Rica    2/2/14  Legislative
+4          El Salvador    2/2/14    President
+5             Thailand    2/2/14  Legislative
+6          Switzerland    2/9/14   Referendum
+7            Macedonia    3/1/14    President
+8          North Korea    3/9/14  Legislative
+9             Slovakia   3/15/14    President
+10       Guinea-Bissau   3/16/14    President
+11       Guinea-Bissau   3/16/14  Legislative
+12            Maldives   3/22/14  Legislative
+13             Algeria    4/1/14    President
+14             Hungary    4/1/14  Legislative
+15        South Africa    4/1/14  Legislative
+16         Afghanistan    4/5/14    President
+17                Iraq   4/30/14  Legislative
+18               India    5/1/14  Legislative
+19       New Caledonia    5/4/14  Legislative
+20              Panama    5/4/14    President
+21              Panama    5/4/14  Legislative
+22           Lithuania   5/11/14    President
+23  Dominican Republic   5/16/14  Legislative
+24              Malawi   5/20/14    President
+25              Malawi   5/20/14  Legislative
+26      European Union   5/22/14  Legislative
+27             Belgium   5/25/14  Legislative
+28            Colombia   5/25/14    President
+29            Colombia   5/25/14  Legislative
+30           Indonesia    7/9/14    President
+31           Indonesia    7/9/14  Legislative
+32              Italia    8/1/14   Referendum
+33              Italia    8/1/14    President
+34              Italia    8/1/14  Legislative
+35              Turkey    8/1/14    President
+36                Fiji    9/1/14  Legislative
+37              Kosovo    9/1/14  Legislative
+38              Sweden   9/14/14  Legislative
+39            Scotland   9/18/14   Referendum
+40              Latvia   10/1/14  Legislative
+41             Lebanon   10/1/14  Legislative
+42             Bolivia   10/5/14    President
+43             Bolivia   10/5/14  Legislative
+44              Bosnia   10/5/14  Legislative
+45              Brazil   10/5/14    President
+46              Brazil   10/5/14  Legislative
+47          Mozambique  10/15/14    President
+48          Mozambique  10/15/14  Legislative
+49             Uruguay  10/26/14    President
+50             Uruguay  10/26/14  Legislative
+51             Moldova   11/1/14  Legislative
+52             Namibia   11/1/14  Legislative
+53          New Zeland   11/1/14  Legislative
+54             Romania   11/1/14    President
+55      American Samoa   11/4/14  Legislative
+56                Guam   11/4/14  Legislative
+57       United States   11/4/14  Legislative
+58           Catalonia   11/9/14   Referendum
+59               Tonga  11/25/14  Legislative
+          c_x          c_y c_column
+0      Bosnia  Legislative       10
+1  Costa Rica    President        2
+2      Sweden  Legislative        9
+3    Thailand  Legislative        2
+4       Tonga  Legislative       11
+5      Turkey    President        8
+# candidates before getting the correct solution: 0
+## synthesize result for task test_21.json
+# table_prog:
+  [separate(@param0, 2)]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'Country Name', 'type': 'nominal'}, 'y': {'field': 'Type', 'type': 'nominal'}, 'column': {'field': 'COL6', 'type': 'nominal'}}}
+# time used (s): 0.2694
+
+real	0m2.255s
+user	0m2.110s
+sys	0m0.207s

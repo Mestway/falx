@@ -1,0 +1,1288 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: gather(@param0, ['1'])
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+====> run synthesize 040.json
+# num samples per layer: 4
+      id  Value Win / Loss
+0    0.0   10.0        Win
+1    1.0    2.0       Loss
+2    2.0   12.0        Win
+3    3.0    4.0       Loss
+4    4.0    5.0        Win
+5    5.0   16.0       Loss
+6    6.0    9.0        Win
+7    7.0   18.0       Loss
+8    8.0   12.0        Win
+9    9.0    3.0       Loss
+10  10.0    4.0        Win
+11  11.0    4.0       Loss
+12  12.0    1.0        Win
+    c_x   c_y c_color
+0   4.0  Loss    Loss
+1   5.0   Win     Win
+2  18.0  Loss    Loss
+3  10.0   Win     Win
+# candidates before getting the correct solution: 0
+===> the program is not consistent with the trace
+ gather(@param0, ['1'])
+===> continue...
+      id  Value Win / Loss
+0    0.0   10.0        Win
+1    1.0    2.0       Loss
+2    2.0   12.0        Win
+3    3.0    4.0       Loss
+4    4.0    5.0        Win
+5    5.0   16.0       Loss
+6    6.0    9.0        Win
+7    7.0   18.0       Loss
+8    8.0   12.0        Win
+9    9.0    3.0       Loss
+10  10.0    4.0        Win
+11  11.0    4.0       Loss
+12  12.0    1.0        Win
+    c_x  c_x2   c_y c_color
+0   0.0  10.0   Win     Win
+1  10.0  12.0  Loss    Loss
+2  33.0  49.0  Loss    Loss
+3  49.0  58.0   Win     Win
+[error] Error in interpreting spread...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+[error] Error in interpreting mutate...
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF6459 <- RET_DF6457 %>% mutate(cumsum=cumsum(.[[3]]))',)
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+[error] Error in interpreting spread...
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12503 <- RET_DF12501 %>% mutate(cumsum=cumsum(.[[1]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12506 <- RET_DF12504 %>% mutate(cumsum=cumsum(.[[1]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12509 <- RET_DF12507 %>% mutate(cumsum=cumsum(.[[1]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12512 <- RET_DF12510 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12553 <- RET_DF12551 %>% mutate(cumsum=cumsum(.[[3]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF12648 <- RET_DF12646 %>% mutate(cumsum=cumsum(.[[3]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF13074 <- RET_DF13072 %>% mutate(cumsum=cumsum(.[[3]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF13097 <- RET_DF13095 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF13134 <- RET_DF13132 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17310 <- RET_DF17308 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17317 <- RET_DF17315 %>% mutate(cumsum=cumsum(.[[1]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17409 <- RET_DF17407 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17416 <- RET_DF17414 %>% mutate(cumsum=cumsum(.[[3]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17438 <- RET_DF17436 %>% mutate(cumsum=cumsum(.[[2]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17445 <- RET_DF17443 %>% mutate(cumsum=cumsum(.[[3]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17656 <- RET_DF17654 %>% mutate(cumsum=cumsum(.[[1]]))',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 492, in eval_cumsum
+    ret_val = robjects.r(_script)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/__init__.py", line 352, in __call__
+    res = self.eval(p)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 178, in __call__
+    return super(SignatureTranslatedFunction, self).__call__(*args, **kwargs)
+  File "/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/functions.py", line 106, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+rpy2.rinterface.RRuntimeError: Error in mutate_impl(.data, dots) : 
+  Column `cumsum` must be length 1 (the group size), not 11
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 32, in emit
+    msg = self.format(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 18, in format
+    msg = record.getMessage()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "run.py", line 78, in <module>
+    test_benchmarks(flags.data_dir, flags.data_id, flags.num_samples, flags.backend, flags.prune)
+  File "run.py", line 59, in test_benchmarks
+    result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+  File "/Users/yufeng/research/vis-pirate/falx/eval_interface.py", line 47, in synthesize
+    candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, extra_consts=extra_consts)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 652, in synthesize
+    prog = synthesizer.synthesize()
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/synthesizer/synthesizer.py", line 40, in synthesize
+    res = self._decider.analyze(prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 298, in analyze
+    return blame_finder.process_examples(self.examples, self.equal_output)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in process_examples
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 240, in <listcomp>
+    all_ok = all([self.process_example(example, equal_output) for example in examples])
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 278, in process_example
+    interpreter_output = constraint_interpreter.visit(self._prog)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/visitor.py", line 22, in visit
+    return visitor(node)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/decider/example_constraint_pruning.py", line 177, in visit_apply_node
+    method_output = method(apply_node, in_values)
+  File "/Users/yufeng/research/vis-pirate/falx/morpheus.py", line 495, in eval_cumsum
+    logger.error('Error in interpreting cumsum...', _script)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1412, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1519, in _log
+    self.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1529, in handle
+    self.callHandlers(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1591, in callHandlers
+    hdlr.handle(record)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 905, in handle
+    self.emit(record)
+  File "/Users/yufeng/research/vis-pirate/falx/tyrell/logger.py", line 35, in emit
+    self.handleError(record)
+Message: 'Error in interpreting cumsum...'
+Arguments: ('RET_DF17784 <- RET_DF17782 %>% mutate(cumsum=cumsum(.[[1]]))',)
+[info] # candidates before getting the correct solution: 9
+[info] Solution found: mutate(cumsum(@param0, 2), -, 4, 2)
+# candidates before getting the correct solution: 9
+## synthesize result for task 040.json
+# table_prog:
+  mutate(cumsum(@param0, 2), -, 4, 2)
+# vis_spec:
+    {'mark': {'type': 'bar', 'opacity': 0.8}, 'encoding': {'x': {'field': 'mutate_a', 'type': 'quantitative', 'stack': None}, 'x2': {'field': 'cumsum'}, 'y': {'field': 'Win / Loss', 'type': 'nominal', 'sort': None}, 'color': {'field': 'Win / Loss', 'type': 'nominal'}}}
+# time used (s): 338.3643
+
+real	5m41.753s
+user	5m20.541s
+sys	0m8.927s

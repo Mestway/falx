@@ -1,0 +1,47 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 1)]
+====> run synthesize test_22.json
+# num samples per layer: 4
+          product    Q4    Q3    Q2    Q1
+0   Product1_2011   3.0   5.0   5.0  10.0
+1   Product2_2011   5.0   7.0   5.0   2.0
+2   Product3_2011   3.0   9.0  10.0   7.0
+3   Product4_2011   3.0   2.0   8.0   1.0
+4   Product5_2011   1.0   7.0   1.0   6.0
+5   Product6_2011   9.0   1.0   6.0   1.0
+6   Product1_2012   3.0   3.0   6.0   4.0
+7   Product2_2012   4.0   3.0   6.0   4.0
+8   Product3_2012   3.0   6.0   6.0   4.0
+9   Product4_2012   4.0  10.0   6.0   1.0
+10  Product5_2012   8.0   5.0   4.0   7.0
+11  Product6_2012   8.0   8.0   8.0   6.0
+12  Product1_2013  10.0   2.0   3.0   9.0
+13  Product2_2013   8.0   6.0   7.0   7.0
+14  Product3_2013   9.0   8.0   4.0   9.0
+15  Product4_2013   5.0   9.0   5.0   2.0
+16  Product5_2013   1.0   5.0   2.0   4.0
+17  Product6_2013   8.0  10.0   6.0   4.0
+  c_x       c_y  c_color c_column
+0  Q1  Product4      1.0     2012
+1  Q3  Product3      6.0     2012
+2  Q2  Product1      3.0     2013
+3  Q4  Product3      3.0     2012
+# candidates before getting the correct solution: 0
+## synthesize result for task test_22.json
+# table_prog:
+  [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 1)]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'COL1825', 'type': 'nominal'}, 'color': {'field': 'VALUE', 'type': 'nominal'}, 'column': {'field': 'COL1826', 'type': 'nominal'}}}
+# time used (s): 19.0004
+
+real	0m20.576s
+user	0m20.098s
+sys	0m0.548s

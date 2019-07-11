@@ -1,0 +1,11 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+full_eval.sh: line 41: 27927 Killed: 9               stdbuf -oL $timeout_cmd $time_limit python run.py --data_id=$i --num_samples=$num_samples --prune=$prune
+
+real	3m50.141s
+user	2m52.657s
+sys	0m55.708s

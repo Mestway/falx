@@ -1,0 +1,59 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 2
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2'])]
+====> run synthesize 033.json
+# num samples per layer: 4
+      Peak                           activity    ...           1430       1435
+0   1320.0                  Playing billiards    ...       3647.150   3172.450
+1   1290.0                            Dancing    ...      16784.600  16784.600
+2   1170.0                           Softball    ...          0.000      0.000
+3      0.0                            Bowling    ...       1154.160   1154.160
+4   1165.0                 Playing volleyball    ...          0.000      0.000
+5   1150.0      Participating in martial arts    ...          0.000      0.000
+6   1140.0             Playing racquet sports    ...          0.000      0.000
+7   1110.0                             Biking    ...          0.000      0.000
+8   1080.0    Weightlifting/strength training    ...       2177.590   2177.590
+9      0.0                         Doing yoga    ...        539.279    539.279
+10  1055.0                     Playing soccer    ...          0.000      0.000
+11  1020.0                   Playing football    ...          0.000      0.000
+12     0.0                 Playing basketball    ...          0.000      0.000
+13   990.0                   Playing baseball    ...          0.000      0.000
+14     0.0                            Hunting    ...       2579.880   2579.880
+15   930.0             Vehicle touring/racing    ...        628.606    628.606
+16     0.0                      Rollerblading    ...        812.615    812.615
+17   900.0      Participating in water sports    ...        822.386    822.386
+18     0.0                            Fishing    ...       3380.190   3380.190
+19   860.0                            Boating    ...       2018.270   2018.270
+20   840.0  Skiing, ice skating, snowboarding    ...          0.000      0.000
+21   780.0                             Hiking    ...          0.000      0.000
+22   690.0                            Golfing    ...          0.000      0.000
+23   540.0                     Doing aerobics    ...          0.000      0.000
+24   510.0                            Walking    ...       2834.590   4370.690
+25   480.0                            Running    ...       1386.220   1386.220
+26   360.0           Working out, unspecified    ...       3763.080   3485.720
+27     0.0     Using cardiovascular equipment    ...        894.043    894.043
+
+[28 rows x 290 columns]
+    c_x                ...                                           c_column
+0   260                ...                  Skiing, ice skating, snowboarding
+1   340                ...                      Participating in water sports
+2  1305                ...                                   Playing baseball
+3   585                ...                                      Rollerblading
+
+[4 rows x 3 columns]
+# candidates before getting the correct solution: 2
+## synthesize result for task 033.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-2'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal', 'sort': None}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'column': {'field': 'activity', 'type': 'nominal'}}}
+# time used (s): 4.7462
+
+real	0m6.309s
+user	0m6.182s
+sys	0m0.216s

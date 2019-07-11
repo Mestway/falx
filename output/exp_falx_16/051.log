@@ -1,0 +1,41 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [groupSum(@param0, sum, 2, ['3', '4'])]
+====> run synthesize 051.json
+# num samples per layer: 16
+   Feature  value  Condition Sex
+0        A    6.0        1.0   M
+1        A    4.0        2.0   M
+2        A   10.0        3.0   M
+3     Aneg    1.0        1.0   M
+4     Aneg    2.0        2.0   M
+5     Aneg    6.0        3.0   M
+6        A    2.0        1.0   F
+7        A    3.0        2.0   F
+8        A    4.0        3.0   F
+9     Aneg    5.0        1.0   F
+10    Aneg    6.0        2.0   F
+11    Aneg    9.0        3.0   F
+   c_x   c_y  c_color c_column
+0  1.0   7.0      1.0        F
+1  1.0   7.0      1.0        M
+2  2.0   6.0      2.0        M
+3  2.0   9.0      2.0        F
+4  3.0  13.0      3.0        F
+5  3.0  16.0      3.0        M
+# candidates before getting the correct solution: 0
+## synthesize result for task 051.json
+# table_prog:
+  [groupSum(@param0, sum, 2, ['3', '4'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'Condition', 'type': 'nominal'}, 'y': {'field': 'COL72', 'type': 'quantitative'}, 'color': {'field': 'Condition', 'type': 'nominal'}, 'column': {'field': 'Sex', 'type': 'nominal'}}}
+# time used (s): 1.1142
+
+real	0m3.056s
+user	0m2.822s
+sys	0m0.238s

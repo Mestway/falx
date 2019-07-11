@@ -1,0 +1,48 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [mutate(@param0, -, 2, 3), gatherNeg(mutate(@param0, -, 2, 3), ['-1', '-2'])]
+====> run synthesize 047.json
+# num samples per layer: 16
+    label  total   ok
+0  Label1    1.0  0.0
+1  Label2    1.0  0.5
+2  Label3    1.0  0.4
+3  Label4    1.0  0.9
+4  Label5    1.0  0.4
+5  Label6    1.0  0.9
+6  Label7    1.0  0.8
+7  Label8    1.0  0.8
+       c_x  c_y   c_color
+0   Label1  0.0        ok
+1   Label1  1.0  mutate_a
+2   Label2  0.5  mutate_a
+3   Label2  0.5        ok
+4   Label3  0.4        ok
+5   Label3  0.6  mutate_a
+6   Label4  0.1  mutate_a
+7   Label4  0.9        ok
+8   Label5  0.4        ok
+9   Label5  0.6  mutate_a
+10  Label6  0.1  mutate_a
+11  Label6  0.9        ok
+12  Label7  0.2  mutate_a
+13  Label7  0.8        ok
+14  Label8  0.2  mutate_a
+15  Label8  0.8        ok
+# candidates before getting the correct solution: 0
+## synthesize result for task 047.json
+# table_prog:
+  [mutate(@param0, -, 2, 3), gatherNeg(mutate(@param0, -, 2, 3), ['-1', '-2'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'label', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 11.2532
+real    0m13.049s
+user    0m12.717s
+sys 0m0.413s

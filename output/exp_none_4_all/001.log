@@ -1,0 +1,48 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [cumsum(@param0, 2)]
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [cumsum(@param0, 2)]
+====> run synthesize 001.json
+# num samples per layer: 4
+    Quarter  Number of Units  Actual Profits
+0  Quarter1             23.0          3358.0
+1  Quarter2             27.0          3829.0
+2  Quarter3             15.0          2374.0
+3  Quarter4             43.0          3373.0
+        c_x   c_y
+0  Quarter1  23.0
+1  Quarter2  27.0
+2  Quarter3  15.0
+3  Quarter4  43.0
+# candidates before getting the correct solution: 0
+    Quarter  Number of Units  Actual Profits
+0  Quarter1             23.0          3358.0
+1  Quarter2             27.0          3829.0
+2  Quarter3             15.0          2374.0
+3  Quarter4             43.0          3373.0
+        c_x     c_y
+0  Quarter1  3358.0
+1  Quarter2  3829.0
+2  Quarter3  2374.0
+3  Quarter4  3373.0
+# candidates before getting the correct solution: 0
+## synthesize result for task 001.json
+# table_prog:
+  [[cumsum(@param0, 2)], [cumsum(@param0, 2)]]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Quarter', 'type': 'nominal'}, 'y': {'field': 'Number of Units', 'type': 'quantitative'}, 'order': {'field': 'Quarter', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'bar', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Quarter', 'type': 'nominal', 'sort': None}, 'y': {'field': 'Actual Profits', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 0.3723
+
+real	0m2.967s
+user	0m2.234s
+sys	0m0.365s

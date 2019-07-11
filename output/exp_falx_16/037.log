@@ -1,0 +1,49 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1', '-6']), mutate(gatherNeg(@param0, ['-1', '-6']), -, 2, 4)]
+====> run synthesize 037.json
+# num samples per layer: 16
+                      Category  <-10%    <0%   >10%   >=0%  TOTAL
+0              HOME APPLIANCES  194.0  139.0  181.0  131.0  645.0
+1                    COMPUTERS  174.0  118.0  173.0  103.0  568.0
+2         CAMERAS & CAMCORDERS  110.0   94.0   83.0   68.0  355.0
+3                  CELL PHONES   80.0   63.0   69.0   53.0  265.0
+4                   TV & VIDEO   62.0   45.0   56.0   42.0  205.0
+5                 GAMES & TOYS   65.0   34.0   42.0   25.0  166.0
+6                        AUDIO   34.0   19.0   34.0   13.0  100.0
+7  MUSIC, MOVIES & AUDIO BOOKS   15.0   26.0   29.0   20.0   90.0
+      c_x                          c_y c_color
+0   124.0                 GAMES & TOYS    >10%
+1   141.0                 GAMES & TOYS    >=0%
+2   149.0                   TV & VIDEO    >10%
+3   160.0                   TV & VIDEO     <0%
+4   185.0                  CELL PHONES   <-10%
+5   196.0                  CELL PHONES    >10%
+6   212.0                  CELL PHONES    >=0%
+7   272.0         CAMERAS & CAMCORDERS    >10%
+8   395.0                    COMPUTERS    >10%
+9   451.0              HOME APPLIANCES   <-10%
+10  464.0              HOME APPLIANCES    >10%
+11  465.0                    COMPUTERS    >=0%
+12  506.0              HOME APPLIANCES     <0%
+13  514.0              HOME APPLIANCES    >=0%
+14   64.0  MUSIC, MOVIES & AUDIO BOOKS     <0%
+15   87.0                        AUDIO    >=0%
+# candidates before getting the correct solution: 0
+## synthesize result for task 037.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-6']), mutate(gatherNeg(@param0, ['-1', '-6']), -, 2, 4)]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'mutate_a', 'type': 'quantitative'}, 'y': {'field': 'Category', 'type': 'nominal'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 68.0464
+
+real	1m10.315s
+user	1m7.288s
+sys	0m2.131s

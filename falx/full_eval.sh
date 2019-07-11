@@ -12,7 +12,7 @@ dt=$(date '+%Y%m%d_%H%M%S')
 dirname="../benchmarks/"
 num_samples=4
 time_limit=600
-###falx | forward | morpheus
+###falx | forward | morpheus | none
 prune=forward
 output_dir="../output/exp_"$prune"_"$num_samples"_"$dt
 

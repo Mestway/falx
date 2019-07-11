@@ -1,0 +1,72 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [cumsum(@param0, 2)]
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [cumsum(@param0, 2)]
+====> run synthesize 025.json
+# num samples per layer: 16
+      Complaint Type  Count
+0          Too noisy   27.0
+1         Overpriced  789.0
+2  Food is tasteless   65.0
+3     Food not fresh    9.0
+4  Food is too salty   15.0
+5          Not clean   30.0
+6   Unfriendly staff   12.0
+7          Wait time  109.0
+8      No atmosphere   45.0
+9     Small portions  621.0
+                 c_x    c_y
+0  Food is tasteless   65.0
+1  Food is too salty   15.0
+2     Food not fresh    9.0
+3      No atmosphere   45.0
+4          Not clean   30.0
+5         Overpriced  789.0
+6     Small portions  621.0
+7          Too noisy   27.0
+8   Unfriendly staff   12.0
+9          Wait time  109.0
+# candidates before getting the correct solution: 0
+      Complaint Type  Count
+0          Too noisy   27.0
+1         Overpriced  789.0
+2  Food is tasteless   65.0
+3     Food not fresh    9.0
+4  Food is too salty   15.0
+5          Not clean   30.0
+6   Unfriendly staff   12.0
+7          Wait time  109.0
+8      No atmosphere   45.0
+9     Small portions  621.0
+                 c_x     c_y
+0  Food is tasteless   881.0
+1  Food is too salty   905.0
+2     Food not fresh   890.0
+3      No atmosphere  1101.0
+4          Not clean   935.0
+5         Overpriced   816.0
+6     Small portions  1722.0
+7          Too noisy    27.0
+8   Unfriendly staff   947.0
+9          Wait time  1056.0
+# candidates before getting the correct solution: 0
+## synthesize result for task 025.json
+# table_prog:
+  [[cumsum(@param0, 2)], [cumsum(@param0, 2)]]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'bar', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Complaint Type', 'type': 'nominal', 'sort': None}, 'y': {'field': 'Count', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Complaint Type', 'type': 'nominal'}, 'y': {'field': 'cumsum', 'type': 'quantitative'}, 'order': {'field': 'Complaint Type', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 0.2824
+
+real	0m2.146s
+user	0m2.043s
+sys	0m0.180s

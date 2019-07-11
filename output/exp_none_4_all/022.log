@@ -1,0 +1,33 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 1
+[info] Solution found: [gatherNeg(@param0, ['-1'])]
+====> run synthesize 022.json
+# num samples per layer: 4
+        label   2008  2009   2010  2011   2012   2013
+0  Category 1   61.0  70.0    4.0  55.0  144.0  132.0
+1  Category 2  128.0  22.0   91.0  61.0   55.0   47.0
+2  Category 3   12.0  95.0   35.0  12.0   22.0   82.0
+3  Category 4   93.0  24.0   16.0  27.0   55.0   13.0
+4  Category 5   88.0  73.0  129.0  23.0  101.0   23.0
+5  Category 6   22.0  28.0   94.0  74.0   60.0   83.0
+    c_x         c_y  c_size
+0  2012  Category 4    55.0
+1  2008  Category 5    88.0
+2  2010  Category 1     4.0
+3  2009  Category 1    70.0
+# candidates before getting the correct solution: 1
+## synthesize result for task 022.json
+# table_prog:
+  [gatherNeg(@param0, ['-1'])]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'label', 'type': 'nominal'}, 'size': {'field': 'VALUE', 'type': 'quantitative'}}}
+# time used (s): 0.9128
+
+real	0m3.033s
+user	0m3.088s
+sys	0m0.225s

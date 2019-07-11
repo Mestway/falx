@@ -1,0 +1,30 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] Solution not found!
+====> run synthesize 039.json
+# num samples per layer: 6
+   Year  SOUTH-Choc  SOUTH-Bisc     ...      WEST-Bisc  NORTH-Choc  NORTH-Bisc
+0  2007        10.0         4.0     ...            4.0        14.0         6.0
+1  2008        11.0         5.0     ...            5.0        18.0         6.7
+2  2009        14.0         5.7     ...            5.7        19.0         7.0
+3  2010        16.0         6.0     ...            6.0        21.0         8.0
+
+[4 rows x 7 columns]
+  c_column     c_x  c_y  c_y2
+0    NORTH  2008.0  6.7  18.0
+1    NORTH  2010.0  8.0  21.0
+2    SOUTH  2007.0  4.0  10.0
+3    SOUTH  2010.0  6.0  16.0
+4     WEST  2007.0  4.0   6.0
+5     WEST  2009.0  5.7  12.0
+## synthesize result for task 039.json
+
+real	8m45.430s
+user	8m6.337s
+sys	0m14.765s

@@ -1,0 +1,96 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+CUT 2
+CUT 3
+[info] # candidates before getting the correct solution: 15
+[info] Solution found: [filter(@param0, ==, 2, Latin America and Caribbean), gatherNeg(filter(@param0, ==, 2, Latin America and Caribbean), ['-1', '-2'])]
+====> run synthesize test_20.json
+# num samples per layer: 6
+              Country Name                 Region  ...     2010   2011
+0                Australia  East Asia and Pacific  ...    84.00  84.10
+1        Brunei Darussalam  East Asia and Pacific  ...    80.32  80.45
+2                 Cambodia  East Asia and Pacific  ...    63.91  64.40
+3                    China  East Asia and Pacific  ...    75.03  75.26
+4                     Fiji  East Asia and Pacific  ...    72.11  72.19
+5         French Polynesia  East Asia and Pacific  ...    77.60  77.79
+6                     Guam  East Asia and Pacific  ...    78.39  78.57
+7     Hong Kong SAR, China  East Asia and Pacific  ...    86.00  86.70
+8                Indonesia  East Asia and Pacific  ...    70.58  71.05
+9                    Japan  East Asia and Pacific  ...    86.30  85.90
+10        Korea, Dem. Rep.  East Asia and Pacific  ...    71.88  71.96
+11             Korea, Rep.  East Asia and Pacific  ...    84.10  84.40
+12                 Lao PDR  East Asia and Pacific  ...    68.47  68.88
+13        Macao SAR, China  East Asia and Pacific  ...    83.21  83.45
+14                Malaysia  East Asia and Pacific  ...    76.29  76.51
+15   Micronesia, Fed. Sts.  East Asia and Pacific  ...    69.63  69.84
+16                Mongolia  East Asia and Pacific  ...    72.27  72.53
+17                 Myanmar  East Asia and Pacific  ...    66.35  66.92
+18           New Caledonia  East Asia and Pacific  ...    79.67  80.01
+19             New Zealand  East Asia and Pacific  ...    82.70  82.80
+20        Papua New Guinea  East Asia and Pacific  ...    64.59  64.97
+21             Philippines  East Asia and Pacific  ...    71.91  72.16
+22                   Samoa  East Asia and Pacific  ...    75.48  75.70
+23               Singapore  East Asia and Pacific  ...    84.00  84.30
+24         Solomon Islands  East Asia and Pacific  ...    68.88  69.32
+25                Thailand  East Asia and Pacific  ...    77.38  77.52
+26             Timor-Leste  East Asia and Pacific  ...    62.97  63.46
+27                   Tonga  East Asia and Pacific  ...    75.08  75.21
+28                 Vanuatu  East Asia and Pacific  ...    72.85  73.15
+29                 Vietnam  East Asia and Pacific  ...    76.85  77.09
+..                     ...                    ...  ...      ...    ...
+157             Madagascar     Sub-Saharan Africa  ...    68.10  68.36
+158                 Malawi     Sub-Saharan Africa  ...    53.52  54.22
+159                   Mali     Sub-Saharan Africa  ...    52.05  52.48
+160             Mauritania     Sub-Saharan Africa  ...    59.96  60.32
+161              Mauritius     Sub-Saharan Africa  ...    76.65  76.97
+162             Mozambique     Sub-Saharan Africa  ...    50.72  51.13
+163                Namibia     Sub-Saharan Africa  ...    62.65  62.88
+164                  Niger     Sub-Saharan Africa  ...    54.74  55.17
+165                Nigeria     Sub-Saharan Africa  ...    52.22  52.69
+166                 Rwanda     Sub-Saharan Africa  ...    56.37  56.73
+167  Sao Tome and Principe     Sub-Saharan Africa  ...    65.78  66.06
+168                Senegal     Sub-Saharan Africa  ...    60.02  60.37
+169           Sierra Leone     Sub-Saharan Africa  ...    48.02  48.41
+170                Somalia     Sub-Saharan Africa  ...    52.51  52.83
+171           South Africa     Sub-Saharan Africa  ...    52.77  53.21
+172                  Sudan     Sub-Saharan Africa  ...    62.92  63.28
+173              Swaziland     Sub-Saharan Africa  ...    47.91  48.15
+174               Tanzania     Sub-Saharan Africa  ...    58.31  59.12
+175                   Togo     Sub-Saharan Africa  ...    58.13  58.59
+176                 Uganda     Sub-Saharan Africa  ...    54.28  54.79
+177                 Zambia     Sub-Saharan Africa  ...    48.89  49.41
+178               Zimbabwe     Sub-Saharan Africa  ...    48.96  50.42
+179            Afghanistan             South Asia  ...    48.44  48.84
+180             Bangladesh             South Asia  ...    69.29  69.67
+181                 Bhutan             South Asia  ...    68.86  69.27
+182                  India             South Asia  ...    66.71  67.08
+183               Maldives             South Asia  ...    77.71  78.12
+184                  Nepal             South Asia  ...    69.22  69.61
+185               Pakistan             South Asia  ...    66.12  66.41
+186              Sri Lanka             South Asia  ...    77.86  78.05
+
+[187 rows x 54 columns]
+     c_color   c_x    c_y
+0   Suriname  2009  73.44
+1       Peru  1963  50.68
+2  Guatemala  1986  62.84
+3    Uruguay  1978  73.20
+4      Chile  1972  66.66
+5     Mexico  2002  77.25
+# candidates before getting the correct solution: 15
+## synthesize result for task test_20.json
+# table_prog:
+  [filter(@param0, ==, 2, Latin America and Caribbean), gatherNeg(filter(@param0, ==, 2, Latin America and Caribbean), ['-1', '-2'])]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'Country Name', 'type': 'nominal'}, 'order': {'field': 'KEY', 'type': 'quantitative'}}}
+# time used (s): 23.4618
+
+real	0m25.739s
+user	0m24.328s
+sys	0m0.610s

@@ -1,0 +1,49 @@
+/Users/yufeng/research/vis-pirate/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 3
+[info] Solution found: [filter(@param0, !=, 1, Total Result), gatherNeg(filter(@param0, !=, 1, Total Result), ['-1', '-5'])]
+====> run synthesize 021.json
+# num samples per layer: 16
+          Country    Beans  Broccoli   Carrots  Total Result
+0       Australia  14433.0   17953.0    8106.0       40492.0
+1          Canada      0.0   12407.0       0.0       12407.0
+2          France    680.0    5341.0    9104.0       15125.0
+3         Germany  29905.0   37197.0   21636.0       88738.0
+4     New Zealand      0.0    4390.0       0.0        4390.0
+5  United Kingdom   5100.0   38436.0   41815.0       85351.0
+6   United States   7163.0   26715.0   56284.0       90162.0
+7    Total Result  57281.0  142439.0  136945.0      336665.0
+         c_x      c_y        c_column
+0      Beans      0.0          Canada
+1      Beans  14433.0       Australia
+2      Beans  29905.0         Germany
+3      Beans   7163.0   United States
+4   Broccoli  12407.0          Canada
+5   Broccoli  26715.0   United States
+6   Broccoli  37197.0         Germany
+7   Broccoli  38436.0  United Kingdom
+8   Broccoli   5341.0          France
+9    Carrots      0.0          Canada
+10   Carrots      0.0     New Zealand
+11   Carrots  21636.0         Germany
+12   Carrots  41815.0  United Kingdom
+13   Carrots  56284.0   United States
+14   Carrots   8106.0       Australia
+15   Carrots   9104.0          France
+# candidates before getting the correct solution: 3
+## synthesize result for task 021.json
+# table_prog:
+  [filter(@param0, !=, 1, Total Result), gatherNeg(filter(@param0, !=, 1, Total Result), ['-1', '-5'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal', 'sort': None}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'column': {'field': 'Country', 'type': 'nominal'}}}
+# time used (s): 6.0331
+
+real	0m7.893s
+user	0m7.635s
+sys	0m0.268s

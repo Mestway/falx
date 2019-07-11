@@ -1,0 +1,33 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 7
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2'])]
+====> run synthesize test_17.json
+# num samples per layer: 4
+        From  Total  YAHOO  MICROSOFT  GOOGLE  APPLE  LINKEDIN  FACEBOOK
+0      YAHOO  100.0    0.0        3.6     3.2    7.6      43.0      10.5
+1  MICROSOFT  100.0    0.0        0.0     5.2    5.0      22.0      30.5
+2     GOOGLE  100.0    0.0        0.0     0.0    0.0       4.8      15.5
+3      APPLE  100.0    0.0        0.0     1.3    0.0       1.0      11.0
+4   LINKEDIN  100.0    0.0        0.0     0.0    1.0       0.0       2.0
+5   FACEBOOK  100.0    0.0        0.0     0.0    0.0       0.0       0.0
+         c_x   c_y   c_color
+0  MICROSOFT  30.5  FACEBOOK
+1      APPLE   1.3    GOOGLE
+2     GOOGLE   0.0     APPLE
+3   FACEBOOK   0.0     APPLE
+# candidates before getting the correct solution: 7
+## synthesize result for task test_17.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-2'])]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'From', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}}
+# time used (s): 0.8885
+
+real	0m2.556s
+user	0m2.595s
+sys	0m0.225s
