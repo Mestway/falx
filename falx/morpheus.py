@@ -574,7 +574,7 @@ def init_tbl_json_str(df_name, json_loc):
     return None
 
 
-def synthesize(inputs, output, oracle_output, prune, extra_consts):
+def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_file):
 
     global full_table 
     full_table = oracle_output
@@ -609,7 +609,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts):
     logger.info('Parsing spec ...')
 
     # provide additional string constants to the solver
-    grammar_base = "dsl/tidyverse.tyrell.base"
+    grammar_base = grammar_base_file
     grammar_file = "dsl/__tidyverse__.tyrell"
     synth_utils.update_search_grammar(extra_consts, grammar_base, grammar_file)
 
