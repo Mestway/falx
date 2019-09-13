@@ -139,7 +139,6 @@ def subset_eq(actual, expect):
     table1 = json.loads(table1)
     table2 = json.loads(table2)
 
-    row_num, col_num = full_table.get_shape()
     actual_col = robjects.r(actual).shape[1]
     actual_row = robjects.r(actual).shape[0]
     # print(table1)
@@ -148,6 +147,12 @@ def subset_eq(actual, expect):
 
     if all_ok:
         global iter_num
+        
+        if full_table is None:
+            # need to work with this to get more solutions
+            iter_num = iter_num + 1
+            return True
+
         full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
 
         if not full_table_ok:
@@ -594,7 +599,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     #print("input table:\n", inputs[0])
     loc_val = 2
     output_data = json.dumps(output.instantiate())
-    full_data = json.dumps(oracle_output.instantiate())
+    #full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
