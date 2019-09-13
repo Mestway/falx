@@ -227,7 +227,7 @@ class AbstractPrune(GenericVisitor):
             self._blames.add(ast.children[2])
             if col1 > tbl_size or col2 > tbl_size:
                 return True, None
-            else: 
+            else:
                 return False, None
             
         elif opcode == 'separate':

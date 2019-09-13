@@ -19,8 +19,10 @@ np.random.seed(2019)
 class FalxInterface(object):
 
     @staticmethod
-    def synthesize(inputs, example_trace, extra_consts=[], backend="vegalite"):
+    def synthesize(inputs, example_trace, extra_consts=[], 
+                   backend="vegalite", grammar_base_file="dsl/tidyverse.tyrell.base"):
         """synthesize table prog and vis prog from input and output traces"""
+    
         assert backend == "vegalite" or backend == "matplotlib"
         
         candidates = []
@@ -35,12 +37,12 @@ class FalxInterface(object):
 
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
-                candidate_progs = morpheus.synthesize(inputs, sym_data, 
-                                    oracle_output=None, prune="falx", extra_consts=extra_consts)
+                candidate_progs = morpheus.synthesize(inputs, sym_data, oracle_output=None, 
+                    prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file)
 
                 for p in candidate_progs:
                     output = morpheus.evaluate(p, inputs)
-                  
+
                     field_mapping = synth_utils.align_table_schema(sym_data.values, output)
                     assert(field_mapping != None)
 
@@ -59,7 +61,7 @@ class FalxInterface(object):
                 # synthesize table transformation programs for each layer
  
                 layer_candidate_progs = [morpheus.synthesize(inputs, d, oracle_output=None, 
-                                            prune="falx", extra_consts=extra_consts) for d in sym_data]
+                                            prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file) for d in sym_data]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
@@ -103,6 +105,10 @@ if __name__ == '__main__':
     ]
 
     vtrace = visual_trace.load_trace(raw_trace)
-
     result = FalxInterface.synthesize(inputs=[input_data], example_trace=vtrace, extra_consts=[], backend="vegalite")
+
+    for c in result:
+        print(c[0])
+        print(c[1].to_vl_json())
+
         
