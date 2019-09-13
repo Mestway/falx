@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-
 import argparse
+import os
 
 import tyrell.spec as S
 from tyrell.interpreter.post_order import PostOrderInterpreter, GeneralError
@@ -573,7 +573,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
 
     # provide additional string constants to the solver
     grammar_base = grammar_base_file
-    grammar_file = "dsl/__tidyverse__.tyrell"
+    grammar_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dsl", "__tidyverse__.tyrell")
     synth_utils.update_search_grammar(extra_consts, grammar_base, grammar_file)
 
     spec = S.parse_file(grammar_file)
