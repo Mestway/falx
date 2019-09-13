@@ -1,9 +1,9 @@
 import unittest
-from ..spec import parse
-from ..dsl import Builder
-from ..interpreter import PostOrderInterpreter
-from .example_base import Example
-from .example_constraint import ExampleConstraintDecider
+from falx.tyrell.spec import parse
+from falx.tyrell.dsl import Builder
+from falx.tyrell.interpreter import PostOrderInterpreter
+from falx.tyrell.decider.example_base import Example
+from falx.tyrell.decider.example_constraint import ExampleConstraintDecider
 
 
 spec_str = r'''

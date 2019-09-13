@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Tuple, Optional, Any
-from .expr import ExprType
+from tyrell.spec.expr import ExprType
 
 
 class Type(ABC):

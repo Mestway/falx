@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 
 import argparse
+
 import tyrell.spec as S
-from tyrell.interpreter import PostOrderInterpreter, GeneralError
-from tyrell.enumerator import BidirectEnumerator, SmtEnumerator
-from tyrell.decider import Example, BidirectionalDecider, ExampleConstraintPruningDecider
-from tyrell.synthesizer import Synthesizer
+from tyrell.interpreter.post_order import PostOrderInterpreter, GeneralError
+from tyrell.enumerator.smt import SmtEnumerator
+from falx.tyrell.enumerator.bidirection_smt import BidirectEnumerator
+from tyrell.decider.example_base import Example
+from falx.tyrell.decider.bidirection_pruning import BidirectionalDecider
+from tyrell.decider.example_constraint_pruning import ExampleConstraintPruningDecider
+from tyrell.synthesizer.synthesizer import Synthesizer
 from tyrell.logger import get_logger
+
 from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects
 from rpy2.robjects import pandas2ri

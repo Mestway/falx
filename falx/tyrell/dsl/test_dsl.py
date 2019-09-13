@@ -1,10 +1,10 @@
 import unittest
-from .. import spec as S
-from .node import AtomNode, ParamNode, ApplyNode
-from .builder import Builder
-from .iterator import bfs, dfs
-from .indexer import NodeIndexer
-from .parent_finder import ParentFinder
+from tyrell import spec as S
+from tyrell.dsl.node import AtomNode, ParamNode, ApplyNode
+from tyrell.dsl.builder import Builder
+from tyrell.dsl.iterator import bfs, dfs
+from tyrell.dsl.indexer import NodeIndexer
+from tyrell.dsl.parent_finder import ParentFinder
 
 
 class TestDSL(unittest.TestCase):

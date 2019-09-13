@@ -1,5 +1,5 @@
 from typing import List, Optional
-from ..dsl import Node
+from tyrell.dsl import Node
 
 
 class Context:

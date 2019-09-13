@@ -1,8 +1,8 @@
 import unittest
-from ..spec import parse
-from ..dsl import Builder
-from ..interpreter import PostOrderInterpreter
-from .example_base import Example, ExampleDecider
+from falx.tyrell.spec import parse
+from falx.tyrell.dsl import Builder
+from falx.tyrell.interpreter import PostOrderInterpreter
+from falx.tyrell.decider.example_base import Example, ExampleDecider
 
 spec_str = r'''
     value IntExpr {

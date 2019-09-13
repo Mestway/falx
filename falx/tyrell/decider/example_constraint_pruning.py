@@ -2,18 +2,18 @@ from collections import defaultdict
 from typing import cast, Any, Callable, Dict, List, Tuple, Set, FrozenSet
 import z3
 
-from .assert_violation_handler import AssertionViolationHandler
-from .blame import Blame
-from .constraint_encoder import ConstraintEncoder
-from .example_base import Example, ExampleDecider
-from .eval_expr import eval_expr
-from .result import ok, bad
-from ..spec import TyrellSpec, ValueType
-from ..dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer, dfs
-from ..interpreter import Interpreter, InterpreterError
-from ..logger import get_logger
-from ..spec.expr import *
-from ..visitor import GenericVisitor
+from falx.tyrell.decider.assert_violation_handler import AssertionViolationHandler
+from falx.tyrell.decider.blame import Blame
+from falx.tyrell.decider.constraint_encoder import ConstraintEncoder
+from falx.tyrell.decider.example_base import Example, ExampleDecider
+from falx.tyrell.decider.eval_expr import eval_expr
+from falx.tyrell.decider.result import ok, bad
+from falx.tyrell.spec import TyrellSpec, ValueType
+from falx.tyrell.dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer, dfs
+from falx.tyrell.interpreter import Interpreter, InterpreterError
+from falx.tyrell.logger import get_logger
+from falx.tyrell.spec.expr import *
+from falx.tyrell.visitor import GenericVisitor
 
 logger = get_logger('tyrell.decider.example_constraint_pruning')
 

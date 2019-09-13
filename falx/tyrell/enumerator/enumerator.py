@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Optional, Any
-from ..dsl import Node
+from tyrell.dsl import Node
 
 
 class Enumerator(ABC):

@@ -1,9 +1,10 @@
 from typing import Iterable, List, Dict, DefaultDict, Optional, Union, Any
 from collections import defaultdict
-from .type import Type, EnumType, ValueType
-from .production import EnumProduction, ParamProduction, FunctionProduction, Production
-from .expr import Expr
-from .predicate import Predicate
+
+from tyrell.spec.type import Type, EnumType, ValueType
+from tyrell.spec.production import EnumProduction, ParamProduction, FunctionProduction, Production
+from tyrell.spec.expr import Expr
+from tyrell.spec.predicate import Predicate
 
 
 class TypeSpec:

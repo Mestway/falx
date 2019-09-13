@@ -1,7 +1,7 @@
 from typing import Callable, NamedTuple, List, Any
-from .decider import Decider
-from ..interpreter import Interpreter
-from .result import ok, bad
+from falx.tyrell.decider.decider import Decider
+from falx.tyrell.interpreter import Interpreter
+from falx.tyrell.decider.result import ok, bad
 
 Example = NamedTuple('Example', [
     ('input', List[Any]),

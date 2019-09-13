@@ -1,7 +1,7 @@
 from typing import List, Any, cast
 from abc import ABC, abstractmethod
-from .type import Type, EnumType, ValueType
-from .expr import Expr, ExprType
+from tyrell.spec.type import Type, EnumType, ValueType
+from tyrell.spec.expr import Expr, ExprType
 
 
 class Production(ABC):

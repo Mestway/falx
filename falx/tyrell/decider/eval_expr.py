@@ -1,7 +1,7 @@
 from typing import ClassVar, Callable, List, Dict, Any
-from ..spec.expr import *
-from ..interpreter import Interpreter
-from ..visitor import GenericVisitor
+from falx.tyrell.spec.expr import *
+from falx.tyrell.interpreter import Interpreter
+from falx.tyrell.visitor import GenericVisitor
 
 
 class ExprVisitor(GenericVisitor):

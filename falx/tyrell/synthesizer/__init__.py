@@ -1,1 +1,1 @@
-from .synthesizer import Synthesizer
+from tyrell.synthesizer.synthesizer import Synthesizer

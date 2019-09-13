@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+import setuptools
 from setuptools import setup, Command
 import unittest
 
@@ -24,6 +25,6 @@ setup(name='falx',
       author='Chenglong Wang and Yu Feng',
       author_email='',
       url='https://github.com/Mestway/falx',
-      packages=['falx'],
+      packages=setuptools.find_packages(),
       test_suite='setup.falx_test_suite',
       cmdclass={'clean': CleanCommand,})

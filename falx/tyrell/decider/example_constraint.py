@@ -14,18 +14,19 @@ from typing import (
 from collections import defaultdict
 from itertools import permutations
 import z3
-from ..interpreter import Interpreter, InterpreterError
-from ..dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer
-from ..spec import Production, ValueType, TyrellSpec
-from ..spec.expr import *
-from ..logger import get_logger
-from ..visitor import GenericVisitor
-from .example_base import Example, ExampleDecider
-from .blame import Blame
-from .assert_violation_handler import AssertionViolationHandler
-from .eval_expr import eval_expr
-from .constraint_encoder import ConstraintEncoder
-from .result import ok, bad
+
+from falx.tyrell.interpreter import Interpreter, InterpreterError
+from falx.tyrell.dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer
+from falx.tyrell.spec import Production, ValueType, TyrellSpec
+from falx.tyrell.spec.expr import *
+from falx.tyrell.logger import get_logger
+from falx.tyrell.visitor import GenericVisitor
+from falx.tyrell.decider.example_base import Example, ExampleDecider
+from falx.tyrell.decider.blame import Blame
+from falx.tyrell.decider.assert_violation_handler import AssertionViolationHandler
+from falx.tyrell.decider.eval_expr import eval_expr
+from falx.tyrell.decider.constraint_encoder import ConstraintEncoder
+from falx.tyrell.decider.result import ok, bad
 
 logger = get_logger('tyrell.synthesizer.constraint')
 ImplyMap = Mapping[Tuple[Production, Expr], List[Production]]

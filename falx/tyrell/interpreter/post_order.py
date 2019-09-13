@@ -1,9 +1,10 @@
 from typing import Tuple, List, Iterator, Any
-from ..dsl import Node, AtomNode, ParamNode, ApplyNode
-from ..visitor import GenericVisitor
-from .interpreter import Interpreter
-from .context import Context
-from .error import InterpreterError, GeneralError
+
+from tyrell.dsl import Node, AtomNode, ParamNode, ApplyNode
+from tyrell.visitor import GenericVisitor
+from tyrell.interpreter.interpreter import Interpreter
+from tyrell.interpreter.context import Context
+from tyrell.interpreter.error import InterpreterError, GeneralError
 
 
 class PostOrderInterpreter(Interpreter):

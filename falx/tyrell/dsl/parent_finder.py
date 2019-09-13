@@ -1,6 +1,6 @@
 from typing import List, Dict, Optional
-from .node import Node
-from .iterator import dfs
+from tyrell.dsl.node import Node
+from tyrell.dsl.iterator import dfs
 
 
 class ParentFinder:

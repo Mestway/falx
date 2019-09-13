@@ -1,9 +1,9 @@
 import unittest
-from ..spec import parse
-from ..dsl import Builder
-from ..interpreter import PostOrderInterpreter, AssertionViolation
-from .assert_violation_handler import AssertionViolationHandler
-from .blame import Blame
+from falx.tyrell.spec import parse
+from falx.tyrell.dsl import Builder
+from falx.tyrell.interpreter import PostOrderInterpreter, AssertionViolation
+from falx.tyrell.decider.assert_violation_handler import AssertionViolationHandler
+from falx.tyrell.decider.blame import Blame
 
 spec_str = r'''
     enum SmallInt {

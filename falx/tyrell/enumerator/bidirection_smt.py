@@ -1,12 +1,12 @@
 from z3 import *
 from collections import deque
-from .enumerator import Enumerator
+from tyrell.enumerator.enumerator import Enumerator
 from functools import reduce
 import collections
 
 
-from .. import dsl as D
-from ..logger import get_logger
+from tyrell import dsl as D
+from tyrell.logger import get_logger
 
 logger = get_logger('tyrell.enumerator.bidirection_smt')
 

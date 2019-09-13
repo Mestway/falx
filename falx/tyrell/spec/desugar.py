@@ -1,11 +1,12 @@
 from ast import literal_eval
 from typing import List, cast
-from .spec import TypeSpec, ProductionSpec, ProgramSpec, PredicateSpec, TyrellSpec
-from .type import Type, EnumType, ValueType
-from .expr import *
-from .parser import Visitor_Recursive
-from .util import enum_set_domain
-from ..logger import get_logger
+
+from tyrell.spec.spec import TypeSpec, ProductionSpec, ProgramSpec, PredicateSpec, TyrellSpec
+from tyrell.spec.type import Type, EnumType, ValueType
+from tyrell.spec.expr import *
+from tyrell.spec.parser import Visitor_Recursive
+from tyrell.spec.util import enum_set_domain
+from tyrell.logger import get_logger
 
 logger = get_logger('tyrell.desugar')
 

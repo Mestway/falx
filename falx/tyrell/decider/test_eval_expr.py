@@ -1,7 +1,7 @@
 import unittest
-from ..spec import parse
-from ..interpreter import PostOrderInterpreter
-from .eval_expr import eval_expr
+from falx.tyrell.spec import parse
+from falx.tyrell.interpreter import PostOrderInterpreter
+from falx.tyrell.decider.eval_expr import eval_expr
 
 spec_str = r'''
     value IntExpr {

@@ -1,6 +1,6 @@
 from typing import NamedTuple
-from ..spec import Production
-from ..dsl import Node
+from falx.tyrell.spec import Production
+from falx.tyrell.dsl import Node
 
 Blame = NamedTuple('Blame', [('node', Node), ('production', Production)])
 

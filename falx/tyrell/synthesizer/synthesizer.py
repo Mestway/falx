@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import Any
-from ..interpreter import InterpreterError
-from ..enumerator import Enumerator
-from ..decider import Decider
-from ..dsl import Node
-from ..logger import get_logger
+
+from falx.tyrell.interpreter import InterpreterError
+from falx.tyrell.enumerator import Enumerator
+from falx.tyrell.decider import Decider
+from falx.tyrell.dsl import Node
+from falx.tyrell.logger import get_logger
 
 logger = get_logger('tyrell.synthesizer')
 

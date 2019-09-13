@@ -19,12 +19,14 @@ np.random.seed(2019)
 class FalxInterface(object):
 
     @staticmethod
-    def synthesize(inputs, example_trace, extra_consts=[], 
+    def synthesize(inputs, raw_trace, extra_consts=[], 
                    backend="vegalite", grammar_base_file="dsl/tidyverse.tyrell.base"):
         """synthesize table prog and vis prog from input and output traces"""
-    
+
         assert backend == "vegalite" or backend == "matplotlib"
-        
+
+        example_trace = visual_trace.load_trace(raw_trace)
+
         candidates = []
 
         # apply inverse semantics to obtain symbolic output table and vis programs
@@ -104,8 +106,7 @@ if __name__ == '__main__':
       {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
     ]
 
-    vtrace = visual_trace.load_trace(raw_trace)
-    result = FalxInterface.synthesize(inputs=[input_data], example_trace=vtrace, extra_consts=[], backend="vegalite")
+    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite")
 
     for c in result:
         print(c[0])

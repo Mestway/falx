@@ -1,8 +1,8 @@
 from typing import Union
 import sexpdata
-from .node import *
-from ..spec import TyrellSpec, Production, EnumType
-from ..visitor import GenericVisitor
+from tyrell.dsl.node import *
+from tyrell.spec import TyrellSpec, Production, EnumType
+from tyrell.visitor import GenericVisitor
 
 
 class ProductionVisitor(GenericVisitor):

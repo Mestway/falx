@@ -1,8 +1,8 @@
 from typing import Set, Optional
 from random import Random
-from .enumerator import Enumerator
-from .. import dsl as D
-from .. import spec as S
+from tyrell.enumerator.enumerator import Enumerator
+from tyrell import dsl as D
+from tyrell import spec as S
 
 
 class RandomEnumerator(Enumerator):

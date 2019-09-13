@@ -1,6 +1,6 @@
-from .enumerator import Enumerator
+from tyrell.enumerator.enumerator import Enumerator
 from typing import Optional, List, Iterator
-from ..dsl import Node
+from tyrell.dsl import Node
 
 
 class FromIteratorEnumerator(Enumerator):
