@@ -125,3 +125,18 @@ class FalxEvalInterface(object):
             if len(candidates) > 0: break
 
         return candidates
+
+
+    @staticmethod
+    def synthesizeTable(inputs, sample_output, num_samples=2, extra_consts=[], 
+                   backend="vegalite", prune="falx", grammar_base_file="dsl/tidyverse.tyrell.base"):
+        """synthesize table prog and vis prog from input and output traces"""
+        # assert backend == "vegalite" or backend == "matplotlib"
+        assert prune == "falx" or prune == "morpheus" or prune == "forward" or prune == "none" or prune == "backward"
+        candidates = []
+
+        # single-layer chart
+        candidate_progs = morpheus.synthesize(inputs, sample_output, sample_output, prune, 
+                                                extra_consts=extra_consts, grammar_base_file=grammar_base_file)
+
+        return candidates
