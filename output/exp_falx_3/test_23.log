@@ -1,0 +1,46 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2']), groupSum(gatherNeg(@param0, ['-1', '-2']), sum, 4, ['1', '3'])]
+====> run synthesize test_23.json
+# num samples per layer: 3
+    year        product    Q4    Q3    Q2    Q1
+0   2011  Product1_2011   3.0   5.0   5.0  10.0
+1   2011  Product2_2011   5.0   7.0   5.0   2.0
+2   2011  Product3_2011   3.0   9.0  10.0   7.0
+3   2011  Product4_2011   3.0   2.0   8.0   1.0
+4   2011  Product5_2011   1.0   7.0   1.0   6.0
+5   2011  Product6_2011   9.0   1.0   6.0   1.0
+6   2012  Product1_2012   3.0   3.0   6.0   4.0
+7   2012  Product2_2012   4.0   3.0   6.0   4.0
+8   2012  Product3_2012   3.0   6.0   6.0   4.0
+9   2012  Product4_2012   4.0  10.0   6.0   1.0
+10  2012  Product5_2012   8.0   5.0   4.0   7.0
+11  2012  Product6_2012   8.0   8.0   8.0   6.0
+12  2013  Product1_2013  10.0   2.0   3.0   9.0
+13  2013  Product2_2013   8.0   6.0   7.0   7.0
+14  2013  Product3_2013   9.0   8.0   4.0   9.0
+15  2013  Product4_2013   5.0   9.0   5.0   2.0
+16  2013  Product5_2013   1.0   5.0   2.0   4.0
+17  2013  Product6_2013   8.0  10.0   6.0   4.0
+  c_x   c_y  c_color
+0  Q3  2013     40.0
+1  Q1  2012     26.0
+2  Q4  2013     41.0
+# candidates before getting the correct solution: 0
+## synthesize result for task test_23.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-2']), groupSum(gatherNeg(@param0, ['-1', '-2']), sum, 4, ['1', '3'])]
+# vis_spec:
+    {'mark': 'point', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'year', 'type': 'nominal'}, 'color': {'field': 'COL26445', 'type': 'nominal'}}}
+# time used (s): 203.7936
+
+real	3m26.264s
+user	3m22.680s
+sys	0m3.778s

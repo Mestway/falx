@@ -1,0 +1,30 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2']), cumsum(gatherNeg(@param0, ['-1', '-2']), 4)]
+====> run synthesize test_11.json
+# num samples per layer: 2
+     Group  Venditor  2010-1  2010-2  ...  2011-2  2011-3  2011-4  2012-1
+0  Group_1  Vendor_1   813.0   194.0  ...   322.0   326.0   567.0   333.0
+
+[1 rows x 11 columns]
+      c_x     c_y
+0  2010-2  1007.0
+1  2010-4  2663.0
+# candidates before getting the correct solution: 0
+## synthesize result for task test_11.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-2']), cumsum(gatherNeg(@param0, ['-1', '-2']), 4)]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal'}, 'y': {'field': 'cumsum', 'type': 'quantitative'}, 'order': {'field': 'KEY', 'type': 'quantitative'}}}
+# time used (s): 132.6241
+
+real	2m14.871s
+user	2m12.385s
+sys	0m2.628s

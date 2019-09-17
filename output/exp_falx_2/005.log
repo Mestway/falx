@@ -1,0 +1,48 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 1
+[info] Solution found: [gather(@param0, ['2', '3', '4'])]
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 3
+[info] Solution found: [gather(@param0, ['5'])]
+====> run synthesize 005.json
+# num samples per layer: 2
+  Month  Sales  Cost  Profit    ROI
+0   Jan   10.0   6.0     4.0  66.67
+1   Feb   20.0  15.0     5.0  33.33
+2   Mar   30.0  24.0     6.0  25.00
+3   Apr   40.0  33.0     7.0  21.21
+4   May   50.0  42.0     8.0  19.05
+5   Jun   60.0  51.0     9.0  17.65
+   c_x   c_y c_color
+0  Jun  51.0    Cost
+1  Mar  30.0   Sales
+# candidates before getting the correct solution: 1
+  Month  Sales  Cost  Profit    ROI
+0   Jan   10.0   6.0     4.0  66.67
+1   Feb   20.0  15.0     5.0  33.33
+2   Mar   30.0  24.0     6.0  25.00
+3   Apr   40.0  33.0     7.0  21.21
+4   May   50.0  42.0     8.0  19.05
+5   Jun   60.0  51.0     9.0  17.65
+  c_color  c_x    c_y
+0     ROI  Jan  66.67
+1     ROI  Mar  25.00
+# candidates before getting the correct solution: 3
+## synthesize result for task 005.json
+# table_prog:
+  [[gather(@param0, ['2', '3', '4'])], [gather(@param0, ['5'])]]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'bar', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Month', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Month', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'Month', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 0.6281
+
+real	0m2.194s
+user	0m2.287s
+sys	0m0.187s

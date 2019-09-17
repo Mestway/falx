@@ -1,0 +1,62 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1'])]
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gatherNeg(@param0, ['-1', '-2', '-4'])]
+====> run synthesize 052.json
+# num samples per layer: 3
+       Label  bar 0  bar 1  bar 2  bar 3
+0    Label_1  100.0   77.0   21.0   20.0
+1    Label_2  114.0   94.0   38.0   17.0
+2    Label_3  151.0   79.0   31.0   26.0
+3    Label_4  175.0   87.0   30.0   16.0
+4    Label_5  178.0   51.0   20.0   29.0
+5    Label_6  187.0   54.0   26.0   19.0
+6    Label_7  113.0   74.0   25.0   15.0
+7    Label_8  140.0  100.0   34.0   26.0
+8    Label_9  119.0   84.0   24.0   25.0
+9   Label_10  113.0   92.0   30.0   21.0
+10  Label_11  179.0   61.0   20.0   23.0
+11  Label_12  143.0   74.0   26.0   28.0
+        c_x    c_y c_color
+0   Label_2  114.0   bar 0
+1  Label_10   21.0   bar 3
+2   Label_7   25.0   bar 2
+# candidates before getting the correct solution: 0
+       Label  bar 0  bar 1  bar 2  bar 3
+0    Label_1  100.0   77.0   21.0   20.0
+1    Label_2  114.0   94.0   38.0   17.0
+2    Label_3  151.0   79.0   31.0   26.0
+3    Label_4  175.0   87.0   30.0   16.0
+4    Label_5  178.0   51.0   20.0   29.0
+5    Label_6  187.0   54.0   26.0   19.0
+6    Label_7  113.0   74.0   25.0   15.0
+7    Label_8  140.0  100.0   34.0   26.0
+8    Label_9  119.0   84.0   24.0   25.0
+9   Label_10  113.0   92.0   30.0   21.0
+10  Label_11  179.0   61.0   20.0   23.0
+11  Label_12  143.0   74.0   26.0   28.0
+  c_color      c_x   c_y
+0   bar 1  Label_7  74.0
+1   bar 3  Label_4  16.0
+2   bar 3  Label_8  26.0
+# candidates before getting the correct solution: 0
+## synthesize result for task 052.json
+# table_prog:
+  [[gatherNeg(@param0, ['-1'])], [gatherNeg(@param0, ['-1', '-2', '-4'])]]
+# vis_spec:
+    {'layer': [{'mark': {'type': 'bar', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Label', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}}, 'transform': [{'filter': 'datum.layer_id == 0'}]}, {'mark': {'type': 'line', 'opacity': 0.7}, 'encoding': {'x': {'field': 'Label', 'type': 'nominal'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'Label', 'type': 'quantitative'}}, 'transform': [{'filter': 'datum.layer_id == 1'}]}], 'resolve': {}}
+# time used (s): 0.6128
+
+real	0m2.179s
+user	0m2.285s
+sys	0m0.181s

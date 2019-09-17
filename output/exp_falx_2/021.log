@@ -1,0 +1,36 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+CUT 2
+[info] # candidates before getting the correct solution: 7
+[info] Solution found: [gatherNeg(@param0, ['-1', '-5']), filter(gatherNeg(@param0, ['-1', '-5']), !=, 1, Total Result)]
+====> run synthesize 021.json
+# num samples per layer: 2
+          Country    Beans  Broccoli   Carrots  Total Result
+0       Australia  14433.0   17953.0    8106.0       40492.0
+1          Canada      0.0   12407.0       0.0       12407.0
+2          France    680.0    5341.0    9104.0       15125.0
+3         Germany  29905.0   37197.0   21636.0       88738.0
+4     New Zealand      0.0    4390.0       0.0        4390.0
+5  United Kingdom   5100.0   38436.0   41815.0       85351.0
+6   United States   7163.0   26715.0   56284.0       90162.0
+7    Total Result  57281.0  142439.0  136945.0      336665.0
+        c_x      c_y       c_column
+0  Broccoli  26715.0  United States
+1   Carrots   9104.0         France
+# candidates before getting the correct solution: 7
+## synthesize result for task 021.json
+# table_prog:
+  [gatherNeg(@param0, ['-1', '-5']), filter(gatherNeg(@param0, ['-1', '-5']), !=, 1, Total Result)]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'KEY', 'type': 'nominal', 'sort': None}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'column': {'field': 'Country', 'type': 'nominal'}}}
+# time used (s): 2.5834
+
+real	0m4.168s
+user	0m4.228s
+sys	0m0.206s

@@ -1,0 +1,38 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 0
+[info] Solution found: [gather(@param0, ['1', '2', '3'])]
+====> run synthesize 050.json
+# num samples per layer: 3
+    Consuntivo 2010  Consuntivo 2011  Obiettivo 2011    id
+0           42560.0          64146.0         51072.0   0.0
+1           46368.0          74043.0         64915.2   1.0
+2           46826.0         110358.0         65556.4   2.0
+3           53090.0         132409.0         74326.0   3.0
+4           60331.0         162675.0         84463.4   4.0
+5           64501.0         171886.0         90301.4   5.0
+6           69244.0         184259.0         96941.6   6.0
+7           73102.0         188505.0        102342.8   7.0
+8           80000.0         204907.0        112000.0   8.0
+9           83922.0         212013.0        117490.8   9.0
+10          86729.0         221144.0        121420.6  10.0
+11          88889.0         221709.0        124444.6  11.0
+           c_color  c_x      c_y
+0  Consuntivo 2010  2.0  46826.0
+1  Consuntivo 2011  0.0  64146.0
+2  Consuntivo 2010  4.0  60331.0
+# candidates before getting the correct solution: 0
+## synthesize result for task 050.json
+# table_prog:
+  [gather(@param0, ['1', '2', '3'])]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'id', 'type': 'quantitative'}, 'y': {'field': 'VALUE', 'type': 'quantitative'}, 'color': {'field': 'KEY', 'type': 'nominal'}, 'order': {'field': 'id', 'type': 'quantitative'}}}
+# time used (s): 0.2385
+
+real	0m1.818s
+user	0m1.928s
+sys	0m0.174s

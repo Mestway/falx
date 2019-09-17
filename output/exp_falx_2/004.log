@@ -1,0 +1,44 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 6
+[info] Solution found: [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 2)]
+====> run synthesize 004.json
+# num samples per layer: 2
+   Age Group  Male-1986  Female-1986  Male-2050  Female-2050
+0      00-04     8580.0       8243.0     5901.0       5637.0
+1      05-09     8763.0       8440.0     6070.0       5804.0
+2      10-14     8959.0       8659.0     6255.0       5986.0
+3      15-19     8836.0       8588.0     6479.0       6213.0
+4      20-24     8096.0       7930.0     6704.0       6455.0
+5      25-29     7524.0       7413.0     6895.0       6673.0
+6      30-34     6749.0       6759.0     7052.0       6862.0
+7      35-39     5719.0       5815.0     7186.0       7037.0
+8      40-44     4765.0       4926.0     7309.0       7215.0
+9      45-49     3848.0       4062.0     7455.0       7440.0
+10     50-54     2994.0       3250.0     7705.0       7810.0
+11     55-59     2391.0       2698.0     7395.0       7669.0
+12     60-64     1862.0       2207.0     7315.0       7870.0
+13     65-69     1384.0       1783.0     6712.0       7607.0
+14     70-74      942.0       1330.0     5621.0       6844.0
+15     75-79      547.0        864.0     4176.0       5623.0
+16     80-00      382.0        763.0     4876.0       8575.0
+  c_color c_column     c_x    c_y
+0    2050   Female  6673.0  25-29
+1    1986     Male  1862.0  60-64
+# candidates before getting the correct solution: 6
+## synthesize result for task 004.json
+# table_prog:
+  [gatherNeg(@param0, ['-1']), separate(gatherNeg(@param0, ['-1']), 2)]
+# vis_spec:
+    {'mark': 'line', 'encoding': {'x': {'field': 'VALUE', 'type': 'quantitative'}, 'y': {'field': 'Age Group', 'type': 'nominal'}, 'color': {'field': 'COL1919', 'type': 'nominal'}, 'column': {'field': 'COL1918', 'type': 'nominal'}, 'order': {'field': 'VALUE', 'type': 'quantitative'}}}
+# time used (s): 23.3989
+
+real	0m25.053s
+user	0m24.722s
+sys	0m0.569s

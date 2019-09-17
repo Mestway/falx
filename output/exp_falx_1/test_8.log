@@ -1,0 +1,32 @@
+/Users/clwang/Research/falx/venv/lib/python3.7/site-packages/rpy2/robjects/pandas2ri.py:191: FutureWarning: from_items is deprecated. Please use DataFrame.from_dict(dict(items), ...) instead. DataFrame.from_dict(OrderedDict(items)) may be used to preserve the key order.
+  res = PandasDataFrame.from_items(items)
+[info] Parsing spec ...
+[info] Parsing succeeded
+[info] Building synthesizer ...
+[info] Synthesizing programs ...
+[info] Solution not found!
+[info] Synthesizing programs ...
+[info] # candidates before getting the correct solution: 1
+[info] Solution found: [mutate(@param0, -, 3, 2), unite(mutate(@param0, -, 3, 2), 2, 3)]
+====> run synthesize test_8.json
+# num samples per layer: 1
+        id  ageFrom  ageTo    qt
+0  valore1      0.0   10.0   5.0
+1  valore2     10.0   15.0  12.0
+2  valore3     15.0   30.0  74.0
+3  valore4     30.0   40.0  12.0
+4  valore5     40.0   99.0   8.0
+5  valore6     99.0  120.0  15.0
+     c_x  c_y  c_color
+0  40_99  8.0     59.0
+# candidates before getting the correct solution: 1
+## synthesize result for task test_8.json
+# table_prog:
+  [mutate(@param0, -, 3, 2), unite(mutate(@param0, -, 3, 2), 2, 3)]
+# vis_spec:
+    {'mark': 'bar', 'encoding': {'x': {'field': 'COL886', 'type': 'nominal'}, 'y': {'field': 'qt', 'type': 'quantitative'}, 'color': {'field': 'mutate_a', 'type': 'nominal'}}}
+# time used (s): 7.8572
+
+real	0m9.563s
+user	0m9.511s
+sys	0m0.327s
