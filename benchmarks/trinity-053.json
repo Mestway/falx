@@ -1,0 +1,131 @@
+{
+  "input_data": [
+    {
+      "date": "9/1/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/2/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/2/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/3/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/3/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "english",
+      "score": 34
+    }
+  ],
+  "output_data": [
+    {
+      "classes": "english",
+      "date": "9/1/11",
+      "score": 1
+    },
+    {
+      "classes": "english",
+      "date": "9/2/11",
+      "score": 1
+    },
+    {
+      "classes": "english",
+      "date": "9/5/11",
+      "score": 2
+    },
+    {
+      "classes": "french",
+      "date": "9/1/11",
+      "score": 2
+    },
+    {
+      "classes": "french",
+      "date": "9/2/11",
+      "score": 1
+    },
+    {
+      "classes": "french",
+      "date": "9/5/11",
+      "score": 1
+    },
+    {
+      "classes": "spanish",
+      "date": "9/1/11",
+      "score": 1
+    },
+    {
+      "classes": "spanish",
+      "date": "9/3/11",
+      "score": 2
+    },
+    {
+      "classes": "spanish",
+      "date": "9/5/11",
+      "score": 1
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "y": {
+        "field": "date",
+        "type": "nominal"
+      },
+      "color": {
+        "field": "classes",
+        "type": "nominal"
+      },
+      "x": {
+        "field": "score",
+        "type": "quantitative"
+      }
+    }
+  }
+}

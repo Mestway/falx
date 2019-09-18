@@ -1,0 +1,141 @@
+{
+  "input_data": [
+    {
+      "Complaint Type": "Too noisy",
+      "Count": 27
+    },
+    {
+      "Complaint Type": "Overpriced",
+      "Count": 789
+    },
+    {
+      "Complaint Type": "Food is tasteless",
+      "Count": 65
+    },
+    {
+      "Complaint Type": "Food not fresh",
+      "Count": 9
+    },
+    {
+      "Complaint Type": "Food is too salty",
+      "Count": 15
+    },
+    {
+      "Complaint Type": "Not clean",
+      "Count": 30
+    },
+    {
+      "Complaint Type": "Unfriendly staff",
+      "Count": 12
+    },
+    {
+      "Complaint Type": "Wait time",
+      "Count": 109
+    },
+    {
+      "Complaint Type": "No atmosphere",
+      "Count": 45
+    },
+    {
+      "Complaint Type": "Small portions",
+      "Count": 621
+    }
+  ],
+  "output_data": [
+    {
+      "Complaint Type": "Too noisy",
+      "Count": 27,
+      "cumsum": 27
+    },
+    {
+      "Complaint Type": "Overpriced",
+      "Count": 789,
+      "cumsum": 816
+    },
+    {
+      "Complaint Type": "Food is tasteless",
+      "Count": 65,
+      "cumsum": 881
+    },
+    {
+      "Complaint Type": "Food not fresh",
+      "Count": 9,
+      "cumsum": 890
+    },
+    {
+      "Complaint Type": "Food is too salty",
+      "Count": 15,
+      "cumsum": 905
+    },
+    {
+      "Complaint Type": "Not clean",
+      "Count": 30,
+      "cumsum": 935
+    },
+    {
+      "Complaint Type": "Unfriendly staff",
+      "Count": 12,
+      "cumsum": 947
+    },
+    {
+      "Complaint Type": "Wait time",
+      "Count": 109,
+      "cumsum": 1056
+    },
+    {
+      "Complaint Type": "No atmosphere",
+      "Count": 45,
+      "cumsum": 1101
+    },
+    {
+      "Complaint Type": "Small portions",
+      "Count": 621,
+      "cumsum": 1722
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Complaint Type",
+            "type": "nominal",
+            "sort": null
+          },
+          "y": {
+            "field": "Count",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "red"
+        },
+        "encoding": {
+          "x": {
+            "field": "Complaint Type",
+            "type": "nominal",
+            "sort": null
+          },
+          "y": {
+            "field": "cumsum",
+            "type": "quantitative"
+          },
+          "order": {
+            "field": "id",
+            "type": "ordinal"
+          }
+        }
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "y": "independent"
+      }
+    }
+  }
+}

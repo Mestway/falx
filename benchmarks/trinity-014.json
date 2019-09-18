@@ -1,0 +1,304 @@
+{
+  "input_data": [
+    {
+      "Shift": 1,
+      "Period": 1,
+      "Start of Shift": "50 / 1150",
+      "End of Shift": "110 / 1090",
+      "Duration": 60
+    },
+    {
+      "Shift": 2,
+      "Period": 1,
+      "Start of Shift": "224 / 976",
+      "End of Shift": "272 / 928",
+      "Duration": 48
+    },
+    {
+      "Shift": 3,
+      "Period": 1,
+      "Start of Shift": "379 / 821",
+      "End of Shift": "419 / 781",
+      "Duration": 40
+    },
+    {
+      "Shift": 4,
+      "Period": 1,
+      "Start of Shift": "545 / 655",
+      "End of Shift": "601 / 599",
+      "Duration": 56
+    },
+    {
+      "Shift": 5,
+      "Period": 1,
+      "Start of Shift": "759 / 441",
+      "End of Shift": "840 / 360",
+      "Duration": 81
+    },
+    {
+      "Shift": 6,
+      "Period": 1,
+      "Start of Shift": "966 / 234",
+      "End of Shift": "1014 / 186",
+      "Duration": 48
+    },
+    {
+      "Shift": 7,
+      "Period": 1,
+      "Start of Shift": "1084 / 116",
+      "End of Shift": "1146 / 54",
+      "Duration": 62
+    },
+    {
+      "Shift": 8,
+      "Period": 2,
+      "Start of Shift": "0 / 1200",
+      "End of Shift": "60 / 1140",
+      "Duration": 60
+    },
+    {
+      "Shift": 9,
+      "Period": 2,
+      "Start of Shift": "157 / 1043",
+      "End of Shift": "245 / 955",
+      "Duration": 88
+    },
+    {
+      "Shift": 10,
+      "Period": 2,
+      "Start of Shift": "558 / 642",
+      "End of Shift": "604 / 596",
+      "Duration": 46
+    },
+    {
+      "Shift": 11,
+      "Period": 2,
+      "Start of Shift": "701 / 499",
+      "End of Shift": "767 / 433",
+      "Duration": 66
+    },
+    {
+      "Shift": 12,
+      "Period": 2,
+      "Start of Shift": "830 / 370",
+      "End of Shift": "913 / 287",
+      "Duration": 83
+    },
+    {
+      "Shift": 13,
+      "Period": 2,
+      "Start of Shift": "1057 / 143",
+      "End of Shift": "1140 / 60",
+      "Duration": 83
+    },
+    {
+      "Shift": 14,
+      "Period": 3,
+      "Start of Shift": "39 / 1161",
+      "End of Shift": "76 / 1124",
+      "Duration": 37
+    },
+    {
+      "Shift": 15,
+      "Period": 3,
+      "Start of Shift": "177 / 1023",
+      "End of Shift": "205 / 995",
+      "Duration": 28
+    },
+    {
+      "Shift": 16,
+      "Period": 3,
+      "Start of Shift": "325 / 875",
+      "End of Shift": "376 / 824",
+      "Duration": 51
+    },
+    {
+      "Shift": 17,
+      "Period": 3,
+      "Start of Shift": "541 / 659",
+      "End of Shift": "564 / 636",
+      "Duration": 23
+    },
+    {
+      "Shift": 18,
+      "Period": 3,
+      "Start of Shift": "684 / 516",
+      "End of Shift": "694 / 506",
+      "Duration": 10
+    },
+    {
+      "Shift": 19,
+      "Period": 3,
+      "Start of Shift": "695 / 505",
+      "End of Shift": "775 / 425",
+      "Duration": 80
+    },
+    {
+      "Shift": 20,
+      "Period": 3,
+      "Start of Shift": "987 / 213",
+      "End of Shift": "1200 / 0",
+      "Duration": 213
+    }
+  ],
+  "output_data": [
+    {
+      "Duration": 60,
+      "Period": 1,
+      "Shift": 1,
+      "s1": 110,
+      "s0": 50
+    },
+    {
+      "Duration": 48,
+      "Period": 1,
+      "Shift": 2,
+      "s1": 272,
+      "s0": 224
+    },
+    {
+      "Duration": 40,
+      "Period": 1,
+      "Shift": 3,
+      "s1": 419,
+      "s0": 379
+    },
+    {
+      "Duration": 56,
+      "Period": 1,
+      "Shift": 4,
+      "s1": 601,
+      "s0": 545
+    },
+    {
+      "Duration": 81,
+      "Period": 1,
+      "Shift": 5,
+      "s1": 840,
+      "s0": 759
+    },
+    {
+      "Duration": 48,
+      "Period": 1,
+      "Shift": 6,
+      "s1": 1014,
+      "s0": 966
+    },
+    {
+      "Duration": 62,
+      "Period": 1,
+      "Shift": 7,
+      "s1": 1146,
+      "s0": 1084
+    },
+    {
+      "Duration": 60,
+      "Period": 2,
+      "Shift": 8,
+      "s1": 60,
+      "s0": 0
+    },
+    {
+      "Duration": 88,
+      "Period": 2,
+      "Shift": 9,
+      "s1": 245,
+      "s0": 157
+    },
+    {
+      "Duration": 46,
+      "Period": 2,
+      "Shift": 10,
+      "s1": 604,
+      "s0": 558
+    },
+    {
+      "Duration": 66,
+      "Period": 2,
+      "Shift": 11,
+      "s1": 767,
+      "s0": 701
+    },
+    {
+      "Duration": 83,
+      "Period": 2,
+      "Shift": 12,
+      "s1": 913,
+      "s0": 830
+    },
+    {
+      "Duration": 83,
+      "Period": 2,
+      "Shift": 13,
+      "s1": 1140,
+      "s0": 1057
+    },
+    {
+      "Duration": 37,
+      "Period": 3,
+      "Shift": 14,
+      "s1": 76,
+      "s0": 39
+    },
+    {
+      "Duration": 28,
+      "Period": 3,
+      "Shift": 15,
+      "s1": 205,
+      "s0": 177
+    },
+    {
+      "Duration": 51,
+      "Period": 3,
+      "Shift": 16,
+      "s1": 376,
+      "s0": 325
+    },
+    {
+      "Duration": 23,
+      "Period": 3,
+      "Shift": 17,
+      "s1": 564,
+      "s0": 541
+    },
+    {
+      "Duration": 10,
+      "Period": 3,
+      "Shift": 18,
+      "s1": 694,
+      "s0": 684
+    },
+    {
+      "Duration": 80,
+      "Period": 3,
+      "Shift": 19,
+      "s1": 775,
+      "s0": 695
+    },
+    {
+      "Duration": 213,
+      "Period": 3,
+      "Shift": 20,
+      "s1": 1200,
+      "s0": 987
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "s0",
+        "type": "quantitative"
+      },
+      "x2": {
+        "field": "s1",
+        "type": "quantitative"
+      },
+      "y": {
+        "field": "Shift",
+        "type": "nominal"
+      }
+    }
+  }
+}
