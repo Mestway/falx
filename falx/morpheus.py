@@ -169,6 +169,20 @@ def subset_eq(actual, expect):
             return True
     return False
 
+def full_eq(actual, expect):
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
+    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
+    table1 = json.loads(table1)
+    table2 = json.loads(table2)
+
+    actual_col = robjects.r(actual).shape[1]
+    actual_row = robjects.r(actual).shape[0]
+    # print(table1)
+    # print(table2)
+    all_ok = synth_utils.align_table_schema(table1, table2, check_equivalence=True, boolean_result=True)
+
+    return True
+
 def get_head(df):
     head = set()
     for h in df.columns.values:
@@ -537,7 +551,7 @@ def init_tbl_json_str(df_name, json_loc):
     return None
 
 
-def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_file):
+def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_file, eq_function="subset_eq"):
 
     global full_table 
     full_table = oracle_output
@@ -556,7 +570,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
     loc_val = 2
-    output_data = json.dumps(output.instantiate())
+    output_data = json.dumps(output)
     #full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
@@ -583,9 +597,13 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     global iter_num
     iter_num = 0
     for loc in range(1, loc_val + 1):
-        eq_fun = subset_eq
-        if prune == 'none':
-            eq_fun = proj_eq
+
+        if eq_function == "subset_eq":
+            eq_fun = subset_eq
+            if prune == 'none':
+                eq_fun = proj_eq
+        else:
+            eq_fun = full_eq
 
         enumerator = BidirectEnumerator(spec, depth=loc+1, loc=loc)
         decider=BidirectionalDecider(

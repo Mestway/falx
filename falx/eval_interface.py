@@ -128,15 +128,20 @@ class FalxEvalInterface(object):
 
 
     @staticmethod
-    def synthesizeTable(inputs, sample_output, num_samples=2, extra_consts=[], 
-                   backend="vegalite", prune="falx", grammar_base_file="dsl/tidyverse.tyrell.base"):
-        """synthesize table prog and vis prog from input and output traces"""
-        # assert backend == "vegalite" or backend == "matplotlib"
-        assert prune == "falx" or prune == "morpheus" or prune == "forward" or prune == "none" or prune == "backward"
+    def synthesize_table(inputs, output, extra_consts=[], 
+                         prune="falx", grammar_base_file="dsl/tidyverse.tyrell.base"):
+        """synthesize table prog and vis prog from input and output tables"""
         candidates = []
-
         # single-layer chart
-        candidate_progs = morpheus.synthesize(inputs, sample_output, sample_output, prune, 
-                                                extra_consts=extra_consts, grammar_base_file=grammar_base_file)
+        candidate_progs = morpheus.synthesize(inputs, output, output, prune, 
+                                              extra_consts=extra_consts, 
+                                              grammar_base_file=grammar_base_file,
+                                              eq_function="eq")
+
+        for p in candidate_progs:
+            eval_output = morpheus.evaluate(p, inputs)
+            field_mapping = synth_utils.align_table_schema(output, eval_output)
+            if field_mapping != None:
+                candidates.append(p)
 
         return candidates
