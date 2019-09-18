@@ -588,7 +588,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, eq_function="
     
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
-    loc_val = 2
+    loc_val = 3
     output_data = json.dumps(output)
     #full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
