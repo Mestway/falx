@@ -1,0 +1,171 @@
+{
+  "input_data": [
+    {
+      "Net Cash Flow": 80000,
+      "Month": "Start"
+    },
+    {
+      "Net Cash Flow": -5003,
+      "Month": "Apr"
+    },
+    {
+      "Net Cash Flow": -16700,
+      "Month": "May"
+    },
+    {
+      "Net Cash Flow": 48802,
+      "Month": "Jun"
+    },
+    {
+      "Net Cash Flow": -11198,
+      "Month": "Jul"
+    },
+    {
+      "Net Cash Flow": -35260,
+      "Month": "Aug"
+    },
+    {
+      "Net Cash Flow": 18220,
+      "Month": "Sep"
+    },
+    {
+      "Net Cash Flow": -23840,
+      "Month": "Oct"
+    },
+    {
+      "Net Cash Flow": 43250,
+      "Month": "Nov"
+    },
+    {
+      "Net Cash Flow": -18280,
+      "Month": "Dec"
+    },
+    {
+      "Net Cash Flow": 26670,
+      "Month": "Jan"
+    },
+    {
+      "Net Cash Flow": 15000,
+      "Month": "Feb"
+    },
+    {
+      "Net Cash Flow": 24750,
+      "Month": "Mar"
+    }
+  ],
+  "output_data": [
+    {
+      "Month": "Start",
+      "Net Cash Flow": 80000,
+      "Net Cash Flow Sum": 80000,
+      "c": 0
+      
+    },
+    {
+      "Month": "Apr",
+      "Net Cash Flow": -5003,
+      "Net Cash Flow Sum": 74997,
+      "c": 80000
+      
+    },
+    {
+      "Month": "May",
+      "Net Cash Flow": -16700,
+      "Net Cash Flow Sum": 58297,
+      "c": 74997
+      
+    },
+    {
+      "Month": "Jun",
+      "Net Cash Flow": 48802,
+      "Net Cash Flow Sum": 107099,
+      "c": 58297
+      
+    },
+    {
+      "Month": "Jul",
+      "Net Cash Flow": -11198,
+      "Net Cash Flow Sum": 95901,
+      "c": 107099
+      
+    },
+    {
+      "Month": "Aug",
+      "Net Cash Flow": -35260,
+      "Net Cash Flow Sum": 60641,
+      "c": 95901
+      
+    },
+    {
+      "Month": "Sep",
+      "Net Cash Flow": 18220,
+      "Net Cash Flow Sum": 78861,
+      "c": 60641
+      
+    },
+    {
+      "Month": "Oct",
+      "Net Cash Flow": -23840,
+      "Net Cash Flow Sum": 55021,
+      "c": 78861
+      
+    },
+    {
+      "Month": "Nov",
+      "Net Cash Flow": 43250,
+      "Net Cash Flow Sum": 98271,
+      "c": 55021
+      
+    },
+    {
+      "Month": "Dec",
+      "Net Cash Flow": -18280,
+      "Net Cash Flow Sum": 79991,
+      "c": 98271
+      
+    },
+    {
+      "Month": "Jan",
+      "Net Cash Flow": 26670,
+      "Net Cash Flow Sum": 106661,
+      "c": 79991
+      
+    },
+    {
+      "Month": "Feb",
+      "Net Cash Flow": 15000,
+      "Net Cash Flow Sum": 121661,
+      "c": 106661
+      
+    },
+    {
+      "Month": "Mar",
+      "Net Cash Flow": 24750,
+      "Net Cash Flow Sum": 146411,
+      "c": 121661
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Month",
+        "type": "nominal",
+        "sort": "none"
+      },
+      "y2": {
+        "field": "Net Cash Flow Sum",
+        "type": "quantitative"
+      },
+      "y": {
+        "field": "c",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Net Cash Flow",
+        "type": "quantitative"
+      }
+    }
+  }
+}

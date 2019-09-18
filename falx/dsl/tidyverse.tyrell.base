@@ -7,16 +7,16 @@ enum SmallInt {
   "1", "2", "3"
 }
 
-enumset ColList[3] {
-  "1","2","3","4","5","6"
+enumset ColList[2] {
+  "1","2","3","4"
 }
 
 enumset ColList2[2] {
-  "1","2","3","4","5","6"
+  "1","2","3","4"
 }
 
-enumset ColNegList[3] {
-  "-1","-2","-3","-4","-5","-6"
+enumset ColNegList[2] {
+  "-1","-2","-3","-4"
 }
 
 enum Aggr {
