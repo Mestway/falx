@@ -1,0 +1,126 @@
+{
+  "input_data": [
+    {
+      "Year": 2011,
+      "Amount": 773000,
+      "Year Label": 2011,
+      "Revenue": "$773K",
+      "Variance": 39000,
+      "Variance %": "+5%"
+    },
+    {
+      "Year": 2012,
+      "Amount": 812000,
+      "Year Label": 2012,
+      "Revenue": "$812K",
+      "Variance": -445000,
+      "Variance %": "-55%"
+    },
+    {
+      "Year": 2013,
+      "Amount": 367000,
+      "Year Label": 2013,
+      "Revenue": "$367K",
+      "Variance": 117000,
+      "Variance %": "+32%"
+    },
+    {
+      "Year": 2014,
+      "Amount": 484000,
+      "Year Label": 2014,
+      "Revenue": "$484K",
+      "Variance": 278000,
+      "Variance %": "+57%"
+    },
+    {
+      "Year": 2015,
+      "Amount": 762000,
+      "Year Label": 2015,
+      "Revenue": "$762K",
+      "Variance": -201000,
+      "Variance %": "-26%"
+    },
+    {
+      "Year": 2016,
+      "Amount": 561000,
+      "Year Label": 2016,
+      "Revenue": "$561K",
+      "Variance": 213000,
+      "Variance %": "+38%"
+    },
+    {
+      "Year": 2017,
+      "Amount": 774000,
+      "Year Label": 2017,
+      "Revenue": "$774K",
+      "Variance": 14500,
+      "Variance %": ""
+    }
+  ],
+  "output_data": [
+    {
+      "Amount": 773000,
+      "Variance": 39000,
+      "Year": 2011,
+      "c": 812000
+    },
+    {
+      "Amount": 812000,
+      "Variance": -445000,
+      "Year": 2012,
+      "c": 367000
+    },
+    {
+      "Amount": 367000,
+      "Variance": 117000,
+      "Year": 2013,
+      "c": 484000
+    },
+    {
+      "Amount": 484000,
+      "Variance": 278000,
+      "Year": 2014,
+      "c": 762000
+    },
+    {
+      "Amount": 762000,
+      "Variance": -201000,
+      "Year": 2015,
+      "c": 561000
+    },
+    {
+      "Amount": 561000,
+      "Variance": 213000,
+      "Year": 2016,
+      "c": 774000
+    },
+    {
+      "Amount": 774000,
+      "Variance": 14500,
+      "Year": 2017,
+      "c": 788500
+    }
+  ],
+  "vl_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "nominal"
+      },
+      "y": {
+        "field": "Amount",
+        "type": "quantitative"
+      },
+      "y2": {
+        "field": "c",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Variance",
+        "type": "quantitative"
+      }
+    }
+  }
+}
