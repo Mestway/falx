@@ -1,0 +1,6 @@
+{
+"input_data":
+[{"Type":"Login","Year":2014,"Count":30},{"Type":"Login","Year":2014,"Count":20},{"Type":"Other","Year":2014,"Count":4},{"Type":"Login","Year":2015,"Count":25},{"Type":"Login","Year":2015,"Count":40},{"Type":"Other","Year":2015,"Count":6}],
+"output_data":
+[{"Type":"Login","freq":4},{"Type":"Other","freq":2}] 
+}
