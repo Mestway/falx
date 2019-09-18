@@ -1,0 +1,7 @@
+{
+"input_data":
+[{"mpg":21,"cyl":6,"vs":"a","am":"b"},{"mpg":21,"cyl":6,"vs":"a","am":"b"},{"mpg":22.8,"cyl":4,"vs":"b","am":"b"},{"mpg":21.4,"cyl":6,"vs":"b","am":"a"},{"mpg":18.7,"cyl":8,"vs":"a","am":"a"},{"mpg":18.1,"cyl":6,"vs":"b","am":"a"},{"mpg":14.3,"cyl":8,"vs":"a","am":"a"},{"mpg":24.4,"cyl":4,"vs":"b","am":"a"}]
+,
+"output_data":
+[{"vs_am":"a_a","countofvalues":2},{"vs_am":"a_b","countofvalues":2},{"vs_am":"b_a","countofvalues":3},{"vs_am":"b_b","countofvalues":1}] 
+}
