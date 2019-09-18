@@ -1,0 +1,7 @@
+{
+"input_data":
+[{"date":"1-1-2018","ship":"Baltimore","latt":41.3,"long":61.4},{"date":"2-1-2018","ship":"Baltimore","latt":7.1,"long":17.5},{"date":"3-1-2018","ship":"Baltimore","latt":6.3,"long":81.4},{"date":"1-1-2018","ship":"Chester","latt":82.1,"long":52.3},{"date":"2-1-2018","ship":"Chester","latt":6.3,"long":62.1},{"date":"3-1-2018","ship":"Chester","latt":9.9,"long":73.2}]
+,
+"output_data":
+[{"date":"1-1-2018","Baltimore_latt":41.3,"Baltimore_long":61.4,"Chester_latt":82.1,"Chester_long":52.3},{"date":"2-1-2018","Baltimore_latt":7.1,"Baltimore_long":17.5,"Chester_latt":6.3,"Chester_long":62.1},{"date":"3-1-2018","Baltimore_latt":6.3,"Baltimore_long":81.4,"Chester_latt":9.9,"Chester_long":73.2}] 
+}
