@@ -41,10 +41,6 @@ def test_benchmarks(data_dir, data_id, num_samples, backend, prune):
         with open(os.path.join(data_dir, fname), "r") as f:
             data = json.load(f)
 
-        if not "vl_spec" in data: 
-            # ignore cases that do not have vl specs
-            continue
-
         start = timer()
         print("====> run synthesize {}".format(fname))
         print("# num samples per layer: {}".format(num_samples))
@@ -52,24 +48,19 @@ def test_benchmarks(data_dir, data_id, num_samples, backend, prune):
         # read the dataset and create visualization
         input_data = data["input_data"]
         extra_consts = data["constants"] if "constants" in data else []
-        vis = VisDesign.load_from_vegalite(data["vl_spec"], data["output_data"])
-        trace = vis.eval()
-        #pprint(trace)
-
-        result = FalxEvalInterface.synthesize(inputs=[input_data], full_trace=trace, num_samples=num_samples, extra_consts=extra_consts, backend=backend, prune=prune)
+        output_data = data["output_data"]
+        
+        result = FalxEvalInterface.synthesize_table(
+                    inputs=[input_data], output=output_data, 
+                    extra_consts=extra_consts, 
+                    prune=prune)
+        
         end = timer()
 
         print("## synthesize result for task {}".format(fname))
-        for p, vis in result:
+        for p in result:
             print("# table_prog:")
             print("  {}".format(p))
-            print("# vis_spec:")
-            if backend == "vegalite":
-                vl_obj = vis.to_vl_obj()
-                data = vl_obj.pop("data")["values"]
-                print("    {}".format(vl_obj))
-            else:
-                print(vis)
             print("# time used (s): {:.4f}".format(end - start))
 
 

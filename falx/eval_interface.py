@@ -122,3 +122,20 @@ class FalxEvalInterface(object):
             if len(candidates) > 0: break
 
         return candidates
+
+    @staticmethod
+    def synthesize_table(inputs, output, extra_consts=[], prune="falx"):
+        """synthesize table prog and vis prog from input and output tables"""
+        candidates = []
+        # single-layer chart
+        candidate_progs = morpheus.synthesize(inputs, output, output, prune, 
+                                              extra_consts=extra_consts, 
+                                              eq_function="eq")
+
+        for p in candidate_progs:
+            eval_output = morpheus.evaluate(p, inputs)
+            field_mapping = synth_utils.align_table_schema(output, eval_output)
+            if field_mapping != None:
+                candidates.append(p)
+
+        return candidates
