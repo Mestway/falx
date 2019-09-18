@@ -172,7 +172,7 @@ def full_eq(actual, expect):
     # print(table2)
     all_ok = synth_utils.align_table_schema(table1, table2, check_equivalence=True, boolean_result=True)
 
-    return True
+    return all_ok
 
 def check_row(col, table):
     all_ok = any(check_col(col, elem) for elem in table)
