@@ -1,7 +1,52 @@
 {
-"input_data":
-[{"round":"round1","var1":22,"var2":33,"nam":"foo","val":0.1691},{"round":"round2","var1":11,"var2":44,"nam":"foo","val":0.1857},{"round":"round1","var1":22,"var2":33,"nam":"bar","val":0.1241},{"round":"round2","var1":11,"var2":44,"nam":"bar","val":0.0326}]
-,
-"output_data":
-[{"nam":"bar","val_round1":0.1241,"val_round2":0.0326,"var1_round1":22,"var1_round2":11,"var2_round1":33,"var2_round2":44},{"nam":"foo","val_round1":0.1691,"val_round2":0.1857,"var1_round1":22,"var1_round2":11,"var2_round1":33,"var2_round2":44}] 
+    "input_data": [
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "foo",
+            "val": 0.1691
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "foo",
+            "val": 0.1857
+        },
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "bar",
+            "val": 0.1241
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "bar",
+            "val": 0.0326
+        }
+    ],
+    "output_data": [
+        {
+            "nam": "bar",
+            "val_round1": 0.1241,
+            "val_round2": 0.0326,
+            "var1_round1": 22,
+            "var1_round2": 11,
+            "var2_round1": 33,
+            "var2_round2": 44
+        },
+        {
+            "nam": "foo",
+            "val_round1": 0.1691,
+            "val_round2": 0.1857,
+            "var1_round1": 22,
+            "var1_round2": 11,
+            "var2_round1": 33,
+            "var2_round2": 44
+        }
+    ]
 }
