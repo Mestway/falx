@@ -12,7 +12,7 @@ dt=$(date '+%Y%m%d_%H%M%S')
 dirname="../benchmarks/"
 time_limit=600
 ###falx | forward | morpheus | none
-prune=falx
+prune=morpheus
 output_dir="../output/trinity_exp_"$prune"_"$dt
 
 data_list=(

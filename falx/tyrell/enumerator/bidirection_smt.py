@@ -236,9 +236,9 @@ class BidirectEnumerator(Enumerator):
         return True
 
     def isBadSketch(self, sketch):
-        # multi_gathers = [s for s in sketch if 'gather' in s]
-        # if len(multi_gathers) > 1:
-        #     return True
+        multi_gathers = [s for s in sketch if 'gather' in s]
+        if len(multi_gathers) > 1:
+            return True
         
         has_group = 'group_by' in sketch
         has_summarise = 'summarise' in sketch
