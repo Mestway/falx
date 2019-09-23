@@ -108,8 +108,8 @@ if __name__ == '__main__':
 
     result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite")
 
-    for c in result:
-        print(c[0])
-        print(c[1].to_vl_json())
+    # for c in result:
+    #     print(c[0])
+    #     print(c[1].to_vl_json())
 
         

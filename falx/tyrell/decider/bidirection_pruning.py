@@ -35,7 +35,7 @@ class AbstractPrune(GenericVisitor):
     _output: None
     new_value: True
     need_separate: True
-    need_spearate2: True
+    need_separate2: True
 
     def __init__(self, interp: Interpreter, example: Example, prune: str):
         self._interp = interp
@@ -49,7 +49,7 @@ class AbstractPrune(GenericVisitor):
         self._output = output
         self.new_value = self.computeNewValue()
         self.need_separate = self.compSeparate()
-        self.need_spearate2 = self.compSeparate2()
+        self.need_separate2 = self.compSeparate2()
         self.prune = prune
         # [self._input.append(col) for col in input]
         # [self._output.append(col) for col in output]
@@ -434,7 +434,7 @@ class AbstractPrune(GenericVisitor):
             tbl_new = tbl_out[cols[1:]]
             tp = tbl_new.T
             # Hack
-            if self.need_spearate2:
+            if self.need_separate2:
                 return False, pd.DataFrame()
             return False, tp
 

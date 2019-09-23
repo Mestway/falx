@@ -137,8 +137,8 @@ def proj_eq(actual, expect):
         return False
             
 
-
 def subset_eq(actual, expect):
+    """check whether the actual table is a subset of expect table """
     table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
     table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
     table1 = json.loads(table1)
@@ -146,8 +146,7 @@ def subset_eq(actual, expect):
 
     actual_col = robjects.r(actual).shape[1]
     actual_row = robjects.r(actual).shape[0]
-    # print(table1)
-    # print(table2)
+
     all_ok = synth_utils.align_table_schema(table1, table2) != None
 
     if all_ok:
@@ -167,23 +166,8 @@ def subset_eq(actual, expect):
             logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
             print('# candidates before getting the correct solution: {}'.format(iter_num))
             return True
+
     return False
-
-def get_head(df):
-    head = set()
-    for h in df.columns.values:
-        head.add(h)
-
-    return head
-
-def get_content(df):
-    content = set()
-    for vec in df:
-        for elem in vec:
-            e_val = str(elem)
-            content.add(e_val)
-
-    return content
 
     
 class MorpheusInterpreter(PostOrderInterpreter):
@@ -510,15 +494,6 @@ class MorpheusInterpreter(PostOrderInterpreter):
         df = robjects.r(val)
         return df.shape[1]
 
-    # def apply_head(self, val):
-    #     curr_df = robjects.r(val)
-    #     curr_head = get_head(curr_df)
-    #     return curr_head
-
-    # def apply_content(self, val):
-    #     curr_df = robjects.r(val)
-    #     curr_content = get_content(curr_df)
-    #     return curr_content
 
 def init_tbl_json_str(df_name, json_loc):
     cmd = '''
@@ -557,14 +532,10 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     #print("input table:\n", inputs[0])
     loc_val = 2
     output_data = json.dumps(output.instantiate())
-    #full_data = json.dumps(oracle_output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
     init_tbl_json_str('output', output_data)
-    # if prune == 'morpheus':
-    #     init_tbl_json_str('output', full_data)
-    # else:
-    #     init_tbl_json_str('output', output_data)
+
     print(robjects.r('input0'))
     print(robjects.r('output'))
 
@@ -595,17 +566,6 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
                     Example(input=['input0'], output='output'),
                 ],
                 prune=prune,
-                equal_output=eq_fun
-            )
-        if prune == 'morpheus':
-            enumerator=SmtEnumerator(spec, depth=loc+1, loc=loc)
-            decider=ExampleConstraintPruningDecider(
-                spec=spec,
-                interpreter=MorpheusInterpreter(),
-                examples=[
-                    # Example(input=[DataFrame2(benchmark1_input)], output=benchmark1_output),
-                    Example(input=['input0'], output='output'),
-                ],
                 equal_output=eq_fun
             )
 
