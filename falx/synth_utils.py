@@ -2,6 +2,26 @@ import json
 import itertools
 import numpy as np
 
+import pandas as pd
+
+
+def remove_duplicate_columns(table):
+    """Given a pandas table deuplicate column duplicates"""
+    to_drop = []
+    col_num = len(table.columns)
+    
+    for i, c1 in enumerate(table.columns):
+        c1 = table.columns[i]
+        if c1 in to_drop: continue
+
+        for j, c2 in enumerate(table.columns):    
+            if i >= j: continue
+            if tuple(table[c1]) == tuple(table[c2]):
+                to_drop.append(c2)
+
+    ret_table = table[[c for c in table.columns if c not in to_drop]]
+    return ret_table
+
 def check_table_inclusion(table1, table2):
     """check table inclusion, this is sound but not complete: 
         if it thinks two tbales are not equal, they absolutely inequal"""
@@ -108,6 +128,7 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
     return None
 
+
 def construct_value_dict(values):
     values = np.array(values)
     try:
@@ -121,7 +142,6 @@ def construct_value_dict(values):
             value_dict[x] = 0
         value_dict[x] += 1
     return value_dict
-
 
 
 def update_search_grammar(extra_consts, in_file, out_file):
@@ -153,4 +173,5 @@ def update_search_grammar(extra_consts, in_file, out_file):
 
 
 if __name__ == '__main__':
-    update_search_grammar(["Total Result", ""], "dsl/tidyverse.tyrell.base", "dsl/tidyverse.tyrell")
+    pass
+    #update_search_grammar(["Total Result", ""], "dsl/tidyverse.tyrell.base", "dsl/tidyverse.tyrell")

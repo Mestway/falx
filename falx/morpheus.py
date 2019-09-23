@@ -517,6 +517,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     global full_table 
     full_table = oracle_output
 
+    # level can be DEBUG or INFO
     logger.setLevel('INFO')
     """ synthesizer table transformation programs from input-output examples
     Args:

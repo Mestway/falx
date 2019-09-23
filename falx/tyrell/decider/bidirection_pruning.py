@@ -124,11 +124,16 @@ class AbstractPrune(GenericVisitor):
         return len(diff) > 0
 
     def backward_interp(self, prog: List[Any]):
-        per_list = list(itertools.permutations(self._output))
+        """apply backward evaluation to prune tables """
+
+        # in order to handle 
+        output_table = falx.synth_utils.remove_duplicate_columns(self._output)
+
+        per_list = list(itertools.permutations(output_table))
         has_error = True
         for out_list in per_list:
             tbl_in = None
-            tbl = self._output[list(out_list)]
+            tbl = output_table[list(out_list)]
             for stmt in reversed(prog):
                 error, tbl_in = self.backward_transform(stmt, tbl)
                 if error:
@@ -137,7 +142,10 @@ class AbstractPrune(GenericVisitor):
                     has_error = False
                     break
                 tbl = tbl_in
-            
+
+            if tbl_in is None:
+                break
+
             if self.is_consistent(self._input, tbl_in):
                 has_error = False
                 break
@@ -276,6 +284,7 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'gather' or opcode == 'gatherNeg':
             self._blames.add(ast.children[1])
             max_idx = max(list(map(abs, map(int, args[1].data))))
+
             if max_idx > tbl_size:
                 return True, None
             else:
