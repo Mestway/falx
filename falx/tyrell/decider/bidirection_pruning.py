@@ -27,6 +27,14 @@ import pandas as pd
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
 
+def forward_abstract_eval(self, tbl_in):
+    pass
+
+
+def backward_abstract_eval(self, tbl_out):
+    pass
+
+
 class AbstractPrune(GenericVisitor):
     _interp: Interpreter
     _example: Example
@@ -90,7 +98,6 @@ class AbstractPrune(GenericVisitor):
                 for vv in self._input[col]:
                     if '-' in vv or '_' in vv or '/' in vv:
                         return True
-
         return has_sep
 
     def compSeparate2(self):
@@ -100,7 +107,6 @@ class AbstractPrune(GenericVisitor):
                 for vv in self._input[col]:
                     if vv.count('_') == 2:
                         return True
-
         return has_sep
 
     def computeNewValue(self):
@@ -121,6 +127,28 @@ class AbstractPrune(GenericVisitor):
 
         diff = out_set - in_set
         return len(diff) > 0
+
+    def bidirectional_abstract_analysis(self, prog):
+        #print("--- {}".format(" | ".join([str(x) for x in self._blames])))
+        # each entry stores the abstract evaluation result of after excuting the i-1 stmt
+        temp_tbls = [{"fw_res": None, "bw_res": None} for _ in range(len(prog) + 1)]
+
+        tbl_in = self._input
+        temp_tbls[0]["fw_res"] = tbl_in
+        for i, stmt in enumerate(prog):
+            tbl_out = forward_abstract_eval(stmt, tbl_in)
+            tbl_in = tbl_out
+            temp_tbls[i + 1]["fw_res"] = tbl_in
+
+        tbl_out = self._output
+        temp_tbls[len(prog)]["bw_res"] = tbl_out
+        for i, stmt in enumerate(reversed(prog)):
+            tbl_in = backward_abstract_eval(stmt, tbl_out)
+            tbl_out = tbl_in
+            temp_tbls[len(prog) - i - 1]["bw_res"] = tbl_out
+
+        for i in range(len(prog) + 1):
+            pass
 
     def backward_interp(self, prog: List[Any]):
         """apply backward evaluation to prune tables """
