@@ -8,7 +8,6 @@ from tyrell.enumerator.smt import SmtEnumerator
 from falx.tyrell.enumerator.bidirection_smt import BidirectEnumerator
 from tyrell.decider.example_base import Example
 from falx.tyrell.decider.bidirection_pruning import BidirectionalDecider
-from tyrell.decider.example_constraint_pruning import ExampleConstraintPruningDecider
 from tyrell.synthesizer.synthesizer import Synthesizer
 from tyrell.logger import get_logger
 
@@ -283,11 +282,23 @@ class MorpheusInterpreter(PostOrderInterpreter):
         ret_df_name = get_fresh_name()
         _script = '{ret_df} <- spread({table}, {col1}, {col2})'.format(
                   ret_df=ret_df_name, table=args[0], col1=str(args[1]), col2=str(args[2]))
+        
+
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
         except:
             logger.error('Error in interpreting spread...')
+            # r0 = robjects.r(args[0])
+            # logger.info(r0)
+            # temp_df_name = get_fresh_name()
+            # key_script = '{ret_df} <- select({table}, {cols})'.format(
+            #        ret_df=ret_df_name, table=args[0], cols=get_collist([str(args[1])]))
+            # rv = robjects.r(key_script)
+            # temp_df_name = get_fresh_name()
+            # id_script = '{ret_df} <- select({table}, {cols})'.format(
+            #        ret_df=ret_df_name, table=args[0], cols=get_collist(["-"+str(args[1]), "-"+str(args[2])]))
+            # rv2 = robjects.r(id_script)
             raise GeneralError()
 
     def eval_gather(self, node, args):
@@ -531,7 +542,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
-    loc_val = 2
+    loc_val = 3
     output_data = json.dumps(output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)

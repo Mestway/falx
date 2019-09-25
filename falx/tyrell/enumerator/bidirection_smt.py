@@ -173,7 +173,7 @@ class BidirectEnumerator(Enumerator):
         if info is not None and not isinstance(info, str):
             for core in info:
                 ctr = reduce(lambda a,b: Or(a, self.program2tree[b[0]] != b[1].id), core, False)
-                # print('blocking=============', ctr)
+                # print('blocking------', ctr)
                 self.z3_solver.add(ctr)
         else:
             self.blockModel()

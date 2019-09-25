@@ -26,7 +26,7 @@ parser.add_argument("--data_id", dest="data_id", default="001",
 parser.add_argument("--num_samples", dest="num_samples", default=4, type=int, help="the number of samples")
 parser.add_argument("--backend", dest="backend", default="vegalite", type=str, help="visualization backend")
 parser.add_argument("--prune", dest="prune", default="falx", type=str, help="prune strategy (falx, forward)")
-parser.add_argument("--grammar-base-file", dest="grammar_base_file", default="dsl/tidyverse.tyrell.base", type=str, help="the grammar base file")
+parser.add_argument("--grammar-base-file", dest="grammar_base_file", default="dsl/tidyverse-test.tyrell.base", type=str, help="the grammar base file")
 
 def test_benchmarks(data_dir, data_id, num_samples, backend, prune, grammar_base_file):
     """load the dataset into panda dataframes """

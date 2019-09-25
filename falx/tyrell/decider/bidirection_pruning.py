@@ -61,10 +61,9 @@ class AbstractPrune(GenericVisitor):
         ### First, do backward interpretation
         if self.prune == 'falx' or self.prune == 'backward':
             err_back, tbl_in = self.backward_interp(prog)
-                
             if err_back:
                 return True
-        
+
         ### Second, do forward interpretation
         if self.prune == 'backward':
             return False
@@ -202,6 +201,7 @@ class AbstractPrune(GenericVisitor):
         ast = stmt.ast
         opcode = ast.name
         args = ast.args
+
         self._blames.add(ast.children[0])
         self._blames.add(ast)
         error = False
@@ -216,7 +216,6 @@ class AbstractPrune(GenericVisitor):
                 self._blames.add(ast.children[2])
                 self._blames.add(ast)
                 return True, None
-
             return error, tbl
         elif opcode == 'select':
             self._blames.add(ast.children[1])
@@ -445,7 +444,10 @@ class AbstractPrune(GenericVisitor):
             # Hack
             if self.need_separate2:
                 return False, pd.DataFrame()
-            return False, tp
+
+            #TODO: this is not sound.
+            # return False, tp            
+            return False, pd.DataFrame()
 
             # if len(tbl_out) > 0:
             #     return False, tbl_out[0]
@@ -534,9 +536,10 @@ class BlameFinder:
         if prune.is_unsat(self._prog):
             # If abstract semantics cannot be satisfiable, perform blame analysis
             blame_nodes = prune.get_blame_nodes()
+
             if blame_nodes is not None:
                 self._blames_collection.add(
-                    frozenset([(n, n.production) for n in blame_nodes])
+                    frozenset([Blame(n, n.production) for n in blame_nodes])
                 )
             return False
         else:
@@ -564,4 +567,5 @@ class BidirectionalDecider(ExampleDecider):
 
     def analyze(self, prog):
         blame_finder = BlameFinder(self.interpreter, prog)
-        return blame_finder.process_examples(self.examples, self.equal_output, self.prune)
+        res = blame_finder.process_examples(self.examples, self.equal_output, self.prune)
+        return res
