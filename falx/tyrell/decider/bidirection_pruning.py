@@ -27,14 +27,6 @@ import pandas as pd
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
 
-def forward_abstract_eval(self, tbl_in):
-    pass
-
-
-def backward_abstract_eval(self, tbl_out):
-    pass
-
-
 class AbstractPrune(GenericVisitor):
     _interp: Interpreter
     _example: Example
@@ -66,10 +58,26 @@ class AbstractPrune(GenericVisitor):
     def is_unsat(self, prog: List[Any]) -> bool:
         if self.prune == 'none':
             return False
+
         ### First, do backward interpretation
         if self.prune == 'falx' or self.prune == 'backward':
-            err_back, tbl_in = self.backward_interp(prog)
-            if err_back:
+            tbl_in_list, abstractions = self.backward_interp(prog)
+
+            has_error = True
+            for tbl_in in tbl_in_list:
+                if self.is_consistent(self._input, tbl_in):
+                    has_error = False
+                    break
+
+            if has_error:
+                for node in abstractions:
+                    self._blames.add(node)
+
+                # print("======= bw")
+                # for b in self._blames:
+                #     print(b)
+                # print("---")
+
                 return True
 
         ### Second, do forward interpretation
@@ -77,17 +85,21 @@ class AbstractPrune(GenericVisitor):
             return False
         else:
             assert 'forward' == self.prune or 'falx' == self.prune
-            err_forward, actual = self.forward_interp(prog)
+            actual, abstractions = self.forward_interp(prog)
+            
+            if actual is "TOP": return False
+            if actual is None or not self.is_consistent(actual, self._output): 
+                for node in abstractions:
+                    self._blames.add(node)
 
-            if err_forward:
+                # print("======= fw")
+                # for b in self._blames:
+                #     print(b)
+                # print("---")
+                            
                 return True
             
-            if actual is None:
-                return False
-            
-            ### Third, check consistency
-            sat = self.is_consistent(actual, self._output)
-            return not sat
+            return False
 
     def compSeparate(self):
         has_sep = False
@@ -129,70 +141,68 @@ class AbstractPrune(GenericVisitor):
         return len(diff) > 0
 
     def bidirectional_abstract_analysis(self, prog):
-        #print("--- {}".format(" | ".join([str(x) for x in self._blames])))
         # each entry stores the abstract evaluation result of after excuting the i-1 stmt
         temp_tbls = [{"fw_res": None, "bw_res": None} for _ in range(len(prog) + 1)]
 
         tbl_in = self._input
         temp_tbls[0]["fw_res"] = tbl_in
         for i, stmt in enumerate(prog):
-            tbl_out = forward_abstract_eval(stmt, tbl_in)
+            tbl_out = self.forward_abstract_eval(stmt, tbl_in, "eq")
             tbl_in = tbl_out
             temp_tbls[i + 1]["fw_res"] = tbl_in
 
         tbl_out = self._output
         temp_tbls[len(prog)]["bw_res"] = tbl_out
         for i, stmt in enumerate(reversed(prog)):
-            tbl_in = backward_abstract_eval(stmt, tbl_out)
+            tbl_in = self.backward_abstract_eval(stmt, tbl_out, "subset_eq")
             tbl_out = tbl_in
             temp_tbls[len(prog) - i - 1]["bw_res"] = tbl_out
 
-        for i in range(len(prog) + 1):
-            pass
+        # print("########## BIDIRECTIONAL ")
+        # for i in range(len(prog) + 1):
+        #     print("fw {}".format(i))
+        #     print(temp_tbls[i]["fw_res"])
+        #     print("bw {}".format(i))
+        #     print(temp_tbls[i]["bw_res"])
+        #     pass
+        # print("-------------------------")
+
 
     def backward_interp(self, prog: List[Any]):
         """apply backward evaluation to prune tables """
 
         # in order to handle 
         output_table = falx.synth_utils.remove_duplicate_columns(self._output)
+        abstractions = []
 
-        per_list = list(itertools.permutations(output_table))
-        has_error = True
-        for out_list in per_list:
-            tbl_in = None
-            tbl = output_table[list(out_list)]
-            for stmt in reversed(prog):
-                error, tbl_in = self.backward_transform(stmt, tbl)
-                if error:
-                    return error, tbl_in
-                if tbl_in is None:
-                    has_error = False
-                    break
-                tbl = tbl_in
-
-            if tbl_in is None:
+        tbl_list = [output_table]
+        for stmt in reversed(prog):
+            tbl_list, abstraction = self.backward_abstract_eval(stmt, tbl_list)
+            abstractions.extend(abstraction)
+    
+            if len(tbl_list) == 0:
+                # deductive reasoning results in empty result
                 break
 
-            if self.is_consistent(self._input, tbl_in):
-                has_error = False
-                break
+        return tbl_list, abstractions
 
-        return has_error, None
-        # return self.backward_transform(prog[-1], self._output)
 
     def forward_interp(self, prog: List[Any]):
         out = None
         tbl = self._input;
 
-        for stmt in prog:
-            error, out = self.forward_transform(stmt, tbl)
-            if error: 
-                return error, out
-            if out is None:
-                break
-            tbl = out
+        abstractions = []
 
-        return False, out
+        for stmt in prog:
+            out, abstraction = self.forward_abstract_eval(stmt, tbl)
+            abstractions.extend(abstraction)
+
+            if out is None or out is "TOP": 
+                break
+            else:
+                tbl = out
+
+        return out, abstractions
 
     # 'actual' contains 'expect'
     def is_consistent(self, actual, expect):
@@ -222,274 +232,244 @@ class AbstractPrune(GenericVisitor):
             abs_list = list(map(abs, sel_list))
             return idx not in abs_list
 
-
     ## 1. Type-checking 2. Forward abstract interpretation.
-    def forward_transform(self, stmt, tbl):
+    def forward_abstract_eval(self, stmt, tbl):
         # assert not tbl == None, stmt
         ast = stmt.ast
-        opcode = ast.name
-        args = ast.args
+        opcode, args = ast.name, ast.args
 
-        self._blames.add(ast.children[0])
-        self._blames.add(ast)
-        error = False
         tbl_size = len(tbl.columns)
 
-        if opcode == 'group_by':
-            return error, tbl
-        elif opcode == 'filter':
+        # filter
+        if opcode == 'filter':
             col_idx = int(args[2].data) - 1
             if col_idx >= len(tbl.dtypes) or np.float64 == tbl.dtypes[col_idx]:
-                self._blames.clear()
-                self._blames.add(ast.children[2])
-                self._blames.add(ast)
-                return True, None
-            return error, tbl
+                return None, [ast, ast.children[2]]
+            return tbl, [ast, ast.children[0]]
+        # select
         elif opcode == 'select':
-            self._blames.add(ast.children[1])
             max_idx = max(list(map(abs, map(int, args[1].data))))
             if max_idx > tbl_size:
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
             else:
-                # sel_list = list(map(int, args[1].data))
                 sel_list = list(map(lambda x: int(x) - 1, args[1].data))
                 cols = tbl.columns
                 tbl_out = tbl[cols[sel_list]]
-                # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
-                return False, tbl_out 
+                return tbl_out, [ast, ast.children[0], ast.children[1]]
+        # unite
         elif opcode == 'unite':
             col1 = int(args[1].data)
             col2 = int(args[2].data)
-            self._blames.add(ast.children[1])
-            self._blames.add(ast.children[2])
             if col1 > tbl_size or col2 > tbl_size:
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1], ast.children[2]]
             else:
-                return False, None
-            
+                return "TOP", [ast, ast.children[0]]
+        # separate
         elif opcode == 'separate':
             if int(args[1].data) > tbl_size:
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
 
+            # check if there is entry containing a separator
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             test_val = col[0]
             if not ((col.dtype == np.object) and ('_' in test_val or '-' in test_val  or '/' in test_val)):
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
 
-            return error, None
+            return "TOP", [ast, ast.children[0]]
+        # mutate
         elif opcode == 'mutate':
             col1 = int(args[2].data)
             col2 = int(args[3].data)
             if col1 == col2:
-                self._blames.add(ast.children[2])
-                self._blames.add(ast.children[3])
-                return True, None
-            return error, None
-
+                return None, [ast, ast.children[0], ast.children[2], ast.children[3]]
+            return "TOP", [ast, ast.children[0]]
+        # cumsum
         elif opcode == 'cumsum':
             if int(args[1].data) > tbl_size:
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
 
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             if not np.issubdtype(col.dtype, np.number):
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
                 
-            return error, None
-
+            return "TOP", [ast, ast.children[0]]
+        # mutateCustom
         elif opcode == 'mutateCustom':
-            return error, None
-        
+            return "TOP", [ast, ast.children[0]]
+        # summarise
         elif opcode == 'summarise' or opcode == 'groupSum':
-            # assert False
-            return error, None
+            return "TOP", [ast, ast.children[0]]
+        # gather/gatherNeg
         elif opcode == 'gather' or opcode == 'gatherNeg':
-            self._blames.add(ast.children[1])
             max_idx = max(list(map(abs, map(int, args[1].data))))
-
             if max_idx > tbl_size:
-                return True, None
+                # return false if index out of bound
+                return None, [ast, ast.children[0], ast.children[1]]
             else:
                 sel_list = list(map(int, args[1].data))
                 if sel_list[0] < 0:
                     sel_list = list(map(lambda x: abs(x) - 1, sel_list))
                     sel_list = [col for col in list(range(0, tbl_size)) if not col in sel_list]
-                else: 
+                else:
                     sel_list = list(map(lambda x: x - 1, sel_list))
-
-                # if len(sel_list) < 2:
-                #     self._blames.add(ast.children[1])
-                #     return True, None
 
                 has_numeric = any([np.issubdtype(dt, np.number) for dt in tbl.dtypes[sel_list]])
                 has_str = any([(dt == np.object) for dt in tbl.dtypes[sel_list]])
-                # print('select types**********', tbl.dtypes[sel_list], tbl.dtypes.values[sel_list])
-                # print('sel:', sel_list)
+
                 if has_str and has_numeric:
-                    return True, None
-                # tbl_out = [col for idx, col in enumerate(tbl) if self.has_index(sel_list, idx)]
-                # return False, tbl_out
-                return False, None
+                    return None, [ast, ast.children[0], ast.children[1]]
+
+                return "TOP", [ast, ast.children[0], ast.children[1]]
 
         elif opcode == 'spread':
             if int(args[1].data) > tbl_size:
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
 
             if int(args[2].data) > tbl_size:
-                self._blames.add(ast.children[2])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[2]]
 
             col_idx = int(args[1].data) - 1
             col = tbl[tbl.columns[col_idx]]
             if np.issubdtype(col.dtype, np.number):
-                self._blames.add(ast.children[1])
-                return True, None
+                return None, [ast, ast.children[0], ast.children[1]]
 
-            return error, None
-        elif opcode == 'inner_join':
-            # assert False
-            return error, tbl
+            return "TOP", [ast, ast.children[0]]
         else:
             assert False
 
+        return "TOP", [ast, ast.children[0]]
 
-        return error, None
 
-    ## 1. Mostly for type-checking. 2. Backward abstract interpretation
-    def backward_transform(self, stmt, tbl_out):
+    def backward_abstract_eval(self, stmt, tbl_out_list):
+        """backward reasoning with lazy abstraction 
+        Given a statement stmt and a list of tbl_out,
+        this function calculates properties of inputs to the stmt:
+        it returns a list of input tables, 
+        such that the true input table should contain as least one fo them
+        """
         ast = stmt.ast
-        opcode = ast.name
-        args = ast.args
-        self._blames.add(ast.children[0])
-        self._blames.add(ast)
-        error = False
-        tbl_in = None
-        tbl_size = len(tbl_out.columns)
+        opcode, args = ast.name, ast.args
+
+        # abstraction used for the backward analysis, 
+        # by default, we only use ast and it's first child
+        abstraction = [ast, ast.children[0]]
+
+        # obtain bot from backward inference if we already obtain bot
+        for tbl_out in tbl_out_list:
+            if tbl_out.empty:
+                return [pd.DataFrame()], abstraction
 
         ##Done.
-        if opcode == 'group_by':
-            return False, tbl_out
-        ##Done.
-        elif opcode == 'filter':
-            return False, tbl_out
-
+        if opcode == 'filter':
+            return tbl_out_list, abstraction
         ##Done.
         elif opcode == 'select':
-            return False, tbl_out
+            return tbl_out_list, abstraction
         ##Done.
         elif opcode == 'unite':
-            new_col = -1
-            if tbl_out.empty:
-                return False, tbl_out
+            tbl_in_list = []
+            for tbl_out in tbl_out_list:
+                new_col = -1
 
-            fst_row = tbl_out.iloc[0,]
-            for idx, item in enumerate(fst_row):
-                if isinstance(item, str) and ('_' in item):
-                    new_col = idx
-                    break
+                # use the first row to find which column is obtained from unite
+                fst_row = tbl_out.iloc[0,]
+                for idx, item in enumerate(fst_row):
+                    if isinstance(item, str) and ('_' in item):
+                        new_col = idx
+                        break
 
-            # assert False, tbl_out
-            # for col_vec in tbl_out:
-            #     fst_elem = col_vec[0]
-            #     if isinstance(col_vec[0], str) and ('-' in fst_elem) and (not str.isdigit(fst_elem.split('-')[0])):
-            #         checked = True
-            #         break
+                if new_col == -1:
+                    # this branch failed, continue to examine the next branch
+                    # so that we won't get a table for the next layer
+                    continue
+                else:
+                    tbl_size = len(tbl_out.columns)
+                    if int(args[2].data) > tbl_size:
+                        # return empty because we already find an error
+                        return [], abstraction + [ast.children[2]]
+
+                    cols = tbl_out.columns.values
+                    sel_list = [col for idx, col in enumerate(cols) if idx != new_col]
+                    tbl_ret = tbl_out[sel_list]
+                    tbl_in_list.append(tbl_ret)
             
-            if new_col == -1:
-                self._blames.clear()
-                self._blames.add(ast)
-                return True, None
-
-            col1 = int(args[1].data)
-            col2 = int(args[2].data)
-            self._blames.add(ast.children[2])
-            if col2 > tbl_size:
-                return True, None
-            else: 
-                assert new_col != -1
-                cols = tbl_out.columns.values
-                sel_list = [col for idx, col in enumerate(cols) if idx != new_col]
-                tbl_ret = tbl_out[sel_list]
-                return False, tbl_ret
+            return tbl_in_list, abstraction
         #Done.
         elif opcode == 'separate':
             if not self.need_separate:
-                return True, None
-
-            self._blames.add(ast.children[1])
-            if len(tbl_out) == 0:
-                return False, tbl_out
-            else:
-                cols = tbl_out.columns
-                if tbl_out.empty:
-                    return False, tbl_out
-                tbl_new = tbl_out[[cols[0]]]
-                return False, tbl_new
+                return [], abstraction
+            tbl_in_list = []
+            abstraction = [ast, ast.children[0]]
+            for tbl_out in tbl_out_list:
+                # enumerate all possible sep columns
+                cols = tbl_out.columns.values
+                for col in cols:
+                    tbl_new = tbl_out[[x for x in cols if x != col]]
+                    tbl_in_list.append(tbl_new)
+            return tbl_in_list, abstraction
         #Done
-        elif opcode == 'mutateCustom':
-            any_bool = any([np.issubdtype(dt, np.int32) for dt in tbl_out.dtypes])
-            if not any_bool:
-                self._blames.clear()
-                self._blames.add(ast)
-                return True, None
+        elif opcode == 'mutateCustom' or opcode == 'mutate' or opcode == 'cumsum' or opcode == 'groupSum':
+            # remove unused cases
 
-            tbl_ret = tbl_out.iloc[:,:-1]
-            return False, tbl_ret
-        elif opcode == 'mutate' or opcode == 'cumsum':
             if not self.new_value:
-                return True, None
+                return [], abstraction
 
-            tbl_ret = tbl_out.iloc[:,:-1]
-            return False, tbl_ret
-        elif opcode == 'summarise' or opcode == 'groupSum':
-            if not self.new_value:
-                return True, None
-
-            all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
-            if all_numeric:
-                self._blames.clear()
-                self._blames.add(ast)
-                return True, None
+            tbl_in_list = []
+            for tbl_out in tbl_out_list:
                 
-            tbl_ret = tbl_out.iloc[:,:-1]
-            return False, tbl_ret
-        #Done last two columns are new generated.
+                if opcode == "mutateCustom":
+                    # requires that there exists a boolean field for mutateCustom operator
+                    any_bool = any([np.issubdtype(dt, np.int32) for dt in tbl_out.dtypes])
+                    if not any_bool:
+                       continue
+                
+                if opcode in ["groupSum"]:
+                    # requires that there exists a least a non-numerical field
+                    all_numeric = all([np.issubdtype(dt, np.number) for dt in tbl_out.dtypes])
+                    if all_numeric:
+                        continue
+
+                cols = tbl_out.columns
+                # enumerate all possible newly generated columns
+                for i, col in enumerate(cols):
+                    if np.issubdtype(tbl_out.dtypes[i], np.number):
+                        tbl_new = tbl_out[[x for x in cols if x != col]]
+                        tbl_in_list.append(tbl_new)
+
+            return tbl_in_list, abstraction
+        #Done
         elif opcode == 'gather' or opcode == 'gatherNeg':
-            tbl_ret = tbl_out.iloc[:,:-2]
-            return False, tbl_ret
+            tbl_in_list = []
+            for tbl_out in tbl_out_list:
+                cols = tbl_out.columns
+                if len(cols) < 2:
+                    # in case the table contain less than two rows, 
+                    # it is possile that the last row is newly generately, 
+                    # so we'll infer BOT to the synthesizer (thus return pd.DataFrame() to bail from bw inference)
+                    tbl_in_list.append(pd.DataFrame())
+                    break
+                # enumerate candidate key-value columns
+                for key_val_cols in itertools.combinations(cols, 2):
+                    tbl_new = tbl_out[[x for x in cols if x not in key_val_cols]]
+                    tbl_in_list.append(tbl_new)
+
+            return tbl_in_list, abstraction
         elif opcode == 'spread':
-            col1 = int(args[1].data)
-            col2 = int(args[2].data)
-            cols = tbl_out.columns.values
-            tbl_new = tbl_out[cols[1:]]
-            tp = tbl_new.T
-            # Hack
-            if self.need_separate2:
-                return False, pd.DataFrame()
+            # cols = tbl_out.columns.values
+            # tbl_new = tbl_out[cols[1:]]
+            # tp = tbl_new.T
 
             #TODO: this is not sound.
             # return False, tp            
-            return False, pd.DataFrame()
-
-            # if len(tbl_out) > 0:
-            #     return False, tbl_out[0]
-            # else:
-            #     return False, []
-        #done.
-        elif opcode == 'inner_join':
-            self._blames.add(ast.children[1])
-            return False, tbl_out
+            return [pd.DataFrame()], abstraction
         else:
             assert False
 
     def get_blame_nodes(self):
         return self._blames
+
 
 class ConstraintInterpreter(GenericVisitor):
     _interp: Interpreter
@@ -556,7 +536,6 @@ class BlameFinder:
                 return bad()
             else:
                 return bad(why=blames)
-
 
     def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool], prune: str):
         prune = AbstractPrune(self._interp, example, prune)
