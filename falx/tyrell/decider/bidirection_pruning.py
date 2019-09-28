@@ -403,11 +403,16 @@ class AbstractPrune(GenericVisitor):
             tbl_in_list = []
             abstraction = [ast, ast.children[0]]
             for tbl_out in tbl_out_list:
-                # enumerate all possible sep columns
-                cols = tbl_out.columns.values
-                for col in cols:
-                    tbl_new = tbl_out[[x for x in cols if x != col]]
+
+                cols = tbl_out.columns
+                if len(cols) < 2:
+                    return [pd.DataFrame()], abstraction
+
+                # enumerate candidate key-value columns
+                for sep_cols in itertools.combinations(cols, 2):
+                    tbl_new = tbl_out[[x for x in cols if x not in sep_cols]]
                     tbl_in_list.append(tbl_new)
+
             return tbl_in_list, abstraction
         #Done
         elif opcode == 'mutateCustom' or opcode == 'mutate' or opcode == 'cumsum' or opcode == 'groupSum':
@@ -456,14 +461,26 @@ class AbstractPrune(GenericVisitor):
                     tbl_in_list.append(tbl_new)
 
             return tbl_in_list, abstraction
+        # spread
         elif opcode == 'spread':
-            # cols = tbl_out.columns.values
-            # tbl_new = tbl_out[cols[1:]]
-            # tp = tbl_new.T
+            # TODO: this reasoning is expensive
+            tbl_in_list = []
+            for tbl_out in tbl_out_list:
+                cols = tbl_out.columns
+                
+                tbl_new = pd.melt(tbl_out, id_vars=[], value_vars=cols, var_name='varNameColumn')
+                
+                # case 1: the id column is gone
+                tbl_in_list.append(tbl_new[[c for c in tbl_new.columns if c != "varNameColumn"]])
 
-            #TODO: this is not sound.
-            # return False, tp            
-            return [pd.DataFrame()], abstraction
+                # case 2: the id column is there, enumerate all possible id columns
+                for id_col in cols:
+                    tbl_new = pd.melt(tbl_out, id_vars=[id_col], 
+                                      value_vars=[c for c in cols if c != id_col],
+                                      var_name='varNameColumn')
+                    tbl_in_list.append(tbl_new[[c for c in tbl_new.columns if c != "varNameColumn"]])
+       
+            return tbl_in_list, abstraction
         else:
             assert False
 
