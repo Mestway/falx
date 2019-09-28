@@ -417,7 +417,6 @@ class AbstractPrune(GenericVisitor):
         #Done
         elif opcode == 'mutateCustom' or opcode == 'mutate' or opcode == 'cumsum' or opcode == 'groupSum':
             # remove unused cases
-
             if not self.new_value:
                 return [], abstraction
 
