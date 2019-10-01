@@ -18,6 +18,7 @@ from falx.tyrell.visitor import GenericVisitor
 
 import rpy2.robjects as robjects
 
+import copy
 from functools import reduce
 import falx.synth_utils
 import json
@@ -37,7 +38,7 @@ class AbstractPrune(GenericVisitor):
     need_separate: True
     need_separate2: True
 
-    def __init__(self, interp: Interpreter, example: Example, prune: str):
+    def __init__(self, interp: Interpreter, example: Example, prune: str, abstract_eval_memory):
         self._interp = interp
         self._example = example
         self._blames = set()
@@ -51,32 +52,67 @@ class AbstractPrune(GenericVisitor):
         self.need_separate = self.compSeparate()
         self.need_separate2 = self.compSeparate2()
         self.prune = prune
+        self.abstract_eval_memory = abstract_eval_memory
         # [self._input.append(col) for col in input]
         # [self._output.append(col) for col in output]
     
     
     def is_unsat(self, prog: List[Any]) -> bool:
+
+
         if self.prune == 'none':
             return False
 
         ### First, do backward interpretation
         if self.prune == 'falx' or self.prune == 'backward':
-            tbl_in_list, abstractions = self.backward_interp(prog)
 
-            has_error = True
-            for tbl_in in tbl_in_list:
-                if self.is_consistent(self._input, tbl_in):
-                    has_error = False
-                    break
+            tbl_list_at_each_step, abstractions_at_each_step = self.backward_interp(prog)
+
+            if len(tbl_list_at_each_step[-1]) == 0:
+                has_error = True
+                abstractions = abstractions_at_each_step[-1]
+            else:
+                # tbl_in_list = tbl_list_at_each_step[-1]
+                # abstractions = abstractions_at_each_step[-1]
+
+                # has_error = True
+                # for tbl_in in tbl_in_list:
+                #     if self.is_consistent(self._input, tbl_in):
+                #         has_error = False
+                #         break 
+        
+                prog_length = len(prog)
+                constraint_interpreter = ConstraintInterpreter(self._interp, self._example.input)
+
+                has_error = False
+                for i in range(prog_length):
+                    tbl_in_list = tbl_list_at_each_step[prog_length - i - 1]
+
+                    fw_prog = [prog[k] for k in range(i)]
+
+                    fw_abstractions = []
+                    for stmt in fw_prog:
+                        fw_abstractions += [stmt.ast]
+                        fw_abstractions += stmt.ast.children
+
+                    bw_abstractions = abstractions_at_each_step[-1]
+                    
+                    true_tbl_in = robjects.r(constraint_interpreter.interpret(fw_prog)) if len(fw_prog) > 0 else self._input
+
+                    has_error_at_this_point = True
+                    for tbl_in in tbl_in_list:
+                        if self.is_consistent(true_tbl_in, tbl_in):
+                            has_error_at_this_point = False
+                            break
+
+                    if has_error_at_this_point:
+                        has_error = True
+                        abstractions = fw_abstractions + bw_abstractions
+                        break
 
             if has_error:
                 for node in abstractions:
                     self._blames.add(node)
-
-                # print("======= bw")
-                # for b in self._blames:
-                #     print(b)
-                # print("---")
 
                 return True
 
@@ -140,51 +176,53 @@ class AbstractPrune(GenericVisitor):
         diff = out_set - in_set
         return len(diff) > 0
 
-    def bidirectional_abstract_analysis(self, prog):
-        # each entry stores the abstract evaluation result of after excuting the i-1 stmt
-        temp_tbls = [{"fw_res": None, "bw_res": None} for _ in range(len(prog) + 1)]
-
-        tbl_in = self._input
-        temp_tbls[0]["fw_res"] = tbl_in
-        for i, stmt in enumerate(prog):
-            tbl_out = self.forward_abstract_eval(stmt, tbl_in, "eq")
-            tbl_in = tbl_out
-            temp_tbls[i + 1]["fw_res"] = tbl_in
-
-        tbl_out = self._output
-        temp_tbls[len(prog)]["bw_res"] = tbl_out
-        for i, stmt in enumerate(reversed(prog)):
-            tbl_in = self.backward_abstract_eval(stmt, tbl_out, "subset_eq")
-            tbl_out = tbl_in
-            temp_tbls[len(prog) - i - 1]["bw_res"] = tbl_out
-
-        # print("########## BIDIRECTIONAL ")
-        # for i in range(len(prog) + 1):
-        #     print("fw {}".format(i))
-        #     print(temp_tbls[i]["fw_res"])
-        #     print("bw {}".format(i))
-        #     print(temp_tbls[i]["bw_res"])
-        #     pass
-        # print("-------------------------")
-
 
     def backward_interp(self, prog: List[Any]):
-        """apply backward evaluation to prune tables """
+        """apply backward evaluation to prune tables 
+        Args:
+            prog: the program to analyze
+        Returns:
+            tbl_list_at_each_step: 
+                the abstract evaluation result after excuting the len(prog) - 1 - i th statment, 
+                which is a list of tables [T1, ..., Tk], such that if the execution result of 
+                the first len(prog) - i statements does not contain any of the tables, the program sketch is infeasible
+            abstractions_at_each_step:
+                the abstraction of the program used for deductive reasoning
+        """
 
         # in order to handle 
         output_table = falx.synth_utils.remove_duplicate_columns(self._output)
-        abstractions = []
+        
+        abstractions_at_each_step = []
+        tbl_list_at_each_step = []
 
         tbl_list = [output_table]
-        for stmt in reversed(prog):
-            tbl_list, abstraction = self.backward_abstract_eval(stmt, tbl_list)
-            abstractions.extend(abstraction)
+        abstractions = []
+        sketch_hash = ""
+        for step_id, stmt in enumerate(reversed(prog)):
+
+            # use sketch hash to reduce abstract evaluation overhead
+            sketch_hash += "{}:{}-".format(step_id, stmt.ast.name)
+
+            if sketch_hash in self.abstract_eval_memory:
+                tbl_list = self.abstract_eval_memory[sketch_hash]
+                abstraction = [stmt.ast, stmt.ast.children[0]]
+            else:
+                tbl_list, abstraction = self.backward_abstract_eval(stmt, tbl_list)
+                self.abstract_eval_memory[sketch_hash] = tbl_list
+
+            abstractions = abstractions + abstraction
+
+            abstractions_at_each_step.append(abstractions)
+            tbl_list_at_each_step.append(tbl_list)
+
+            step_id += 1
     
             if len(tbl_list) == 0:
                 # deductive reasoning results in empty result
                 break
 
-        return tbl_list, abstractions
+        return tbl_list_at_each_step, abstractions_at_each_step
 
 
     def forward_interp(self, prog: List[Any]):
@@ -259,9 +297,11 @@ class AbstractPrune(GenericVisitor):
         # unite
         elif opcode == 'unite':
             col1 = int(args[1].data)
+            if col1 > tbl_size:
+                return None, [ast, ast.children[0], ast.children[1]]
             col2 = int(args[2].data)
-            if col1 > tbl_size or col2 > tbl_size:
-                return None, [ast, ast.children[0], ast.children[1], ast.children[2]]
+            if col2 > tbl_size:
+                return None, [ast, ast.children[0], ast.children[2]]
             else:
                 return "TOP", [ast, ast.children[0]]
         # separate
@@ -348,6 +388,7 @@ class AbstractPrune(GenericVisitor):
         this function calculates properties of inputs to the stmt:
         it returns a list of input tables, 
         such that the true input table should contain as least one fo them
+        step_id: records which step is it (counting backwardly, which equals to prog_length - stmt_id)
         """
         ast = stmt.ast
         opcode, args = ast.name, ast.args
@@ -386,10 +427,6 @@ class AbstractPrune(GenericVisitor):
                     continue
                 else:
                     tbl_size = len(tbl_out.columns)
-                    if int(args[2].data) > tbl_size:
-                        # return empty because we already find an error
-                        return [], abstraction + [ast.children[2]]
-
                     cols = tbl_out.columns.values
                     sel_list = [col for idx, col in enumerate(cols) if idx != new_col]
                     tbl_ret = tbl_out[sel_list]
@@ -400,10 +437,9 @@ class AbstractPrune(GenericVisitor):
         elif opcode == 'separate':
             if not self.need_separate:
                 return [], abstraction
-            tbl_in_list = []
-            abstraction = [ast, ast.children[0]]
-            for tbl_out in tbl_out_list:
 
+            tbl_in_list = []
+            for tbl_out in tbl_out_list:
                 cols = tbl_out.columns
                 if len(cols) < 2:
                     return [pd.DataFrame()], abstraction
@@ -478,6 +514,13 @@ class AbstractPrune(GenericVisitor):
                                       value_vars=[c for c in cols if c != id_col],
                                       var_name='varNameColumn')
                     tbl_in_list.append(tbl_new[[c for c in tbl_new.columns if c != "varNameColumn"]])
+
+                # case 3: id column is not just one
+                for id_cols in itertools.combinations(cols, 2):
+                    tbl_new = pd.melt(tbl_out, id_vars=id_cols, 
+                                      value_vars=[c for c in cols if c not in id_cols],
+                                      var_name='varNameColumn')
+                    tbl_in_list.append(tbl_new[[c for c in tbl_new.columns if c != "varNameColumn"]])
        
             return tbl_in_list, abstraction
         else:
@@ -542,8 +585,10 @@ class BlameFinder:
     def _get_blames(self) -> List[List[Blame]]:
         return [list(x) for x in self._blames_collection]
 
-    def process_examples(self, examples: List[Example], equal_output: Callable[[Any, Any], bool], prune: str):
-        all_ok = all([self.process_example(example, equal_output, prune) for example in examples])
+    def process_examples(self, examples: List[Example], 
+                         equal_output: Callable[[Any, Any], bool], 
+                         prune: str, abstract_eval_memory):
+        all_ok = all([self.process_example(example, equal_output, prune, abstract_eval_memory) for example in examples])
         if all_ok:
             return ok()
         else:
@@ -553,8 +598,10 @@ class BlameFinder:
             else:
                 return bad(why=blames)
 
-    def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool], prune: str):
-        prune = AbstractPrune(self._interp, example, prune)
+    def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool], 
+                        prune: str, abstract_eval_memory):
+        """check whether an example program is consistent with the input-output spec """
+        prune = AbstractPrune(self._interp, example, prune, abstract_eval_memory)
 
         if prune.is_unsat(self._prog):
             # If abstract semantics cannot be satisfiable, perform blame analysis
@@ -564,6 +611,7 @@ class BlameFinder:
                 self._blames_collection.add(
                     frozenset([Blame(n, n.production) for n in blame_nodes])
                 )
+
             return False
         else:
             # If abstract semantics is satisfiable, start interpretation
@@ -584,11 +632,13 @@ class BidirectionalDecider(ExampleDecider):
         super().__init__(interpreter, examples, equal_output)
         self._assert_handler = AssertionViolationHandler(spec, interpreter)
         self.prune = prune
+        # the memory used for storing abstract evaluation result, so that we don't have to run the prune again and again
+        self.abstract_eval_memory = {}
 
     def analyze_interpreter_error(self, error: InterpreterError):
         return self._assert_handler.handle_interpreter_error(error)
 
     def analyze(self, prog):
         blame_finder = BlameFinder(self.interpreter, prog)
-        res = blame_finder.process_examples(self.examples, self.equal_output, self.prune)
+        res = blame_finder.process_examples(self.examples, self.equal_output, self.prune, self.abstract_eval_memory)
         return res
