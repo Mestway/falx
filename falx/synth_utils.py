@@ -130,12 +130,18 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
 
 def construct_value_dict(values):
+    new_values = []
     values = np.array(values)
-    try:
-        values = values.astype(np.float64)
-        values = np.round(values, 5)
-    except:
-        pass
+    for v in values:
+        try:
+            v = v.astype(np.float64)
+            v = np.round(v, 5)
+            new_values.append(v)
+        except:
+            new_values.append(v)
+
+    values = new_values
+
     value_dict = {}
     for x in values:
         if not x in value_dict:

@@ -24,6 +24,7 @@ import falx.synth_utils
 import json
 import numpy as np
 import pandas as pd
+from pprint import pprint
 
 logger = get_logger('tyrell.decider.bidirection_pruning')
 
@@ -59,7 +60,6 @@ class AbstractPrune(GenericVisitor):
     
     def is_unsat(self, prog: List[Any]) -> bool:
 
-
         if self.prune == 'none':
             return False
 
@@ -67,6 +67,9 @@ class AbstractPrune(GenericVisitor):
         if self.prune == 'falx' or self.prune == 'backward':
 
             tbl_list_at_each_step, abstractions_at_each_step = self.backward_interp(prog)
+
+            # this caches the forward execution result of the first k instructions
+            forward_prog_exec_cache = []
 
             if len(tbl_list_at_each_step[-1]) == 0:
                 has_error = True
@@ -98,16 +101,21 @@ class AbstractPrune(GenericVisitor):
                     bw_abstractions = abstractions_at_each_step[-1]
                     
                     true_tbl_in = robjects.r(constraint_interpreter.interpret(fw_prog)) if len(fw_prog) > 0 else self._input
+                    forward_prog_exec_cache.append(true_tbl_in) 
 
                     has_error_at_this_point = True
                     for tbl_in in tbl_in_list:
-                        if self.is_consistent(true_tbl_in, tbl_in):
+                        if true_tbl_in.empty and not tbl_in.empty:
+                            continue
+                        if tbl_in.empty or self.is_consistent(true_tbl_in, tbl_in):
                             has_error_at_this_point = False
                             break
 
                     if has_error_at_this_point:
+
                         has_error = True
                         abstractions = fw_abstractions + bw_abstractions
+
                         break
 
             if has_error:
@@ -121,19 +129,36 @@ class AbstractPrune(GenericVisitor):
             return False
         else:
             assert 'forward' == self.prune or 'falx' == self.prune
-            actual, abstractions = self.forward_interp(prog)
-            
-            if actual is "TOP": return False
-            if actual is None or not self.is_consistent(actual, self._output): 
-                for node in abstractions:
-                    self._blames.add(node)
 
-                # print("======= fw")
-                # for b in self._blames:
-                #     print(b)
-                # print("---")
+            for i in range(len(prog)):
+                # concretely execute the first i statements 
+                # and then abstractly execute the last len(prog) - i statement using forward abstraction
+                fw_prog = [prog[k] for k in range(i)]
+                fw_abstractions = []
+                for stmt in fw_prog:
+                    fw_abstractions += [stmt.ast]
+                    fw_abstractions += stmt.ast.children
+
+                if i < len(forward_prog_exec_cache):
+                    concrete_tbl_in = forward_prog_exec_cache[i]
+                else:
+                    concrete_tbl_in = robjects.r(constraint_interpreter.interpret(fw_prog)) if len(fw_prog) > 0 else self._input
+
+                if concrete_tbl_in.empty:
+                    # fw eval already generates empty result
+                    for node in fw_abstractions:
+                        self._blames.add(node)
+                    return True
+
+                actual, rest_abstractions = self.forward_interp(prog[i:], concrete_tbl_in)
+            
+                if actual is "TOP":
+                    continue
+                if actual is None or not self.is_consistent(actual, self._output): 
+                    for node in fw_abstractions + rest_abstractions:
+                        self._blames.add(node)
                             
-                return True
+                    return True
             
             return False
 
@@ -225,9 +250,8 @@ class AbstractPrune(GenericVisitor):
         return tbl_list_at_each_step, abstractions_at_each_step
 
 
-    def forward_interp(self, prog: List[Any]):
+    def forward_interp(self, prog: List[Any], tbl):
         out = None
-        tbl = self._input;
 
         abstractions = []
 
@@ -499,6 +523,7 @@ class AbstractPrune(GenericVisitor):
         # spread
         elif opcode == 'spread':
             # TODO: this reasoning is expensive
+
             tbl_in_list = []
             for tbl_out in tbl_out_list:
                 cols = tbl_out.columns
