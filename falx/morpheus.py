@@ -558,6 +558,7 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     # provide additional string constants to the solver
     grammar_base = grammar_base_file
     grammar_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dsl", "__tidyverse__.tyrell")
+    
     synth_utils.update_search_grammar(extra_consts, grammar_base, grammar_file)
 
     spec = S.parse_file(grammar_file)
@@ -573,22 +574,23 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
 
         enumerator = BidirectEnumerator(spec, depth=loc+1, loc=loc)
         decider=BidirectionalDecider(
-                spec=spec,
-                interpreter=MorpheusInterpreter(),
-                examples=[
-                    Example(input=['input0'], output='output'),
-                ],
-                prune=prune,
-                equal_output=eq_fun
-            )
+                    spec=spec,
+                    interpreter=MorpheusInterpreter(),
+                    examples=[
+                        Example(input=['input0'], output='output'),
+                    ],
+                    prune=prune,
+                    equal_output=eq_fun)
 
         synthesizer = Synthesizer(enumerator=enumerator, decider=decider)
         logger.info('Synthesizing programs ...')
 
-        prog = synthesizer.synthesize()
-        if prog is not None:
-            logger.info('Solution found: {}'.format(prog))
-            return [prog]
+        solutions = synthesizer.synthesize()
+        if solutions is not None:
+            logger.info('# Solutions found:')
+            for prog in solutions:
+                logger.info('  {}'.format(prog))
+            return solutions
         else:
             logger.info('Solution not found!')
 

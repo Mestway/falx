@@ -7,6 +7,8 @@ from falx.tyrell.decider import Decider
 from falx.tyrell.dsl import Node
 from falx.tyrell.logger import get_logger
 
+import time
+
 logger = get_logger('tyrell.synthesizer')
 
 
@@ -32,6 +34,11 @@ class Synthesizer(ABC):
         A convenient method to enumerate ASTs until the result passes the analysis.
         Returns the synthesized program, or `None` if the synthesis failed.
         '''
+        # stores all solutions to the result list
+        solutions = []
+
+        start_time = time.time()
+
         num_attempts = 0
         prog = self._enumerator.next()
         while prog is not None:
@@ -42,7 +49,13 @@ class Synthesizer(ABC):
                 if res.is_ok():
                     logger.debug(
                         'Program accepted after {} attempts'.format(num_attempts))
-                    return prog
+                    solutions.append(prog)
+                    if len(solutions) > 5 or (time.time() - start_time > 5.):
+                        return solutions
+                    else:
+                        #block the current example
+                        self._enumerator.update()
+                        prog = self._enumerator.next()
                 else:
                     info = res.why()
                     logger.debug('Program rejected. Reason: {}'.format(info))
@@ -55,4 +68,4 @@ class Synthesizer(ABC):
                 prog = self._enumerator.next()
         logger.debug(
             'Enumerator is exhausted after {} attempts'.format(num_attempts))
-        return None
+        return None if len(solutions) == 0 else solutions

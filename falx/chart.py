@@ -788,6 +788,9 @@ class ScatterPlot(object):
 
     @staticmethod
     def inv_eval(vtrace):
+
+        mark_ty = "rect" if vtrace[0].point_shape == "rect" else "point"
+
         data_values = []
         for vt in vtrace:
             data_values.append({"c_x": vt.x, "c_y": vt.y, "c_size": vt.size, 
@@ -803,15 +806,15 @@ class ScatterPlot(object):
             if field_name in unused_fields: 
                 continue
 
-            if channel in ["x", "y", "size"]:
+            if channel in ["x", "y", "size"] or (channel == "color" and mark_ty == "rect"):
                 # the type needs to be determined by datatype
                 dtype = table_utils.infer_dtype([r[field_name] for r in data_values])
                 enc_ty = "nominal" if dtype == "string" else "quantitative"
 
             encodings.append(Encoding(channel, field_name, enc_ty))
 
-        bar_chart = ScatterPlot(mark_ty="point", encodings=encodings)
-        return [(SymTable(values=data_values), bar_chart)]
+        chart = ScatterPlot(mark_ty=mark_ty, encodings=encodings)
+        return [(SymTable(values=data_values), chart)]
 
 
 class Encoding(object):

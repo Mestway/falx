@@ -4,7 +4,7 @@ from pprint import pprint
 # mutatable vtrace
 BarV = namedlist("BarV", ["x", "y1", "y2", "color", "column"], default=None)
 BarH = namedlist("BarH", ["x1", "x2", "y", "color", "column"], default=None)
-Point = namedlist("Point", ["shape", "x", "y", "size", "color", "column"], default=None)
+Point = namedlist("Point", ["point_shape", "shape", "x", "y", "size", "color", "column"], default=None)
 Line = namedlist("Line", ["x1", "y1", "x2", "y2", "size", "color", "column"], default=None)
 Area = namedlist("Area", ["x1", "yt1", "yb1", "x2", "yt2", "yb2", "color", "column"], default=None)
 Box = namedlist("Box", ["x", "min", "max", "Q1", "median", "Q3", "color", "column"], default=None)
@@ -39,8 +39,8 @@ def load_trace(raw_trace):
                 return BarH(x1=get_prop("x"), x2=get_prop("x2"), y=get_prop("y"), color=get_prop("color"), column=get_prop("column"))
             else:
                 return BarV(x=get_prop("x"), y1=get_prop("y"), y2=get_prop("y2"), color=get_prop("color"), column=get_prop("column"))
-        elif trace_dict["type"] == "point":
-            return Point(x=get_prop("x"), y=get_prop("y"), shape=get_prop("shape"), 
+        elif trace_dict["type"] in ["point", "rect"]:
+            return Point(point_shape=trace_dict["type"], x=get_prop("x"), y=get_prop("y"), shape=get_prop("shape"), 
                          size=get_prop("size"), color=get_prop("color"), column=get_prop("column"))
         elif trace_dict["type"] == "line":
             return Line(x1=get_prop("x1"), y1=get_prop("y1"), x2=get_prop("x2"), y2=get_prop("y2"), 

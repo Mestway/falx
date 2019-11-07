@@ -8,6 +8,7 @@ import itertools
 from pprint import pprint
 import numpy as np
 import visual_trace
+import copy
 
 import synth_utils
 import eval_utils
@@ -49,14 +50,14 @@ class FalxInterface(object):
                     assert(field_mapping != None)
 
                     if backend == "vegalite":
-                        vis_design = VisDesign(data=output, chart=chart)
+                        vis_design = VisDesign(data=output, chart=copy.deepcopy(chart))
                         vis_design.update_field_names(field_mapping)
                         candidates.append((p, vis_design))
                     else:
-                        vis_design = MatplotlibChart(output,chart)
+                        vis_design = MatplotlibChart(output, copy.deepcopy(chart))
                         candidates.append((p, vis_design.to_string_spec(field_mapping)))
 
-                    if len(candidates) > 0: break
+                    #if len(candidates) > 0: break
             else:
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
@@ -108,8 +109,8 @@ if __name__ == '__main__':
 
     result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite")
 
-    # for c in result:
-    #     print(c[0])
-    #     print(c[1].to_vl_json())
+    for c in result:
+        print(c[0])
+        print(c[1].to_vl_json())
 
         
