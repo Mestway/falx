@@ -45,6 +45,10 @@ def load_trace(raw_trace):
         elif trace_dict["type"] == "line":
             return Line(x1=get_prop("x1"), y1=get_prop("y1"), x2=get_prop("x2"), y2=get_prop("y2"), 
                         size=get_prop("size"), color=get_prop("color"), column=get_prop("column"))
+        elif trace_dict["type"] == "area":
+            return Area(x1=get_prop("x_left"), yt1=get_prop("y_top_left"), yb1=get_prop("y_bot_left"),
+                        x2=get_prop("x_right"), yt2=get_prop("y_top_right"), yb2=get_prop("y_bot_right"),
+                        column=get_prop("column"), color=get_prop("color"))
         else:
             return None
     return [convert_one(tr) for tr in raw_trace]

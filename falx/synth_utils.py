@@ -100,9 +100,9 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
 
     if boolean_result: return len(all_choices) > 0
 
-    # directly return if there is only one choice
-    if len(all_choices) == 1:
-        return {key:mapping[key][0] for key in mapping}
+    # directly return if there is only one choice, !!!should still check it to ensure correctness
+    #if len(all_choices) == 1:
+    #    return {key:mapping[key][0] for key in mapping}
 
     #assert("[align table] unimplemented error")
     for mapping_id_choices in all_choices:

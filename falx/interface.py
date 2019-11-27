@@ -19,9 +19,21 @@ np.random.seed(2019)
 
 class FalxInterface(object):
 
+    def group_results(results):
+        """Given a list of candidate program, evaluate them and group them into equivalence classes."""
+        equiv_classes = {}
+        for tbl_prog, vis_spec in results:
+            full_trace = vis_spec.eval()
+            fronzen_trace = json.dumps(visual_trace.trace_to_table(full_trace), sort_keys=True)
+            if fronzen_trace not in equiv_classes:
+                equiv_classes[fronzen_trace] = []
+            equiv_classes[fronzen_trace].append((tbl_prog, vis_spec))
+        return equiv_classes
+
+
     @staticmethod
     def synthesize(inputs, raw_trace, extra_consts=[], 
-                   backend="vegalite", grammar_base_file="dsl/tidyverse.tyrell.base"):
+                   backend="vegalite", grammar_base_file="dsl/tidyverse.tyrell.base", group_results=False):
         """synthesize table prog and vis prog from input and output traces"""
 
         assert backend == "vegalite" or backend == "matplotlib"
@@ -78,17 +90,21 @@ class FalxInterface(object):
 
                     field_mappings = [synth_utils.align_table_schema(sym_data[k].values, output) for k, output in enumerate(outputs)]
 
+                    print(field_mappings)
+
                     if backend == "vegalite":
-                        vis_design = VisDesign(data=outputs, chart=chart)
+                        vis_design = VisDesign(data=outputs, chart=copy.deepcopy(chart))
                         vis_design.update_field_names(field_mappings)
                         candidates.append((progs, vis_design))
                     else:
-                        vis_design = MatplotlibChart(outputs,chart)
+                        vis_design = MatplotlibChart(outputs,copy.deepcopy(chart))
                         candidates.append((progs, vis_design.to_string_spec(field_mappings)))
-                    if len(candidates) > 0: break
+                    #if len(candidates) > 0: break
 
             if len(candidates) > 0: break
 
+        if group_results:
+            return FalxInterface.group_results(candidates)
         return candidates
 
 if __name__ == '__main__':
@@ -107,10 +123,13 @@ if __name__ == '__main__':
       {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
     ]
 
-    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite")
+    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite", group_results=True)
 
-    for c in result:
-        print(c[0])
-        print(c[1].to_vl_json())
+    for val in result:
+        print("#####")
+        print(val)
+        for p in result[val]:
+            print(p[0])
+            #print(p[1].to_vl_json())
 
         

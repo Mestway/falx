@@ -135,7 +135,7 @@ def proj_eq(actual, expect):
                     return True
 
         return False
-            
+
 
 def subset_eq(actual, expect):
     """check whether the actual table is a subset of expect table """

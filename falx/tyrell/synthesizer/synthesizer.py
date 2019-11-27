@@ -50,7 +50,7 @@ class Synthesizer(ABC):
                     logger.debug(
                         'Program accepted after {} attempts'.format(num_attempts))
                     solutions.append(prog)
-                    if len(solutions) > 5 or (time.time() - start_time > 5.):
+                    if len(solutions) > 50 or (time.time() - start_time > 600.):
                         return solutions
                     else:
                         #block the current example
