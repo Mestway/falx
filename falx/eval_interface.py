@@ -46,7 +46,8 @@ class FalxEvalInterface(object):
 
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, 
-                                                        extra_consts=extra_consts, grammar_base_file=grammar_base_file)
+                                                        extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                                                        solution_limit=1, time_limit_sec=5)
 
                 for p in candidate_progs:
                     #pprint(inputs[0])
@@ -87,7 +88,8 @@ class FalxEvalInterface(object):
                     sym_tables.append((sample_table, full_output))
 
                 layer_candidate_progs = [morpheus.synthesize(inputs, p[0], p[1], prune, 
-                                            extra_consts=extra_consts, grammar_base_file=grammar_base_file) for p in sym_tables]
+                                            extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                                            solution_limit=1, time_limit_sec=5) for p in sym_tables]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]

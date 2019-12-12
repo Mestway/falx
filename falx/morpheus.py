@@ -524,7 +524,9 @@ def init_tbl_json_str(df_name, json_loc):
     return None
 
 
-def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_file):
+def synthesize(inputs, output, oracle_output, 
+               prune, extra_consts, grammar_base_file,
+               solution_limit, time_limit_sec):
 
     global full_table 
     full_table = oracle_output
@@ -543,7 +545,10 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
-    loc_val = 3
+    loc_val = 2
+    # solution_limit = 1
+    # time_limit_sec = 5
+
     output_data = json.dumps(output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
     init_tbl_json_str('input0', input_data)
@@ -552,7 +557,6 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     print(robjects.r('input0'))
     print(robjects.r('output'))
 
-    depth_val = loc_val + 1
     logger.info('Parsing spec ...')
 
     # provide additional string constants to the solver
@@ -567,6 +571,8 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
     logger.info('Building synthesizer ...')
     global iter_num
     iter_num = 0
+
+    solutions = []
     for loc in range(1, loc_val + 1):
         eq_fun = subset_eq
         if prune == 'none':
@@ -582,16 +588,23 @@ def synthesize(inputs, output, oracle_output, prune, extra_consts, grammar_base_
                     prune=prune,
                     equal_output=eq_fun)
 
-        synthesizer = Synthesizer(enumerator=enumerator, decider=decider)
+        synthesizer = Synthesizer(enumerator=enumerator, decider=decider, 
+                                  solution_limit=solution_limit, time_limit_sec=time_limit_sec)
         logger.info('Synthesizing programs ...')
 
-        solutions = synthesizer.synthesize()
-        if solutions is not None:
+        current_solutions = synthesizer.synthesize()
+        if current_solutions is not None:
+            solutions += current_solutions
+
             logger.info('# Solutions found:')
-            for prog in solutions:
+            for prog in current_solutions:
                 logger.info('  {}'.format(prog))
-            return solutions
+
+            if len(solutions) >= solution_limit:
+                return solutions
+            else:
+                logger.info('# Continue searching for solutions: {} found (expecting {})'.format(len(solutions), solution_limit))
         else:
             logger.info('Solution not found!')
 
-    return []
+    return solutions

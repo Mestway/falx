@@ -17,9 +17,20 @@ class Synthesizer(ABC):
     _enumerator: Enumerator
     _decider: Decider
 
-    def __init__(self, enumerator: Enumerator, decider: Decider):
+    def __init__(self, enumerator: Enumerator, decider: Decider, 
+                 solution_limit, time_limit_sec):
+        """ Initialize the synthesizer
+            enumerator: the enumerator for traverse the sapce
+            decider: decision procedure for pruning the search space
+            solution_limit: the stop criteria of the synthesizer, 
+                if solution_limit=k: the synthesizer terminates when it find >= k solution
+            time_limit: the synthesizer will terminate *at least* at this time limit 
+                (it terminates at the the smallest time above this time time), no guarentee to terminate right at time_limit
+        """
         self._enumerator = enumerator
         self._decider = decider
+        self.solution_limit = solution_limit
+        self.time_limit_sec = time_limit_sec
 
     @property
     def enumerator(self):
@@ -49,8 +60,9 @@ class Synthesizer(ABC):
                 if res.is_ok():
                     logger.debug(
                         'Program accepted after {} attempts'.format(num_attempts))
+
                     solutions.append(prog)
-                    if len(solutions) > 50 or (time.time() - start_time > 600.):
+                    if len(solutions) >= self.solution_limit or (time.time() - start_time > self.time_limit_sec):
                         return solutions
                     else:
                         #block the current example

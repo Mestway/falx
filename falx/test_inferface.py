@@ -5,36 +5,24 @@ from falx.interface import *
 
 class TestFalxInterface(unittest.TestCase):
 
+    @unittest.skip
     def test_line_chart_1(self):
 
         inputs = [[
-            {"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
-            {"Totals":8,"Value":"B","variable":"alpha","value":2,"cumsum":2},
-            {"Totals":9,"Value":"C","variable":"alpha","value":3,"cumsum":3},
-            {"Totals":9,"Value":"D","variable":"alpha","value":3,"cumsum":3},
-            {"Totals":9,"Value":"E","variable":"alpha","value":4,"cumsum":4},
-            {"Totals":7,"Value":"A","variable":"beta","value":2,"cumsum":4},
-            {"Totals":8,"Value":"B","variable":"beta","value":3,"cumsum":5},
-            {"Totals":9,"Value":"C","variable":"beta","value":3,"cumsum":6}, 
-            {"Totals":9,"Value":"D","variable":"beta","value":4,"cumsum":7},
-            {"Totals":9,"Value":"E","variable":"beta","value":3,"cumsum":7},
-            {"Totals":7,"Value":"A","variable":"gamma","value":3,"cumsum":7},
-            {"Totals":8,"Value":"B","variable":"gamma","value":3,"cumsum":8},
-            {"Totals":9,"Value":"C","variable":"gamma","value":3,"cumsum":9},
-            {"Totals":9,"Value":"D","variable":"gamma","value":2,"cumsum":9},
-            {"Totals":9,"Value":"E","variable":"gamma","value":2,"cumsum":9}
+          { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
+          { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
+          { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
+          { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
+          { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
         ]]
 
         vtrace = [
-            Line(x1='A', y1=2, x2='B', y2=3, size=None, color='beta', column=None), 
-            Line(x1='B', y1=3, x2='C', y2=3, size=None, color='beta', column=None), 
-            Line(x1='A', y1=3, x2='B', y2=3, size=None, color='gamma', column=None),  
-            Line(x1='B', y1=3, x2='C', y2=3, size=None, color='gamma', column=None), 
-            Line(x1='C', y1=3, x2='D', y2=2, size=None, color='gamma', column=None),
-            Line(x1='D', y1=3, x2='E', y2=4, size=None, color='alpha', column=None)
+          {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
+          {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
+          {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
         ]
 
-        candidates = Falx.synthesize(inputs=inputs, vtrace=vtrace)
+        candidates = FalxInterface.synthesize(inputs=inputs, raw_trace=vtrace)
 
         for ptable, vis_design in candidates:
             print(ptable)
@@ -43,24 +31,24 @@ class TestFalxInterface(unittest.TestCase):
     def test_line_chart_2(self):
 
         inputs = [[
-            {"Year":1950,"Crustaceans":58578630,"Cod":2716706,"Tuna":69690537,"Herring":87161396,"Scorpion.fishes":15250015},
-            {"Year":1951,"Crustaceans":59194582,"Cod":3861166,"Tuna":34829755,"Herring":51215349,"Scorpion.fishes":15454659},
-            {"Year":1952,"Crustaceans":47562941,"Cod":4396174,"Tuna":31061481,"Herring":13962479,"Scorpion.fishes":12541484},
-            {"Year":1953,"Crustaceans":68432658,"Cod":3901176,"Tuna":23225423,"Herring":13229061,"Scorpion.fishes":9524564},
-            {"Year":1954,"Crustaceans":64395489,"Cod":4412721,"Tuna":20798126,"Herring":25285539,"Scorpion.fishes":9890656},
-            {"Year":1955,"Crustaceans":76111004,"Cod":4774045,"Tuna":13992697,"Herring":18910756,"Scorpion.fishes":8446391}
+          {"Value":"means","Y1":0.52,"Y2":0.57,"Y3":0.6,"Y4":0.63,"Y5":0.63},
+          {"Value":"stddev","Y1":0.1328,"Y2":0.1321,"Y3":0.1303,"Y4":0.1266,"Y5":0.1225},
+          {"Value":"upper range","Y1":0.66,"Y2":0.7,"Y3":0.73,"Y4":0.75,"Y5":0.75},
+          {"Value":"lower range","Y1":0.39,"Y2":0.44,"Y3":0.47,"Y4":0.5,"Y5":0.51}
         ]]
 
         vtrace = [
-            Line(x1=1950, y1=58578630, x2=1951, y2=59194582, size=None, color='Crustaceans', column=None), 
-            Line(x1=1954, y1=4412721, x2=1955, y2=4774045, size=None, color='Cod', column=None),
+          {"type": "area", "props": {"x_left": "Y1", "y_top_left": 0.66, "y_bot_left": 0.39,  
+                                     "x_right": "Y2", "y_top_right": 0.7, "y_bot_right": 0.44, "color": "", "column": ""}},
+          {"type": "line", "props": {"x1": "Y1", "y1": 0.52, "x2": "Y2", "y2": 0.57, "color": "", "column": ""}},
+          {"type": "line", "props": {"x1": "Y2", "y1": 0.57, "x2": "Y3", "y2": 0.6, "color": "", "column": ""}}
         ]
 
-        candidates = Falx.synthesize(inputs=inputs, vtrace=vtrace)
+        candidates = FalxInterface.synthesize(inputs=inputs, raw_trace=vtrace)
 
         for ptable, vis_design in candidates:
             print(ptable)
-            print(vis_design.to_vl_json())
+            print(json.dumps(json.loads(vis_design.to_vl_json())))
 
 
 if __name__ == '__main__':

@@ -53,7 +53,8 @@ class FalxInterface(object):
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(inputs, sym_data, oracle_output=None, 
-                    prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file)
+                    prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                    solution_limit=10, time_limit_sec=30.)
 
                 for p in candidate_progs:
                     output = morpheus.evaluate(p, inputs)
@@ -76,7 +77,8 @@ class FalxInterface(object):
                 # synthesize table transformation programs for each layer
  
                 layer_candidate_progs = [morpheus.synthesize(inputs, d, oracle_output=None, 
-                                            prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file) for d in sym_data]
+                                            prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                                            solution_limit=10, time_limit_sec=30.) for d in sym_data]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]

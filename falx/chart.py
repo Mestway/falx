@@ -698,6 +698,14 @@ class LineChart(object):
             color, size, column = key
             for i in range(len(vals) - 1):
                 l, r = vals[i], vals[i + 1]
+                if (self.encodings["x"].field not in l or self.encodings["x"].field not in r  or 
+                    self.encodings["y"].field not in l or self.encodings["y"].field not in r):
+                    print("[POTENTIAL ERROR] MISSING FIELD chart.py@703")
+                    print(self.encodings["x"].field)
+                    print(self.encodings["y"].field)
+                    print(vals[i])
+                    print(vals[i + 1])
+                    continue
                 xl, yl = l[self.encodings["x"].field], l[self.encodings["y"].field]
                 xr, yr = r[self.encodings["x"].field], r[self.encodings["y"].field]
                 res.append(Line(xl, yl, xr, yr, size, color, column))
