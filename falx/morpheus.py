@@ -29,10 +29,6 @@ warnings.filterwarnings("ignore", category=RRuntimeWarning)
 
 logger = get_logger('tyrell')
 
-counter_ = 1
-
-full_table = None
-
 #library(compare)
 robjects.r('''
     library(dplyr)
@@ -44,6 +40,22 @@ def default(o):
     if isinstance(o, np.int64): return int(o)  
     raise TypeError
 
+def init_tbl_json_str(df_name, json_loc):
+    cmd = '''
+    # tbl_name <- read.csv(csv_location, check.names = FALSE)
+    tbl_name <- fromJSON(json_location)
+    fctr.cols <- sapply(tbl_name, is.factor)
+    int.cols <- sapply(tbl_name, is.integer)
+    tbl_name[, fctr.cols] <- sapply(tbl_name[, fctr.cols], as.character)
+    tbl_name[, int.cols] <- sapply(tbl_name[, int.cols], as.numeric)
+    '''
+    cmd = cmd.replace('tbl_name', df_name).replace('json_location', "'" + json_loc + "'")
+    try:
+        robjects.r(cmd)
+    except:
+        print('Parse error!!! Move on...')
+    return None
+
 def evaluate(prog, inputs):
     """ evaluate a table transformation program on input tables
     Args:
@@ -52,125 +64,51 @@ def evaluate(prog, inputs):
     Returns:
         an output table (represented as a list of named tuples)
     """
+    morpheus_interpreter = MorpheusInterpreter()
+
     tnames = []
     for i in range(len(inputs)):
         name = "input_{}".format(i)
         tnames.append(name)
         init_tbl_json_str(name, json.dumps(inputs[i], default=default))
 
-    # call morpheusInterpreter to obtain result variable name in r
+    # call morpheus_interpreter to obtain result variable name in r
     if type(prog) is list:
-        res_id = MorpheusInterpreter().eval(prog[-1].ast, tnames)
+        res_id = morpheus_interpreter.eval(prog[-1].ast, tnames)
     else:
-        res_id = MorpheusInterpreter().eval(prog, tnames)
+        res_id = morpheus_interpreter.eval(prog, tnames)
 
     # get the result out from r environment
     prog_output = robjects.r('toJSON({})'.format(res_id))[0]
     return json.loads(prog_output)
 
-## Common utils.
-def get_collist(sel):
-    sel_str = ",".join(sel)
-    return "c(" + sel_str + ")"
-
-def get_fresh_name():
-    global counter_ 
-    counter_ = counter_ + 1
-
-    fresh_str = 'RET_DF' + str(counter_)
-    return fresh_str
-
-def get_fresh_col():
-    global counter_ 
-    counter_ = counter_ + 1
-
-    fresh_str = 'COL' + str(counter_)
-    return fresh_str
-
-def get_type(df, index):
-    _rscript = 'sapply({df_name}, class)[{pos}]'.format(df_name=df, pos=index)
-    ret_val = robjects.r(_rscript)
-    return ret_val[0]
-
-iter_num = 0
-
-# Only for no pruning 
-def proj_eq(actual, expect):
-    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
-    table2 = json.loads(table2)
-
-    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
-    table1 = json.loads(table1)
-
-    row_num, col_num = full_table.get_shape()
-    actual_tbl = robjects.r(actual)
-    actual_col = actual_tbl.shape[1]
-    actual_row = actual_tbl.shape[0]
-
-    expect_col = robjects.r(expect).shape[1]
-
-    if actual_col < expect_col:
-        return False
-    else:
-        domain = range(actual_col)
-        candidates = list(combinations(domain, expect_col))
-        for sel_list in candidates:
-            sel_list = list(sel_list)
-            cols = actual_tbl.columns
-            proj_out = actual_tbl[cols[sel_list]]
-            table2 = json.loads(proj_out.to_json(orient='records'))
-
-            all_ok = synth_utils.align_table_schema(table1, table2) != None
-
-            if all_ok:
-                global iter_num
-                full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
-
-                if not full_table_ok:
-                    iter_num = iter_num + 1
-                    return False
-                else:
-                    logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
-                    print('# candidates before getting the correct solution: {}'.format(iter_num))
-                    return True
-
-        return False
-
-
-def subset_eq(actual, expect):
-    """check whether the actual table is a subset of expect table """
-    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
-    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
-    table1 = json.loads(table1)
-    table2 = json.loads(table2)
-
-    actual_col = robjects.r(actual).shape[1]
-    actual_row = robjects.r(actual).shape[0]
-
-    all_ok = synth_utils.align_table_schema(table1, table2) != None
-
-    if all_ok:
-        global iter_num
-        
-        if full_table is None:
-            # need to work with this to get more solutions
-            iter_num = iter_num + 1
-            return True
-
-        full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
-
-        if not full_table_ok:
-            iter_num = iter_num + 1
-            return False
-        else:
-            logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
-            print('# candidates before getting the correct solution: {}'.format(iter_num))
-            return True
-
-    return False
-
     
 class MorpheusInterpreter(PostOrderInterpreter):
+
+    def __init__(self):
+        super()
+        self.counter_ = 0
+
+    ## Common utils.
+    def get_collist(self, sel):
+        sel_str = ",".join(sel)
+        return "c(" + sel_str + ")"
+
+    def get_fresh_name(self):
+        self.counter_ = self.counter_ + 1
+        fresh_str = 'RET_DF' + str(self.counter_)
+        return fresh_str
+
+    def get_fresh_col(self):
+        self.counter_ = self.counter_ + 1
+        fresh_str = 'COL' + str(self.counter_)
+        return fresh_str
+
+    def get_type(self, df, index):
+        _rscript = 'sapply({df_name}, class)[{pos}]'.format(df_name=df, pos=index)
+        ret_val = robjects.r(_rscript)
+        return ret_val[0]
+
     ## Concrete interpreter
     def eval_ColInt(self, v):
         return int(v)
@@ -188,9 +126,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: max(list(map(lambda y: int(y), x))) <= n_cols,
                 capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- select({table}, {cols})'.format(
-                   ret_df=ret_df_name, table=args[0], cols=get_collist(args[1]))
+                   ret_df=ret_df_name, table=args[0], cols=self.get_collist(args[1]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -210,9 +148,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: x <= n_cols and x != first_idx,
                 capture_indices=[0, 1])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- unite({table}, {TMP}, {col1}, {col2})'.format(
-                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), col1=str(args[1]), col2=str(args[2]))
+                  ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), col1=str(args[1]), col2=str(args[2]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -228,10 +166,10 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 capture_indices=[0])
         self.assertArg(node, args,
                 index=2,
-                cond=lambda x: get_type(args[0], str(x)) != 'factor',
+                cond=lambda x: self.get_type(args[0], str(x)) != 'factor',
                 capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- {table} %>% filter(.[[{col}]] {op} "{const}")'.format(
                   ret_df=ret_df_name, table=args[0], op=args[1], col=str(args[2]), const=str(args[3]))
         try:
@@ -250,14 +188,14 @@ class MorpheusInterpreter(PostOrderInterpreter):
 
         tbl = robjects.r(args[0])
         col = tbl.columns[int(args[1]) - 1]
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- separate({table}, {col1}, c("{TMP1}", "{TMP2}"))'.format(
-                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=get_fresh_col(), TMP2=get_fresh_col())
+                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=self.get_fresh_col(), TMP2=self.get_fresh_col())
         if tbl[col].dtype == np.object:
             cell = tbl[col][0]
             if cell.count('_') > 1:
                 _script = '{ret_df} <- separate({table}, {col1}, c("{TMP1}", "{TMP2}", "{TMP3}"), sep="_")'.format(
-                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=get_fresh_col(), TMP2=get_fresh_col(), TMP3=get_fresh_col())
+                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=self.get_fresh_col(), TMP2=self.get_fresh_col(), TMP3=self.get_fresh_col())
         else:
             raise GeneralError()
 
@@ -280,7 +218,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: x <= n_cols and x > first_idx,
                 capture_indices=[0, 1])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- spread({table}, {col1}, {col2})'.format(
                   ret_df=ret_df_name, table=args[0], col1=str(args[1]), col2=str(args[2]))
         
@@ -309,9 +247,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: max(list(map(lambda y: int(y), x))) <= n_cols,
                 capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- gather({table}, KEY, VALUE, {cols})'.format(
-                   ret_df=ret_df_name, table=args[0], cols=get_collist(args[1]))
+                   ret_df=ret_df_name, table=args[0], cols=self.get_collist(args[1]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -333,9 +271,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
         #                cond=lambda x: len(x) == 1,
         #         capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- group_by_at({table}, {cols})'.format(
-                   ret_df=ret_df_name, table=args[0], cols=get_collist(args[1]))
+                   ret_df=ret_df_name, table=args[0], cols=self.get_collist(args[1]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -362,18 +300,18 @@ class MorpheusInterpreter(PostOrderInterpreter):
         if not aggr_fun == 'n':
             self.assertArg(node, args,
                     index=2,
-                    cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
+                    cond=lambda x: self.get_type(args[0], str(x)) == 'integer' or self.get_type(args[0], str(x)) == 'numeric',
                     capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = ''
         if aggr_fun == 'n':
             _script = '{ret_df} <- group_by_at({table}, {cols})  %>% summarise({TMP} = {aggr} ())'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, cols=get_collist(args[3]))
+                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), aggr=aggr_fun, cols=self.get_collist(args[3]))
         else:
             aggr_col = input_cols[args[2]-1]
             _script = '{ret_df} <- group_by_at({table}, {cols}) %>% summarise({TMP} = {aggr} (`{col}`))'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col, cols=get_collist(args[3]))
+                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), aggr=aggr_fun, col=aggr_col, cols=self.get_collist(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -395,18 +333,18 @@ class MorpheusInterpreter(PostOrderInterpreter):
         if not aggr_fun == 'n':
             self.assertArg(node, args,
                     index=2,
-                    cond=lambda x: get_type(args[0], str(x)) == 'integer' or get_type(args[0], str(x)) == 'numeric',
+                    cond=lambda x: self.get_type(args[0], str(x)) == 'integer' or self.get_type(args[0], str(x)) == 'numeric',
                     capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = ''
         if aggr_fun == 'n':
             _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} ())'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun)
+                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), aggr=aggr_fun)
         else:
             aggr_col = input_cols[args[2]-1]
             _script = '{ret_df} <- {table} %>% summarise({TMP} = {aggr} (`{col}`))'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), aggr=aggr_fun, col=aggr_col)
+                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), aggr=aggr_fun, col=aggr_col)
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -427,9 +365,9 @@ class MorpheusInterpreter(PostOrderInterpreter):
         if col_type == np.float64 or col_type == np.int64:
             raise GeneralError()
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=(.[[{col1}]] {op} "{col2}"))'.format(
-                  ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
+                  ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -445,7 +383,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: x <= n_cols,
                 capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=cumsum(.[[{col1}]]))'.format(
                   ret_df=ret_df_name, table=args[0], TMP='cumsum', col1=str(args[1]))
         try:
@@ -467,18 +405,18 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 capture_indices=[0])
         self.assertArg(node, args,
                 index=2,
-                cond=lambda x: get_type(args[0], str(x)) == 'numeric',
+                cond=lambda x: self.get_type(args[0], str(x)) == 'numeric',
                 capture_indices=[0])
         self.assertArg(node, args,
                 index=3,
-                cond=lambda x: get_type(args[0], str(x)) == 'numeric',
+                cond=lambda x: self.get_type(args[0], str(x)) == 'numeric',
                 capture_indices=[0])
 
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
                 ret_df=ret_df_name, table=args[0], TMP='mutate_a', op=args[1], col1=str(args[2]), col2=str(args[3]))
         # _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
-        #           ret_df=ret_df_name, table=args[0], TMP=get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
+        #           ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -487,7 +425,7 @@ class MorpheusInterpreter(PostOrderInterpreter):
             raise GeneralError()
 
     def eval_inner_join(self, node, args):
-        ret_df_name = get_fresh_name()
+        ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- inner_join({t1}, {t2})'.format(
                   ret_df=ret_df_name, t1=args[0], t2=args[1])
         try:
@@ -507,32 +445,90 @@ class MorpheusInterpreter(PostOrderInterpreter):
         return df.shape[1]
 
 
-def init_tbl_json_str(df_name, json_loc):
-    cmd = '''
-    # tbl_name <- read.csv(csv_location, check.names = FALSE)
-    tbl_name <- fromJSON(json_location)
-    fctr.cols <- sapply(tbl_name, is.factor)
-    int.cols <- sapply(tbl_name, is.integer)
-    tbl_name[, fctr.cols] <- sapply(tbl_name[, fctr.cols], as.character)
-    tbl_name[, int.cols] <- sapply(tbl_name[, int.cols], as.numeric)
-    '''
-    cmd = cmd.replace('tbl_name', df_name).replace('json_location', "'" + json_loc + "'")
-    try:
-        robjects.r(cmd)
-    except:
-        print('Parse error!!! Move on...')
-    return None
 
+# Only for no pruning 
+def proj_eq(actual, expect):
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
+    table2 = json.loads(table2)
+
+    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
+    table1 = json.loads(table1)
+
+    actual_tbl = robjects.r(actual)
+    actual_col = actual_tbl.shape[1]
+    actual_row = actual_tbl.shape[0]
+
+    expect_col = robjects.r(expect).shape[1]
+
+    if actual_col < expect_col:
+        return False
+    else:
+        domain = range(actual_col)
+        candidates = list(combinations(domain, expect_col))
+        for sel_list in candidates:
+            sel_list = list(sel_list)
+            cols = actual_tbl.columns
+            proj_out = actual_tbl[cols[sel_list]]
+            table2 = json.loads(proj_out.to_json(orient='records'))
+
+            all_ok = synth_utils.align_table_schema(table1, table2) != None
+
+            if all_ok:
+                return True
+                # full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
+
+                # if not full_table_ok:
+                #     return False
+                # else:
+                #     logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
+                #     print('# candidates before getting the correct solution: {}'.format(iter_num))
+                #     return True
+        return False
+
+def full_eq(actual_df_name, full_table):
+    """check whether the actual table is same as the full_table
+        Args: actual is a DF string name,
+              full_table is a json object
+        Returns: whether actual table is same as the full table
+    """
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual_df_name))[0]
+    table2 = json.loads(table2)
+    return synth_utils.align_table_schema(
+                full_table.values, table2, check_equivalence=True, boolean_result=True)
+
+
+def subset_eq(actual, expect):
+    """check whether the actual table is a subset of expect table """
+    table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
+    table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
+    table1 = json.loads(table1)
+    table2 = json.loads(table2)
+
+    actual_col = robjects.r(actual).shape[1]
+    actual_row = robjects.r(actual).shape[0]
+
+    all_ok = synth_utils.align_table_schema(table1, table2) != None
+
+    return all_ok
+
+    # if all_ok:        
+    #     if full_table is None:
+    #         # need to work with this to get more solutions
+    #         return True
+
+    #     full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
+
+    #     if not full_table_ok:
+    #         return False
+    #     else:
+    #         logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
+    #         print('# candidates before getting the correct solution: {}'.format(iter_num))
+    #         return True
+    # return False
 
 def synthesize(inputs, output, oracle_output, 
                prune, extra_consts, grammar_base_file,
                solution_limit, time_limit_sec):
-
-    global full_table 
-    full_table = oracle_output
-
-    # level can be DEBUG or INFO
-    logger.setLevel('INFO')
     """ synthesizer table transformation programs from input-output examples
     Args:
         inputs: a list of input tables (represented as a list of named tuples)
@@ -542,6 +538,14 @@ def synthesize(inputs, output, oracle_output,
     Returns:
         a list of transformation programs s.t. p(inputs) = output
     """
+
+    if oracle_output is not None:
+        oracle_decider = lambda output_df_name: full_eq(output_df_name, oracle_output)
+    else:
+        oracle_decider = None
+
+    # level can be DEBUG or INFO
+    logger.setLevel('INFO')
     
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
@@ -592,7 +596,7 @@ def synthesize(inputs, output, oracle_output,
                                   solution_limit=solution_limit, time_limit_sec=time_limit_sec)
         logger.info('Synthesizing programs ...')
 
-        current_solutions = synthesizer.synthesize()
+        current_solutions = synthesizer.synthesize(oracle_decider=oracle_decider)
         if current_solutions is not None:
             solutions += current_solutions
 

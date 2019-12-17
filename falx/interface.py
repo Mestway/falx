@@ -3,6 +3,8 @@ import json
 from falx.chart import VisDesign
 from falx.matplotlib_chart import MatplotlibChart
 
+from tyrell.logger import get_logger
+
 import morpheus
 import itertools
 from pprint import pprint
@@ -17,7 +19,28 @@ from pprint import pprint
 
 np.random.seed(2019)
 
+logger = get_logger("interface")
+
 class FalxInterface(object):
+
+    # the default confifguration for the synthesizer
+    default_config = {
+        # configurations related to table transformation program synthesizer
+        "solution_limit": 5,
+        "time_limit_sec": 30,
+        "starting_search_program_length": 1,
+        "stop_search_program_length": 2,
+        "grammar_base_file": "dsl/tidyverse.tyrell.base",
+
+        # the following two criterias defines restrictions on which sketches / program symbols 
+        # can be used during the synthesis process
+        "sketch_restriction": None,
+        "component_restriction": None,
+
+        # set the visualizatino backend, one of "vegalite, ggplot2, matplotlib"
+        # ggplot2 and matplotlib have some feature restrictions
+        "vis_backend": "vegalite"
+    }
 
     def group_results(results):
         """Given a list of candidate program, evaluate them and group them into equivalence classes."""
@@ -30,30 +53,60 @@ class FalxInterface(object):
             equiv_classes[fronzen_trace].append((tbl_prog, vis_spec))
         return equiv_classes
 
+    def update_config(user_config):
+        config = copy.copy(FalxInterface.default_config)
+        for key in user_config:
+            if key in config:
+                config[key] = user_config[key]
+            else:
+                logger.warning(f"[] Key {key} is not part of the synthesizer config.")
+
+        assert config["vis_backend"] in ["vegalite", "matplotlib"]
+        assert config["solution_limit"] >= 1
+        assert config["time_limit_sec"] > 0
+        assert config["starting_search_program_length"] >= 1
+        assert config["stop_search_program_length"] > config["starting_search_program_length"]
+
+        return config
 
     @staticmethod
-    def synthesize(inputs, raw_trace, extra_consts=[], 
-                   backend="vegalite", grammar_base_file="dsl/tidyverse.tyrell.base", group_results=False):
-        """synthesize table prog and vis prog from input and output traces"""
+    def synthesize(inputs, raw_trace, extra_consts=[], group_results=False, config={}):
+        """synthesize table prog and vis prog from input and output traces
+        Inputs:
+            input tables: a list of input tables that the synthesizer will take into consideration
+            raw_trace: visualization elements in the following format
+                vtrace = [
+                  {"type": "line", "props": {"x1": "Y1", "y1": 0.52, "x2": "Y2", "y2": 0.57, "color": "", "column": ""}},
+                  {"type": "line", "props": {"x1": "Y2", "y1": 0.57, "x2": "Y3", "y2": 0.6, "color": "", "column": ""}}
+                ]
+            extra_consts: extra constant that the synthesizer will take into consideration
+            group_results: whether the output is grouped based on equivalence classes 
+                            (i.e., the programs generate same visualizations)
+            config: configurations sent to the synthesizer contains the following options
+                    { "solution_limit": ..., "time_limit_sec": ...,
+                      "starting_search_program_length": 1, "stop_search_program_length": 2,
+                      "grammar_base_file": "dsl/tidyverse.tyrell.base",
+                      "block_sketches": [], "block_program_symbols": [], "vis_backend": "vegalite" }
+        """
 
-        assert backend == "vegalite" or backend == "matplotlib"
+        # update synthesizer config
+        config = FalxInterface.update_config(config)
 
         example_trace = visual_trace.load_trace(raw_trace)
 
-        candidates = []
-
         # apply inverse semantics to obtain symbolic output table and vis programs
-        abstract_designs = VisDesign.inv_eval(example_trace) if backend == "vegalite" else MatplotlibChart.inv_eval(example_trace)
-
+        abstract_designs = VisDesign.inv_eval(example_trace) if config["vis_backend"] == "vegalite" else MatplotlibChart.inv_eval(example_trace)
         # sort pairs based on complexity of tables
-        abstract_designs.sort(key=lambda x: len(x[0].values[0]) if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
+        abstract_designs.sort(key=lambda x: len(x[0].values[0]) 
+                                if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
 
+        candidates = []
         for sym_data, chart in abstract_designs:
 
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
                 candidate_progs = morpheus.synthesize(inputs, sym_data, oracle_output=None, 
-                    prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                    prune="falx", extra_consts=extra_consts, grammar_base_file=config["grammar_base_file"],
                     solution_limit=10, time_limit_sec=30.)
 
                 for p in candidate_progs:
@@ -62,7 +115,7 @@ class FalxInterface(object):
                     field_mapping = synth_utils.align_table_schema(sym_data.values, output)
                     assert(field_mapping != None)
 
-                    if backend == "vegalite":
+                    if config["vis_backend"] == "vegalite":
                         vis_design = VisDesign(data=output, chart=copy.deepcopy(chart))
                         vis_design.update_field_names(field_mapping)
                         candidates.append((p, vis_design))
@@ -77,7 +130,7 @@ class FalxInterface(object):
                 # synthesize table transformation programs for each layer
  
                 layer_candidate_progs = [morpheus.synthesize(inputs, d, oracle_output=None, 
-                                            prune="falx", extra_consts=extra_consts, grammar_base_file=grammar_base_file,
+                                            prune="falx", extra_consts=extra_consts, grammar_base_file=config["grammar_base_file"],
                                             solution_limit=10, time_limit_sec=30.) for d in sym_data]
 
                 # iterating over combinations for different layers
@@ -94,7 +147,7 @@ class FalxInterface(object):
 
                     print(field_mappings)
 
-                    if backend == "vegalite":
+                    if config["vis_backend"] == "vegalite":
                         vis_design = VisDesign(data=outputs, chart=copy.deepcopy(chart))
                         vis_design.update_field_names(field_mappings)
                         candidates.append((progs, vis_design))
