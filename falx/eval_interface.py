@@ -45,9 +45,11 @@ class FalxEvalInterface(object):
                 sample_output = eval_utils.sample_symbolic_table(full_sym_data, num_samples)
 
                 # single-layer chart
-                candidate_progs = morpheus.synthesize(inputs, sample_output, full_sym_data, prune, 
+                candidate_progs = morpheus.synthesize(inputs, sample_output, oracle_output=full_sym_data, prune=prune, 
                                                         extra_consts=extra_consts, grammar_base_file=grammar_base_file,
-                                                        solution_limit=1, time_limit_sec=100)
+                                                        solution_limit=1, time_limit_sec=100,
+                                                        search_start_depth_level=1,
+                                                        search_stop_depth_level=2)
 
                 for p in candidate_progs:
                     #pprint(inputs[0])
@@ -87,9 +89,11 @@ class FalxEvalInterface(object):
                     sample_table = eval_utils.sample_symbolic_table(full_output, num_samples)
                     sym_tables.append((sample_table, full_output))
 
-                layer_candidate_progs = [morpheus.synthesize(inputs, p[0], p[1], prune, 
+                layer_candidate_progs = [morpheus.synthesize(inputs, p[0], oracle_output=p[1], prune=prune, 
                                             extra_consts=extra_consts, grammar_base_file=grammar_base_file,
-                                            solution_limit=1, time_limit_sec=5) for p in sym_tables]
+                                            solution_limit=1, time_limit_sec=5,
+                                            search_start_depth_level=1,
+                                            search_stop_depth_level=2) for p in sym_tables]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]

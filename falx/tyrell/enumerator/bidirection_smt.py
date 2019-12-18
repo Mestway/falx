@@ -42,6 +42,37 @@ class BidirectEnumerator(Enumerator):
     # map from internal k-tree to nodes of program
     program2tree = {}
 
+    def __init__(self, spec, loc=None, component_restriction=None, sketch_restriction=None):
+        
+        self.z3_solver = Solver()
+        custom_list = spec.get_productions_with_lhs('SmallStr')
+        if len(custom_list) > 0:
+            # Switch to optimizer
+            self.z3_solver = Optimize()
+
+        self.variables = []
+        self.sk_vars = []
+        self.program2tree = {}
+        self.spec = spec
+        if loc <= 0:
+            raise ValueError(
+                'LOC cannot be non-positive: {}'.format(loc))
+        self.loc = loc
+        self.max_children = self.maxChildren()
+        self.builder = D.Builder(self.spec)
+        self.lines, self.nodes = self.buildKLines(self.max_children, self.loc, self.z3_solver)
+
+        self.model = None
+        self.createStmtConstraints()
+        self.createDefuseConstraints()
+
+        self.component_restriction = component_restriction
+        self.sketch_restriction = sketch_restriction
+
+        print("-===--===--==-=-==-")
+        print(self.component_restriction)
+        print(self.sketch_restriction)
+
     def createStmtConstraints(self):
         functions = list(filter(lambda x: x.is_function() and x.id > 0, self.spec.productions()))
         
@@ -134,34 +165,6 @@ class BidirectEnumerator(Enumerator):
             self.z3_solver.add(lhs == (1000 + l))
 
         return lines, None
-
-    def __init__(self, spec, depth=None, loc=None):
-        self.z3_solver = Solver()
-        custom_list = spec.get_productions_with_lhs('SmallStr')
-        if len(custom_list) > 0:
-            # Switch to optimizer
-            self.z3_solver = Optimize()
-
-        self.variables = []
-        self.sk_vars = []
-        self.program2tree = {}
-        self.spec = spec
-        if depth <= 0:
-            raise ValueError(
-                'Depth cannot be non-positive: {}'.format(depth))
-        self.depth = depth
-        if loc <= 0:
-            raise ValueError(
-                'LOC cannot be non-positive: {}'.format(loc))
-        self.loc = loc
-        self.max_children = self.maxChildren()
-        self.builder = D.Builder(self.spec)
-        self.lines, self.nodes = self.buildKLines(self.max_children, self.loc, self.z3_solver)
-
-        self.model = None
-        self.createStmtConstraints()
-        self.createDefuseConstraints()
-
 
     def blockModel(self):
         assert(self.model is not None)
@@ -388,6 +391,14 @@ class BidirectEnumerator(Enumerator):
         return True
 
     def isBadSketch(self, sketch):
+        """check if the program sketch is a bad sketch, 
+            we will prevent bad sketch directly """
+
+        if self.component_restriction is not None:
+            # remove components that does not follow components restriction
+            if len([s for s in sketch if s not in self.component_restriction]) > 0:
+                return True
+
         multi_gathers = [s for s in sketch if 'gather' in s]
         if len(multi_gathers) > 1:
             return True

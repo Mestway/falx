@@ -20,16 +20,17 @@ from pprint import pprint
 np.random.seed(2019)
 
 logger = get_logger("interface")
+logger.setLevel('INFO')
 
 class FalxInterface(object):
 
     # the default confifguration for the synthesizer
     default_config = {
         # configurations related to table transformation program synthesizer
-        "solution_limit": 5,
+        "solution_limit": 10,
         "time_limit_sec": 30,
-        "starting_search_program_length": 1,
-        "stop_search_program_length": 2,
+        "search_start_depth_level": 1,
+        "search_stop_depth_level": 2,
         "grammar_base_file": "dsl/tidyverse.tyrell.base",
 
         # the following two criterias defines restrictions on which sketches / program symbols 
@@ -64,8 +65,8 @@ class FalxInterface(object):
         assert config["vis_backend"] in ["vegalite", "matplotlib"]
         assert config["solution_limit"] >= 1
         assert config["time_limit_sec"] > 0
-        assert config["starting_search_program_length"] >= 1
-        assert config["stop_search_program_length"] > config["starting_search_program_length"]
+        assert config["search_start_depth_level"] >= 1
+        assert config["search_stop_depth_level"] >= config["search_start_depth_level"]
 
         return config
 
@@ -95,19 +96,34 @@ class FalxInterface(object):
         example_trace = visual_trace.load_trace(raw_trace)
 
         # apply inverse semantics to obtain symbolic output table and vis programs
-        abstract_designs = VisDesign.inv_eval(example_trace) if config["vis_backend"] == "vegalite" else MatplotlibChart.inv_eval(example_trace)
+        abstract_designs = None
+        if config["vis_backend"] == "vegalite":
+            abstract_designs = VisDesign.inv_eval(example_trace)  
+        else:
+            abstract_designs = MatplotlibChart.inv_eval(example_trace)
+        
         # sort pairs based on complexity of tables
         abstract_designs.sort(key=lambda x: len(x[0].values[0]) 
                                 if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
 
+        logger.info("# Synthesizer configuration")
+        logger.info(json.dumps(config, indent=2))
+
         candidates = []
         for sym_data, chart in abstract_designs:
-
+            # split case based on single layered chart or multi layered chart
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
-                candidate_progs = morpheus.synthesize(inputs, sym_data, oracle_output=None, 
-                    prune="falx", extra_consts=extra_consts, grammar_base_file=config["grammar_base_file"],
-                    solution_limit=10, time_limit_sec=30.)
+                candidate_progs = morpheus.synthesize(
+                    inputs, sym_data, 
+                    extra_consts=extra_consts, oracle_output=None, 
+                    prune="falx",  grammar_base_file=config["grammar_base_file"],
+                    solution_limit=config["solution_limit"], 
+                    time_limit_sec=config["time_limit_sec"], 
+                    search_start_depth_level=config["search_start_depth_level"],
+                    search_stop_depth_level=config["search_stop_depth_level"],
+                    component_restriction=config["component_restriction"],
+                    sketch_restriction=config["sketch_restriction"])
 
                 for p in candidate_progs:
                     output = morpheus.evaluate(p, inputs)
@@ -122,16 +138,19 @@ class FalxInterface(object):
                     else:
                         vis_design = MatplotlibChart(output, copy.deepcopy(chart))
                         candidates.append((p, vis_design.to_string_spec(field_mapping)))
-
-                    #if len(candidates) > 0: break
             else:
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
- 
-                layer_candidate_progs = [morpheus.synthesize(inputs, d, oracle_output=None, 
-                                            prune="falx", extra_consts=extra_consts, grammar_base_file=config["grammar_base_file"],
-                                            solution_limit=10, time_limit_sec=30.) for d in sym_data]
+                layer_candidate_progs = [morpheus.synthesize(
+                                            inputs, d, extra_consts=extra_consts, oracle_output=None, 
+                                            prune="falx", grammar_base_file=config["grammar_base_file"],
+                                            solution_limit=config["solution_limit"], 
+                                            time_limit_sec=config["time_limit_sec"], 
+                                            search_start_depth_level=config["search_start_depth_level"],
+                                            search_stop_depth_level=config["search_stop_depth_level"],
+                                            component_restriction=config["component_restriction"],
+                                            sketch_restriction=config["sketch_restriction"]) for d in sym_data]
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
@@ -154,7 +173,6 @@ class FalxInterface(object):
                     else:
                         vis_design = MatplotlibChart(outputs,copy.deepcopy(chart))
                         candidates.append((progs, vis_design.to_string_spec(field_mappings)))
-                    #if len(candidates) > 0: break
 
             if len(candidates) > 0: break
 
@@ -178,7 +196,7 @@ if __name__ == '__main__':
       {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
     ]
 
-    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], backend="vegalite", group_results=True)
+    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
 
     for val in result:
         print("#####")

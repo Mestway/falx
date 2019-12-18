@@ -96,6 +96,7 @@ class Synthesizer(ABC):
                         self._enumerator.update()
                         prog = self._enumerator.next()
                 else:
+                    # decider will prune this
                     info = res.why()
                     logger.debug('Program rejected. Reason: {}'.format(info))
                     self._enumerator.update(info)

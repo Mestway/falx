@@ -195,7 +195,8 @@ class MorpheusInterpreter(PostOrderInterpreter):
             cell = tbl[col][0]
             if cell.count('_') > 1:
                 _script = '{ret_df} <- separate({table}, {col1}, c("{TMP1}", "{TMP2}", "{TMP3}"), sep="_")'.format(
-                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), TMP1=self.get_fresh_col(), TMP2=self.get_fresh_col(), TMP3=self.get_fresh_col())
+                  ret_df=ret_df_name, table=args[0], col1=str(args[1]), 
+                  TMP1=self.get_fresh_col(), TMP2=self.get_fresh_col(), TMP3=self.get_fresh_col())
         else:
             raise GeneralError()
 
@@ -311,7 +312,8 @@ class MorpheusInterpreter(PostOrderInterpreter):
         else:
             aggr_col = input_cols[args[2]-1]
             _script = '{ret_df} <- group_by_at({table}, {cols}) %>% summarise({TMP} = {aggr} (`{col}`))'.format(
-                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), aggr=aggr_fun, col=aggr_col, cols=self.get_collist(args[3]))
+                    ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), 
+                    aggr=aggr_fun, col=aggr_col, cols=self.get_collist(args[3]))
         try:
             ret_val = robjects.r(_script)
             return ret_df_name
@@ -444,10 +446,13 @@ class MorpheusInterpreter(PostOrderInterpreter):
         df = robjects.r(val)
         return df.shape[1]
 
-
-
 # Only for no pruning 
 def proj_eq(actual, expect):
+    """check whether the expect table is a subset of actual table, this is a slow speed comparison 
+        method that tries to enumerate projections from the actual table, only intended for using in no-pruning evaluation
+        Args: actual is the df_name of the output table,
+              expect is the df name of the expected table, 
+    """
     table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
     table2 = json.loads(table2)
 
@@ -475,14 +480,6 @@ def proj_eq(actual, expect):
 
             if all_ok:
                 return True
-                # full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
-
-                # if not full_table_ok:
-                #     return False
-                # else:
-                #     logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
-                #     print('# candidates before getting the correct solution: {}'.format(iter_num))
-                #     return True
         return False
 
 def full_eq(actual_df_name, full_table):
@@ -496,9 +493,11 @@ def full_eq(actual_df_name, full_table):
     return synth_utils.align_table_schema(
                 full_table.values, table2, check_equivalence=True, boolean_result=True)
 
-
 def subset_eq(actual, expect):
-    """check whether the actual table is a subset of expect table """
+    """check whether the expect table is a subset of actual table 
+        Args: actual is the df_name of the output table,
+              expect is the df name of the expected table, 
+    """
     table2 = robjects.r('toJSON({df_name})'.format(df_name=actual))[0]
     table1 = robjects.r('toJSON({df_name})'.format(df_name=expect))[0]
     table1 = json.loads(table1)
@@ -511,47 +510,38 @@ def subset_eq(actual, expect):
 
     return all_ok
 
-    # if all_ok:        
-    #     if full_table is None:
-    #         # need to work with this to get more solutions
-    #         return True
-
-    #     full_table_ok = synth_utils.align_table_schema(full_table.values, table2, check_equivalence=True, boolean_result=True)
-
-    #     if not full_table_ok:
-    #         return False
-    #     else:
-    #         logger.info('# candidates before getting the correct solution: {}'.format(iter_num))
-    #         print('# candidates before getting the correct solution: {}'.format(iter_num))
-    #         return True
-    # return False
-
-def synthesize(inputs, output, oracle_output, 
-               prune, extra_consts, grammar_base_file,
-               solution_limit, time_limit_sec):
+def synthesize(inputs, 
+               output, 
+               extra_consts,
+               oracle_output,
+               prune,
+               grammar_base_file,
+               solution_limit, 
+               time_limit_sec,
+               search_start_depth_level,
+               search_stop_depth_level,
+               component_restriction=None,
+               sketch_restriction=None):
     """ synthesizer table transformation programs from input-output examples
     Args:
         inputs: a list of input tables (represented as a list of named tuples)
         output: a symbolic table (of class symbolic.SymTable)
-        full_output:  the oracle output table, the task would need to generalize to it
+        oracle_output:  the oracle output table, the task would need to generalize to it
         extra_consts: extra constants provided to the solver
+        prune: pruning strategy, one of "falx", "backward", "forward", "none"
     Returns:
         a list of transformation programs s.t. p(inputs) = output
     """
+    # level can be DEBUG or INFO
+    logger.setLevel('INFO')
 
     if oracle_output is not None:
         oracle_decider = lambda output_df_name: full_eq(output_df_name, oracle_output)
     else:
         oracle_decider = None
 
-    # level can be DEBUG or INFO
-    logger.setLevel('INFO')
-    
     #print("output table:\n", output)
     #print("input table:\n", inputs[0])
-    loc_val = 2
-    # solution_limit = 1
-    # time_limit_sec = 5
 
     output_data = json.dumps(output.instantiate())
     input_data = json.dumps(inputs[0], default=default)
@@ -577,12 +567,16 @@ def synthesize(inputs, output, oracle_output,
     iter_num = 0
 
     solutions = []
-    for loc in range(1, loc_val + 1):
+    for loc in range(search_start_depth_level, search_stop_depth_level + 1):
         eq_fun = subset_eq
         if prune == 'none':
             eq_fun = proj_eq
 
-        enumerator = BidirectEnumerator(spec, depth=loc+1, loc=loc)
+        enumerator = BidirectEnumerator(
+                spec, loc=loc, 
+                component_restriction=component_restriction, 
+                sketch_restriction=sketch_restriction)
+        
         decider=BidirectionalDecider(
                     spec=spec,
                     interpreter=MorpheusInterpreter(),
