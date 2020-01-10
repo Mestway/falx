@@ -64,6 +64,11 @@ def evaluate(prog, inputs):
     Returns:
         an output table (represented as a list of named tuples)
     """
+
+    # if the program is an empty program, return the first input table
+    if prog == []:
+        return inputs[0]
+
     morpheus_interpreter = MorpheusInterpreter()
 
     tnames = []
@@ -414,9 +419,12 @@ class MorpheusInterpreter(PostOrderInterpreter):
                 cond=lambda x: self.get_type(args[0], str(x)) == 'numeric',
                 capture_indices=[0])
 
+        #new_col_name = "mutate_a"
+        new_col_name = "mutate_diff" if args[1] == "-" else ("mutate_add" if args[1] == "+" else "mutate_a")
+
         ret_df_name = self.get_fresh_name()
         _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
-                ret_df=ret_df_name, table=args[0], TMP='mutate_a', op=args[1], col1=str(args[2]), col2=str(args[3]))
+                ret_df=ret_df_name, table=args[0], TMP=new_col_name, op=args[1], col1=str(args[2]), col2=str(args[3]))
         # _script = '{ret_df} <- {table} %>% mutate({TMP}=.[[{col1}]] {op} .[[{col2}]])'.format(
         #           ret_df=ret_df_name, table=args[0], TMP=self.get_fresh_col(), op=args[1], col1=str(args[2]), col2=str(args[3]))
         try:
@@ -567,7 +575,14 @@ def synthesize(inputs,
     iter_num = 0
 
     solutions = []
-    for loc in range(search_start_depth_level, search_stop_depth_level + 1):
+
+    if search_start_depth_level == 0:
+        if synth_utils.align_table_schema(output.instantiate(), inputs[0]) != None:
+            solutions += [[]]
+
+    # start using morpheus synthesizer from search depth 1
+    start_depth = search_start_depth_level if search_start_depth_level > 0 else 1
+    for loc in range(start_depth, search_stop_depth_level + 1):
         eq_fun = subset_eq
         if prune == 'none':
             eq_fun = proj_eq
@@ -599,6 +614,8 @@ def synthesize(inputs,
                 logger.info('  {}'.format(prog))
 
             if len(solutions) >= solution_limit:
+                print("???")
+                print(solutions)
                 return solutions
             else:
                 logger.info('# Continue searching for solutions: {} found (expecting {})'.format(len(solutions), solution_limit))

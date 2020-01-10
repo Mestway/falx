@@ -69,9 +69,6 @@ class BidirectEnumerator(Enumerator):
         self.component_restriction = component_restriction
         self.sketch_restriction = sketch_restriction
 
-        print("-===--===--==-=-==-")
-        print(self.component_restriction)
-        print(self.sketch_restriction)
 
     def createStmtConstraints(self):
         functions = list(filter(lambda x: x.is_function() and x.id > 0, self.spec.productions()))
@@ -398,6 +395,13 @@ class BidirectEnumerator(Enumerator):
             # remove components that does not follow components restriction
             if len([s for s in sketch if s not in self.component_restriction]) > 0:
                 return True
+
+        if self.sketch_restriction is not None:
+            # remove the sketch if it is in the restricted sketches list
+            for restricted_sketch in self.sketch_restriction:
+                if (len(restricted_sketch) == sketch 
+                    and all([sketch[i] == restricted_sketch[i] for i in range(len(sketch))])):
+                    return True
 
         multi_gathers = [s for s in sketch if 'gather' in s]
         if len(multi_gathers) > 1:

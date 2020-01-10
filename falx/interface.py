@@ -27,7 +27,7 @@ class FalxInterface(object):
     # the default confifguration for the synthesizer
     default_config = {
         # configurations related to table transformation program synthesizer
-        "solution_limit": 10,
+        "solution_limit": 5,
         "time_limit_sec": 30,
         "search_start_depth_level": 1,
         "search_stop_depth_level": 2,
@@ -65,7 +65,7 @@ class FalxInterface(object):
         assert config["vis_backend"] in ["vegalite", "matplotlib"]
         assert config["solution_limit"] >= 1
         assert config["time_limit_sec"] > 0
-        assert config["search_start_depth_level"] >= 1
+        assert config["search_start_depth_level"] >= 0
         assert config["search_stop_depth_level"] >= config["search_start_depth_level"]
 
         return config

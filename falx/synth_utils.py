@@ -104,7 +104,6 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
     #if len(all_choices) == 1:
     #    return {key:mapping[key][0] for key in mapping}
 
-    #assert("[align table] unimplemented error")
     for mapping_id_choices in all_choices:
         # the following is an instantiation of the the mapping
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
