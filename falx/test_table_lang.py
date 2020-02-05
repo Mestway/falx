@@ -1,6 +1,7 @@
 import unittest
 
-from falx.synthesizer.tidyverse import *
+from falx.synthesizer.table_lang import *
+from falx.synthesizer.utils import Hole
 import os
 
 test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
@@ -19,102 +20,104 @@ test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
              {"Totals":9,"Value":"D","variable":"gamma","value":2,"cumsum":9},
              {"Totals":9,"Value":"E","variable":"gamma","value":2,"cumsum":9}]
 
-class TestTableLang(unittest.TestCase):
+env = {0: pd.DataFrame.from_dict(test_data)}
 
+class TestTableLang(unittest.TestCase):
+    
     def test_select(self):
-        q = Table.from_dict(test_data)
-        q = Select(q, [0, 1])
+        q = Table(data_id=0)
+        q = Select(q, Hole("column_index_list"))
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        print(q.is_abstract())
+        print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
 
     def test_unite(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Unite(q, 1, 2)
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_filter(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Filter(q, 0, "==", 7)
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_separate(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Filter(q, 0, "==", 7)
         q = Unite(q, 1, 2)
         q = Separate(q, 3)
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_spread(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Spread(q, 1, 2)
-        t = q.eval().reset_index()
+        t = q.eval(env=env).reset_index()
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_gather(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Spread(q, 1, 2)
         q = Gather(q, [1, 2])
-        t = q.eval().reset_index()
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
 
     def test_gather_neg(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Spread(q, 1, 2)
         q = GatherNeg(q, [0])
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_cumsum(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Filter(q, 1, "==", "alpha")
         q = CumSum(q, 3)
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_mutate(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Filter(q, 1, "==", "alpha")
         q = CumSum(q, 3)
         q = Mutate(q, 4, "-", 3)
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
     def test_mutate_custom(self):
-        q = Table.from_dict(test_data)
+        q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = MutateCustom(q, 1, "==", "alpha")
         print("---")
-        for s in statements_to_string(q.to_stmts()):
+        for s in q.stmt_string():
             print(s)
-        #print(q.eval())
+        #print(q.eval(env=env))
 
 if __name__ == '__main__':
     unittest.main()
