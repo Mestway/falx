@@ -182,27 +182,53 @@ class FalxInterface(object):
 
 if __name__ == '__main__':
 
+    # input_data = [
+    #   { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
+    #   { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
+    #   { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
+    #   { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
+    #   { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
+    # ]
+
+    # raw_trace = [
+    #   {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
+    #   {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
+    #   {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
+    # ]
+
+    # result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
+
+    # for val in result:
+    #     print("#####")
+    #     print(val)
+    #     for p in result[val]:
+    #         print(p[0])
+    #         #print(p[1].to_vl_json())
+
     input_data = [
-      { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
-      { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
-      { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
-      { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
-      { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
+        { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
+        { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
+        { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
+        { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
+        { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
     ]
 
     raw_trace = [
-      {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
-      {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
-      {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
+        {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
+        {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
+        {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
     ]
 
-    result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
+    result = FalxInterface.synthesize(
+                inputs=[input_data], 
+                raw_trace=raw_trace, 
+                extra_consts=[],
+                config={"backend": "vegalite",
+                        "search_start_depth_level": 0,
+                        "search_stop_depth_level": 2})
 
-    for val in result:
-        print("#####")
-        print(val)
-        for p in result[val]:
-            print(p[0])
-            #print(p[1].to_vl_json())
+    for c in result:
+        print(c[0])
+        print(c[1].to_vl_json())
 
         
