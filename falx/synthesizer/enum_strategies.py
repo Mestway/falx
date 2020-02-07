@@ -6,7 +6,7 @@ def disable_sketch(p):
             we will prevent bad sketch directly """
     
     def get_op_list(_ast):
-        return [_ast["op"]] + [v for c in _ast["args"] if c["type"] == "node" for v in get_op_list(c)]
+        return [_ast["op"]] + [v for c in _ast["children"] if c["type"] == "node" for v in get_op_list(c)]
 
     ast = p.to_dict()
     op_list = get_op_list(ast)
@@ -28,7 +28,7 @@ def disable_sketch(p):
 
     def contains_repetition(_ast, except_list):
         """check if there is a sketch that contains repetitive components """
-        for child in _ast["args"]:
+        for child in _ast["children"]:
             if child["type"] == "node": 
                 if (child["op"] == _ast["op"] and child["op"] not in except_list) or contains_repetition(child, except_list):
                     return True

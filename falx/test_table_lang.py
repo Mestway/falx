@@ -1,7 +1,7 @@
 import unittest
 
 from falx.synthesizer.table_lang import *
-from falx.synthesizer.utils import Hole
+from falx.synthesizer.utils import HOLE
 import os
 
 test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
@@ -26,10 +26,9 @@ class TestTableLang(unittest.TestCase):
     
     def test_select(self):
         q = Table(data_id=0)
-        q = Select(q, Hole("column_index_list"))
+        q = Select(q, HOLE)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         print(q.is_abstract())
         print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
 
@@ -37,16 +36,14 @@ class TestTableLang(unittest.TestCase):
         q = Table(data_id=0)
         q = Unite(q, 1, 2)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_filter(self):
         q = Table(data_id=0)
         q = Filter(q, 0, "==", 7)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_separate(self):
@@ -55,8 +52,7 @@ class TestTableLang(unittest.TestCase):
         q = Unite(q, 1, 2)
         q = Separate(q, 3)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_spread(self):
@@ -65,8 +61,7 @@ class TestTableLang(unittest.TestCase):
         q = Spread(q, 1, 2)
         t = q.eval(env=env).reset_index()
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_gather(self):
@@ -75,8 +70,7 @@ class TestTableLang(unittest.TestCase):
         q = Spread(q, 1, 2)
         q = Gather(q, [1, 2])
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
 
     def test_gather_neg(self):
@@ -85,8 +79,7 @@ class TestTableLang(unittest.TestCase):
         q = Spread(q, 1, 2)
         q = GatherNeg(q, [0])
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_cumsum(self):
@@ -95,8 +88,7 @@ class TestTableLang(unittest.TestCase):
         q = Filter(q, 1, "==", "alpha")
         q = CumSum(q, 3)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_mutate(self):
@@ -106,8 +98,7 @@ class TestTableLang(unittest.TestCase):
         q = CumSum(q, 3)
         q = Mutate(q, 4, "-", 3)
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
     def test_mutate_custom(self):
@@ -115,8 +106,7 @@ class TestTableLang(unittest.TestCase):
         q = Select(q, [1, 2, 3])
         q = MutateCustom(q, 1, "==", "alpha")
         print("---")
-        for s in q.stmt_string():
-            print(s)
+        print(q.stmt_string())
         #print(q.eval(env=env))
 
 if __name__ == '__main__':
