@@ -20,7 +20,7 @@ test_data = [{"Totals":7,"Value":"A","variable":"alpha","value":2,"cumsum":2},
              {"Totals":9,"Value":"D","variable":"gamma","value":2,"cumsum":9},
              {"Totals":9,"Value":"E","variable":"gamma","value":2,"cumsum":9}]
 
-env = {0: pd.DataFrame.from_dict(test_data)}
+inputs = {0: pd.DataFrame.from_dict(test_data)}
 
 class TestTableLang(unittest.TestCase):
     
@@ -30,21 +30,29 @@ class TestTableLang(unittest.TestCase):
         print("---")
         print(q.stmt_string())
         print(q.is_abstract())
-        print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
+        print(q.eval(inputs=inputs) if not q.is_abstract() else "[Expression is abstract]")
+
+    def test_group(self):
+        q = Table(data_id=0)
+        q = GroupSummary(q, [1], -1, "count")
+        print("---")
+        print(q.stmt_string())
+        print(q.is_abstract())
+        print(q.eval(inputs=inputs) if not q.is_abstract() else "[Expression is abstract]")
 
     def test_unite(self):
         q = Table(data_id=0)
         q = Unite(q, 1, 2)
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_filter(self):
         q = Table(data_id=0)
         q = Filter(q, 0, "==", 7)
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_separate(self):
         q = Table(data_id=0)
@@ -53,16 +61,16 @@ class TestTableLang(unittest.TestCase):
         q = Separate(q, 3)
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_spread(self):
         q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Spread(q, 1, 2)
-        t = q.eval(env=env).reset_index()
+        t = q.eval(inputs=inputs).reset_index()
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_gather(self):
         q = Table(data_id=0)
@@ -71,7 +79,7 @@ class TestTableLang(unittest.TestCase):
         q = Gather(q, [1, 2])
         print("---")
         print(q.stmt_string())
-        print(q.eval(env=env) if not q.is_abstract() else "[Expression is abstract]")
+        print(q.eval(inputs=inputs) if not q.is_abstract() else "[Expression is abstract]")
 
     def test_gather_neg(self):
         q = Table(data_id=0)
@@ -80,7 +88,7 @@ class TestTableLang(unittest.TestCase):
         q = GatherNeg(q, [0])
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_cumsum(self):
         q = Table(data_id=0)
@@ -89,7 +97,7 @@ class TestTableLang(unittest.TestCase):
         q = CumSum(q, 3)
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_mutate(self):
         q = Table(data_id=0)
@@ -99,7 +107,7 @@ class TestTableLang(unittest.TestCase):
         q = Mutate(q, 4, "-", 3)
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
     def test_mutate_custom(self):
         q = Table(data_id=0)
@@ -107,7 +115,7 @@ class TestTableLang(unittest.TestCase):
         q = MutateCustom(q, 1, "==", "alpha")
         print("---")
         print(q.stmt_string())
-        #print(q.eval(env=env))
+        #print(q.eval(inputs=inputs))
 
 if __name__ == '__main__':
     unittest.main()

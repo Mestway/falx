@@ -1,3 +1,5 @@
+import sys
+
 import copy
 from pprint import pprint
 import pandas as pd
@@ -38,7 +40,7 @@ class Sythesizer(object):
 		self.config = {
 			"filer_op": [">", "<", "=="],
 			"constants": [],
-			"aggr_func": ["average", "sum", "count"],
+			"aggr_func": ["mean", "sum", "count"],
 			"mutate_op": ["+", "-"]
 		}
 
@@ -109,7 +111,7 @@ class Sythesizer(object):
 			return [p]
 
 	def enumerative_synthesis(self, inputs, output):
-		all_sketches = self.enum_sketches(size=1, num_inputs=len(inputs))
+		all_sketches = self.enum_sketches(size=2, num_inputs=len(inputs))
 		concrete_programs = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
@@ -118,9 +120,10 @@ class Sythesizer(object):
 			print(p.stmt_string())
 			try:
 				print(p.eval(inputs))
-			except:
-				print("[error]")
-		print(len(concrete_programs))
+			except Exception as e:
+				print(f"[error] {sys.exc_info()[0]} {e}")
+		print("----")
+		print(f"number of programs: {len(concrete_programs)}")
 
 		# ast = p.to_dict()
 		# print(p.stmt_string())

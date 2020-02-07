@@ -30,6 +30,23 @@ def value_to_dict(val, val_type):
 	"""
 	return {"type": val_type, "value": val}
 
+def extract_table_schema(df):
+	def dtype_mapping(dtype):
+		"""map pandas datatype to c """
+		dtype = str(dtype)
+		if dtype == "object" or dtype == "string":
+			return "string"
+		elif "int" in dtype or "float" in dtype:
+			return "number"
+		elif "bool" in dtype:
+			return "bool"
+		else:
+			print(f"[unknown type] {dtype}")
+			sys.exit(-1)
+
+	schema = [dtype_mapping(s) for s in df.infer_objects().dtypes]
+	return schema
+
 class Node(ABC):
 	def __init__(self):
 		super(AbstractExpression, self).__init__()
@@ -135,25 +152,11 @@ class Table(Node):
 
 	def infer_output_info(self, inputs):
 		"""infer output schema """
-		def dtype_mapping(dtype):
-			"""map pandas datatype to c """
-			dtype = str(dtype)
-			if dtype == "object" or dtype == "string":
-				return "string"
-			elif "int" in dtype or "float" in dtype:
-				return "number"
-			elif "bool" in dtype:
-				return "bool"
-			else:
-				print(f"[unknown type] {dtype}")
-				sys.exit(-1)
-
-		df = inputs[self.data_id]
-		schema = [dtype_mapping(s) for s in df.infer_objects().dtypes]
+		schema = extract_table_schema(inputs[self.data_id])
 		return schema
 
-	def eval(self, env):
-		return env[self.data_id]
+	def eval(self, inputs):
+		return inputs[self.data_id]
 
 	def to_dict(self):
 		return {
@@ -185,8 +188,8 @@ class Select(Node):
 		schema = self.q.infer_output_info(inputs)
 		return [s for i, s in enumerate(schema) if i in self.cols]
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		return df[[df.columns[i] for i in self.cols]]
 
 	def to_dict(self):
@@ -205,9 +208,13 @@ class Unite(Node):
 		self.col2 = col2
 
 	def infer_domain(self, arg_id, inputs, config):
-		if arg_id in [1, 2]:
-			input_schema = self.q.infer_output_info(inputs)
-			return [i for i, s in enumerate(input_schema) if s == "string"]
+		input_schema = self.q.infer_output_info(inputs)
+		str_cols = [i for i, s in enumerate(input_schema) if s == "string"]
+		if arg_id == 1:
+			return str_cols
+		if arg_id == 2:
+			# refine the domain according to the first argumnet
+			return str_cols if self.col1 == HOLE else [i for i in str_cols if i > self.col1]
 		else:
 			assert False, "[Unite] No args to infer domain for id > 2."
 
@@ -215,8 +222,8 @@ class Unite(Node):
 		input_schema = self.q.infer_output_info(inputs)
 		return [s for i,s in enumerate(input_schema) if i not in [self.col1, self.col2]] + ["string"]
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]
 		c1, c2 = ret.columns[self.col1], ret.columns[self.col2]
@@ -255,8 +262,8 @@ class Filter(Node):
 	def infer_output_info(self, inputs):
 		return self.q.infer_output_info(inputs)
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		col = df.columns[self.col_index]
 		if self.op == "==":
 			return df[df[col] == self.const].reset_index()
@@ -287,14 +294,14 @@ class Separate(Node):
 			input_schema = self.q.infer_output_info(inputs)
 			return [i for i, s in enumerate(input_schema) if s == "string"]
 		else:
-			assert False, "[Select] No args to infer domain for id > 1."
+			assert False, "[Separate] No args to infer domain for id > 1."
 
 	def infer_output_info(self, inputs):
 		input_schema = self.q.infer_output_info(inputs)
 		return [s for i, s in enumerate(input_schema) if i != self.col_index] + ["string", "string"]
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		ret = df.copy()
 		col = ret.columns[self.col_index]
 		splitted = ret[col].str.split(r"\s|_", n=1, expand=True)
@@ -319,16 +326,36 @@ class Spread(Node):
 		self.val = val
 
 	def infer_domain(self, arg_id, inputs, config):
-		if arg_id in [1, 2]:
-			schema = self.q.infer_output_info(inputs)
-			return list(range(len(schema)))
+		schema = self.q.infer_output_info(inputs)
+		if arg_id == 1:
+			if self.q.is_abstract():
+				return list(range(len(schema)))
+			else:
+				# approximation: only get fields with more than one values
+				# for the purpose of avoiding empty fields
+				df = self.q.eval(inputs)
+				cols = []
+				for i, c in enumerate(df.columns):					
+					l = list(df[c])
+					vals_cnt = [l.count(x) for x in set(l)]
+					if len(set(vals_cnt)) == 1 and vals_cnt[0] > 1:
+						cols.append(i)
+				return cols
+		if arg_id == 2:
+			if self.key != HOLE:
+				return [i for i in range(len(schema)) if i != self.key]
+			else:
+				return list(range(len(schema)))
 		else:
 			assert False, "[Spread] No args to infer domain for id > 2."
 
 	def infer_output_info(self, inputs):
-		return None
+		if self.is_abstract():
+			return None
+		else:
+			return extract_table_schema(self.eval(inputs))
 	
-	def eval(self, env):
+	def eval(self, inputs):
 		def multiindex_pivot(df, columns=None, values=None):
 			# a helper function for performing multi-index pivoting
 		    #https://github.com/pandas-dev/pandas/issues/23955
@@ -342,7 +369,7 @@ class Spread(Node):
 		    index = pd.MultiIndex.from_tuples(tuples_index, names=names)
 		    df.index = index
 		    return df
-		df = self.q.eval(env)
+		df = self.q.eval(inputs)
 		key_col, val_col = df.columns[self.key], df.columns[self.val]
 		index_cols = [c for c in list(df.columns) if c not in [key_col, val_col]]
 		ret = df.set_index(index_cols)
@@ -371,17 +398,20 @@ class Gather(Node):
 			col_num = len(input_schema)
 			col_list_candidates = []
 			for size in range(2, col_num + 1 - 1):
-				col_list_candidates += list(itertools.combinations(list(range(col_num)), size))
+				for l in list(itertools.combinations(list(range(col_num)), size)):
+					# only consider these fields together if they have the same type
+					if len(set([input_schema[i] for i in l])) == 1:
+						col_list_candidates.append(l)
 			return col_list_candidates
 		else:
 			assert False, "[Gather] No args to infer domain for id > 1."
 
 	def infer_output_info(self, inputs):
 		input_schema = self.q.infer_output_info(inputs)
-		return [s for i, s in enumerate(input_schema) if i not in value_columns] + ["string"] + ["unknown"]
+		return [s for i, s in enumerate(input_schema) if i not in self.value_columns] + ["string"] + ["unknown"]
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		value_vars = [df.columns[idx] for idx in self.value_columns]
 		key_vars = [c for c in df.columns if c not in value_vars]
 		return pd.melt(df, id_vars=key_vars, value_vars=value_vars, 
@@ -402,21 +432,25 @@ class GatherNeg(Node):
 
 	def infer_domain(self, arg_id, inputs, config):
 		if arg_id == 1:
-			col_num = len(self.q.infer_output_info(inputs))
+			input_schema = self.q.infer_output_info(inputs)
+			col_num = len(input_schema)
 			col_list_candidates = []
 			for size in range(1, col_num + 1 - 2):
-				col_list_candidates += list(itertools.combinations(list(range(col_num)), size))
+				for l in list(itertools.combinations(list(range(col_num)), size)):
+					# only consider these fields together if they have the same type
+					if len(set([input_schema[i] for i in range(size) if i not in l])) == 1:
+						col_list_candidates.append(l)
 			return col_list_candidates
 		else:
 			assert False, "[Gather] No args to infer domain for id > 1."
 
 	def infer_output_info(self, inputs):
 		input_schema = self.q.infer_output_info(inputs)
-		return [s for i, s in enumerate(input_schema) if i in key_columns] + ["string"] + ["unknown"]
+		return [s for i, s in enumerate(input_schema) if i in self.key_columns] + ["string"] + ["unknown"]
 
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		key_vars = [df.columns[idx] for idx in self.key_columns]
 		value_vars = [c for c in df.columns if c not in key_vars]
 		return pd.melt(df, id_vars=key_vars, value_vars=value_vars, 
@@ -440,17 +474,30 @@ class GroupSummary(Node):
 		self.aggr_func = aggr_func
 
 	def infer_domain(self, arg_id, inputs, config):
+		schema = self.q.infer_output_info(inputs)
 		if arg_id == 1:
-			col_num = len(self.q.infer_output_info(inputs))
+			col_num = len(schema)
 			col_list_candidates = []
 			for size in range(1, col_num + 1 - 1):
 				col_list_candidates += list(itertools.combinations(list(range(col_num)), size))
 			return col_list_candidates
 		elif arg_id == 2:
-			col_num = len(self.q.infer_output_info(inputs))
-			return list(range(col_num))
+			number_fields = [i for i,s in enumerate(schema) if s == "number"]
+			if self.group_cols != HOLE:
+				cols = [i for i in number_fields if i not in self.group_cols]
+			else:
+				cols = number_fields
+			# the special column -1 is used for the purpose of "count", no other real intent
+			cols += [-1]
+			return cols
 		elif arg_id == 3:
-			return config["aggr_func"]
+			if self.aggr_col != HOLE:
+				if self.aggr_col == -1:
+					return ["count"] if "count" in config["aggr_func"] else []
+				else:
+					return [f for f in config["aggr_func"] if f != "count"]
+			else:
+				return config["aggr_func"]
 		else:
 			assert False, "[Gather] No args to infer domain for id > 1."
 
@@ -459,11 +506,13 @@ class GroupSummary(Node):
 		aggr_type = input_schema[self.aggr_col] if self.aggr_func != "count" else "number"
 		return [s for i, s in enumerate(input_schema) if i in self.group_cols] + [aggr_type]
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		group_keys = [df.columns[idx] for idx in self.group_cols]
 		target = df.columns[self.aggr_col]
-		return df.groupby(group_keys)[target].agg(self.aggr_func).reset_index()
+		res = df.groupby(group_keys).agg({target: self.aggr_func})
+		res = res.rename(columns={target: f'{self.aggr_func}_{target}'}).reset_index()
+		return res
 
 	def to_dict(self):
 		return {
@@ -493,8 +542,8 @@ class CumSum(Node):
 		input_schema = self.q.infer_output_info(inputs)
 		return input_schema
 
-	def eval(self, env):
-		df = self.q.eval(env)
+	def eval(self, inputs):
+		df = self.q.eval(inputs)
 		ret = df.copy()
 		ret["cumsum"] = ret[ret.columns[self.target]].cumsum()
 		return ret
@@ -517,7 +566,17 @@ class Mutate(Node):
 	def infer_domain(self, arg_id, inputs, config):
 		if arg_id in [1, 3]:
 			input_schema = self.q.infer_output_info(inputs)
-			return [i for i, s in enumerate(input_schema) if s == "number"]
+			number_fields = [i for i, s in enumerate(input_schema) if s == "number"]
+			if arg_id == 1:
+				return number_fields
+			elif arg_id == 3:
+				if self.col1 != HOLE and self.op != HOLE:
+					if self.op == "-":
+						return [i for i in number_fields if i != self.col1]
+					elif self.op == "+":
+						return [i for i in number_fields if i >= self.col1]
+				else:
+					return number_fields
 		elif arg_id == 2:
 			return config["mutate_op"]
 		else:
@@ -527,9 +586,9 @@ class Mutate(Node):
 		input_schema = self.q.infer_output_info(inputs)
 		return input_schema + ["number"]
 
-	def eval(self, env):
+	def eval(self, inputs):
 		assert (op in ["-", "+"])
-		df = self.q.eval(env)
+		df = self.q.eval(inputs)
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]
 		c1, c2 = ret.columns[self.col1], ret.columns[self.col2]
@@ -577,9 +636,9 @@ class MutateCustom(Node):
 		input_schema = self.q.infer_output_info(inputs)
 		return input_schema + ["number"]
 
-	def eval(self, env):
+	def eval(self, inputs):
 		assert(op == "==")
-		df = self.q.eval(env)
+		df = self.q.eval(inputs)
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]
 		c = ret.columns[self.col]
