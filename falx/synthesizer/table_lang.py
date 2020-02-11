@@ -291,8 +291,29 @@ class Separate(Node):
 
 	def infer_domain(self, arg_id, inputs, config):
 		if arg_id == 1:
+			try:
+				df = self.q.eval(inputs)
+			except Exception as e:
+				print(f"[eval error in infer_domain] {e}")
+				return []
 			input_schema = self.q.infer_output_info(inputs)
-			return [i for i, s in enumerate(input_schema) if s == "string"]
+			domain = []
+			#TODO: need to improve precisions of type inferene
+			# print(df)
+			# print(input_schema)
+			for i, s in enumerate(input_schema):
+				if s != "string": 
+					continue
+				l = list(df[df.columns[i]])
+				separators = [" ", "-", "_"]
+				contain_sep = False
+				for sep in separators:
+					if all([sep in str(x) for x in l]):
+						contain_sep = True
+						break
+				if contain_sep:
+					domain.append(i)
+			return domain
 		else:
 			assert False, "[Separate] No args to infer domain for id > 1."
 
@@ -333,17 +354,52 @@ class Spread(Node):
 			else:
 				# approximation: only get fields with more than one values
 				# for the purpose of avoiding empty fields
-				df = self.q.eval(inputs)
+				try:
+					df = self.q.eval(inputs)
+				except Exception as e:
+					print(f"[eval error in infer_domain] {e}")
+					return []
 				cols = []
 				for i, c in enumerate(df.columns):					
 					l = list(df[c])
 					vals_cnt = [l.count(x) for x in set(l)]
-					if len(set(vals_cnt)) == 1 and vals_cnt[0] > 1:
+					# (1) all values should have the same cardinality
+					# (2) their cardinality should all be greater than 1
+					# (3) there should be at least two distrint value
+					if len(set(vals_cnt)) == 1 and vals_cnt[0] > 1 and vals_cnt[0] != len(l):
 						cols.append(i)
 				return cols
 		if arg_id == 2:
 			if self.key != HOLE:
-				return [i for i in range(len(schema)) if i != self.key]
+				try:
+					df = self.q.eval(inputs)
+				except Exception as e:
+					print(f"[eval error in infer_domain] {e}")
+					return []
+
+				val_col_domain = []
+				for i, vcol in enumerate(df.columns):
+					if i == self.key:
+						continue
+					key_vals = list(df[df.columns[self.key]])
+					key_cnt = [key_vals.count(x) for x in set(key_vals)]
+					
+					id_cols = [c for k, c in enumerate(df.columns) if k != i and k != self.key]
+					id_val_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
+
+					# print("...>>>>>>>>")
+					# print(key_vals)
+					# print(key_cnt)
+					# print(id_cols)
+					# print(set(id_val_tuples))
+					# print("{} {} {}".format(len(set(id_val_tuples)), key_cnt[0], len(key_vals)))
+
+					# only add the value column into the domain 
+					# if #cardinality of key column * #distinct values in id column matches the # tables
+					if len(set(id_val_tuples)) * key_cnt[0] == len(key_vals):
+						val_col_domain.append(i)
+
+				return val_col_domain #[i for i in range(len(schema)) if i != self.key]
 			else:
 				return list(range(len(schema)))
 		else:
@@ -353,8 +409,14 @@ class Spread(Node):
 		if self.is_abstract():
 			return None
 		else:
-			return extract_table_schema(self.eval(inputs))
-	
+			try:
+				schema = extract_table_schema(self.eval(inputs))
+				return schema
+			except Exception as e:
+				#TODO: use this to indicate the domain would be empty
+				print(f"[eval error in infer_domain] {e}")
+				return []
+
 	def eval(self, inputs):
 		def multiindex_pivot(df, columns=None, values=None):
 			# a helper function for performing multi-index pivoting
@@ -435,10 +497,12 @@ class GatherNeg(Node):
 			input_schema = self.q.infer_output_info(inputs)
 			col_num = len(input_schema)
 			col_list_candidates = []
+			df = self.q.eval(inputs)
+			
 			for size in range(1, col_num + 1 - 2):
 				for l in list(itertools.combinations(list(range(col_num)), size)):
 					# only consider these fields together if they have the same type
-					if len(set([input_schema[i] for i in range(size) if i not in l])) == 1:
+					if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
 						col_list_candidates.append(l)
 			return col_list_candidates
 		else:
@@ -587,7 +651,7 @@ class Mutate(Node):
 		return input_schema + ["number"]
 
 	def eval(self, inputs):
-		assert (op in ["-", "+"])
+		assert (self.op in ["-", "+"])
 		df = self.q.eval(inputs)
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]

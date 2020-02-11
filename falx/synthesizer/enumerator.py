@@ -1,5 +1,5 @@
 import sys
-
+import traceback
 import copy
 from pprint import pprint
 import pandas as pd
@@ -111,7 +111,7 @@ class Sythesizer(object):
 			return [p]
 
 	def enumerative_synthesis(self, inputs, output):
-		all_sketches = self.enum_sketches(size=2, num_inputs=len(inputs))
+		all_sketches = self.enum_sketches(size=3, num_inputs=len(inputs))
 		concrete_programs = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
@@ -122,6 +122,9 @@ class Sythesizer(object):
 				print(p.eval(inputs))
 			except Exception as e:
 				print(f"[error] {sys.exc_info()[0]} {e}")
+				tb = sys.exc_info()[2]
+				tb_info = ''.join(traceback.format_tb(tb))
+				print(tb_info)
 		print("----")
 		print(f"number of programs: {len(concrete_programs)}")
 
