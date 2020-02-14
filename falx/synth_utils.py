@@ -5,26 +5,29 @@ import numpy as np
 import pandas as pd
 
 
-def remove_duplicate_columns(table):
+def remove_duplicate_columns(df):
     """Given a pandas table deuplicate column duplicates"""
     to_drop = []
-    col_num = len(table.columns)
+    col_num = len(df.columns)
     
-    for i, c1 in enumerate(table.columns):
-        c1 = table.columns[i]
+    for i, c1 in enumerate(df.columns):
+        c1 = df.columns[i]
         if c1 in to_drop: continue
 
-        for j, c2 in enumerate(table.columns):    
+        for j, c2 in enumerate(df.columns):    
             if i >= j: continue
-            if tuple(table[c1]) == tuple(table[c2]):
+            if tuple(df[c1]) == tuple(df[c2]):
                 to_drop.append(c2)
 
-    ret_table = table[[c for c in table.columns if c not in to_drop]]
+    ret_table = df[[c for c in df.columns if c not in to_drop]]
     return ret_table
 
-def check_table_inclusion(table1, table2):
-    """check table inclusion, this is sound but not complete: 
-        if it thinks two tbales are not equal, they absolutely inequal"""
+
+def check_table_inclusion(table1, table2, wild_card=None):
+    """check if table1 is included by table2 (projection + subset), 
+        this is sound but not complete: 
+            if it thinks two tables are not equal, they absolutely inequal, 
+        tables are records"""
     if len(table1) == 0:
         return True
 
@@ -32,6 +35,7 @@ def check_table_inclusion(table1, table2):
     vals2_dicts = {}
     for k2 in table2[0].keys():
         vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
+    
     for k1 in table1[0].keys():
         mapping[k1] = []
         vals1_dict = construct_value_dict([r[k1] for r in table1 if k1 in r])
@@ -39,6 +43,11 @@ def check_table_inclusion(table1, table2):
             vals2_dict = vals2_dicts[k2]
             contained = True
             for x in vals1_dict:
+
+                if wild_card != None and x == wild_card:
+                    # we consider this x value matches anything
+                    continue
+
                 if x not in vals2_dict:
                     contained = False
                 if contained == False:
@@ -67,6 +76,7 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
     vals2_dicts = {}
     for k2 in table2[0].keys():
         vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
+
     for k1 in table1[0].keys():
         mapping[k1] = []
         vals1_dict = construct_value_dict([r[k1] for r in table1 if k1 in r])

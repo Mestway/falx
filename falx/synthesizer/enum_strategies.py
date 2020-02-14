@@ -17,7 +17,7 @@ def disable_sketch(p):
         return True
 
     # group_sum and mutate_custom can only be used in the last operator
-    if "group_sum" in op_list[1:] or "mutate_custom" in op_list[1:]: 
+    if "group_sum" in op_list[1:] or "mutate_custom" in op_list[1:] or "cumsum" in op_list[1:]: 
         return True
     
     # No more than 1 gather, no more than 1 mutate

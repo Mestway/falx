@@ -5,6 +5,7 @@ import copy
 import itertools
 
 from falx.synthesizer.utils import HOLE
+import falx.synthesizer.utils as utils
 
 
 def get_fresh_col(used_columns, n=1):
@@ -30,30 +31,23 @@ def value_to_dict(val, val_type):
 	"""
 	return {"type": val_type, "value": val}
 
-def extract_table_schema(df):
-	def dtype_mapping(dtype):
-		"""map pandas datatype to c """
-		dtype = str(dtype)
-		if dtype == "object" or dtype == "string":
-			return "string"
-		elif "int" in dtype or "float" in dtype:
-			return "number"
-		elif "bool" in dtype:
-			return "bool"
-		else:
-			print(f"[unknown type] {dtype}")
-			sys.exit(-1)
-
-	schema = [dtype_mapping(s) for s in df.infer_objects().dtypes]
-	return schema
 
 class Node(ABC):
 	def __init__(self):
 		super(AbstractExpression, self).__init__()
 
 	@abstractmethod
-	def eval(self):
+	def eval(self, inputs):
+		"""the inputs are dataframes,
+			it returns a pandas dataframe representation"""
 		pass
+
+	# @abstractmethod
+	# def abstract_eval(self, inputs):
+	# 	"""the inputs are tables stored as list of records,
+	# 		it returns a list of records represented table, and the relationship state,
+	# 		the relation can be one of "EQ", "SUBSET", "CONTAIN" """
+	# 	pass
 
 	@abstractmethod
 	def to_dict(self):
@@ -152,11 +146,24 @@ class Table(Node):
 
 	def infer_output_info(self, inputs):
 		"""infer output schema """
-		schema = extract_table_schema(inputs[self.data_id])
+		inp = inputs[self.data_id]
+		if isinstance(inp, (list,)):
+			df = pd.DataFrame.from_dict(inp)
+		else:
+			df = inp
+		schema = utils.extract_table_schema(df)
 		return schema
 
 	def eval(self, inputs):
-		return inputs[self.data_id]
+		inp = inputs[self.data_id]
+		if isinstance(inp, (list,)):
+			df = pd.DataFrame.from_dict(inp)
+		else:
+			df = inp
+		return df
+
+	def abstract_eval(self, inputs):
+		return inputs[self.data_id], "EQ"
 
 	def to_dict(self):
 		return {
@@ -191,6 +198,10 @@ class Select(Node):
 	def eval(self, inputs):
 		df = self.q.eval(inputs)
 		return df[[df.columns[i] for i in self.cols]]
+
+	def backward_eval(self, output):
+		# the input table should contain every value appear in the output table
+		return [output]
 
 	def to_dict(self):
 		return {
@@ -230,6 +241,12 @@ class Unite(Node):
 		ret[new_col] = ret[c1] + "_" + ret[c2]
 		ret = ret.drop(columns=[c1, c2])
 		return ret
+
+	def backward_eval(self, output):
+		# if could be the case that all column in the output 
+		possible_premise = [output]
+		cols = list(output[0].keys())
+		return output
 
 	def to_dict(self):
 		return {
@@ -410,7 +427,7 @@ class Spread(Node):
 			return None
 		else:
 			try:
-				schema = extract_table_schema(self.eval(inputs))
+				schema = utils.extract_table_schema(self.eval(inputs))
 				return schema
 			except Exception as e:
 				#TODO: use this to indicate the domain would be empty
