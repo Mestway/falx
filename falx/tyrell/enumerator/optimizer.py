@@ -1,5 +1,5 @@
 from z3 import *
-from tyrell import dsl as D
+from falx.tyrell import dsl as D
 
 
 class Optimizer:

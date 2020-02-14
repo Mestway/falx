@@ -1,6 +1,6 @@
 from typing import Iterator
 from collections import deque
-from tyrell.dsl.node import Node
+from falx.tyrell.dsl.node import Node
 
 
 def dfs(node: Node) -> Iterator[Node]:

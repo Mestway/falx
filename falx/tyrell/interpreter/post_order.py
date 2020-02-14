@@ -1,10 +1,10 @@
 from typing import Tuple, List, Iterator, Any
 
-from tyrell.dsl import Node, AtomNode, ParamNode, ApplyNode
-from tyrell.visitor import GenericVisitor
-from tyrell.interpreter.interpreter import Interpreter
-from tyrell.interpreter.context import Context
-from tyrell.interpreter.error import InterpreterError, GeneralError
+from falx.tyrell.dsl import Node, AtomNode, ParamNode, ApplyNode
+from falx.tyrell.visitor import GenericVisitor
+from falx.tyrell.interpreter.interpreter import Interpreter
+from falx.tyrell.interpreter.context import Context
+from falx.tyrell.interpreter.error import InterpreterError, GeneralError
 
 
 class PostOrderInterpreter(Interpreter):

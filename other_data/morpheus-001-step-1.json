@@ -1,0 +1,106 @@
+{
+    "input_data": [
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "foo",
+            "val": 0.1691
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "foo",
+            "val": 0.1857
+        },
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "bar",
+            "val": 0.1241
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "bar",
+            "val": 0.0326
+        }
+    ],
+    "output_data": [
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "val",
+            "value": 0.1691
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "val",
+            "value": 0.1857
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "val",
+            "value": 0.1241
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "val",
+            "value": 0.0326
+        },
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "var1",
+            "value": 22.0
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "var1",
+            "value": 11.0
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "var1",
+            "value": 22.0
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "var1",
+            "value": 11.0
+        },
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "var2",
+            "value": 33.0
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "var2",
+            "value": 44.0
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "var2",
+            "value": 33.0
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "var2",
+            "value": 44.0
+        }
+    ]
+}

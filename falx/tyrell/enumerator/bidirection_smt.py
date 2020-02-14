@@ -1,11 +1,11 @@
 from z3 import *
 from collections import deque
-from tyrell.enumerator.enumerator import Enumerator
 from functools import reduce
 import collections
 
-from tyrell import dsl as D
-from tyrell.logger import get_logger
+from falx.tyrell import dsl as D
+from falx.tyrell.logger import get_logger
+from falx.tyrell.enumerator.enumerator import Enumerator
 
 import sys
 from pprint import pprint

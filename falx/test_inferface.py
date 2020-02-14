@@ -1,7 +1,7 @@
 import unittest
 
 from falx.chart import *
-from falx.interface import *
+from falx.interface_deprecated import *
 
 class TestFalxInterface(unittest.TestCase):
 

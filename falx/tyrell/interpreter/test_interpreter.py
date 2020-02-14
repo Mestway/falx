@@ -1,9 +1,9 @@
 import unittest
 from itertools import product
-from tyrell import spec as S
-from tyrell import dsl as D
-from tyrell.interpreter.post_order import PostOrderInterpreter
-from tyrell.interpreter.error import GeneralError
+from falx.tyrell import spec as S
+from falx.tyrell import dsl as D
+from falx.tyrell.interpreter.post_order import PostOrderInterpreter
+from falx.tyrell.interpreter.error import GeneralError
 
 
 class BoolInterpreter(PostOrderInterpreter):

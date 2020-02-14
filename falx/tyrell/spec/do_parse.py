@@ -1,5 +1,5 @@
-from tyrell.spec.parser import Lark_StandAlone
-from tyrell.spec.desugar import desugar
+from falx.tyrell.spec.parser import Lark_StandAlone
+from falx.tyrell.spec.desugar import desugar
 
 # This has to be global since Lark_StandAlone() is not re-entrant.
 # See https://github.com/lark-parser/lark/issues/299

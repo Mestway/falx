@@ -6,7 +6,7 @@ import numpy as np
 from timeit import default_timer as timer
 import subprocess
 
-from symbolic import SymTable
+from falx.symbolic import SymTable
 
 
 def sample_symbolic_table(symtable, size, strategy="diversity"):

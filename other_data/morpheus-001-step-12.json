@@ -1,0 +1,94 @@
+{
+    "input_data": [
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "foo",
+            "val": 0.1691
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "foo",
+            "val": 0.1857
+        },
+        {
+            "round": "round1",
+            "var1": 22,
+            "var2": 33,
+            "nam": "bar",
+            "val": 0.1241
+        },
+        {
+            "round": "round2",
+            "var1": 11,
+            "var2": 44,
+            "nam": "bar",
+            "val": 0.0326
+        }
+    ],
+    "output_data": [
+        {
+            "nam": "foo",
+            "value": 0.1691,
+            "vround": "val_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 0.1857,
+            "vround": "val_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 0.1241,
+            "vround": "val_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 0.0326,
+            "vround": "val_round2"
+        },
+        {
+            "nam": "foo",
+            "value": 22.0,
+            "vround": "var1_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 11.0,
+            "vround": "var1_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 22.0,
+            "vround": "var1_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 11.0,
+            "vround": "var1_round2"
+        },
+        {
+            "nam": "foo",
+            "value": 33.0,
+            "vround": "var2_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 44.0,
+            "vround": "var2_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 33.0,
+            "vround": "var2_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 44.0,
+            "vround": "var2_round2"
+        }
+    ]
+}

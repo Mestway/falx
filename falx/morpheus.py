@@ -2,14 +2,14 @@
 import argparse
 import os
 
-import tyrell.spec as S
-from tyrell.interpreter.post_order import PostOrderInterpreter, GeneralError
-from tyrell.enumerator.smt import SmtEnumerator
+from falx.tyrell import spec as S
+from falx.tyrell.interpreter.post_order import PostOrderInterpreter, GeneralError
+from falx.tyrell.enumerator.smt import SmtEnumerator
 from falx.tyrell.enumerator.bidirection_smt import BidirectEnumerator
-from tyrell.decider.example_base import Example
+from falx.tyrell.decider.example_base import Example
 from falx.tyrell.decider.bidirection_pruning import BidirectionalDecider
-from tyrell.synthesizer.synthesizer import Synthesizer
-from tyrell.logger import get_logger
+from falx.tyrell.synthesizer.synthesizer import Synthesizer
+from falx.tyrell.logger import get_logger
 
 from rpy2.rinterface import RRuntimeWarning
 import rpy2.robjects as robjects

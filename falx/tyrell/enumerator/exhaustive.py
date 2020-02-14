@@ -1,9 +1,9 @@
 from typing import Iterator
 from itertools import product
-from tyrell.spec import TyrellSpec, Type
-from tyrell.dsl import Node, Builder
-from tyrell.enumerator.enumerator import Enumerator
-from tyrell.enumerator.from_iterator import FromIteratorEnumerator
+from falx.tyrell.spec import TyrellSpec, Type
+from falx.tyrell.dsl import Node, Builder
+from falx.tyrell.enumerator.enumerator import Enumerator
+from falx.tyrell.enumerator.from_iterator import FromIteratorEnumerator
 
 
 class ExhaustiveIterator:

@@ -1,16 +1,17 @@
 import json
 
-from falx.chart import VisDesign
-from falx.matplotlib_chart import MatplotlibChart
 
 import morpheus
 import itertools
 from pprint import pprint
 import numpy as np
-import visual_trace
 
-import synth_utils
-import eval_utils
+import falx.synth_utils
+import falx.eval_utils
+
+import falx.visualization.visual_trace as visual_trace
+from falx.visualization.chart import VisDesign
+from falx.visualization.matplotlib_chart import MatplotlibChart
 
 from pprint import pprint
 

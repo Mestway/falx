@@ -1,0 +1,84 @@
+{
+    "input_data": [
+        {
+            "nam": "foo",
+            "value": 0.1691,
+            "vround": "val_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 0.1857,
+            "vround": "val_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 0.1241,
+            "vround": "val_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 0.0326,
+            "vround": "val_round2"
+        },
+        {
+            "nam": "foo",
+            "value": 22.0,
+            "vround": "var1_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 11.0,
+            "vround": "var1_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 22.0,
+            "vround": "var1_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 11.0,
+            "vround": "var1_round2"
+        },
+        {
+            "nam": "foo",
+            "value": 33.0,
+            "vround": "var2_round1"
+        },
+        {
+            "nam": "foo",
+            "value": 44.0,
+            "vround": "var2_round2"
+        },
+        {
+            "nam": "bar",
+            "value": 33.0,
+            "vround": "var2_round1"
+        },
+        {
+            "nam": "bar",
+            "value": 44.0,
+            "vround": "var2_round2"
+        }
+    ],
+    "output_data": [
+        {
+            "nam": "bar",
+            "val_round1": 0.1241,
+            "val_round2": 0.0326,
+            "var1_round1": 22.0,
+            "var1_round2": 11.0,
+            "var2_round1": 33.0,
+            "var2_round2": 44.0
+        },
+        {
+            "nam": "foo",
+            "val_round1": 0.1691,
+            "val_round2": 0.1857,
+            "var1_round1": 22.0,
+            "var1_round2": 11.0,
+            "var2_round1": 33.0,
+            "var2_round2": 44.0
+        }
+    ]
+}

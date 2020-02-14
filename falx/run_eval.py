@@ -6,13 +6,13 @@ import datetime
 from pprint import pprint
 import subprocess
 
-from chart import VisDesign
-from matplotlib_chart import MatplotlibChart
-from eval_interface import FalxEvalInterface
-import table_utils
+from falx.visualization.chart import VisDesign
+from falx.visualization.matplotlib_chart import MatplotlibChart
+from falx.eval_interface import FalxEvalInterface
+from flax import table_utils
 from timeit import default_timer as timer
 
-import morpheus
+from falx import morpheus
 
 # default directories
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))

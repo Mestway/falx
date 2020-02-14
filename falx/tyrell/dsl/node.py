@@ -1,7 +1,7 @@
 from typing import cast, List, Any
 from abc import ABC, abstractmethod
 from sexpdata import Symbol
-from tyrell.spec import Type, Production, EnumProduction, ParamProduction, FunctionProduction
+from falx.tyrell.spec import Type, Production, EnumProduction, ParamProduction, FunctionProduction
 
 
 class Node(ABC):
