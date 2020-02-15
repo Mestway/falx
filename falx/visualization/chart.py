@@ -110,6 +110,7 @@ class VisDesign(object):
         """inverse evaluation of a visual trace 
         Args: vtrace: a visual trace
         Returns: a list of pairs (table, vis) s.t. vis(table)=vtrace
+            The output table is wrapped in a SymTable
         """
         res = []
         for data, chart in LayeredChart.inv_eval(vtrace):

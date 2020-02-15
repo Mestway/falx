@@ -319,6 +319,7 @@ class Separate(Node):
 		ret = df.copy()
 		col = ret.columns[self.col_index]
 		splitted = ret[col].str.split(r"\s|_", n=1, expand=True)
+
 		new_col_names = get_fresh_col(list(ret.columns), n=2)
 		ret[new_col_names[0]] = splitted[0]
 		ret[new_col_names[1]] = splitted[1]
