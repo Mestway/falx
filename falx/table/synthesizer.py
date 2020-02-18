@@ -3,29 +3,31 @@ import traceback
 import copy
 from pprint import pprint
 import pandas as pd
+import time
 
 from falx.table.language import (HOLE, Node, Table, Select, Unite, Filter, Separate, Spread, 
 	Gather, GatherNeg, GroupSummary, CumSum, Mutate, MutateCustom)
-from falx.table import enum_strategies 
+from falx.table import enum_strategies
 from falx.table import abstract_eval
 from falx.synth_utils import remove_duplicate_columns, check_table_inclusion, align_table_schema
 
 abstract_combinators = {
-	"Select": lambda q: Select(q, cols=HOLE),
-	"Unite": lambda q: Unite(q, col1=HOLE, col2=HOLE),
-	"Filter": lambda q: Filter(q, col_index=HOLE, op=HOLE, const=HOLE),
-	"Separate": lambda q: Separate(q, col_index=HOLE),
-	"Spread": lambda q: Spread(q, key=HOLE, val=HOLE),
-	"Gather": lambda q: Gather(q, value_columns=HOLE),
-	#"GatherNeg": lambda q: GatherNeg(q, key_columns=HOLE),
-	"GroupSummary": lambda q: GroupSummary(q, group_cols=HOLE, aggr_col=HOLE, aggr_func=HOLE),
-	"CumSum": lambda q: CumSum(q, target=HOLE),
-	"Mutate": lambda q: Mutate(q, col1=HOLE, op=HOLE, col2=HOLE),
-	"MutateCustom": lambda q: MutateCustom(q, col=HOLE, op=HOLE, const=HOLE), 
+	"select": lambda q: Select(q, cols=HOLE),
+	"unite": lambda q: Unite(q, col1=HOLE, col2=HOLE),
+	"filter": lambda q: Filter(q, col_index=HOLE, op=HOLE, const=HOLE),
+	"separate": lambda q: Separate(q, col_index=HOLE),
+	"spread": lambda q: Spread(q, key=HOLE, val=HOLE),
+	"gather": lambda q: Gather(q, value_columns=HOLE),
+	"gather_neg": lambda q: GatherNeg(q, key_columns=HOLE),
+	"group_sum": lambda q: GroupSummary(q, group_cols=HOLE, aggr_col=HOLE, aggr_func=HOLE),
+	"cumsum": lambda q: CumSum(q, target=HOLE),
+	"mutate": lambda q: Mutate(q, col1=HOLE, op=HOLE, col2=HOLE),
+	"mutate_custom": lambda q: MutateCustom(q, col=HOLE, op=HOLE, const=HOLE), 
 }
 
 def update_tree_value(node, path, new_val):
-	"""from a given ast node, locate the refence to the arg"""
+	"""from a given ast node, locate the refence to the arg,
+	   and update the value"""
 	for k in path:
 		node = node["children"][k]
 	node["value"] = new_val
@@ -37,26 +39,50 @@ def get_node(node, path):
 
 class Synthesizer(object):
 
-	def __init__(self):
-		self.config = {
-			"filer_op": [">", "<", "=="],
-			"constants": [],
-			"aggr_func": ["mean", "sum", "count"],
-			"mutate_op": ["+", "-"]
-		}
+	def __init__(self, config=None):
+		if config is None:
+			self.config = {
+				"operators": ["select", "unite", "filter", "separate", "spread", 
+					"gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+				"filer_op": [">", "<", "=="],
+				"constants": [],
+				"aggr_func": ["mean", "sum", "count"],
+				"mutate_op": ["+", "-"],
+				"gather_max_val_list_size": 3,
+				"gather_neg_max_key_list_size": 3
+			}
+		else:
+			self.config = config
 
-	def enum_sketches(self, size, num_inputs):
+	def enum_sketches(self, inputs, output, size):
 		"""enumerate program sketches up to the given size"""
+
+		# check if output contains a new value 
+		# (this decides if we should use ops that generates new vals)
+		
+		inp_val_set = set([v for t in inputs for r in t for k, v in r.items()] + [k for t in inputs for k in t[0]])
+		out_val_set = set([v for r in output for k, v in r.items()])
+		contain_new_val = True if len(out_val_set - inp_val_set) > 0 else False
+		
+		#if any([len(t[0]) < 4 for t in inputs]):
+			# always consider new value operators for small tables (#column < 4)
+		#	contain_new_val = True
+
+		# check if there are seperators in column names
+		sep_in_col_names = [key for t in inputs for key in t[0] if ('-' in key or '_' in key or '/' in key)]
+		sep_in_content = [v for t in inputs for r in t for k, v in r.items() if (isinstance(v, str) and ('-' in v or '_' in v or '/' in v))]
+		has_sep = (len(sep_in_col_names) > 0) or (len(sep_in_content) > 0)
+
 		candidates = {}
 		for level in range(0, size + 1):
 			candidates[level] = []
 			if level == 0:
-				candidates[level] += [Table(data_id=i) for i in range(num_inputs)]
+				candidates[level] += [Table(data_id=i) for i in range(len(inputs))]
 			else:
 				for p in candidates[level - 1]:
 					for op in abstract_combinators:
 						q = abstract_combinators[op](copy.copy(p))
-						if not enum_strategies.disable_sketch(q):
+						if not enum_strategies.disable_sketch(q, contain_new_val, has_sep):
 							candidates[level].append(q)
 		return candidates
 
@@ -136,11 +162,10 @@ class Synthesizer(object):
 			return results
 		else:
 			return [p]
- 
 
 	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains):
 		"""iteratively instantiate abstract programs w/ promise check """
-
+		
 		def instantiate_with_premises_check(p, inputs, premise_chains):
 			"""instantiate programs and then check each one of them against the premise """
 			results = []
@@ -166,6 +191,7 @@ class Synthesizer(object):
 				return results
 			else:
 				return []
+
 		results = []
 		if p.is_abstract():
 			candidates = instantiate_with_premises_check(p, inputs, premise_chains)
@@ -178,7 +204,7 @@ class Synthesizer(object):
 	def enumerative_all_programs(self, inputs, output, max_prog_size):
 		"""Given inputs and output, enumerate all programs in the search space until 
 			find a solution p such that output ⊆ subseteq p(inputs)  """
-		all_sketches = self.enum_sketches(size=max_prog_size, num_inputs=len(inputs))
+		all_sketches = self.enum_sketches(inputs, output, size=max_prog_size)
 		concrete_programs = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
@@ -199,7 +225,7 @@ class Synthesizer(object):
 	def enumerative_search(self, inputs, output, max_prog_size):
 		"""Given inputs and output, enumerate all programs in the search space until 
 			find a solution p such that output ⊆ subseteq p(inputs)  """
-		all_sketches = self.enum_sketches(size=max_prog_size, num_inputs=len(inputs))
+		all_sketches = self.enum_sketches(inputs, output, size=max_prog_size)
 		candidates = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
@@ -218,11 +244,15 @@ class Synthesizer(object):
 						print(tb_info)
 		print("----")
 		print(f"number of programs: {len(candidates)}")
+		return candidates
 
-	def enumerative_synthesis(self, inputs, output, max_prog_size):
+	def enumerative_synthesis(self, inputs, output, max_prog_size, time_limit_sec=None, solution_limit=None):
 		"""Given inputs and output, enumerate all programs with premise check until 
 			find a solution p such that output ⊆ subseteq p(inputs) """
-		all_sketches = self.enum_sketches(size=max_prog_size, num_inputs=len(inputs))
+
+		start_time = time.time()
+
+		all_sketches = self.enum_sketches(inputs, output, size=max_prog_size)
 		candidates = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
@@ -231,23 +261,29 @@ class Synthesizer(object):
 				out_df = remove_duplicate_columns(out_df)
 				# all premise chains for the given ast
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
-				#concrete_programs = instantiate_with_premise_check(p, inputs, premise_chain)
 				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains)
 				for p in programs:
+					# check table consistensy
 					t = p.eval(inputs)
 					alignment_result = align_table_schema(output, t.to_dict(orient="records"))
 					if alignment_result != None:
-						# print(alignment_result)
-						# print(p.stmt_string())
-						# print(p.eval(inputs))
 						candidates.append(p)
+
+					# early return if the termination condition is met
+					# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
+					if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+						return candidates
+
+					if solution_limit is not None and len(candidates) > solution_limit:
+						return candidates
+
 		return candidates
 
 if __name__ == '__main__':
 
 	inputs = [[
 		{ "Bucket": "Bucket_E", "Budgeted": 100, "Actual": 115 },
-		{ "Bucket": "Bucket_D", "Budgeted": 100, "Actual": 90 },
+		{ "Bucket": "Bucket_D", "Budgeted": 100, "Actual": 115 },
 		{ "Bucket": "Bucket_C", "Budgeted": 125, "Actual": 115 },
 		{ "Bucket": "Bucket_B", "Budgeted": 125, "Actual": 140 },
 		{ "Bucket": "Bucket_A", "Budgeted": 140, "Actual": 150 }
@@ -255,11 +291,13 @@ if __name__ == '__main__':
 
 	output = [
 		{ "x": "Actual", "y": 115,  "color": "Actual", "column": "Bucket_E"},
-		{ "x": "Actual", "y": 90,"color": "Actual", "column": "Bucket_D"},
+		{ "x": "Actual", "y": 115,"color": "Actual", "column": "Bucket_D"},
 		{ "x": "Budgeted","y": 100,  "color": "Budgeted", "column": "Bucket_D"},
 	]
+
 	#Synthesizer().enumerative_all_programs(inputs, output, 3)
-	candidates = Synthesizer().enumerative_synthesis(inputs, output, 3)
+	candidates = Synthesizer().enumerative_synthesis(inputs, output, 3, time_limit_sec=3, solution_limit=10)
+	#candidates = Synthesizer().enumerative_search(inputs, output, 3)
 
 	for p in candidates:
 		#print(alignment_result)

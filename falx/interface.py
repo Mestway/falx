@@ -4,10 +4,7 @@ from pprint import pprint
 import numpy as np
 import copy
 
-from falx import morpheus
-
 from falx.table import synthesizer as table_synthesizer
-
 
 from falx import synth_utils
 from falx import eval_utils
@@ -30,18 +27,22 @@ class FalxInterface(object):
     # the default confifguration for the synthesizer
     default_config = {
         # configurations related to table transformation program synthesizer
-        "solution_limit": 5,
-        "time_limit_sec": 30,
-        "search_start_depth_level": 1,
-        "search_stop_depth_level": 2,
-        "grammar_base_file": "dsl/tidyverse.tyrell.base",
+        "solution_limit": 20,
+        "time_limit_sec": 5,
+        "max_prog_size": 2,
 
-        # the following two criterias defines restrictions on which sketches / program symbols 
-        # can be used during the synthesis process
-        "sketch_restriction": None,
-        "component_restriction": None,
+        "grammar": {
+            "operators": ["select", "unite", "filter", "separate", "spread", 
+                "gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+            "filer_op": [">", "<", "=="],
+            "constants": [],
+            "aggr_func": ["mean", "sum", "count"],
+            "mutate_op": ["+", "-"],
+            "gather_max_val_list_size": 3,
+            "gather_neg_max_key_list_size": 3
+        },
 
-        # set the visualizatino backend, one of "vegalite, ggplot2, matplotlib"
+        # set the visualization backend, one of "vegalite, ggplot2, matplotlib"
         # ggplot2 and matplotlib have some feature restrictions
         "vis_backend": "vegalite"
     }
@@ -68,8 +69,7 @@ class FalxInterface(object):
         assert config["vis_backend"] in ["vegalite", "matplotlib"]
         assert config["solution_limit"] >= 1
         assert config["time_limit_sec"] > 0
-        assert config["search_start_depth_level"] >= 0
-        assert config["search_stop_depth_level"] >= config["search_start_depth_level"]
+        assert config["max_prog_size"] >= 0
 
         return config
 
@@ -118,9 +118,12 @@ class FalxInterface(object):
             if not isinstance(sym_data, (list,)):
                 # single-layer chart
 
-                synthesizer = table_synthesizer.Synthesizer()
+                synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
                 candidate_progs = synthesizer.enumerative_synthesis(
-                                    inputs, sym_data.instantiate(), config["search_stop_depth_level"])
+                                    inputs, sym_data.instantiate(), 
+                                    max_prog_size=config["max_prog_size"],
+                                    time_limit_sec=config["time_limit_sec"],
+                                    solution_limit=config["solution_limit"])
 
                 for p in candidate_progs:
                     output = p.eval(inputs).to_dict(orient="records")
@@ -136,22 +139,17 @@ class FalxInterface(object):
                         vis_design = MatplotlibChart(output, copy.deepcopy(chart))
                         candidates.append((p.stmt_string(), vis_design.to_string_spec(field_mapping)))
             else:
-                synthesizer = table_synthesizer.Synthesizer()
-                layer_candidate_progs = [synthesizer.enumerative_synthesis(
-                                    inputs, d.instantiate(), 1) for d in sym_data]
+                synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
+
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
-
-                # layer_candidate_progs = [morpheus.synthesize(
-                #                             inputs, d, extra_consts=extra_consts, oracle_output=None, 
-                #                             prune="falx", grammar_base_file=config["grammar_base_file"],
-                #                             solution_limit=config["solution_limit"], 
-                #                             time_limit_sec=config["time_limit_sec"], 
-                #                             search_start_depth_level=config["search_start_depth_level"],
-                #                             search_stop_depth_level=config["search_stop_depth_level"],
-                #                             component_restriction=config["component_restriction"],
-                #                             sketch_restriction=config["sketch_restriction"]) for d in sym_data]
+                layer_candidate_progs = [synthesizer.enumerative_synthesis(
+                                            inputs, d.instantiate(), 
+                                            max_prog_size=config["max_prog_size"], 
+                                            time_limit_sec=config["time_limit_sec"],
+                                            solution_limit=config["solution_limit"]) for d in sym_data]
+                
 
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
@@ -205,7 +203,6 @@ if __name__ == '__main__':
     #     for p in result[val]:
     #         print(p[0])
     #         #print(p[1].to_vl_json())
-
 
     input_data = [
       { "Quarter": "Quarter1", "Number of Units": 23, "Actual Profits": 3358 },

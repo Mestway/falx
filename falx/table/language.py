@@ -18,13 +18,6 @@ class Node(ABC):
 			it returns a pandas dataframe representation"""
 		pass
 
-	# @abstractmethod
-	# def abstract_eval(self, inputs):
-	# 	"""the inputs are tables stored as list of records,
-	# 		it returns a list of records represented table, and the relationship state,
-	# 		the relation can be one of "EQ", "SUBSET", "CONTAIN" """
-	# 	pass
-
 	@abstractmethod
 	def to_dict(self):
 		pass
@@ -137,9 +130,6 @@ class Table(Node):
 		else:
 			df = inp
 		return df
-
-	def abstract_eval(self, inputs):
-		return inputs[self.data_id], "EQ"
 
 	def to_dict(self):
 		return {
@@ -453,7 +443,13 @@ class Gather(Node):
 			input_schema = self.q.infer_output_info(inputs)
 			col_num = len(input_schema)
 			col_list_candidates = []
-			for size in range(2, col_num + 1 - 1):
+
+			# at least leave one column as the key column
+			# also, choose the maximum list size based on config if the list is too long
+			# 	(this prevents exponential enumeration when the table is too wide)
+			max_val_list_size = min(col_num - 1, config["gather_max_val_list_size"])
+
+			for size in range(2, max_val_list_size + 1):
 				for l in list(itertools.combinations(list(range(col_num)), size)):
 					# only consider these fields together if they have the same type
 					if len(set([input_schema[i] for i in l])) == 1:
@@ -492,8 +488,19 @@ class GatherNeg(Node):
 			col_num = len(input_schema)
 			col_list_candidates = []
 			df = self.q.eval(inputs)
+
+			# leave at least two columns as values columns that will be unpivoted
+			# also don't exceed col_num - config["gather_max_val_list_size"] 
+			#   (since such query is already covered in gather(..))
+			# also don't exceed config["gather_neg_max_key_list_size"] to prevent explosion
+			max_key_list_size = min(col_num - 2, 
+									col_num - config["gather_max_val_list_size"] - 1, 
+									config["gather_neg_max_key_list_size"])
 			
-			for size in range(1, col_num + 1 - 2):
+			if max_key_list_size <= 0:
+				return []
+			
+			for size in range(1, max_key_list_size + 1):
 				for l in list(itertools.combinations(list(range(col_num)), size)):
 					# only consider these fields together if they have the same type
 					if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
@@ -534,10 +541,33 @@ class GroupSummary(Node):
 	def infer_domain(self, arg_id, inputs, config):
 		schema = self.q.infer_output_info(inputs)
 		if arg_id == 1:
+			# approximation: only get fields with more than one values
+			# for the purpose of avoiding empty fields
+			try:
+				df = self.q.eval(inputs)
+			except Exception as e:
+				print(f"[eval error in infer_domain] {e}")
+				return []
+
+			# use this list to store primitive table keys, 
+			# use them to elimiate column combinations that contain no duplicates
+			table_keys = []
+
 			col_num = len(schema)
 			col_list_candidates = []
 			for size in range(1, col_num + 1 - 1):
-				col_list_candidates += list(itertools.combinations(list(range(col_num)), size))
+				for gb_keys in itertools.combinations(list(range(col_num)), size):
+					if any([set(banned).issubset(set(gb_keys)) for banned in table_keys]):
+						# current key group is subsumbed by a table key, so all fields will be distinct
+						continue
+					gb_cols = df[[df.columns[k] for k in gb_keys]]
+					if not gb_cols.duplicated().any():
+						# a key group is valid for aggregation 
+						#   if there exists at least a key appear more than once
+						table_keys.append(gb_keys)
+						continue
+		
+					col_list_candidates += [gb_keys]
 			return col_list_candidates
 		elif arg_id == 2:
 			number_fields = [i for i,s in enumerate(schema) if s == "number"]

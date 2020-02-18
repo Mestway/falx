@@ -4,7 +4,6 @@ import numpy as np
 
 import pandas as pd
 
-
 def remove_duplicate_columns(df):
     """Given a pandas table deuplicate column duplicates"""
     to_drop = []
