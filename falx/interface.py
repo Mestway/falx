@@ -6,14 +6,15 @@ import copy
 
 from falx.table import synthesizer as table_synthesizer
 
-from falx import synth_utils
-from falx import eval_utils
+from falx.utils import synth_utils
+from falx.utils import eval_utils
+from falx.utils import vis_utils
 
 from falx.visualization.chart import VisDesign
 from falx.visualization.matplotlib_chart import MatplotlibChart
 from falx.visualization import visual_trace
 
-from falx.tyrell.logger import get_logger
+from falx.logger import get_logger
 
 from pprint import pprint
 
@@ -27,8 +28,8 @@ class FalxInterface(object):
     # the default confifguration for the synthesizer
     default_config = {
         # configurations related to table transformation program synthesizer
-        "solution_limit": 20,
-        "time_limit_sec": 5,
+        "solution_limit": 5,
+        "time_limit_sec": 10,
         "max_prog_size": 2,
 
         "grammar": {
@@ -119,6 +120,9 @@ class FalxInterface(object):
                 # single-layer chart
 
                 synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
+
+                print(sym_data.instantiate())
+
                 candidate_progs = synthesizer.enumerative_synthesis(
                                     inputs, sym_data.instantiate(), 
                                     max_prog_size=config["max_prog_size"],
@@ -177,6 +181,7 @@ class FalxInterface(object):
 
         if group_results:
             return FalxInterface.group_results(candidates)
+
         return candidates
 
 if __name__ == '__main__':
@@ -223,7 +228,15 @@ if __name__ == '__main__':
         print("#####")
         print(val)
         for p in result[val]:
-            print(p[0])
-            print(p[1].to_vl_json())
+            print("--")
+            spec_w_data = p[1].to_vl_obj()
+            data = spec_w_data["data"]["values"]
+            spec = spec_w_data
+            spec = vis_utils.try_repair_visualization(spec, data)
+            if spec is not None:
+                spec["data"] = {"values": data}
+                print(p[0])
+                print(json.dumps(spec))
+
 
         

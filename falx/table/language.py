@@ -372,15 +372,16 @@ class Spread(Node):
 					id_val_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
 
 					# print("...>>>>>>>>")
-					# print(key_vals)
-					# print(key_cnt)
 					# print(id_cols)
+					# print(key_vals)
+					# print(set(key_vals))
+					# print(key_cnt)
 					# print(set(id_val_tuples))
 					# print("{} {} {}".format(len(set(id_val_tuples)), key_cnt[0], len(key_vals)))
 
 					# only add the value column into the domain 
-					# if #cardinality of key column * #distinct values in id column matches the # tables
-					if len(set(id_val_tuples)) * key_cnt[0] == len(key_vals):
+					# if #cardinality of key column * #distinct values in id column matches the # of rules tables
+					if len(set(id_val_tuples)) *  len(set(key_vals)) == len(key_vals):
 						val_col_domain.append(i)
 
 				return val_col_domain #[i for i in range(len(schema)) if i != self.key]

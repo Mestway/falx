@@ -1,7 +1,7 @@
 import unittest
 
-from falx.chart import *
-from falx.interface_deprecated import *
+from falx.visualization.chart import *
+from falx.interface import *
 
 class TestFalxInterface(unittest.TestCase):
 
@@ -28,6 +28,7 @@ class TestFalxInterface(unittest.TestCase):
             print(ptable)
             print(vis_design.to_vl_json())
 
+    @unittest.skip
     def test_line_chart_2(self):
 
         inputs = [[
@@ -50,6 +51,38 @@ class TestFalxInterface(unittest.TestCase):
             print(ptable)
             print(json.dumps(json.loads(vis_design.to_vl_json())))
 
+    def test_chart_3(self):
+
+        inputs = [[{"product":"Product1_2011","Q4":3,"Q3":5,"Q2":5,"Q1":10},
+           {"product":"Product2_2011","Q4":5,"Q3":7,"Q2":5,"Q1":2},
+           {"product":"Product3_2011","Q4":3,"Q3":9,"Q2":10,"Q1":7},
+           {"product":"Product4_2011","Q4":3,"Q3":2,"Q2":8,"Q1":1},
+           {"product":"Product5_2011","Q4":1,"Q3":7,"Q2":1,"Q1":6},
+           {"product":"Product6_2011","Q4":9,"Q3":1,"Q2":6,"Q1":1},
+           {"product":"Product1_2012","Q4":3,"Q3":3,"Q2":6,"Q1":4},
+           {"product":"Product2_2012","Q4":4,"Q3":3,"Q2":6,"Q1":4},
+           {"product":"Product3_2012","Q4":3,"Q3":6,"Q2":6,"Q1":4},
+           {"product":"Product4_2012","Q4":4,"Q3":10,"Q2":6,"Q1":1},
+           {"product":"Product5_2012","Q4":8,"Q3":5,"Q2":4,"Q1":7},
+           {"product":"Product6_2012","Q4":8,"Q3":8,"Q2":8,"Q1":6},
+           {"product":"Product1_2013","Q4":10,"Q3":2,"Q2":3,"Q1":9},
+           {"product":"Product2_2013","Q4":8,"Q3":6,"Q2":7,"Q1":7},
+           {"product":"Product3_2013","Q4":9,"Q3":8,"Q2":4,"Q1":9},
+           {"product":"Product4_2013","Q4":5,"Q3":9,"Q2":5,"Q1":2},
+           {"product":"Product5_2013","Q4":1,"Q3":5,"Q2":2,"Q1":4},
+           {"product":"Product6_2013","Q4":8,"Q3":10,"Q2":6,"Q1":4}]]
+
+        vtrace = [
+          {"type": "rect", "props": { "x": "Q2", "y": "Product4",  "color": 8, "column": "2011"}},
+          {"type": "rect", "props": { "x": "Q2", "y": "Product5",  "color": 1, "column": "2011"}},
+          {"type": "rect", "props": { "x": "Q1", "y": "Product3",  "color": 7, "column": "2011"}}
+      ]
+
+        candidates = FalxInterface.synthesize(inputs=inputs, raw_trace=vtrace)
+
+        for ptable, vis_design in candidates:
+            print(ptable)
+            print(json.dumps(json.loads(vis_design.to_vl_json())))
 
 if __name__ == '__main__':
     unittest.main()

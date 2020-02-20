@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 from itertools import combinations 
 
-from falx import synth_utils
+from falx.utils import synth_utils
 
 # suppress R warnings
 warnings.filterwarnings("ignore", category=RRuntimeWarning)

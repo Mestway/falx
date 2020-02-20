@@ -1,13 +1,13 @@
 import json
 
 
-import morpheus
+from falx import morpheus
 import itertools
 from pprint import pprint
 import numpy as np
 
-import falx.synth_utils
-import falx.eval_utils
+from falx.utils import synth_utils
+from falx.utils import eval_utils
 
 import falx.visualization.visual_trace as visual_trace
 from falx.visualization.chart import VisDesign

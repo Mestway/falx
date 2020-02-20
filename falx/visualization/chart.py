@@ -7,7 +7,7 @@ import itertools
 import numpy as np
 
 from falx.symbolic import SymTable, SymVal
-import falx.table_utils as table_utils
+from falx.utils import table_utils
 
 from falx.visualization import visual_trace
 from falx.visualization.visual_trace import BarV, BarH, Point, Line, Area, Box

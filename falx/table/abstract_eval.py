@@ -1,7 +1,7 @@
 import pandas as pd
 
 from falx.table.language import *
-from falx.synth_utils import remove_duplicate_columns, check_table_inclusion
+from falx.utils.synth_utils import remove_duplicate_columns, check_table_inclusion
 
 def backward_eval(node, out_df, is_outer_most=True):
 	"""Given an ast node, and the output dataframe, 

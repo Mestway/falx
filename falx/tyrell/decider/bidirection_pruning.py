@@ -20,7 +20,7 @@ import rpy2.robjects as robjects
 
 import copy
 from functools import reduce
-import falx.synth_utils
+from falx.utils import synth_utils
 import json
 import numpy as np
 import pandas as pd
@@ -216,7 +216,7 @@ class AbstractPrune(GenericVisitor):
         """
 
         # in order to handle 
-        output_table = falx.synth_utils.remove_duplicate_columns(self._output)
+        output_table = synth_utils.remove_duplicate_columns(self._output)
         
         abstractions_at_each_step = []
         tbl_list_at_each_step = []
@@ -271,7 +271,7 @@ class AbstractPrune(GenericVisitor):
         table1 = json.loads(actual.to_json(orient='records'))
         table2 = json.loads(expect.to_json(orient='records'))
 
-        all_ok = falx.synth_utils.check_table_inclusion(table2, table1)
+        all_ok = synth_utils.check_table_inclusion(table2, table1)
         return all_ok
 
     def is_primitive(self, var):

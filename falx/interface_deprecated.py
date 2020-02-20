@@ -5,8 +5,8 @@ import numpy as np
 import copy
 
 from falx import morpheus
-from falx import synth_utils
-from falx import eval_utils
+from falx.utils import synth_utils
+from falx.utils import eval_utils
 
 from falx.visualization.chart import VisDesign
 from falx.visualization.matplotlib_chart import MatplotlibChart
