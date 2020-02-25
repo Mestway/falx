@@ -7,8 +7,11 @@ import json
 from flask_cors import CORS
 
 import copy
-
 import pandas as pd
+
+sys.path.append(os.path.abspath('/Users/clwang/Research/falx-project/falx/falx'))
+
+from falx.interface import FalxInterface
 
 def infer_dtype(values):
     return pd.api.types.infer_dtype(values, skipna=True)
@@ -26,10 +29,6 @@ def try_infer_string_type(values):
 
     return dtype, values
 
-sys.path.append(os.path.abspath('/Users/clwang/Research/falx-project/falx/falx'))
-
-from falx.interface import FalxInterface
-
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
@@ -44,41 +43,41 @@ GRAMMAR = {
     "gather_neg_max_key_list_size": 3
 }
 
-# @app.route('/')
-# def hello():
-#     name = request.args.get("name", "World")
+@app.route('/')
+def hello():
+    name = request.args.get("name", "World")
 
-#     input_data = [
-#         { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
-#         { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
-#         { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
-#         { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
-#         { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
-#     ]
+    input_data = [
+        { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
+        { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
+        { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
+        { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
+        { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
+    ]
 
-#     raw_trace = [
-#         {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
-#         {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
-#         {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
-#     ]
+    raw_trace = [
+        {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
+        {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
+        {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
+    ]
 
-#     result = FalxInterface.synthesize(
-#                 inputs=[input_data], 
-#                 raw_trace=raw_trace, 
-#                 extra_consts=[],
-#                 config={
-#                     "solution_limit": 10,
-#                     "time_limit_sec": 10,
-#                     "backend": "vegalite",
-#                     "max_prog_size": 2,
-#                     "grammar": GRAMMAR
-#                 })
+    result = FalxInterface.synthesize(
+                inputs=[input_data], 
+                raw_trace=raw_trace, 
+                extra_consts=[],
+                config={
+                    "solution_limit": 10,
+                    "time_limit_sec": 10,
+                    "backend": "vegalite",
+                    "max_prog_size": 2,
+                    "grammar": GRAMMAR
+                })
 
-#     for c in result:
-#         print(c[0])
-#         print(c[1].to_vl_json())
+    for c in result:
+        print(c[0])
+        print(c[1].to_vl_json())
 
-#     return 'Hello!'
+    return 'Hello!'
 
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
