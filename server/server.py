@@ -9,7 +9,7 @@ from flask_cors import CORS
 import copy
 import pandas as pd
 
-sys.path.append(os.path.abspath('/Users/clwang/Research/falx-project/falx/falx'))
+sys.path.append(os.path.abspath('../falx'))
 
 from falx.interface import FalxInterface
 
@@ -28,6 +28,7 @@ def try_infer_string_type(values):
         pass
 
     return dtype, values
+
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
@@ -113,6 +114,7 @@ def run_falx_synthesizer():
                         # update the value in partion by reference, force to modify into integer
                         partition[i]["props"][c] = float(values[i])
 
+
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
                     raw_trace=visual_elements, 
@@ -135,5 +137,4 @@ def run_falx_synthesizer():
     return response
 
 if __name__ == '__main__':
-    #app.run(debug=True, host='127.0.0.1', port=5000)
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
