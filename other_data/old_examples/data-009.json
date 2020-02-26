@@ -1,0 +1,218 @@
+[
+{
+  "state":"Maine",
+  "produce":"apples",
+  "year":1900,
+  "value":"131"
+},
+{
+  "state":"Maine",
+  "produce":"apples",
+  "year":1950,
+  "value":"231"
+},
+{
+  "state":"Maine",
+  "produce":"apples",
+  "year":2000,
+  "value":"191"
+},
+{
+  "state":"Maine",
+  "produce":"apples",
+  "year":2015,
+  "value":"302"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"apples",
+  "year":1900,
+  "value":"31"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"apples",
+  "year":1950,
+  "value":"331"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"apples",
+  "year":2000,
+  "value":"291"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"apples",
+  "year":2015,
+  "value":"250"
+},
+{
+  "state":"Ohio",
+  "produce":"apples",
+  "year":1900,
+  "value":"11"
+},
+{
+  "state":"Ohio",
+  "produce":"apples",
+  "year":1950,
+  "value":"230"
+},
+{
+  "state":"Ohio",
+  "produce":"apples",
+  "year":2000,
+  "value":"185"
+},
+{
+  "state":"Ohio",
+  "produce":"apples",
+  "year":2015,
+  "value":"310"
+},
+{
+  "state":"Maine",
+  "produce":"pears",
+  "year":1900,
+  "value":"171"
+},
+{
+  "state":"Maine",
+  "produce":"pears",
+  "year":1950,
+  "value":"121"
+},
+{
+  "state":"Maine",
+  "produce":"pears",
+  "year":2000,
+  "value":"231"
+},
+{
+  "state":"Maine",
+  "produce":"pears",
+  "year":2015,
+  "value":"202"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"pears",
+  "year":1900,
+  "value":"73"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"pears",
+  "year":1950,
+  "value":"151"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"pears",
+  "year":2000,
+  "value":"399"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"pears",
+  "year":2015,
+  "value":"140"
+},
+{
+  "state":"Ohio",
+  "produce":"pears",
+  "year":1900,
+  "value":"146"
+},
+{
+  "state":"Ohio",
+  "produce":"pears",
+  "year":1950,
+  "value":"130"
+},
+{
+  "state":"Ohio",
+  "produce":"pears",
+  "year":2000,
+  "value":"195"
+},
+{
+  "state":"Ohio",
+  "produce":"pears",
+  "year":2015,
+  "value":"210"
+},
+{
+  "state":"Maine",
+  "produce":"tomatoes",
+  "year":1900,
+  "value":"71"
+},
+{
+  "state":"Maine",
+  "produce":"tomatoes",
+  "year":1950,
+  "value":"221"
+},
+{
+  "state":"Maine",
+  "produce":"tomatoes",
+  "year":2000,
+  "value":"31"
+},
+{
+  "state":"Maine",
+  "produce":"tomatoes",
+  "year":2015,
+  "value":"102"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"tomatoes",
+  "year":1900,
+  "value":"173"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"tomatoes",
+  "year":1950,
+  "value":"194"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"tomatoes",
+  "year":2000,
+  "value":"195"
+},
+{
+  "state":"Pennsylvania",
+  "produce":"tomatoes",
+  "year":2015,
+  "value":"230"
+},
+{
+  "state":"Ohio",
+  "produce":"tomatoes",
+  "year":1900,
+  "value":"216"
+},
+{
+  "state":"Ohio",
+  "produce":"tomatoes",
+  "year":1950,
+  "value":"184"
+},
+{
+  "state":"Ohio",
+  "produce":"tomatoes",
+  "year":2000,
+  "value":"125"
+},
+{
+  "state":"Ohio",
+  "produce":"tomatoes",
+  "year":2015,
+  "value":"150"
+}
+]

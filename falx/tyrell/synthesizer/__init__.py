@@ -1,1 +1,1 @@
-from tyrell.synthesizer.synthesizer import Synthesizer
+from falx.tyrell.synthesizer.synthesizer import Synthesizer

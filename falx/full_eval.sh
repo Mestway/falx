@@ -13,7 +13,7 @@ dirname="../benchmarks/"
 num_samples=4
 time_limit=600
 ###falx | forward | morpheus | none
-prune=forward
+prune=falx
 output_dir="../output/exp_"$prune"_"$num_samples"_"$dt
 
 data_list=(

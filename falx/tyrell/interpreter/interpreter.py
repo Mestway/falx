@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Callable, Iterable, List, Any
-from tyrell.dsl import Node
-from tyrell.interpreter.error import AssertionViolation
+from falx.tyrell.dsl import Node
+from falx.tyrell.interpreter.error import AssertionViolation
 
 
 class Interpreter(ABC):

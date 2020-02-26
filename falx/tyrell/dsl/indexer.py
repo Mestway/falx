@@ -1,7 +1,7 @@
 from typing import List, Dict, Optional
 from collections import deque
-from tyrell.dsl.node import Node
-from tyrell.dsl.iterator import bfs
+from falx.tyrell.dsl.node import Node
+from falx.tyrell.dsl.iterator import bfs
 
 
 class NodeIndexer:

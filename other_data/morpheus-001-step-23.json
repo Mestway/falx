@@ -1,0 +1,96 @@
+{
+    "input_data": [
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "val",
+            "value": 0.1691
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "val",
+            "value": 0.1857
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "val",
+            "value": 0.1241
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "val",
+            "value": 0.0326
+        },
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "var1",
+            "value": 22.0
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "var1",
+            "value": 11.0
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "var1",
+            "value": 22.0
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "var1",
+            "value": 11.0
+        },
+        {
+            "nam": "foo",
+            "round": "round1",
+            "variable": "var2",
+            "value": 33.0
+        },
+        {
+            "nam": "foo",
+            "round": "round2",
+            "variable": "var2",
+            "value": 44.0
+        },
+        {
+            "nam": "bar",
+            "round": "round1",
+            "variable": "var2",
+            "value": 33.0
+        },
+        {
+            "nam": "bar",
+            "round": "round2",
+            "variable": "var2",
+            "value": 44.0
+        }
+    ],
+    "output_data": [
+        {
+            "nam": "bar",
+            "val_round1": 0.1241,
+            "val_round2": 0.0326,
+            "var1_round1": 22.0,
+            "var1_round2": 11.0,
+            "var2_round1": 33.0,
+            "var2_round2": 44.0
+        },
+        {
+            "nam": "foo",
+            "val_round1": 0.1691,
+            "val_round2": 0.1857,
+            "var1_round1": 22.0,
+            "var1_round2": 11.0,
+            "var2_round1": 33.0,
+            "var2_round2": 44.0
+        }
+    ]
+}

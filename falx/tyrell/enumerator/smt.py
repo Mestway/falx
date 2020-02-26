@@ -1,10 +1,10 @@
 from z3 import *
 from collections import deque
-from tyrell.enumerator.enumerator import Enumerator
-from tyrell.enumerator.optimizer import Optimizer
+from falx.tyrell.enumerator.enumerator import Enumerator
+from falx.tyrell.enumerator.optimizer import Optimizer
 
-from tyrell import dsl as D
-from tyrell.logger import get_logger
+from falx.tyrell import dsl as D
+from falx.tyrell.logger import get_logger
 
 logger = get_logger('tyrell.enumerator.smt')
 

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Callable, Iterable, Optional, Any
-from tyrell.dsl import Node
-from tyrell.interpreter.context import Context
+from falx.tyrell.dsl import Node
+from falx.tyrell.interpreter.context import Context
 
 
 class InterpreterError(RuntimeError):
