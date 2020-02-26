@@ -37,3 +37,5 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 To run the Falx design synthesizer: `cd falx; python run.py`
 
 To test Tyrell enumerator: `cd falx; python morpheus.py`
+
+To run Falx as a synthesis server: `cd server; env FLASK_APP=server.py flask run`

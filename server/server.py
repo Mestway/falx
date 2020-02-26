@@ -29,7 +29,6 @@ def try_infer_string_type(values):
 
     return dtype, values
 
-
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
@@ -92,7 +91,6 @@ def run_falx_synthesizer():
         app.logger.info(input_data)
         app.logger.info(visual_elements)
 
-
         all_input_values = list(set([val for r in input_data for key, val in r.items()])) + list(set([key for key in input_data[0]]))
 
         post_processed_visual_elements = []
@@ -113,7 +111,6 @@ def run_falx_synthesizer():
                     for i in range(len(values)):
                         # update the value in partion by reference, force to modify into integer
                         partition[i]["props"][c] = float(values[i])
-
 
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
