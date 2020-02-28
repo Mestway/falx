@@ -177,7 +177,7 @@ class FalxInterface(object):
                         vis_design = MatplotlibChart(outputs,copy.deepcopy(chart))
                         candidates.append(([p.stmt_string() for p in progs], vis_design.to_string_spec(field_mappings)))
 
-            if len(candidates) > 0: break
+            #if len(candidates) > 0: break
 
         if group_results:
             return FalxInterface.group_results(candidates)
@@ -186,57 +186,55 @@ class FalxInterface(object):
 
 if __name__ == '__main__':
 
-    # input_data = [
-    #   { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
-    #   { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
-    #   { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
-    #   { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
-    #   { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
-    # ]
-
-    # raw_trace = [
-    #   {"type": "bar", "props": { "x": "Actual", "y": 115,  "color": "Actual", "x2": "", "y2": "", "column": "Bucket E"}},
-    #   {"type": "bar", "props": { "x": "Actual", "y": 90,"color": "Actual", "x2": "", "y2": "", "column": "Bucket D"}},
-    #   {"type": "bar", "props": { "x": "Budgeted","y": 100,  "color": "Budgeted", "x2": "", "y2": "", "column": "Bucket D"}},
-    # ]
-
-    # result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
-
-    # for val in result:
-    #     print("#####")
-    #     print(val)
-    #     for p in result[val]:
-    #         print(p[0])
-    #         #print(p[1].to_vl_json())
-
     input_data = [
-      { "Quarter": "Quarter1", "Number of Units": 23, "Actual Profits": 3358 },
-      { "Quarter": "Quarter2", "Number of Units": 27, "Actual Profits": 3829 },
-      { "Quarter": "Quarter3", "Number of Units": 15, "Actual Profits": 2374 },
-      { "Quarter": "Quarter4", "Number of Units": 43, "Actual Profits": 3373 }
+      { "Bucket": "Bucket E", "Budgeted": 100, "Actual": 115 },
+      { "Bucket": "Bucket D", "Budgeted": 100, "Actual": 90 },
+      { "Bucket": "Bucket C", "Budgeted": 125, "Actual": 115 },
+      { "Bucket": "Bucket B", "Budgeted": 125, "Actual": 140 },
+      { "Bucket": "Bucket A", "Budgeted": 140, "Actual": 150 }
     ]
 
     raw_trace = [
-      {"type": "bar", "props": { "x": "Quarter1", "y": 23,  "color": "", "x2": "", "y2": "", "column": ""}},
-      {"type": "bar", "props": { "x": "Quarter2", "y": 27,"color": "", "x2": "", "y2": "", "column": ""}},
-      {"type": "line", "props": {"x1": "Quarter1", "y1": 3358, "x2": "Quarter2", "y2": 3829, "color": "", "column": ""}},
+      {"type": "bar", "props": { "x": "Bucket E", "y": 100,  "color": 15, "x2": "", "y2": 115, "column": ""}}
     ]
-  
+
     result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
 
     for val in result:
         print("#####")
         print(val)
         for p in result[val]:
-            print("--")
-            spec_w_data = p[1].to_vl_obj()
-            data = spec_w_data["data"]["values"]
-            spec = spec_w_data
-            spec = vis_utils.try_repair_visualization(spec, data)
-            if spec is not None:
-                spec["data"] = {"values": data}
-                print(p[0])
-                print(json.dumps(spec))
+            print(p[0])
+            #print(p[1].to_vl_json())
+
+    # input_data = [
+    #   { "Quarter": "Quarter1", "Number of Units": 23, "Actual Profits": 3358 },
+    #   { "Quarter": "Quarter2", "Number of Units": 27, "Actual Profits": 3829 },
+    #   { "Quarter": "Quarter3", "Number of Units": 15, "Actual Profits": 2374 },
+    #   { "Quarter": "Quarter4", "Number of Units": 43, "Actual Profits": 3373 }
+    # ]
+
+    # raw_trace = [
+    #   {"type": "bar", "props": { "x": "Quarter1", "y": 23,  "color": "", "x2": "", "y2": "", "column": ""}},
+    #   {"type": "bar", "props": { "x": "Quarter2", "y": 27,"color": "", "x2": "", "y2": "", "column": ""}},
+    #   {"type": "line", "props": {"x1": "Quarter1", "y1": 3358, "x2": "Quarter2", "y2": 3829, "color": "", "column": ""}},
+    # ]
+  
+    # result = FalxInterface.synthesize(inputs=[input_data], raw_trace=raw_trace, extra_consts=[], group_results=True)
+
+    # for val in result:
+    #     print("#####")
+    #     print(val)
+    #     for p in result[val]:
+    #         print("--")
+    #         spec_w_data = p[1].to_vl_obj()
+    #         data = spec_w_data["data"]["values"]
+    #         spec = spec_w_data
+    #         spec = vis_utils.try_repair_visualization(spec, data)
+    #         if spec is not None:
+    #             spec["data"] = {"values": data}
+    #             print(p[0])
+    #             print(json.dumps(spec))
 
 
         

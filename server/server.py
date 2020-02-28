@@ -92,6 +92,14 @@ def run_falx_synthesizer():
         app.logger.info(visual_elements)
 
         all_input_values = list(set([val for r in input_data for key, val in r.items()])) + list(set([key for key in input_data[0]]))
+        splitted_values = []
+        for v in all_input_values:
+            if isinstance(v, (str,)) and "_" in v:
+                splitted_values += v.split("_")
+        all_input_values += splitted_values
+        all_input_values = set(all_input_values)
+
+        print(all_input_values)
 
         post_processed_visual_elements = []
         partition_keys = set([r['type'] for r in visual_elements])
@@ -103,6 +111,13 @@ def run_falx_synthesizer():
             for c in columns:
                 values = [r["props"][c] for r in copyed_partition]
                 if all([v == "" for v in values]):
+                    continue
+
+                if infer_dtype(values) != "string":
+                    continue
+
+                # don't try to force conversion if it is not 
+                if len([x for x in values if x not in all_input_values]) == 0:
                     continue
 
                 ty, values = try_infer_string_type(values)
