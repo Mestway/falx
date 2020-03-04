@@ -1,7 +1,8 @@
 import sys
 import os
 
-from flask import Flask, escape, request, send_from_directory
+from flask import Flask, escape, request, send_from_directory, redirect, url_for
+
 import flask
 import json
 from flask_cors import CORS
@@ -50,7 +51,7 @@ def download_file(filename):
     print(filename)
     return send_from_directory(app.static_folder + "/media", filename)
 
-@app.route('/')
+@app.route('/hello')
 def hello():
     name = request.args.get("name", "World")
 
@@ -85,6 +86,10 @@ def hello():
         print(c[1].to_vl_json())
 
     return 'Hello!'
+
+@app.route("/")
+def index():
+    return redirect('/index.html')
 
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
