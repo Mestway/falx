@@ -1,7 +1,7 @@
 import sys
 import os
 
-from flask import Flask, escape, request
+from flask import Flask, escape, request, send_from_directory
 import flask
 import json
 from flask_cors import CORS
@@ -42,6 +42,13 @@ GRAMMAR = {
     "gather_max_val_list_size": 3,
     "gather_neg_max_key_list_size": 3
 }
+
+@app.route('/static/media/<path:filename>')
+def download_file(filename):
+    print("--->")
+    print(app.static_folder)
+    print(filename)
+    return send_from_directory(app.static_folder + "/media", filename)
 
 @app.route('/')
 def hello():
