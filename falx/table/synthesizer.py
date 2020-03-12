@@ -163,16 +163,27 @@ class Synthesizer(object):
 		else:
 			return [p]
 
-	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains):
+	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains, time_limit_sec=None):
 		"""iteratively instantiate abstract programs w/ promise check """
 		
+		print("time limit: {}".format(time_limit_sec))
+		if time_limit_sec < 0:
+			return []
+
+		start_time = time.time()
+
 		def instantiate_with_premises_check(p, inputs, premise_chains):
 			"""instantiate programs and then check each one of them against the premise """
 			results = []
 			if p.is_abstract():
 				ast = p.to_dict()
 				next_level_programs, level = self.instantiate_one_level(ast, inputs)
+
 				for _ast in next_level_programs:
+
+					# force terminate if the remaining time is running out
+					if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+						return results
 
 					premises_at_level = [[pm for pm in premise_chain if len(pm[1]) == level][0] for premise_chain in premise_chains]
 
@@ -196,7 +207,10 @@ class Synthesizer(object):
 		if p.is_abstract():
 			candidates = instantiate_with_premises_check(p, inputs, premise_chains)
 			for _p in candidates:
-				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains)
+				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+					return results
+				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
+				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains, remaining_time_limit)
 			return results
 		else:
 			return [p]
@@ -256,12 +270,14 @@ class Synthesizer(object):
 		candidates = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
+				print(s.stmt_string())
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
 				out_df = remove_duplicate_columns(out_df)
 				# all premise chains for the given ast
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
-				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains)
+				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
+				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, remaining_time_limit)
 				for p in programs:
 					# check table consistensy
 					t = p.eval(inputs)
@@ -327,7 +343,7 @@ if __name__ == '__main__':
 
 
 	#Synthesizer().enumerative_all_programs(inputs, output, 3)
-	candidates = Synthesizer().enumerative_synthesis(inputs, output, 3, time_limit_sec=3, solution_limit=10)
+	candidates = Synthesizer().enumerative_synthesis(inputs, output, 2, time_limit_sec=3, solution_limit=5)
 	#candidates = Synthesizer().enumerative_search(inputs, output, 3)
 
 	for p in candidates:
