@@ -4,9 +4,13 @@ from abc import ABC, abstractmethod
 import copy
 import itertools
 
+
 # two special symbols used in the language
 HOLE = "_?_"
 UNKNOWN = "_UNK_"
+
+# restrict how many keys can be generated from spread
+SPREAD_MAX_KEYSIZE = 10
 
 class Node(ABC):
 	def __init__(self):
@@ -365,24 +369,34 @@ class Spread(Node):
 				for i, vcol in enumerate(df.columns):
 					if i == self.key:
 						continue
-					key_vals = list(df[df.columns[self.key]])
-					key_cnt = [key_vals.count(x) for x in set(key_vals)]
+
+					# values in the key column
+					key_values = list(df[df.columns[self.key]])
+					key_cnt = [key_values.count(x) for x in set(key_values)]
 					
+					# values in the id column (columns outside of key or val)
 					id_cols = [c for k, c in enumerate(df.columns) if k != i and k != self.key]
-					id_val_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
+					id_value_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
+
+					# restrict how many keys can be maximally generated from spread
+					if SPREAD_MAX_KEYSIZE != None and len(set(key_values)) > SPREAD_MAX_KEYSIZE:
+						continue
 
 					# print("...>>>>>>>>")
 					# print(id_cols)
-					# print(key_vals)
-					# print(set(key_vals))
+					# print(key_values)
+					# print(set(key_values))
 					# print(key_cnt)
-					# print(set(id_val_tuples))
-					# print("{} {} {}".format(len(set(id_val_tuples)), key_cnt[0], len(key_vals)))
+					# print(set(id_value_tuples))
+					# print("{} {} {}".format(len(set(id_value_tuples)), key_cnt[0], len(set(key_values))))
 
 					# only add the value column into the domain 
-					# if #cardinality of key column * #distinct values in id column matches the # of rules tables
-					if len(set(id_val_tuples)) *  len(set(key_vals)) == len(key_vals):
-						val_col_domain.append(i)
+					# if #cardinality of key column * #distinct values in id column matches the # of rows tables
+					if len(set(id_value_tuples)) *  len(set(key_values)) == len(key_values):
+						# if it contains duplicate entries, remove them
+						id_key_content = df[id_cols + [df.columns[self.key]]]
+						if not id_key_content.duplicated().any():
+							val_col_domain.append(i)
 
 				return val_col_domain #[i for i in range(len(schema)) if i != self.key]
 			else:

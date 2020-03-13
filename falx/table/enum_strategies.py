@@ -1,6 +1,7 @@
 from pprint import pprint
 from falx.table.language import HOLE
 
+
 def disable_sketch(p, contain_new_val, has_sep):
     """check if the program sketch is a bad sketch, 
             we will prevent bad sketch directly 

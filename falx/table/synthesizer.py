@@ -176,6 +176,8 @@ class Synthesizer(object):
 			"""instantiate programs and then check each one of them against the premise """
 			results = []
 			if p.is_abstract():
+
+				print(p.stmt_string())
 				ast = p.to_dict()
 				next_level_programs, level = self.instantiate_one_level(ast, inputs)
 
@@ -192,6 +194,7 @@ class Synthesizer(object):
 						if subquery_res is None:
 							# check if the subquery result contains the premise
 							subquery_node = get_node(_ast, subquery_path)
+							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
 							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
 						
 						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):
@@ -278,6 +281,7 @@ class Synthesizer(object):
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
 				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
 				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, remaining_time_limit)
+				
 				for p in programs:
 					# check table consistensy
 					t = p.eval(inputs)
@@ -285,68 +289,13 @@ class Synthesizer(object):
 					if alignment_result != None:
 						candidates.append(p)
 
-					# early return if the termination condition is met
-					# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
-					if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
-						return candidates
-
 					if solution_limit is not None and len(candidates) > solution_limit:
 						return candidates
+				
+				# early return if the termination condition is met
+				# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
+				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+					return candidates
+
 
 		return candidates
-
-if __name__ == '__main__':
-
-	# inputs = [[
-	# 	{ "Bucket": "Bucket_E", "Budgeted": 100, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_D", "Budgeted": 100, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_C", "Budgeted": 125, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_B", "Budgeted": 125, "Actual": 140 },
-	# 	{ "Bucket": "Bucket_A", "Budgeted": 140, "Actual": 150 }
-	# ]]
-
-	# output = [
-	# 	{ "x": "Actual", "y": 115,  "color": "Actual", "column": "Bucket_E"},
-	# 	{ "x": "Actual", "y": 115,"color": "Actual", "column": "Bucket_D"},
-	# 	{ "x": "Budgeted","y": 100,  "color": "Budgeted", "column": "Bucket_D"},
-	# ]
-
-	# #Synthesizer().enumerative_all_programs(inputs, output, 3)
-	# candidates = Synthesizer().enumerative_synthesis(inputs, output, 3, time_limit_sec=3, solution_limit=10)
-	# #candidates = Synthesizer().enumerative_search(inputs, output, 3)
-
-	# for p in candidates:
-	# 	#print(alignment_result)
-	# 	print(p.stmt_string())
-	# 	print(p.eval(inputs))
-
-	inputs = [[{"product":"Product1_2011","Q4":3,"Q3":5,"Q2":5,"Q1":10},
-           {"product":"Product2_2011","Q4":5,"Q3":7,"Q2":5,"Q1":2},
-           {"product":"Product3_2011","Q4":3,"Q3":9,"Q2":10,"Q1":7},
-           {"product":"Product4_2011","Q4":3,"Q3":2,"Q2":8,"Q1":1},
-           {"product":"Product5_2011","Q4":1,"Q3":7,"Q2":1,"Q1":6},
-           {"product":"Product6_2011","Q4":9,"Q3":1,"Q2":6,"Q1":1},
-           {"product":"Product1_2012","Q4":3,"Q3":3,"Q2":6,"Q1":4},
-           {"product":"Product2_2012","Q4":4,"Q3":3,"Q2":6,"Q1":4},
-           {"product":"Product3_2012","Q4":3,"Q3":6,"Q2":6,"Q1":4},
-           {"product":"Product4_2012","Q4":4,"Q3":10,"Q2":6,"Q1":1},
-           {"product":"Product5_2012","Q4":8,"Q3":5,"Q2":4,"Q1":7},
-           {"product":"Product6_2012","Q4":8,"Q3":8,"Q2":8,"Q1":6},
-           {"product":"Product1_2013","Q4":10,"Q3":2,"Q2":3,"Q1":9},
-           {"product":"Product2_2013","Q4":8,"Q3":6,"Q2":7,"Q1":7},
-           {"product":"Product3_2013","Q4":9,"Q3":8,"Q2":4,"Q1":9},
-           {"product":"Product4_2013","Q4":5,"Q3":9,"Q2":5,"Q1":2},
-           {"product":"Product5_2013","Q4":1,"Q3":5,"Q2":2,"Q1":4},
-           {"product":"Product6_2013","Q4":8,"Q3":10,"Q2":6,"Q1":4}]]
-
-	output = [{'c_x': 'Q1', 'c_y': 'Product3', 'c_color': 7, 'c_column': '2011'}, {'c_x': 'Q2', 'c_y': 'Product4', 'c_color': 8, 'c_column': '2011'}, {'c_x': 'Q2', 'c_y': 'Product5', 'c_color': 1, 'c_column': '2011'}]
-
-
-	#Synthesizer().enumerative_all_programs(inputs, output, 3)
-	candidates = Synthesizer().enumerative_synthesis(inputs, output, 2, time_limit_sec=3, solution_limit=5)
-	#candidates = Synthesizer().enumerative_search(inputs, output, 3)
-
-	for p in candidates:
-		#print(alignment_result)
-		print(p.stmt_string())
-		print(p.eval(inputs))
