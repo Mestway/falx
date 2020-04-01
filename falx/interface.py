@@ -115,6 +115,7 @@ class FalxInterface(object):
 
         candidates = []
         for sym_data, chart in abstract_designs:
+
             # split case based on single layered chart or multi layered chart
             if not isinstance(sym_data, (list,)):
                 # single-layer chart

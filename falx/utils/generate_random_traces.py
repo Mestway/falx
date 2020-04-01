@@ -8,7 +8,7 @@ import numpy as np
 
 from pprint import pprint
 
-from falx.visualization.chart import VisDesign, StackedBarChart, LayeredChart
+from falx.visualization.chart import VisDesign, LayeredChart
 from falx.visualization.matplotlib_chart import MatplotlibChart
 import falx.visualization.visual_trace as visual_trace
 
@@ -73,38 +73,6 @@ def process_data(bid, num_samples_dict):
                     kreplace = lambda x: "x" if x in ["x1", "x2"] else ("y2" if x in ["yb1", "yb2"] else "y" if x in ["yt1", "yt2"] else x)
                     sample_trace.append({"type": ty, "props": {kreplace(k):tr[k] for k in ["x1", "yt1", "yb1", "color", "column"] if k in tr}})
                     sample_trace.append({"type": ty, "props": {kreplace(k):tr[k] for k in ["x2", "yt2", "yb2", "color", "column"] if k in tr}})
-
-        #pprint(sample_trace)
-
-        # abstract_designs = VisDesign.inv_eval(full_trace)
-        # abstract_designs.sort(key=lambda x: len(x[0].values[0]) if not isinstance(x[0], (list,)) else sum([len(y.values[0]) for y in x[0]]))
-
-        # sample_outputs = []
-
-        # for full_sym_data, chart in abstract_designs:
-
-        #     if (isinstance(chart, (StackedBarChart, )) 
-        #         or (isinstance(chart, (LayeredChart, )) and 
-        #             any([isinstance(x, (StackedBarChart,)) for x in chart.layers]))):
-        #         continue
-
-        #     marks = get_mark_type(chart)
-
-        #     if not isinstance(full_sym_data, (list,)):
-        #         sample_output = eval_utils.sample_symbolic_table(full_sym_data, num_samples)
-        #         sample_outputs.append((marks[0], sample_output))
-        #     else:
-        #         # multi-layer charts
-        #         for i, full_output in enumerate(full_sym_data):
-        #             sample_table = eval_utils.sample_symbolic_table(full_output, num_samples)
-        #             sample_outputs.append((marks[i], sample_table))
-        #     break
-
-        # sample_trace = []
-        # for t in sample_outputs:
-        #     mark = t[0]
-        #     for row in t[1].values:
-        #         sample_trace.append({"type": mark, "props": {key.replace("c_", ""): row[key] for key in row}})
 
         data["sample_trace"] = sample_trace
         data["raw_sample_trace"] = raw_sample_trace

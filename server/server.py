@@ -13,6 +13,7 @@ import pandas as pd
 sys.path.append(os.path.abspath('../falx'))
 
 from falx.interface import FalxInterface
+from falx.utils import vis_utils
 
 def infer_dtype(values):
     return pd.api.types.infer_dtype(values, skipna=True)
@@ -35,13 +36,13 @@ CORS(app)
 
 GRAMMAR = {
     "operators": ["select", "unite", "filter", "separate", "spread", 
-        "gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+        "gather", "group_sum", "cumsum", "mutate", "mutate_custom"],
     "filer_op": [">", "<", "=="],
     "constants": [],
     "aggr_func": ["mean", "sum", "count"],
     "mutate_op": ["+", "-"],
     "gather_max_val_list_size": 3,
-    "gather_neg_max_key_list_size": 3
+    "gather_max_key_list_size": 3
 }
 
 @app.route('/static/media/<path:filename>')
@@ -152,8 +153,22 @@ def run_falx_synthesizer():
                         "grammar": GRAMMAR
                     })
 
-        response = flask.jsonify([{"rscript": str(result[key][0][0]), 
-                                   "vl_spec": result[key][0][1].to_vl_json()} for key in result])
+        # perform repairs on synthesized visdualization
+        final_results = {}
+        for key in result:
+            for p in result[key]:
+                spec_w_data = p[1].to_vl_obj()
+                data = spec_w_data["data"]["values"]
+                spec = spec_w_data
+                spec = vis_utils.post_process_spec(spec, data)
+                if spec is not None:
+                    spec["data"] = {"values": data}
+                    if key not in final_results:
+                        final_results[key] = []
+                    final_results[key].append((p[0], spec))
+
+        response = flask.jsonify([{"rscript": str(final_results[key][0][0]), 
+                                   "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results])
     else:
         response = falx.jsonify([])
 

@@ -6,7 +6,7 @@ import pandas as pd
 import time
 
 from falx.table.language import (HOLE, Node, Table, Select, Unite, Filter, Separate, Spread, 
-	Gather, GatherNeg, GroupSummary, CumSum, Mutate, MutateCustom)
+	Gather, GroupSummary, CumSum, Mutate, MutateCustom)
 from falx.table import enum_strategies
 from falx.table import abstract_eval
 from falx.utils.synth_utils import remove_duplicate_columns, check_table_inclusion, align_table_schema
@@ -18,7 +18,6 @@ abstract_combinators = {
 	"separate": lambda q: Separate(q, col_index=HOLE),
 	"spread": lambda q: Spread(q, key=HOLE, val=HOLE),
 	"gather": lambda q: Gather(q, value_columns=HOLE),
-	"gather_neg": lambda q: GatherNeg(q, key_columns=HOLE),
 	"group_sum": lambda q: GroupSummary(q, group_cols=HOLE, aggr_col=HOLE, aggr_func=HOLE),
 	"cumsum": lambda q: CumSum(q, target=HOLE),
 	"mutate": lambda q: Mutate(q, col1=HOLE, op=HOLE, col2=HOLE),
@@ -43,13 +42,13 @@ class Synthesizer(object):
 		if config is None:
 			self.config = {
 				"operators": ["select", "unite", "filter", "separate", "spread", 
-					"gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+					"gather", "group_sum", "cumsum", "mutate", "mutate_custom"],
 				"filer_op": [">", "<", "=="],
 				"constants": [],
 				"aggr_func": ["mean", "sum", "count"],
 				"mutate_op": ["+", "-"],
 				"gather_max_val_list_size": 3,
-				"gather_neg_max_key_list_size": 3
+				"gather_max_key_list_size": 3
 			}
 		else:
 			self.config = config
@@ -62,7 +61,7 @@ class Synthesizer(object):
 		
 		inp_val_set = set([v for t in inputs for r in t for k, v in r.items()] + [k for t in inputs for k in t[0]])
 		out_val_set = set([v for r in output for k, v in r.items()])
-		contain_new_val = True if len(out_val_set - inp_val_set) > 0 else False
+		new_vals = out_val_set - inp_val_set
 		
 		#if any([len(t[0]) < 4 for t in inputs]):
 			# always consider new value operators for small tables (#column < 4)
@@ -81,8 +80,11 @@ class Synthesizer(object):
 			else:
 				for p in candidates[level - 1]:
 					for op in abstract_combinators:
+						#ignore operators that are not set
+						if op not in self.config["operators"]:
+							continue
 						q = abstract_combinators[op](copy.copy(p))
-						if not enum_strategies.disable_sketch(q, contain_new_val, has_sep):
+						if not enum_strategies.disable_sketch(q, new_vals, has_sep):
 							candidates[level].append(q)
 		return candidates
 
@@ -191,12 +193,13 @@ class Synthesizer(object):
 
 					subquery_res = None
 					for premise, subquery_path in premises_at_level:
+
 						if subquery_res is None:
 							# check if the subquery result contains the premise
 							subquery_node = get_node(_ast, subquery_path)
 							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
 							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
-						
+
 						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):
 							#print(f"{' - '}{Node.load_from_dict(_ast).stmt_string()}")
 							results.append(Node.load_from_dict(_ast))
@@ -276,9 +279,11 @@ class Synthesizer(object):
 				print(s.stmt_string())
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
+
 				out_df = remove_duplicate_columns(out_df)
 				# all premise chains for the given ast
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
+
 				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
 				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, remaining_time_limit)
 				
