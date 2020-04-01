@@ -47,9 +47,6 @@ GRAMMAR = {
 
 @app.route('/static/media/<path:filename>')
 def download_file(filename):
-    print("--->")
-    print(app.static_folder)
-    print(filename)
     return send_from_directory(app.static_folder + "/media", filename)
 
 @app.route('/hello')
@@ -88,9 +85,14 @@ def hello():
 
     return 'Hello!'
 
-@app.route("/")
-def index():
-    return redirect('/index.html')
+@app.route("/", defaults={"path": ""})
+def index_alt(path):
+    return send_from_directory(app.static_folder, "index.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # your processing here
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
@@ -170,7 +172,7 @@ def run_falx_synthesizer():
         response = flask.jsonify([{"rscript": str(final_results[key][0][0]), 
                                    "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results])
     else:
-        response = falx.jsonify([])
+        response = flask.jsonify([])
 
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
