@@ -8,7 +8,7 @@ Requirement: Python version >=3.7.
 
 #### Create virtual environment (recommended)
 
-[Virtual Environment](<https://docs.python.org/3/library/venv.html>) is recommended for managing dependencies (Conda doesn't work for now due to the dependency to z3 smt solver):
+[Virtual Environment](<https://docs.python.org/3/library/venv.html>) is recommended for managing dependencies.
 
 If using Virtual Environment:
 
@@ -25,17 +25,17 @@ At development time, use `source venv/bin/activate` (venv) or `source activate f
 1. Install python dependencies: `pip install -r requirements.txt`
 
 2. Install falx in the development mode: `pip install -e .`
-
+<!-- 
 3. Install [R 3.3+](https://cran.r-project.org/bin/macosx/R-3.5.2.pkg) and the following data wrangling libraries:
        - dplyr: `install.packages("dplyr", dependencies=TRUE)`
        - tidyr: `install.packages("tidyr", dependencies=TRUE)`
        - jsonlite: `install.packages("jsonlite", dependencies=TRUE)`
-       - jsonlite: `install.packages("compare", dependencies=TRUE)`
+       - jsonlite: `install.packages("compare", dependencies=TRUE)` -->
 
 ## Run
 
-To run the Falx design synthesizer: `cd falx; python run.py`
-
+To run the Falx: `cd falx; python3 interface.py`
+<!-- 
 To test Tyrell enumerator: `cd falx; python morpheus.py`
-
-To run Falx as a synthesis server: `cd server; env FLASK_APP=server.py flask run`
+ -->
+To run Falx as a server: `cd server; env FLASK_APP=server.py flask run`

@@ -40,7 +40,7 @@ class FalxInterface(object):
             "aggr_func": ["mean", "sum", "count"],
             "mutate_op": ["+", "-"],
             "gather_max_val_list_size": 3,
-            "gather_neg_max_key_list_size": 3
+            "gather_max_key_list_size": 3
         },
 
         # set the visualization backend, one of "vegalite, ggplot2, matplotlib"

@@ -84,7 +84,6 @@ class TestTableLang(unittest.TestCase):
         q = Table(data_id=0)
         q = Select(q, [1, 2, 3])
         q = Spread(q, 1, 2)
-        q = GatherNeg(q, [0])
         print("---")
         print(q.stmt_string())
         #print(q.eval(inputs=inputs))
