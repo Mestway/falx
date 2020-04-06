@@ -5,7 +5,7 @@ from falx.interface import *
 
 class TestFalxInterface(unittest.TestCase):
 
-    @unittest.skip
+    #@unittest.skip
     def test_line_chart_1(self):
 
         inputs = [[
@@ -28,7 +28,7 @@ class TestFalxInterface(unittest.TestCase):
             print(ptable)
             print(vis_design.to_vl_json())
 
-    @unittest.skip
+    #@unittest.skip
     def test_line_chart_2(self):
 
         inputs = [[

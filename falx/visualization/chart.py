@@ -148,16 +148,7 @@ class VisDesign(object):
                             for channel, enc in lspec["encoding"].items()]
             if mark_ty == "bar":
                 orientation = "horizontal" if lspec["encoding"]["y"]["type"] == "nominal" else "vertical"
-                if "color" in lspec["encoding"]:
-                    # stacked bar chart or layered bar chart
-                    val_channel = "y" if orientation == "vertical" else "x"
-                    if (("x2" in lspec["encoding"] or "y2" in lspec["encoding"])
-                         or ("stack" in lspec["encoding"][val_channel] and lspec["encoding"][val_channel]["stack"] is None)):
-                        chart = BarChart(encodings, orientation)
-                    else:
-                        chart = StackedBarChart(orientation, encodings)                        
-                else:
-                    chart = BarChart(encodings, orientation)
+                chart = BarChart(encodings, orientation)
             elif mark_ty == "boxplot":
                 chart = BoxPlot(encodings)
             elif mark_ty == "area":
@@ -189,6 +180,11 @@ class LayeredChart(object):
                 l["mark"]["opacity"] = 0.7
             else:
                 l["mark"] = {"type": l["mark"], "opacity": 0.7}
+            
+            # lines / points can have 1 opacity in multilayered charts
+            if l["mark"]["type"] in ["line", "circ", "point"]:
+                l["mark"]["opacity"] = 1
+
             l["transform"] = [{"filter": "datum.layer_id == {}".format(i)}]
         vl_obj = {
             "layer": layer_obj,
@@ -214,13 +210,9 @@ class LayeredChart(object):
         layers = {}
         for vty in trace_layer:
             if vty == "BarV":
-                l1 = BarChart.inv_eval(trace_layer[vty], orientation="vertical")
-                l2 = StackedBarChart.inv_eval(trace_layer[vty], orientation="vertical")
-                layers[vty] = l1 + l2
+                layers[vty] = BarChart.inv_eval(trace_layer[vty], orientation="vertical")
             elif vty == "BarH":
-                l1 = BarChart.inv_eval(trace_layer[vty], orientation="horizontal")
-                l2 = StackedBarChart.inv_eval(trace_layer[vty], orientation="horizontal")
-                layers[vty] = l1 + l2
+                layers[vty] = BarChart.inv_eval(trace_layer[vty], orientation="horizontal")
             elif vty == "Point":
                 layers[vty] = ScatterPlot.inv_eval(trace_layer[vty])
             elif vty == "Line":
@@ -269,10 +261,11 @@ class BarChart(object):
 
         if "color" in self.encodings:
             mark = {"type": "bar", "opacity": 0.8}
-            if self.orientation == "horizontal":
-                encodings["x"]["stack"] = None
-            if self.orientation == "vertical":
-                encodings["y"]["stack"] = None
+            #TODO: stack or not???
+            # if self.orientation == "horizontal":
+            #     encodings["x"]["stack"] = None
+            # if self.orientation == "vertical":
+            #     encodings["y"]["stack"] = None
         return {
             "mark": mark,
             "encoding": encodings
@@ -367,119 +360,6 @@ class BarChart(object):
 
         bar_chart = BarChart(encodings=encodings, orientation=orientation)
 
-        return [(SymTable(values=data_values), bar_chart)]
-
-
-class StackedBarChart(object):
-    def __init__(self, orientation, encodings):
-        """ encodings x,y,color
-            stack_channel, stack_ty: specifies which channel to stack and the stack configuration
-        """
-        assert(orientation in ["horizontal", "vertical"])
-        self.orientation = orientation
-        self.encodings = {e.channel:e for e in encodings}
-
-    def to_vl_obj(self):
-        vl_obj = {
-            "mark": "bar",
-            "encoding": {e:self.encodings[e].to_vl_obj() for e in self.encodings}
-        }
-        return vl_obj
-
-    def to_ggplot2(self, data_var, alpha=1):
-        channel_map = lambda c: "fill" if c == "color" else c
-        aes_pairs = {channel_map(channel):self.encodings[channel].field for channel in self.encodings}
-
-        coord_flip = ""
-        if self.orientation == "horizontal":
-            coord_flip = " + coord_flip()"
-            temp = aes_pairs["y"]
-            aes_pairs["y"] = aes_pairs["x"]
-            aes_pairs["x"] = temp
-
-        aes_str = ",".join(["{}=`{}`".format(p, aes_pairs[p]) for p in aes_pairs])
-
-        return "geom_bar(data={},aes({}),stat ='identity',alpha={})+ scale_x_discrete(){}".format(data_var, aes_str, alpha, coord_flip)
-
-
-    def eval(self, data):
-        """first group data based on stack channel and then stack them """  
-        stack_pos = "x" if self.orientation == "vertical" else "y"
-
-        # group based on stack_pos channel
-        group_keys = set([r[self.encodings[stack_pos].field] for r in data])
-        grouped_data = {key: [r for r in data if r[self.encodings[stack_pos].field] == key] for key in group_keys}
-        if "color" in self.encodings:
-            stack_order = self.encodings["color"].sort_order
-        else:
-            stack_order = None
-
-        res = []
-        for key in grouped_data:
-            vals = grouped_data[key]
-            if "color" in self.encodings:
-                vals.sort(key=lambda x: x[self.encodings["color"].field], 
-                          reverse=False if stack_order == 'ascending' else True)
-
-            # only used when there is no interval value for x, y
-            last_stack_val = 0
-            for r in vals:
-                x = get_channel_value(self.encodings, "x", r)
-                y = get_channel_value(self.encodings, "y", r)
-                color = get_channel_value(self.encodings, "color", r)
-                column = get_channel_value(self.encodings, "column", r)
-
-                if self.orientation == "vertical":
-                    # TODO: take a look at this
-                    y = 0 if y is None else y
-                    y = (last_stack_val, last_stack_val + y)
-                    last_stack_val = y[1]
-                    res.append(BarV(x=x, y1=y[0], y2=y[1], color=color, column=column))
-
-                if self.orientation == "horizontal":
-                    x = (last_stack_val, last_stack_val + x)
-                    last_stack_val = x[1]
-                    res.append(BarH(x1=x[0], x2=x[1], y=y, color=color, column=column))
-        return res
-
-    @staticmethod
-    def inv_eval(vtrace, orientation):
-
-        assert(orientation in ["horizontal", "vertical"])
-
-        """inverse construction of vertical bars """
-        if ((orientation=="horizontal" and any([vt.x1 is None or vt.x2 is None for vt in vtrace]))
-            or (orientation=="vertical" and any([vt.y1 is None or vt.y2 is None for vt in vtrace]))):
-                # it does not satisfy stacked bar semantics
-                return []
-        
-        data_values = []
-        if orientation == "vertical":
-            # vertical stacked bar
-            for vt in vtrace:
-                data_values.append({"c_x": vt.x, "c_y": vt.y2 - vt.y1, "c_color": vt.color, "c_column": vt.column})
-            channel_types = [("x", "nominal"), ("y", "quantitative"), ("color", "nominal"), ("column", "nominal")]
-        elif orientation == "horizontal":
-            # horizontal stacked bar
-            for vt in vtrace:
-                data_values.append({"c_x": vt.x2 - vt.x1, "c_y": vt.y, "c_color": vt.color, "c_column": vt.column})
-            channel_types = [("x", "quantitative"), ("y", "nominal"), ("color", "nominal"), ("column", "nominal")]
-
-        # remove fields that contain none values
-        unused_fields = remove_unused_fields(data_values)
-
-        # this is the current strategy: the user have to provide full color information
-        if "c_color" in unused_fields:
-            return []
-
-        encodings = []
-        for channel, enc_ty in channel_types:
-            field_name = "c_{}".format(channel)
-            if field_name in unused_fields:
-                continue
-            encodings.append(Encoding(channel, field_name, enc_ty))
-
-        bar_chart = StackedBarChart(encodings=encodings, orientation=orientation)
         return [(SymTable(values=data_values), bar_chart)]
 
 

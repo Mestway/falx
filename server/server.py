@@ -1,7 +1,8 @@
 import sys
 import os
 
-from flask import Flask, escape, request
+from flask import Flask, escape, request, send_from_directory, redirect, url_for
+
 import flask
 import json
 from flask_cors import CORS
@@ -12,6 +13,7 @@ import pandas as pd
 sys.path.append(os.path.abspath('../falx'))
 
 from falx.interface import FalxInterface
+from falx.utils import vis_utils
 
 def infer_dtype(values):
     return pd.api.types.infer_dtype(values, skipna=True)
@@ -29,22 +31,25 @@ def try_infer_string_type(values):
 
     return dtype, values
 
-
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
 GRAMMAR = {
     "operators": ["select", "unite", "filter", "separate", "spread", 
-        "gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+        "gather", "group_sum", "cumsum", "mutate", "mutate_custom"],
     "filer_op": [">", "<", "=="],
     "constants": [],
     "aggr_func": ["mean", "sum", "count"],
     "mutate_op": ["+", "-"],
     "gather_max_val_list_size": 3,
-    "gather_neg_max_key_list_size": 3
+    "gather_max_key_list_size": 3
 }
 
-@app.route('/')
+@app.route('/static/media/<path:filename>')
+def download_file(filename):
+    return send_from_directory(app.static_folder + "/media", filename)
+
+@app.route('/hello')
 def hello():
     name = request.args.get("name", "World")
 
@@ -80,6 +85,15 @@ def hello():
 
     return 'Hello!'
 
+@app.route("/", defaults={"path": ""})
+def index_alt(path):
+    return send_from_directory(app.static_folder, "index.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # your processing here
+    return send_from_directory(app.static_folder, "index.html")
+
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
     if request.is_json:
@@ -92,8 +106,15 @@ def run_falx_synthesizer():
         app.logger.info(input_data)
         app.logger.info(visual_elements)
 
-
         all_input_values = list(set([val for r in input_data for key, val in r.items()])) + list(set([key for key in input_data[0]]))
+        splitted_values = []
+        for v in all_input_values:
+            if isinstance(v, (str,)) and "_" in v:
+                splitted_values += v.split("_")
+        all_input_values += splitted_values
+        all_input_values = set(all_input_values)
+
+        print(all_input_values)
 
         post_processed_visual_elements = []
         partition_keys = set([r['type'] for r in visual_elements])
@@ -107,13 +128,19 @@ def run_falx_synthesizer():
                 if all([v == "" for v in values]):
                     continue
 
+                if infer_dtype(values) != "string":
+                    continue
+
+                # don't try to force conversion if it is not 
+                if len([x for x in values if x not in all_input_values]) == 0:
+                    continue
+
                 ty, values = try_infer_string_type(values)
 
                 if ty != "string":
                     for i in range(len(values)):
                         # update the value in partion by reference, force to modify into integer
                         partition[i]["props"][c] = float(values[i])
-
 
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
@@ -128,13 +155,28 @@ def run_falx_synthesizer():
                         "grammar": GRAMMAR
                     })
 
-        response = flask.jsonify([{"rscript": str(result[key][0][0]), 
-                                   "vl_spec": result[key][0][1].to_vl_json()} for key in result])
+        # perform repairs on synthesized visdualization
+        final_results = {}
+        for key in result:
+            for p in result[key]:
+                spec_w_data = p[1].to_vl_obj()
+                data = spec_w_data["data"]["values"]
+                spec = spec_w_data
+                spec = vis_utils.post_process_spec(spec, data)
+                if spec is not None:
+                    spec["data"] = {"values": data}
+                    if key not in final_results:
+                        final_results[key] = []
+                    final_results[key].append((p[0], spec))
+
+        response = flask.jsonify([{"rscript": str(final_results[key][0][0]), 
+                                   "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results])
     else:
-        response = falx.jsonify([])
+        response = flask.jsonify([])
 
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)
+    #app.run(host='0.0.0.0', port=5000)

@@ -110,8 +110,13 @@ def backward_eval_one_step(op, out_df, is_outer_most=False):
 			if not all([schema[i] == "string" for i in sep_col_indexes]):
 				continue
 			sep_cols = [cols[i] for i in sep_col_indexes]
-			t = Unite(Table(0), sep_col_indexes[0], sep_col_indexes[1]).eval([out_df])
-			candidates.append(t)
+
+			for sep in ["-", "_", " "]:
+				t = Unite(Table(0), sep_col_indexes[0], sep_col_indexes[1], sep).eval([out_df])
+				candidates.append(t)
+			for sep in ["-", "_", " "]:
+				t = Unite(Table(0), sep_col_indexes[1], sep_col_indexes[0], sep).eval([out_df])
+				candidates.append(t)
 
 		return candidates
 

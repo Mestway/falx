@@ -4,9 +4,13 @@ from abc import ABC, abstractmethod
 import copy
 import itertools
 
+
 # two special symbols used in the language
 HOLE = "_?_"
 UNKNOWN = "_UNK_"
+
+# restrict how many keys can be generated from spread
+SPREAD_MAX_KEYSIZE = 10
 
 class Node(ABC):
 	def __init__(self):
@@ -37,7 +41,7 @@ class Node(ABC):
 			"select": Select, "unite": Unite,
 			"filter": Filter, "separate": Separate,
 			"spread": Spread, "gather": Gather,
-			"gather_neg": GatherNeg, "group_sum": GroupSummary,
+			"group_sum": GroupSummary,
 			"cumsum": CumSum, "mutate": Mutate,
 			"mutate_custom": MutateCustom,
 		}
@@ -178,11 +182,12 @@ class Select(Node):
 
 
 class Unite(Node):
-	def __init__(self, q, col1, col2):
+	def __init__(self, q, col1, col2, sep="_"):
 		""" col1, col2 are column indexes"""
 		self.q = q
 		self.col1 = col1
 		self.col2 = col2
+		self.sep = sep
 
 	def infer_domain(self, arg_id, inputs, config):
 		input_schema = self.q.infer_output_info(inputs)
@@ -204,7 +209,7 @@ class Unite(Node):
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]
 		c1, c2 = ret.columns[self.col1], ret.columns[self.col2]
-		ret[new_col] = ret[c1] + "_" + ret[c2]
+		ret[new_col] = ret[c1] + self.sep + ret[c2]
 		ret = ret.drop(columns=[c1, c2])
 		return ret
 
@@ -306,10 +311,12 @@ class Separate(Node):
 
 	def eval(self, inputs):
 		df = self.q.eval(inputs)
+
 		ret = df.copy()
 		col = ret.columns[self.col_index]
-		splitted = ret[col].str.split(r"\s|_", n=1, expand=True)
 
+		# enable splitting by "_", "-", and whitespace (but only split once)
+		splitted = ret[col].str.split(r"\s|_|-", n=1, expand=True)
 		new_col_names = get_fresh_col(list(ret.columns), n=2)
 		ret[new_col_names[0]] = splitted[0]
 		ret[new_col_names[1]] = splitted[1]
@@ -322,7 +329,7 @@ class Separate(Node):
 			"op": "separate",
 			"children": [self.q.to_dict(), value_to_dict(self.col_index, "col_index")]
 		}
-
+		
 
 class Spread(Node):
 	def __init__(self, q, key, val):
@@ -365,24 +372,34 @@ class Spread(Node):
 				for i, vcol in enumerate(df.columns):
 					if i == self.key:
 						continue
-					key_vals = list(df[df.columns[self.key]])
-					key_cnt = [key_vals.count(x) for x in set(key_vals)]
+
+					# values in the key column
+					key_values = list(df[df.columns[self.key]])
+					key_cnt = [key_values.count(x) for x in set(key_values)]
 					
+					# values in the id column (columns outside of key or val)
 					id_cols = [c for k, c in enumerate(df.columns) if k != i and k != self.key]
-					id_val_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
+					id_value_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
+
+					# restrict how many keys can be maximally generated from spread
+					if SPREAD_MAX_KEYSIZE != None and len(set(key_values)) > SPREAD_MAX_KEYSIZE:
+						continue
 
 					# print("...>>>>>>>>")
 					# print(id_cols)
-					# print(key_vals)
-					# print(set(key_vals))
+					# print(key_values)
+					# print(set(key_values))
 					# print(key_cnt)
-					# print(set(id_val_tuples))
-					# print("{} {} {}".format(len(set(id_val_tuples)), key_cnt[0], len(key_vals)))
+					# print(set(id_value_tuples))
+					# print("{} {} {}".format(len(set(id_value_tuples)), key_cnt[0], len(set(key_values))))
 
 					# only add the value column into the domain 
-					# if #cardinality of key column * #distinct values in id column matches the # of rules tables
-					if len(set(id_val_tuples)) *  len(set(key_vals)) == len(key_vals):
-						val_col_domain.append(i)
+					# if #cardinality of key column * #distinct values in id column matches the # of rows tables
+					if len(set(id_value_tuples)) *  len(set(key_values)) == len(key_values):
+						# if it contains duplicate entries, remove them
+						id_key_content = df[id_cols + [df.columns[self.key]]]
+						if not id_key_content.duplicated().any():
+							val_col_domain.append(i)
 
 				return val_col_domain #[i for i in range(len(schema)) if i != self.key]
 			else:
@@ -440,6 +457,7 @@ class Gather(Node):
 		self.value_columns = value_columns
 
 	def infer_domain(self, arg_id, inputs, config):
+
 		if arg_id == 1:
 			input_schema = self.q.infer_output_info(inputs)
 			col_num = len(input_schema)
@@ -455,6 +473,24 @@ class Gather(Node):
 					# only consider these fields together if they have the same type
 					if len(set([input_schema[i] for i in l])) == 1:
 						col_list_candidates.append(l)
+
+			## this is the gahter neg case: enumerate keys (instead of columns)
+			# leave at least two columns as values columns that will be unpivoted
+			# also don't exceed col_num - config["gather_max_val_list_size"] 
+			#   (since such query is already covered in gather(..))
+			# also don't exceed config["gather_max_key_list_size"] to prevent explosion
+			max_key_list_size = min(col_num - 2, 
+									col_num - config["gather_max_val_list_size"] - 1, 
+									config["gather_max_key_list_size"])
+			
+			# only consider such gather_neg stype if the table size is greater than config["gather_max_key_list_size"]
+			if max_key_list_size > 0:			
+				for size in range(1, max_key_list_size + 1):
+					for l in list(itertools.combinations(list(range(col_num)), size)):
+						# only consider these fields together if they have the same type
+						if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
+							col_list_candidates.append([x for x in range(col_num) if x not in l])
+
 			return col_list_candidates
 		else:
 			assert False, "[Gather] No args to infer domain for id > 1."
@@ -476,61 +512,6 @@ class Gather(Node):
 			"op": "gather",
 			"children": [self.q.to_dict(), value_to_dict(self.value_columns, "col_index_list")]
 		}
-
-
-class GatherNeg(Node):
-	def __init__(self, q, key_columns):
-		self.q = q
-		self.key_columns = key_columns
-
-	def infer_domain(self, arg_id, inputs, config):
-		if arg_id == 1:
-			input_schema = self.q.infer_output_info(inputs)
-			col_num = len(input_schema)
-			col_list_candidates = []
-			df = self.q.eval(inputs)
-
-			# leave at least two columns as values columns that will be unpivoted
-			# also don't exceed col_num - config["gather_max_val_list_size"] 
-			#   (since such query is already covered in gather(..))
-			# also don't exceed config["gather_neg_max_key_list_size"] to prevent explosion
-			max_key_list_size = min(col_num - 2, 
-									col_num - config["gather_max_val_list_size"] - 1, 
-									config["gather_neg_max_key_list_size"])
-			
-			if max_key_list_size <= 0:
-				return []
-			
-			for size in range(1, max_key_list_size + 1):
-				for l in list(itertools.combinations(list(range(col_num)), size)):
-					# only consider these fields together if they have the same type
-					if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
-						col_list_candidates.append(l)
-			return col_list_candidates
-		else:
-			assert False, "[Gather] No args to infer domain for id > 1."
-
-	def infer_output_info(self, inputs):
-		input_schema = self.q.infer_output_info(inputs)
-		return [s for i, s in enumerate(input_schema) if i in self.key_columns] + ["string"] + ["unknown"]
-
-
-	def eval(self, inputs):
-		df = self.q.eval(inputs)
-		key_vars = [df.columns[idx] for idx in self.key_columns]
-		value_vars = [c for c in df.columns if c not in key_vars]
-		return pd.melt(df, id_vars=key_vars, value_vars=value_vars, 
-						var_name="KEY", value_name="VALUE")
-
-	def to_dict(self):
-		return {
-			"type": "node",
-			"op": "gather_neg",
-			"children": [
-				self.q.to_dict(), 
-				value_to_dict(self.key_columns, "col_index_list"),
-			]}
-
 
 class GroupSummary(Node):
 	def __init__(self, q, group_cols, aggr_col, aggr_func):
@@ -629,11 +610,13 @@ class CumSum(Node):
 
 	def infer_output_info(self, inputs):
 		input_schema = self.q.infer_output_info(inputs)
-		return input_schema
+
+		return input_schema + ["number"]
 
 	def eval(self, inputs):
 		df = self.q.eval(inputs)
 		ret = df.copy()
+		#new_col = get_fresh_col(list(ret.columns))[0]
 		ret["cumsum"] = ret[ret.columns[self.target]].cumsum()
 		return ret
 

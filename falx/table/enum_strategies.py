@@ -1,12 +1,13 @@
 from pprint import pprint
 from falx.table.language import HOLE
 
-def disable_sketch(p, contain_new_val, has_sep):
+
+def disable_sketch(p, new_vals, has_sep):
     """check if the program sketch is a bad sketch, 
             we will prevent bad sketch directly 
     Args:
         p: program sketch in ast form
-        contain_new_val: whether the output table contain new value comparing to the input
+        new_vals: new values from the output, use to infer whether the output table contain new value comparing to the input
             (this helps deterimin if we should use operators that generates new value)
         has_sep: whethre the input table contains any value that can be applied to a separator
     Returns:
@@ -20,8 +21,8 @@ def disable_sketch(p, contain_new_val, has_sep):
     ast = p.to_dict()
     op_list = get_op_list(ast)
 
-    if contain_new_val is False:
-        # if output contains no new values, we'll not use operaters generates new values
+    if len([x for x in new_vals if isinstance(x, (int, float, complex))]) == 0:
+        # if output contains no new numerical values, we'll not use operaters generates new values
         if "mutate" in op_list or "mutate_custom" in op_list or "cumsum" in op_list or "group_sum" in op_list:
             return True
 
@@ -34,7 +35,7 @@ def disable_sketch(p, contain_new_val, has_sep):
         return True
 
     # group_sum and mutate_custom can only be used in the last operator
-    if "group_sum" in op_list[1:] or "mutate_custom" in op_list[1:] or "cumsum" in op_list[1:]: 
+    if "group_sum" in op_list[1:] or "mutate_custom" in op_list[1:]:# or "cumsum" in op_list[1:]: 
         return True
     
     # No more than 1 gather, no more than 1 mutate

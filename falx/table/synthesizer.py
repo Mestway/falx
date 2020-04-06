@@ -6,7 +6,7 @@ import pandas as pd
 import time
 
 from falx.table.language import (HOLE, Node, Table, Select, Unite, Filter, Separate, Spread, 
-	Gather, GatherNeg, GroupSummary, CumSum, Mutate, MutateCustom)
+	Gather, GroupSummary, CumSum, Mutate, MutateCustom)
 from falx.table import enum_strategies
 from falx.table import abstract_eval
 from falx.utils.synth_utils import remove_duplicate_columns, check_table_inclusion, align_table_schema
@@ -18,7 +18,6 @@ abstract_combinators = {
 	"separate": lambda q: Separate(q, col_index=HOLE),
 	"spread": lambda q: Spread(q, key=HOLE, val=HOLE),
 	"gather": lambda q: Gather(q, value_columns=HOLE),
-	"gather_neg": lambda q: GatherNeg(q, key_columns=HOLE),
 	"group_sum": lambda q: GroupSummary(q, group_cols=HOLE, aggr_col=HOLE, aggr_func=HOLE),
 	"cumsum": lambda q: CumSum(q, target=HOLE),
 	"mutate": lambda q: Mutate(q, col1=HOLE, op=HOLE, col2=HOLE),
@@ -43,13 +42,13 @@ class Synthesizer(object):
 		if config is None:
 			self.config = {
 				"operators": ["select", "unite", "filter", "separate", "spread", 
-					"gather", "gather_neg", "group_sum", "cumsum", "mutate", "mutate_custom"],
+					"gather", "group_sum", "cumsum", "mutate", "mutate_custom"],
 				"filer_op": [">", "<", "=="],
 				"constants": [],
 				"aggr_func": ["mean", "sum", "count"],
 				"mutate_op": ["+", "-"],
 				"gather_max_val_list_size": 3,
-				"gather_neg_max_key_list_size": 3
+				"gather_max_key_list_size": 3
 			}
 		else:
 			self.config = config
@@ -62,7 +61,7 @@ class Synthesizer(object):
 		
 		inp_val_set = set([v for t in inputs for r in t for k, v in r.items()] + [k for t in inputs for k in t[0]])
 		out_val_set = set([v for r in output for k, v in r.items()])
-		contain_new_val = True if len(out_val_set - inp_val_set) > 0 else False
+		new_vals = out_val_set - inp_val_set
 		
 		#if any([len(t[0]) < 4 for t in inputs]):
 			# always consider new value operators for small tables (#column < 4)
@@ -81,8 +80,11 @@ class Synthesizer(object):
 			else:
 				for p in candidates[level - 1]:
 					for op in abstract_combinators:
+						#ignore operators that are not set
+						if op not in self.config["operators"]:
+							continue
 						q = abstract_combinators[op](copy.copy(p))
-						if not enum_strategies.disable_sketch(q, contain_new_val, has_sep):
+						if not enum_strategies.disable_sketch(q, new_vals, has_sep):
 							candidates[level].append(q)
 		return candidates
 
@@ -163,26 +165,41 @@ class Synthesizer(object):
 		else:
 			return [p]
 
-	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains):
+	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains, time_limit_sec=None):
 		"""iteratively instantiate abstract programs w/ promise check """
 		
+		print("time limit: {}".format(time_limit_sec))
+		if time_limit_sec < 0:
+			return []
+
+		start_time = time.time()
+
 		def instantiate_with_premises_check(p, inputs, premise_chains):
 			"""instantiate programs and then check each one of them against the premise """
 			results = []
 			if p.is_abstract():
+
+				print(p.stmt_string())
 				ast = p.to_dict()
 				next_level_programs, level = self.instantiate_one_level(ast, inputs)
+
 				for _ast in next_level_programs:
+
+					# force terminate if the remaining time is running out
+					if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+						return results
 
 					premises_at_level = [[pm for pm in premise_chain if len(pm[1]) == level][0] for premise_chain in premise_chains]
 
 					subquery_res = None
 					for premise, subquery_path in premises_at_level:
+
 						if subquery_res is None:
 							# check if the subquery result contains the premise
 							subquery_node = get_node(_ast, subquery_path)
+							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
 							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
-						
+
 						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):
 							#print(f"{' - '}{Node.load_from_dict(_ast).stmt_string()}")
 							results.append(Node.load_from_dict(_ast))
@@ -196,7 +213,10 @@ class Synthesizer(object):
 		if p.is_abstract():
 			candidates = instantiate_with_premises_check(p, inputs, premise_chains)
 			for _p in candidates:
-				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains)
+				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+					return results
+				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
+				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains, remaining_time_limit)
 			return results
 		else:
 			return [p]
@@ -256,12 +276,17 @@ class Synthesizer(object):
 		candidates = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
+				print(s.stmt_string())
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
+
 				out_df = remove_duplicate_columns(out_df)
 				# all premise chains for the given ast
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
-				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains)
+
+				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
+				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, remaining_time_limit)
+				
 				for p in programs:
 					# check table consistensy
 					t = p.eval(inputs)
@@ -269,68 +294,13 @@ class Synthesizer(object):
 					if alignment_result != None:
 						candidates.append(p)
 
-					# early return if the termination condition is met
-					# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
-					if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
-						return candidates
-
 					if solution_limit is not None and len(candidates) > solution_limit:
 						return candidates
+				
+				# early return if the termination condition is met
+				# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
+				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+					return candidates
+
 
 		return candidates
-
-if __name__ == '__main__':
-
-	# inputs = [[
-	# 	{ "Bucket": "Bucket_E", "Budgeted": 100, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_D", "Budgeted": 100, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_C", "Budgeted": 125, "Actual": 115 },
-	# 	{ "Bucket": "Bucket_B", "Budgeted": 125, "Actual": 140 },
-	# 	{ "Bucket": "Bucket_A", "Budgeted": 140, "Actual": 150 }
-	# ]]
-
-	# output = [
-	# 	{ "x": "Actual", "y": 115,  "color": "Actual", "column": "Bucket_E"},
-	# 	{ "x": "Actual", "y": 115,"color": "Actual", "column": "Bucket_D"},
-	# 	{ "x": "Budgeted","y": 100,  "color": "Budgeted", "column": "Bucket_D"},
-	# ]
-
-	# #Synthesizer().enumerative_all_programs(inputs, output, 3)
-	# candidates = Synthesizer().enumerative_synthesis(inputs, output, 3, time_limit_sec=3, solution_limit=10)
-	# #candidates = Synthesizer().enumerative_search(inputs, output, 3)
-
-	# for p in candidates:
-	# 	#print(alignment_result)
-	# 	print(p.stmt_string())
-	# 	print(p.eval(inputs))
-
-	inputs = [[{"product":"Product1_2011","Q4":3,"Q3":5,"Q2":5,"Q1":10},
-           {"product":"Product2_2011","Q4":5,"Q3":7,"Q2":5,"Q1":2},
-           {"product":"Product3_2011","Q4":3,"Q3":9,"Q2":10,"Q1":7},
-           {"product":"Product4_2011","Q4":3,"Q3":2,"Q2":8,"Q1":1},
-           {"product":"Product5_2011","Q4":1,"Q3":7,"Q2":1,"Q1":6},
-           {"product":"Product6_2011","Q4":9,"Q3":1,"Q2":6,"Q1":1},
-           {"product":"Product1_2012","Q4":3,"Q3":3,"Q2":6,"Q1":4},
-           {"product":"Product2_2012","Q4":4,"Q3":3,"Q2":6,"Q1":4},
-           {"product":"Product3_2012","Q4":3,"Q3":6,"Q2":6,"Q1":4},
-           {"product":"Product4_2012","Q4":4,"Q3":10,"Q2":6,"Q1":1},
-           {"product":"Product5_2012","Q4":8,"Q3":5,"Q2":4,"Q1":7},
-           {"product":"Product6_2012","Q4":8,"Q3":8,"Q2":8,"Q1":6},
-           {"product":"Product1_2013","Q4":10,"Q3":2,"Q2":3,"Q1":9},
-           {"product":"Product2_2013","Q4":8,"Q3":6,"Q2":7,"Q1":7},
-           {"product":"Product3_2013","Q4":9,"Q3":8,"Q2":4,"Q1":9},
-           {"product":"Product4_2013","Q4":5,"Q3":9,"Q2":5,"Q1":2},
-           {"product":"Product5_2013","Q4":1,"Q3":5,"Q2":2,"Q1":4},
-           {"product":"Product6_2013","Q4":8,"Q3":10,"Q2":6,"Q1":4}]]
-
-	output = [{'c_x': 'Q1', 'c_y': 'Product3', 'c_color': 7, 'c_column': '2011'}, {'c_x': 'Q2', 'c_y': 'Product4', 'c_color': 8, 'c_column': '2011'}, {'c_x': 'Q2', 'c_y': 'Product5', 'c_color': 1, 'c_column': '2011'}]
-
-
-	#Synthesizer().enumerative_all_programs(inputs, output, 3)
-	candidates = Synthesizer().enumerative_synthesis(inputs, output, 3, time_limit_sec=3, solution_limit=10)
-	#candidates = Synthesizer().enumerative_search(inputs, output, 3)
-
-	for p in candidates:
-		#print(alignment_result)
-		print(p.stmt_string())
-		print(p.eval(inputs))

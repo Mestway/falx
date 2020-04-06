@@ -49,16 +49,6 @@ class TestChart(unittest.TestCase):
         trace = design.eval()
         abstract_designs = VisDesign.inv_eval(trace)
 
-    def test_stacked(self):
-        chart = StackedBarChart(
-            orientation="vertical",
-            encodings=[ Encoding("x", "Value", "nominal"),
-                        Encoding("y", "value", "quantitative"),
-                        Encoding("color", "variable", "nominal")])
-        design = VisDesign(chart=chart, data=test_data)
-        trace = design.eval()
-        abstract_designs = VisDesign.inv_eval(trace)
-
     def test_scatter(self):
         chart = ScatterPlot(
             mark_ty="point",
@@ -75,7 +65,7 @@ class TestChart(unittest.TestCase):
             mark_ty="point",
             encodings=[ Encoding("x", "Value", "nominal"),
                         Encoding("y", "Totals", "quantitative") ])
-        area_chart = StackedBarChart(
+        area_chart = BarChart(
             orientation="vertical",
             encodings=[ Encoding("y", "value", "quantitative"),
                         Encoding("color", "variable", "nominal"),
