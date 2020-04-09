@@ -4,3 +4,7 @@ vega
 dpath
 jsonschema
 namedlist
+click
+matplotlib
+flask
+flask_cors
