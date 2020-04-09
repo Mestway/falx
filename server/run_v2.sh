@@ -1,0 +1,1 @@
+env FLASK_APP=server.py FLASK_RUN_PORT=8050 LANG=C.UTF-8 LC_ALL=C.UTF-8 flask run
