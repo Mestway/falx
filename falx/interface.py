@@ -65,7 +65,7 @@ class FalxInterface(object):
             if key in config:
                 config[key] = user_config[key]
             else:
-                logger.warning(f"[] Key {key} is not part of the synthesizer config.")
+                logger.warning("[] Key {} is not part of the synthesizer config.".format(key))
 
         assert config["vis_backend"] in ["vegalite", "matplotlib"]
         assert config["solution_limit"] >= 1
