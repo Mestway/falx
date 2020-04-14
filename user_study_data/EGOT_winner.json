@@ -5,10 +5,6 @@
         "Grammy": 1960,
         "Oscar": 1945,
         "Tony": 1950,
-        "Year span": 17,
-        "Started": 1945,
-        "Completed": 1962,
-        "Age at completion": "59.9 years",
         "Category(s)": "Composer"
     },
     {
@@ -17,10 +13,6 @@
         "Grammy": 1977,
         "Oscar": 1932,
         "Tony": 1947,
-        "Year span": 45,
-        "Started": 1932,
-        "Completed": 1977,
-        "Age at completion": "76.4 years",
         "Category(s)": "Actress"
     },
     {
@@ -29,10 +21,6 @@
         "Grammy": 1972,
         "Oscar": 1961,
         "Tony": 1975,
-        "Year span": 16,
-        "Started": 1961,
-        "Completed": 1977,
-        "Age at completion": "45.8 years",
         "Category(s)": "Actress/Singer"
     },
     {
@@ -41,10 +29,6 @@
         "Grammy": 1979,
         "Oscar": 1981,
         "Tony": 1961,
-        "Year span": 30,
-        "Started": 1961,
-        "Completed": 1991,
-        "Age at completion": "87.4 years",
         "Category(s)": "Actor/Director"
     },
     {
@@ -53,10 +37,6 @@
         "Grammy": 1994,
         "Oscar": 1953,
         "Tony": 1954,
-        "Year span": 41,
-        "Started": 1953,
-        "Completed": 1994,
-        "Age at completion": "63.7 years",
         "Category(s)": "Actress"
     },
     {
@@ -65,10 +45,6 @@
         "Grammy": 1974,
         "Oscar": 1973,
         "Tony": 1976,
-        "Year span": 22,
-        "Started": 1973,
-        "Completed": 1995,
-        "Age at completion": "51.3 years",
         "Category(s)": "Composer"
     },
     {
@@ -77,10 +53,6 @@
         "Grammy": 1988,
         "Oscar": 1977,
         "Tony": 1997,
-        "Year span": 20,
-        "Started": 1977,
-        "Completed": 1997,
-        "Age at completion": "59.1 years",
         "Category(s)": "Composer/Conductor"
     },
     {
@@ -89,10 +61,6 @@
         "Grammy": 1998,
         "Oscar": 1968,
         "Tony": 2001,
-        "Year span": 34,
-        "Started": 1967,
-        "Completed": 2001,
-        "Age at completion": "74.9 years",
         "Category(s)": "Writer/Composer/Actor"
     },
     {
@@ -101,10 +69,6 @@
         "Grammy": 1961,
         "Oscar": 1967,
         "Tony": 1964,
-        "Year span": 40,
-        "Started": 1961,
-        "Completed": 2001,
-        "Age at completion": "70 years",
         "Category(s)": "Director/Comedian"
     },
     {
@@ -113,10 +77,6 @@
         "Grammy": 1986,
         "Oscar": 1991,
         "Tony": 2002,
-        "Year span": 16,
-        "Started": 1986,
-        "Completed": 2002,
-        "Age at completion": "46.6 years",
         "Category(s)": "Comedian/Actress/Host"
     },
     {
@@ -125,10 +85,6 @@
         "Grammy": 2012,
         "Oscar": 2008,
         "Tony": 1994,
-        "Year span": 28,
-        "Started": 1984,
-        "Completed": 2012,
-        "Age at completion": "53.6 years",
         "Category(s)": "Producer"
     },
     {
@@ -137,10 +93,6 @@
         "Grammy": 2012,
         "Oscar": 2014,
         "Tony": 2004,
-        "Year span": 10,
-        "Started": 2004,
-        "Completed": 2014,
-        "Age at completion": "39 years",
         "Category(s)": "Composer"
     },
     {
@@ -149,10 +101,6 @@
         "Grammy": 2006,
         "Oscar": 2015,
         "Tony": 2017,
-        "Year span": 12,
-        "Started": 2006,
-        "Completed": 2018,
-        "Age at completion": "39.7 years",
         "Category(s)": "Singer/Composer/Producer"
     },
     {
@@ -161,10 +109,6 @@
         "Grammy": 1980,
         "Oscar": 1997,
         "Tony": 1980,
-        "Year span": 38,
-        "Started": 1980,
-        "Completed": 2018,
-        "Age at completion": "70.5 years",
         "Category(s)": "Composer/Producer"
     },
     {
@@ -173,10 +117,6 @@
         "Grammy": 1980,
         "Oscar": 1993,
         "Tony": 1980,
-        "Year span": 38,
-        "Started": 1980,
-        "Completed": 2018,
-        "Age at completion": "73.8 years",
         "Category(s)": "Lyricist/Producer"
     }
 ]

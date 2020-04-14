@@ -489,7 +489,7 @@ class Gather(Node):
 					for l in list(itertools.combinations(list(range(col_num)), size)):
 						# only consider these fields together if they have the same type
 						if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
-							col_list_candidates.append([x for x in range(col_num) if x not in l])
+							col_list_candidates.append(tuple([x for x in range(col_num) if x not in l]))
 
 			return col_list_candidates
 		else:

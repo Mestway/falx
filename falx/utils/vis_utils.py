@@ -35,22 +35,23 @@ def is_broken_line_area_charts(layer_spec, raw_data):
 	if mark not in ["line", "area"]:
 		return False
 
-	inv_map = {}
+	channel_field = []
 	for ch in layer_spec["encoding"]:
 		if ch == "order":
 			continue
 		enc = layer_spec["encoding"][ch]
 		field_name = enc["field"]
-		inv_map[field_name] = (ch, field_name)
+		channel_field.append((ch, field_name))
+
+	# print(channel_field)
 		
 	df = pd.DataFrame.from_dict(raw_data)
-	# TODO: @clwang to confirm the fix is right
-	df = df[[inv_map[f][1] for f in inv_map]]
+	df = df[[p[1] for p in channel_field]]
 
 	data = df.to_dict(orient="records")
 
-	non_pos_cols = [f for f in inv_map if inv_map[f][0] not in ["x", "y"]]
-	x_col, y_col = [f for f in inv_map if inv_map[f][0] == "x"][0], [f for f in inv_map if inv_map[f][0] == "y"][0]
+	non_pos_cols = [p[1] for p in channel_field if p[0] not in ["x", "y"]]
+	x_col, y_col = [p[1] for p in channel_field if p[0] == "x"][0], [p[1] for p in channel_field if p[0] == "y"][0]
 
 	partitions = {}
 	for r in data:
@@ -61,13 +62,13 @@ def is_broken_line_area_charts(layer_spec, raw_data):
 			partitions[key][r[x_col]] = []
 		partitions[key][r[x_col]].append(r[y_col])
 
-	#print(partitions)
+	# print(partitions)
 
-	if any([any([len(ys) >= 2 for x, ys in p.items()]) for k1, p in partitions.items()]):
+	if any([any([len(set(ys)) >= 2 for x, ys in p.items()]) for k1, p in partitions.items()]):
 		print(" [Found broken line/area chart]")
 		full_spec = copy.deepcopy(layer_spec)
 		full_spec["data"] = {"values": raw_data}
-		# print(full_spec)
+		#print(json.dumps(full_spec))
 		return True
 			
 	return False
@@ -78,7 +79,7 @@ def repair_broken_line_area_chart(layer_spec, data):
 		if it is a multiple layer visualization, destruct layers first
 	"""
 	used_fields = ["layer_id"] + [layer_spec["encoding"][ch]["field"] for ch in layer_spec["encoding"]]
-	other_fields = [f for f in data[0] if f not in used_fields]
+	other_fields = [f for f in data[0] if f not in used_fields] + ([layer_spec["encoding"]["y"]["field"]] if "y" in layer_spec["encoding"] else [])
 
 	candidates = []
 	for f in other_fields:
@@ -171,7 +172,6 @@ def update_encoding_type(spec, data):
 			enc_ty = "nominal" if dtype == "string" else "quantitative"
 			layer_spec["encoding"]["color"]["type"] = enc_ty
 
-
 	if "layer" in spec:
 		for layer_spec, layer_data in break_down_layered(spec, data):
 			_update_encoding_type(layer_spec, layer_data)
@@ -179,13 +179,36 @@ def update_encoding_type(spec, data):
 		_update_encoding_type(spec, data)
 
 
+def handle_scale_zero(spec, data):
+	"""decide for continuous  visualization with zero """
+
+	def _handle_scale_zero(layer_spec, layer_data):
+		"""use side effect to update encodings"""
+		mark = layer_spec["mark"]["type"] if isinstance(layer_spec["mark"], (dict,)) else layer_spec["mark"]
+		for ch in ["x", "y"]:
+			if ch in layer_spec["encoding"] and layer_spec["encoding"][ch]["type"] == "quantitative":
+				field_data = [r[layer_spec["encoding"][ch]["field"]] for r in layer_data]
+
+				# don't use zero if the difference is too small
+				if (max(field_data) - min(field_data)) * 5 < (min(field_data) - 0) or min(field_data) < 0:
+					layer_spec["encoding"][ch]["scale"] = {"zero": None}
+
+	if "layer" in spec:
+		for layer_spec, layer_data in break_down_layered(spec, data):
+			_handle_scale_zero(layer_spec, layer_data)
+	else:
+		_handle_scale_zero(spec, data)
+
 def post_process_spec(spec, data):
 	"""post process the visualization spec"""
 	spec = try_repair_visualization(spec, data)
+	if spec is None:
+		return None
 	width, height = infer_width_height(spec, data)
 	spec["width"] = width
 	spec["height"] = height
 	update_encoding_type(spec, data)
+	handle_scale_zero(spec, data)
 	return spec
 
 if __name__ == '__main__':
