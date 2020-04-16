@@ -154,28 +154,34 @@ def infer_width_height(spec, data):
 
 		x_ty, y_ty, col_ty = [x_ty], [y_ty], [col_ty]
 
-	width = 20
-	height = 20
+	unit_width = 20
+	unit_height = 20
 	cont_width = 200
 	cont_height = 200
+	width = 20
+	height = 20
 
 	if "discrete" in col_ty:
 		if "discrete" in x_ty and len(set(x_values)) * len(set(col_values)) > 20:
-			width = 10
-			height = 10
+			unit_width = 10
+			unit_height = 10
 		if "continuous" in x_ty and 200 * len(set(col_values)) > 600:
 			cont_width = 80
 			cont_height = 80
 
 
 	if "discrete" in x_ty:
-		width = width * len(set(x_values))
+		if len(set(x_values)) * unit_width > 800:
+			unit_width = 10
+		width = unit_width * len(set(x_values))
 	if "continuous" in x_ty:
 		width = max(width, cont_width)
 
 	
 	if "discrete" in y_ty:
-		height = height * len(set(y_values))
+		if len(set(y_values)) * unit_height > 800:
+			unit_height = 10
+		height = unit_height * len(set(y_values))
 	if "continuous" in y_ty:
 		height = max(height, cont_width)
 
