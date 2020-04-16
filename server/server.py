@@ -151,7 +151,7 @@ def run_falx_synthesizer():
                     group_results=True,
                     config={
                         "solution_limit": 10,
-                        "time_limit_sec": 10,
+                        "time_limit_sec": 15,
                         "backend": "vegalite",
                         "max_prog_size": 2,
                         "grammar": GRAMMAR
@@ -181,4 +181,4 @@ def run_falx_synthesizer():
 
 if __name__ == '__main__':
     #app.run(debug=True, host='127.0.0.1', port=5000)
-    app.run(host='0.0.0.0', port=8590)
+    app.run(host='0.0.0.0', port=5000, threaded=True)
