@@ -468,11 +468,12 @@ class Gather(Node):
 			# 	(this prevents exponential enumeration when the table is too wide)
 			max_val_list_size = min(col_num - 1, config["gather_max_val_list_size"])
 
+			fw_col_lists = []
 			for size in range(2, max_val_list_size + 1):
 				for l in list(itertools.combinations(list(range(col_num)), size)):
 					# only consider these fields together if they have the same type
 					if len(set([input_schema[i] for i in l])) == 1:
-						col_list_candidates.append(l)
+						fw_col_lists.append(l)
 
 			## this is the gahter neg case: enumerate keys (instead of columns)
 			# leave at least two columns as values columns that will be unpivoted
@@ -484,12 +485,24 @@ class Gather(Node):
 									config["gather_max_key_list_size"])
 			
 			# only consider such gather_neg stype if the table size is greater than config["gather_max_key_list_size"]
+			bw_col_lists = []
 			if max_key_list_size > 0:			
 				for size in range(1, max_key_list_size + 1):
 					for l in list(itertools.combinations(list(range(col_num)), size)):
 						# only consider these fields together if they have the same type
 						if len(set([input_schema[i] for i in range(len(input_schema)) if i not in l])) == 1:
-							col_list_candidates.append(tuple([x for x in range(col_num) if x not in l]))
+							bw_col_lists.append(tuple([x for x in range(col_num) if x not in l]))
+
+			# col_list_candidates = [(1,2,3,4,5)]
+			# print(col_list_candidates)
+			col_list_candidates = []
+			for i in range(max(len(fw_col_lists), len(bw_col_lists))):
+				if i < len(bw_col_lists):
+					col_list_candidates.append(bw_col_lists[i])
+				if i < len(fw_col_lists):
+					col_list_candidates.append(fw_col_lists[i])
+
+			#col_list_candidates = [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)]
 
 			return col_list_candidates
 		else:
@@ -581,6 +594,8 @@ class GroupSummary(Node):
 		group_keys = [df.columns[idx] for idx in self.group_cols]
 		target = df.columns[self.aggr_col]
 		res = df.groupby(group_keys).agg({target: self.aggr_func})
+		if self.aggr_func == "mean":
+			res[target] = res[target].round(2)
 		res = res.rename(columns={target: f'{self.aggr_func}_{target}'}).reset_index()
 		return res
 

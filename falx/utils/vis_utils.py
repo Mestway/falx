@@ -129,6 +129,8 @@ def infer_width_height(spec, data):
 
 	x_ty, x_values = [], []
 	y_ty, y_values = [], []
+	col_ty, col_values = [], []
+
 	if "layer" in spec:	
 		for layer_spec, layer_data in break_down_layered(spec, data):
 			ty, vals = infer_axis_attr(layer_spec, layer_data, "x")
@@ -140,22 +142,42 @@ def infer_width_height(spec, data):
 			y_ty.append(ty)
 			if vals is not None:
 				y_values += vals
+
+			ty, vals = infer_axis_attr(layer_spec, layer_data, "column")
+			col_ty.append(ty)
+			if vals is not None:
+				col_values += vals
 	else:
 		x_ty, x_values = infer_axis_attr(spec, data, "x")
 		y_ty, y_values = infer_axis_attr(spec, data, "y")
-		x_ty, y_ty = [x_ty], [y_ty]
+		col_ty, col_values = infer_axis_attr(spec, data, "column")
+
+		x_ty, y_ty, col_ty = [x_ty], [y_ty], [col_ty]
 
 	width = 20
-	if "discrete" in x_ty:
-		width = 20 * len(set(x_values))
-	if "continuous" in x_ty:
-		width = max(width, 200)
-
 	height = 20
+	cont_width = 200
+	cont_height = 200
+
+	if "discrete" in col_ty:
+		if "discrete" in x_ty and len(set(x_values)) * len(set(col_values)) > 20:
+			width = 10
+			height = 10
+		if "continuous" in x_ty and 200 * len(set(col_values)) > 600:
+			cont_width = 80
+			cont_height = 80
+
+
+	if "discrete" in x_ty:
+		width = width * len(set(x_values))
+	if "continuous" in x_ty:
+		width = max(width, cont_width)
+
+	
 	if "discrete" in y_ty:
-		height = 20 * len(set(y_values))
+		height = height * len(set(y_values))
 	if "continuous" in y_ty:
-		height = max(height, 200)
+		height = max(height, cont_width)
 
 	return (width, height)
 
@@ -171,6 +193,11 @@ def update_encoding_type(spec, data):
 			dtype = table_utils.infer_dtype(field_data)
 			enc_ty = "nominal" if dtype == "string" else "quantitative"
 			layer_spec["encoding"]["color"]["type"] = enc_ty
+		if mark == "rect":
+			for ch in layer_spec["encoding"]:
+				if ch in ["x", "y"]:
+					if layer_spec["encoding"][ch]["type"] != "nominal":
+						layer_spec["encoding"][ch]["type"] = "nominal"
 
 	if "layer" in spec:
 		for layer_spec, layer_data in break_down_layered(spec, data):
@@ -187,7 +214,7 @@ def handle_scale_zero(spec, data):
 		mark = layer_spec["mark"]["type"] if isinstance(layer_spec["mark"], (dict,)) else layer_spec["mark"]
 		for ch in ["x", "y"]:
 			if ch in layer_spec["encoding"] and layer_spec["encoding"][ch]["type"] == "quantitative":
-				field_data = [r[layer_spec["encoding"][ch]["field"]] for r in layer_data]
+				field_data = [float(r[layer_spec["encoding"][ch]["field"]]) for r in layer_data]
 
 				# don't use zero if the difference is too small
 				if (max(field_data) - min(field_data)) * 5 < (min(field_data) - 0) or min(field_data) < 0:
@@ -199,17 +226,21 @@ def handle_scale_zero(spec, data):
 	else:
 		_handle_scale_zero(spec, data)
 
+
 def post_process_spec(spec, data):
 	"""post process the visualization spec"""
 	spec = try_repair_visualization(spec, data)
+	update_encoding_type(spec, data)
+
 	if spec is None:
 		return None
 	width, height = infer_width_height(spec, data)
 	spec["width"] = width
 	spec["height"] = height
-	update_encoding_type(spec, data)
+	
 	handle_scale_zero(spec, data)
 	return spec
+
 
 if __name__ == '__main__':
 
@@ -229,7 +260,7 @@ if __name__ == '__main__':
 			{"Quarter":"Quarter2","KEY":"Actual Profits","VALUE":3829,"layer_id":1},
 			{"Quarter":"Quarter3","KEY":"Actual Profits","VALUE":2374,"layer_id":1},
 			{"Quarter":"Quarter4","KEY":"Actual Profits","VALUE":3373,"layer_id":1}]
-	
+
 	spec = {
 	  "layer": [
 	    {

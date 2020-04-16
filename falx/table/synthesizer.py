@@ -167,12 +167,6 @@ class Synthesizer(object):
 
 	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains, time_limit_sec=None):
 		"""iteratively instantiate abstract programs w/ promise check """
-		
-		print("time limit: {}".format(time_limit_sec))
-		if time_limit_sec < 0:
-			return []
-
-		start_time = time.time()
 
 		def instantiate_with_premises_check(p, inputs, premise_chains):
 			"""instantiate programs and then check each one of them against the premise """
@@ -200,8 +194,17 @@ class Synthesizer(object):
 							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
 							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
 
+						#print(subquery_res)
 						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):
-							#print(f"{' - '}{Node.load_from_dict(_ast).stmt_string()}")
+
+							# debug
+							# p = Node.load_from_dict(_ast)
+							# if not p.is_abstract():
+							# 	print(f"{' - '}{p.stmt_string()}")
+							# 	print(subquery_res)
+							# 	print(premise)
+							# 	print( check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")))
+
 							results.append(Node.load_from_dict(_ast))
 							break
 
@@ -209,16 +212,24 @@ class Synthesizer(object):
 			else:
 				return []
 
+		print("time limit: {}".format(time_limit_sec))
+
 		results = []
 		if p.is_abstract():
+			
+			if time_limit_sec < 0:
+				return []
+			start_time = time.time()
+
 			candidates = instantiate_with_premises_check(p, inputs, premise_chains)
 			for _p in candidates:
-				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
-					return results
+				# if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
+				# 	return results
 				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
 				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains, remaining_time_limit)
 			return results
 		else:
+			# handling concrete programs won't take long, allow them to proceed
 			return [p]
 
 	def enumerative_all_programs(self, inputs, output, max_prog_size):

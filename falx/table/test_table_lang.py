@@ -33,7 +33,7 @@ class TestTableLang(unittest.TestCase):
 
     def test_group(self):
         q = Table(data_id=0)
-        q = GroupSummary(q, [1], -1, "count")
+        q = GroupSummary(q, [1], -1, "mean")
         print("---")
         print(q.stmt_string())
         print(q.is_abstract())

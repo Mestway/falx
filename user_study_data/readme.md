@@ -1,5 +1,7 @@
 # User Study Material
 
+Raw input data is stored in `raw` folder, proceeded data (proceeded using `process_data.py`) is in this folder.
+
 ### Task 1: City Population
 
 Group bar chart

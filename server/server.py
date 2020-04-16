@@ -111,6 +111,8 @@ def run_falx_synthesizer():
         for v in all_input_values:
             if isinstance(v, (str,)) and "_" in v:
                 splitted_values += v.split("_")
+            if isinstance(v, (str,)) and "-" in v:
+                splitted_values += v.split("-")
         all_input_values += splitted_values
         all_input_values = set(all_input_values)
 

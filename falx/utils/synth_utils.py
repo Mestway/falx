@@ -54,6 +54,8 @@ def check_table_inclusion(table1, table2, wild_card=None):
             if contained:
                 mapping[k1].append(k2)
 
+    #print(mapping)
+
     # distill plausible mappings from the table
     # not all choices generated from the approach above generalize, we need to check consistency
     t1_schema = list(mapping.keys())
@@ -62,8 +64,11 @@ def check_table_inclusion(table1, table2, wild_card=None):
     return check_ok
 
 
-def align_table_schema(table1, table2, check_equivalence=False, boolean_result=False):
-    """align table schema, assume that table1 is contained by table2"""
+def align_table_schema(table1, table2, check_equivalence=False, boolean_result=False, find_all_alignments=False):
+    """align table schema, assume that table1 is contained by table2
+    Args:
+        find_all_alignments: whether to find all alignments or not
+    """
     if len(table1) > len(table2):
         # cannot find any mapping
         return None
@@ -113,12 +118,13 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
     #if len(all_choices) == 1:
     #    return {key:mapping[key][0] for key in mapping}
 
+    all_alignments = []
     for mapping_id_choices in all_choices:
         # the following is an instantiation of the the mapping
         inst = { t1_schema[i]:mapping[t1_schema[i]][mapping_id_choices[i]] for i in range(len(t1_schema))}
 
         def value_handling_func(val):
-            if isinstance(val, (int, str,)):
+            if isinstance(val, (int,)):
                 return val
             try:
                 val = float(val)
@@ -132,7 +138,13 @@ def align_table_schema(table1, table2, check_equivalence=False, boolean_result=F
         frozen_table2 = [tuple([value_handling_func(r[inst[key]]) for key in t1_schema if inst[key] in r]) for r in table2]
 
         if all([frozen_table1.count(t) <= frozen_table2.count(t) for t in frozen_table1]):
-            return inst
+            if find_all_alignments:
+                all_alignments.append(inst)
+            else:
+                return inst
+
+    if find_all_alignments:
+        return all_alignments
 
     return None
 

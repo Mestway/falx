@@ -133,16 +133,17 @@ class FalxInterface(object):
                 for p in candidate_progs:
                     output = p.eval(inputs).to_dict(orient="records")
 
-                    field_mapping = synth_utils.align_table_schema(sym_data.values, output)
-                    assert(field_mapping != None)
+                    field_mappings = synth_utils.align_table_schema(sym_data.values, output, find_all_alignments=True)
+                    assert(len(field_mappings) > 0)
 
-                    if config["vis_backend"] == "vegalite":
-                        vis_design = VisDesign(data=output, chart=copy.deepcopy(chart))
-                        vis_design.update_field_names(field_mapping)
-                        candidates.append((p.stmt_string(), vis_design))
-                    else:
-                        vis_design = MatplotlibChart(output, copy.deepcopy(chart))
-                        candidates.append((p.stmt_string(), vis_design.to_string_spec(field_mapping)))
+                    for field_mapping in field_mappings:
+                        if config["vis_backend"] == "vegalite":
+                            vis_design = VisDesign(data=output, chart=copy.deepcopy(chart))
+                            vis_design.update_field_names(field_mapping)
+                            candidates.append((p.stmt_string(), vis_design))
+                        else:
+                            vis_design = MatplotlibChart(output, copy.deepcopy(chart))
+                            candidates.append((p.stmt_string(), vis_design.to_string_spec(field_mapping)))
             else:
                 synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
 
@@ -166,17 +167,22 @@ class FalxInterface(object):
                     # apply each program on inputs to get output table for each layer
                     outputs = [p.eval(inputs).to_dict(orient="records") for p in progs]
 
-                    field_mappings = [synth_utils.align_table_schema(sym_data[k].values, output) for k, output in enumerate(outputs)]
+                    all_field_mappings = [synth_utils.align_table_schema(sym_data[k].values, output, find_all_alignments=True) 
+                            for k, output in enumerate(outputs)]
 
-                    #print(field_mappings)
+                    mapping_id_lists = [list(range(len(l))) for l in all_field_mappings]
+                    for mapping_id_choices in itertools.product(*mapping_id_lists):
 
-                    if config["vis_backend"] == "vegalite":
-                        vis_design = VisDesign(data=outputs, chart=copy.deepcopy(chart))
-                        vis_design.update_field_names(field_mappings)
-                        candidates.append(([p.stmt_string() for p in progs], vis_design))
-                    else:
-                        vis_design = MatplotlibChart(outputs,copy.deepcopy(chart))
-                        candidates.append(([p.stmt_string() for p in progs], vis_design.to_string_spec(field_mappings)))
+                        field_mappings = [all_field_mappings[i][idx] for i, idx in enumerate(mapping_id_choices)]
+                        #print(field_mappings)
+
+                        if config["vis_backend"] == "vegalite":
+                            vis_design = VisDesign(data=outputs, chart=copy.deepcopy(chart))
+                            vis_design.update_field_names(field_mappings)
+                            candidates.append(([p.stmt_string() for p in progs], vis_design))
+                        else:
+                            vis_design = MatplotlibChart(outputs,copy.deepcopy(chart))
+                            candidates.append(([p.stmt_string() for p in progs], vis_design.to_string_spec(field_mappings)))
 
             #if len(candidates) > 0: break
 
