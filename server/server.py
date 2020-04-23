@@ -9,6 +9,7 @@ from flask_cors import CORS
 
 import copy
 import pandas as pd
+import time
 
 sys.path.append(os.path.abspath('../falx'))
 
@@ -144,6 +145,9 @@ def run_falx_synthesizer():
                         # update the value in partion by reference, force to modify into integer
                         partition[i]["props"][c] = float(values[i])
 
+        start_time = time.time()
+
+        time_limit_sec = 15
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
                     raw_trace=visual_elements, 
@@ -151,11 +155,14 @@ def run_falx_synthesizer():
                     group_results=True,
                     config={
                         "solution_limit": 10,
-                        "time_limit_sec": 15,
+                        "time_limit_sec": time_limit_sec,
                         "backend": "vegalite",
                         "max_prog_size": 2,
                         "grammar": GRAMMAR
                     })
+        time_spent = time.time() - start_time
+
+        print("==> time spent: {}".format(time_spent))
 
         # perform repairs on synthesized visdualization
         final_results = {}
@@ -171,10 +178,19 @@ def run_falx_synthesizer():
                         final_results[key] = []
                     final_results[key].append((p[0], spec))
 
-        response = flask.jsonify([{"rscript": str(final_results[key][0][0]), 
-                                   "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results])
+        
+        response = flask.jsonify({
+            "status": "timeout" if time_spent >= time_limit_sec else "ok",
+            "time_spent": time_spent,
+            "result": [{"rscript": str(final_results[key][0][0]), 
+                        "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results]
+        })
     else:
-        response = flask.jsonify([])
+        response = flask.jsonify({
+            "time_spent": "",
+            "status": "error",
+            "result": []
+        })
 
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
