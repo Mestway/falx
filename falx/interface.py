@@ -122,6 +122,7 @@ class FalxInterface(object):
 
                 synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
 
+                print("==> table synthesis input:")
                 print(sym_data.instantiate())
 
                 candidate_progs = synthesizer.enumerative_synthesis(
@@ -147,16 +148,21 @@ class FalxInterface(object):
             else:
                 synthesizer = table_synthesizer.Synthesizer(config=config["grammar"])
 
+                
                 # multi-layer charts
                 # layer_candidate_progs[i] contains all programs that transform inputs to output[i]
                 # synthesize table transformation programs for each layer
-                layer_candidate_progs = [synthesizer.enumerative_synthesis(
-                                            inputs, d.instantiate(), 
-                                            max_prog_size=config["max_prog_size"], 
-                                            time_limit_sec=config["time_limit_sec"],
-                                            solution_limit=config["solution_limit"]) for d in sym_data]
-                
-
+                layer_candidate_progs = []
+                for d in sym_data:
+                    print("==> table synthesis input:")
+                    print(d.instantiate())
+                    layer_candidate_progs.append(
+                        synthesizer.enumerative_synthesis(
+                            inputs, d.instantiate(), 
+                            max_prog_size=config["max_prog_size"], 
+                            time_limit_sec=config["time_limit_sec"],
+                            solution_limit=config["solution_limit"]))
+            
                 # iterating over combinations for different layers
                 layer_id_lists = [list(range(len(l))) for l in layer_candidate_progs]
                 for layer_id_choices in itertools.product(*layer_id_lists):

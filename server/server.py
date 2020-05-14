@@ -122,12 +122,25 @@ def run_falx_synthesizer():
         post_processed_visual_elements = []
         partition_keys = set([r['type'] for r in visual_elements])
         for key in partition_keys:
+
             partition = [r for r in visual_elements if r['type'] == key]
             copyed_partition = copy.deepcopy(partition)
 
             columns = [c for c in partition[0]["props"]]
+            all_empty_columns = [c for c in columns if all([r["props"][c] == "" for r in copyed_partition])]
+
             for c in columns:
-                values = [r["props"][c] for r in copyed_partition]
+                # for x, y, we also need to look into columns from x1, x2 etc, not just x, y themselves
+                if c.startswith("x"):
+                    related_columns = ["x", "x1", "x2", "x_left", "x_right"]
+                elif c.startswith("y"):
+                    related_columns = ["y", "y1", "y2", "y_top_left", "y_bot_left", "y_top_right", "y_bot_right"]
+                else:
+                    related_columns = [c]
+
+                related_columns = [c for c in related_columns if c in columns and c not in all_empty_columns]
+
+                values = [r["props"][x] for r in copyed_partition for x in related_columns]
                 if all([v == "" for v in values]):
                     continue
 
@@ -141,9 +154,12 @@ def run_falx_synthesizer():
                 ty, values = try_infer_string_type(values)
 
                 if ty != "string":
-                    for i in range(len(values)):
+                    # locate values in the column c and update their types by reference
+                    values_in_c = [r["props"][c] for r in copyed_partition]
+                    _, values_in_c = try_infer_string_type(values_in_c)
+                    for i in range(len(values_in_c)):
                         # update the value in partion by reference, force to modify into integer
-                        partition[i]["props"][c] = float(values[i])
+                        partition[i]["props"][c] = float(values_in_c[i])
 
         start_time = time.time()
 

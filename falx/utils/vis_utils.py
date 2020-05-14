@@ -223,7 +223,7 @@ def handle_scale_zero(spec, data):
 				field_data = [float(r[layer_spec["encoding"][ch]["field"]]) for r in layer_data]
 
 				# don't use zero if the difference is too small
-				if (max(field_data) - min(field_data)) * 5 < (min(field_data) - 0) or min(field_data) < 0:
+				if ((max(field_data) - min(field_data)) * 5 < (min(field_data) - 0) and min(field_data) > 10) or min(field_data) < 0:
 					layer_spec["encoding"][ch]["scale"] = {"zero": None}
 
 	if "layer" in spec:

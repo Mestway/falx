@@ -600,11 +600,17 @@ class LineChart(object):
         # frozen data used for removing duplicate points
         frozen_data = []
         for vt in vtrace:
-            # each end of an point will only be added once
-            p1 = json.dumps({"c_x": vt.x1, "c_y": vt.y1, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
-            p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
-            if p1 not in frozen_data: frozen_data.append(p1)
-            if p2 not in frozen_data: frozen_data.append(p2)
+
+            # add fault tolerency: if the field is null, ignore it
+            if vt.x1 != None and vt.y1 != None:
+                # each end of an point will only be added once
+                p1 = json.dumps({"c_x": vt.x1, "c_y": vt.y1, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+                if p1 not in frozen_data: frozen_data.append(p1)
+
+            if vt.x2 != None and vt.y2 != None:
+                p2 = json.dumps({"c_x": vt.x2, "c_y": vt.y2, "c_size": vt.size, "c_color": vt.color, "c_column": vt.column}, sort_keys=True)
+                if p2 not in frozen_data: frozen_data.append(p2)
+
 
             # there should not be any points between these two
             constraints.append("""
