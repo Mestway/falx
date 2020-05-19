@@ -31,7 +31,7 @@ RUN apt-get update \
         vim
 
 ADD https://api.github.com/repos/mestway/falx/git/refs/heads/user-study version.json
-RUN git clone -b bfs https://github.com/Mestway/falx.git
+RUN git clone -b user-study https://github.com/Mestway/falx.git
 RUN pip install -r /falx/requirements.txt
 RUN pip install -e /falx
 
