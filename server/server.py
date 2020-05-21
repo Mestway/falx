@@ -173,7 +173,7 @@ def run_falx_synthesizer():
                         "solution_limit": 10,
                         "time_limit_sec": time_limit_sec,
                         "backend": "vegalite",
-                        "max_prog_size": 2,
+                        "max_prog_size": 3,
                         "grammar": GRAMMAR
                     })
         time_spent = time.time() - start_time
