@@ -84,8 +84,12 @@ class Synthesizer(object):
 						if op not in self.config["operators"]:
 							continue
 						q = abstract_combinators[op](copy.copy(p))
-						if not enum_strategies.disable_sketch(q, new_vals, has_sep):
-							candidates[level].append(q)
+						candidates[level].append(q)
+
+		for level in range(0, size + 1):
+			candidates[level] = [q for q in candidates[level] if not enum_strategies.disable_sketch(q, new_vals, has_sep)]
+
+
 		return candidates
 
 	def pick_vars(self, ast, inputs):
@@ -193,6 +197,7 @@ class Synthesizer(object):
 							subquery_node = get_node(_ast, subquery_path)
 							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
 							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
+							#print(subquery_res)
 
 						#print(subquery_res)
 						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):

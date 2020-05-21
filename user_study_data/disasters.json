@@ -1,800 +1,458 @@
 [
     {
         "Year": 1961,
-        "All natural disasters": 17341.0,
         "Drought": 0,
         "Earthquake": 60.0,
         "Epidemic": 0,
         "Extreme temperature": 400.0,
-        "Extreme weather": 12852.0,
-        "Flood": 3863.0,
-        "Landslide": 166.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 3863.0
     },
     {
         "Year": 1962,
-        "All natural disasters": 17370.0,
         "Drought": 0,
         "Earthquake": 12209.0,
         "Epidemic": 0,
         "Extreme temperature": 50.0,
-        "Extreme weather": 1860.0,
-        "Flood": 1180.0,
-        "Landslide": 71.0,
-        "Mass movement (dry)": 2000.0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 1180.0
     },
     {
         "Year": 1963,
-        "All natural disasters": 37746.0,
         "Drought": 0,
         "Earthquake": 1700.0,
         "Epidemic": 1000.0,
         "Extreme temperature": 162.0,
-        "Extreme weather": 29965.0,
-        "Flood": 1031.0,
-        "Landslide": 2033.0,
-        "Mass movement (dry)": 150.0,
-        "Volcanic activity": 1705.0,
-        "Wildfire": 0
+        "Flood": 1031.0
     },
     {
         "Year": 1964,
-        "All natural disasters": 12892.0,
         "Drought": 50.0,
         "Earthquake": 335.0,
         "Epidemic": 617.0,
         "Extreme temperature": 0,
-        "Extreme weather": 10655.0,
-        "Flood": 1123.0,
-        "Landslide": 108.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 4.0,
-        "Wildfire": 0
+        "Flood": 1123.0
     },
     {
         "Year": 1965,
-        "All natural disasters": 1565517.0,
         "Drought": 1502000.0,
         "Earthquake": 683.0,
         "Epidemic": 816.0,
         "Extreme temperature": 100.0,
-        "Extreme weather": 59932.0,
-        "Flood": 1401.0,
-        "Landslide": 204.0,
-        "Mass movement (dry)": 26.0,
-        "Volcanic activity": 355.0,
-        "Wildfire": 0
+        "Flood": 1401.0
     },
     {
         "Year": 1966,
-        "All natural disasters": 17181.0,
         "Drought": 8000.0,
         "Earthquake": 2752.0,
         "Epidemic": 200.0,
         "Extreme temperature": 262.0,
-        "Extreme weather": 2327.0,
-        "Flood": 1923.0,
-        "Landslide": 604.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 1088.0,
-        "Wildfire": 25.0
+        "Flood": 1923.0
     },
     {
         "Year": 1967,
-        "All natural disasters": 10103.0,
         "Drought": 600.0,
         "Earthquake": 1013.0,
         "Epidemic": 3137.0,
         "Extreme temperature": 0,
-        "Extreme weather": 2255.0,
-        "Flood": 2446.0,
-        "Landslide": 590.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 62.0
+        "Flood": 2446.0
     },
     {
         "Year": 1968,
-        "All natural disasters": 21461.0,
         "Drought": 0,
         "Earthquake": 10858.0,
         "Epidemic": 177.0,
         "Extreme temperature": 153.0,
-        "Extreme weather": 1669.0,
-        "Flood": 7306.0,
-        "Landslide": 1196.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 90.0,
-        "Wildfire": 12.0
+        "Flood": 7306.0
     },
     {
         "Year": 1969,
-        "All natural disasters": 11687.0,
         "Drought": 0,
         "Earthquake": 3353.0,
         "Epidemic": 3520.0,
         "Extreme temperature": 0,
-        "Extreme weather": 3252.0,
-        "Flood": 1544.0,
-        "Landslide": 18.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 1544.0
     },
     {
         "Year": 1970,
-        "All natural disasters": 387507.0,
         "Drought": 0,
         "Earthquake": 78599.0,
         "Epidemic": 939.0,
         "Extreme temperature": 0,
-        "Extreme weather": 304495.0,
-        "Flood": 3246.0,
-        "Landslide": 186.0,
-        "Mass movement (dry)": 42.0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 3246.0
     },
     {
         "Year": 1971,
-        "All natural disasters": 18086.0,
         "Drought": 0,
         "Earthquake": 1107.0,
         "Epidemic": 2313.0,
         "Extreme temperature": 400.0,
-        "Extreme weather": 10811.0,
-        "Flood": 2404.0,
-        "Landslide": 1020.0,
-        "Mass movement (dry)": 31.0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 2404.0
     },
     {
         "Year": 1972,
-        "All natural disasters": 20045.0,
         "Drought": 0,
         "Earthquake": 15170.0,
         "Epidemic": 35.0,
         "Extreme temperature": 110.0,
-        "Extreme weather": 1427.0,
-        "Flood": 2548.0,
-        "Landslide": 755.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 2548.0
     },
     {
         "Year": 1973,
-        "All natural disasters": 110555.0,
         "Drought": 100000.0,
         "Earthquake": 552.0,
         "Epidemic": 0,
         "Extreme temperature": 283.0,
-        "Extreme weather": 4344.0,
-        "Flood": 1835.0,
-        "Landslide": 3541.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 1835.0
     },
     {
         "Year": 1974,
-        "All natural disasters": 87504.0,
         "Drought": 19000.0,
         "Earthquake": 24808.0,
         "Epidemic": 1500.0,
         "Extreme temperature": 0,
-        "Extreme weather": 11861.0,
-        "Flood": 29431.0,
-        "Landslide": 904.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 0
+        "Flood": 29431.0
     },
     {
         "Year": 1975,
-        "All natural disasters": 14858.0,
         "Drought": 0,
         "Earthquake": 12632.0,
         "Epidemic": 0,
         "Extreme temperature": 140.0,
-        "Extreme weather": 1041.0,
-        "Flood": 848.0,
-        "Landslide": 195.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 2.0,
-        "Wildfire": 0
+        "Flood": 848.0
     },
     {
         "Year": 1976,
-        "All natural disasters": 280469.0,
         "Drought": 0,
         "Earthquake": 276994.0,
         "Epidemic": 396.0,
         "Extreme temperature": 0,
-        "Extreme weather": 1763.0,
-        "Flood": 960.0,
-        "Landslide": 315.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 41.0,
-        "Wildfire": 0
+        "Flood": 960.0
     },
     {
         "Year": 1977,
-        "All natural disasters": 22406.0,
         "Drought": 0,
         "Earthquake": 3098.0,
         "Epidemic": 1184.0,
         "Extreme temperature": 0,
-        "Extreme weather": 15298.0,
-        "Flood": 2568.0,
-        "Landslide": 40.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 215.0,
-        "Wildfire": 3.0
+        "Flood": 2568.0
     },
     {
         "Year": 1978,
-        "All natural disasters": 38096.0,
         "Drought": 63.0,
         "Earthquake": 25162.0,
         "Epidemic": 3060.0,
         "Extreme temperature": 150.0,
-        "Extreme weather": 3676.0,
-        "Flood": 5897.0,
-        "Landslide": 86.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 2.0
+        "Flood": 5897.0
     },
     {
         "Year": 1979,
-        "All natural disasters": 7341.0,
         "Drought": 18.0,
         "Earthquake": 2100.0,
         "Epidemic": 486.0,
         "Extreme temperature": 470.0,
-        "Extreme weather": 2623.0,
-        "Flood": 1038.0,
-        "Landslide": 338.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 268.0,
-        "Wildfire": 0
+        "Flood": 1038.0
     },
     {
         "Year": 1980,
-        "All natural disasters": 23089.0,
         "Drought": 0,
         "Earthquake": 7730.0,
         "Epidemic": 1685.0,
         "Extreme temperature": 1389.0,
-        "Extreme weather": 1379.0,
-        "Flood": 10466.0,
-        "Landslide": 300.0,
-        "Mass movement (dry)": 50.0,
-        "Volcanic activity": 90.0,
-        "Wildfire": 0
+        "Flood": 10466.0
     },
     {
         "Year": 1981,
-        "All natural disasters": 119697.0,
         "Drought": 103000.0,
         "Earthquake": 4206.0,
         "Epidemic": 2497.0,
         "Extreme temperature": 300.0,
-        "Extreme weather": 3790.0,
-        "Flood": 5283.0,
-        "Landslide": 421.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 192.0,
-        "Wildfire": 8.0
+        "Flood": 5283.0
     },
     {
         "Year": 1982,
-        "All natural disasters": 13973.0,
         "Drought": 280.0,
         "Earthquake": 2120.0,
         "Epidemic": 2912.0,
         "Extreme temperature": 400.0,
-        "Extreme weather": 2782.0,
-        "Flood": 4648.0,
-        "Landslide": 640.0,
-        "Mass movement (dry)": 59.0,
-        "Volcanic activity": 130.0,
-        "Wildfire": 2.0
+        "Flood": 4648.0
     },
     {
         "Year": 1983,
-        "All natural disasters": 461561.0,
         "Drought": 450520.0,
         "Earthquake": 2148.0,
         "Epidemic": 1219.0,
         "Extreme temperature": 205.0,
-        "Extreme weather": 3656.0,
-        "Flood": 2082.0,
-        "Landslide": 1159.0,
-        "Mass movement (dry)": 466.0,
-        "Volcanic activity": 0,
-        "Wildfire": 106.0
+        "Flood": 2082.0
     },
     {
         "Year": 1984,
-        "All natural disasters": 16273.0,
         "Drought": 230.0,
         "Earthquake": 57.0,
         "Epidemic": 7016.0,
         "Extreme temperature": 290.0,
-        "Extreme weather": 5468.0,
-        "Flood": 2930.0,
-        "Landslide": 228.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 37.0,
-        "Wildfire": 17.0
+        "Flood": 2930.0
     },
     {
         "Year": 1985,
-        "All natural disasters": 60232.0,
         "Drought": 0,
         "Earthquake": 9853.0,
         "Epidemic": 5854.0,
         "Extreme temperature": 456.0,
-        "Extreme weather": 17165.0,
-        "Flood": 4376.0,
-        "Landslide": 377.0,
-        "Mass movement (dry)": 300.0,
-        "Volcanic activity": 21800.0,
-        "Wildfire": 51.0
+        "Flood": 4376.0
     },
     {
         "Year": 1986,
-        "All natural disasters": 10349.0,
         "Drought": 84.0,
         "Earthquake": 1181.0,
         "Epidemic": 3046.0,
         "Extreme temperature": 50.0,
-        "Extreme weather": 1939.0,
-        "Flood": 1782.0,
-        "Landslide": 501.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 1746.0,
-        "Wildfire": 20.0
+        "Flood": 1782.0
     },
     {
         "Year": 1987,
-        "All natural disasters": 21533.0,
         "Drought": 1317.0,
         "Earthquake": 5160.0,
         "Epidemic": 2592.0,
         "Extreme temperature": 1220.0,
-        "Extreme weather": 2900.0,
-        "Flood": 6766.0,
-        "Landslide": 1204.0,
-        "Mass movement (dry)": 183.0,
-        "Volcanic activity": 0,
-        "Wildfire": 191.0
+        "Flood": 6766.0
     },
     {
         "Year": 1988,
-        "All natural disasters": 57464.0,
         "Drought": 1600.0,
         "Earthquake": 27049.0,
         "Epidemic": 15216.0,
         "Extreme temperature": 644.0,
-        "Extreme weather": 3335.0,
-        "Flood": 8504.0,
-        "Landslide": 952.0,
-        "Mass movement (dry)": 157.0,
-        "Volcanic activity": 7.0,
-        "Wildfire": 0
+        "Flood": 8504.0
     },
     {
         "Year": 1989,
-        "All natural disasters": 12611.0,
         "Drought": 237.0,
         "Earthquake": 650.0,
         "Epidemic": 1870.0,
         "Extreme temperature": 381.0,
-        "Extreme weather": 4256.0,
-        "Flood": 4716.0,
-        "Landslide": 445.0,
-        "Mass movement (dry)": 55.0,
-        "Volcanic activity": 0,
-        "Wildfire": 1.0
+        "Flood": 4716.0
     },
     {
         "Year": 1990,
-        "All natural disasters": 53141.0,
         "Drought": 0,
         "Earthquake": 42853.0,
         "Epidemic": 2207.0,
         "Extreme temperature": 979.0,
-        "Extreme weather": 4604.0,
-        "Flood": 2251.0,
-        "Landslide": 98.0,
-        "Mass movement (dry)": 116.0,
-        "Volcanic activity": 33.0,
-        "Wildfire": 0
+        "Flood": 2251.0
     },
     {
         "Year": 1991,
-        "All natural disasters": 189707.0,
         "Drought": 2000.0,
         "Earthquake": 2454.0,
         "Epidemic": 30682.0,
         "Extreme temperature": 835.0,
-        "Extreme weather": 146297.0,
-        "Flood": 5852.0,
-        "Landslide": 728.0,
-        "Mass movement (dry)": 86.0,
-        "Volcanic activity": 683.0,
-        "Wildfire": 90.0
+        "Flood": 5852.0
     },
     {
         "Year": 1992,
-        "All natural disasters": 18911.0,
         "Drought": 0,
         "Earthquake": 4033.0,
         "Epidemic": 6675.0,
         "Extreme temperature": 388.0,
-        "Extreme weather": 1342.0,
-        "Flood": 5315.0,
-        "Landslide": 712.0,
-        "Mass movement (dry)": 323.0,
-        "Volcanic activity": 1.0,
-        "Wildfire": 122.0
+        "Flood": 5315.0
     },
     {
         "Year": 1993,
-        "All natural disasters": 21821.0,
         "Drought": 0,
         "Earthquake": 10088.0,
         "Epidemic": 651.0,
         "Extreme temperature": 106.0,
-        "Extreme weather": 2965.0,
-        "Flood": 6150.0,
-        "Landslide": 1418.0,
-        "Mass movement (dry)": 341.0,
-        "Volcanic activity": 99.0,
-        "Wildfire": 3.0
+        "Flood": 6150.0
     },
     {
         "Year": 1994,
-        "All natural disasters": 15590.0,
         "Drought": 0,
         "Earthquake": 1242.0,
         "Epidemic": 2505.0,
         "Extreme temperature": 341.0,
-        "Extreme weather": 4239.0,
-        "Flood": 6771.0,
-        "Landslide": 307.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 101.0,
-        "Wildfire": 84.0
+        "Flood": 6771.0
     },
     {
         "Year": 1995,
-        "All natural disasters": 27166.0,
         "Drought": 0,
         "Earthquake": 7739.0,
         "Epidemic": 4428.0,
         "Extreme temperature": 1730.0,
-        "Extreme weather": 3763.0,
-        "Flood": 7956.0,
-        "Landslide": 1521.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 29.0
+        "Flood": 7956.0
     },
     {
         "Year": 1996,
-        "All natural disasters": 31595.0,
         "Drought": 0,
         "Earthquake": 576.0,
         "Epidemic": 16887.0,
         "Extreme temperature": 300.0,
-        "Extreme weather": 4581.0,
-        "Flood": 8047.0,
-        "Landslide": 1155.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 4.0,
-        "Wildfire": 45.0
+        "Flood": 8047.0
     },
     {
         "Year": 1997,
-        "All natural disasters": 30124.0,
         "Drought": 732.0,
         "Earthquake": 3159.0,
         "Epidemic": 10674.0,
         "Extreme temperature": 604.0,
-        "Extreme weather": 6150.0,
-        "Flood": 7685.0,
-        "Landslide": 801.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 53.0,
-        "Wildfire": 266.0
+        "Flood": 7685.0
     },
     {
         "Year": 1998,
-        "All natural disasters": 62672.0,
         "Drought": 20.0,
         "Earthquake": 9573.0,
         "Epidemic": 12931.0,
         "Extreme temperature": 3269.0,
-        "Extreme weather": 24935.0,
-        "Flood": 10653.0,
-        "Landslide": 1141.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 150.0
+        "Flood": 10653.0
     },
     {
         "Year": 1999,
-        "All natural disasters": 76886.0,
         "Drought": 361.0,
         "Earthquake": 21869.0,
         "Epidemic": 6293.0,
         "Extreme temperature": 771.0,
-        "Extreme weather": 12270.0,
-        "Flood": 34807.0,
-        "Landslide": 445.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 70.0
+        "Flood": 34807.0
     },
     {
         "Year": 2000,
-        "All natural disasters": 16667.0,
         "Drought": 80.0,
         "Earthquake": 217.0,
         "Epidemic": 6980.0,
         "Extreme temperature": 941.0,
-        "Extreme weather": 1354.0,
-        "Flood": 6025.0,
-        "Landslide": 1012.0,
-        "Mass movement (dry)": 11.0,
-        "Volcanic activity": 0,
-        "Wildfire": 47.0
+        "Flood": 6025.0
     },
     {
         "Year": 2001,
-        "All natural disasters": 39493.0,
         "Drought": 99.0,
         "Earthquake": 21348.0,
         "Epidemic": 8515.0,
         "Extreme temperature": 1787.0,
-        "Extreme weather": 1911.0,
-        "Flood": 5014.0,
-        "Landslide": 786.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 33.0
+        "Flood": 5014.0
     },
     {
         "Year": 2002,
-        "All natural disasters": 21342.0,
         "Drought": 588.0,
         "Earthquake": 1639.0,
         "Epidemic": 8762.0,
         "Extreme temperature": 3369.0,
-        "Extreme weather": 1382.0,
-        "Flood": 4236.0,
-        "Landslide": 1100.0,
-        "Mass movement (dry)": 60.0,
-        "Volcanic activity": 200.0,
-        "Wildfire": 6.0
+        "Flood": 4236.0
     },
     {
         "Year": 2003,
-        "All natural disasters": 113558.0,
         "Drought": 9.0,
         "Earthquake": 29617.0,
         "Epidemic": 3522.0,
         "Extreme temperature": 74698.0,
-        "Extreme weather": 1049.0,
-        "Flood": 3910.0,
-        "Landslide": 706.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 47.0
+        "Flood": 3910.0
     },
     {
         "Year": 2004,
-        "All natural disasters": 244772.0,
         "Drought": 80.0,
         "Earthquake": 227290.0,
         "Epidemic": 3245.0,
         "Extreme temperature": 255.0,
-        "Extreme weather": 6547.0,
-        "Flood": 6982.0,
-        "Landslide": 313.0,
-        "Mass movement (dry)": 44.0,
-        "Volcanic activity": 2.0,
-        "Wildfire": 14.0
+        "Flood": 6982.0
     },
     {
         "Year": 2005,
-        "All natural disasters": 93566.0,
         "Drought": 149.0,
         "Earthquake": 76241.0,
         "Epidemic": 3909.0,
         "Extreme temperature": 1550.0,
-        "Extreme weather": 5251.0,
-        "Flood": 5754.0,
-        "Landslide": 664.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 3.0,
-        "Wildfire": 45.0
+        "Flood": 5754.0
     },
     {
         "Year": 2006,
-        "All natural disasters": 29893.0,
         "Drought": 134.0,
         "Earthquake": 6692.0,
         "Epidemic": 6402.0,
         "Extreme temperature": 4826.0,
-        "Extreme weather": 4329.0,
-        "Flood": 5843.0,
-        "Landslide": 1638.0,
-        "Mass movement (dry)": 11.0,
-        "Volcanic activity": 5.0,
-        "Wildfire": 13.0
+        "Flood": 5843.0
     },
     {
         "Year": 2007,
-        "All natural disasters": 22422.0,
         "Drought": 0,
         "Earthquake": 780.0,
         "Epidemic": 5484.0,
         "Extreme temperature": 1086.0,
-        "Extreme weather": 6035.0,
-        "Flood": 8607.0,
-        "Landslide": 271.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 11.0,
-        "Wildfire": 148.0
+        "Flood": 8607.0
     },
     {
         "Year": 2008,
-        "All natural disasters": 242236.0,
         "Drought": 8.0,
         "Earthquake": 87918.0,
         "Epidemic": 6904.0,
         "Extreme temperature": 1688.0,
-        "Extreme weather": 140985.0,
-        "Flood": 4007.0,
-        "Landslide": 504.0,
-        "Mass movement (dry)": 120.0,
-        "Volcanic activity": 16.0,
-        "Wildfire": 86.0
+        "Flood": 4007.0
     },
     {
         "Year": 2009,
-        "All natural disasters": 16037.0,
         "Drought": 0,
         "Earthquake": 1893.0,
         "Epidemic": 4895.0,
         "Extreme temperature": 1386.0,
-        "Extreme weather": 3287.0,
-        "Flood": 3627.0,
-        "Landslide": 723.0,
-        "Mass movement (dry)": 36.0,
-        "Volcanic activity": 0,
-        "Wildfire": 190.0
+        "Flood": 3627.0
     },
     {
         "Year": 2010,
-        "All natural disasters": 329900.0,
         "Drought": 20000.0,
         "Earthquake": 226733.0,
         "Epidemic": 12143.0,
         "Extreme temperature": 57188.0,
-        "Extreme weather": 1564.0,
-        "Flood": 8356.0,
-        "Landslide": 3427.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 323.0,
-        "Wildfire": 166.0
+        "Flood": 8356.0
     },
     {
         "Year": 2011,
-        "All natural disasters": 34143.0,
         "Drought": 0,
         "Earthquake": 20946.0,
         "Epidemic": 3174.0,
         "Extreme temperature": 435.0,
-        "Extreme weather": 3103.0,
-        "Flood": 6163.0,
-        "Landslide": 309.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 3.0,
-        "Wildfire": 10.0
+        "Flood": 6163.0
     },
     {
         "Year": 2012,
-        "All natural disasters": 11619.0,
         "Drought": 0,
         "Earthquake": 711.0,
         "Epidemic": 1887.0,
         "Extreme temperature": 1834.0,
-        "Extreme weather": 3105.0,
-        "Flood": 3544.0,
-        "Landslide": 501.0,
-        "Mass movement (dry)": 16.0,
-        "Volcanic activity": 0,
-        "Wildfire": 21.0
+        "Flood": 3544.0
     },
     {
         "Year": 2013,
-        "All natural disasters": 22225.0,
         "Drought": 0,
         "Earthquake": 1120.0,
         "Epidemic": 529.0,
         "Extreme temperature": 1821.0,
-        "Extreme weather": 8603.0,
-        "Flood": 9836.0,
-        "Landslide": 235.0,
-        "Mass movement (dry)": 46.0,
-        "Volcanic activity": 0,
-        "Wildfire": 35.0
+        "Flood": 9836.0
     },
     {
         "Year": 2014,
-        "All natural disasters": 20882.0,
         "Drought": 0,
         "Earthquake": 774.0,
         "Epidemic": 12911.0,
         "Extreme temperature": 1168.0,
-        "Extreme weather": 1424.0,
-        "Flood": 3532.0,
-        "Landslide": 943.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 102.0,
-        "Wildfire": 16.0
+        "Flood": 3532.0
     },
     {
         "Year": 2015,
-        "All natural disasters": 23893.0,
         "Drought": 35.0,
         "Earthquake": 9550.0,
         "Epidemic": 1032.0,
         "Extreme temperature": 7425.0,
-        "Extreme weather": 1270.0,
-        "Flood": 3495.0,
-        "Landslide": 1006.0,
-        "Mass movement (dry)": 13.0,
-        "Volcanic activity": 0,
-        "Wildfire": 67.0
+        "Flood": 3495.0
     },
     {
         "Year": 2016,
-        "All natural disasters": 10201.0,
         "Drought": 0,
         "Earthquake": 1311.0,
         "Epidemic": 1520.0,
         "Extreme temperature": 490.0,
-        "Extreme weather": 1760.0,
-        "Flood": 4720.0,
-        "Landslide": 361.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 39.0
+        "Flood": 4720.0
     },
     {
         "Year": 2017,
-        "All natural disasters": 2087.0,
         "Drought": 0,
         "Earthquake": 49.0,
         "Epidemic": 386.0,
         "Extreme temperature": 130.0,
-        "Extreme weather": 394.0,
-        "Flood": 648.0,
-        "Landslide": 405.0,
-        "Mass movement (dry)": 0,
-        "Volcanic activity": 0,
-        "Wildfire": 75.0
+        "Flood": 648.0
     }
 ]

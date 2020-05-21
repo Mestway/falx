@@ -133,6 +133,8 @@ class Table(Node):
 			df = pd.DataFrame.from_dict(inp)
 		else:
 			df = inp
+
+
 		return df
 
 	def to_dict(self):
@@ -510,7 +512,14 @@ class Gather(Node):
 
 	def infer_output_info(self, inputs):
 		input_schema = self.q.infer_output_info(inputs)
-		return [s for i, s in enumerate(input_schema) if i not in self.value_columns] + ["string"] + ["unknown"]
+
+		gather_schema = list(set([input_schema[i] for i in self.value_columns]))
+
+		val_field_type = "string"
+		if len(gather_schema) == 1 and gather_schema[0] == "number":
+			val_field_type = "number"
+
+		return [s for i, s in enumerate(input_schema) if i not in self.value_columns] + ["string"] + [val_field_type]
 
 	def eval(self, inputs):
 		df = self.q.eval(inputs)

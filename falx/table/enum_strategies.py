@@ -26,6 +26,11 @@ def disable_sketch(p, new_vals, has_sep):
         if "mutate" in op_list or "mutate_custom" in op_list or "cumsum" in op_list or "group_sum" in op_list:
             return True
 
+    if len([x for x in new_vals if isinstance(x, (int, float, complex))]) > 0:
+        # must use a operator if involves new value
+        if not ("mutate" in op_list or "mutate_custom" in op_list or "cumsum" in op_list or "group_sum" in op_list):
+            return True
+
     if has_sep is False and "separate" in op_list:
         return True
 

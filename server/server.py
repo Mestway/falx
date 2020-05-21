@@ -163,7 +163,7 @@ def run_falx_synthesizer():
 
         start_time = time.time()
 
-        time_limit_sec = 15
+        time_limit_sec = 30
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
                     raw_trace=visual_elements, 

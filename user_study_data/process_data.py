@@ -9,14 +9,17 @@ import json
 # 		del r['Completed']
 # 	#print(json.dumps(data))
 
-# with open("raw/disasters.json", "r") as f:
-# 	data = json.load(f)
-# 	for r in data:
-# 		for key, val in r.items():
-# 			if val == None:
-# 				r[key] = 0
-# 	data = json.dumps([r for r in data if r["Year"] > 1960])
-# 	#print(data)
+
+with open("raw/disasters.json", "r") as f:
+	data = json.load(f)
+	for r in data:
+		for key, val in r.items():
+			if val == None:
+				r[key] = 0
+		for key in ["Extreme weather", "Landslide", "Mass movement (dry)", "Volcanic activity", "Wildfire", "All natural disasters"]:
+			del r[key]
+	data = json.dumps([r for r in data if r["Year"] > 1960])
+	print(data)
 
 # with open("raw/pge-electric-data.json", "r") as f:
 # 	data = json.load(f)
@@ -47,28 +50,28 @@ import json
 # 	data = sum([r["rate"] for r in data if int(r["id"] / 1000) == 6]) / len([r["rate"] for r in data if int(r["id"] / 1000) == 6])
 # 	print(data)
 
-from collections import OrderedDict
+# from collections import OrderedDict
 
-with open("raw/car-fuel-efficiency.json", "r") as f:
-	data = json.load(f)
-	for r in data:
-		del r["index"]
-		del r["efficiency"]
+# with open("raw/car-fuel-efficiency.json", "r") as f:
+# 	data = json.load(f)
+# 	for r in data:
+# 		del r["index"]
+# 		del r["efficiency"]
 
-	#data = json.dumps(data)
+# 	#data = json.dumps(data)
 
-	sort_order = ['year', 'Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck', "sales"]
-	data = [OrderedDict(sorted(item.items(), key=lambda k: sort_order.index(k[0]))) for item in data]
+# 	sort_order = ['year', 'Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck', "sales"]
+# 	data = [OrderedDict(sorted(item.items(), key=lambda k: sort_order.index(k[0]))) for item in data]
 
 	
 
-	last_sale = None
-	for r in data:
-		temp = r["sales"]
-		if last_sale != None:
-			r["sales"] = r["sales"] - last_sale
-		last_sale = temp
+# 	last_sale = None
+# 	for r in data:
+# 		temp = r["sales"]
+# 		if last_sale != None:
+# 			r["sales"] = r["sales"] - last_sale
+# 		last_sale = temp
 
-	data = json.dumps(data, indent=4, separators=(',', ': '))
+# 	data = json.dumps(data, indent=4, separators=(',', ': '))
 
-	print(data)	
+	# print(data)	
