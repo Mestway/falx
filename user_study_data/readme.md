@@ -50,3 +50,8 @@ Scatter Plot
 
 Link: https://vega.github.io/vega-lite/examples/circle_natural_disasters.html
 
+### Task 9: Car fuel Efficiency and Sales
+
+Bar + line
+
+Link: https://observablehq.com/@d3/bar-line-chart
