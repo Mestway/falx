@@ -29,11 +29,11 @@ import json
 
 
 
-# with open("raw/sea-ice-extent.json", "r") as f:
-# 	data = json.load(f)
+with open("raw/sea-ice-extent.json", "r") as f:
+	data = json.load(f)
 	
-# 	data = json.dumps([r for r in data if int(r["date"].split("-")[0]) % 3 == 0 and int(r["date"].split("-")[2]) == 1])
-# 	#print(data)
+	data = json.dumps([r for r in data if int(r["date"].split("-")[0]) > 2000 and int(r["date"].split("-")[2]) == 1])
+	print(data)
 
 # with open("raw/weather.json", "r") as f:
 # 	data = json.load(f)
@@ -52,28 +52,28 @@ import json
 
 # from collections import OrderedDict
 
-with open("raw/car-sales.json", "r") as f:
-	data = json.load(f)
-	for r in data:
-		del r["index"]
-		del r["efficiency"]
-		for key in ['Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck']:
-			del r[key]
+# with open("raw/car-sales.json", "r") as f:
+# 	data = json.load(f)
+# 	for r in data:
+# 		del r["index"]
+# 		del r["efficiency"]
+# 		for key in ['Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck']:
+# 			del r[key]
 
-	#data = json.dumps(data)
+# 	#data = json.dumps(data)
 
-	#sort_order = ['year', 'Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck', "sales"]
-	#data = [OrderedDict(sorted(item.items(), key=lambda k: sort_order.index(k[0]))) for item in data]
+# 	#sort_order = ['year', 'Passenger Car (Domestic)', 'Passenger Car (Imported)', 'Light truck', "sales"]
+# 	#data = [OrderedDict(sorted(item.items(), key=lambda k: sort_order.index(k[0]))) for item in data]
 
 	
 
-	last_sale = None
-	for r in data:
-		temp = r["sales"]
-		if last_sale != None:
-			r["sales"] = r["sales"] - last_sale
-		last_sale = temp
+# 	last_sale = None
+# 	for r in data:
+# 		temp = r["sales"]
+# 		if last_sale != None:
+# 			r["sales"] = r["sales"] - last_sale
+# 		last_sale = temp
 
-	data = json.dumps(data, indent=4, separators=(',', ': '))
+# 	data = json.dumps(data, indent=4, separators=(',', ': '))
 
-	print(data)	
+# 	print(data)	
