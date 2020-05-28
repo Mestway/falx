@@ -103,7 +103,14 @@ def run_falx_synthesizer():
         
         input_data = content["data"]
         visual_elements = content["tags"]
+        token = content["token"]
+        mode = content["mode"]
 
+        # decide whether running the solver in lightweight mode or heavy weight mode
+        time_limit_sec = 5 if mode == "lightweight" else 20
+        solution_limit = 3 if mode == "lightweight" else 10
+
+        print("==> Running task (token {}), time limit: {} sec, solution limit: {}".format(token, time_limit_sec, solution_limit))
         app.logger.info(input_data)
         app.logger.info(visual_elements)
 
@@ -163,14 +170,14 @@ def run_falx_synthesizer():
 
         start_time = time.time()
 
-        time_limit_sec = 20
+        
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
                     raw_trace=visual_elements, 
                     extra_consts=[],
                     group_results=True,
                     config={
-                        "solution_limit": 10,
+                        "solution_limit": solution_limit,
                         "time_limit_sec": time_limit_sec,
                         "backend": "vegalite",
                         "max_prog_size": 3,
@@ -198,6 +205,8 @@ def run_falx_synthesizer():
         response = flask.jsonify({
             "status": "timeout" if time_spent >= time_limit_sec else "ok",
             "time_spent": time_spent,
+            "token": token,
+            "mode": mode,
             "result": [{"rscript": str(final_results[key][0][0]), 
                         "vl_spec": json.dumps(final_results[key][0][1])} for key in final_results]
         })
@@ -205,7 +214,9 @@ def run_falx_synthesizer():
         response = flask.jsonify({
             "time_spent": "",
             "status": "error",
-            "result": []
+            "result": [],
+            "token": token,
+            "mode": mode
         })
 
     response.headers.add('Access-Control-Allow-Origin', '*')
