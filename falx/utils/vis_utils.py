@@ -1,6 +1,7 @@
 import pandas as pd
 import copy
 import json
+from dateutil.parser import parse
 
 from falx.utils import table_utils
 
@@ -124,6 +125,12 @@ def infer_width_height(spec, data):
 			return None, None
 		if layer_spec["encoding"][axis]["type"] == "nominal":
 			return "discrete", list(set([r[layer_spec["encoding"][axis]["field"]] for r in layer_data]))
+		elif layer_spec["encoding"][axis]["type"] == "temporal" and (axis == "x"):
+			# temporal discrete
+			if layer_spec["mark"] == "bar" or ("type" in layer_spec["mark"] and layer_spec["mark"]["type"] == "bar"):
+				return "temporal_discrete", list(set([r[layer_spec["encoding"][axis]["field"]] for r in layer_data]))
+			else:
+				return "continuous", None
 		else:
 			return "continuous", None
 
@@ -174,6 +181,10 @@ def infer_width_height(spec, data):
 		if len(set(x_values)) * unit_width > 800:
 			unit_width = 10
 		width = unit_width * len(set(x_values))
+	if "temporal_discrete" in x_ty:
+		unit_width = 5
+		width = unit_width * len(set(x_values))
+
 	if "continuous" in x_ty:
 		width = max(width, cont_width)
 
@@ -187,6 +198,18 @@ def infer_width_height(spec, data):
 
 	return (width, height)
 
+def is_date(string, fuzzy=False):
+    """
+    Return whether the string can be interpreted as a date.
+
+    :param string: str, string to check for date
+    :param fuzzy: bool, ignore unknown tokens in string if True
+    """
+    try: 
+        parse(string, fuzzy=fuzzy)
+        return True
+    except:
+        return False
 
 def update_encoding_type(spec, data):
 	"""update encoding types based on data values"""
@@ -204,6 +227,12 @@ def update_encoding_type(spec, data):
 				if ch in ["x", "y"]:
 					if layer_spec["encoding"][ch]["type"] != "nominal":
 						layer_spec["encoding"][ch]["type"] = "nominal"
+
+		for ch in layer_spec["encoding"]:
+			field_data = set([r[layer_spec["encoding"][ch]["field"]] for r in layer_data])
+			if all([is_date(d) for d in field_data]):
+				layer_spec["encoding"][ch]["type"] = "temporal"
+
 
 	if "layer" in spec:
 		for layer_spec, layer_data in break_down_layered(spec, data):
