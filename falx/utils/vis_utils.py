@@ -229,6 +229,11 @@ def update_encoding_type(spec, data):
 						layer_spec["encoding"][ch]["type"] = "nominal"
 
 		for ch in layer_spec["encoding"]:
+
+			if (ch == "x" or ch == "y") and mark == "rect":
+				# rect won't support temporal
+				continue
+
 			field_data = set([r[layer_spec["encoding"][ch]["field"]] for r in layer_data])
 			if all([is_date(d) for d in field_data]):
 				layer_spec["encoding"][ch]["type"] = "temporal"
