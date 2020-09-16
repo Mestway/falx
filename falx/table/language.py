@@ -506,6 +506,17 @@ class Gather(Node):
 
 			#col_list_candidates = [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)]
 
+			# # only consider consecutive columns
+			# filtered = []
+			# for lst in col_list_candidates:
+			# 	is_consecutive = True
+			# 	for i, v in enumerate(lst):
+			# 		if lst[i] - lst[0] != i - 0:
+			# 			is_consecutive = False
+			# 	if is_consecutive == True:
+			# 		filtered.append(lst)
+			# col_list_candidates = filtered
+
 			return col_list_candidates
 		else:
 			assert False, "[Gather] No args to infer domain for id > 1."

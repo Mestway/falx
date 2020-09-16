@@ -205,7 +205,14 @@ def is_date(string, fuzzy=False):
     :param string: str, string to check for date
     :param fuzzy: bool, ignore unknown tokens in string if True
     """
-    try: 
+
+    try:
+    	int(string)
+    	return False
+    except:
+    	pass
+
+    try:
         parse(string, fuzzy=fuzzy)
         return True
     except:

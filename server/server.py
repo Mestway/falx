@@ -88,12 +88,12 @@ def hello():
 
 @app.route("/", defaults={"path": ""})
 def index_alt(path):
-    return send_from_directory(app.static_folder, "index.html")
+    return send_from_directory(app.static_folder, "index-coming-soon.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
     # your processing here
-    return send_from_directory(app.static_folder, "index.html")
+    return send_from_directory(app.static_folder, "index-coming-soon.html")
 
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
@@ -107,7 +107,7 @@ def run_falx_synthesizer():
         mode = content["mode"]
 
         # decide whether running the solver in lightweight mode or heavy weight mode
-        time_limit_sec = 5 if mode == "lightweight" else 20
+        time_limit_sec = 5 if mode == "lightweight" else 10
         solution_limit = 3 if mode == "lightweight" else 10
 
         print("==> Running task (token {}), time limit: {} sec, solution limit: {}".format(token, time_limit_sec, solution_limit))
