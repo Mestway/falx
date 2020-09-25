@@ -102,12 +102,13 @@ def run_falx_synthesizer():
         content = request.get_json()
         
         input_data = content["data"]
+
         visual_elements = content["tags"]
         token = content["token"]
         mode = content["mode"]
 
         # decide whether running the solver in lightweight mode or heavy weight mode
-        time_limit_sec = 5 if mode == "lightweight" else 10
+        time_limit_sec = 5 if mode == "lightweight" else 20
         solution_limit = 3 if mode == "lightweight" else 10
 
         print("==> Running task (token {}), time limit: {} sec, solution limit: {}".format(token, time_limit_sec, solution_limit))
@@ -170,7 +171,6 @@ def run_falx_synthesizer():
 
         start_time = time.time()
 
-        
         result = FalxInterface.synthesize(
                     inputs=[input_data], 
                     raw_trace=visual_elements, 

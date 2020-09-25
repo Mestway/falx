@@ -40,7 +40,8 @@ class FalxInterface(object):
             "aggr_func": ["mean", "sum", "count"],
             "mutate_op": ["+", "-"],
             "gather_max_val_list_size": 3,
-            "gather_max_key_list_size": 3
+            "gather_max_key_list_size": 3,
+            "consider_non_consecutive_gather_keys": False,
         },
 
         # set the visualization backend, one of "vegalite, ggplot2, matplotlib"
@@ -63,7 +64,12 @@ class FalxInterface(object):
         config = copy.copy(FalxInterface.default_config)
         for key in user_config:
             if key in config:
-                config[key] = user_config[key]
+                if key == "grammar":
+                    for k2 in user_config["grammar"]:
+                        if k2 in config["grammar"]:
+                            config["grammar"][k2] = user_config["grammar"][k2]
+                else:
+                    config[key] = user_config[key]
             else:
                 logger.warning("[] Key {} is not part of the synthesizer config.".format(key))
 
@@ -95,6 +101,7 @@ class FalxInterface(object):
         """
 
         # update synthesizer config
+
         config = FalxInterface.update_config(config)
 
         example_trace = visual_trace.load_trace(raw_trace)

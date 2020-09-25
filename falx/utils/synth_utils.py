@@ -22,18 +22,33 @@ def remove_duplicate_columns(df):
     return ret_table
 
 
-def check_table_inclusion(table1, table2, wild_card=None):
-    """check if table1 is included by table2 (projection + subset), 
+def check_table_inclusion(table1, table2, table2_dict=None, wild_card=None):
+    """
+    check if table1 is included by table2 (projection + subset), 
         this is sound but not complete: 
             if it thinks two tables are not equal, they absolutely inequal, 
-        tables are records"""
+        tables are records
+    Args:
+        table1: the "small table"
+        table2: the "large table"
+        table2_dict: a dictionary represented table can be used 
+            to save effort in computing
+        wild_card: for the purpose of easy match
+    
+    """
     if len(table1) == 0:
         return True
 
     mapping = {}
     vals2_dicts = {}
-    for k2 in table2[0].keys():
-        vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
+
+    #if we already have table2_dict ready, we don't need to re-compute
+    if table2_dict is None:
+        vals2_dicts = {}
+        for k2 in table2[0].keys():
+            vals2_dicts[k2] = construct_value_dict([r[k2] for r in table2 if k2 in r])
+    else:
+        vals2_dicts = table2_dict
     
     for k1 in table1[0].keys():
         mapping[k1] = []

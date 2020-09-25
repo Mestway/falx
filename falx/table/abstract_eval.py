@@ -159,7 +159,7 @@ def backward_eval_one_step(op, out_df, is_outer_most=False):
 
 		return candidates
 
-	if op in ["gather", "gather_neg"]:
+	if op in ["gather"]:
 		candidates = []
 
 		if not is_outer_most:

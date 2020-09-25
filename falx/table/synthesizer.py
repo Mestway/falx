@@ -9,7 +9,8 @@ from falx.table.language import (HOLE, Node, Table, Select, Unite, Filter, Separ
 	Gather, GroupSummary, CumSum, Mutate, MutateCustom)
 from falx.table import enum_strategies
 from falx.table import abstract_eval
-from falx.utils.synth_utils import remove_duplicate_columns, check_table_inclusion, align_table_schema
+from falx.utils.synth_utils import remove_duplicate_columns, check_table_inclusion, align_table_schema, construct_value_dict
+from falx.table.provenance_analysis import provenance_analysis
 
 abstract_combinators = {
 	"select": lambda q: Select(q, cols=HOLE),
@@ -48,7 +49,8 @@ class Synthesizer(object):
 				"aggr_func": ["mean", "sum", "count"],
 				"mutate_op": ["+", "-"],
 				"gather_max_val_list_size": 3,
-				"gather_max_key_list_size": 3
+				"gather_max_key_list_size": 3,
+				"consider_non_consecutive_gather_keys": False
 			}
 		else:
 			self.config = config
@@ -169,17 +171,28 @@ class Synthesizer(object):
 		else:
 			return [p]
 
-	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains, time_limit_sec=None):
-		"""iteratively instantiate abstract programs w/ promise check """
+	def iteratively_instantiate_with_premises_check(self, p, inputs, premise_chains, trimmed_inputs, time_limit_sec=None):
+		"""iteratively instantiate abstract programs w/ promise check 
+		Args:
+			p: partial program
+			inputs: input tables
+			premise_chains: backward analysis chains
+			trimmed inputs: input obtained from provenance analysis used to perform checks
+			time_limit_sec: remaining time limit
+		returns:
+			a list of candidate programs
+		"""
 
-		def instantiate_with_premises_check(p, inputs, premise_chains):
+		def instantiate_with_premises_check(p, inputs, premise_chains, trimmed_inputs):
 			"""instantiate programs and then check each one of them against the premise """
 			results = []
 			if p.is_abstract():
-
 				print(p.stmt_string())
 				ast = p.to_dict()
+
+				
 				next_level_programs, level = self.instantiate_one_level(ast, inputs)
+				#next_level_programs, level = self.instantiate_one_level(ast, trimmed_inputs)
 
 				for _ast in next_level_programs:
 
@@ -189,20 +202,27 @@ class Synthesizer(object):
 
 					premises_at_level = [[pm for pm in premise_chain if len(pm[1]) == level][0] for premise_chain in premise_chains]
 
-					subquery_res = None
+					subquery_res = None # cache subquery result to avoid re-computation overhead
 					for premise, subquery_path in premises_at_level:
 
 						if subquery_res is None:
 							# check if the subquery result contains the premise
 							subquery_node = get_node(_ast, subquery_path)
 							print("  {}".format(Node.load_from_dict(subquery_node).stmt_string()))
-							subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
-							#print(subquery_res)
+
+							#subquery_res = Node.load_from_dict(subquery_node).eval(inputs)
+							subquery_res = Node.load_from_dict(subquery_node).eval(trimmed_inputs)
+
+						# an optimization: compute the dictionary represented table here to reduce time spent later on to check table inclusion.
+						subquery_res_table = subquery_res.to_dict(orient="records")
+						subquery_res_dict = {}
+						for k2 in subquery_res_table[0].keys():
+							subquery_res_dict[k2] = construct_value_dict([r[k2] for r in subquery_res_table if k2 in r])
 
 						#print(subquery_res)
-						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res.to_dict(orient="records")):
+						if check_table_inclusion(premise.to_dict(orient="records"), subquery_res_table, subquery_res_dict):
 
-							# debug
+							# # debug
 							# p = Node.load_from_dict(_ast)
 							# if not p.is_abstract():
 							# 	print(f"{' - '}{p.stmt_string()}")
@@ -226,12 +246,12 @@ class Synthesizer(object):
 				return []
 			start_time = time.time()
 
-			candidates = instantiate_with_premises_check(p, inputs, premise_chains)
+			candidates = instantiate_with_premises_check(p, inputs, premise_chains, trimmed_inputs)
 			for _p in candidates:
 				# if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
 				# 	return results
 				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
-				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains, remaining_time_limit)
+				results += self.iteratively_instantiate_with_premises_check(_p, inputs, premise_chains, trimmed_inputs, remaining_time_limit)
 			return results
 		else:
 			# handling concrete programs won't take long, allow them to proceed
@@ -292,16 +312,28 @@ class Synthesizer(object):
 		candidates = []
 		for level, sketches in all_sketches.items():
 			for s in sketches:
+				print("-->")
 				print(s.stmt_string())
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
+
+				pred, trimmed_inputs = provenance_analysis(ast, out_df, inputs)
+
+				# print(pred.print_str())
+				# print(pd.DataFrame(trimmed_inputs[0]))
+
+				## disable provenance analysis
+				#trimmed_inputs = inputs
+
+				if len(trimmed_inputs[0]) == 0:
+					continue
 
 				out_df = remove_duplicate_columns(out_df)
 				# all premise chains for the given ast
 				premise_chains = abstract_eval.backward_eval(ast, out_df)
 
 				remaining_time_limit = time_limit_sec - (time.time() - start_time) if time_limit_sec is not None else None
-				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, remaining_time_limit)
+				programs = self.iteratively_instantiate_with_premises_check(s, inputs, premise_chains, trimmed_inputs, remaining_time_limit)
 				
 				for p in programs:
 					# check table consistensy

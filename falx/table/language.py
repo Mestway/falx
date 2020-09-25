@@ -121,7 +121,8 @@ class Table(Node):
 		"""infer output schema """
 		inp = inputs[self.data_id]
 		if isinstance(inp, (list,)):
-			df = pd.DataFrame.from_dict(inp)
+			columns = [key for key in inp[0]]
+			df = pd.DataFrame.from_dict(inp)[list(inp[0].keys())]
 		else:
 			df = inp
 		schema = extract_table_schema(df)
@@ -130,11 +131,9 @@ class Table(Node):
 	def eval(self, inputs):
 		inp = inputs[self.data_id]
 		if isinstance(inp, (list,)):
-			df = pd.DataFrame.from_dict(inp)
+			df = pd.DataFrame.from_dict(inp)[list(inp[0].keys())]
 		else:
 			df = inp
-
-
 		return df
 
 	def to_dict(self):
@@ -504,18 +503,18 @@ class Gather(Node):
 				if i < len(fw_col_lists):
 					col_list_candidates.append(fw_col_lists[i])
 
-			#col_list_candidates = [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)]
-
-			# # only consider consecutive columns
-			# filtered = []
-			# for lst in col_list_candidates:
-			# 	is_consecutive = True
-			# 	for i, v in enumerate(lst):
-			# 		if lst[i] - lst[0] != i - 0:
-			# 			is_consecutive = False
-			# 	if is_consecutive == True:
-			# 		filtered.append(lst)
-			# col_list_candidates = filtered
+			if not config["consider_non_consecutive_gather_keys"]:
+				# only consider consecutive columns in this setup, 
+				# this is a hueristic to help narrow down the search space
+				filtered = []
+				for lst in col_list_candidates:
+					is_consecutive = True
+					for i, v in enumerate(lst):
+						if lst[i] - lst[0] != i - 0:
+							is_consecutive = False
+					if is_consecutive == True:
+						filtered.append(lst)
+				col_list_candidates = filtered
 
 			return col_list_candidates
 		else:
