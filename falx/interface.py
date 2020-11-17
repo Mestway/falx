@@ -41,8 +41,10 @@ class FalxInterface(object):
             "mutate_op": ["+", "-"],
             "gather_max_val_list_size": 3,
             "gather_max_key_list_size": 3,
-            "consider_non_consecutive_gather_keys": False,
+            "consider_non_consecutive_gather_keys": False
         },
+
+        "disable_provenance_analysis": False,
 
         # set the visualization backend, one of "vegalite, ggplot2, matplotlib"
         # ggplot2 and matplotlib have some feature restrictions
@@ -136,7 +138,8 @@ class FalxInterface(object):
                                     inputs, sym_data.instantiate(), 
                                     max_prog_size=config["max_prog_size"],
                                     time_limit_sec=config["time_limit_sec"],
-                                    solution_limit=config["solution_limit"])
+                                    solution_limit=config["solution_limit"],
+                                    disable_provenance_analysis=config["disable_provenance_analysis"])
 
                 for p in candidate_progs:
                     output = p.eval(inputs).to_dict(orient="records")

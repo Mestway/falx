@@ -43,7 +43,8 @@ GRAMMAR = {
     "aggr_func": ["mean", "sum", "count"],
     "mutate_op": ["+", "-"],
     "gather_max_val_list_size": 3,
-    "gather_max_key_list_size": 3
+    "gather_max_key_list_size": 3,
+    "consider_non_consecutive_gather_keys": False,
 }
 
 @app.route('/static/media/<path:filename>')
@@ -88,7 +89,7 @@ def hello():
 
 @app.route("/", defaults={"path": ""})
 def index_alt(path):
-    return send_from_directory(app.static_folder, "index-coming-soon.html")
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.errorhandler(404)
 def page_not_found(e):

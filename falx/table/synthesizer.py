@@ -50,7 +50,7 @@ class Synthesizer(object):
 				"mutate_op": ["+", "-"],
 				"gather_max_val_list_size": 3,
 				"gather_max_key_list_size": 3,
-				"consider_non_consecutive_gather_keys": False
+				"consider_non_consecutive_gather_keys": False,
 			}
 		else:
 			self.config = config
@@ -302,7 +302,11 @@ class Synthesizer(object):
 		print(f"number of programs: {len(candidates)}")
 		return candidates
 
-	def enumerative_synthesis(self, inputs, output, max_prog_size, time_limit_sec=None, solution_limit=None):
+	def enumerative_synthesis(self, 
+			inputs, output, max_prog_size, 
+			time_limit_sec=None, 
+			solution_limit=None, 
+			disable_provenance_analysis=False):
 		"""Given inputs and output, enumerate all programs with premise check until 
 			find a solution p such that output ⊆ subseteq p(inputs) """
 
@@ -317,13 +321,15 @@ class Synthesizer(object):
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
 
-				pred, trimmed_inputs = provenance_analysis(ast, out_df, inputs)
+				if disable_provenance_analysis:
+					# disable provenance analysis
+					trimmed_inputs = inputs
+				else:
+					pred, trimmed_inputs = provenance_analysis(ast, out_df, inputs)
 
-				# print(pred.print_str())
-				# print(pd.DataFrame(trimmed_inputs[0]))
+					# print(pred.print_str())
+					# print(pd.DataFrame(trimmed_inputs[0]))
 
-				## disable provenance analysis
-				#trimmed_inputs = inputs
 
 				if len(trimmed_inputs[0]) == 0:
 					continue
