@@ -94,7 +94,7 @@ def index_alt(path):
 @app.errorhandler(404)
 def page_not_found(e):
     # your processing here
-    return send_from_directory(app.static_folder, "index-coming-soon.html")
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/falx', methods=['GET', 'POST'])
 def run_falx_synthesizer():
