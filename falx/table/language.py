@@ -42,7 +42,8 @@ class Node(ABC):
 			"filter": Filter, "separate": Separate,
 			"spread": Spread, "gather": Gather,
 			"group_sum": GroupSummary,
-			"cumsum": CumSum, "mutate": Mutate,
+			"cumsum": CumSum,
+			"mutate": Mutate,
 			"mutate_custom": MutateCustom,
 		}
 		if ast["op"] == "table_ref":
@@ -192,12 +193,13 @@ class Unite(Node):
 
 	def infer_domain(self, arg_id, inputs, config):
 		input_schema = self.q.infer_output_info(inputs)
-		str_cols = [i for i, s in enumerate(input_schema) if s == "string"]
+		str_cols = [i for i, s in enumerate(input_schema)]
 		if arg_id == 1:
 			return str_cols
 		if arg_id == 2:
 			# refine the domain according to the first argumnet
-			return str_cols if self.col1 == HOLE else [i for i in str_cols if i > self.col1]
+			# cannot just do i > self.col1, since it is not commutative
+			return str_cols if self.col1 == HOLE else [i for i in str_cols if i != self.col1]
 		else:
 			assert False, "[Unite] No args to infer domain for id > 2."
 
@@ -210,7 +212,7 @@ class Unite(Node):
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]
 		c1, c2 = ret.columns[self.col1], ret.columns[self.col2]
-		ret[new_col] = ret[c1] + self.sep + ret[c2]
+		ret[new_col] = ret[c1].astype(str) + self.sep + ret[c2].astype(str)
 		ret = ret.drop(columns=[c1, c2])
 		return ret
 
@@ -294,7 +296,7 @@ class Separate(Node):
 				if s != "string": 
 					continue
 				l = list(df[df.columns[i]])
-				separators = [" ", "-", "_"]
+				separators = [" ", "-", "_", "/"]
 				contain_sep = False
 				for sep in separators:
 					if all([sep in str(x) for x in l]):
@@ -317,7 +319,7 @@ class Separate(Node):
 		col = ret.columns[self.col_index]
 
 		# enable splitting by "_", "-", and whitespace (but only split once)
-		splitted = ret[col].str.split(r"\s|_|-", n=1, expand=True)
+		splitted = ret[col].str.split(r"\s|_|-|/", n=1, expand=True)
 		new_col_names = get_fresh_col(list(ret.columns), n=2)
 		ret[new_col_names[0]] = splitted[0]
 		ret[new_col_names[1]] = splitted[1]
@@ -438,7 +440,14 @@ class Spread(Node):
 		key_col, val_col = df.columns[self.key], df.columns[self.val]
 		index_cols = [c for c in list(df.columns) if c not in [key_col, val_col]]
 		ret = df.set_index(index_cols)
-		ret = multiindex_pivot(ret, columns=key_col, values=val_col).reset_index()
+
+
+		# handle some special case
+		try:
+			ret = multiindex_pivot(ret, columns=key_col, values=val_col).reset_index()
+		except:
+			ret = multiindex_pivot(ret, columns=key_col, values=val_col).reset_index(drop=True)
+
 		return ret
 
 	def to_dict(self):
@@ -612,7 +621,13 @@ class GroupSummary(Node):
 		df = self.q.eval(inputs)
 		group_keys = [df.columns[idx] for idx in self.group_cols]
 		target = df.columns[self.aggr_col]
-		res = df.groupby(group_keys).agg({target: self.aggr_func})
+
+		if self.aggr_func == "cumsum":
+			res = df
+			res[target] = df.groupby(group_keys)[target].transform(pd.Series.cumsum)
+		else:
+			res = df.groupby(group_keys).agg({target: self.aggr_func})
+
 		if self.aggr_func == "mean":
 			res[target] = res[target].round(2)
 		res = res.rename(columns={target: f'{self.aggr_func}_{target}'}).reset_index()
@@ -730,9 +745,9 @@ class MutateCustom(Node):
 	def infer_domain(self, arg_id, inputs, config):
 		if arg_id == 1:
 			input_schema = self.q.infer_output_info(inputs)
-			return [i for i, s in enumerate(input_schema) if s == "number"]
+			return [i for i, s in enumerate(input_schema) if s == "string"]
 		elif arg_id == 2:
-			return config["mutate_op"]
+			return ["=="] #config["mutate_op"]
 		elif arg_id == 3:
 			return config["constants"]
 		else:
@@ -743,7 +758,7 @@ class MutateCustom(Node):
 		return input_schema + ["number"]
 
 	def eval(self, inputs):
-		assert(op == "==")
+		assert(self.op == "==")
 		df = self.q.eval(inputs)
 		ret = df.copy()
 		new_col = get_fresh_col(list(ret.columns))[0]

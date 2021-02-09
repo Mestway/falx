@@ -2,7 +2,7 @@ from pprint import pprint
 from falx.table.language import HOLE
 
 
-def disable_sketch(p, new_vals, has_sep):
+def disable_sketch(p, new_vals, has_sep, comp_without_new_val):
     """check if the program sketch is a bad sketch, 
             we will prevent bad sketch directly 
     Args:
@@ -23,7 +23,7 @@ def disable_sketch(p, new_vals, has_sep):
 
     if len([x for x in new_vals if isinstance(x, (int, float, complex))]) == 0:
         # if output contains no new numerical values, we'll not use operaters generates new values
-        if "mutate" in op_list or "mutate_custom" in op_list or "cumsum" in op_list or "group_sum" in op_list:
+        if (comp_without_new_val == False) and "mutate" in op_list or "mutate_custom" in op_list or "cumsum" in op_list or "group_sum" in op_list:
             return True
 
     if len([x for x in new_vals if isinstance(x, (int, float, complex))]) > 0:

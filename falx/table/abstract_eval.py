@@ -188,7 +188,7 @@ def backward_eval_one_step(op, out_df, is_outer_most=False):
 		if op in ["mutate", "cumsum", "group_sum"]:
 			potential_new_col = [c for i, c in enumerate(cols) if schema[i] == "number"]
 		elif op == "mutate_custom":
-			potential_new_col = [c for i, c in enumerate(cols) if schema[i] == "boolean"]
+			potential_new_col = [c for i, c in enumerate(cols) if schema[i] == "bool"]
 
 		for new_col in potential_new_col:
 			t = out_df[[c for c in cols if c != new_col]]

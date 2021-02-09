@@ -32,6 +32,69 @@ def try_infer_string_type(values):
 
     return dtype, values
 
+def input_preprocessing(raw_input_data, raw_visual_elements):
+
+    input_data = copy.deepcopy(raw_input_data)
+    visual_elements = copy.deepcopy(raw_visual_elements)
+
+    all_input_values = list(set([val for r in input_data for key, val in r.items()])) + list(set([key for key in input_data[0]]))
+    splitted_values = []
+    for v in all_input_values:
+        if isinstance(v, (str,)) and "_" in v:
+            splitted_values += v.split("_")
+        if isinstance(v, (str,)) and "-" in v:
+            splitted_values += v.split("-")
+    all_input_values += splitted_values
+    all_input_values = set(all_input_values)
+
+    print(all_input_values)
+
+    post_processed_visual_elements = []
+    partition_keys = set([r['type'] for r in visual_elements])
+    for key in partition_keys:
+
+        partition = [r for r in visual_elements if r['type'] == key]
+        copyed_partition = copy.deepcopy(partition)
+
+        columns = [c for c in partition[0]["props"]]
+        all_empty_columns = [c for c in columns if all([r["props"][c] == "" for r in copyed_partition])]
+
+        for c in columns:
+            # for x, y, we also need to look into columns from x1, x2 etc, not just x, y themselves
+            if c.startswith("x"):
+                related_columns = ["x", "x1", "x2", "x_left", "x_right"]
+            elif c.startswith("y"):
+                related_columns = ["y", "y1", "y2", "y_top_left", "y_bot_left", "y_top_right", "y_bot_right"]
+            else:
+                related_columns = [c]
+
+            related_columns = [c for c in related_columns if c in columns and c not in all_empty_columns]
+
+            values = [r["props"][x] for r in copyed_partition for x in related_columns]
+            if all([v == "" for v in values]):
+                continue
+
+            if infer_dtype(values) != "string":
+                continue
+
+            # don't try to force conversion if it is not 
+            if len([x for x in values if x not in all_input_values]) == 0:
+                continue
+
+            ty, values = try_infer_string_type(values)
+
+            if ty != "string":
+                # locate values in the column c and update their types by reference
+                values_in_c = [r["props"][c] for r in copyed_partition]
+                _, values_in_c = try_infer_string_type(values_in_c)
+                for i in range(len(values_in_c)):
+                    # update the value in partion by reference, force to modify into integer
+                    partition[i]["props"][c] = float(values_in_c[i])
+
+    return input_data, visual_elements
+
+
+
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
@@ -40,7 +103,7 @@ GRAMMAR = {
         "gather", "group_sum", "cumsum", "mutate", "mutate_custom"],
     "filer_op": [">", "<", "=="],
     "constants": [],
-    "aggr_func": ["mean", "sum", "count"],
+    "aggr_func": ["mean", "sum", "count", "cumsum"],
     "mutate_op": ["+", "-"],
     "gather_max_val_list_size": 3,
     "gather_max_key_list_size": 3,
@@ -74,7 +137,7 @@ def hello():
                 raw_trace=raw_trace, 
                 extra_consts=[],
                 config={
-                    "solution_limit": 10,
+                    "solution_sketch_limit": 3,
                     "time_limit_sec": 10,
                     "backend": "vegalite",
                     "max_prog_size": 2,
@@ -102,74 +165,29 @@ def run_falx_synthesizer():
         app.logger.info("# request data: ")
         content = request.get_json()
         
-        input_data = content["data"]
-
-        visual_elements = content["tags"]
+        raw_input_data = content["data"]
+        raw_visual_elements = content["tags"]
         token = content["token"]
         mode = content["mode"]
 
         # decide whether running the solver in lightweight mode or heavy weight mode
-        time_limit_sec = 5 if mode == "lightweight" else 20
-        solution_limit = 3 if mode == "lightweight" else 10
+        if (mode == "lightweight"):
+            time_limit_sec = 5
+            solution_sketch_limit = 2
+            solution_limit = 3
+        else:
+            time_limit_sec = 3000
+            solution_limit = 10
+            solution_sketch_limit = 5
 
-        print("==> Running task (token {}), time limit: {} sec, solution limit: {}".format(token, time_limit_sec, solution_limit))
+
+        print("==> Running task (token {}), time limit: {} sec, solution limit: {}".format(token, time_limit_sec, solution_sketch_limit))
+
+        input_data, visual_elements = input_preprocessing(raw_input_data, raw_visual_elements)
+
         app.logger.info(input_data)
         app.logger.info(visual_elements)
-
-        all_input_values = list(set([val for r in input_data for key, val in r.items()])) + list(set([key for key in input_data[0]]))
-        splitted_values = []
-        for v in all_input_values:
-            if isinstance(v, (str,)) and "_" in v:
-                splitted_values += v.split("_")
-            if isinstance(v, (str,)) and "-" in v:
-                splitted_values += v.split("-")
-        all_input_values += splitted_values
-        all_input_values = set(all_input_values)
-
-        print(all_input_values)
-
-        post_processed_visual_elements = []
-        partition_keys = set([r['type'] for r in visual_elements])
-        for key in partition_keys:
-
-            partition = [r for r in visual_elements if r['type'] == key]
-            copyed_partition = copy.deepcopy(partition)
-
-            columns = [c for c in partition[0]["props"]]
-            all_empty_columns = [c for c in columns if all([r["props"][c] == "" for r in copyed_partition])]
-
-            for c in columns:
-                # for x, y, we also need to look into columns from x1, x2 etc, not just x, y themselves
-                if c.startswith("x"):
-                    related_columns = ["x", "x1", "x2", "x_left", "x_right"]
-                elif c.startswith("y"):
-                    related_columns = ["y", "y1", "y2", "y_top_left", "y_bot_left", "y_top_right", "y_bot_right"]
-                else:
-                    related_columns = [c]
-
-                related_columns = [c for c in related_columns if c in columns and c not in all_empty_columns]
-
-                values = [r["props"][x] for r in copyed_partition for x in related_columns]
-                if all([v == "" for v in values]):
-                    continue
-
-                if infer_dtype(values) != "string":
-                    continue
-
-                # don't try to force conversion if it is not 
-                if len([x for x in values if x not in all_input_values]) == 0:
-                    continue
-
-                ty, values = try_infer_string_type(values)
-
-                if ty != "string":
-                    # locate values in the column c and update their types by reference
-                    values_in_c = [r["props"][c] for r in copyed_partition]
-                    _, values_in_c = try_infer_string_type(values_in_c)
-                    for i in range(len(values_in_c)):
-                        # update the value in partion by reference, force to modify into integer
-                        partition[i]["props"][c] = float(values_in_c[i])
-
+        
         start_time = time.time()
 
         result = FalxInterface.synthesize(
@@ -178,9 +196,10 @@ def run_falx_synthesizer():
                     extra_consts=[],
                     group_results=True,
                     config={
+                        "solution_sketch_limit": solution_sketch_limit,
                         "solution_limit": solution_limit,
                         "time_limit_sec": time_limit_sec,
-                        "backend": "vegalite",
+                        "vis_backend": "vegalite",
                         "max_prog_size": 3,
                         "grammar": GRAMMAR
                     })
@@ -202,7 +221,6 @@ def run_falx_synthesizer():
                         final_results[key] = []
                     final_results[key].append((p[0], spec))
 
-        
         response = flask.jsonify({
             "status": "timeout" if time_spent >= time_limit_sec else "ok",
             "time_spent": time_spent,

@@ -166,42 +166,42 @@
     },
     {
       "label": "Label1",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 1.0
     },
     {
       "label": "Label2",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.5
     },
     {
       "label": "Label3",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.6
     },
     {
       "label": "Label4",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.1
     },
     {
       "label": "Label5",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.6
     },
     {
       "label": "Label6",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.1
     },
     {
       "label": "Label7",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.2
     },
     {
       "label": "Label8",
-      "variable": "mutate_a",
+      "variable": "COL_0",
       "value": 0.2
     }
   ],

@@ -51,6 +51,7 @@ class Synthesizer(object):
 				"gather_max_val_list_size": 3,
 				"gather_max_key_list_size": 3,
 				"consider_non_consecutive_gather_keys": False,
+				"allow_comp_without_new_val": False
 			}
 		else:
 			self.config = config
@@ -89,7 +90,9 @@ class Synthesizer(object):
 						candidates[level].append(q)
 
 		for level in range(0, size + 1):
-			candidates[level] = [q for q in candidates[level] if not enum_strategies.disable_sketch(q, new_vals, has_sep)]
+			candidates[level] = [q for q in candidates[level] 
+								if not enum_strategies.disable_sketch(
+									q, new_vals, has_sep, self.config["allow_comp_without_new_val"])]
 
 
 		return candidates
@@ -305,7 +308,8 @@ class Synthesizer(object):
 	def enumerative_synthesis(self, 
 			inputs, output, max_prog_size, 
 			time_limit_sec=None, 
-			solution_limit=None, 
+			solution_sketch_limit=None, 
+			solution_limit=None,
 			disable_provenance_analysis=False):
 		"""Given inputs and output, enumerate all programs with premise check until 
 			find a solution p such that output ⊆ subseteq p(inputs) """
@@ -313,11 +317,12 @@ class Synthesizer(object):
 		start_time = time.time()
 
 		all_sketches = self.enum_sketches(inputs, output, size=max_prog_size)
+		
 		candidates = []
+		solution_sketches = set() # records sketches of candidate programs
+
 		for level, sketches in all_sketches.items():
 			for s in sketches:
-				print("-->")
-				print(s.stmt_string())
 				ast = s.to_dict()
 				out_df = pd.DataFrame.from_dict(output)
 
@@ -329,7 +334,6 @@ class Synthesizer(object):
 
 					# print(pred.print_str())
 					# print(pd.DataFrame(trimmed_inputs[0]))
-
 
 				if len(trimmed_inputs[0]) == 0:
 					continue
@@ -347,14 +351,15 @@ class Synthesizer(object):
 					alignment_result = align_table_schema(output, t.to_dict(orient="records"))
 					if alignment_result != None:
 						candidates.append(p)
-
-					if solution_limit is not None and len(candidates) > solution_limit:
+						solution_sketches.add(s.stmt_string())
+				
+					if ((solution_sketch_limit is not None and len(solution_sketches) >= solution_sketch_limit) or 
+						(solution_limit is not None and len(candidates) >= solution_limit)):
 						return candidates
 				
 				# early return if the termination condition is met
 				# TODO: time_limit may be exceeded if the synthesizer is stuck on iteratively instantiation
 				if time_limit_sec is not None and time.time() - start_time > time_limit_sec:
 					return candidates
-
 
 		return candidates

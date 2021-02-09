@@ -59,7 +59,7 @@ class PredContainsVal(object):
 		self.val = val
 
 	def check(self, row):
-		return self.val in row
+		return self.val in row or any([str(self.val) == str(v) for v in row])
 
 	def print_str(self, indent="", multi_line=True):
 		return f"{indent}{self.val}"
