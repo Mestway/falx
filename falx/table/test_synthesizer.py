@@ -321,7 +321,7 @@ class TestSynthesizer(unittest.TestCase):
 			print(p.stmt_string())
 			print(p.eval(inputs))
 
-	#@unittest.skip	
+	@unittest.skip	
 	def test_12(self):
 		
 		small_inputs = [[{"date":"2014-01-01","precipitation":0,"temp_max":7.2,"temp_min":3.3,"wind":1.2,"weather":"sun"},{"date":"2014-01-05","precipitation":0,"temp_max":8.3,"temp_min":-0.5,"wind":3.7,"weather":"sun"},{"date":"2014-01-10","precipitation":4.3,"temp_max":12.8,"temp_min":8.3,"wind":7,"weather":"sun"},{"date":"2014-01-15","precipitation":0,"temp_max":11.1,"temp_min":5.6,"wind":2.5,"weather":"sun"},{"date":"2014-01-20","precipitation":0,"temp_max":10,"temp_min":2.8,"wind":2.2,"weather":"sun"},{"date":"2014-01-25","precipitation":0,"temp_max":12.2,"temp_min":1.1,"wind":0.8,"weather":"sun"}]]
@@ -392,6 +392,41 @@ class TestSynthesizer(unittest.TestCase):
 
 		print(f"small table synthesis time: {t1 - t0}")
 		print(f"  big table synthesis time: {t2 - t1}")
+
+
+	def test_14(self):
+		inputs = [[
+		{"Group":1,"A":0,"B":2,"C":1},
+		{"Group":1,"A":1,"B":2,"C":3},
+		{"Group":2,"A":2,"B":2,"C":0},
+		{"Group":2,"A":1,"B":4,"C":1}]]
+
+		output = [
+			{ "x": 1, "y": "A",  "color": 1},
+			{ "x": 1, "y": "B",  "color": 4},
+		]
+
+		config = {
+            "operators": [  "gather_neg", "unite","mutate_custom","filter", "separate", "spread",  "cumsum", 
+                "gather", "mutate", "group_sum"],
+            "filer_op": [">", "<", "=="],
+            "constants": [],
+            "aggr_func": ["sum", "count"], #"mean", 
+            "mutate_op": ["+", "-"],
+            "gather_max_val_list_size": 3,
+            "gather_max_key_list_size": 3,
+            "consider_non_consecutive_gather_keys": True,
+            "allow_comp_without_new_val": False
+        }
+
+		#Synthesizer(config=config).enumerative_all_programs(inputs, output, 4, False)
+		candidates = Synthesizer(config=config).enumerative_synthesis(inputs, output, 4, time_limit_sec=4000, solution_limit=1000)
+		#candidates = Synthesizer().enumerative_search(inputs, output, 3)
+
+		# for p in candidates:
+		# 	#print(alignment_result)
+		# 	print(p.stmt_string())
+		# 	print(p.eval(inputs))
 
 if __name__ == '__main__':
 	unittest.main()

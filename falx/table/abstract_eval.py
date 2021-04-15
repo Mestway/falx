@@ -75,7 +75,14 @@ def backward_eval_one_step(op, out_df, is_outer_most=False):
 			if schema[i] != "string":
 				continue
 
-			col_vals = [str(v) for v in out_df[c].to_list()]
+			val_column = out_df[c]
+			
+			if isinstance(val_column, pd.DataFrame):
+				continue
+				
+
+
+			col_vals = [str(v) for v in val_column.to_list()]
 
 			if all(["_" in v for v in col_vals]):
 				#out_df[[x for x in out_df.columns if x != c]]

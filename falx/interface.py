@@ -42,7 +42,8 @@ class FalxInterface(object):
             "mutate_op": ["+", "-"],
             "gather_max_val_list_size": 3,
             "gather_max_key_list_size": 3,
-            "consider_non_consecutive_gather_keys": False
+            "consider_non_consecutive_gather_keys": False,
+            "allow_comp_without_new_val": False
         },
 
         "disable_provenance_analysis": False,

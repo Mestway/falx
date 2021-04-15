@@ -382,6 +382,10 @@ class Spread(Node):
 					
 					# values in the id column (columns outside of key or val)
 					id_cols = [c for k, c in enumerate(df.columns) if k != i and k != self.key]
+
+					if len(id_cols) == 0:
+						continue
+					
 					id_value_tuples = [tuple(x) for x in df[id_cols].to_records(index=False)]
 
 					# restrict how many keys can be maximally generated from spread

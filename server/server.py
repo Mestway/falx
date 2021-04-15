@@ -176,7 +176,7 @@ def run_falx_synthesizer():
             solution_sketch_limit = 2
             solution_limit = 3
         else:
-            time_limit_sec = 3000
+            time_limit_sec = 20
             solution_limit = 10
             solution_sketch_limit = 5
 

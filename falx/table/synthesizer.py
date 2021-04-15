@@ -260,7 +260,7 @@ class Synthesizer(object):
 			# handling concrete programs won't take long, allow them to proceed
 			return [p]
 
-	def enumerative_all_programs(self, inputs, output, max_prog_size):
+	def enumerative_all_programs(self, inputs, output, max_prog_size, print_progs=True):
 		"""Given inputs and output, enumerate all programs in the search space until 
 			find a solution p such that output ⊆ subseteq p(inputs)  """
 		all_sketches = self.enum_sketches(inputs, output, size=max_prog_size)
@@ -268,11 +268,13 @@ class Synthesizer(object):
 		for level, sketches in all_sketches.items():
 			for s in sketches:
 				concrete_programs += self.iteratively_instantiate_and_print(s, inputs, 1, True)
+		
 		for p in concrete_programs:
 			try:
 				t = p.eval(inputs)
-				print(p.stmt_string())
-				print(t)
+				if (print_progs):
+					print(p.stmt_string())
+					print(t)
 			except Exception as e:
 				print(f"[error] {sys.exc_info()[0]} {e}")
 				tb = sys.exc_info()[2]
